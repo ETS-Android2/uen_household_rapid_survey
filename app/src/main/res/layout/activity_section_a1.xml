@@ -334,25 +334,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-
-                <!-- a1title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa1title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a1title" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- a103  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa103"
@@ -435,6 +416,27 @@
                 </androidx.cardview.widget.CardView>
 
 
+
+                <!-- a1title  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa1title"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/a1title" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
                 <!-- a109  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa109"
@@ -508,7 +510,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/a110"
                             android:text="@={form.a110}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- a111  Input   -->

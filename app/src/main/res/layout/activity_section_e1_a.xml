@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,13 +9,16 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,13 +29,16 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/etitle1"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/reproductivehealth_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -39,22 +46,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- etitle1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVetitle1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/etitle1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- etitle2  Title   -->
                 <androidx.cardview.widget.CardView
@@ -70,8 +61,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/etitle2" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e101a  Input   -->
                 <androidx.cardview.widget.CardView
@@ -96,10 +90,10 @@
                                 android:text="@string/Q_e101a" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/e101a" />
+
                         </LinearLayout>
 
                         <EditText
@@ -108,8 +102,11 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/e101a"
                             android:text="@={form.e101a}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e101b  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -138,6 +135,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/e101b" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -150,7 +148,9 @@
                             android:text="@={form.e101b}"
                             app:maxValue="100"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- e101  Radio   -->
@@ -1111,7 +1111,11 @@
                                 android:text="@string/e11502" />
                         </RadioGroup>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+                </androidx.cardview.widget.CardView>
+
+
+
+                <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1138,8 +1142,17 @@
                         android:onClick="BtnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
+
             </LinearLayout>
+
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>
