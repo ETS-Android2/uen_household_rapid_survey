@@ -6,7 +6,6 @@ import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp._EMPTY_;
 import android.database.Cursor;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
@@ -52,26 +51,30 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
     // SECTION VARIABLES
-    private String sA2 = _EMPTY_;
+    private String sD = _EMPTY_;
 
     // FIELD VARIABLES
-    private String hl1 = _EMPTY_;
-    private String hl2 = _EMPTY_;
-    private String hl3 = _EMPTY_;
-    private String hl4 = _EMPTY_;
-    private String hl5d = _EMPTY_;
-    private String hl5m = _EMPTY_;
-    private String hl5y = _EMPTY_;
-    private String hl6y = _EMPTY_;
-    private String hl6m = _EMPTY_;
-    private String hl7 = _EMPTY_;
-    private String hl8 = _EMPTY_;
-    private String hl9 = _EMPTY_;
-    private String hl10 = _EMPTY_;
-    private String hl11 = _EMPTY_;
-    private String hl12 = _EMPTY_;
-    private String hl1296x = _EMPTY_;
-    private String hl13 = _EMPTY_;
+    private String d101 = _EMPTY_;
+    private String d102 = _EMPTY_;
+    private String d104 = _EMPTY_;
+    private String d103 = _EMPTY_;
+    private String d108d = _EMPTY_;
+    private String d108m = _EMPTY_;
+    private String d108y = _EMPTY_;
+    private String d109y = _EMPTY_;
+    private String d109m = _EMPTY_;
+    private String d109d = _EMPTY_;
+    private String d106 = _EMPTY_;
+    private String d10601x = _EMPTY_;
+    private String d107 = _EMPTY_;
+    private String d10701x = _EMPTY_;
+    private String d105 = _EMPTY_;
+    private String d110 = _EMPTY_;
+    private String d111 = _EMPTY_;
+    private String d115 = _EMPTY_;
+    private String d112 = _EMPTY_;
+    private String d113 = _EMPTY_;
+    private String d114 = _EMPTY_;
 
 
     private boolean expanded;
@@ -238,218 +241,223 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
 
-    public String getsA2() {
-        return sA2;
+    public String getsD() {
+        return sD;
     }
 
-    public void setsA2(String sA2) {
-        this.sA2 = sA2;
+    public void setsD(String sD) {
+        this.sD = sD;
     }
 
-/*
-    public void setEcdNo(String sno) {
-        this.sno = sno;
+
+    @Bindable
+    public String getD101() {
+        return d101;
+    }
+
+    public void setD101(String d101) {
+        this.d101 = d101;
+        notifyPropertyChanged(BR.d101);
     }
 
     @Bindable
-    public boolean isMwra() {
-        return mwra;
-    }
-*/
-
-    @Bindable
-    public String getHl1() {
-        return hl1;
+    public String getD102() {
+        return d102;
     }
 
-    public void setHl1(String hl1) {
-        this.hl1 = hl1;
-        this.sno = hl1;
-        notifyPropertyChanged(BR.hl1);
+    public void setD102(String d102) {
+        this.d102 = d102;
+        notifyPropertyChanged(BR.d102);
     }
 
     @Bindable
-    public String getHl2() {
-        return hl2;
+    public String getD104() {
+        return d104;
     }
 
-    public void setHl2(String hl2) {
-        this.hl2 = hl2;
-        notifyPropertyChanged(BR.hl2);
-    }
-
-    @Bindable
-    public String getHl3() {
-        return hl3;
-    }
-
-    public void setHl3(String hl3) {
-        this.hl3 = hl3;
-        notifyPropertyChanged(BR.hl3);
+    public void setD104(String d104) {
+        this.d104 = d104;
+        notifyPropertyChanged(BR.d104);
     }
 
     @Bindable
-    public String getHl4() {
-        return hl4;
+    public String getD103() {
+        return d103;
     }
 
-    public void setHl4(String hl4) {
-        this.hl4 = hl4;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl4);
-    }
-
-    @Bindable
-    public String getHl5d() {
-        return hl5d;
-    }
-
-    public void setHl5d(String hl5d) {
-        this.hl5d = hl5d;
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5d);
+    public void setD103(String d103) {
+        this.d103 = d103;
+        notifyPropertyChanged(BR.d103);
     }
 
     @Bindable
-    public String getHl5m() {
-        return hl5m;
+    public String getD108d() {
+        return d108d;
     }
 
-    public void setHl5m(String hl5m) {
-        this.hl5m = hl5m;
-        if (hl5m.equals("98")) {
-            setHl5d("98");
-        }
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5m);
+    public void setD108d(String d108d) {
+        this.d108d = d108d;
+        notifyPropertyChanged(BR.d108d);
     }
 
     @Bindable
-    public String getHl5y() {
-        return hl5y;
+    public String getD108m() {
+        return d108m;
     }
 
-    public void setHl5y(String hl5y) {
-        this.hl5y = hl5y;
-        if (hl5y.equals("9998")) {
-            setHl5m("98");
-            setHl6m("");
-            setHl6y("");
-        }
-        // Calculate age
-        CaluculateAge();
-        notifyPropertyChanged(BR.hl5y);
+    public void setD108m(String d108m) {
+        this.d108m = d108m;
+        notifyPropertyChanged(BR.d108m);
     }
 
     @Bindable
-    public String getHl6y() {
-        return hl6y;
+    public String getD108y() {
+        return d108y;
     }
 
-    public void setHl6y(@NonNull String hl6y) {
-        this.hl6y = hl6y;
-        setHl7(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 13 ? "" : this.hl7 : this.hl7);
-        setHl11(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 3 ? "" : this.hl11 : this.hl11);
-        setHl12(hl6y.length() > 0 ? Integer.parseInt(hl6y) < 10 ? "" : this.hl12 : this.hl12);
-        updateMemCategory();
-
-        notifyPropertyChanged(BR.hl6y);
+    public void setD108y(String d108y) {
+        this.d108y = d108y;
+        notifyPropertyChanged(BR.d108y);
     }
 
     @Bindable
-    public String getHl6m() {
-        return hl6m;
+    public String getD109y() {
+        return d109y;
     }
 
-    public void setHl6m(String hl6m) {
-        this.hl6m = hl6m;
-        notifyPropertyChanged(BR.hl6m);
-    }
-
-    @Bindable
-    public String getHl7() {
-        return hl7;
-    }
-
-    public void setHl7(String hl7) {
-        this.hl7 = hl7;
-//        setHl7(hl7.equals("") ? "99" : this.hl7);
-        updateMemCategory();
-
-        notifyPropertyChanged(BR.hl7);
+    public void setD109y(String d109y) {
+        this.d109y = d109y;
+        notifyPropertyChanged(BR.d109y);
     }
 
     @Bindable
-    public String getHl8() {
-        return hl8;
+    public String getD109m() {
+        return d109m;
     }
 
-    public void setHl8(String hl8) {
-        this.hl8 = hl8;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl8);
-    }
-
-    @Bindable
-    public String getHl9() {
-        return hl9;
-    }
-
-    public void setHl9(String hl9) {
-        this.hl9 = hl9;
-        notifyPropertyChanged(BR.hl9);
+    public void setD109m(String d109m) {
+        this.d109m = d109m;
+        notifyPropertyChanged(BR.d109m);
     }
 
     @Bindable
-    public String getHl10() {
-        return hl10;
+    public String getD109d() {
+        return d109d;
     }
 
-    public void setHl10(String hl10) {
-        this.hl10 = hl10;
-        updateMemCategory();
-        notifyPropertyChanged(BR.hl10);
-    }
-
-    @Bindable
-    public String getHl11() {
-        return hl11;
-    }
-
-    public void setHl11(String hl11) {
-        this.hl11 = hl11;
-        notifyPropertyChanged(BR.hl11);
+    public void setD109d(String d109d) {
+        this.d109d = d109d;
+        notifyPropertyChanged(BR.d109d);
     }
 
     @Bindable
-    public String getHl12() {
-        return hl12;
+    public String getD106() {
+        return d106;
     }
 
-    public void setHl12(String hl12) {
-        this.hl12 = hl12;
-        setHl1296x(hl12.equals("96") ? this.hl1296x : "");
-        notifyPropertyChanged(BR.hl12);
-    }
-
-    @Bindable
-    public String getHl1296x() {
-        return hl1296x;
-    }
-
-    public void setHl1296x(String hl1296x) {
-        this.hl1296x = hl1296x;
-        notifyPropertyChanged(BR.hl1296x);
+    public void setD106(String d106) {
+        this.d106 = d106;
+        notifyPropertyChanged(BR.d106);
     }
 
     @Bindable
-    public String getHl13() {
-        return hl13;
+    public String getD10601x() {
+        return d10601x;
     }
 
-    public void setHl13(String hl13) {
-        this.hl13 = hl13;
-        notifyPropertyChanged(BR.hl13);
+    public void setD10601x(String d10601x) {
+        this.d10601x = d10601x;
+        notifyPropertyChanged(BR.d10601x);
+    }
+
+    @Bindable
+    public String getD107() {
+        return d107;
+    }
+
+    public void setD107(String d107) {
+        this.d107 = d107;
+        notifyPropertyChanged(BR.d107);
+    }
+
+    @Bindable
+    public String getD10701x() {
+        return d10701x;
+    }
+
+    public void setD10701x(String d10701x) {
+        this.d10701x = d10701x;
+        notifyPropertyChanged(BR.d10701x);
+    }
+
+    @Bindable
+    public String getD105() {
+        return d105;
+    }
+
+    public void setD105(String d105) {
+        this.d105 = d105;
+        notifyPropertyChanged(BR.d105);
+    }
+
+    @Bindable
+    public String getD110() {
+        return d110;
+    }
+
+    public void setD110(String d110) {
+        this.d110 = d110;
+        notifyPropertyChanged(BR.d110);
+    }
+
+    @Bindable
+    public String getD111() {
+        return d111;
+    }
+
+    public void setD111(String d111) {
+        this.d111 = d111;
+        notifyPropertyChanged(BR.d111);
+    }
+
+    @Bindable
+    public String getD115() {
+        return d115;
+    }
+
+    public void setD115(String d115) {
+        this.d115 = d115;
+        notifyPropertyChanged(BR.d115);
+    }
+
+    @Bindable
+    public String getD112() {
+        return d112;
+    }
+
+    public void setD112(String d112) {
+        this.d112 = d112;
+        notifyPropertyChanged(BR.d112);
+    }
+
+    @Bindable
+    public String getD113() {
+        return d113;
+    }
+
+    public void setD113(String d113) {
+        this.d113 = d113;
+        notifyPropertyChanged(BR.d113);
+    }
+
+    @Bindable
+    public String getD114() {
+        return d114;
+    }
+
+    public void setD114(String d114) {
+        this.d114 = d114;
+        notifyPropertyChanged(BR.d114);
     }
 
     @Bindable
@@ -500,34 +508,38 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED_DATE));
 
-        sA2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SA2)));
+        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SD)));
         updateMemCategory();
 
         return this;
     }
 
-    public void sA2Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sA2Hydrate: " + string);
+    public void sDHydrate(String string) throws JSONException {
+        Log.d(TAG, "sDHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.hl1 = json.getString("hl1");
-            this.hl2 = json.getString("hl2");
-            this.hl3 = json.getString("hl3");
-            this.hl4 = json.getString("hl4");
-            this.hl5d = json.getString("hl5d");
-            this.hl5m = json.getString("hl5m");
-            this.hl5y = json.getString("hl5y");
-            this.hl6y = json.getString("hl6y");
-            this.hl6m = json.getString("hl6m");
-            this.hl7 = json.getString("hl7");
-            this.hl8 = json.getString("hl8");
-            this.hl9 = json.getString("hl9");
-            this.hl10 = json.getString("hl10");
-            this.hl11 = json.getString("hl11");
-            this.hl12 = json.getString("hl12");
-            this.hl1296x = json.getString("hl1296x");
-            this.hl13 = json.getString("hl13");
+            this.d101 = json.getString("d101");
+            this.d102 = json.getString("d102");
+            this.d104 = json.getString("d104");
+            this.d103 = json.getString("d103");
+            this.d108d = json.getString("d108d");
+            this.d108m = json.getString("d108m");
+            this.d108y = json.getString("d108y");
+            this.d109y = json.getString("d109y");
+            this.d109m = json.getString("d109m");
+            this.d109d = json.getString("d109d");
+            this.d106 = json.getString("d106");
+            this.d10601x = json.getString("d10601x");
+            this.d107 = json.getString("d107");
+            this.d10701x = json.getString("d10701x");
+            this.d105 = json.getString("d105");
+            this.d110 = json.getString("d110");
+            this.d111 = json.getString("d111");
+            this.d115 = json.getString("d115");
+            this.d112 = json.getString("d112");
+            this.d113 = json.getString("d113");
+            this.d114 = json.getString("d114");
         }
     }
 
@@ -552,41 +564,45 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FamilyMembersTable.COLUMN_APPVERSION, this.appver);
 
-        json.put(FamilyMembersTable.COLUMN_SA2, new JSONObject(sA2toString()));
+        json.put(FamilyMembersTable.COLUMN_SD, new JSONObject(sDtoString()));
         return json;
     }
 
-    public String sA2toString() throws JSONException {
-        Log.d(TAG, "sA2toString: ");
+    public String sDtoString() throws JSONException {
+        Log.d(TAG, "sDtoString: ");
         JSONObject json = new JSONObject();
-        json.put("hl1", hl1)
-                .put("hl2", hl2)
-                .put("hl3", hl3)
-                .put("hl4", hl4)
-                .put("hl5d", hl5d)
-                .put("hl5m", hl5m)
-                .put("hl5y", hl5y)
-                .put("hl6y", hl6y)
-                .put("hl6m", hl6m)
-                .put("hl7", hl7)
-                .put("hl8", hl8)
-                .put("hl9", hl9)
-                .put("hl10", hl10)
-                .put("hl11", hl11)
-                .put("hl12", hl12)
-                .put("hl1296x", hl1296x)
-                .put("hl13", hl13);
+        json.put("d101", d101)
+                .put("d102", d102)
+                .put("d104", d104)
+                .put("d103", d103)
+                .put("d108d", d108d)
+                .put("d108m", d108m)
+                .put("d108y", d108y)
+                .put("d109y", d109y)
+                .put("d109m", d109m)
+                .put("d109d", d109d)
+                .put("d106", d106)
+                .put("d10601x", d10601x)
+                .put("d107", d107)
+                .put("d10701x", d10701x)
+                .put("d105", d105)
+                .put("d110", d110)
+                .put("d111", d111)
+                .put("d115", d115)
+                .put("d112", d112)
+                .put("d113", d113)
+                .put("d114", d114);
         return json.toString();
     }
 
     private void CaluculateAge() {
-        Log.d(TAG, "CaluculateAge: " + this.hl5y + "-" + this.hl5m + "-" + this.hl5d);
+        Log.d(TAG, "CaluculateAge: " + this.d108y + "-" + this.d108m + "-" + this.d108d);
 
-        if (!this.hl5y.equals("") && !this.hl5y.equals("9998") && !this.hl5m.equals("") && !this.hl5d.equals("")) {
+        if (!this.d108y.equals("") && !this.d108y.equals("9998") && !this.d108m.equals("") && !this.d108d.equals("")) {
 
-            if ((Integer.parseInt(this.hl5m) > 12 && !this.hl5m.equals("98")) || (Integer.parseInt(this.hl5d) > 31 && !this.hl5d.equals("98")) || Integer.parseInt(this.hl5y) < 1920) {
-                setHl6y("");
-                setHl6m("");
+            if ((Integer.parseInt(this.d108m) > 12 && !this.d108m.equals("98")) || (Integer.parseInt(this.d108d) > 31 && !this.d108d.equals("98")) || Integer.parseInt(this.d108y) < 1920) {
+                setD109y("");
+                setD109m("");
                 this.ageInMonths = 0;
                 return;
             }
@@ -600,9 +616,9 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
 
             // set Date of birth
-            int day = !this.hl5d.equals("98") ? Integer.parseInt(this.hl5d) : 15;
-            int month = !this.hl5m.equals("98") ? Integer.parseInt(this.hl5m) : 6;
-            int year = Integer.parseInt(this.hl5y);
+            int day = !this.d108d.equals("98") ? Integer.parseInt(this.d108d) : 15;
+            int month = !this.d108m.equals("98") ? Integer.parseInt(this.d108m) : 6;
+            int year = Integer.parseInt(this.d108y);
             Calendar cal = Calendar.getInstance();
 
             SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
@@ -636,10 +652,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
 
-                setHl6y(String.valueOf(tYear));
-                setHl6m(String.valueOf(tMonth));
+                setD109y(String.valueOf(tYear));
+                setD109m(String.valueOf(tMonth));
                 if (tYear < 0)
-                    setHl6y("");
+                    setD109y("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
 
 
@@ -665,10 +681,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
      * 4 = Adol Female
      */
     private void updateMemCategory() {
-        if (hl4.equals("") || hl6y.equals("") || hl7.equals("") || !hl10.equals("1")) return;
-        String memGender = getHl4();
-        String memMaritalStatus = getHl7();
-        int memAge = Integer.parseInt(getHl6y());
+        if (d104.equals("") || d109y.equals("") || d105.equals("") || !d115.equals("1")) return;
+        String memGender = getD104();
+        String memMaritalStatus = getD105();
+        int memAge = Integer.parseInt(getD109y());
 
         // MWRA
         if (memGender.equals("2")                // Female
@@ -680,7 +696,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
         // Child
         if (memAge < 5
-                && !hl8.equals("") && !hl8.equals("97")
+                && !d107.equals("") && !d107.equals("97")
         ) {
             setMemCate("2");
         }

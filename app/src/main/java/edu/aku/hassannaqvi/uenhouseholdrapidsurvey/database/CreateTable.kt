@@ -67,7 +67,7 @@ object CreateTable {
             + FamilyMembersTable.COLUMN_SYNCED + " TEXT,"
             + FamilyMembersTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FamilyMembersTable.COLUMN_APPVERSION + " TEXT,"
-            + FamilyMembersTable.COLUMN_SA2 + " TEXT"
+            + FamilyMembersTable.COLUMN_SD + " TEXT"
             + " );"
             )
 

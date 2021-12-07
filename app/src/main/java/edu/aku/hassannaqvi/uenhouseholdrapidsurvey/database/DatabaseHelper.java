@@ -256,7 +256,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_SNO, members.getSno());
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(FamilyMembersTable.COLUMN_SA2, members.sA2toString());
+        values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
         values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
@@ -287,7 +287,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
-        values.put(FamilyMembersTable.COLUMN_SA2, members.sA2toString());
+        values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
 
         values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
 
