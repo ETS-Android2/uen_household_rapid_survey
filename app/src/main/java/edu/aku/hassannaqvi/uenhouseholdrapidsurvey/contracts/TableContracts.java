@@ -18,6 +18,8 @@ public class TableContracts {
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SA = "sA";
         public static final String COLUMN_SM = "sM";
+        public static final String COLUMN_SN = "sN";
+        public static final String COLUMN_SO = "sO";
         public static final String COLUMN_SE2 = "sE2";
 
         public static final String COLUMN_DEVICEID = "deviceid";
