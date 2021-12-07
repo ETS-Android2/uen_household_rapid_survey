@@ -1235,6 +1235,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10901(String n10901) {
+        if (this.n10901.equals(n10901)) return;
         this.n10901 = n10901;
         notifyPropertyChanged(BR.n10901);
     }
@@ -1245,6 +1246,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10902(String n10902) {
+        if (this.n10902.equals(n10902)) return;
         this.n10902 = n10902;
         notifyPropertyChanged(BR.n10902);
     }
@@ -1255,6 +1257,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10903(String n10903) {
+        if (this.n10903.equals(n10903)) return;
         this.n10903 = n10903;
         notifyPropertyChanged(BR.n10903);
     }
@@ -1265,6 +1268,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10904(String n10904) {
+        if (this.n10904.equals(n10904)) return;
         this.n10904 = n10904;
         notifyPropertyChanged(BR.n10904);
     }
@@ -1275,6 +1279,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10905(String n10905) {
+        if (this.n10905.equals(n10905)) return;
         this.n10905 = n10905;
         notifyPropertyChanged(BR.n10905);
     }
@@ -1285,6 +1290,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10906(String n10906) {
+        if (this.n10906.equals(n10906)) return;
         this.n10906 = n10906;
         notifyPropertyChanged(BR.n10906);
     }
@@ -1295,6 +1301,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setN10907(String n10907) {
+        if (this.n10907.equals(n10907)) return;
         this.n10907 = n10907;
         notifyPropertyChanged(BR.n10907);
     }
@@ -1318,6 +1325,7 @@ public class Form extends BaseObservable implements Observable {
         this.n111 = n111;
         setN112(n111.equals("1") ? this.n112 : "");
         setN113(n111.equals("1") ? this.n113 : "");
+        setN11301x(n111.equals("1") ? this.getN11301x() : "");
         notifyPropertyChanged(BR.n111);
     }
 
@@ -1328,6 +1336,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN112(String n112) {
         this.n112 = n112;
+        setN113(n111.equals("1") ? this.n113 : "");
+        setN11301x(n111.equals("1") ? this.getN11301x() : "");
         notifyPropertyChanged(BR.n112);
     }
 
@@ -1338,6 +1348,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN113(String n113) {
         this.n113 = n113;
+        setN11301x(n113.equals("1") ?  this.n11301x : "");
         notifyPropertyChanged(BR.n113);
     }
 
@@ -1358,6 +1369,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setO101(String o101) {
         this.o101 = o101;
+        setO102(o101.equals("1") ? this.o102 : "");
+        setO103(o101.equals("1") ? this.o103 : "");
         notifyPropertyChanged(BR.o101);
     }
 
@@ -1378,6 +1391,11 @@ public class Form extends BaseObservable implements Observable {
 
     public void setO103(String o103) {
         this.o103 = o103;
+        setO10401(o103.equals("1") ? this.o10401 : "");
+        setO10402(o103.equals("1") ? this.o10402 : "");
+        setO10403(o103.equals("1") ? this.o10403 : "");
+        setO10404(o103.equals("1") ? this.o10404 : "");
+        setO10497(o103.equals("1") ? this.o10497 : "");
         notifyPropertyChanged(BR.o103);
     }
 
@@ -1397,6 +1415,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10401(String o10401) {
+        if (this.o10401.equals(o10401)) return;
         this.o10401 = o10401;
         notifyPropertyChanged(BR.o10401);
     }
@@ -1407,6 +1426,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10402(String o10402) {
+        if (this.o10402.equals(o10402)) return;
         this.o10402 = o10402;
         notifyPropertyChanged(BR.o10402);
     }
@@ -1417,6 +1437,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10403(String o10403) {
+        if (this.o10403.equals(o10403)) return;
         this.o10403 = o10403;
         notifyPropertyChanged(BR.o10403);
     }
@@ -1427,6 +1448,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10404(String o10404) {
+        if (this.o10404.equals(o10404)) return;
         this.o10404 = o10404;
         notifyPropertyChanged(BR.o10404);
     }
@@ -1437,7 +1459,15 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10497(String o10497) {
+        if (this.o10497.equals(o10497)) return;
         this.o10497 = o10497;
+
+        setO10401(o10497.equals("97") ? "" : this.o10401 );
+        setO10402(o10497.equals("97") ? "" : this.o10402 );
+        setO10403(o10497.equals("97") ? "" : this.o10403 );
+        setO10404(o10497.equals("97") ? "" : this.o10404 );
+
+
         notifyPropertyChanged(BR.o10497);
     }
 
@@ -1458,6 +1488,11 @@ public class Form extends BaseObservable implements Observable {
 
     public void setO106(String o106) {
         this.o106 = o106;
+        setO10701(o106.equals("1") ? this.o10701 : "");
+        setO10702(o106.equals("1") ? this.o10702 : "");
+        setO10703(o106.equals("1") ? this.o10703 : "");
+        setO10704(o106.equals("1") ? this.o10704 : "");
+        setO10797(o106.equals("1") ? this.o10797 : "");
         notifyPropertyChanged(BR.o106);
     }
 
@@ -1477,6 +1512,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10701(String o10701) {
+        if (this.o10701.equals(o10701)) return;
         this.o10701 = o10701;
         notifyPropertyChanged(BR.o10701);
     }
@@ -1487,6 +1523,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10702(String o10702) {
+        if (this.o10702.equals(o10702)) return;
         this.o10702 = o10702;
         notifyPropertyChanged(BR.o10702);
     }
@@ -1497,6 +1534,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10703(String o10703) {
+        if (this.o10703.equals(o10703)) return;
         this.o10703 = o10703;
         notifyPropertyChanged(BR.o10703);
     }
@@ -1507,6 +1545,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10704(String o10704) {
+        if (this.o10704.equals(o10704)) return;
         this.o10704 = o10704;
         notifyPropertyChanged(BR.o10704);
     }
@@ -1517,7 +1556,13 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setO10797(String o10797) {
+        if (this.o10797.equals(o10797)) return;
         this.o10797 = o10797;
+        setO10701(o10797.equals("97") ? this.o10701 : "");
+        setO10702(o10797.equals("97") ? this.o10702 : "");
+        setO10703(o10797.equals("97") ? this.o10703 : "");
+        setO10704(o10797.equals("97") ? this.o10704 : "");
+
         notifyPropertyChanged(BR.o10797);
     }
 
