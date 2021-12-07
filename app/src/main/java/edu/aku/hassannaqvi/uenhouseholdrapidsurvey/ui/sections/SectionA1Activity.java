@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 
-public class SectionC1Activity extends AppCompatActivity {
+public class SectionA1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_c1);
+        setContentView(R.layout.activity_section_a1);
     }
 }
