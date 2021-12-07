@@ -72,16 +72,6 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String e113m = _EMPTY_;
     private String e114 = _EMPTY_;
     private String e115 = _EMPTY_;
-    private String e116 = _EMPTY_;
-    private String e117 = _EMPTY_;
-    private String e118 = _EMPTY_;
-    private String e119d = _EMPTY_;
-    private String e119m = _EMPTY_;
-    private String e119y = _EMPTY_;
-    private String e120 = _EMPTY_;
-    private String e121 = _EMPTY_;
-    private String e122 = _EMPTY_;
-    private String e12296x = _EMPTY_;
 
 
     public void Pregnancy() {
@@ -94,7 +84,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         setUuid(MainApp.form.getUid());  // not applicable in Form table
         setMuid(MainApp.mwra.getUid());  // not applicable in Form table
         setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()); //// not applicable in Form table
-        setMsno(MainApp.mwra.getBs1q1());
+//        setMsno(MainApp.mwra.getBs1q1());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setpsuCode(MainApp.selectedPSU);
@@ -510,106 +500,6 @@ public class Pregnancy extends BaseObservable implements Observable {
     public void setE115(String e115) {
         this.e115 = e115;
         notifyPropertyChanged(BR.e115);
-    }
-
-    @Bindable
-    public String getE116() {
-        return e116;
-    }
-
-    public void setE116(String e116) {
-        this.e116 = e116;
-        notifyPropertyChanged(BR.e116);
-    }
-
-    @Bindable
-    public String getE117() {
-        return e117;
-    }
-
-    public void setE117(String e117) {
-        this.e117 = e117;
-        notifyPropertyChanged(BR.e117);
-    }
-
-    @Bindable
-    public String getE118() {
-        return e118;
-    }
-
-    public void setE118(String e118) {
-        this.e118 = e118;
-        notifyPropertyChanged(BR.e118);
-    }
-
-    @Bindable
-    public String getE119d() {
-        return e119d;
-    }
-
-    public void setE119d(String e119d) {
-        this.e119d = e119d;
-        notifyPropertyChanged(BR.e119d);
-    }
-
-    @Bindable
-    public String getE119m() {
-        return e119m;
-    }
-
-    public void setE119m(String e119m) {
-        this.e119m = e119m;
-        notifyPropertyChanged(BR.e119m);
-    }
-
-    @Bindable
-    public String getE119y() {
-        return e119y;
-    }
-
-    public void setE119y(String e119y) {
-        this.e119y = e119y;
-        notifyPropertyChanged(BR.e119y);
-    }
-
-    @Bindable
-    public String getE120() {
-        return e120;
-    }
-
-    public void setE120(String e120) {
-        this.e120 = e120;
-        notifyPropertyChanged(BR.e120);
-    }
-
-    @Bindable
-    public String getE121() {
-        return e121;
-    }
-
-    public void setE121(String e121) {
-        this.e121 = e121;
-        notifyPropertyChanged(BR.e121);
-    }
-
-    @Bindable
-    public String getE122() {
-        return e122;
-    }
-
-    public void setE122(String e122) {
-        this.e122 = e122;
-        notifyPropertyChanged(BR.e122);
-    }
-
-    @Bindable
-    public String getE12296x() {
-        return e12296x;
-    }
-
-    public void setE12296x(String e12296x) {
-        this.e12296x = e12296x;
-        notifyPropertyChanged(BR.e12296x);
     }
 
 

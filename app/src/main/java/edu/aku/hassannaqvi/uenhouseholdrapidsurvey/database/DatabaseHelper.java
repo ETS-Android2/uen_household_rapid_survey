@@ -74,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
+        db.execSQL(CreateTable.SQL_CREATE_MaternalMortalityTable);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);

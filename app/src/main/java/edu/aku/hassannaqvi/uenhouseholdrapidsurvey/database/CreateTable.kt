@@ -147,6 +147,32 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_MaternalMortalityTable = ("CREATE TABLE "
+            + MaternalMortalityTable.TABLE_NAME + "("
+            + MaternalMortalityTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MaternalMortalityTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + MaternalMortalityTable.COLUMN_UID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_UUID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_MUID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_FMUID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_PSU_CODE + " TEXT,"
+            + MaternalMortalityTable.COLUMN_SNO + " TEXT,"
+            + MaternalMortalityTable.COLUMN_M_SNO + " TEXT,"
+            + MaternalMortalityTable.COLUMN_HHID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_USERNAME + " TEXT,"
+            + MaternalMortalityTable.COLUMN_SYSDATE + " TEXT,"
+            + MaternalMortalityTable.COLUMN_INDEXED + " TEXT,"
+            + MaternalMortalityTable.COLUMN_ISTATUS + " TEXT,"
+            + MaternalMortalityTable.COLUMN_DEVICEID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_DEVICETAGID + " TEXT,"
+            + MaternalMortalityTable.COLUMN_SYNCED + " TEXT,"
+            + MaternalMortalityTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + MaternalMortalityTable.COLUMN_APPVERSION + " TEXT,"
+            + MaternalMortalityTable.COLUMN_SE2 + " TEXT"
+
+            + " );"
+            )
+
     const val SQL_CREATE_CHILD = ("CREATE TABLE "
             + ChildTable.TABLE_NAME + "("
             + ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
