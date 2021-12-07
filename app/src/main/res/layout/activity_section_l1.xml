@@ -11,6 +11,19 @@
             type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA" />
     </data>
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/CustomToolbarTheme"
+        app:popupTheme="@style/CustomPopupTheme"
+        app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+        app:title="@string/sectionlwomenempowerment_mainheading"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
