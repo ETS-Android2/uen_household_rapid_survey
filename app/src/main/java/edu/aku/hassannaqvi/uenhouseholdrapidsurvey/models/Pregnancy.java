@@ -439,6 +439,7 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void setE111(String e111) {
         this.e111 = e111;
+        setE11196x(e111.equals("96") ? this.e11196x : "");
         notifyPropertyChanged(BR.e111);
     }
 
