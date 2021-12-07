@@ -1470,11 +1470,11 @@ public class Form extends BaseObservable implements Observable {
 
     public void setO106(String o106) {
         this.o106 = o106;
-        setO10701(o106.equals("1") ? this.o10701 : "");
-        setO10702(o106.equals("1") ? this.o10702 : "");
-        setO10703(o106.equals("1") ? this.o10703 : "");
-        setO10704(o106.equals("1") ? this.o10704 : "");
-        setO10797(o106.equals("1") ? this.o10797 : "");
+        setO10701(o106.equals("1") ? "" : this.o10701);
+        setO10702(o106.equals("1") ? "" : this.o10702);
+        setO10703(o106.equals("1") ? "" : this.o10703);
+        setO10704(o106.equals("1") ? "" : this.o10704);
+        setO10797(o106.equals("1") ? "" : this.o10797);
         notifyPropertyChanged(BR.o106);
     }
 
@@ -1540,10 +1540,10 @@ public class Form extends BaseObservable implements Observable {
     public void setO10797(String o10797) {
         if (this.o10797.equals(o10797)) return;
         this.o10797 = o10797;
-        setO10701(o10797.equals("97") ? this.o10701 : "");
-        setO10702(o10797.equals("97") ? this.o10702 : "");
-        setO10703(o10797.equals("97") ? this.o10703 : "");
-        setO10704(o10797.equals("97") ? this.o10704 : "");
+        setO10701(o10797.equals("97") ? "" : this.o10701);
+        setO10702(o10797.equals("97") ? "" : this.o10702);
+        setO10703(o10797.equals("97") ? "" : this.o10703);
+        setO10704(o10797.equals("97") ? "" : this.o10704);
 
         notifyPropertyChanged(BR.o10797);
     }
