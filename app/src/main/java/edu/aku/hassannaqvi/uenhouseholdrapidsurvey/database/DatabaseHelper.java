@@ -160,12 +160,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_HHID, mwra.getHhid());
         values.put(MwraTable.COLUMN_USERNAME, mwra.getUserName());
         values.put(MwraTable.COLUMN_SYSDATE, mwra.getSysDate());
-        values.put(MwraTable.COLUMN_SB1, mwra.sB1toString());
-        values.put(MwraTable.COLUMN_SB2, mwra.sB2toString());
-        values.put(MwraTable.COLUMN_SB3, mwra.sB3toString());
-        values.put(MwraTable.COLUMN_SB41, mwra.sB41toString());
-        values.put(MwraTable.COLUMN_SB42, mwra.sB42toString());
-        values.put(MwraTable.COLUMN_SB5, mwra.sB5toString());
+        values.put(MwraTable.COLUMN_SF, mwra.sFtoString());
+        values.put(MwraTable.COLUMN_SG, mwra.sGtoString());
+        values.put(MwraTable.COLUMN_SH1, mwra.sH1toString());
+        values.put(MwraTable.COLUMN_SH2, mwra.sH2toString());
+        values.put(MwraTable.COLUMN_SK, mwra.sKtoString());
+        values.put(MwraTable.COLUMN_SL, mwra.sLtoString());
         values.put(MwraTable.COLUMN_SB6, mwra.sB6toString());
         values.put(MwraTable.COLUMN_SB7, mwra.sB7toString());
         values.put(MwraTable.COLUMN_ISTATUS, mwra.getiStatus());
@@ -196,8 +196,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
-        values.put(ChildTable.COLUMN_SC1, child.sC1toString());
-        values.put(ChildTable.COLUMN_SC2, child.sC2toString());
+        values.put(ChildTable.COLUMN_SI1, child.sI1toString());
+        values.put(ChildTable.COLUMN_SI2, child.sI2toString());
         values.put(ChildTable.COLUMN_SC31, child.sC31toString());
         values.put(ChildTable.COLUMN_SC32, child.sC32toString());
         values.put(ChildTable.COLUMN_SC4, child.sC4toString());
@@ -260,7 +260,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
         values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
-        values.put(PregnancyTable.COLUMN_SB1, preg.sB1toString());
+        values.put(PregnancyTable.COLUMN_SE1, preg.sE1toString());
         values.put(PregnancyTable.COLUMN_ISTATUS, preg.getiStatus());
         values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
         values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());

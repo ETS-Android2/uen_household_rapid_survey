@@ -128,13 +128,13 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_SB1 = "sb1";
+        public static final String COLUMN_SF = "sb1";
 
-        public static final String COLUMN_SB2 = "sb2";
-        public static final String COLUMN_SB3 = "sb3";
-        public static final String COLUMN_SB41 = "sb41";
-        public static final String COLUMN_SB42 = "sb42";
-        public static final String COLUMN_SB5 = "sb5";
+        public static final String COLUMN_SG = "sb2";
+        public static final String COLUMN_SH1 = "sb3";
+        public static final String COLUMN_SH2 = "sb41";
+        public static final String COLUMN_SK = "sb42";
+        public static final String COLUMN_SL = "sb5";
         public static final String COLUMN_SB6 = "sb6";
         public static final String COLUMN_SB7 = "sb7";
 
@@ -163,7 +163,7 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
-        public static final String COLUMN_SB1 = "sb1";
+        public static final String COLUMN_SE1 = "sb1";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
@@ -188,8 +188,8 @@ public class TableContracts {
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_SC1 = "sc1";
-        public static final String COLUMN_SC2 = "sc2";
+        public static final String COLUMN_SI1 = "sc1";
+        public static final String COLUMN_SI2 = "sc2";
         public static final String COLUMN_SC31 = "sc31";
         public static final String COLUMN_SC32 = "sc32";
         public static final String COLUMN_SC4 = "sc4";

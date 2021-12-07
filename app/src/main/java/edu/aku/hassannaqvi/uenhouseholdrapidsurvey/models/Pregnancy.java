@@ -48,10 +48,40 @@ public class Pregnancy extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
 
     //Field Variables;
-    private String bs1q7p1g = _EMPTY_;
-    private String bs1q7p1d = _EMPTY_;
-    private String bs1q7p1d96x = _EMPTY_;
-    private String bs1q7p1b = _EMPTY_;
+    private String e101a = _EMPTY_;
+    private String e101b = _EMPTY_;
+    private String e101 = _EMPTY_;
+    private String e102 = _EMPTY_;
+    private String e102a = _EMPTY_;
+    private String e103 = _EMPTY_;
+    private String e104 = _EMPTY_;
+    private String e105 = _EMPTY_;
+    private String e106d = _EMPTY_;
+    private String e106m = _EMPTY_;
+    private String e106y = _EMPTY_;
+    private String e107 = _EMPTY_;
+    private String e109 = _EMPTY_;
+    private String e108 = _EMPTY_;
+    private String e110y = _EMPTY_;
+    private String e110m = _EMPTY_;
+    private String e110d = _EMPTY_;
+    private String e111 = _EMPTY_;
+    private String e11196x = _EMPTY_;
+    private String e112 = _EMPTY_;
+    private String e113y = _EMPTY_;
+    private String e113m = _EMPTY_;
+    private String e114 = _EMPTY_;
+    private String e115 = _EMPTY_;
+    private String e116 = _EMPTY_;
+    private String e117 = _EMPTY_;
+    private String e118 = _EMPTY_;
+    private String e119d = _EMPTY_;
+    private String e119m = _EMPTY_;
+    private String e119y = _EMPTY_;
+    private String e120 = _EMPTY_;
+    private String e121 = _EMPTY_;
+    private String e122 = _EMPTY_;
+    private String e12296x = _EMPTY_;
 
 
     public void Pregnancy() {
@@ -240,45 +270,346 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.psuCode = psuCode;
     }
 
-    @Bindable
-    public String getBs1q7p1g() {
-        return bs1q7p1g;
-    }
 
-    public void setBs1q7p1g(String bs1q7p1g) {
-        this.bs1q7p1g = bs1q7p1g;
-        notifyPropertyChanged(BR.bs1q7p1g);
-    }
 
     @Bindable
-    public String getBs1q7p1d() {
-        return bs1q7p1d;
+    public String getE101a() {
+        return e101a;
     }
 
-    public void setBs1q7p1d(String bs1q7p1d) {
-        this.bs1q7p1d = bs1q7p1d;
-        setBs1q7p1d96x(bs1q7p1d.equals("96") ? this.bs1q7p1d96x : "");
-        notifyPropertyChanged(BR.bs1q7p1d);
+    public void setE101a(String e101a) {
+        this.e101a = e101a;
+        notifyPropertyChanged(BR.e101a);
     }
 
     @Bindable
-    public String getBs1q7p1d96x() {
-        return bs1q7p1d96x;
+    public String getE101b() {
+        return e101b;
     }
 
-    public void setBs1q7p1d96x(String bs1q7p1d96x) {
-        this.bs1q7p1d96x = bs1q7p1d96x;
-        notifyPropertyChanged(BR.bs1q7p1d96x);
+    public void setE101b(String e101b) {
+        this.e101b = e101b;
+        notifyPropertyChanged(BR.e101b);
     }
 
     @Bindable
-    public String getBs1q7p1b() {
-        return bs1q7p1b;
+    public String getE101() {
+        return e101;
     }
 
-    public void setBs1q7p1b(String bs1q7p1b) {
-        this.bs1q7p1b = bs1q7p1b;
-        notifyPropertyChanged(BR.bs1q7p1b);
+    public void setE101(String e101) {
+        this.e101 = e101;
+        notifyPropertyChanged(BR.e101);
+    }
+
+    @Bindable
+    public String getE102() {
+        return e102;
+    }
+
+    public void setE102(String e102) {
+        this.e102 = e102;
+        notifyPropertyChanged(BR.e102);
+    }
+
+    @Bindable
+    public String getE102a() {
+        return e102a;
+    }
+
+    public void setE102a(String e102a) {
+        this.e102a = e102a;
+        notifyPropertyChanged(BR.e102a);
+    }
+
+    @Bindable
+    public String getE103() {
+        return e103;
+    }
+
+    public void setE103(String e103) {
+        this.e103 = e103;
+        notifyPropertyChanged(BR.e103);
+    }
+
+    @Bindable
+    public String getE104() {
+        return e104;
+    }
+
+    public void setE104(String e104) {
+        this.e104 = e104;
+        notifyPropertyChanged(BR.e104);
+    }
+
+    @Bindable
+    public String getE105() {
+        return e105;
+    }
+
+    public void setE105(String e105) {
+        this.e105 = e105;
+        notifyPropertyChanged(BR.e105);
+    }
+
+    @Bindable
+    public String getE106d() {
+        return e106d;
+    }
+
+    public void setE106d(String e106d) {
+        this.e106d = e106d;
+        notifyPropertyChanged(BR.e106d);
+    }
+
+    @Bindable
+    public String getE106m() {
+        return e106m;
+    }
+
+    public void setE106m(String e106m) {
+        this.e106m = e106m;
+        notifyPropertyChanged(BR.e106m);
+    }
+
+    @Bindable
+    public String getE106y() {
+        return e106y;
+    }
+
+    public void setE106y(String e106y) {
+        this.e106y = e106y;
+        notifyPropertyChanged(BR.e106y);
+    }
+
+    @Bindable
+    public String getE107() {
+        return e107;
+    }
+
+    public void setE107(String e107) {
+        this.e107 = e107;
+        notifyPropertyChanged(BR.e107);
+    }
+
+    @Bindable
+    public String getE109() {
+        return e109;
+    }
+
+    public void setE109(String e109) {
+        this.e109 = e109;
+        notifyPropertyChanged(BR.e109);
+    }
+
+    @Bindable
+    public String getE108() {
+        return e108;
+    }
+
+    public void setE108(String e108) {
+        this.e108 = e108;
+        notifyPropertyChanged(BR.e108);
+    }
+
+    @Bindable
+    public String getE110y() {
+        return e110y;
+    }
+
+    public void setE110y(String e110y) {
+        this.e110y = e110y;
+        notifyPropertyChanged(BR.e110y);
+    }
+
+    @Bindable
+    public String getE110m() {
+        return e110m;
+    }
+
+    public void setE110m(String e110m) {
+        this.e110m = e110m;
+        notifyPropertyChanged(BR.e110m);
+    }
+
+    @Bindable
+    public String getE110d() {
+        return e110d;
+    }
+
+    public void setE110d(String e110d) {
+        this.e110d = e110d;
+        notifyPropertyChanged(BR.e110d);
+    }
+
+    @Bindable
+    public String getE111() {
+        return e111;
+    }
+
+    public void setE111(String e111) {
+        this.e111 = e111;
+        notifyPropertyChanged(BR.e111);
+    }
+
+    @Bindable
+    public String getE11196x() {
+        return e11196x;
+    }
+
+    public void setE11196x(String e11196x) {
+        this.e11196x = e11196x;
+        notifyPropertyChanged(BR.e11196x);
+    }
+
+    @Bindable
+    public String getE112() {
+        return e112;
+    }
+
+    public void setE112(String e112) {
+        this.e112 = e112;
+        notifyPropertyChanged(BR.e112);
+    }
+
+    @Bindable
+    public String getE113y() {
+        return e113y;
+    }
+
+    public void setE113y(String e113y) {
+        this.e113y = e113y;
+        notifyPropertyChanged(BR.e113y);
+    }
+
+    @Bindable
+    public String getE113m() {
+        return e113m;
+    }
+
+    public void setE113m(String e113m) {
+        this.e113m = e113m;
+        notifyPropertyChanged(BR.e113m);
+    }
+
+    @Bindable
+    public String getE114() {
+        return e114;
+    }
+
+    public void setE114(String e114) {
+        this.e114 = e114;
+        notifyPropertyChanged(BR.e114);
+    }
+
+    @Bindable
+    public String getE115() {
+        return e115;
+    }
+
+    public void setE115(String e115) {
+        this.e115 = e115;
+        notifyPropertyChanged(BR.e115);
+    }
+
+    @Bindable
+    public String getE116() {
+        return e116;
+    }
+
+    public void setE116(String e116) {
+        this.e116 = e116;
+        notifyPropertyChanged(BR.e116);
+    }
+
+    @Bindable
+    public String getE117() {
+        return e117;
+    }
+
+    public void setE117(String e117) {
+        this.e117 = e117;
+        notifyPropertyChanged(BR.e117);
+    }
+
+    @Bindable
+    public String getE118() {
+        return e118;
+    }
+
+    public void setE118(String e118) {
+        this.e118 = e118;
+        notifyPropertyChanged(BR.e118);
+    }
+
+    @Bindable
+    public String getE119d() {
+        return e119d;
+    }
+
+    public void setE119d(String e119d) {
+        this.e119d = e119d;
+        notifyPropertyChanged(BR.e119d);
+    }
+
+    @Bindable
+    public String getE119m() {
+        return e119m;
+    }
+
+    public void setE119m(String e119m) {
+        this.e119m = e119m;
+        notifyPropertyChanged(BR.e119m);
+    }
+
+    @Bindable
+    public String getE119y() {
+        return e119y;
+    }
+
+    public void setE119y(String e119y) {
+        this.e119y = e119y;
+        notifyPropertyChanged(BR.e119y);
+    }
+
+    @Bindable
+    public String getE120() {
+        return e120;
+    }
+
+    public void setE120(String e120) {
+        this.e120 = e120;
+        notifyPropertyChanged(BR.e120);
+    }
+
+    @Bindable
+    public String getE121() {
+        return e121;
+    }
+
+    public void setE121(String e121) {
+        this.e121 = e121;
+        notifyPropertyChanged(BR.e121);
+    }
+
+    @Bindable
+    public String getE122() {
+        return e122;
+    }
+
+    public void setE122(String e122) {
+        this.e122 = e122;
+        notifyPropertyChanged(BR.e122);
+    }
+
+    @Bindable
+    public String getE12296x() {
+        return e12296x;
+    }
+
+    public void setE12296x(String e12296x) {
+        this.e12296x = e12296x;
+        notifyPropertyChanged(BR.e12296x);
     }
 
 
@@ -304,17 +635,37 @@ public class Pregnancy extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyTable.COLUMN_SYNCED, this.synced);
         json.put(TableContracts.PregnancyTable.COLUMN_SYSDATE, this.syncDate);
         json.put(TableContracts.PregnancyTable.COLUMN_APPVERSION, this.appver);
-        json.put(TableContracts.PregnancyTable.COLUMN_SB1, new JSONObject(sB1toString()));
+        json.put(TableContracts.PregnancyTable.COLUMN_SE1, new JSONObject(sE1toString()));
         return json;
     }
 
-    public String sB1toString() throws JSONException {
-        Log.d(TAG, "sB1toString: ");
+    public String sE1toString() throws JSONException {
+        Log.d(TAG, "sE1toString: ");
         JSONObject json = new JSONObject();
-        json.put("bs1q7p1g", bs1q7p1g)
-                .put("bs1q7p1d", bs1q7p1d)
-                .put("bs1q7p1d96x", bs1q7p1d96x)
-                .put("bs1q7p1b", bs1q7p1b);
+        json.put("e101a", e101a)
+                .put("e101b", e101b)
+                .put("e101", e101)
+                .put("e102", e102)
+                .put("e102a", e102a)
+                .put("e103", e103)
+                .put("e104", e104)
+                .put("e105", e105)
+                .put("e106d", e106d)
+                .put("e106m", e106m)
+                .put("e106y", e106y)
+                .put("e107", e107)
+                .put("e109", e109)
+                .put("e108", e108)
+                .put("e110y", e110y)
+                .put("e110m", e110m)
+                .put("e110d", e110d)
+                .put("e111", e111)
+                .put("e11196x", e11196x)
+                .put("e112", e112)
+                .put("e113y", e113y)
+                .put("e113m", e113m)
+                .put("e114", e114)
+                .put("e115", e115);
         return json.toString();
     }
 
@@ -340,19 +691,39 @@ public class Pregnancy extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SYNCED_DATE));
 
-        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SB1)));
+        sE1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyTable.COLUMN_SE1)));
         return this;
     }
 
-    public void sB1Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB1Hydrate: " + string);
+    public void sE1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sE1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs1q7p1g = json.getString("bs1q7p1g");
-            this.bs1q7p1d = json.getString("bs1q7p1d");
-            this.bs1q7p1d96x = json.getString("bs1q7p1d96x");
-            this.bs1q7p1b = json.getString("bs1q7p1b");
+            this.e101a = json.getString("e101a");
+            this.e101b = json.getString("e101b");
+            this.e101 = json.getString("e101");
+            this.e102 = json.getString("e102");
+            this.e102a = json.getString("e102a");
+            this.e103 = json.getString("e103");
+            this.e104 = json.getString("e104");
+            this.e105 = json.getString("e105");
+            this.e106d = json.getString("e106d");
+            this.e106m = json.getString("e106m");
+            this.e106y = json.getString("e106y");
+            this.e107 = json.getString("e107");
+            this.e109 = json.getString("e109");
+            this.e108 = json.getString("e108");
+            this.e110y = json.getString("e110y");
+            this.e110m = json.getString("e110m");
+            this.e110d = json.getString("e110d");
+            this.e111 = json.getString("e111");
+            this.e11196x = json.getString("e11196x");
+            this.e112 = json.getString("e112");
+            this.e113y = json.getString("e113y");
+            this.e113m = json.getString("e113m");
+            this.e114 = json.getString("e114");
+            this.e115 = json.getString("e115");
         }
     }
 

@@ -27,7 +27,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionAS1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -83,16 +82,16 @@ public class IdentificationActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
                 R.layout.custom_spinner, provinceNames);
 
-        bi.as1q02.setAdapter(adapter);
+        bi.a104.setAdapter(adapter);
 
-        bi.as1q02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.as1q04.setAdapter(null);
-                bi.as1q06.setAdapter(null);
-                bi.as1q08.setText(null);
+                bi.a105.setAdapter(null);
+                bi.a109.setAdapter(null);
+                bi.a101.setText(null);
 
                 if (position == 0) return;
                 MainApp.selectedProvince = provinceCodes.get(position);
@@ -115,7 +114,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
                         R.layout.custom_spinner, districtNames);
 
-                bi.as1q04.setAdapter(adapter);
+                bi.a105.setAdapter(adapter);
 
             }
 
@@ -125,11 +124,12 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.as1q04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a105.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.as1q06.setAdapter(null);
-                bi.as1q08.setText(null);
+                bi.a104.setAdapter(null);
+                bi.a109.setAdapter(null);
+                bi.a101.setText(null);
                 if (position == 0) return;
 
                 MainApp.selectedDistrict = districtCodes.get(position);
@@ -155,7 +155,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
                         R.layout.custom_spinner, villageNames);
 
-                bi.as1q06.setAdapter(adapter);
+                bi.a109.setAdapter(adapter);
 
             }
 
@@ -165,10 +165,10 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.as1q06.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a109.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.as1q08.setText(null);
+                bi.a101.setText(null);
                 if (position == 0) return;
 
                 MainApp.selectedVillage = villageCodes.get(position);
@@ -188,7 +188,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        MainApp.selectedHHID = bi.as1q08.getText().toString();
+        MainApp.selectedHHID = bi.a101.getText().toString();
 
         if (!hhExists()) {
             saveDraftForm();
