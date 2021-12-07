@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
@@ -35,6 +36,7 @@ public class SectionM1Activity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
 
     }
 
