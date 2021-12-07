@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main">
         <activity
+            android:name=".ui.sections.SectionA1Activity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,56 +21,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ui.sections.SectionC1Activity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.sections.SectionD1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionE1AActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionE1BActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
-            android:name=".ui.sections.SectionE1CActivity"
+            android:name=".ui.sections.SectionE2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionF1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionG1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionH1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionH2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionI1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionI2Activity"
             android:screenOrientation="portrait"
@@ -88,7 +77,6 @@
             android:name=".ui.sections.SectionM1Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"

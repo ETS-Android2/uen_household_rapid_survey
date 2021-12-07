@@ -11,6 +11,6 @@ public class SectionE1BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_e1_bactivity);
+        setContentView(R.layout.activity_section_e1_b);
     }
 }
