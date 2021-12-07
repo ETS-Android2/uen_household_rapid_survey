@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.validatorcrawler.aliazaz.Validator;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
@@ -30,7 +32,6 @@ public class SectionA1Activity extends AppCompatActivity {
         bi.setForm(form);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.householdidentification_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 
@@ -80,7 +81,7 @@ public class SectionA1Activity extends AppCompatActivity {
         return true;
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         saveDraft();
@@ -96,7 +97,7 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         saveDraft();

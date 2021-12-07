@@ -225,9 +225,9 @@
     <string name="a109">Village</string>
     <string name="a110">Block/ Mohalla</string>
     <string name="a111">Street </string>
-    <string name="a112">House number/khandan number</string>
-    <string name="a11201">Khandan number in LHW covered area</string>
-    <string name="a11203">Not Applicable</string>
+    <string name="a112"> House / Khandan Number in LHW Covered Area </string>
+    <string name="a11201"> Khandan number in LHW covered area </string>
+    <string name="a11297"> Not Applicable </string>
     <string name="concent">Assalamo Alaikum.  My name is (Name of Interviewer) and I am working with Centre of Excellence in Women and Child Health, Aga Khan University Karachi. In collaboration with National Ministry of Health Services, Regulation and Coordination Government of Pakistan and Provincial Health Departments of Balochistan, Punjab and Sindh, we are conducting a project on Maternal, newborn and child health in selected districts of Pakistan. As part of the project, we are collecting information on the status of health of population in these selected districts. The Information we are collecting relates to knowledge, attitudes and practices on maternal, newborn and child health including morbidity and mortality. This information will be used to design strategies in improving MNCH services by government and other healthcare providers in your area. The whole process of this interview may take approximately one hour. We would very much appreciate your participation in this survey. All of the answers you provide will be confidential. Your participation in the survey is voluntary. If you do not want to provide information to a specific question or a section, please let me know. You may also withdraw from this interview at any time.</string>
     <string name="concent_info">The name of interviewer will be replace by the Full name of User</string>
     <string name="c101">Name of the respondent</string>
