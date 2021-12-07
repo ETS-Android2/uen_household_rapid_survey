@@ -29,9 +29,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/etitle1"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/reproductivehealth_mainheading"
+            app:title="@string/sectiondhouseholdmemberinformation_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
