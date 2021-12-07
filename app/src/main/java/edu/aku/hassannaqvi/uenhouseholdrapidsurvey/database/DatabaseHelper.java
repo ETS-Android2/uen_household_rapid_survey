@@ -104,6 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SA, form.sAtoString());
         values.put(FormsTable.COLUMN_SM, form.sMtoString());
+        values.put(FormsTable.COLUMN_SE2, form.sE2toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());

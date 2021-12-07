@@ -1552,6 +1552,7 @@ public class Form extends BaseObservable implements Observable {
 
         sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
         sMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SM)));
+        sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SE2)));
         return this;
     }
 
@@ -1578,6 +1579,16 @@ public class Form extends BaseObservable implements Observable {
             this.c101 = json.getString("c101");
             this.c102 = json.getString("c102");
             this.c103 = json.getString("c103");
+        }
+    }
+
+    public void sE2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sAHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.e116 = json.getString("e116");
+            this.e117 = json.getString("e117");
         }
     }
 
@@ -1708,6 +1719,14 @@ public class Form extends BaseObservable implements Observable {
         return json.toString();
     }
 
+    public String sE2toString() throws JSONException {
+        Log.d(TAG, "sE2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("e116", e116)
+                .put("a117", e117);
+        return json.toString();
+    }
+
     public String sMtoString() throws JSONException {
         Log.d(TAG, "sMtoString: ");
         JSONObject json = new JSONObject();
@@ -1829,6 +1848,7 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
         json.put(FormsTable.COLUMN_SM, new JSONObject(sMtoString()));
+        json.put(FormsTable.COLUMN_SE2, new JSONObject(sE2toString()));
         return json;
     }
 
