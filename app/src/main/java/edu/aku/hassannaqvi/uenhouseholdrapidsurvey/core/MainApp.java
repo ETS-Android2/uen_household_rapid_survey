@@ -78,6 +78,7 @@ public class MainApp extends Application {
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
+    public static List<Pregnancy> pregList;
     public static int memberCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
@@ -97,6 +98,10 @@ public class MainApp extends Application {
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
     public static String selectedChildName = "";
+    public static Pregnancy preg;
+    public static int pregCount = 0;
+    public static int pregCountComplete = 0;
+    public static boolean pregComplete = false;
 
 
     public static void hideSystemUI(View decorView) {
