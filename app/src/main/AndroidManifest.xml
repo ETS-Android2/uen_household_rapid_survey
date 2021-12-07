@@ -9,9 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.main">
+
+        <activity
+            android:name=".ui.sections.ConsentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionA1Activity"
             android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,66 +29,99 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".ui.sections.SectionD1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE1AActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE1BActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE2Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionF1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionG1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionH1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionH2Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionI1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionI2Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionIMActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionK1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionL1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionM1Activity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
+
     </application>
 
 </manifest>

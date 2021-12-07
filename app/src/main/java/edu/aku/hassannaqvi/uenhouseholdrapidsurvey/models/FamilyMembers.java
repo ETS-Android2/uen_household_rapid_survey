@@ -26,7 +26,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 
 public class FamilyMembers extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "FamilyMembers";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
