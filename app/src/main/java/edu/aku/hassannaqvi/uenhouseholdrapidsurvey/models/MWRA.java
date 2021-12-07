@@ -53,394 +53,492 @@ public class MWRA extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
 
     //Section Vaiables
-    private String sB1 = _EMPTY_;
-    private String sB2 = _EMPTY_;
-    private String sB3 = _EMPTY_;
-    private String sB41 = _EMPTY_;
-    private String sB42 = _EMPTY_;
-    private String sB5 = _EMPTY_;
-    private String sB6 = _EMPTY_;
-    private String sB7 = _EMPTY_;
+    private String sF = _EMPTY_;
+    private String sG = _EMPTY_;
+    private String sH1 = _EMPTY_;
+    private String sH2 = _EMPTY_;
+    private String sK = _EMPTY_;
+    private String sL = _EMPTY_;
 
 
     // Field Variables bs1
-    private String bs1resp = _EMPTY_;
-    private String bs1respline = _EMPTY_;
-    private String bs1con = _EMPTY_;
-    private String bs1q1 = _EMPTY_;
-    private String bs1q2 = _EMPTY_;
-    private String bs1q3 = _EMPTY_;
-    private String bs1q4 = _EMPTY_;
-    private String bs1q5 = _EMPTY_;
-    private String bs1q6 = _EMPTY_;
-    private String bs1q08 = _EMPTY_;
-    private String bs1q09 = _EMPTY_;
-    private String bs1q0901 = _EMPTY_;
-    private String bs1q0902 = _EMPTY_;
-    private String bs1q0903 = _EMPTY_;
-    private String bs1q0904 = _EMPTY_;
-    private String bs1q0905 = _EMPTY_;
-    private String bs1q0906 = _EMPTY_;
-    private String bs1q0907 = _EMPTY_;
-    private String bs1q0908 = _EMPTY_;
-    private String bs1q09t296 = _EMPTY_;
-    private String bs1q09t296x = _EMPTY_;
-    private String bs1q1001 = _EMPTY_;
-    private String bs1q1002 = _EMPTY_;
-    private String bs1q1098 = _EMPTY_;
-    private String bs1q11 = _EMPTY_;
-    private String bs1q12 = _EMPTY_;
-    private String bs1q13 = _EMPTY_;
-    private String bs1q1301 = _EMPTY_;
-    private String bs1q1302 = _EMPTY_;
-    private String bs1q1303 = _EMPTY_;
-    private String bs1q1304 = _EMPTY_;
-    private String bs1q1305 = _EMPTY_;
-    private String bs1q1306 = _EMPTY_;
-    private String bs1q1307 = _EMPTY_;
-    private String bs1q1308 = _EMPTY_;
-    private String bs1q1396 = _EMPTY_;
-    private String bs1q1396x = _EMPTY_;
-    private String bs2q1 = _EMPTY_;
-    private String bs2q2 = _EMPTY_;
-    private String bs2q201 = _EMPTY_;
-    private String bs2q202 = _EMPTY_;
-    private String bs2q203 = _EMPTY_;
-    private String bs2q204 = _EMPTY_;
-    private String bs2q205 = _EMPTY_;
-    private String bs2q206 = _EMPTY_;
-    private String bs2q207 = _EMPTY_;
-    private String bs2q208 = _EMPTY_;
-    private String bs2q209 = _EMPTY_;
-    private String bs2q210 = _EMPTY_;
-    private String bs2q211 = _EMPTY_;
-    private String bs2q212 = _EMPTY_;
-    private String bs2q213 = _EMPTY_;
-    private String bs2q214 = _EMPTY_;
-    private String bs2q215 = _EMPTY_;
-    private String bs2q216 = _EMPTY_;
-    private String bs2q217 = _EMPTY_;
-    private String bs2q218 = _EMPTY_;
-    private String bs2q296 = _EMPTY_;
-    private String bs2q296x = _EMPTY_;
-    private String bs2q3 = _EMPTY_;
-    private String bs2q4 = _EMPTY_;
-    private String bs2q401 = _EMPTY_;
-    private String bs2q402 = _EMPTY_;
-    private String bs2q403 = _EMPTY_;
-    private String bs2q404 = _EMPTY_;
-    private String bs2q405 = _EMPTY_;
-    private String bs2q406 = _EMPTY_;
-    private String bs2q407 = _EMPTY_;
-    private String bs2q408 = _EMPTY_;
-    private String bs2q409 = _EMPTY_;
-    private String bs2q410 = _EMPTY_;
-    private String bs2q411 = _EMPTY_;
-    private String bs2q412 = _EMPTY_;
-    private String bs2q413 = _EMPTY_;
-    private String bs2q414 = _EMPTY_;
-    private String bs2q415 = _EMPTY_;
-    private String bs2q416 = _EMPTY_;
-    private String bs2q417 = _EMPTY_;
-    private String bs2q418 = _EMPTY_;
-    private String bs2q466 = _EMPTY_;
-    private String bs2q4096 = _EMPTY_;
-    private String bs2q4096x = _EMPTY_;
-    private String bs2q5 = _EMPTY_;
-    private String bs2q6 = _EMPTY_;
-    private String bs2q601 = _EMPTY_;
-    private String bs2q602 = _EMPTY_;
-    private String bs2q603 = _EMPTY_;
-    private String bs2q604 = _EMPTY_;
-    private String bs2q605 = _EMPTY_;
-    private String bs2q606 = _EMPTY_;
-    private String bs2q606x = _EMPTY_;
-    private String bs2q607 = _EMPTY_;
-    private String bs2q608 = _EMPTY_;
-    private String bs2q609 = _EMPTY_;
-    private String bs2q6010 = _EMPTY_;
-    private String bs2q6010x = _EMPTY_;
-    private String bs2q6011 = _EMPTY_;
-    private String bs2q6011x = _EMPTY_;
-    private String bs2q6012 = _EMPTY_;
-    private String bs2q6013 = _EMPTY_;
-    private String bs2q6014 = _EMPTY_;
-    private String bs2q6015 = _EMPTY_;
-    private String bs2q696 = _EMPTY_;
-    private String bs2q696x = _EMPTY_;
-    private String bs2q7 = _EMPTY_;
-    private String bs2q796x = _EMPTY_;
-    private String bs2q8 = _EMPTY_;
-    private String bs2q801 = _EMPTY_;
-    private String bs2q802 = _EMPTY_;
-    private String bs2q803 = _EMPTY_;
-    private String bs2q804 = _EMPTY_;
-    private String bs2q898 = _EMPTY_;
-    private String bs2q896 = _EMPTY_;
-    private String bs2q896x = _EMPTY_;
-    private String bs3q1 = _EMPTY_;
-    private String bs3q101 = _EMPTY_;
-    private String bs3q102 = _EMPTY_;
-    private String bs3q103 = _EMPTY_;
-    private String bs3q104 = _EMPTY_;
-    private String bs3q105 = _EMPTY_;
-    private String bs3q106 = _EMPTY_;
-    private String bs3q107 = _EMPTY_;
-    private String bs3q197 = _EMPTY_;
-    private String bs3q198 = _EMPTY_;
-    private String bs3q196 = _EMPTY_;
-    private String bs3q196x = _EMPTY_;
-    private String bs3q2a = _EMPTY_;
-    private String bs3q2a96x = _EMPTY_;
-    private String bs3q2b = _EMPTY_;
-    private String bs3q2b96x = _EMPTY_;
-    private String bs3q2c = _EMPTY_;
-    private String bs3q2c96x = _EMPTY_;
-    private String bs3q2d = _EMPTY_;
-    private String bs3q2d96x = _EMPTY_;
-    private String bs3q3 = _EMPTY_;
-    private String bs3q4 = _EMPTY_;
-    private String bs3q401 = _EMPTY_;
-    private String bs3q402 = _EMPTY_;
-    private String bs3q403 = _EMPTY_;
-    private String bs3q404 = _EMPTY_;
-    private String bs3q405 = _EMPTY_;
-    private String bs3q406 = _EMPTY_;
-    private String bs3q407 = _EMPTY_;
-    private String bs3q496 = _EMPTY_;
-    private String bs3q496x = _EMPTY_;
-    private String bs3q498 = _EMPTY_;
-    private String bs3q5 = _EMPTY_;
-    private String bs3q501 = _EMPTY_;
-    private String bs3q502 = _EMPTY_;
-    private String bs3q503 = _EMPTY_;
-    private String bs3q504 = _EMPTY_;
-    private String bs3q598 = _EMPTY_;
-    private String bs3q596 = _EMPTY_;
-    private String bs3q596x = _EMPTY_;
-    private String bs3q6 = _EMPTY_;
-    private String bs3q601 = _EMPTY_;
-    private String bs3q602 = _EMPTY_;
-    private String bs3q603 = _EMPTY_;
-    private String bs3q604 = _EMPTY_;
-    private String bs3q605 = _EMPTY_;
-    private String bs3q606 = _EMPTY_;
-    private String bs3q607 = _EMPTY_;
-    private String bs3q608 = _EMPTY_;
-    private String bs3q609 = _EMPTY_;
-    private String bs3q698 = _EMPTY_;
-    private String bs3q696 = _EMPTY_;
-    private String bs3q696x = _EMPTY_;
-    private String bs3q7 = _EMPTY_;
-    private String bs3q701 = _EMPTY_;
-    private String bs3q702 = _EMPTY_;
-    private String bs3q703 = _EMPTY_;
-    private String bs3q704 = _EMPTY_;
-    private String bs3q705 = _EMPTY_;
-    private String bs3q798 = _EMPTY_;
-    private String bs3q796 = _EMPTY_;
-    private String bs3q796x = _EMPTY_;
-    private String bs3q8 = _EMPTY_;
-    private String bs3q801 = _EMPTY_;
-    private String bs3q802 = _EMPTY_;
-    private String bs3q803 = _EMPTY_;
-    private String bs3q804 = _EMPTY_;
-    private String bs3q897 = _EMPTY_;
-    private String bs3q896 = _EMPTY_;
-    private String bs3q896x = _EMPTY_;
-    private String bs3q9 = _EMPTY_;
-    private String bs3q901 = _EMPTY_;
-    private String bs3q902 = _EMPTY_;
-    private String bs3q903 = _EMPTY_;
-    private String bs3q904 = _EMPTY_;
-    private String bs3q905 = _EMPTY_;
-    private String bs3q906 = _EMPTY_;
-    private String bs3q996 = _EMPTY_;
-    private String bs3q996x = _EMPTY_;
-    private String bs3q997 = _EMPTY_;
-    private String bs3q10 = _EMPTY_;
-    private String bs3q1001 = _EMPTY_;
-    private String bs3q1002 = _EMPTY_;
-    private String bs3q1003 = _EMPTY_;
-    private String bs3q1004 = _EMPTY_;
-    private String bs3q1005 = _EMPTY_;
-    private String bs3q1006 = _EMPTY_;
-    private String bs3q1007 = _EMPTY_;
-    private String bs3q1008 = _EMPTY_;
-    private String bs3q1009 = _EMPTY_;
-    private String bs3q1096 = _EMPTY_;
-    private String bs3q1096x = _EMPTY_;
-    private String bs3q1097 = _EMPTY_;
-    private String bs3q11 = _EMPTY_;
-    private String bs3q12 = _EMPTY_;
-    private String bs3q1201 = _EMPTY_;
-    private String bs3q1202 = _EMPTY_;
-    private String bs3q1203 = _EMPTY_;
-    private String bs3q1204 = _EMPTY_;
-    private String bs3q1205 = _EMPTY_;
-    private String bs3q1206 = _EMPTY_;
-    private String bs3q1206x = _EMPTY_;
-    private String bs3q1207 = _EMPTY_;
-    private String bs3q1296 = _EMPTY_;
-    private String bs3q1296x = _EMPTY_;
-    private String bs3q13 = _EMPTY_;
-    private String bs3q14 = _EMPTY_;
-    private String bs3q15 = _EMPTY_;
-    private String bs4aq1 = _EMPTY_;
-    private String bs4aq2 = _EMPTY_;
-    private String bs4aq201 = _EMPTY_;
-    private String bs4aq202 = _EMPTY_;
-    private String bs4aq203 = _EMPTY_;
-    private String bs4aq204 = _EMPTY_;
-    private String bs4aq205 = _EMPTY_;
-    private String bs4aq206 = _EMPTY_;
-    private String bs4aq207 = _EMPTY_;
-    private String bs4aq208 = _EMPTY_;
-    private String bs4aq298 = _EMPTY_;
-    private String bs4aq296 = _EMPTY_;
-    private String bs4aq296x = _EMPTY_;
-    private String bs4aq3 = _EMPTY_;
-    private String bs4aq4 = _EMPTY_;
-    private String bs4aq5 = _EMPTY_;
-    private String bs4aq6 = _EMPTY_;
-    private String bs4aq696x = _EMPTY_;
-    private String bs4aq7 = _EMPTY_;
-    private String bs4aq8 = _EMPTY_;
-    private String bs4aq896x = _EMPTY_;
-    private String bs4aq9 = _EMPTY_;
-    private String bs4aq10 = _EMPTY_;
-    private String bs4bq1 = _EMPTY_;
-    private String bs4bq2 = _EMPTY_;
-    private String bs4bq21 = _EMPTY_;
-    private String bs4bq22 = _EMPTY_;
-    private String bs4bq23 = _EMPTY_;
-    private String bs4bq24 = _EMPTY_;
-    private String bs4bq298 = _EMPTY_;
-    private String bs4bq296 = _EMPTY_;
-    private String bs4bq296x = _EMPTY_;
-    private String bs4bq3 = _EMPTY_;
-    private String bs4bq31 = _EMPTY_;
-    private String bs4bq32 = _EMPTY_;
-    private String bs4bq33 = _EMPTY_;
-    private String bs4bq34 = _EMPTY_;
-    private String bs4bq35 = _EMPTY_;
-    private String bs4bq36 = _EMPTY_;
-    private String bs4bq398 = _EMPTY_;
-    private String bs4bq396 = _EMPTY_;
-    private String bs4bq396x = _EMPTY_;
-    private String bs4bq4 = _EMPTY_;
-    private String bs4bq5 = _EMPTY_;
-    private String bs4bq51 = _EMPTY_;
-    private String bs4bq52 = _EMPTY_;
-    private String bs4bq53 = _EMPTY_;
-    private String bs4bq598 = _EMPTY_;
-    private String bs4bq596 = _EMPTY_;
-    private String bs4bq596x = _EMPTY_;
-    private String bs4bq6 = _EMPTY_;
-    private String bs4bq696x = _EMPTY_;
-    private String bs4bq7 = _EMPTY_;
-    private String bs4bq8 = _EMPTY_;
-    private String bs4bq81 = _EMPTY_;
-    private String bs4bq82 = _EMPTY_;
-    private String bs4bq83 = _EMPTY_;
-    private String bs4bq84 = _EMPTY_;
-    private String bs4bq85 = _EMPTY_;
-    private String bs4bq86 = _EMPTY_;
-    private String bs4bq87 = _EMPTY_;
-    private String bs4bq898 = _EMPTY_;
-    private String bs4bq896 = _EMPTY_;
-    private String bs4bq896x = _EMPTY_;
-    private String bs5q1 = _EMPTY_;
-    private String bs5q2 = _EMPTY_;
-    private String bs5q201 = _EMPTY_;
-    private String bs5q202 = _EMPTY_;
-    private String bs5q203 = _EMPTY_;
-    private String bs5q204 = _EMPTY_;
-    private String bs5q205 = _EMPTY_;
-    private String bs5q296 = _EMPTY_;
-    private String bs5q296x = _EMPTY_;
-    private String bs5q297 = _EMPTY_;
-    private String bs5q3 = _EMPTY_;
-    private String bs5q4 = _EMPTY_;
-    private String bs5q401 = _EMPTY_;
-    private String bs5q402 = _EMPTY_;
-    private String bs5q403 = _EMPTY_;
-    private String bs5q404 = _EMPTY_;
-    private String bs5q496 = _EMPTY_;
-    private String bs5q496x = _EMPTY_;
-    private String bs5q497 = _EMPTY_;
-    private String bs5q5 = _EMPTY_;
-    private String bs5q6 = _EMPTY_;
-    private String bs5q7 = _EMPTY_;
-    private String bs5q8 = _EMPTY_;
-    private String bs5q801 = _EMPTY_;
-    private String bs5q802 = _EMPTY_;
-    private String bs5q803 = _EMPTY_;
-    private String bs5q804 = _EMPTY_;
-    private String bs5q805 = _EMPTY_;
-    private String bs5q806 = _EMPTY_;
-    private String bs5q807 = _EMPTY_;
-    private String bs5q808 = _EMPTY_;
-    private String bs5q896 = _EMPTY_;
-    private String bs5q896x = _EMPTY_;
-    private String bs5q898 = _EMPTY_;
-    private String bs5q9 = _EMPTY_;
-    private String bs5q901 = _EMPTY_;
-    private String bs5q902 = _EMPTY_;
-    private String bs5q903 = _EMPTY_;
-    private String bs5q904 = _EMPTY_;
-    private String bs5q905 = _EMPTY_;
-    private String bs5q906 = _EMPTY_;
-    private String bs5q907 = _EMPTY_;
-    private String bs5q908 = _EMPTY_;
-    private String bs5q996 = _EMPTY_;
-    private String bs5q996x = _EMPTY_;
-    private String bs5q998 = _EMPTY_;
-    private String bs5q10 = _EMPTY_;
-    private String bs5q1096x = _EMPTY_;
-    private String bs5q11 = _EMPTY_;
-    private String bs5q12 = _EMPTY_;
-    private String bs6q1 = _EMPTY_;
-    private String bs6q1mx = _EMPTY_;
-    private String bs6q2 = _EMPTY_;
-    private String bs6q3 = _EMPTY_;
-    private String bs6q3mx = _EMPTY_;
-    private String bs7q1 = _EMPTY_;
-    private String bs7q2line = _EMPTY_;
-    private String bs7q3 = _EMPTY_;
-    private String bs7q4a = _EMPTY_;
-    private String bs7q4b = _EMPTY_;
-    private String bs7q4c = _EMPTY_;
-    private String bs7q4d = _EMPTY_;
-    private String bs7q4e = _EMPTY_;
-    private String bs7q4f = _EMPTY_;
-    private String bs7q4g = _EMPTY_;
-    private String bs7q4h = _EMPTY_;
 
-/*    // DS1
-
-    private String ds1q01 = _EMPTY_;
-    private String ds1q02 = _EMPTY_;
-    private String ds1q03a = _EMPTY_;
-    private String ds1q03b = _EMPTY_;
-    private String ds1q03c = _EMPTY_;
-    private String ds1q03d = _EMPTY_;
-    private String ds1q03e = _EMPTY_;
-    private String ds1q03f = _EMPTY_;
-    private String ds1q04 = _EMPTY_;
-    private String ds2q01a = _EMPTY_;
-    private String ds2q01b = _EMPTY_;
-    private String ds2q01c = _EMPTY_;
-    private String ds3q01 = _EMPTY_;
-    private String ds3q02 = _EMPTY_;
-    private String ds3q03a = _EMPTY_;
-    private String ds3q03b = _EMPTY_;
-    private String ds3q03c = _EMPTY_;
-    private String ds3q03d = _EMPTY_;
-    private String ds3q03e = _EMPTY_;
-    private String ds3q03f = _EMPTY_;
-    private String ds3q03g = _EMPTY_;*/
-
+    private String f101 = _EMPTY_;
+    private String f101a = _EMPTY_;
+    private String f101a01 = _EMPTY_;
+    private String f101a02 = _EMPTY_;
+    private String f101a03 = _EMPTY_;
+    private String f101a04 = _EMPTY_;
+    private String f101a05 = _EMPTY_;
+    private String f101a06 = _EMPTY_;
+    private String f101a07 = _EMPTY_;
+    private String f101a08 = _EMPTY_;
+    private String f101a09 = _EMPTY_;
+    private String f101a10 = _EMPTY_;
+    private String f101a11 = _EMPTY_;
+    private String f101a12 = _EMPTY_;
+    private String f101a13 = _EMPTY_;
+    private String f101a14 = _EMPTY_;
+    private String f101a96 = _EMPTY_;
+    private String f101b = _EMPTY_;
+    private String f101b01x = _EMPTY_;
+    private String f102 = _EMPTY_;
+    private String f10201 = _EMPTY_;
+    private String f10202 = _EMPTY_;
+    private String f10203 = _EMPTY_;
+    private String f10204 = _EMPTY_;
+    private String f10205 = _EMPTY_;
+    private String f10206 = _EMPTY_;
+    private String f10207 = _EMPTY_;
+    private String f10208 = _EMPTY_;
+    private String f10209 = _EMPTY_;
+    private String f10210 = _EMPTY_;
+    private String f10296 = _EMPTY_;
+    private String f10296x = _EMPTY_;
+    private String f103 = _EMPTY_;
+    private String f10301 = _EMPTY_;
+    private String f10302 = _EMPTY_;
+    private String f10303 = _EMPTY_;
+    private String f10304 = _EMPTY_;
+    private String f10305 = _EMPTY_;
+    private String f107 = _EMPTY_;
+    private String f10796x = _EMPTY_;
+    private String f108 = _EMPTY_;
+    private String f108wx = _EMPTY_;
+    private String f108mx = _EMPTY_;
+    private String f11001 = _EMPTY_;
+    private String f11002 = _EMPTY_;
+    private String f11003 = _EMPTY_;
+    private String f11004 = _EMPTY_;
+    private String f11005 = _EMPTY_;
+    private String f11006 = _EMPTY_;
+    private String f11007 = _EMPTY_;
+    private String f11008 = _EMPTY_;
+    private String f11009 = _EMPTY_;
+    private String f11096 = _EMPTY_;
+    private String f1109696x = _EMPTY_;
+    private String f111 = _EMPTY_;
+    private String f112 = _EMPTY_;
+    private String f113 = _EMPTY_;
+    private String f11301x = _EMPTY_;
+    private String f114 = _EMPTY_;
+    private String f116 = _EMPTY_;
+    private String f117 = _EMPTY_;
+    private String f118m = _EMPTY_;
+    private String f118d = _EMPTY_;
+    private String f119 = _EMPTY_;
+    private String f120 = _EMPTY_;
+    private String f12001x = _EMPTY_;
+    private String f121a = _EMPTY_;
+    private String f121b = _EMPTY_;
+    private String f121b96x = _EMPTY_;
+    private String f122 = _EMPTY_;
+    private String f12201x = _EMPTY_;
+    private String f123 = _EMPTY_;
+    private String f12301 = _EMPTY_;
+    private String f12302 = _EMPTY_;
+    private String f12303 = _EMPTY_;
+    private String f12304 = _EMPTY_;
+    private String f12305 = _EMPTY_;
+    private String f12306 = _EMPTY_;
+    private String f12307 = _EMPTY_;
+    private String f12308 = _EMPTY_;
+    private String f12309 = _EMPTY_;
+    private String f128 = _EMPTY_;
+    private String f12801 = _EMPTY_;
+    private String f12802 = _EMPTY_;
+    private String f12803 = _EMPTY_;
+    private String f12804 = _EMPTY_;
+    private String f12805 = _EMPTY_;
+    private String f12806 = _EMPTY_;
+    private String f12807 = _EMPTY_;
+    private String f129 = _EMPTY_;
+    private String f130 = _EMPTY_;
+    private String f13001 = _EMPTY_;
+    private String f13002 = _EMPTY_;
+    private String f13003 = _EMPTY_;
+    private String f13004 = _EMPTY_;
+    private String f13005 = _EMPTY_;
+    private String f13006 = _EMPTY_;
+    private String f13007 = _EMPTY_;
+    private String f13008 = _EMPTY_;
+    private String f13009 = _EMPTY_;
+    private String f13010 = _EMPTY_;
+    private String f13011 = _EMPTY_;
+    private String f13012 = _EMPTY_;
+    private String f13013 = _EMPTY_;
+    private String f13014 = _EMPTY_;
+    private String f13096 = _EMPTY_;
+    private String f13096x = _EMPTY_;
+    private String f131 = _EMPTY_;
+    private String f131a = _EMPTY_;
+    private String f134 = _EMPTY_;
+    private String f13401 = _EMPTY_;
+    private String f13402 = _EMPTY_;
+    private String f13403 = _EMPTY_;
+    private String f13404 = _EMPTY_;
+    private String f13405 = _EMPTY_;
+    private String f13406 = _EMPTY_;
+    private String f13407 = _EMPTY_;
+    private String f13408 = _EMPTY_;
+    private String f13409 = _EMPTY_;
+    private String g101 = _EMPTY_;
+    private String g102 = _EMPTY_;
+    private String g103 = _EMPTY_;
+    private String g10301 = _EMPTY_;
+    private String g10302 = _EMPTY_;
+    private String g10303 = _EMPTY_;
+    private String g10304 = _EMPTY_;
+    private String g10305 = _EMPTY_;
+    private String g10306 = _EMPTY_;
+    private String g10307 = _EMPTY_;
+    private String g10308 = _EMPTY_;
+    private String g10309 = _EMPTY_;
+    private String g10310 = _EMPTY_;
+    private String g10311 = _EMPTY_;
+    private String g10312 = _EMPTY_;
+    private String g10313 = _EMPTY_;
+    private String g10314 = _EMPTY_;
+    private String g10396 = _EMPTY_;
+    private String g10396x = _EMPTY_;
+    private String g104 = _EMPTY_;
+    private String g10496x = _EMPTY_;
+    private String g105 = _EMPTY_;
+    private String g10501x = _EMPTY_;
+    private String g106 = _EMPTY_;
+    private String g107 = _EMPTY_;
+    private String g10701x = _EMPTY_;
+    private String g108 = _EMPTY_;
+    private String g109 = _EMPTY_;
+    private String g110 = _EMPTY_;
+    private String g126 = _EMPTY_;
+    private String g113 = _EMPTY_;
+    private String g114 = _EMPTY_;
+    private String g11496x = _EMPTY_;
+    private String g115 = _EMPTY_;
+    private String g116 = _EMPTY_;
+    private String g117 = _EMPTY_;
+    private String g117hx = _EMPTY_;
+    private String g117mx = _EMPTY_;
+    private String g117dx = _EMPTY_;
+    private String g118 = _EMPTY_;
+    private String g11801 = _EMPTY_;
+    private String g11801x = _EMPTY_;
+    private String g11802 = _EMPTY_;
+    private String g11802x = _EMPTY_;
+    private String g11803 = _EMPTY_;
+    private String g11803x = _EMPTY_;
+    private String g11804 = _EMPTY_;
+    private String g11804x = _EMPTY_;
+    private String g11896 = _EMPTY_;
+    private String g11896x = _EMPTY_;
+    private String g11898 = _EMPTY_;
+    private String g119 = _EMPTY_;
+    private String g120 = _EMPTY_;
+    private String g12096x = _EMPTY_;
+    private String g121 = _EMPTY_;
+    private String g12196x = _EMPTY_;
+    private String g124 = _EMPTY_;
+    private String g12401 = _EMPTY_;
+    private String g12402 = _EMPTY_;
+    private String g12403 = _EMPTY_;
+    private String g12404 = _EMPTY_;
+    private String g12405 = _EMPTY_;
+    private String g12406 = _EMPTY_;
+    private String g12407 = _EMPTY_;
+    private String g12408 = _EMPTY_;
+    private String g12409 = _EMPTY_;
+    private String g12410 = _EMPTY_;
+    private String g12411 = _EMPTY_;
+    private String g12412 = _EMPTY_;
+    private String g12413 = _EMPTY_;
+    private String g128 = _EMPTY_;
+    private String g129 = _EMPTY_;
+    private String h101 = _EMPTY_;
+    private String h101mx = _EMPTY_;
+    private String h101wx = _EMPTY_;
+    private String h102 = _EMPTY_;
+    private String h103 = _EMPTY_;
+    private String h104 = _EMPTY_;
+    private String h10401 = _EMPTY_;
+    private String h10402 = _EMPTY_;
+    private String h10403 = _EMPTY_;
+    private String h10496 = _EMPTY_;
+    private String h105 = _EMPTY_;
+    private String h106 = _EMPTY_;
+    private String h1061x = _EMPTY_;
+    private String h107 = _EMPTY_;
+    private String h108 = _EMPTY_;
+    private String h10896x = _EMPTY_;
+    private String h109 = _EMPTY_;
+    private String h10901 = _EMPTY_;
+    private String h10902 = _EMPTY_;
+    private String h10903 = _EMPTY_;
+    private String h10904 = _EMPTY_;
+    private String h10905 = _EMPTY_;
+    private String h10906 = _EMPTY_;
+    private String h10907 = _EMPTY_;
+    private String h10997 = _EMPTY_;
+    private String h10996 = _EMPTY_;
+    private String h10996x = _EMPTY_;
+    private String h110 = _EMPTY_;
+    private String h111 = _EMPTY_;
+    private String h112 = _EMPTY_;
+    private String h113 = _EMPTY_;
+    private String h114 = _EMPTY_;
+    private String h115 = _EMPTY_;
+    private String h11501 = _EMPTY_;
+    private String h11502 = _EMPTY_;
+    private String h11503 = _EMPTY_;
+    private String h11504 = _EMPTY_;
+    private String h11505 = _EMPTY_;
+    private String h11506 = _EMPTY_;
+    private String h11507 = _EMPTY_;
+    private String h11508 = _EMPTY_;
+    private String h11509 = _EMPTY_;
+    private String h11596 = _EMPTY_;
+    private String h11596x = _EMPTY_;
+    private String h116 = _EMPTY_;
+    private String h11701 = _EMPTY_;
+    private String h118 = _EMPTY_;
+    private String h119 = _EMPTY_;
+    private String h120 = _EMPTY_;
+    private String h121 = _EMPTY_;
+    private String h122 = _EMPTY_;
+    private String h1221x = _EMPTY_;
+    private String h123 = _EMPTY_;
+    private String h124 = _EMPTY_;
+    private String h125 = _EMPTY_;
+    private String h126 = _EMPTY_;
+    private String h127 = _EMPTY_;
+    private String h128 = _EMPTY_;
+    private String h12896x = _EMPTY_;
+    private String h12901 = _EMPTY_;
+    private String h12902 = _EMPTY_;
+    private String h12903 = _EMPTY_;
+    private String h12904 = _EMPTY_;
+    private String h12905 = _EMPTY_;
+    private String h12906 = _EMPTY_;
+    private String h132 = _EMPTY_;
+    private String h132a = _EMPTY_;
+    private String h133 = _EMPTY_;
+    private String h13301 = _EMPTY_;
+    private String h13302 = _EMPTY_;
+    private String h13303 = _EMPTY_;
+    private String h13304 = _EMPTY_;
+    private String h13305 = _EMPTY_;
+    private String h13306 = _EMPTY_;
+    private String h13307 = _EMPTY_;
+    private String h13308 = _EMPTY_;
+    private String h13309 = _EMPTY_;
+    private String h135 = _EMPTY_;
+    private String h13501 = _EMPTY_;
+    private String h13502 = _EMPTY_;
+    private String h13503 = _EMPTY_;
+    private String h13504 = _EMPTY_;
+    private String h13505 = _EMPTY_;
+    private String h13506 = _EMPTY_;
+    private String h13507 = _EMPTY_;
+    private String h13508 = _EMPTY_;
+    private String h13509 = _EMPTY_;
+    private String h13598 = _EMPTY_;
+    private String h136 = _EMPTY_;
+    private String h13601 = _EMPTY_;
+    private String h13602 = _EMPTY_;
+    private String h13603 = _EMPTY_;
+    private String h13604 = _EMPTY_;
+    private String h13605 = _EMPTY_;
+    private String h13606 = _EMPTY_;
+    private String h13696 = _EMPTY_;
+    private String h13696x = _EMPTY_;
+    private String h137 = _EMPTY_;
+    private String h137a = _EMPTY_;
+    private String h137a96x = _EMPTY_;
+    private String h137b = _EMPTY_;
+    private String h137b96x = _EMPTY_;
+    private String h137c = _EMPTY_;
+    private String h137c96x = _EMPTY_;
+    private String h201 = _EMPTY_;
+    private String h201hx = _EMPTY_;
+    private String h201dx = _EMPTY_;
+    private String h201wx = _EMPTY_;
+    private String h202 = _EMPTY_;
+    private String h203h = _EMPTY_;
+    private String h203d = _EMPTY_;
+    private String h203w = _EMPTY_;
+    private String h204 = _EMPTY_;
+    private String h205 = _EMPTY_;
+    private String h20596x = _EMPTY_;
+    private String h207 = _EMPTY_;
+    private String h20701 = _EMPTY_;
+    private String h20702 = _EMPTY_;
+    private String h20703 = _EMPTY_;
+    private String h20704 = _EMPTY_;
+    private String h20705 = _EMPTY_;
+    private String h20706 = _EMPTY_;
+    private String h20707 = _EMPTY_;
+    private String h20708 = _EMPTY_;
+    private String h20798 = _EMPTY_;
+    private String h208 = _EMPTY_;
+    private String h20801 = _EMPTY_;
+    private String h20802 = _EMPTY_;
+    private String h20803 = _EMPTY_;
+    private String h20804 = _EMPTY_;
+    private String h20805 = _EMPTY_;
+    private String h20806 = _EMPTY_;
+    private String h20896 = _EMPTY_;
+    private String h209 = _EMPTY_;
+    private String h209a = _EMPTY_;
+    private String h210 = _EMPTY_;
+    private String h211 = _EMPTY_;
+    private String h212 = _EMPTY_;
+    private String h213 = _EMPTY_;
+    private String h214 = _EMPTY_;
+    private String h214a = _EMPTY_;
+    private String h214b = _EMPTY_;
+    private String h214b01 = _EMPTY_;
+    private String h214b02 = _EMPTY_;
+    private String h214b03 = _EMPTY_;
+    private String h214b04 = _EMPTY_;
+    private String h214b05 = _EMPTY_;
+    private String h214b06 = _EMPTY_;
+    private String h214b96 = _EMPTY_;
+    private String h214b96x = _EMPTY_;
+    private String h214b98 = _EMPTY_;
+    private String h215 = _EMPTY_;
+    private String h216 = _EMPTY_;
+    private String h216a = _EMPTY_;
+    private String h216a96x = _EMPTY_;
+    private String h217 = _EMPTY_;
+    private String h21701 = _EMPTY_;
+    private String h21702 = _EMPTY_;
+    private String h21703 = _EMPTY_;
+    private String h21704 = _EMPTY_;
+    private String h21705 = _EMPTY_;
+    private String h21706 = _EMPTY_;
+    private String h21796 = _EMPTY_;
+    private String h21796x = _EMPTY_;
+    private String h218 = _EMPTY_;
+    private String h219 = _EMPTY_;
+    private String h21996x = _EMPTY_;
+    private String h220 = _EMPTY_;
+    private String h2201 = _EMPTY_;
+    private String h2201x = _EMPTY_;
+    private String h2202 = _EMPTY_;
+    private String h2202x = _EMPTY_;
+    private String h2203 = _EMPTY_;
+    private String h2203x = _EMPTY_;
+    private String h2204 = _EMPTY_;
+    private String h2204x = _EMPTY_;
+    private String h2205 = _EMPTY_;
+    private String h2205x = _EMPTY_;
+    private String h2206 = _EMPTY_;
+    private String h2206x = _EMPTY_;
+    private String h22096 = _EMPTY_;
+    private String h22096x = _EMPTY_;
+    private String h221 = _EMPTY_;
+    private String h222 = _EMPTY_;
+    private String h223 = _EMPTY_;
+    private String k101 = _EMPTY_;
+    private String k101a = _EMPTY_;
+    private String k101a01 = _EMPTY_;
+    private String k101a02 = _EMPTY_;
+    private String k101a03 = _EMPTY_;
+    private String k101a04 = _EMPTY_;
+    private String k101a05 = _EMPTY_;
+    private String k101a06 = _EMPTY_;
+    private String k101a07 = _EMPTY_;
+    private String k101a08 = _EMPTY_;
+    private String k101a09 = _EMPTY_;
+    private String k101a10 = _EMPTY_;
+    private String k101a11 = _EMPTY_;
+    private String k101a12 = _EMPTY_;
+    private String k101a13 = _EMPTY_;
+    private String k101a96 = _EMPTY_;
+    private String k101a96x = _EMPTY_;
+    private String k102 = _EMPTY_;
+    private String k104a = _EMPTY_;
+    private String k104a01 = _EMPTY_;
+    private String k104a02 = _EMPTY_;
+    private String k104a03 = _EMPTY_;
+    private String k104a04 = _EMPTY_;
+    private String k104a05 = _EMPTY_;
+    private String k104a06 = _EMPTY_;
+    private String k104a77 = _EMPTY_;
+    private String k104a08 = _EMPTY_;
+    private String k104a09 = _EMPTY_;
+    private String k104a10 = _EMPTY_;
+    private String k104a11 = _EMPTY_;
+    private String k104a12 = _EMPTY_;
+    private String k104a13 = _EMPTY_;
+    private String k103 = _EMPTY_;
+    private String k104b = _EMPTY_;
+    private String k104b01 = _EMPTY_;
+    private String k104b02 = _EMPTY_;
+    private String k104b03 = _EMPTY_;
+    private String k104b04 = _EMPTY_;
+    private String k104b05 = _EMPTY_;
+    private String k104b06 = _EMPTY_;
+    private String k104b07 = _EMPTY_;
+    private String k104b08 = _EMPTY_;
+    private String k104b09 = _EMPTY_;
+    private String k104b10 = _EMPTY_;
+    private String k104b11 = _EMPTY_;
+    private String k104b12 = _EMPTY_;
+    private String k104b13 = _EMPTY_;
+    private String k105 = _EMPTY_;
+    private String k105a = _EMPTY_;
+    private String k105a01x = _EMPTY_;
+    private String k105a02x = _EMPTY_;
+    private String k106 = _EMPTY_;
+    private String k10601 = _EMPTY_;
+    private String k10602 = _EMPTY_;
+    private String k10603 = _EMPTY_;
+    private String k10604 = _EMPTY_;
+    private String k10605 = _EMPTY_;
+    private String k10606 = _EMPTY_;
+    private String k10607 = _EMPTY_;
+    private String k10608 = _EMPTY_;
+    private String k10696 = _EMPTY_;
+    private String k10696x = _EMPTY_;
+    private String k107 = _EMPTY_;
+    private String k107a = _EMPTY_;
+    private String k107a96x = _EMPTY_;
+    private String l101 = _EMPTY_;
+    private String l102 = _EMPTY_;
+    private String l102a = _EMPTY_;
+    private String l102a96x = _EMPTY_;
+    private String l103 = _EMPTY_;
+    private String l104 = _EMPTY_;
+    private String l10496x = _EMPTY_;
+    private String l105 = _EMPTY_;
+    private String l106 = _EMPTY_;
+    private String l10696x = _EMPTY_;
+    private String l107 = _EMPTY_;
+    private String l10796x = _EMPTY_;
+    private String l108 = _EMPTY_;
+    private String l10896x = _EMPTY_;
+    private String l109 = _EMPTY_;
+    private String l10996x = _EMPTY_;
+    private String l110 = _EMPTY_;
+    private String l111 = _EMPTY_;
+    private String l1121 = _EMPTY_;
+    private String l1122 = _EMPTY_;
+    private String l1123 = _EMPTY_;
+    private String l1124 = _EMPTY_;
+    private String l1125 = _EMPTY_;
+    private String l1131 = _EMPTY_;
+    private String l1132 = _EMPTY_;
+    private String l1133 = _EMPTY_;
+    private String l1134 = _EMPTY_;
+    private String l114 = _EMPTY_;
+    private String l11496x = _EMPTY_;
+    private String l115 = _EMPTY_;
+    private String l11596x = _EMPTY_;
+    private String l116 = _EMPTY_;
+    private String l11696x = _EMPTY_;
+    private String l117 = _EMPTY_;
+    private String l11796x = _EMPTY_;
 
     // Constructor
     public void Mwra() {
@@ -635,4404 +733,4817 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
 
-    public String getsB1() {
-        return sB1;
+    public String getsF() {
+        return sF;
     }
 
-    public void setsB1(String sB1) {
-        this.sB1 = sB1;
+    public void setsF(String sF) {
+        this.sF = sF;
     }
 
 
-    public String getsB2() {
-        return sB2;
+    public String getsG() {
+        return sG;
     }
 
-    public void setsB2(String sB2) {
-        this.sB2 = sB2;
+    public void setsG(String sG) {
+        this.sG = sG;
     }
 
 
-    public String getsB3() {
-        return sB3;
+    public String getsH1() {
+        return sH1;
     }
 
-    public void setsB3(String sB3) {
-        this.sB3 = sB3;
+    public void setsH1(String sH1) {
+        this.sH1 = sH1;
     }
 
 
-    public String getsB41() {
-        return sB41;
+    public String getsH2() {
+        return sH2;
     }
 
-    public void setsB41(String sB41) {
-        this.sB41 = sB41;
+    public void setsH2(String sH2) {
+        this.sH2 = sH2;
     }
 
 
-    public String getsB42() {
-        return sB42;
+    public String getsK() {
+        return sK;
     }
 
-    public void setsB42(String sB42) {
-        this.sB42 = sB42;
+    public void setsK(String sK) {
+        this.sK = sK;
     }
 
 
-    public String getsB5() {
-        return sB5;
+    public String getsL() {
+        return sL;
     }
 
-    public void setsB5(String sB5) {
-        this.sB5 = sB5;
+    public void setsL(String sL) {
+        this.sL = sL;
     }
 
+    @Bindable
+    public String getF101() {
+        return f101;
+    }
+
+    public void setF101(String f101) {
+        this.f101 = f101;
+        notifyPropertyChanged(BR.f101);
+    }
+
+    @Bindable
+    public String getF101a() {
+        return f101a;
+    }
+
+    public void setF101a(String f101a) {
+        this.f101a = f101a;
+        notifyPropertyChanged(BR.f101a);
+    }
+
+    @Bindable
+    public String getF101a01() {
+        return f101a01;
+    }
+
+    public void setF101a01(String f101a01) {
+        this.f101a01 = f101a01;
+        notifyPropertyChanged(BR.f101a01);
+    }
+
+    @Bindable
+    public String getF101a02() {
+        return f101a02;
+    }
+
+    public void setF101a02(String f101a02) {
+        this.f101a02 = f101a02;
+        notifyPropertyChanged(BR.f101a02);
+    }
+
+    @Bindable
+    public String getF101a03() {
+        return f101a03;
+    }
+
+    public void setF101a03(String f101a03) {
+        this.f101a03 = f101a03;
+        notifyPropertyChanged(BR.f101a03);
+    }
+
+    @Bindable
+    public String getF101a04() {
+        return f101a04;
+    }
+
+    public void setF101a04(String f101a04) {
+        this.f101a04 = f101a04;
+        notifyPropertyChanged(BR.f101a04);
+    }
+
+    @Bindable
+    public String getF101a05() {
+        return f101a05;
+    }
+
+    public void setF101a05(String f101a05) {
+        this.f101a05 = f101a05;
+        notifyPropertyChanged(BR.f101a05);
+    }
+
+    @Bindable
+    public String getF101a06() {
+        return f101a06;
+    }
+
+    public void setF101a06(String f101a06) {
+        this.f101a06 = f101a06;
+        notifyPropertyChanged(BR.f101a06);
+    }
+
+    @Bindable
+    public String getF101a07() {
+        return f101a07;
+    }
+
+    public void setF101a07(String f101a07) {
+        this.f101a07 = f101a07;
+        notifyPropertyChanged(BR.f101a07);
+    }
+
+    @Bindable
+    public String getF101a08() {
+        return f101a08;
+    }
+
+    public void setF101a08(String f101a08) {
+        this.f101a08 = f101a08;
+        notifyPropertyChanged(BR.f101a08);
+    }
+
+    @Bindable
+    public String getF101a09() {
+        return f101a09;
+    }
+
+    public void setF101a09(String f101a09) {
+        this.f101a09 = f101a09;
+        notifyPropertyChanged(BR.f101a09);
+    }
+
+    @Bindable
+    public String getF101a10() {
+        return f101a10;
+    }
+
+    public void setF101a10(String f101a10) {
+        this.f101a10 = f101a10;
+        notifyPropertyChanged(BR.f101a10);
+    }
+
+    @Bindable
+    public String getF101a11() {
+        return f101a11;
+    }
+
+    public void setF101a11(String f101a11) {
+        this.f101a11 = f101a11;
+        notifyPropertyChanged(BR.f101a11);
+    }
+
+    @Bindable
+    public String getF101a12() {
+        return f101a12;
+    }
+
+    public void setF101a12(String f101a12) {
+        this.f101a12 = f101a12;
+        notifyPropertyChanged(BR.f101a12);
+    }
+
+    @Bindable
+    public String getF101a13() {
+        return f101a13;
+    }
+
+    public void setF101a13(String f101a13) {
+        this.f101a13 = f101a13;
+        notifyPropertyChanged(BR.f101a13);
+    }
+
+    @Bindable
+    public String getF101a14() {
+        return f101a14;
+    }
+
+    public void setF101a14(String f101a14) {
+        this.f101a14 = f101a14;
+        notifyPropertyChanged(BR.f101a14);
+    }
+
+    @Bindable
+    public String getF101a96() {
+        return f101a96;
+    }
+
+    public void setF101a96(String f101a96) {
+        this.f101a96 = f101a96;
+        notifyPropertyChanged(BR.f101a96);
+    }
+
+    @Bindable
+    public String getF101b() {
+        return f101b;
+    }
+
+    public void setF101b(String f101b) {
+        this.f101b = f101b;
+        notifyPropertyChanged(BR.f101b);
+    }
+
+    @Bindable
+    public String getF101b01x() {
+        return f101b01x;
+    }
+
+    public void setF101b01x(String f101b01x) {
+        this.f101b01x = f101b01x;
+        notifyPropertyChanged(BR.f101b01x);
+    }
+
+    @Bindable
+    public String getF102() {
+        return f102;
+    }
+
+    public void setF102(String f102) {
+        this.f102 = f102;
+        notifyPropertyChanged(BR.f102);
+    }
+
+    @Bindable
+    public String getF10201() {
+        return f10201;
+    }
+
+    public void setF10201(String f10201) {
+        this.f10201 = f10201;
+        notifyPropertyChanged(BR.f10201);
+    }
+
+    @Bindable
+    public String getF10202() {
+        return f10202;
+    }
+
+    public void setF10202(String f10202) {
+        this.f10202 = f10202;
+        notifyPropertyChanged(BR.f10202);
+    }
+
+    @Bindable
+    public String getF10203() {
+        return f10203;
+    }
+
+    public void setF10203(String f10203) {
+        this.f10203 = f10203;
+        notifyPropertyChanged(BR.f10203);
+    }
+
+    @Bindable
+    public String getF10204() {
+        return f10204;
+    }
+
+    public void setF10204(String f10204) {
+        this.f10204 = f10204;
+        notifyPropertyChanged(BR.f10204);
+    }
+
+    @Bindable
+    public String getF10205() {
+        return f10205;
+    }
+
+    public void setF10205(String f10205) {
+        this.f10205 = f10205;
+        notifyPropertyChanged(BR.f10205);
+    }
+
+    @Bindable
+    public String getF10206() {
+        return f10206;
+    }
+
+    public void setF10206(String f10206) {
+        this.f10206 = f10206;
+        notifyPropertyChanged(BR.f10206);
+    }
+
+    @Bindable
+    public String getF10207() {
+        return f10207;
+    }
+
+    public void setF10207(String f10207) {
+        this.f10207 = f10207;
+        notifyPropertyChanged(BR.f10207);
+    }
+
+    @Bindable
+    public String getF10208() {
+        return f10208;
+    }
+
+    public void setF10208(String f10208) {
+        this.f10208 = f10208;
+        notifyPropertyChanged(BR.f10208);
+    }
+
+    @Bindable
+    public String getF10209() {
+        return f10209;
+    }
+
+    public void setF10209(String f10209) {
+        this.f10209 = f10209;
+        notifyPropertyChanged(BR.f10209);
+    }
+
+    @Bindable
+    public String getF10210() {
+        return f10210;
+    }
+
+    public void setF10210(String f10210) {
+        this.f10210 = f10210;
+        notifyPropertyChanged(BR.f10210);
+    }
+
+    @Bindable
+    public String getF10296() {
+        return f10296;
+    }
+
+    public void setF10296(String f10296) {
+        this.f10296 = f10296;
+        notifyPropertyChanged(BR.f10296);
+    }
+
+    @Bindable
+    public String getF10296x() {
+        return f10296x;
+    }
+
+    public void setF10296x(String f10296x) {
+        this.f10296x = f10296x;
+        notifyPropertyChanged(BR.f10296x);
+    }
+
+    @Bindable
+    public String getF103() {
+        return f103;
+    }
+
+    public void setF103(String f103) {
+        this.f103 = f103;
+        notifyPropertyChanged(BR.f103);
+    }
+
+    @Bindable
+    public String getF10301() {
+        return f10301;
+    }
+
+    public void setF10301(String f10301) {
+        this.f10301 = f10301;
+        notifyPropertyChanged(BR.f10301);
+    }
+
+    @Bindable
+    public String getF10302() {
+        return f10302;
+    }
+
+    public void setF10302(String f10302) {
+        this.f10302 = f10302;
+        notifyPropertyChanged(BR.f10302);
+    }
+
+    @Bindable
+    public String getF10303() {
+        return f10303;
+    }
+
+    public void setF10303(String f10303) {
+        this.f10303 = f10303;
+        notifyPropertyChanged(BR.f10303);
+    }
+
+    @Bindable
+    public String getF10304() {
+        return f10304;
+    }
+
+    public void setF10304(String f10304) {
+        this.f10304 = f10304;
+        notifyPropertyChanged(BR.f10304);
+    }
+
+    @Bindable
+    public String getF10305() {
+        return f10305;
+    }
+
+    public void setF10305(String f10305) {
+        this.f10305 = f10305;
+        notifyPropertyChanged(BR.f10305);
+    }
+
+    @Bindable
+    public String getF107() {
+        return f107;
+    }
+
+    public void setF107(String f107) {
+        this.f107 = f107;
+        notifyPropertyChanged(BR.f107);
+    }
+
+    @Bindable
+    public String getF10796x() {
+        return f10796x;
+    }
+
+    public void setF10796x(String f10796x) {
+        this.f10796x = f10796x;
+        notifyPropertyChanged(BR.f10796x);
+    }
+
+    @Bindable
+    public String getF108() {
+        return f108;
+    }
+
+    public void setF108(String f108) {
+        this.f108 = f108;
+        notifyPropertyChanged(BR.f108);
+    }
+
+    @Bindable
+    public String getF108wx() {
+        return f108wx;
+    }
+
+    public void setF108wx(String f108wx) {
+        this.f108wx = f108wx;
+        notifyPropertyChanged(BR.f108wx);
+    }
+
+    @Bindable
+    public String getF108mx() {
+        return f108mx;
+    }
+
+    public void setF108mx(String f108mx) {
+        this.f108mx = f108mx;
+        notifyPropertyChanged(BR.f108mx);
+    }
+
+    @Bindable
+    public String getF11001() {
+        return f11001;
+    }
+
+    public void setF11001(String f11001) {
+        this.f11001 = f11001;
+        notifyPropertyChanged(BR.f11001);
+    }
+
+    @Bindable
+    public String getF11002() {
+        return f11002;
+    }
+
+    public void setF11002(String f11002) {
+        this.f11002 = f11002;
+        notifyPropertyChanged(BR.f11002);
+    }
+
+    @Bindable
+    public String getF11003() {
+        return f11003;
+    }
+
+    public void setF11003(String f11003) {
+        this.f11003 = f11003;
+        notifyPropertyChanged(BR.f11003);
+    }
+
+    @Bindable
+    public String getF11004() {
+        return f11004;
+    }
+
+    public void setF11004(String f11004) {
+        this.f11004 = f11004;
+        notifyPropertyChanged(BR.f11004);
+    }
+
+    @Bindable
+    public String getF11005() {
+        return f11005;
+    }
+
+    public void setF11005(String f11005) {
+        this.f11005 = f11005;
+        notifyPropertyChanged(BR.f11005);
+    }
+
+    @Bindable
+    public String getF11006() {
+        return f11006;
+    }
+
+    public void setF11006(String f11006) {
+        this.f11006 = f11006;
+        notifyPropertyChanged(BR.f11006);
+    }
+
+    @Bindable
+    public String getF11007() {
+        return f11007;
+    }
+
+    public void setF11007(String f11007) {
+        this.f11007 = f11007;
+        notifyPropertyChanged(BR.f11007);
+    }
+
+    @Bindable
+    public String getF11008() {
+        return f11008;
+    }
+
+    public void setF11008(String f11008) {
+        this.f11008 = f11008;
+        notifyPropertyChanged(BR.f11008);
+    }
+
+    @Bindable
+    public String getF11009() {
+        return f11009;
+    }
+
+    public void setF11009(String f11009) {
+        this.f11009 = f11009;
+        notifyPropertyChanged(BR.f11009);
+    }
+
+    @Bindable
+    public String getF11096() {
+        return f11096;
+    }
+
+    public void setF11096(String f11096) {
+        this.f11096 = f11096;
+        notifyPropertyChanged(BR.f11096);
+    }
+
+    @Bindable
+    public String getF1109696x() {
+        return f1109696x;
+    }
+
+    public void setF1109696x(String f1109696x) {
+        this.f1109696x = f1109696x;
+        notifyPropertyChanged(BR.f1109696x);
+    }
+
+    @Bindable
+    public String getF111() {
+        return f111;
+    }
+
+    public void setF111(String f111) {
+        this.f111 = f111;
+        notifyPropertyChanged(BR.f111);
+    }
+
+    @Bindable
+    public String getF112() {
+        return f112;
+    }
+
+    public void setF112(String f112) {
+        this.f112 = f112;
+        notifyPropertyChanged(BR.f112);
+    }
+
+    @Bindable
+    public String getF113() {
+        return f113;
+    }
+
+    public void setF113(String f113) {
+        this.f113 = f113;
+        notifyPropertyChanged(BR.f113);
+    }
+
+    @Bindable
+    public String getF11301x() {
+        return f11301x;
+    }
+
+    public void setF11301x(String f11301x) {
+        this.f11301x = f11301x;
+        notifyPropertyChanged(BR.f11301x);
+    }
+
+    @Bindable
+    public String getF114() {
+        return f114;
+    }
+
+    public void setF114(String f114) {
+        this.f114 = f114;
+        notifyPropertyChanged(BR.f114);
+    }
+
+    @Bindable
+    public String getF116() {
+        return f116;
+    }
+
+    public void setF116(String f116) {
+        this.f116 = f116;
+        notifyPropertyChanged(BR.f116);
+    }
+
+    @Bindable
+    public String getF117() {
+        return f117;
+    }
+
+    public void setF117(String f117) {
+        this.f117 = f117;
+        notifyPropertyChanged(BR.f117);
+    }
+
+    @Bindable
+    public String getF118m() {
+        return f118m;
+    }
+
+    public void setF118m(String f118m) {
+        this.f118m = f118m;
+        notifyPropertyChanged(BR.f118m);
+    }
+
+    @Bindable
+    public String getF118d() {
+        return f118d;
+    }
+
+    public void setF118d(String f118d) {
+        this.f118d = f118d;
+        notifyPropertyChanged(BR.f118d);
+    }
+
+    @Bindable
+    public String getF119() {
+        return f119;
+    }
+
+    public void setF119(String f119) {
+        this.f119 = f119;
+        notifyPropertyChanged(BR.f119);
+    }
+
+    @Bindable
+    public String getF120() {
+        return f120;
+    }
+
+    public void setF120(String f120) {
+        this.f120 = f120;
+        notifyPropertyChanged(BR.f120);
+    }
+
+    @Bindable
+    public String getF12001x() {
+        return f12001x;
+    }
+
+    public void setF12001x(String f12001x) {
+        this.f12001x = f12001x;
+        notifyPropertyChanged(BR.f12001x);
+    }
+
+    @Bindable
+    public String getF121a() {
+        return f121a;
+    }
+
+    public void setF121a(String f121a) {
+        this.f121a = f121a;
+        notifyPropertyChanged(BR.f121a);
+    }
+
+    @Bindable
+    public String getF121b() {
+        return f121b;
+    }
+
+    public void setF121b(String f121b) {
+        this.f121b = f121b;
+        notifyPropertyChanged(BR.f121b);
+    }
+
+    @Bindable
+    public String getF121b96x() {
+        return f121b96x;
+    }
+
+    public void setF121b96x(String f121b96x) {
+        this.f121b96x = f121b96x;
+        notifyPropertyChanged(BR.f121b96x);
+    }
+
+    @Bindable
+    public String getF122() {
+        return f122;
+    }
+
+    public void setF122(String f122) {
+        this.f122 = f122;
+        notifyPropertyChanged(BR.f122);
+    }
+
+    @Bindable
+    public String getF12201x() {
+        return f12201x;
+    }
+
+    public void setF12201x(String f12201x) {
+        this.f12201x = f12201x;
+        notifyPropertyChanged(BR.f12201x);
+    }
+
+    @Bindable
+    public String getF123() {
+        return f123;
+    }
+
+    public void setF123(String f123) {
+        this.f123 = f123;
+        notifyPropertyChanged(BR.f123);
+    }
+
+    @Bindable
+    public String getF12301() {
+        return f12301;
+    }
+
+    public void setF12301(String f12301) {
+        this.f12301 = f12301;
+        notifyPropertyChanged(BR.f12301);
+    }
+
+    @Bindable
+    public String getF12302() {
+        return f12302;
+    }
+
+    public void setF12302(String f12302) {
+        this.f12302 = f12302;
+        notifyPropertyChanged(BR.f12302);
+    }
+
+    @Bindable
+    public String getF12303() {
+        return f12303;
+    }
+
+    public void setF12303(String f12303) {
+        this.f12303 = f12303;
+        notifyPropertyChanged(BR.f12303);
+    }
+
+    @Bindable
+    public String getF12304() {
+        return f12304;
+    }
+
+    public void setF12304(String f12304) {
+        this.f12304 = f12304;
+        notifyPropertyChanged(BR.f12304);
+    }
+
+    @Bindable
+    public String getF12305() {
+        return f12305;
+    }
+
+    public void setF12305(String f12305) {
+        this.f12305 = f12305;
+        notifyPropertyChanged(BR.f12305);
+    }
+
+    @Bindable
+    public String getF12306() {
+        return f12306;
+    }
+
+    public void setF12306(String f12306) {
+        this.f12306 = f12306;
+        notifyPropertyChanged(BR.f12306);
+    }
+
+    @Bindable
+    public String getF12307() {
+        return f12307;
+    }
+
+    public void setF12307(String f12307) {
+        this.f12307 = f12307;
+        notifyPropertyChanged(BR.f12307);
+    }
+
+    @Bindable
+    public String getF12308() {
+        return f12308;
+    }
+
+    public void setF12308(String f12308) {
+        this.f12308 = f12308;
+        notifyPropertyChanged(BR.f12308);
+    }
+
+    @Bindable
+    public String getF12309() {
+        return f12309;
+    }
+
+    public void setF12309(String f12309) {
+        this.f12309 = f12309;
+        notifyPropertyChanged(BR.f12309);
+    }
+
+    @Bindable
+    public String getF128() {
+        return f128;
+    }
+
+    public void setF128(String f128) {
+        this.f128 = f128;
+        notifyPropertyChanged(BR.f128);
+    }
+
+    @Bindable
+    public String getF12801() {
+        return f12801;
+    }
+
+    public void setF12801(String f12801) {
+        this.f12801 = f12801;
+        notifyPropertyChanged(BR.f12801);
+    }
+
+    @Bindable
+    public String getF12802() {
+        return f12802;
+    }
+
+    public void setF12802(String f12802) {
+        this.f12802 = f12802;
+        notifyPropertyChanged(BR.f12802);
+    }
+
+    @Bindable
+    public String getF12803() {
+        return f12803;
+    }
+
+    public void setF12803(String f12803) {
+        this.f12803 = f12803;
+        notifyPropertyChanged(BR.f12803);
+    }
+
+    @Bindable
+    public String getF12804() {
+        return f12804;
+    }
+
+    public void setF12804(String f12804) {
+        this.f12804 = f12804;
+        notifyPropertyChanged(BR.f12804);
+    }
+
+    @Bindable
+    public String getF12805() {
+        return f12805;
+    }
+
+    public void setF12805(String f12805) {
+        this.f12805 = f12805;
+        notifyPropertyChanged(BR.f12805);
+    }
+
+    @Bindable
+    public String getF12806() {
+        return f12806;
+    }
+
+    public void setF12806(String f12806) {
+        this.f12806 = f12806;
+        notifyPropertyChanged(BR.f12806);
+    }
+
+    @Bindable
+    public String getF12807() {
+        return f12807;
+    }
+
+    public void setF12807(String f12807) {
+        this.f12807 = f12807;
+        notifyPropertyChanged(BR.f12807);
+    }
+
+    @Bindable
+    public String getF129() {
+        return f129;
+    }
+
+    public void setF129(String f129) {
+        this.f129 = f129;
+        notifyPropertyChanged(BR.f129);
+    }
+
+    @Bindable
+    public String getF130() {
+        return f130;
+    }
+
+    public void setF130(String f130) {
+        this.f130 = f130;
+        notifyPropertyChanged(BR.f130);
+    }
+
+    @Bindable
+    public String getF13001() {
+        return f13001;
+    }
+
+    public void setF13001(String f13001) {
+        this.f13001 = f13001;
+        notifyPropertyChanged(BR.f13001);
+    }
+
+    @Bindable
+    public String getF13002() {
+        return f13002;
+    }
+
+    public void setF13002(String f13002) {
+        this.f13002 = f13002;
+        notifyPropertyChanged(BR.f13002);
+    }
+
+    @Bindable
+    public String getF13003() {
+        return f13003;
+    }
+
+    public void setF13003(String f13003) {
+        this.f13003 = f13003;
+        notifyPropertyChanged(BR.f13003);
+    }
+
+    @Bindable
+    public String getF13004() {
+        return f13004;
+    }
+
+    public void setF13004(String f13004) {
+        this.f13004 = f13004;
+        notifyPropertyChanged(BR.f13004);
+    }
+
+    @Bindable
+    public String getF13005() {
+        return f13005;
+    }
+
+    public void setF13005(String f13005) {
+        this.f13005 = f13005;
+        notifyPropertyChanged(BR.f13005);
+    }
 
-    public String getsB6() {
-        return sB6;
+    @Bindable
+    public String getF13006() {
+        return f13006;
+    }
+
+    public void setF13006(String f13006) {
+        this.f13006 = f13006;
+        notifyPropertyChanged(BR.f13006);
+    }
+
+    @Bindable
+    public String getF13007() {
+        return f13007;
+    }
+
+    public void setF13007(String f13007) {
+        this.f13007 = f13007;
+        notifyPropertyChanged(BR.f13007);
+    }
+
+    @Bindable
+    public String getF13008() {
+        return f13008;
+    }
+
+    public void setF13008(String f13008) {
+        this.f13008 = f13008;
+        notifyPropertyChanged(BR.f13008);
+    }
+
+    @Bindable
+    public String getF13009() {
+        return f13009;
+    }
+
+    public void setF13009(String f13009) {
+        this.f13009 = f13009;
+        notifyPropertyChanged(BR.f13009);
+    }
+
+    @Bindable
+    public String getF13010() {
+        return f13010;
+    }
+
+    public void setF13010(String f13010) {
+        this.f13010 = f13010;
+        notifyPropertyChanged(BR.f13010);
+    }
+
+    @Bindable
+    public String getF13011() {
+        return f13011;
+    }
+
+    public void setF13011(String f13011) {
+        this.f13011 = f13011;
+        notifyPropertyChanged(BR.f13011);
+    }
+
+    @Bindable
+    public String getF13012() {
+        return f13012;
+    }
+
+    public void setF13012(String f13012) {
+        this.f13012 = f13012;
+        notifyPropertyChanged(BR.f13012);
+    }
+
+    @Bindable
+    public String getF13013() {
+        return f13013;
+    }
+
+    public void setF13013(String f13013) {
+        this.f13013 = f13013;
+        notifyPropertyChanged(BR.f13013);
+    }
+
+    @Bindable
+    public String getF13014() {
+        return f13014;
+    }
+
+    public void setF13014(String f13014) {
+        this.f13014 = f13014;
+        notifyPropertyChanged(BR.f13014);
+    }
+
+    @Bindable
+    public String getF13096() {
+        return f13096;
+    }
+
+    public void setF13096(String f13096) {
+        this.f13096 = f13096;
+        notifyPropertyChanged(BR.f13096);
+    }
+
+    @Bindable
+    public String getF13096x() {
+        return f13096x;
+    }
+
+    public void setF13096x(String f13096x) {
+        this.f13096x = f13096x;
+        notifyPropertyChanged(BR.f13096x);
+    }
+
+    @Bindable
+    public String getF131() {
+        return f131;
+    }
+
+    public void setF131(String f131) {
+        this.f131 = f131;
+        notifyPropertyChanged(BR.f131);
+    }
+
+    @Bindable
+    public String getF131a() {
+        return f131a;
+    }
+
+    public void setF131a(String f131a) {
+        this.f131a = f131a;
+        notifyPropertyChanged(BR.f131a);
+    }
+
+    @Bindable
+    public String getF134() {
+        return f134;
+    }
+
+    public void setF134(String f134) {
+        this.f134 = f134;
+        notifyPropertyChanged(BR.f134);
+    }
+
+    @Bindable
+    public String getF13401() {
+        return f13401;
+    }
+
+    public void setF13401(String f13401) {
+        this.f13401 = f13401;
+        notifyPropertyChanged(BR.f13401);
+    }
+
+    @Bindable
+    public String getF13402() {
+        return f13402;
+    }
+
+    public void setF13402(String f13402) {
+        this.f13402 = f13402;
+        notifyPropertyChanged(BR.f13402);
+    }
+
+    @Bindable
+    public String getF13403() {
+        return f13403;
+    }
+
+    public void setF13403(String f13403) {
+        this.f13403 = f13403;
+        notifyPropertyChanged(BR.f13403);
+    }
+
+    @Bindable
+    public String getF13404() {
+        return f13404;
+    }
+
+    public void setF13404(String f13404) {
+        this.f13404 = f13404;
+        notifyPropertyChanged(BR.f13404);
+    }
+
+    @Bindable
+    public String getF13405() {
+        return f13405;
+    }
+
+    public void setF13405(String f13405) {
+        this.f13405 = f13405;
+        notifyPropertyChanged(BR.f13405);
+    }
+
+    @Bindable
+    public String getF13406() {
+        return f13406;
     }
 
-    public void setsB6(String sB6) {
-        this.sB6 = sB6;
+    public void setF13406(String f13406) {
+        this.f13406 = f13406;
+        notifyPropertyChanged(BR.f13406);
     }
 
+    @Bindable
+    public String getF13407() {
+        return f13407;
+    }
+
+    public void setF13407(String f13407) {
+        this.f13407 = f13407;
+        notifyPropertyChanged(BR.f13407);
+    }
+
+    @Bindable
+    public String getF13408() {
+        return f13408;
+    }
+
+    public void setF13408(String f13408) {
+        this.f13408 = f13408;
+        notifyPropertyChanged(BR.f13408);
+    }
+
+    @Bindable
+    public String getF13409() {
+        return f13409;
+    }
+
+    public void setF13409(String f13409) {
+        this.f13409 = f13409;
+        notifyPropertyChanged(BR.f13409);
+    }
+
+    @Bindable
+    public String getG101() {
+        return g101;
+    }
+
+    public void setG101(String g101) {
+        this.g101 = g101;
+        notifyPropertyChanged(BR.g101);
+    }
+
+    @Bindable
+    public String getG102() {
+        return g102;
+    }
+
+    public void setG102(String g102) {
+        this.g102 = g102;
+        notifyPropertyChanged(BR.g102);
+    }
 
-    public String getsB7() {
-        return sB7;
+    @Bindable
+    public String getG103() {
+        return g103;
+    }
+
+    public void setG103(String g103) {
+        this.g103 = g103;
+        notifyPropertyChanged(BR.g103);
     }
 
-    public void setsB7(String sB7) {
-        this.sB7 = sB7;
+    @Bindable
+    public String getG10301() {
+        return g10301;
     }
 
+    public void setG10301(String g10301) {
+        this.g10301 = g10301;
+        notifyPropertyChanged(BR.g10301);
+    }
 
     @Bindable
-    public String getBs1resp() {
-        return bs1resp;
+    public String getG10302() {
+        return g10302;
     }
 
-    public void setBs1resp(String bs1resp) {
-        this.bs1resp = bs1resp;
-        notifyPropertyChanged(BR.bs1resp);
+    public void setG10302(String g10302) {
+        this.g10302 = g10302;
+        notifyPropertyChanged(BR.g10302);
     }
 
     @Bindable
-    public String getBs1respline() {
-        return bs1respline;
+    public String getG10303() {
+        return g10303;
     }
 
-    public void setBs1respline(String bs1respline) {
-        this.bs1respline = bs1respline;
-        this.sno = bs1respline;
-        notifyPropertyChanged(BR.bs1respline);
+    public void setG10303(String g10303) {
+        this.g10303 = g10303;
+        notifyPropertyChanged(BR.g10303);
     }
 
     @Bindable
-    public String getBs1con() {
-        return bs1con;
+    public String getG10304() {
+        return g10304;
     }
 
-    public void setBs1con(String bs1con) {
-        this.bs1con = bs1con;
-        setBs1q1(bs1con.equals("2") ? "" : this.bs1q1);
-        setBs1q2(bs1con.equals("2") ? "" : this.bs1q2);
-        setBs1q3(bs1con.equals("2") ? "" : this.bs1q3);
-        setBs1q4(bs1con.equals("2") ? "" : this.bs1q4);
-        setBs1q5(bs1con.equals("2") ? "" : this.bs1q5);
-        setBs1q6(bs1con.equals("2") ? "" : this.bs1q6);
-        setBs1q08(bs1con.equals("2") ? "" : this.bs1q08);
-        setBs1q0901(bs1con.equals("2") ? "" : this.bs1q0901);
-        setBs1q0902(bs1con.equals("2") ? "" : this.bs1q0902);
-        setBs1q0903(bs1con.equals("2") ? "" : this.bs1q0903);
-        setBs1q0904(bs1con.equals("2") ? "" : this.bs1q0904);
-        setBs1q0905(bs1con.equals("2") ? "" : this.bs1q0905);
-        setBs1q0906(bs1con.equals("2") ? "" : this.bs1q0906);
-        setBs1q0907(bs1con.equals("2") ? "" : this.bs1q0907);
-        setBs1q0908(bs1con.equals("2") ? "" : this.bs1q0908);
-        setBs1q09t296(bs1con.equals("2") ? "" : this.bs1q09t296);
-        setBs1q1001(bs1con.equals("2") ? "" : this.bs1q1001);
-        setBs1q1002(bs1con.equals("2") ? "" : this.bs1q1002);
-        setBs1q1098(bs1con.equals("2") ? "" : this.bs1q1098);
-        setBs1q11(bs1con.equals("2") ? "" : this.bs1q11);
-        setBs1q12(bs1con.equals("2") ? "" : this.bs1q12);
-        setBs1q1301(bs1con.equals("2") ? "" : this.bs1q1301);
-        setBs1q1302(bs1con.equals("2") ? "" : this.bs1q1302);
-        setBs1q1303(bs1con.equals("2") ? "" : this.bs1q1303);
-        setBs1q1304(bs1con.equals("2") ? "" : this.bs1q1304);
-        setBs1q1305(bs1con.equals("2") ? "" : this.bs1q1305);
-        setBs1q1306(bs1con.equals("2") ? "" : this.bs1q1306);
-        setBs1q1307(bs1con.equals("2") ? "" : this.bs1q1307);
-        setBs1q1308(bs1con.equals("2") ? "" : this.bs1q1308);
-        setBs1q1396(bs1con.equals("2") ? "" : this.bs1q1396);
-        notifyPropertyChanged(BR.bs1con);
+    public void setG10304(String g10304) {
+        this.g10304 = g10304;
+        notifyPropertyChanged(BR.g10304);
     }
 
     @Bindable
-    public String getBs1q1() {
-        return bs1q1;
+    public String getG10305() {
+        return g10305;
     }
 
-    public void setBs1q1(String bs1q1) {
-        this.bs1q1 = bs1q1;
-        notifyPropertyChanged(BR.bs1q1);
+    public void setG10305(String g10305) {
+        this.g10305 = g10305;
+        notifyPropertyChanged(BR.g10305);
     }
 
     @Bindable
-    public String getBs1q2() {
-        return bs1q2;
+    public String getG10306() {
+        return g10306;
     }
 
-    public void setBs1q2(String bs1q2) {
-        this.bs1q2 = bs1q2;
-        notifyPropertyChanged(BR.bs1q2);
+    public void setG10306(String g10306) {
+        this.g10306 = g10306;
+        notifyPropertyChanged(BR.g10306);
     }
 
     @Bindable
-    public String getBs1q3() {
-        return bs1q3;
+    public String getG10307() {
+        return g10307;
     }
 
-    public void setBs1q3(String bs1q3) {
-        this.bs1q3 = bs1q3;
-        notifyPropertyChanged(BR.bs1q3);
+    public void setG10307(String g10307) {
+        this.g10307 = g10307;
+        notifyPropertyChanged(BR.g10307);
     }
 
     @Bindable
-    public String getBs1q4() {
-        return bs1q4;
+    public String getG10308() {
+        return g10308;
     }
 
-    public void setBs1q4(String bs1q4) {
-        this.bs1q4 = bs1q4;
-        notifyPropertyChanged(BR.bs1q4);
+    public void setG10308(String g10308) {
+        this.g10308 = g10308;
+        notifyPropertyChanged(BR.g10308);
     }
 
     @Bindable
-    public String getBs1q5() {
-        return bs1q5;
+    public String getG10309() {
+        return g10309;
     }
 
-    public void setBs1q5(String bs1q5) {
-        this.bs1q5 = bs1q5;
-        notifyPropertyChanged(BR.bs1q5);
+    public void setG10309(String g10309) {
+        this.g10309 = g10309;
+        notifyPropertyChanged(BR.g10309);
     }
 
     @Bindable
-    public String getBs1q6() {
-        return bs1q6;
+    public String getG10310() {
+        return g10310;
+    }
+
+    public void setG10310(String g10310) {
+        this.g10310 = g10310;
+        notifyPropertyChanged(BR.g10310);
     }
 
-    public void setBs1q6(String bs1q6) {
-        this.bs1q6 = bs1q6;
-        notifyPropertyChanged(BR.bs1q6);
+    @Bindable
+    public String getG10311() {
+        return g10311;
     }
 
+    public void setG10311(String g10311) {
+        this.g10311 = g10311;
+        notifyPropertyChanged(BR.g10311);
+    }
 
     @Bindable
-    public String getBs1q08() {
-        return bs1q08;
+    public String getG10312() {
+        return g10312;
     }
 
-    public void setBs1q08(String bs1q08) {
-        this.bs1q08 = bs1q08;
-        setBs1q0901(bs1q08.equals("2") ? "" : this.bs1q0901);
-        setBs1q0901(bs1q08.equals("2") ? "" : this.bs1q0901);
-        setBs1q0902(bs1q08.equals("2") ? "" : this.bs1q0902);
-        setBs1q0903(bs1q08.equals("2") ? "" : this.bs1q0903);
-        setBs1q0904(bs1q08.equals("2") ? "" : this.bs1q0904);
-        setBs1q0905(bs1q08.equals("2") ? "" : this.bs1q0905);
-        setBs1q0906(bs1q08.equals("2") ? "" : this.bs1q0906);
-        setBs1q0907(bs1q08.equals("2") ? "" : this.bs1q0907);
-        setBs1q0908(bs1q08.equals("2") ? "" : this.bs1q0908);
-        setBs1q09t296(bs1q08.equals("2") ? "" : this.bs1q09t296);
-        setBs1q1001(bs1q08.equals("2") ? "" : this.bs1q1001);
-        setBs1q1002(bs1q08.equals("2") ? "" : this.bs1q1002);
-        setBs1q1098(bs1q08.equals("2") ? "" : this.bs1q1098);
-        setBs1q11(bs1q08.equals("2") ? "" : this.bs1q11);
-        notifyPropertyChanged(BR.bs1q08);
+    public void setG10312(String g10312) {
+        this.g10312 = g10312;
+        notifyPropertyChanged(BR.g10312);
     }
 
     @Bindable
-    public String getBs1q09() {
-        return bs1q09;
+    public String getG10313() {
+        return g10313;
     }
 
-    public void setBs1q09(String bs1q09) {
-        this.bs1q09 = bs1q09;
-        notifyPropertyChanged(BR.bs1q09);
+    public void setG10313(String g10313) {
+        this.g10313 = g10313;
+        notifyPropertyChanged(BR.g10313);
     }
 
     @Bindable
-    public String getBs1q0901() {
-        return bs1q0901;
+    public String getG10314() {
+        return g10314;
     }
 
-    public void setBs1q0901(String bs1q0901) {
-        if (this.bs1q0901.equals(bs1q0901)) return;
-        this.bs1q0901 = bs1q0901;
-        notifyPropertyChanged(BR.bs1q0901);
+    public void setG10314(String g10314) {
+        this.g10314 = g10314;
+        notifyPropertyChanged(BR.g10314);
     }
 
     @Bindable
-    public String getBs1q0902() {
-        return bs1q0902;
+    public String getG10396() {
+        return g10396;
     }
 
-    public void setBs1q0902(String bs1q0902) {
-        if (this.bs1q0902.equals(bs1q0902)) return;
-        this.bs1q0902 = bs1q0902;
-        notifyPropertyChanged(BR.bs1q0902);
+    public void setG10396(String g10396) {
+        this.g10396 = g10396;
+        notifyPropertyChanged(BR.g10396);
     }
 
     @Bindable
-    public String getBs1q0903() {
-        return bs1q0903;
+    public String getG10396x() {
+        return g10396x;
     }
 
-    public void setBs1q0903(String bs1q0903) {
-        if (this.bs1q0903.equals(bs1q0903)) return;
-        this.bs1q0903 = bs1q0903;
-        notifyPropertyChanged(BR.bs1q0903);
+    public void setG10396x(String g10396x) {
+        this.g10396x = g10396x;
+        notifyPropertyChanged(BR.g10396x);
     }
 
     @Bindable
-    public String getBs1q0904() {
-        return bs1q0904;
+    public String getG104() {
+        return g104;
     }
 
-    public void setBs1q0904(String bs1q0904) {
-        if (this.bs1q0904.equals(bs1q0904)) return;
-        this.bs1q0904 = bs1q0904;
-        notifyPropertyChanged(BR.bs1q0904);
+    public void setG104(String g104) {
+        this.g104 = g104;
+        notifyPropertyChanged(BR.g104);
     }
 
     @Bindable
-    public String getBs1q0905() {
-        return bs1q0905;
+    public String getG10496x() {
+        return g10496x;
     }
 
-    public void setBs1q0905(String bs1q0905) {
-        if (this.bs1q0905.equals(bs1q0905)) return;
-        this.bs1q0905 = bs1q0905;
-        notifyPropertyChanged(BR.bs1q0905);
+    public void setG10496x(String g10496x) {
+        this.g10496x = g10496x;
+        notifyPropertyChanged(BR.g10496x);
     }
 
     @Bindable
-    public String getBs1q0906() {
-        return bs1q0906;
+    public String getG105() {
+        return g105;
     }
 
-    public void setBs1q0906(String bs1q0906) {
-        if (this.bs1q0906.equals(bs1q0906)) return;
-        this.bs1q0906 = bs1q0906;
-        notifyPropertyChanged(BR.bs1q0906);
+    public void setG105(String g105) {
+        this.g105 = g105;
+        notifyPropertyChanged(BR.g105);
     }
 
     @Bindable
-    public String getBs1q0907() {
-        return bs1q0907;
+    public String getG10501x() {
+        return g10501x;
     }
 
-    public void setBs1q0907(String bs1q0907) {
-        if (this.bs1q0907.equals(bs1q0907)) return;
-        this.bs1q0907 = bs1q0907;
-        notifyPropertyChanged(BR.bs1q0907);
+    public void setG10501x(String g10501x) {
+        this.g10501x = g10501x;
+        notifyPropertyChanged(BR.g10501x);
     }
 
     @Bindable
-    public String getBs1q0908() {
-        return bs1q0908;
+    public String getG106() {
+        return g106;
     }
 
-    public void setBs1q0908(String bs1q0908) {
-        if (this.bs1q0908.equals(bs1q0908)) return;
-        this.bs1q0908 = bs1q0908;
-        notifyPropertyChanged(BR.bs1q0908);
+    public void setG106(String g106) {
+        this.g106 = g106;
+        notifyPropertyChanged(BR.g106);
     }
 
     @Bindable
-    public String getBs1q09t296() {
-        return bs1q09t296;
+    public String getG107() {
+        return g107;
     }
 
-    public void setBs1q09t296(String bs1q09t296) {
-        if (this.bs1q09t296.equals(bs1q09t296)) return;
-        this.bs1q09t296 = bs1q09t296;
-        setBs1q09t296x(bs1q09t296.equals("96") ? this.bs1q09t296x : "");
-        notifyPropertyChanged(BR.bs1q09t296);
+    public void setG107(String g107) {
+        this.g107 = g107;
+        notifyPropertyChanged(BR.g107);
     }
 
     @Bindable
-    public String getBs1q09t296x() {
-        return bs1q09t296x;
+    public String getG10701x() {
+        return g10701x;
     }
 
-    public void setBs1q09t296x(String bs1q09t296x) {
-        this.bs1q09t296x = bs1q09t296x;
-        notifyPropertyChanged(BR.bs1q09t296x);
+    public void setG10701x(String g10701x) {
+        this.g10701x = g10701x;
+        notifyPropertyChanged(BR.g10701x);
     }
 
     @Bindable
-    public String getBs1q1001() {
-        return bs1q1001;
+    public String getG108() {
+        return g108;
     }
 
-    public void setBs1q1001(String bs1q1001) {
-        this.bs1q1001 = bs1q1001;
-        notifyPropertyChanged(BR.bs1q1001);
+    public void setG108(String g108) {
+        this.g108 = g108;
+        notifyPropertyChanged(BR.g108);
     }
 
     @Bindable
-    public String getBs1q1002() {
-        return bs1q1002;
+    public String getG109() {
+        return g109;
     }
 
-    public void setBs1q1002(String bs1q1002) {
-        this.bs1q1002 = bs1q1002;
-        notifyPropertyChanged(BR.bs1q1002);
+    public void setG109(String g109) {
+        this.g109 = g109;
+        notifyPropertyChanged(BR.g109);
     }
 
     @Bindable
-    public String getBs1q1098() {
-        return bs1q1098;
+    public String getG110() {
+        return g110;
     }
 
-    public void setBs1q1098(String bs1q1098) {
-        if (this.bs1q1098.equals(bs1q1098)) return;
-        this.bs1q1098 = bs1q1098;
-        setBs1q1001(bs1q1098.equals("98") ? "" : this.bs1q1001);
-        setBs1q1002(bs1q1098.equals("98") ? "" : this.bs1q1002);
-        notifyPropertyChanged(BR.bs1q1098);
+    public void setG110(String g110) {
+        this.g110 = g110;
+        notifyPropertyChanged(BR.g110);
     }
 
     @Bindable
-    public String getBs1q11() {
-        return bs1q11;
+    public String getG126() {
+        return g126;
     }
 
-    public void setBs1q11(String bs1q11) {
-        this.bs1q11 = bs1q11;
-        notifyPropertyChanged(BR.bs1q11);
+    public void setG126(String g126) {
+        this.g126 = g126;
+        notifyPropertyChanged(BR.g126);
     }
 
     @Bindable
-    public String getBs1q12() {
-        return bs1q12;
+    public String getG113() {
+        return g113;
     }
 
-    public void setBs1q12(String bs1q12) {
-        this.bs1q12 = bs1q12;
-        notifyPropertyChanged(BR.bs1q12);
+    public void setG113(String g113) {
+        this.g113 = g113;
+        notifyPropertyChanged(BR.g113);
     }
 
     @Bindable
-    public String getBs1q13() {
-        return bs1q13;
+    public String getG114() {
+        return g114;
     }
 
-    public void setBs1q13(String bs1q13) {
-        this.bs1q13 = bs1q13;
-        notifyPropertyChanged(BR.bs1q13);
+    public void setG114(String g114) {
+        this.g114 = g114;
+        notifyPropertyChanged(BR.g114);
     }
 
     @Bindable
-    public String getBs1q1301() {
-        return bs1q1301;
+    public String getG11496x() {
+        return g11496x;
     }
 
-    public void setBs1q1301(String bs1q1301) {
-        if (this.bs1q1301.equals(bs1q1301)) return;
-        this.bs1q1301 = bs1q1301;
-        notifyPropertyChanged(BR.bs1q1301);
+    public void setG11496x(String g11496x) {
+        this.g11496x = g11496x;
+        notifyPropertyChanged(BR.g11496x);
     }
 
     @Bindable
-    public String getBs1q1302() {
-        return bs1q1302;
+    public String getG115() {
+        return g115;
     }
 
-    public void setBs1q1302(String bs1q1302) {
-        if (this.bs1q1302.equals(bs1q1302)) return;
-        this.bs1q1302 = bs1q1302;
-        notifyPropertyChanged(BR.bs1q1302);
+    public void setG115(String g115) {
+        this.g115 = g115;
+        notifyPropertyChanged(BR.g115);
     }
 
     @Bindable
-    public String getBs1q1303() {
-        return bs1q1303;
+    public String getG116() {
+        return g116;
     }
 
-    public void setBs1q1303(String bs1q1303) {
-        if (this.bs1q1303.equals(bs1q1303)) return;
-        this.bs1q1303 = bs1q1303;
-        notifyPropertyChanged(BR.bs1q1303);
+    public void setG116(String g116) {
+        this.g116 = g116;
+        notifyPropertyChanged(BR.g116);
     }
 
     @Bindable
-    public String getBs1q1304() {
-        return bs1q1304;
+    public String getG117() {
+        return g117;
     }
 
-    public void setBs1q1304(String bs1q1304) {
-        if (this.bs1q1304.equals(bs1q1304)) return;
-        this.bs1q1304 = bs1q1304;
-        notifyPropertyChanged(BR.bs1q1304);
+    public void setG117(String g117) {
+        this.g117 = g117;
+        notifyPropertyChanged(BR.g117);
     }
 
     @Bindable
-    public String getBs1q1305() {
-        return bs1q1305;
+    public String getG117hx() {
+        return g117hx;
     }
 
-    public void setBs1q1305(String bs1q1305) {
-        if (this.bs1q1305.equals(bs1q1305)) return;
-        this.bs1q1305 = bs1q1305;
-        notifyPropertyChanged(BR.bs1q1305);
+    public void setG117hx(String g117hx) {
+        this.g117hx = g117hx;
+        notifyPropertyChanged(BR.g117hx);
     }
 
     @Bindable
-    public String getBs1q1306() {
-        return bs1q1306;
+    public String getG117mx() {
+        return g117mx;
     }
 
-    public void setBs1q1306(String bs1q1306) {
-        if (this.bs1q1306.equals(bs1q1306)) return;
-        this.bs1q1306 = bs1q1306;
-        notifyPropertyChanged(BR.bs1q1306);
+    public void setG117mx(String g117mx) {
+        this.g117mx = g117mx;
+        notifyPropertyChanged(BR.g117mx);
     }
 
     @Bindable
-    public String getBs1q1307() {
-        return bs1q1307;
+    public String getG117dx() {
+        return g117dx;
     }
 
-    public void setBs1q1307(String bs1q1307) {
-        if (this.bs1q1307.equals(bs1q1307)) return;
-        this.bs1q1307 = bs1q1307;
-        notifyPropertyChanged(BR.bs1q1307);
+    public void setG117dx(String g117dx) {
+        this.g117dx = g117dx;
+        notifyPropertyChanged(BR.g117dx);
     }
 
     @Bindable
-    public String getBs1q1308() {
-        return bs1q1308;
+    public String getG118() {
+        return g118;
     }
 
-    public void setBs1q1308(String bs1q1308) {
-        if (this.bs1q1308.equals(bs1q1308)) return;
-        this.bs1q1308 = bs1q1308;
-        notifyPropertyChanged(BR.bs1q1308);
+    public void setG118(String g118) {
+        this.g118 = g118;
+        notifyPropertyChanged(BR.g118);
     }
 
     @Bindable
-    public String getBs1q1396() {
-        return bs1q1396;
+    public String getG11801() {
+        return g11801;
     }
 
-    public void setBs1q1396(String bs1q1396) {
-        if (this.bs1q1396.equals(bs1q1396)) return;
-        this.bs1q1396 = bs1q1396;
-        setBs1q1396x(bs1q1396.equals("96") ? this.bs1q1396x : "");
-        notifyPropertyChanged(BR.bs1q1396);
+    public void setG11801(String g11801) {
+        this.g11801 = g11801;
+        notifyPropertyChanged(BR.g11801);
     }
 
     @Bindable
-    public String getBs1q1396x() {
-        return bs1q1396x;
+    public String getG11801x() {
+        return g11801x;
     }
 
-    public void setBs1q1396x(String bs1q1396x) {
-        this.bs1q1396x = bs1q1396x;
-        notifyPropertyChanged(BR.bs1q1396x);
+    public void setG11801x(String g11801x) {
+        this.g11801x = g11801x;
+        notifyPropertyChanged(BR.g11801x);
     }
 
     @Bindable
-    public String getBs2q1() {
-        return bs2q1;
+    public String getG11802() {
+        return g11802;
     }
 
-    public void setBs2q1(String bs2q1) {
-        this.bs2q1 = bs2q1;
-        setBs2q201(bs2q1.equals("2") ? "" : this.bs2q201);
-        setBs2q202(bs2q1.equals("2") ? "" : this.bs2q202);
-        setBs2q203(bs2q1.equals("2") ? "" : this.bs2q203);
-        setBs2q204(bs2q1.equals("2") ? "" : this.bs2q204);
-        setBs2q205(bs2q1.equals("2") ? "" : this.bs2q205);
-        setBs2q206(bs2q1.equals("2") ? "" : this.bs2q206);
-        setBs2q207(bs2q1.equals("2") ? "" : this.bs2q207);
-        setBs2q208(bs2q1.equals("2") ? "" : this.bs2q208);
-        setBs2q209(bs2q1.equals("2") ? "" : this.bs2q209);
-        setBs2q210(bs2q1.equals("2") ? "" : this.bs2q210);
-        setBs2q211(bs2q1.equals("2") ? "" : this.bs2q211);
-        setBs2q212(bs2q1.equals("2") ? "" : this.bs2q212);
-        setBs2q213(bs2q1.equals("2") ? "" : this.bs2q213);
-        setBs2q214(bs2q1.equals("2") ? "" : this.bs2q214);
-        setBs2q215(bs2q1.equals("2") ? "" : this.bs2q215);
-        setBs2q216(bs2q1.equals("2") ? "" : this.bs2q216);
-        setBs2q217(bs2q1.equals("2") ? "" : this.bs2q217);
-        setBs2q218(bs2q1.equals("2") ? "" : this.bs2q218);
-        setBs2q296(bs2q1.equals("2") ? "" : this.bs2q296);
-        setBs2q3(bs2q1.equals("2") ? "" : this.bs2q3);
-        setBs2q401(bs2q1.equals("2") ? "" : this.bs2q401);
-        setBs2q402(bs2q1.equals("2") ? "" : this.bs2q402);
-        setBs2q403(bs2q1.equals("2") ? "" : this.bs2q403);
-        setBs2q404(bs2q1.equals("2") ? "" : this.bs2q404);
-        setBs2q405(bs2q1.equals("2") ? "" : this.bs2q405);
-        setBs2q406(bs2q1.equals("2") ? "" : this.bs2q406);
-        setBs2q407(bs2q1.equals("2") ? "" : this.bs2q407);
-        setBs2q408(bs2q1.equals("2") ? "" : this.bs2q408);
-        setBs2q409(bs2q1.equals("2") ? "" : this.bs2q409);
-        setBs2q410(bs2q1.equals("2") ? "" : this.bs2q410);
-        setBs2q411(bs2q1.equals("2") ? "" : this.bs2q411);
-        setBs2q412(bs2q1.equals("2") ? "" : this.bs2q412);
-        setBs2q413(bs2q1.equals("2") ? "" : this.bs2q413);
-        setBs2q414(bs2q1.equals("2") ? "" : this.bs2q414);
-        setBs2q415(bs2q1.equals("2") ? "" : this.bs2q415);
-        setBs2q416(bs2q1.equals("2") ? "" : this.bs2q416);
-        setBs2q417(bs2q1.equals("2") ? "" : this.bs2q417);
-        setBs2q418(bs2q1.equals("2") ? "" : this.bs2q418);
-        setBs2q466(bs2q1.equals("2") ? "" : this.bs2q466);
-        setBs2q4096(bs2q1.equals("2") ? "" : this.bs2q4096);
-        setBs2q5(bs2q1.equals("2") ? "" : this.bs2q5);
-        setBs2q601(bs2q1.equals("2") ? "" : this.bs2q601);
-        setBs2q602(bs2q1.equals("2") ? "" : this.bs2q602);
-        setBs2q603(bs2q1.equals("2") ? "" : this.bs2q603);
-        setBs2q604(bs2q1.equals("2") ? "" : this.bs2q604);
-        setBs2q605(bs2q1.equals("2") ? "" : this.bs2q605);
-        setBs2q606(bs2q1.equals("2") ? "" : this.bs2q606);
-        setBs2q607(bs2q1.equals("2") ? "" : this.bs2q607);
-        setBs2q608(bs2q1.equals("2") ? "" : this.bs2q608);
-        setBs2q609(bs2q1.equals("2") ? "" : this.bs2q609);
-        setBs2q6010(bs2q1.equals("2") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q1.equals("2") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q1.equals("2") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q1.equals("2") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q1.equals("2") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q1.equals("2") ? "" : this.bs2q6015);
-        setBs2q696(bs2q1.equals("2") ? "" : this.bs2q696);
-        setBs2q7(bs2q1.equals("2") ? "" : this.bs2q7);
-        setBs2q801(bs2q1.equals("2") ? "" : this.bs2q801);
-        setBs2q802(bs2q1.equals("2") ? "" : this.bs2q802);
-        setBs2q803(bs2q1.equals("2") ? "" : this.bs2q803);
-        setBs2q804(bs2q1.equals("2") ? "" : this.bs2q804);
-        setBs2q898(bs2q1.equals("2") ? "" : this.bs2q898);
-        setBs2q896(bs2q1.equals("2") ? "" : this.bs2q896);
-        notifyPropertyChanged(BR.bs2q1);
+    public void setG11802(String g11802) {
+        this.g11802 = g11802;
+        notifyPropertyChanged(BR.g11802);
     }
 
     @Bindable
-    public String getBs2q2() {
-        return bs2q2;
+    public String getG11802x() {
+        return g11802x;
     }
 
-    public void setBs2q2(String bs2q2) {
-        this.bs2q2 = bs2q2;
-        notifyPropertyChanged(BR.bs2q2);
+    public void setG11802x(String g11802x) {
+        this.g11802x = g11802x;
+        notifyPropertyChanged(BR.g11802x);
     }
 
     @Bindable
-    public String getBs2q201() {
-        return bs2q201;
+    public String getG11803() {
+        return g11803;
     }
 
-    public void setBs2q201(String bs2q201) {
-        if (this.bs2q201.equals(bs2q201)) return;
-        this.bs2q201 = bs2q201;
-        notifyPropertyChanged(BR.bs2q201);
+    public void setG11803(String g11803) {
+        this.g11803 = g11803;
+        notifyPropertyChanged(BR.g11803);
     }
 
     @Bindable
-    public String getBs2q202() {
-        return bs2q202;
+    public String getG11803x() {
+        return g11803x;
     }
 
-    public void setBs2q202(String bs2q202) {
-        if (this.bs2q202.equals(bs2q202)) return;
-        this.bs2q202 = bs2q202;
-        notifyPropertyChanged(BR.bs2q202);
+    public void setG11803x(String g11803x) {
+        this.g11803x = g11803x;
+        notifyPropertyChanged(BR.g11803x);
     }
 
     @Bindable
-    public String getBs2q203() {
-        return bs2q203;
+    public String getG11804() {
+        return g11804;
     }
 
-    public void setBs2q203(String bs2q203) {
-        if (this.bs2q203.equals(bs2q203)) return;
-        this.bs2q203 = bs2q203;
-        notifyPropertyChanged(BR.bs2q203);
+    public void setG11804(String g11804) {
+        this.g11804 = g11804;
+        notifyPropertyChanged(BR.g11804);
     }
 
     @Bindable
-    public String getBs2q204() {
-        return bs2q204;
+    public String getG11804x() {
+        return g11804x;
     }
 
-    public void setBs2q204(String bs2q204) {
-        if (this.bs2q204.equals(bs2q204)) return;
-        this.bs2q204 = bs2q204;
-        notifyPropertyChanged(BR.bs2q204);
+    public void setG11804x(String g11804x) {
+        this.g11804x = g11804x;
+        notifyPropertyChanged(BR.g11804x);
     }
 
     @Bindable
-    public String getBs2q205() {
-        return bs2q205;
+    public String getG11896() {
+        return g11896;
     }
 
-    public void setBs2q205(String bs2q205) {
-        if (this.bs2q205.equals(bs2q205)) return;
-        this.bs2q205 = bs2q205;
-        notifyPropertyChanged(BR.bs2q205);
+    public void setG11896(String g11896) {
+        this.g11896 = g11896;
+        notifyPropertyChanged(BR.g11896);
     }
 
     @Bindable
-    public String getBs2q206() {
-        return bs2q206;
+    public String getG11896x() {
+        return g11896x;
     }
 
-    public void setBs2q206(String bs2q206) {
-        if (this.bs2q206.equals(bs2q206)) return;
-        this.bs2q206 = bs2q206;
-        notifyPropertyChanged(BR.bs2q206);
+    public void setG11896x(String g11896x) {
+        this.g11896x = g11896x;
+        notifyPropertyChanged(BR.g11896x);
     }
 
     @Bindable
-    public String getBs2q207() {
-        return bs2q207;
+    public String getG11898() {
+        return g11898;
     }
 
-    public void setBs2q207(String bs2q207) {
-        if (this.bs2q207.equals(bs2q207)) return;
-        this.bs2q207 = bs2q207;
-        notifyPropertyChanged(BR.bs2q207);
+    public void setG11898(String g11898) {
+        this.g11898 = g11898;
+        notifyPropertyChanged(BR.g11898);
     }
 
     @Bindable
-    public String getBs2q208() {
-        return bs2q208;
+    public String getG119() {
+        return g119;
     }
 
-    public void setBs2q208(String bs2q208) {
-        if (this.bs2q208.equals(bs2q208)) return;
-        this.bs2q208 = bs2q208;
-        notifyPropertyChanged(BR.bs2q208);
+    public void setG119(String g119) {
+        this.g119 = g119;
+        notifyPropertyChanged(BR.g119);
     }
 
     @Bindable
-    public String getBs2q209() {
-        return bs2q209;
+    public String getG120() {
+        return g120;
     }
 
-    public void setBs2q209(String bs2q209) {
-        if (this.bs2q209.equals(bs2q209)) return;
-        this.bs2q209 = bs2q209;
-        notifyPropertyChanged(BR.bs2q209);
+    public void setG120(String g120) {
+        this.g120 = g120;
+        notifyPropertyChanged(BR.g120);
     }
 
     @Bindable
-    public String getBs2q210() {
-        return bs2q210;
+    public String getG12096x() {
+        return g12096x;
     }
 
-    public void setBs2q210(String bs2q210) {
-        if (this.bs2q210.equals(bs2q210)) return;
-        this.bs2q210 = bs2q210;
-        notifyPropertyChanged(BR.bs2q210);
+    public void setG12096x(String g12096x) {
+        this.g12096x = g12096x;
+        notifyPropertyChanged(BR.g12096x);
     }
 
     @Bindable
-    public String getBs2q211() {
-        return bs2q211;
+    public String getG121() {
+        return g121;
     }
 
-    public void setBs2q211(String bs2q211) {
-        if (this.bs2q211.equals(bs2q211)) return;
-        this.bs2q211 = bs2q211;
-        notifyPropertyChanged(BR.bs2q211);
+    public void setG121(String g121) {
+        this.g121 = g121;
+        notifyPropertyChanged(BR.g121);
     }
 
     @Bindable
-    public String getBs2q212() {
-        return bs2q212;
+    public String getG12196x() {
+        return g12196x;
     }
 
-    public void setBs2q212(String bs2q212) {
-        if (this.bs2q212.equals(bs2q212)) return;
-        this.bs2q212 = bs2q212;
-        notifyPropertyChanged(BR.bs2q212);
+    public void setG12196x(String g12196x) {
+        this.g12196x = g12196x;
+        notifyPropertyChanged(BR.g12196x);
     }
 
     @Bindable
-    public String getBs2q213() {
-        return bs2q213;
+    public String getG124() {
+        return g124;
     }
 
-    public void setBs2q213(String bs2q213) {
-        if (this.bs2q213.equals(bs2q213)) return;
-        this.bs2q213 = bs2q213;
-        notifyPropertyChanged(BR.bs2q213);
+    public void setG124(String g124) {
+        this.g124 = g124;
+        notifyPropertyChanged(BR.g124);
     }
 
     @Bindable
-    public String getBs2q214() {
-        return bs2q214;
+    public String getG12401() {
+        return g12401;
     }
 
-    public void setBs2q214(String bs2q214) {
-        if (this.bs2q214.equals(bs2q214)) return;
-        this.bs2q214 = bs2q214;
-        notifyPropertyChanged(BR.bs2q214);
+    public void setG12401(String g12401) {
+        this.g12401 = g12401;
+        notifyPropertyChanged(BR.g12401);
     }
 
     @Bindable
-    public String getBs2q215() {
-        return bs2q215;
+    public String getG12402() {
+        return g12402;
     }
 
-    public void setBs2q215(String bs2q215) {
-        if (this.bs2q215.equals(bs2q215)) return;
-        this.bs2q215 = bs2q215;
-        notifyPropertyChanged(BR.bs2q215);
+    public void setG12402(String g12402) {
+        this.g12402 = g12402;
+        notifyPropertyChanged(BR.g12402);
     }
 
     @Bindable
-    public String getBs2q216() {
-        return bs2q216;
+    public String getG12403() {
+        return g12403;
     }
 
-    public void setBs2q216(String bs2q216) {
-        if (this.bs2q216.equals(bs2q216)) return;
-        this.bs2q216 = bs2q216;
-        notifyPropertyChanged(BR.bs2q216);
+    public void setG12403(String g12403) {
+        this.g12403 = g12403;
+        notifyPropertyChanged(BR.g12403);
     }
 
     @Bindable
-    public String getBs2q217() {
-        return bs2q217;
+    public String getG12404() {
+        return g12404;
     }
 
-    public void setBs2q217(String bs2q217) {
-        if (this.bs2q217.equals(bs2q217)) return;
-        this.bs2q217 = bs2q217;
-        notifyPropertyChanged(BR.bs2q217);
+    public void setG12404(String g12404) {
+        this.g12404 = g12404;
+        notifyPropertyChanged(BR.g12404);
     }
 
     @Bindable
-    public String getBs2q218() {
-        return bs2q218;
+    public String getG12405() {
+        return g12405;
     }
 
-    public void setBs2q218(String bs2q218) {
-        if (this.bs2q218.equals(bs2q218)) return;
-        this.bs2q218 = bs2q218;
-        notifyPropertyChanged(BR.bs2q218);
+    public void setG12405(String g12405) {
+        this.g12405 = g12405;
+        notifyPropertyChanged(BR.g12405);
     }
 
     @Bindable
-    public String getBs2q296() {
-        return bs2q296;
+    public String getG12406() {
+        return g12406;
     }
 
-    public void setBs2q296(String bs2q296) {
-        if (this.bs2q296.equals(bs2q296)) return;
-        this.bs2q296 = bs2q296;
-        setBs2q296x(bs2q296.equals("96") ? this.bs2q296x : "");
-        notifyPropertyChanged(BR.bs2q296);
+    public void setG12406(String g12406) {
+        this.g12406 = g12406;
+        notifyPropertyChanged(BR.g12406);
     }
 
     @Bindable
-    public String getBs2q296x() {
-        return bs2q296x;
+    public String getG12407() {
+        return g12407;
     }
 
-    public void setBs2q296x(String bs2q296x) {
-        this.bs2q296x = bs2q296x;
-        notifyPropertyChanged(BR.bs2q296x);
+    public void setG12407(String g12407) {
+        this.g12407 = g12407;
+        notifyPropertyChanged(BR.g12407);
     }
 
     @Bindable
-    public String getBs2q3() {
-        return bs2q3;
+    public String getG12408() {
+        return g12408;
     }
 
-    public void setBs2q3(String bs2q3) {
-        this.bs2q3 = bs2q3;
-        setBs2q401(bs2q3.equals("2") ? "" : this.bs2q401);
-        setBs2q402(bs2q3.equals("2") ? "" : this.bs2q402);
-        setBs2q403(bs2q3.equals("2") ? "" : this.bs2q403);
-        setBs2q404(bs2q3.equals("2") ? "" : this.bs2q404);
-        setBs2q405(bs2q3.equals("2") ? "" : this.bs2q405);
-        setBs2q406(bs2q3.equals("2") ? "" : this.bs2q406);
-        setBs2q407(bs2q3.equals("2") ? "" : this.bs2q407);
-        setBs2q408(bs2q3.equals("2") ? "" : this.bs2q408);
-        setBs2q409(bs2q3.equals("2") ? "" : this.bs2q409);
-        setBs2q410(bs2q3.equals("2") ? "" : this.bs2q410);
-        setBs2q411(bs2q3.equals("2") ? "" : this.bs2q411);
-        setBs2q412(bs2q3.equals("2") ? "" : this.bs2q412);
-        setBs2q413(bs2q3.equals("2") ? "" : this.bs2q413);
-        setBs2q414(bs2q3.equals("2") ? "" : this.bs2q414);
-        setBs2q415(bs2q3.equals("2") ? "" : this.bs2q415);
-        setBs2q416(bs2q3.equals("2") ? "" : this.bs2q416);
-        setBs2q417(bs2q3.equals("2") ? "" : this.bs2q417);
-        setBs2q418(bs2q3.equals("2") ? "" : this.bs2q418);
-        setBs2q4096(bs2q3.equals("2") ? "" : this.bs2q4096);
-        setBs2q5(bs2q3.equals("2") ? "" : this.bs2q5);
-        setBs2q601(bs2q3.equals("2") ? "" : this.bs2q601);
-        setBs2q602(bs2q3.equals("2") ? "" : this.bs2q602);
-        setBs2q603(bs2q3.equals("2") ? "" : this.bs2q603);
-        setBs2q604(bs2q3.equals("2") ? "" : this.bs2q604);
-        setBs2q605(bs2q3.equals("2") ? "" : this.bs2q605);
-        setBs2q606(bs2q3.equals("2") ? "" : this.bs2q606);
-        setBs2q607(bs2q3.equals("2") ? "" : this.bs2q607);
-        setBs2q608(bs2q3.equals("2") ? "" : this.bs2q608);
-        setBs2q609(bs2q3.equals("2") ? "" : this.bs2q609);
-        setBs2q6010(bs2q3.equals("2") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q3.equals("2") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q3.equals("2") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q3.equals("2") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q3.equals("2") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q3.equals("2") ? "" : this.bs2q6015);
-        setBs2q696(bs2q3.equals("2") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q3);
+    public void setG12408(String g12408) {
+        this.g12408 = g12408;
+        notifyPropertyChanged(BR.g12408);
     }
 
     @Bindable
-    public String getBs2q4() {
-        return bs2q4;
+    public String getG12409() {
+        return g12409;
     }
 
-    public void setBs2q4(String bs2q4) {
-        this.bs2q4 = bs2q4;
-        notifyPropertyChanged(BR.bs2q4);
+    public void setG12409(String g12409) {
+        this.g12409 = g12409;
+        notifyPropertyChanged(BR.g12409);
     }
 
     @Bindable
-    public String getBs2q401() {
-        return bs2q401;
+    public String getG12410() {
+        return g12410;
     }
 
-    public void setBs2q401(String bs2q401) {
-        if (this.bs2q401.equals(bs2q401)) return;
-        this.bs2q401 = bs2q401;
-        notifyPropertyChanged(BR.bs2q401);
+    public void setG12410(String g12410) {
+        this.g12410 = g12410;
+        notifyPropertyChanged(BR.g12410);
     }
 
     @Bindable
-    public String getBs2q402() {
-        return bs2q402;
+    public String getG12411() {
+        return g12411;
     }
 
-    public void setBs2q402(String bs2q402) {
-        if (this.bs2q402.equals(bs2q402)) return;
-        this.bs2q402 = bs2q402;
-        notifyPropertyChanged(BR.bs2q402);
+    public void setG12411(String g12411) {
+        this.g12411 = g12411;
+        notifyPropertyChanged(BR.g12411);
     }
 
     @Bindable
-    public String getBs2q403() {
-        return bs2q403;
+    public String getG12412() {
+        return g12412;
     }
 
-    public void setBs2q403(String bs2q403) {
-        if (this.bs2q403.equals(bs2q403)) return;
-        this.bs2q403 = bs2q403;
-        notifyPropertyChanged(BR.bs2q403);
+    public void setG12412(String g12412) {
+        this.g12412 = g12412;
+        notifyPropertyChanged(BR.g12412);
     }
 
     @Bindable
-    public String getBs2q404() {
-        return bs2q404;
+    public String getG12413() {
+        return g12413;
     }
 
-    public void setBs2q404(String bs2q404) {
-        if (this.bs2q404.equals(bs2q404)) return;
-        this.bs2q404 = bs2q404;
-        notifyPropertyChanged(BR.bs2q404);
+    public void setG12413(String g12413) {
+        this.g12413 = g12413;
+        notifyPropertyChanged(BR.g12413);
     }
 
     @Bindable
-    public String getBs2q405() {
-        return bs2q405;
+    public String getG128() {
+        return g128;
     }
 
-    public void setBs2q405(String bs2q405) {
-        if (this.bs2q405.equals(bs2q405)) return;
-        this.bs2q405 = bs2q405;
-        notifyPropertyChanged(BR.bs2q405);
+    public void setG128(String g128) {
+        this.g128 = g128;
+        notifyPropertyChanged(BR.g128);
     }
 
     @Bindable
-    public String getBs2q406() {
-        return bs2q406;
+    public String getG129() {
+        return g129;
     }
 
-    public void setBs2q406(String bs2q406) {
-        if (this.bs2q406.equals(bs2q406)) return;
-        this.bs2q406 = bs2q406;
-        notifyPropertyChanged(BR.bs2q406);
+    public void setG129(String g129) {
+        this.g129 = g129;
+        notifyPropertyChanged(BR.g129);
     }
 
     @Bindable
-    public String getBs2q407() {
-        return bs2q407;
+    public String getH101() {
+        return h101;
     }
 
-    public void setBs2q407(String bs2q407) {
-        if (this.bs2q407.equals(bs2q407)) return;
-        this.bs2q407 = bs2q407;
-        notifyPropertyChanged(BR.bs2q407);
+    public void setH101(String h101) {
+        this.h101 = h101;
+        notifyPropertyChanged(BR.h101);
     }
 
     @Bindable
-    public String getBs2q408() {
-        return bs2q408;
+    public String getH101mx() {
+        return h101mx;
     }
 
-    public void setBs2q408(String bs2q408) {
-        if (this.bs2q408.equals(bs2q408)) return;
-        this.bs2q408 = bs2q408;
-        notifyPropertyChanged(BR.bs2q408);
+    public void setH101mx(String h101mx) {
+        this.h101mx = h101mx;
+        notifyPropertyChanged(BR.h101mx);
     }
 
     @Bindable
-    public String getBs2q409() {
-        return bs2q409;
+    public String getH101wx() {
+        return h101wx;
     }
 
-    public void setBs2q409(String bs2q409) {
-        if (this.bs2q409.equals(bs2q409)) return;
-        this.bs2q409 = bs2q409;
-        notifyPropertyChanged(BR.bs2q409);
+    public void setH101wx(String h101wx) {
+        this.h101wx = h101wx;
+        notifyPropertyChanged(BR.h101wx);
     }
 
     @Bindable
-    public String getBs2q410() {
-        return bs2q410;
+    public String getH102() {
+        return h102;
     }
 
-    public void setBs2q410(String bs2q410) {
-        if (this.bs2q410.equals(bs2q410)) return;
-        this.bs2q410 = bs2q410;
-        notifyPropertyChanged(BR.bs2q410);
+    public void setH102(String h102) {
+        this.h102 = h102;
+        notifyPropertyChanged(BR.h102);
     }
 
     @Bindable
-    public String getBs2q411() {
-        return bs2q411;
+    public String getH103() {
+        return h103;
     }
 
-    public void setBs2q411(String bs2q411) {
-        if (this.bs2q411.equals(bs2q411)) return;
-        this.bs2q411 = bs2q411;
-        notifyPropertyChanged(BR.bs2q411);
+    public void setH103(String h103) {
+        this.h103 = h103;
+        notifyPropertyChanged(BR.h103);
     }
 
     @Bindable
-    public String getBs2q412() {
-        return bs2q412;
+    public String getH104() {
+        return h104;
     }
 
-    public void setBs2q412(String bs2q412) {
-        if (this.bs2q412.equals(bs2q412)) return;
-        this.bs2q412 = bs2q412;
-        setBs2q5(bs2q412.equals("12") ? "" : this.bs2q5);
-        setBs2q601(bs2q412.equals("12") ? "" : this.bs2q601);
-        setBs2q602(bs2q412.equals("12") ? "" : this.bs2q602);
-        setBs2q603(bs2q412.equals("12") ? "" : this.bs2q603);
-        setBs2q604(bs2q412.equals("12") ? "" : this.bs2q604);
-        setBs2q605(bs2q412.equals("12") ? "" : this.bs2q605);
-        setBs2q606(bs2q412.equals("12") ? "" : this.bs2q606);
-        setBs2q607(bs2q412.equals("12") ? "" : this.bs2q607);
-        setBs2q608(bs2q412.equals("12") ? "" : this.bs2q608);
-        setBs2q609(bs2q412.equals("12") ? "" : this.bs2q609);
-        setBs2q6010(bs2q412.equals("12") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q412.equals("12") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q412.equals("12") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q412.equals("12") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q412.equals("12") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q412.equals("12") ? "" : this.bs2q6015);
-        setBs2q696(bs2q412.equals("12") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q412);
+    public void setH104(String h104) {
+        this.h104 = h104;
+        notifyPropertyChanged(BR.h104);
     }
 
     @Bindable
-    public String getBs2q413() {
-        return bs2q413;
+    public String getH10401() {
+        return h10401;
     }
 
-    public void setBs2q413(String bs2q413) {
-        if (this.bs2q413.equals(bs2q413)) return;
-        this.bs2q413 = bs2q413;
-        setBs2q5(bs2q413.equals("13") ? "" : this.bs2q5);
-        setBs2q601(bs2q413.equals("13") ? "" : this.bs2q601);
-        setBs2q602(bs2q413.equals("13") ? "" : this.bs2q602);
-        setBs2q603(bs2q413.equals("13") ? "" : this.bs2q603);
-        setBs2q604(bs2q413.equals("13") ? "" : this.bs2q604);
-        setBs2q605(bs2q413.equals("13") ? "" : this.bs2q605);
-        setBs2q606(bs2q413.equals("13") ? "" : this.bs2q606);
-        setBs2q607(bs2q413.equals("13") ? "" : this.bs2q607);
-        setBs2q608(bs2q413.equals("13") ? "" : this.bs2q608);
-        setBs2q609(bs2q413.equals("13") ? "" : this.bs2q609);
-        setBs2q6010(bs2q413.equals("13") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q413.equals("13") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q413.equals("13") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q413.equals("13") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q413.equals("13") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q413.equals("13") ? "" : this.bs2q6015);
-        setBs2q696(bs2q413.equals("13") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q413);
+    public void setH10401(String h10401) {
+        this.h10401 = h10401;
+        notifyPropertyChanged(BR.h10401);
     }
 
     @Bindable
-    public String getBs2q414() {
-        return bs2q414;
+    public String getH10402() {
+        return h10402;
     }
 
-    public void setBs2q414(String bs2q414) {
-        if (this.bs2q414.equals(bs2q414)) return;
-        this.bs2q414 = bs2q414;
-        setBs2q5(bs2q414.equals("14") ? "" : this.bs2q5);
-        setBs2q601(bs2q414.equals("14") ? "" : this.bs2q601);
-        setBs2q602(bs2q414.equals("14") ? "" : this.bs2q602);
-        setBs2q603(bs2q414.equals("14") ? "" : this.bs2q603);
-        setBs2q604(bs2q414.equals("14") ? "" : this.bs2q604);
-        setBs2q605(bs2q414.equals("14") ? "" : this.bs2q605);
-        setBs2q606(bs2q414.equals("14") ? "" : this.bs2q606);
-        setBs2q607(bs2q414.equals("14") ? "" : this.bs2q607);
-        setBs2q608(bs2q414.equals("14") ? "" : this.bs2q608);
-        setBs2q609(bs2q414.equals("14") ? "" : this.bs2q609);
-        setBs2q6010(bs2q414.equals("14") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q414.equals("14") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q414.equals("14") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q414.equals("14") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q414.equals("14") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q414.equals("14") ? "" : this.bs2q6015);
-        setBs2q696(bs2q414.equals("14") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q414);
+    public void setH10402(String h10402) {
+        this.h10402 = h10402;
+        notifyPropertyChanged(BR.h10402);
     }
 
     @Bindable
-    public String getBs2q415() {
-        return bs2q415;
+    public String getH10403() {
+        return h10403;
     }
 
-    public void setBs2q415(String bs2q415) {
-        if (this.bs2q415.equals(bs2q415)) return;
-        this.bs2q415 = bs2q415;
-        setBs2q5(bs2q415.equals("15") ? "" : this.bs2q5);
-        setBs2q601(bs2q415.equals("15") ? "" : this.bs2q601);
-        setBs2q602(bs2q415.equals("15") ? "" : this.bs2q602);
-        setBs2q603(bs2q415.equals("15") ? "" : this.bs2q603);
-        setBs2q604(bs2q415.equals("15") ? "" : this.bs2q604);
-        setBs2q605(bs2q415.equals("15") ? "" : this.bs2q605);
-        setBs2q606(bs2q415.equals("15") ? "" : this.bs2q606);
-        setBs2q607(bs2q415.equals("15") ? "" : this.bs2q607);
-        setBs2q608(bs2q415.equals("15") ? "" : this.bs2q608);
-        setBs2q609(bs2q415.equals("15") ? "" : this.bs2q609);
-        setBs2q6010(bs2q415.equals("15") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q415.equals("15") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q415.equals("15") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q415.equals("15") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q415.equals("15") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q415.equals("15") ? "" : this.bs2q6015);
-        setBs2q696(bs2q415.equals("15") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q415);
+    public void setH10403(String h10403) {
+        this.h10403 = h10403;
+        notifyPropertyChanged(BR.h10403);
     }
 
     @Bindable
-    public String getBs2q416() {
-        return bs2q416;
+    public String getH10496() {
+        return h10496;
     }
 
-    public void setBs2q416(String bs2q416) {
-        if (this.bs2q416.equals(bs2q416)) return;
-        this.bs2q416 = bs2q416;
-        setBs2q5(bs2q416.equals("16") ? "" : this.bs2q5);
-        setBs2q601(bs2q416.equals("16") ? "" : this.bs2q601);
-        setBs2q602(bs2q416.equals("16") ? "" : this.bs2q602);
-        setBs2q603(bs2q416.equals("16") ? "" : this.bs2q603);
-        setBs2q604(bs2q416.equals("16") ? "" : this.bs2q604);
-        setBs2q605(bs2q416.equals("16") ? "" : this.bs2q605);
-        setBs2q606(bs2q416.equals("16") ? "" : this.bs2q606);
-        setBs2q607(bs2q416.equals("16") ? "" : this.bs2q607);
-        setBs2q608(bs2q416.equals("16") ? "" : this.bs2q608);
-        setBs2q609(bs2q416.equals("16") ? "" : this.bs2q609);
-        setBs2q6010(bs2q416.equals("16") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q416.equals("16") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q416.equals("16") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q416.equals("16") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q416.equals("16") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q416.equals("16") ? "" : this.bs2q6015);
-        setBs2q696(bs2q416.equals("16") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q416);
+    public void setH10496(String h10496) {
+        this.h10496 = h10496;
+        notifyPropertyChanged(BR.h10496);
     }
 
     @Bindable
-    public String getBs2q417() {
-        return bs2q417;
+    public String getH105() {
+        return h105;
     }
 
-    public void setBs2q417(String bs2q417) {
-        if (this.bs2q417.equals(bs2q417)) return;
-        this.bs2q417 = bs2q417;
-        setBs2q5(bs2q417.equals("17") ? "" : this.bs2q5);
-        setBs2q601(bs2q417.equals("17") ? "" : this.bs2q601);
-        setBs2q602(bs2q417.equals("17") ? "" : this.bs2q602);
-        setBs2q603(bs2q417.equals("17") ? "" : this.bs2q603);
-        setBs2q604(bs2q417.equals("17") ? "" : this.bs2q604);
-        setBs2q605(bs2q417.equals("17") ? "" : this.bs2q605);
-        setBs2q606(bs2q417.equals("17") ? "" : this.bs2q606);
-        setBs2q607(bs2q417.equals("17") ? "" : this.bs2q607);
-        setBs2q608(bs2q417.equals("17") ? "" : this.bs2q608);
-        setBs2q609(bs2q417.equals("17") ? "" : this.bs2q609);
-        setBs2q6010(bs2q417.equals("17") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q417.equals("17") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q417.equals("17") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q417.equals("17") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q417.equals("17") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q417.equals("17") ? "" : this.bs2q6015);
-        setBs2q696(bs2q417.equals("17") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q417);
+    public void setH105(String h105) {
+        this.h105 = h105;
+        notifyPropertyChanged(BR.h105);
     }
 
     @Bindable
-    public String getBs2q418() {
-        return bs2q418;
+    public String getH106() {
+        return h106;
     }
 
-    public void setBs2q418(String bs2q418) {
-        if (this.bs2q418.equals(bs2q418)) return;
-        this.bs2q418 = bs2q418;
-        setBs2q5(bs2q418.equals("18") ? "" : this.bs2q5);
-        setBs2q601(bs2q418.equals("18") ? "" : this.bs2q601);
-        setBs2q602(bs2q418.equals("18") ? "" : this.bs2q602);
-        setBs2q603(bs2q418.equals("18") ? "" : this.bs2q603);
-        setBs2q604(bs2q418.equals("18") ? "" : this.bs2q604);
-        setBs2q605(bs2q418.equals("18") ? "" : this.bs2q605);
-        setBs2q606(bs2q418.equals("18") ? "" : this.bs2q606);
-        setBs2q607(bs2q418.equals("18") ? "" : this.bs2q607);
-        setBs2q608(bs2q418.equals("18") ? "" : this.bs2q608);
-        setBs2q609(bs2q418.equals("18") ? "" : this.bs2q609);
-        setBs2q6010(bs2q418.equals("18") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q418.equals("18") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q418.equals("18") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q418.equals("18") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q418.equals("18") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q418.equals("18") ? "" : this.bs2q6015);
-        setBs2q696(bs2q418.equals("18") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q418);
+    public void setH106(String h106) {
+        this.h106 = h106;
+        notifyPropertyChanged(BR.h106);
     }
 
     @Bindable
-    public String getBs2q466() {
-        return bs2q466;
+    public String getH1061x() {
+        return h1061x;
     }
 
-    public void setBs2q466(String bs2q466) {
-        if (this.bs2q466.equals(bs2q466)) return;
-        this.bs2q466 = bs2q466;
-        setBs2q401(bs2q466.equals("66") ? "" : this.bs2q401);
-        setBs2q402(bs2q466.equals("66") ? "" : this.bs2q402);
-        setBs2q403(bs2q466.equals("66") ? "" : this.bs2q403);
-        setBs2q404(bs2q466.equals("66") ? "" : this.bs2q404);
-        setBs2q405(bs2q466.equals("66") ? "" : this.bs2q405);
-        setBs2q406(bs2q466.equals("66") ? "" : this.bs2q406);
-        setBs2q407(bs2q466.equals("66") ? "" : this.bs2q407);
-        setBs2q408(bs2q466.equals("66") ? "" : this.bs2q408);
-        setBs2q409(bs2q466.equals("66") ? "" : this.bs2q409);
-        setBs2q410(bs2q466.equals("66") ? "" : this.bs2q410);
-        setBs2q411(bs2q466.equals("66") ? "" : this.bs2q411);
-        setBs2q412(bs2q466.equals("66") ? "" : this.bs2q412);
-        setBs2q413(bs2q466.equals("66") ? "" : this.bs2q413);
-        setBs2q414(bs2q466.equals("66") ? "" : this.bs2q414);
-        setBs2q415(bs2q466.equals("66") ? "" : this.bs2q415);
-        setBs2q416(bs2q466.equals("66") ? "" : this.bs2q416);
-        setBs2q417(bs2q466.equals("66") ? "" : this.bs2q417);
-        setBs2q418(bs2q466.equals("66") ? "" : this.bs2q418);
-        setBs2q4096(bs2q466.equals("66") ? "" : this.bs2q4096);
-        setBs2q5(bs2q466.equals("66") ? "" : this.bs2q5);
-        setBs2q601(bs2q466.equals("66") ? "" : this.bs2q601);
-        setBs2q602(bs2q466.equals("66") ? "" : this.bs2q602);
-        setBs2q603(bs2q466.equals("66") ? "" : this.bs2q603);
-        setBs2q604(bs2q466.equals("66") ? "" : this.bs2q604);
-        setBs2q605(bs2q466.equals("66") ? "" : this.bs2q605);
-        setBs2q606(bs2q466.equals("66") ? "" : this.bs2q606);
-        setBs2q607(bs2q466.equals("66") ? "" : this.bs2q607);
-        setBs2q608(bs2q466.equals("66") ? "" : this.bs2q608);
-        setBs2q609(bs2q466.equals("66") ? "" : this.bs2q609);
-        setBs2q6010(bs2q466.equals("66") ? "" : this.bs2q6010);
-        setBs2q6011(bs2q466.equals("66") ? "" : this.bs2q6011);
-        setBs2q6012(bs2q466.equals("66") ? "" : this.bs2q6012);
-        setBs2q6013(bs2q466.equals("66") ? "" : this.bs2q6013);
-        setBs2q6014(bs2q466.equals("66") ? "" : this.bs2q6014);
-        setBs2q6015(bs2q466.equals("66") ? "" : this.bs2q6015);
-        setBs2q696(bs2q466.equals("66") ? "" : this.bs2q696);
-        notifyPropertyChanged(BR.bs2q466);
+    public void setH1061x(String h1061x) {
+        this.h1061x = h1061x;
+        notifyPropertyChanged(BR.h1061x);
     }
 
     @Bindable
-    public String getBs2q4096() {
-        return bs2q4096;
+    public String getH107() {
+        return h107;
     }
 
-    public void setBs2q4096(String bs2q4096) {
-        if (this.bs2q4096.equals(bs2q4096)) return;
-        this.bs2q4096 = bs2q4096;
-        setBs2q4096x(bs2q4096.equals("96") ? this.bs2q4096x : "");
-        notifyPropertyChanged(BR.bs2q4096);
+    public void setH107(String h107) {
+        this.h107 = h107;
+        notifyPropertyChanged(BR.h107);
     }
 
     @Bindable
-    public String getBs2q4096x() {
-        return bs2q4096x;
+    public String getH108() {
+        return h108;
     }
 
-    public void setBs2q4096x(String bs2q4096x) {
-        this.bs2q4096x = bs2q4096x;
-        notifyPropertyChanged(BR.bs2q4096x);
+    public void setH108(String h108) {
+        this.h108 = h108;
+        notifyPropertyChanged(BR.h108);
     }
 
     @Bindable
-    public String getBs2q5() {
-        return bs2q5;
+    public String getH10896x() {
+        return h10896x;
     }
 
-    public void setBs2q5(String bs2q5) {
-        this.bs2q5 = bs2q5;
-        notifyPropertyChanged(BR.bs2q5);
+    public void setH10896x(String h10896x) {
+        this.h10896x = h10896x;
+        notifyPropertyChanged(BR.h10896x);
     }
 
     @Bindable
-    public String getBs2q6() {
-        return bs2q6;
+    public String getH109() {
+        return h109;
     }
 
-    public void setBs2q6(String bs2q6) {
-        this.bs2q6 = bs2q6;
-        notifyPropertyChanged(BR.bs2q6);
+    public void setH109(String h109) {
+        this.h109 = h109;
+        notifyPropertyChanged(BR.h109);
     }
 
     @Bindable
-    public String getBs2q601() {
-        return bs2q601;
+    public String getH10901() {
+        return h10901;
     }
 
-    public void setBs2q601(String bs2q601) {
-        if (this.bs2q601.equals(bs2q601)) return;
-        this.bs2q601 = bs2q601;
-        notifyPropertyChanged(BR.bs2q601);
+    public void setH10901(String h10901) {
+        this.h10901 = h10901;
+        notifyPropertyChanged(BR.h10901);
     }
 
     @Bindable
-    public String getBs2q602() {
-        return bs2q602;
+    public String getH10902() {
+        return h10902;
     }
 
-    public void setBs2q602(String bs2q602) {
-        if (this.bs2q602.equals(bs2q602)) return;
-        this.bs2q602 = bs2q602;
-        notifyPropertyChanged(BR.bs2q602);
+    public void setH10902(String h10902) {
+        this.h10902 = h10902;
+        notifyPropertyChanged(BR.h10902);
     }
 
     @Bindable
-    public String getBs2q603() {
-        return bs2q603;
+    public String getH10903() {
+        return h10903;
     }
 
-    public void setBs2q603(String bs2q603) {
-        if (this.bs2q603.equals(bs2q603)) return;
-        this.bs2q603 = bs2q603;
-        notifyPropertyChanged(BR.bs2q603);
+    public void setH10903(String h10903) {
+        this.h10903 = h10903;
+        notifyPropertyChanged(BR.h10903);
     }
 
     @Bindable
-    public String getBs2q604() {
-        return bs2q604;
+    public String getH10904() {
+        return h10904;
     }
 
-    public void setBs2q604(String bs2q604) {
-        if (this.bs2q604.equals(bs2q604)) return;
-        this.bs2q604 = bs2q604;
-        notifyPropertyChanged(BR.bs2q604);
+    public void setH10904(String h10904) {
+        this.h10904 = h10904;
+        notifyPropertyChanged(BR.h10904);
     }
 
     @Bindable
-    public String getBs2q605() {
-        return bs2q605;
+    public String getH10905() {
+        return h10905;
     }
 
-    public void setBs2q605(String bs2q605) {
-        if (this.bs2q605.equals(bs2q605)) return;
-        this.bs2q605 = bs2q605;
-        notifyPropertyChanged(BR.bs2q605);
+    public void setH10905(String h10905) {
+        this.h10905 = h10905;
+        notifyPropertyChanged(BR.h10905);
     }
 
     @Bindable
-    public String getBs2q606() {
-        return bs2q606;
+    public String getH10906() {
+        return h10906;
     }
 
-    public void setBs2q606(String bs2q606) {
-        if (this.bs2q606.equals(bs2q606)) return;
-        this.bs2q606 = bs2q606;
-        setBs2q606x(bs2q606.equals("6") ? this.bs2q606x : "");
-        notifyPropertyChanged(BR.bs2q606);
+    public void setH10906(String h10906) {
+        this.h10906 = h10906;
+        notifyPropertyChanged(BR.h10906);
     }
 
     @Bindable
-    public String getBs2q606x() {
-        return bs2q606x;
+    public String getH10907() {
+        return h10907;
     }
 
-    public void setBs2q606x(String bs2q606x) {
-        this.bs2q606x = bs2q606x;
-        notifyPropertyChanged(BR.bs2q606x);
+    public void setH10907(String h10907) {
+        this.h10907 = h10907;
+        notifyPropertyChanged(BR.h10907);
     }
 
     @Bindable
-    public String getBs2q607() {
-        return bs2q607;
+    public String getH10997() {
+        return h10997;
     }
 
-    public void setBs2q607(String bs2q607) {
-        if (this.bs2q607.equals(bs2q607)) return;
-        this.bs2q607 = bs2q607;
-        notifyPropertyChanged(BR.bs2q607);
+    public void setH10997(String h10997) {
+        this.h10997 = h10997;
+        notifyPropertyChanged(BR.h10997);
     }
 
     @Bindable
-    public String getBs2q608() {
-        return bs2q608;
+    public String getH10996() {
+        return h10996;
     }
 
-    public void setBs2q608(String bs2q608) {
-        if (this.bs2q608.equals(bs2q608)) return;
-        this.bs2q608 = bs2q608;
-        notifyPropertyChanged(BR.bs2q608);
+    public void setH10996(String h10996) {
+        this.h10996 = h10996;
+        notifyPropertyChanged(BR.h10996);
     }
 
     @Bindable
-    public String getBs2q609() {
-        return bs2q609;
+    public String getH10996x() {
+        return h10996x;
     }
 
-    public void setBs2q609(String bs2q609) {
-        if (this.bs2q609.equals(bs2q609)) return;
-        this.bs2q609 = bs2q609;
-        notifyPropertyChanged(BR.bs2q609);
+    public void setH10996x(String h10996x) {
+        this.h10996x = h10996x;
+        notifyPropertyChanged(BR.h10996x);
     }
 
     @Bindable
-    public String getBs2q6010() {
-        return bs2q6010;
+    public String getH110() {
+        return h110;
     }
 
-    public void setBs2q6010(String bs2q6010) {
-        if (this.bs2q6010.equals(bs2q6010)) return;
-        this.bs2q6010 = bs2q6010;
-        setBs2q6010x(bs2q6010.equals("10") ? this.bs2q6010x : "");
-        notifyPropertyChanged(BR.bs2q6010);
+    public void setH110(String h110) {
+        this.h110 = h110;
+        notifyPropertyChanged(BR.h110);
     }
 
     @Bindable
-    public String getBs2q6010x() {
-        return bs2q6010x;
+    public String getH111() {
+        return h111;
     }
 
-    public void setBs2q6010x(String bs2q6010x) {
-        this.bs2q6010x = bs2q6010x;
-        notifyPropertyChanged(BR.bs2q6010x);
+    public void setH111(String h111) {
+        this.h111 = h111;
+        notifyPropertyChanged(BR.h111);
     }
 
     @Bindable
-    public String getBs2q6011() {
-        return bs2q6011;
+    public String getH112() {
+        return h112;
     }
 
-    public void setBs2q6011(String bs2q6011) {
-        if (this.bs2q6011.equals(bs2q6011)) return;
-        this.bs2q6011 = bs2q6011;
-        setBs2q6011x(bs2q6011.equals("11") ? this.bs2q6011x : "");
-        notifyPropertyChanged(BR.bs2q6011);
+    public void setH112(String h112) {
+        this.h112 = h112;
+        notifyPropertyChanged(BR.h112);
     }
 
     @Bindable
-    public String getBs2q6011x() {
-        return bs2q6011x;
+    public String getH113() {
+        return h113;
     }
 
-    public void setBs2q6011x(String bs2q6011x) {
-        this.bs2q6011x = bs2q6011x;
-        notifyPropertyChanged(BR.bs2q6011x);
+    public void setH113(String h113) {
+        this.h113 = h113;
+        notifyPropertyChanged(BR.h113);
     }
 
     @Bindable
-    public String getBs2q6012() {
-        return bs2q6012;
+    public String getH114() {
+        return h114;
     }
 
-    public void setBs2q6012(String bs2q6012) {
-        if (this.bs2q6012.equals(bs2q6012)) return;
-        this.bs2q6012 = bs2q6012;
-        notifyPropertyChanged(BR.bs2q6012);
+    public void setH114(String h114) {
+        this.h114 = h114;
+        notifyPropertyChanged(BR.h114);
     }
 
     @Bindable
-    public String getBs2q6013() {
-        return bs2q6013;
+    public String getH115() {
+        return h115;
     }
 
-    public void setBs2q6013(String bs2q6013) {
-        if (this.bs2q6013.equals(bs2q6013)) return;
-        this.bs2q6013 = bs2q6013;
-        notifyPropertyChanged(BR.bs2q6013);
+    public void setH115(String h115) {
+        this.h115 = h115;
+        notifyPropertyChanged(BR.h115);
     }
 
     @Bindable
-    public String getBs2q6014() {
-        return bs2q6014;
+    public String getH11501() {
+        return h11501;
     }
 
-    public void setBs2q6014(String bs2q6014) {
-        if (this.bs2q6014.equals(bs2q6014)) return;
-        this.bs2q6014 = bs2q6014;
-        notifyPropertyChanged(BR.bs2q6014);
+    public void setH11501(String h11501) {
+        this.h11501 = h11501;
+        notifyPropertyChanged(BR.h11501);
     }
 
     @Bindable
-    public String getBs2q6015() {
-        return bs2q6015;
+    public String getH11502() {
+        return h11502;
     }
 
-    public void setBs2q6015(String bs2q6015) {
-        if (this.bs2q6015.equals(bs2q6015)) return;
-        this.bs2q6015 = bs2q6015;
-        notifyPropertyChanged(BR.bs2q6015);
+    public void setH11502(String h11502) {
+        this.h11502 = h11502;
+        notifyPropertyChanged(BR.h11502);
     }
 
     @Bindable
-    public String getBs2q696() {
-        return bs2q696;
+    public String getH11503() {
+        return h11503;
     }
 
-    public void setBs2q696(String bs2q696) {
-        if (this.bs2q696.equals(bs2q696)) return;
-        this.bs2q696 = bs2q696;
-        setBs2q696x(bs2q696.equals("96") ? this.bs2q696x : "");
-        notifyPropertyChanged(BR.bs2q696);
+    public void setH11503(String h11503) {
+        this.h11503 = h11503;
+        notifyPropertyChanged(BR.h11503);
     }
 
     @Bindable
-    public String getBs2q696x() {
-        return bs2q696x;
+    public String getH11504() {
+        return h11504;
     }
 
-    public void setBs2q696x(String bs2q696x) {
-        this.bs2q696x = bs2q696x;
-        notifyPropertyChanged(BR.bs2q696x);
+    public void setH11504(String h11504) {
+        this.h11504 = h11504;
+        notifyPropertyChanged(BR.h11504);
     }
 
     @Bindable
-    public String getBs2q7() {
-        return bs2q7;
+    public String getH11505() {
+        return h11505;
     }
 
-    public void setBs2q7(String bs2q7) {
-        this.bs2q7 = bs2q7;
-        setBs2q796x(bs2q7.equals("96") ? this.bs2q796x : "");
-        notifyPropertyChanged(BR.bs2q7);
+    public void setH11505(String h11505) {
+        this.h11505 = h11505;
+        notifyPropertyChanged(BR.h11505);
     }
 
     @Bindable
-    public String getBs2q796x() {
-        return bs2q796x;
+    public String getH11506() {
+        return h11506;
     }
 
-    public void setBs2q796x(String bs2q796x) {
-        this.bs2q796x = bs2q796x;
-        notifyPropertyChanged(BR.bs2q796x);
+    public void setH11506(String h11506) {
+        this.h11506 = h11506;
+        notifyPropertyChanged(BR.h11506);
     }
 
     @Bindable
-    public String getBs2q8() {
-        return bs2q8;
+    public String getH11507() {
+        return h11507;
     }
 
-    public void setBs2q8(String bs2q8) {
-        this.bs2q8 = bs2q8;
-        notifyPropertyChanged(BR.bs2q8);
+    public void setH11507(String h11507) {
+        this.h11507 = h11507;
+        notifyPropertyChanged(BR.h11507);
     }
 
     @Bindable
-    public String getBs2q801() {
-        return bs2q801;
+    public String getH11508() {
+        return h11508;
     }
 
-    public void setBs2q801(String bs2q801) {
-        if (this.bs2q801.equals(bs2q801)) return;
-        this.bs2q801 = bs2q801;
-        notifyPropertyChanged(BR.bs2q801);
+    public void setH11508(String h11508) {
+        this.h11508 = h11508;
+        notifyPropertyChanged(BR.h11508);
     }
 
     @Bindable
-    public String getBs2q802() {
-        return bs2q802;
+    public String getH11509() {
+        return h11509;
     }
 
-    public void setBs2q802(String bs2q802) {
-        if (this.bs2q802.equals(bs2q802)) return;
-        this.bs2q802 = bs2q802;
-        notifyPropertyChanged(BR.bs2q802);
+    public void setH11509(String h11509) {
+        this.h11509 = h11509;
+        notifyPropertyChanged(BR.h11509);
     }
 
     @Bindable
-    public String getBs2q803() {
-        return bs2q803;
+    public String getH11596() {
+        return h11596;
     }
 
-    public void setBs2q803(String bs2q803) {
-        if (this.bs2q803.equals(bs2q803)) return;
-        this.bs2q803 = bs2q803;
-        notifyPropertyChanged(BR.bs2q803);
+    public void setH11596(String h11596) {
+        this.h11596 = h11596;
+        notifyPropertyChanged(BR.h11596);
     }
 
     @Bindable
-    public String getBs2q804() {
-        return bs2q804;
+    public String getH11596x() {
+        return h11596x;
     }
 
-    public void setBs2q804(String bs2q804) {
-        if (this.bs2q804.equals(bs2q804)) return;
-        this.bs2q804 = bs2q804;
-        notifyPropertyChanged(BR.bs2q804);
+    public void setH11596x(String h11596x) {
+        this.h11596x = h11596x;
+        notifyPropertyChanged(BR.h11596x);
     }
 
     @Bindable
-    public String getBs2q898() {
-        return bs2q898;
+    public String getH116() {
+        return h116;
     }
 
-    public void setBs2q898(String bs2q898) {
-        if (this.bs2q898.equals(bs2q898)) return;
-        this.bs2q898 = bs2q898;
-        setBs2q801(bs2q898.equals("98") ? "" : this.bs2q801);
-        setBs2q802(bs2q898.equals("98") ? "" : this.bs2q802);
-        setBs2q803(bs2q898.equals("98") ? "" : this.bs2q803);
-        setBs2q804(bs2q898.equals("98") ? "" : this.bs2q804);
-        setBs2q896(bs2q898.equals("98") ? "" : this.bs2q896);
-        notifyPropertyChanged(BR.bs2q898);
+    public void setH116(String h116) {
+        this.h116 = h116;
+        notifyPropertyChanged(BR.h116);
     }
 
     @Bindable
-    public String getBs2q896() {
-        return bs2q896;
+    public String getH11701() {
+        return h11701;
     }
 
-    public void setBs2q896(String bs2q896) {
-        if (this.bs2q896.equals(bs2q896)) return;
-        this.bs2q896 = bs2q896;
-        setBs2q896x(bs2q896.equals("96") ? this.bs2q896x : "");
-        notifyPropertyChanged(BR.bs2q896);
+    public void setH11701(String h11701) {
+        this.h11701 = h11701;
+        notifyPropertyChanged(BR.h11701);
     }
 
     @Bindable
-    public String getBs2q896x() {
-        return bs2q896x;
+    public String getH118() {
+        return h118;
     }
 
-    public void setBs2q896x(String bs2q896x) {
-        this.bs2q896x = bs2q896x;
-        notifyPropertyChanged(BR.bs2q896x);
+    public void setH118(String h118) {
+        this.h118 = h118;
+        notifyPropertyChanged(BR.h118);
     }
 
     @Bindable
-    public String getBs3q1() {
-        return bs3q1;
+    public String getH119() {
+        return h119;
     }
 
-    public void setBs3q1(String bs3q1) {
-        this.bs3q1 = bs3q1;
-        notifyPropertyChanged(BR.bs3q1);
+    public void setH119(String h119) {
+        this.h119 = h119;
+        notifyPropertyChanged(BR.h119);
     }
 
     @Bindable
-    public String getBs3q101() {
-        return bs3q101;
+    public String getH120() {
+        return h120;
     }
 
-    public void setBs3q101(String bs3q101) {
-        if (this.bs3q101.equals(bs3q101)) return;
-        this.bs3q101 = bs3q101;
-        notifyPropertyChanged(BR.bs3q101);
+    public void setH120(String h120) {
+        this.h120 = h120;
+        notifyPropertyChanged(BR.h120);
     }
 
     @Bindable
-    public String getBs3q102() {
-        return bs3q102;
+    public String getH121() {
+        return h121;
     }
 
-    public void setBs3q102(String bs3q102) {
-        if (this.bs3q102.equals(bs3q102)) return;
-        this.bs3q102 = bs3q102;
-        notifyPropertyChanged(BR.bs3q102);
+    public void setH121(String h121) {
+        this.h121 = h121;
+        notifyPropertyChanged(BR.h121);
     }
 
     @Bindable
-    public String getBs3q103() {
-        return bs3q103;
+    public String getH122() {
+        return h122;
     }
 
-    public void setBs3q103(String bs3q103) {
-        if (this.bs3q103.equals(bs3q103)) return;
-        this.bs3q103 = bs3q103;
-        notifyPropertyChanged(BR.bs3q103);
+    public void setH122(String h122) {
+        this.h122 = h122;
+        notifyPropertyChanged(BR.h122);
     }
 
     @Bindable
-    public String getBs3q104() {
-        return bs3q104;
+    public String getH1221x() {
+        return h1221x;
     }
 
-    public void setBs3q104(String bs3q104) {
-        if (this.bs3q104.equals(bs3q104)) return;
-        this.bs3q104 = bs3q104;
-        notifyPropertyChanged(BR.bs3q104);
+    public void setH1221x(String h1221x) {
+        this.h1221x = h1221x;
+        notifyPropertyChanged(BR.h1221x);
     }
 
     @Bindable
-    public String getBs3q105() {
-        return bs3q105;
+    public String getH123() {
+        return h123;
     }
 
-    public void setBs3q105(String bs3q105) {
-        if (this.bs3q105.equals(bs3q105)) return;
-        this.bs3q105 = bs3q105;
-        notifyPropertyChanged(BR.bs3q105);
+    public void setH123(String h123) {
+        this.h123 = h123;
+        notifyPropertyChanged(BR.h123);
     }
 
     @Bindable
-    public String getBs3q106() {
-        return bs3q106;
+    public String getH124() {
+        return h124;
     }
 
-    public void setBs3q106(String bs3q106) {
-        if (this.bs3q106.equals(bs3q106)) return;
-        this.bs3q106 = bs3q106;
-        notifyPropertyChanged(BR.bs3q106);
+    public void setH124(String h124) {
+        this.h124 = h124;
+        notifyPropertyChanged(BR.h124);
     }
 
     @Bindable
-    public String getBs3q107() {
-        return bs3q107;
+    public String getH125() {
+        return h125;
     }
 
-    public void setBs3q107(String bs3q107) {
-        if (this.bs3q107.equals(bs3q107)) return;
-        this.bs3q107 = bs3q107;
-        notifyPropertyChanged(BR.bs3q107);
+    public void setH125(String h125) {
+        this.h125 = h125;
+        notifyPropertyChanged(BR.h125);
     }
 
     @Bindable
-    public String getBs3q197() {
-        return bs3q197;
+    public String getH126() {
+        return h126;
     }
 
-    public void setBs3q197(String bs3q197) {
-        if (this.bs3q197.equals(bs3q197)) return;
-        this.bs3q197 = bs3q197;
-        setBs3q101(bs3q197.equals("97") ? "" : this.bs3q101);
-        setBs3q102(bs3q197.equals("97") ? "" : this.bs3q102);
-        setBs3q103(bs3q197.equals("97") ? "" : this.bs3q103);
-        setBs3q104(bs3q197.equals("97") ? "" : this.bs3q104);
-        setBs3q105(bs3q197.equals("97") ? "" : this.bs3q105);
-        setBs3q106(bs3q197.equals("97") ? "" : this.bs3q106);
-        setBs3q107(bs3q197.equals("97") ? "" : this.bs3q107);
-        setBs3q196(bs3q197.equals("97") ? "" : this.bs3q196);
-        setBs3q198(bs3q197.equals("97") ? "" : this.bs3q198);
-        notifyPropertyChanged(BR.bs3q197);
+    public void setH126(String h126) {
+        this.h126 = h126;
+        notifyPropertyChanged(BR.h126);
     }
 
     @Bindable
-    public String getBs3q198() {
-        return bs3q198;
+    public String getH127() {
+        return h127;
     }
 
-    public void setBs3q198(String bs3q198) {
-        if (this.bs3q198.equals(bs3q198)) return;
-        this.bs3q198 = bs3q198;
-        setBs3q101(bs3q198.equals("98") ? "" : this.bs3q101);
-        setBs3q102(bs3q198.equals("98") ? "" : this.bs3q102);
-        setBs3q103(bs3q198.equals("98") ? "" : this.bs3q103);
-        setBs3q104(bs3q198.equals("98") ? "" : this.bs3q104);
-        setBs3q105(bs3q198.equals("98") ? "" : this.bs3q105);
-        setBs3q106(bs3q198.equals("98") ? "" : this.bs3q106);
-        setBs3q107(bs3q198.equals("98") ? "" : this.bs3q107);
-        setBs3q196(bs3q198.equals("98") ? "" : this.bs3q196);
-        setBs3q197(bs3q198.equals("98") ? "" : this.bs3q197);
-        notifyPropertyChanged(BR.bs3q198);
+    public void setH127(String h127) {
+        this.h127 = h127;
+        notifyPropertyChanged(BR.h127);
     }
 
     @Bindable
-    public String getBs3q196() {
-        return bs3q196;
+    public String getH128() {
+        return h128;
     }
 
-    public void setBs3q196(String bs3q196) {
-        if (this.bs3q196.equals(bs3q196)) return;
-        this.bs3q196 = bs3q196;
-        setBs3q196x(bs3q196.equals("96") ? this.bs3q196x : "");
-        notifyPropertyChanged(BR.bs3q196);
+    public void setH128(String h128) {
+        this.h128 = h128;
+        notifyPropertyChanged(BR.h128);
     }
 
     @Bindable
-    public String getBs3q196x() {
-        return bs3q196x;
+    public String getH12896x() {
+        return h12896x;
     }
 
-    public void setBs3q196x(String bs3q196x) {
-        this.bs3q196x = bs3q196x;
-        notifyPropertyChanged(BR.bs3q196x);
+    public void setH12896x(String h12896x) {
+        this.h12896x = h12896x;
+        notifyPropertyChanged(BR.h12896x);
     }
 
     @Bindable
-    public String getBs3q2a() {
-        return bs3q2a;
+    public String getH12901() {
+        return h12901;
     }
 
-    public void setBs3q2a(String bs3q2a) {
-        this.bs3q2a = bs3q2a;
-        setBs3q2a96x(bs3q2a.equals("96") ? this.bs3q2a96x : "");
-        notifyPropertyChanged(BR.bs3q2a);
+    public void setH12901(String h12901) {
+        this.h12901 = h12901;
+        notifyPropertyChanged(BR.h12901);
     }
 
     @Bindable
-    public String getBs3q2a96x() {
-        return bs3q2a96x;
+    public String getH12902() {
+        return h12902;
     }
 
-    public void setBs3q2a96x(String bs3q2a96x) {
-        this.bs3q2a96x = bs3q2a96x;
-        notifyPropertyChanged(BR.bs3q2a96x);
+    public void setH12902(String h12902) {
+        this.h12902 = h12902;
+        notifyPropertyChanged(BR.h12902);
     }
 
     @Bindable
-    public String getBs3q2b() {
-        return bs3q2b;
+    public String getH12903() {
+        return h12903;
     }
 
-    public void setBs3q2b(String bs3q2b) {
-        this.bs3q2b = bs3q2b;
-        setBs3q2b96x(bs3q2b.equals("96") ? this.bs3q2b96x : "");
-        notifyPropertyChanged(BR.bs3q2b);
+    public void setH12903(String h12903) {
+        this.h12903 = h12903;
+        notifyPropertyChanged(BR.h12903);
     }
 
     @Bindable
-    public String getBs3q2b96x() {
-        return bs3q2b96x;
+    public String getH12904() {
+        return h12904;
     }
 
-    public void setBs3q2b96x(String bs3q2b96x) {
-        this.bs3q2b96x = bs3q2b96x;
-        notifyPropertyChanged(BR.bs3q2b96x);
+    public void setH12904(String h12904) {
+        this.h12904 = h12904;
+        notifyPropertyChanged(BR.h12904);
     }
 
     @Bindable
-    public String getBs3q2c() {
-        return bs3q2c;
+    public String getH12905() {
+        return h12905;
     }
 
-    public void setBs3q2c(String bs3q2c) {
-        this.bs3q2c = bs3q2c;
-        setBs3q2c96x(bs3q2c.equals("96") ? this.bs3q2c96x : "");
-        notifyPropertyChanged(BR.bs3q2c);
+    public void setH12905(String h12905) {
+        this.h12905 = h12905;
+        notifyPropertyChanged(BR.h12905);
     }
 
     @Bindable
-    public String getBs3q2c96x() {
-        return bs3q2c96x;
+    public String getH12906() {
+        return h12906;
     }
 
-    public void setBs3q2c96x(String bs3q2c96x) {
-        this.bs3q2c96x = bs3q2c96x;
-        notifyPropertyChanged(BR.bs3q2c96x);
+    public void setH12906(String h12906) {
+        this.h12906 = h12906;
+        notifyPropertyChanged(BR.h12906);
     }
 
     @Bindable
-    public String getBs3q2d() {
-        return bs3q2d;
+    public String getH132() {
+        return h132;
     }
 
-    public void setBs3q2d(String bs3q2d) {
-        this.bs3q2d = bs3q2d;
-        setBs3q2d96x(bs3q2d.equals("96") ? this.bs3q2d96x : "");
-        notifyPropertyChanged(BR.bs3q2d);
+    public void setH132(String h132) {
+        this.h132 = h132;
+        notifyPropertyChanged(BR.h132);
     }
 
     @Bindable
-    public String getBs3q2d96x() {
-        return bs3q2d96x;
+    public String getH132a() {
+        return h132a;
     }
 
-    public void setBs3q2d96x(String bs3q2d96x) {
-        this.bs3q2d96x = bs3q2d96x;
-        notifyPropertyChanged(BR.bs3q2d96x);
+    public void setH132a(String h132a) {
+        this.h132a = h132a;
+        notifyPropertyChanged(BR.h132a);
     }
 
     @Bindable
-    public String getBs3q3() {
-        return bs3q3;
+    public String getH133() {
+        return h133;
     }
 
-    public void setBs3q3(String bs3q3) {
-        this.bs3q3 = bs3q3;
-        setBs3q401(bs3q3.equals("2") ? "" : this.bs3q401);
-        setBs3q402(bs3q3.equals("2") ? "" : this.bs3q402);
-        setBs3q403(bs3q3.equals("2") ? "" : this.bs3q403);
-        setBs3q404(bs3q3.equals("2") ? "" : this.bs3q404);
-        setBs3q405(bs3q3.equals("2") ? "" : this.bs3q405);
-        setBs3q406(bs3q3.equals("2") ? "" : this.bs3q406);
-        setBs3q407(bs3q3.equals("2") ? "" : this.bs3q407);
-        setBs3q496(bs3q3.equals("2") ? "" : this.bs3q496);
-        setBs3q498(bs3q3.equals("2") ? "" : this.bs3q498);
-        setBs3q501(bs3q3.equals("2") ? "" : this.bs3q501);
-        setBs3q502(bs3q3.equals("2") ? "" : this.bs3q502);
-        setBs3q503(bs3q3.equals("2") ? "" : this.bs3q503);
-        setBs3q504(bs3q3.equals("2") ? "" : this.bs3q504);
-        setBs3q596(bs3q3.equals("2") ? "" : this.bs3q596);
-        setBs3q598(bs3q3.equals("2") ? "" : this.bs3q598);
-        notifyPropertyChanged(BR.bs3q3);
+    public void setH133(String h133) {
+        this.h133 = h133;
+        notifyPropertyChanged(BR.h133);
     }
 
     @Bindable
-    public String getBs3q4() {
-        return bs3q4;
+    public String getH13301() {
+        return h13301;
     }
 
-    public void setBs3q4(String bs3q4) {
-        this.bs3q4 = bs3q4;
-        notifyPropertyChanged(BR.bs3q4);
+    public void setH13301(String h13301) {
+        this.h13301 = h13301;
+        notifyPropertyChanged(BR.h13301);
     }
 
     @Bindable
-    public String getBs3q401() {
-        return bs3q401;
+    public String getH13302() {
+        return h13302;
     }
 
-    public void setBs3q401(String bs3q401) {
-        if (this.bs3q401.equals(bs3q401)) return;
-        this.bs3q401 = bs3q401;
-        notifyPropertyChanged(BR.bs3q401);
+    public void setH13302(String h13302) {
+        this.h13302 = h13302;
+        notifyPropertyChanged(BR.h13302);
     }
 
     @Bindable
-    public String getBs3q402() {
-        return bs3q402;
+    public String getH13303() {
+        return h13303;
     }
 
-    public void setBs3q402(String bs3q402) {
-        if (this.bs3q402.equals(bs3q402)) return;
-        this.bs3q402 = bs3q402;
-        notifyPropertyChanged(BR.bs3q402);
+    public void setH13303(String h13303) {
+        this.h13303 = h13303;
+        notifyPropertyChanged(BR.h13303);
     }
 
     @Bindable
-    public String getBs3q403() {
-        return bs3q403;
+    public String getH13304() {
+        return h13304;
     }
 
-    public void setBs3q403(String bs3q403) {
-        if (this.bs3q403.equals(bs3q403)) return;
-        this.bs3q403 = bs3q403;
-        notifyPropertyChanged(BR.bs3q403);
+    public void setH13304(String h13304) {
+        this.h13304 = h13304;
+        notifyPropertyChanged(BR.h13304);
     }
 
     @Bindable
-    public String getBs3q404() {
-        return bs3q404;
+    public String getH13305() {
+        return h13305;
     }
 
-    public void setBs3q404(String bs3q404) {
-        if (this.bs3q404.equals(bs3q404)) return;
-        this.bs3q404 = bs3q404;
-        notifyPropertyChanged(BR.bs3q404);
+    public void setH13305(String h13305) {
+        this.h13305 = h13305;
+        notifyPropertyChanged(BR.h13305);
     }
 
     @Bindable
-    public String getBs3q405() {
-        return bs3q405;
+    public String getH13306() {
+        return h13306;
     }
 
-    public void setBs3q405(String bs3q405) {
-        if (this.bs3q405.equals(bs3q405)) return;
-        this.bs3q405 = bs3q405;
-        notifyPropertyChanged(BR.bs3q405);
+    public void setH13306(String h13306) {
+        this.h13306 = h13306;
+        notifyPropertyChanged(BR.h13306);
     }
 
     @Bindable
-    public String getBs3q406() {
-        return bs3q406;
+    public String getH13307() {
+        return h13307;
     }
 
-    public void setBs3q406(String bs3q406) {
-        if (this.bs3q406.equals(bs3q406)) return;
-        this.bs3q406 = bs3q406;
-        notifyPropertyChanged(BR.bs3q406);
+    public void setH13307(String h13307) {
+        this.h13307 = h13307;
+        notifyPropertyChanged(BR.h13307);
     }
 
     @Bindable
-    public String getBs3q407() {
-        return bs3q407;
+    public String getH13308() {
+        return h13308;
     }
 
-    public void setBs3q407(String bs3q407) {
-        if (this.bs3q407.equals(bs3q407)) return;
-        this.bs3q407 = bs3q407;
-        notifyPropertyChanged(BR.bs3q407);
+    public void setH13308(String h13308) {
+        this.h13308 = h13308;
+        notifyPropertyChanged(BR.h13308);
     }
 
     @Bindable
-    public String getBs3q496() {
-        return bs3q496;
+    public String getH13309() {
+        return h13309;
     }
 
-    public void setBs3q496(String bs3q496) {
-        if (this.bs3q496.equals(bs3q496)) return;
-        this.bs3q496 = bs3q496;
-        setBs3q496x(bs3q496.equals("96") ? this.bs3q496x : "");
-        notifyPropertyChanged(BR.bs3q496);
+    public void setH13309(String h13309) {
+        this.h13309 = h13309;
+        notifyPropertyChanged(BR.h13309);
     }
 
     @Bindable
-    public String getBs3q496x() {
-        return bs3q496x;
+    public String getH135() {
+        return h135;
     }
 
-    public void setBs3q496x(String bs3q496x) {
-        this.bs3q496x = bs3q496x;
-        notifyPropertyChanged(BR.bs3q496x);
+    public void setH135(String h135) {
+        this.h135 = h135;
+        notifyPropertyChanged(BR.h135);
     }
 
     @Bindable
-    public String getBs3q498() {
-        return bs3q498;
+    public String getH13501() {
+        return h13501;
     }
 
-    public void setBs3q498(String bs3q498) {
-        if (this.bs3q498.equals(bs3q498)) return;
-        this.bs3q498 = bs3q498;
-        setBs3q401(bs3q498.equals("98") ? "" : this.bs3q401);
-        setBs3q402(bs3q498.equals("98") ? "" : this.bs3q402);
-        setBs3q403(bs3q498.equals("98") ? "" : this.bs3q403);
-        setBs3q404(bs3q498.equals("98") ? "" : this.bs3q404);
-        setBs3q405(bs3q498.equals("98") ? "" : this.bs3q405);
-        setBs3q406(bs3q498.equals("98") ? "" : this.bs3q406);
-        setBs3q407(bs3q498.equals("98") ? "" : this.bs3q407);
-        setBs3q496(bs3q498.equals("98") ? "" : this.bs3q496);
-        notifyPropertyChanged(BR.bs3q498);
+    public void setH13501(String h13501) {
+        this.h13501 = h13501;
+        notifyPropertyChanged(BR.h13501);
     }
 
     @Bindable
-    public String getBs3q5() {
-        return bs3q5;
+    public String getH13502() {
+        return h13502;
     }
 
-    public void setBs3q5(String bs3q5) {
-        this.bs3q5 = bs3q5;
-        notifyPropertyChanged(BR.bs3q5);
+    public void setH13502(String h13502) {
+        this.h13502 = h13502;
+        notifyPropertyChanged(BR.h13502);
     }
 
     @Bindable
-    public String getBs3q501() {
-        return bs3q501;
+    public String getH13503() {
+        return h13503;
     }
 
-    public void setBs3q501(String bs3q501) {
-        if (this.bs3q501.equals(bs3q501)) return;
-        this.bs3q501 = bs3q501;
-        notifyPropertyChanged(BR.bs3q501);
+    public void setH13503(String h13503) {
+        this.h13503 = h13503;
+        notifyPropertyChanged(BR.h13503);
     }
 
     @Bindable
-    public String getBs3q502() {
-        return bs3q502;
+    public String getH13504() {
+        return h13504;
     }
 
-    public void setBs3q502(String bs3q502) {
-        if (this.bs3q502.equals(bs3q502)) return;
-        this.bs3q502 = bs3q502;
-        notifyPropertyChanged(BR.bs3q502);
+    public void setH13504(String h13504) {
+        this.h13504 = h13504;
+        notifyPropertyChanged(BR.h13504);
     }
 
     @Bindable
-    public String getBs3q503() {
-        return bs3q503;
+    public String getH13505() {
+        return h13505;
     }
 
-    public void setBs3q503(String bs3q503) {
-        if (this.bs3q503.equals(bs3q503)) return;
-        this.bs3q503 = bs3q503;
-        notifyPropertyChanged(BR.bs3q503);
+    public void setH13505(String h13505) {
+        this.h13505 = h13505;
+        notifyPropertyChanged(BR.h13505);
     }
 
     @Bindable
-    public String getBs3q504() {
-        return bs3q504;
+    public String getH13506() {
+        return h13506;
     }
 
-    public void setBs3q504(String bs3q504) {
-        if (this.bs3q504.equals(bs3q504)) return;
-        this.bs3q504 = bs3q504;
-        notifyPropertyChanged(BR.bs3q504);
+    public void setH13506(String h13506) {
+        this.h13506 = h13506;
+        notifyPropertyChanged(BR.h13506);
     }
 
     @Bindable
-    public String getBs3q598() {
-        return bs3q598;
+    public String getH13507() {
+        return h13507;
     }
 
-    public void setBs3q598(String bs3q598) {
-        if (this.bs3q598.equals(bs3q598)) return;
-        this.bs3q598 = bs3q598;
-        setBs3q501(bs3q598.equals("98") ? "" : this.bs3q501);
-        setBs3q502(bs3q598.equals("98") ? "" : this.bs3q502);
-        setBs3q503(bs3q598.equals("98") ? "" : this.bs3q503);
-        setBs3q504(bs3q598.equals("98") ? "" : this.bs3q504);
-        setBs3q596(bs3q598.equals("98") ? "" : this.bs3q596);
-        notifyPropertyChanged(BR.bs3q598);
+    public void setH13507(String h13507) {
+        this.h13507 = h13507;
+        notifyPropertyChanged(BR.h13507);
     }
 
     @Bindable
-    public String getBs3q596() {
-        return bs3q596;
+    public String getH13508() {
+        return h13508;
     }
 
-    public void setBs3q596(String bs3q596) {
-        if (this.bs3q596.equals(bs3q596)) return;
-        this.bs3q596 = bs3q596;
-        setBs3q596x(bs3q596.equals("96") ? this.bs3q596x : "");
-        notifyPropertyChanged(BR.bs3q596);
+    public void setH13508(String h13508) {
+        this.h13508 = h13508;
+        notifyPropertyChanged(BR.h13508);
     }
 
     @Bindable
-    public String getBs3q596x() {
-        return bs3q596x;
+    public String getH13509() {
+        return h13509;
     }
 
-    public void setBs3q596x(String bs3q596x) {
-        this.bs3q596x = bs3q596x;
-        notifyPropertyChanged(BR.bs3q596x);
+    public void setH13509(String h13509) {
+        this.h13509 = h13509;
+        notifyPropertyChanged(BR.h13509);
     }
 
     @Bindable
-    public String getBs3q6() {
-        return bs3q6;
+    public String getH13598() {
+        return h13598;
     }
 
-    public void setBs3q6(String bs3q6) {
-        this.bs3q6 = bs3q6;
-        notifyPropertyChanged(BR.bs3q6);
+    public void setH13598(String h13598) {
+        this.h13598 = h13598;
+        notifyPropertyChanged(BR.h13598);
     }
 
     @Bindable
-    public String getBs3q601() {
-        return bs3q601;
+    public String getH136() {
+        return h136;
     }
 
-    public void setBs3q601(String bs3q601) {
-        if (this.bs3q601.equals(bs3q601)) return;
-        this.bs3q601 = bs3q601;
-        notifyPropertyChanged(BR.bs3q601);
+    public void setH136(String h136) {
+        this.h136 = h136;
+        notifyPropertyChanged(BR.h136);
     }
 
     @Bindable
-    public String getBs3q602() {
-        return bs3q602;
+    public String getH13601() {
+        return h13601;
     }
 
-    public void setBs3q602(String bs3q602) {
-        if (this.bs3q602.equals(bs3q602)) return;
-        this.bs3q602 = bs3q602;
-        notifyPropertyChanged(BR.bs3q602);
+    public void setH13601(String h13601) {
+        this.h13601 = h13601;
+        notifyPropertyChanged(BR.h13601);
     }
 
     @Bindable
-    public String getBs3q603() {
-        return bs3q603;
+    public String getH13602() {
+        return h13602;
     }
 
-    public void setBs3q603(String bs3q603) {
-        if (this.bs3q603.equals(bs3q603)) return;
-        this.bs3q603 = bs3q603;
-        notifyPropertyChanged(BR.bs3q603);
+    public void setH13602(String h13602) {
+        this.h13602 = h13602;
+        notifyPropertyChanged(BR.h13602);
     }
 
     @Bindable
-    public String getBs3q604() {
-        return bs3q604;
+    public String getH13603() {
+        return h13603;
     }
 
-    public void setBs3q604(String bs3q604) {
-        if (this.bs3q604.equals(bs3q604)) return;
-        this.bs3q604 = bs3q604;
-        notifyPropertyChanged(BR.bs3q604);
+    public void setH13603(String h13603) {
+        this.h13603 = h13603;
+        notifyPropertyChanged(BR.h13603);
     }
 
     @Bindable
-    public String getBs3q605() {
-        return bs3q605;
+    public String getH13604() {
+        return h13604;
     }
 
-    public void setBs3q605(String bs3q605) {
-        if (this.bs3q605.equals(bs3q605)) return;
-        this.bs3q605 = bs3q605;
-        notifyPropertyChanged(BR.bs3q605);
+    public void setH13604(String h13604) {
+        this.h13604 = h13604;
+        notifyPropertyChanged(BR.h13604);
     }
 
     @Bindable
-    public String getBs3q606() {
-        return bs3q606;
+    public String getH13605() {
+        return h13605;
     }
 
-    public void setBs3q606(String bs3q606) {
-        if (this.bs3q606.equals(bs3q606)) return;
-        this.bs3q606 = bs3q606;
-        notifyPropertyChanged(BR.bs3q606);
+    public void setH13605(String h13605) {
+        this.h13605 = h13605;
+        notifyPropertyChanged(BR.h13605);
     }
 
     @Bindable
-    public String getBs3q607() {
-        return bs3q607;
+    public String getH13606() {
+        return h13606;
     }
 
-    public void setBs3q607(String bs3q607) {
-        if (this.bs3q607.equals(bs3q607)) return;
-        this.bs3q607 = bs3q607;
-        notifyPropertyChanged(BR.bs3q607);
+    public void setH13606(String h13606) {
+        this.h13606 = h13606;
+        notifyPropertyChanged(BR.h13606);
     }
 
     @Bindable
-    public String getBs3q608() {
-        return bs3q608;
+    public String getH13696() {
+        return h13696;
     }
 
-    public void setBs3q608(String bs3q608) {
-        if (this.bs3q608.equals(bs3q608)) return;
-        this.bs3q608 = bs3q608;
-        notifyPropertyChanged(BR.bs3q608);
+    public void setH13696(String h13696) {
+        this.h13696 = h13696;
+        notifyPropertyChanged(BR.h13696);
     }
 
     @Bindable
-    public String getBs3q609() {
-        return bs3q609;
+    public String getH13696x() {
+        return h13696x;
     }
 
-    public void setBs3q609(String bs3q609) {
-        if (this.bs3q609.equals(bs3q609)) return;
-        this.bs3q609 = bs3q609;
-        notifyPropertyChanged(BR.bs3q609);
+    public void setH13696x(String h13696x) {
+        this.h13696x = h13696x;
+        notifyPropertyChanged(BR.h13696x);
     }
 
     @Bindable
-    public String getBs3q698() {
-        return bs3q698;
+    public String getH137() {
+        return h137;
     }
 
-    public void setBs3q698(String bs3q698) {
-        if (this.bs3q698.equals(bs3q698)) return;
-        this.bs3q698 = bs3q698;
-        setBs3q601(bs3q698.equals("98") ? "" : this.bs3q601);
-        setBs3q602(bs3q698.equals("98") ? "" : this.bs3q602);
-        setBs3q603(bs3q698.equals("98") ? "" : this.bs3q603);
-        setBs3q604(bs3q698.equals("98") ? "" : this.bs3q604);
-        setBs3q605(bs3q698.equals("98") ? "" : this.bs3q605);
-        setBs3q606(bs3q698.equals("98") ? "" : this.bs3q606);
-        setBs3q607(bs3q698.equals("98") ? "" : this.bs3q607);
-        setBs3q608(bs3q698.equals("98") ? "" : this.bs3q608);
-        setBs3q609(bs3q698.equals("98") ? "" : this.bs3q609);
-        setBs3q696(bs3q698.equals("98") ? "" : this.bs3q696);
-        notifyPropertyChanged(BR.bs3q698);
+    public void setH137(String h137) {
+        this.h137 = h137;
+        notifyPropertyChanged(BR.h137);
     }
 
     @Bindable
-    public String getBs3q696() {
-        return bs3q696;
+    public String getH137a() {
+        return h137a;
     }
 
-    public void setBs3q696(String bs3q696) {
-        if (this.bs3q696.equals(bs3q696)) return;
-        this.bs3q696 = bs3q696;
-        setBs3q696x(bs3q696.equals("96") ? this.bs3q696x : "");
-        notifyPropertyChanged(BR.bs3q696);
+    public void setH137a(String h137a) {
+        this.h137a = h137a;
+        notifyPropertyChanged(BR.h137a);
     }
 
     @Bindable
-    public String getBs3q696x() {
-        return bs3q696x;
+    public String getH137a96x() {
+        return h137a96x;
     }
 
-    public void setBs3q696x(String bs3q696x) {
-        this.bs3q696x = bs3q696x;
-        notifyPropertyChanged(BR.bs3q696x);
+    public void setH137a96x(String h137a96x) {
+        this.h137a96x = h137a96x;
+        notifyPropertyChanged(BR.h137a96x);
     }
 
     @Bindable
-    public String getBs3q7() {
-        return bs3q7;
+    public String getH137b() {
+        return h137b;
     }
 
-    public void setBs3q7(String bs3q7) {
-        this.bs3q7 = bs3q7;
-        notifyPropertyChanged(BR.bs3q7);
+    public void setH137b(String h137b) {
+        this.h137b = h137b;
+        notifyPropertyChanged(BR.h137b);
     }
 
     @Bindable
-    public String getBs3q701() {
-        return bs3q701;
+    public String getH137b96x() {
+        return h137b96x;
     }
 
-    public void setBs3q701(String bs3q701) {
-        if (this.bs3q701.equals(bs3q701)) return;
-        this.bs3q701 = bs3q701;
-        notifyPropertyChanged(BR.bs3q701);
+    public void setH137b96x(String h137b96x) {
+        this.h137b96x = h137b96x;
+        notifyPropertyChanged(BR.h137b96x);
     }
 
     @Bindable
-    public String getBs3q702() {
-        return bs3q702;
+    public String getH137c() {
+        return h137c;
     }
 
-    public void setBs3q702(String bs3q702) {
-        if (this.bs3q702.equals(bs3q702)) return;
-        this.bs3q702 = bs3q702;
-        notifyPropertyChanged(BR.bs3q702);
+    public void setH137c(String h137c) {
+        this.h137c = h137c;
+        notifyPropertyChanged(BR.h137c);
     }
 
     @Bindable
-    public String getBs3q703() {
-        return bs3q703;
+    public String getH137c96x() {
+        return h137c96x;
     }
 
-    public void setBs3q703(String bs3q703) {
-        if (this.bs3q703.equals(bs3q703)) return;
-        this.bs3q703 = bs3q703;
-        notifyPropertyChanged(BR.bs3q703);
+    public void setH137c96x(String h137c96x) {
+        this.h137c96x = h137c96x;
+        notifyPropertyChanged(BR.h137c96x);
     }
 
     @Bindable
-    public String getBs3q704() {
-        return bs3q704;
+    public String getH201() {
+        return h201;
     }
 
-    public void setBs3q704(String bs3q704) {
-        if (this.bs3q704.equals(bs3q704)) return;
-        this.bs3q704 = bs3q704;
-        notifyPropertyChanged(BR.bs3q704);
+    public void setH201(String h201) {
+        this.h201 = h201;
+        notifyPropertyChanged(BR.h201);
     }
 
     @Bindable
-    public String getBs3q705() {
-        return bs3q705;
+    public String getH201hx() {
+        return h201hx;
     }
 
-    public void setBs3q705(String bs3q705) {
-        if (this.bs3q705.equals(bs3q705)) return;
-        this.bs3q705 = bs3q705;
-        notifyPropertyChanged(BR.bs3q705);
+    public void setH201hx(String h201hx) {
+        this.h201hx = h201hx;
+        notifyPropertyChanged(BR.h201hx);
     }
 
     @Bindable
-    public String getBs3q798() {
-        return bs3q798;
+    public String getH201dx() {
+        return h201dx;
     }
 
-    public void setBs3q798(String bs3q798) {
-        if (this.bs3q798.equals(bs3q798)) return;
-        this.bs3q798 = bs3q798;
-        setBs3q701(bs3q798.equals("98") ? "" : this.bs3q701);
-        setBs3q702(bs3q798.equals("98") ? "" : this.bs3q702);
-        setBs3q703(bs3q798.equals("98") ? "" : this.bs3q703);
-        setBs3q704(bs3q798.equals("98") ? "" : this.bs3q704);
-        setBs3q705(bs3q798.equals("98") ? "" : this.bs3q705);
-        setBs3q796(bs3q798.equals("98") ? "" : this.bs3q796);
-        notifyPropertyChanged(BR.bs3q798);
+    public void setH201dx(String h201dx) {
+        this.h201dx = h201dx;
+        notifyPropertyChanged(BR.h201dx);
     }
 
     @Bindable
-    public String getBs3q796() {
-        return bs3q796;
+    public String getH201wx() {
+        return h201wx;
     }
 
-    public void setBs3q796(String bs3q796) {
-        if (this.bs3q796.equals(bs3q796)) return;
-        this.bs3q796 = bs3q796;
-        setBs3q796x(bs3q796.equals("96") ? this.bs3q796x : "");
-        notifyPropertyChanged(BR.bs3q796);
+    public void setH201wx(String h201wx) {
+        this.h201wx = h201wx;
+        notifyPropertyChanged(BR.h201wx);
     }
 
     @Bindable
-    public String getBs3q796x() {
-        return bs3q796x;
+    public String getH202() {
+        return h202;
     }
 
-    public void setBs3q796x(String bs3q796x) {
-        this.bs3q796x = bs3q796x;
-        notifyPropertyChanged(BR.bs3q796x);
+    public void setH202(String h202) {
+        this.h202 = h202;
+        notifyPropertyChanged(BR.h202);
     }
 
     @Bindable
-    public String getBs3q8() {
-        return bs3q8;
+    public String getH203h() {
+        return h203h;
     }
 
-    public void setBs3q8(String bs3q8) {
-        this.bs3q8 = bs3q8;
-        notifyPropertyChanged(BR.bs3q8);
+    public void setH203h(String h203h) {
+        this.h203h = h203h;
+        notifyPropertyChanged(BR.h203h);
     }
 
     @Bindable
-    public String getBs3q801() {
-        return bs3q801;
+    public String getH203d() {
+        return h203d;
     }
 
-    public void setBs3q801(String bs3q801) {
-        if (this.bs3q801.equals(bs3q801)) return;
-        this.bs3q801 = bs3q801;
-        notifyPropertyChanged(BR.bs3q801);
+    public void setH203d(String h203d) {
+        this.h203d = h203d;
+        notifyPropertyChanged(BR.h203d);
     }
 
     @Bindable
-    public String getBs3q802() {
-        return bs3q802;
+    public String getH203w() {
+        return h203w;
     }
 
-    public void setBs3q802(String bs3q802) {
-        if (this.bs3q802.equals(bs3q802)) return;
-        this.bs3q802 = bs3q802;
-        notifyPropertyChanged(BR.bs3q802);
+    public void setH203w(String h203w) {
+        this.h203w = h203w;
+        notifyPropertyChanged(BR.h203w);
     }
 
     @Bindable
-    public String getBs3q803() {
-        return bs3q803;
+    public String getH204() {
+        return h204;
     }
 
-    public void setBs3q803(String bs3q803) {
-        if (this.bs3q803.equals(bs3q803)) return;
-        this.bs3q803 = bs3q803;
-        notifyPropertyChanged(BR.bs3q803);
+    public void setH204(String h204) {
+        this.h204 = h204;
+        notifyPropertyChanged(BR.h204);
     }
 
     @Bindable
-    public String getBs3q804() {
-        return bs3q804;
+    public String getH205() {
+        return h205;
     }
 
-    public void setBs3q804(String bs3q804) {
-        if (this.bs3q804.equals(bs3q804)) return;
-        this.bs3q804 = bs3q804;
-        notifyPropertyChanged(BR.bs3q804);
+    public void setH205(String h205) {
+        this.h205 = h205;
+        notifyPropertyChanged(BR.h205);
     }
 
     @Bindable
-    public String getBs3q897() {
-        return bs3q897;
+    public String getH20596x() {
+        return h20596x;
     }
 
-    public void setBs3q897(String bs3q897) {
-        if (this.bs3q897.equals(bs3q897)) return;
-        this.bs3q897 = bs3q897;
-        setBs3q801(bs3q897.equals("97") ? "" : this.bs3q801);
-        setBs3q802(bs3q897.equals("97") ? "" : this.bs3q802);
-        setBs3q803(bs3q897.equals("97") ? "" : this.bs3q803);
-        setBs3q804(bs3q897.equals("97") ? "" : this.bs3q804);
-        setBs3q896(bs3q897.equals("97") ? "" : this.bs3q896);
-        notifyPropertyChanged(BR.bs3q897);
+    public void setH20596x(String h20596x) {
+        this.h20596x = h20596x;
+        notifyPropertyChanged(BR.h20596x);
     }
 
     @Bindable
-    public String getBs3q896() {
-        return bs3q896;
+    public String getH207() {
+        return h207;
     }
 
-    public void setBs3q896(String bs3q896) {
-        if (this.bs3q896.equals(bs3q896)) return;
-        this.bs3q896 = bs3q896;
-        setBs3q896x(bs3q896.equals("96") ? this.bs3q896x : "");
-        notifyPropertyChanged(BR.bs3q896);
+    public void setH207(String h207) {
+        this.h207 = h207;
+        notifyPropertyChanged(BR.h207);
     }
 
     @Bindable
-    public String getBs3q896x() {
-        return bs3q896x;
+    public String getH20701() {
+        return h20701;
     }
 
-    public void setBs3q896x(String bs3q896x) {
-        this.bs3q896x = bs3q896x;
-        notifyPropertyChanged(BR.bs3q896x);
+    public void setH20701(String h20701) {
+        this.h20701 = h20701;
+        notifyPropertyChanged(BR.h20701);
     }
 
     @Bindable
-    public String getBs3q9() {
-        return bs3q9;
+    public String getH20702() {
+        return h20702;
     }
 
-    public void setBs3q9(String bs3q9) {
-        this.bs3q9 = bs3q9;
-        notifyPropertyChanged(BR.bs3q9);
+    public void setH20702(String h20702) {
+        this.h20702 = h20702;
+        notifyPropertyChanged(BR.h20702);
     }
 
     @Bindable
-    public String getBs3q901() {
-        return bs3q901;
+    public String getH20703() {
+        return h20703;
     }
 
-    public void setBs3q901(String bs3q901) {
-        if (this.bs3q901.equals(bs3q901)) return;
-        this.bs3q901 = bs3q901;
-        notifyPropertyChanged(BR.bs3q901);
+    public void setH20703(String h20703) {
+        this.h20703 = h20703;
+        notifyPropertyChanged(BR.h20703);
     }
 
     @Bindable
-    public String getBs3q902() {
-        return bs3q902;
+    public String getH20704() {
+        return h20704;
     }
 
-    public void setBs3q902(String bs3q902) {
-        if (this.bs3q902.equals(bs3q902)) return;
-        this.bs3q902 = bs3q902;
-        notifyPropertyChanged(BR.bs3q902);
+    public void setH20704(String h20704) {
+        this.h20704 = h20704;
+        notifyPropertyChanged(BR.h20704);
     }
 
     @Bindable
-    public String getBs3q903() {
-        return bs3q903;
+    public String getH20705() {
+        return h20705;
     }
 
-    public void setBs3q903(String bs3q903) {
-        if (this.bs3q903.equals(bs3q903)) return;
-        this.bs3q903 = bs3q903;
-        notifyPropertyChanged(BR.bs3q903);
+    public void setH20705(String h20705) {
+        this.h20705 = h20705;
+        notifyPropertyChanged(BR.h20705);
     }
 
     @Bindable
-    public String getBs3q904() {
-        return bs3q904;
+    public String getH20706() {
+        return h20706;
     }
 
-    public void setBs3q904(String bs3q904) {
-        if (this.bs3q904.equals(bs3q904)) return;
-        this.bs3q904 = bs3q904;
-        notifyPropertyChanged(BR.bs3q904);
+    public void setH20706(String h20706) {
+        this.h20706 = h20706;
+        notifyPropertyChanged(BR.h20706);
     }
 
     @Bindable
-    public String getBs3q905() {
-        return bs3q905;
+    public String getH20707() {
+        return h20707;
     }
 
-    public void setBs3q905(String bs3q905) {
-        if (this.bs3q905.equals(bs3q905)) return;
-        this.bs3q905 = bs3q905;
-        notifyPropertyChanged(BR.bs3q905);
+    public void setH20707(String h20707) {
+        this.h20707 = h20707;
+        notifyPropertyChanged(BR.h20707);
     }
 
     @Bindable
-    public String getBs3q906() {
-        return bs3q906;
+    public String getH20708() {
+        return h20708;
     }
 
-    public void setBs3q906(String bs3q906) {
-        if (this.bs3q906.equals(bs3q906)) return;
-        this.bs3q906 = bs3q906;
-        notifyPropertyChanged(BR.bs3q906);
+    public void setH20708(String h20708) {
+        this.h20708 = h20708;
+        notifyPropertyChanged(BR.h20708);
     }
 
     @Bindable
-    public String getBs3q996() {
-        return bs3q996;
+    public String getH20798() {
+        return h20798;
     }
 
-    public void setBs3q996(String bs3q996) {
-        if (this.bs3q996.equals(bs3q996)) return;
-        this.bs3q996 = bs3q996;
-        setBs3q996x(bs3q996.equals("96") ? this.bs3q996x : "");
-        notifyPropertyChanged(BR.bs3q996);
+    public void setH20798(String h20798) {
+        this.h20798 = h20798;
+        notifyPropertyChanged(BR.h20798);
     }
 
     @Bindable
-    public String getBs3q996x() {
-        return bs3q996x;
+    public String getH208() {
+        return h208;
     }
 
-    public void setBs3q996x(String bs3q996x) {
-        this.bs3q996x = bs3q996x;
-        notifyPropertyChanged(BR.bs3q996x);
+    public void setH208(String h208) {
+        this.h208 = h208;
+        notifyPropertyChanged(BR.h208);
     }
 
     @Bindable
-    public String getBs3q997() {
-        return bs3q997;
+    public String getH20801() {
+        return h20801;
     }
 
-    public void setBs3q997(String bs3q997) {
-        if (this.bs3q997.equals(bs3q997)) return;
-        this.bs3q997 = bs3q997;
-        setBs3q901(bs3q997.equals("97") ? "" : this.bs3q901);
-        setBs3q902(bs3q997.equals("97") ? "" : this.bs3q902);
-        setBs3q903(bs3q997.equals("97") ? "" : this.bs3q903);
-        setBs3q904(bs3q997.equals("97") ? "" : this.bs3q904);
-        setBs3q905(bs3q997.equals("97") ? "" : this.bs3q905);
-        setBs3q906(bs3q997.equals("97") ? "" : this.bs3q906);
-        setBs3q996(bs3q997.equals("97") ? "" : this.bs3q996);
-        notifyPropertyChanged(BR.bs3q997);
+    public void setH20801(String h20801) {
+        this.h20801 = h20801;
+        notifyPropertyChanged(BR.h20801);
     }
 
     @Bindable
-    public String getBs3q10() {
-        return bs3q10;
+    public String getH20802() {
+        return h20802;
     }
 
-    public void setBs3q10(String bs3q10) {
-        this.bs3q10 = bs3q10;
-        notifyPropertyChanged(BR.bs3q10);
+    public void setH20802(String h20802) {
+        this.h20802 = h20802;
+        notifyPropertyChanged(BR.h20802);
     }
 
     @Bindable
-    public String getBs3q1001() {
-        return bs3q1001;
+    public String getH20803() {
+        return h20803;
     }
 
-    public void setBs3q1001(String bs3q1001) {
-        if (this.bs3q1001.equals(bs3q1001)) return;
-        this.bs3q1001 = bs3q1001;
-        notifyPropertyChanged(BR.bs3q1001);
+    public void setH20803(String h20803) {
+        this.h20803 = h20803;
+        notifyPropertyChanged(BR.h20803);
     }
 
     @Bindable
-    public String getBs3q1002() {
-        return bs3q1002;
+    public String getH20804() {
+        return h20804;
     }
 
-    public void setBs3q1002(String bs3q1002) {
-        if (this.bs3q1002.equals(bs3q1002)) return;
-        this.bs3q1002 = bs3q1002;
-        notifyPropertyChanged(BR.bs3q1002);
+    public void setH20804(String h20804) {
+        this.h20804 = h20804;
+        notifyPropertyChanged(BR.h20804);
     }
 
     @Bindable
-    public String getBs3q1003() {
-        return bs3q1003;
+    public String getH20805() {
+        return h20805;
     }
 
-    public void setBs3q1003(String bs3q1003) {
-        if (this.bs3q1003.equals(bs3q1003)) return;
-        this.bs3q1003 = bs3q1003;
-        notifyPropertyChanged(BR.bs3q1003);
+    public void setH20805(String h20805) {
+        this.h20805 = h20805;
+        notifyPropertyChanged(BR.h20805);
     }
 
     @Bindable
-    public String getBs3q1004() {
-        return bs3q1004;
+    public String getH20806() {
+        return h20806;
     }
 
-    public void setBs3q1004(String bs3q1004) {
-        if (this.bs3q1004.equals(bs3q1004)) return;
-        this.bs3q1004 = bs3q1004;
-        notifyPropertyChanged(BR.bs3q1004);
+    public void setH20806(String h20806) {
+        this.h20806 = h20806;
+        notifyPropertyChanged(BR.h20806);
     }
 
     @Bindable
-    public String getBs3q1005() {
-        return bs3q1005;
+    public String getH20896() {
+        return h20896;
     }
 
-    public void setBs3q1005(String bs3q1005) {
-        if (this.bs3q1005.equals(bs3q1005)) return;
-        this.bs3q1005 = bs3q1005;
-        notifyPropertyChanged(BR.bs3q1005);
+    public void setH20896(String h20896) {
+        this.h20896 = h20896;
+        notifyPropertyChanged(BR.h20896);
     }
 
     @Bindable
-    public String getBs3q1006() {
-        return bs3q1006;
+    public String getH209() {
+        return h209;
     }
 
-    public void setBs3q1006(String bs3q1006) {
-        if (this.bs3q1006.equals(bs3q1006)) return;
-        this.bs3q1006 = bs3q1006;
-        notifyPropertyChanged(BR.bs3q1006);
+    public void setH209(String h209) {
+        this.h209 = h209;
+        notifyPropertyChanged(BR.h209);
     }
 
     @Bindable
-    public String getBs3q1007() {
-        return bs3q1007;
+    public String getH209a() {
+        return h209a;
     }
 
-    public void setBs3q1007(String bs3q1007) {
-        if (this.bs3q1007.equals(bs3q1007)) return;
-        this.bs3q1007 = bs3q1007;
-        notifyPropertyChanged(BR.bs3q1007);
+    public void setH209a(String h209a) {
+        this.h209a = h209a;
+        notifyPropertyChanged(BR.h209a);
     }
 
     @Bindable
-    public String getBs3q1008() {
-        return bs3q1008;
+    public String getH210() {
+        return h210;
     }
 
-    public void setBs3q1008(String bs3q1008) {
-        if (this.bs3q1008.equals(bs3q1008)) return;
-        this.bs3q1008 = bs3q1008;
-        notifyPropertyChanged(BR.bs3q1008);
+    public void setH210(String h210) {
+        this.h210 = h210;
+        notifyPropertyChanged(BR.h210);
     }
 
     @Bindable
-    public String getBs3q1009() {
-        return bs3q1009;
+    public String getH211() {
+        return h211;
     }
 
-    public void setBs3q1009(String bs3q1009) {
-        if (this.bs3q1009.equals(bs3q1009)) return;
-        this.bs3q1009 = bs3q1009;
-        notifyPropertyChanged(BR.bs3q1009);
+    public void setH211(String h211) {
+        this.h211 = h211;
+        notifyPropertyChanged(BR.h211);
     }
 
     @Bindable
-    public String getBs3q1096() {
-        return bs3q1096;
+    public String getH212() {
+        return h212;
     }
 
-    public void setBs3q1096(String bs3q1096) {
-        if (this.bs3q1096.equals(bs3q1096)) return;
-        this.bs3q1096 = bs3q1096;
-        setBs3q1096x(bs3q1096.equals("96") ? this.bs3q1096x : "");
-        notifyPropertyChanged(BR.bs3q1096);
+    public void setH212(String h212) {
+        this.h212 = h212;
+        notifyPropertyChanged(BR.h212);
     }
 
     @Bindable
-    public String getBs3q1096x() {
-        return bs3q1096x;
+    public String getH213() {
+        return h213;
     }
 
-    public void setBs3q1096x(String bs3q1096x) {
-        this.bs3q1096x = bs3q1096x;
-        notifyPropertyChanged(BR.bs3q1096x);
+    public void setH213(String h213) {
+        this.h213 = h213;
+        notifyPropertyChanged(BR.h213);
     }
 
     @Bindable
-    public String getBs3q1097() {
-        return bs3q1097;
+    public String getH214() {
+        return h214;
     }
 
-    public void setBs3q1097(String bs3q1097) {
-        if (this.bs3q1097.equals(bs3q1097)) return;
-        this.bs3q1097 = bs3q1097;
-        setBs3q1001(bs3q1097.equals("97") ? "" : this.bs3q1001);
-        setBs3q1002(bs3q1097.equals("97") ? "" : this.bs3q1002);
-        setBs3q1003(bs3q1097.equals("97") ? "" : this.bs3q1003);
-        setBs3q1004(bs3q1097.equals("97") ? "" : this.bs3q1004);
-        setBs3q1005(bs3q1097.equals("97") ? "" : this.bs3q1005);
-        setBs3q1006(bs3q1097.equals("97") ? "" : this.bs3q1006);
-        setBs3q1007(bs3q1097.equals("97") ? "" : this.bs3q1007);
-        setBs3q1008(bs3q1097.equals("97") ? "" : this.bs3q1008);
-        setBs3q1009(bs3q1097.equals("97") ? "" : this.bs3q1009);
-        setBs3q1096(bs3q1097.equals("97") ? "" : this.bs3q1096);
-        notifyPropertyChanged(BR.bs3q1097);
+    public void setH214(String h214) {
+        this.h214 = h214;
+        notifyPropertyChanged(BR.h214);
     }
 
     @Bindable
-    public String getBs3q11() {
-        return bs3q11;
+    public String getH214a() {
+        return h214a;
     }
 
-    public void setBs3q11(String bs3q11) {
-        this.bs3q11 = bs3q11;
-        setBs3q1201(bs3q11.equals("2") ? "" : this.bs3q1201);
-        setBs3q1202(bs3q11.equals("2") ? "" : this.bs3q1202);
-        setBs3q1203(bs3q11.equals("2") ? "" : this.bs3q1203);
-        setBs3q1204(bs3q11.equals("2") ? "" : this.bs3q1204);
-        setBs3q1205(bs3q11.equals("2") ? "" : this.bs3q1205);
-        setBs3q1206(bs3q11.equals("2") ? "" : this.bs3q1206);
-        setBs3q1207(bs3q11.equals("2") ? "" : this.bs3q1207);
-        setBs3q1296(bs3q11.equals("2") ? "" : this.bs3q1296);
-        notifyPropertyChanged(BR.bs3q11);
+    public void setH214a(String h214a) {
+        this.h214a = h214a;
+        notifyPropertyChanged(BR.h214a);
     }
 
     @Bindable
-    public String getBs3q12() {
-        return bs3q12;
+    public String getH214b() {
+        return h214b;
     }
 
-    public void setBs3q12(String bs3q12) {
-        this.bs3q12 = bs3q12;
-        notifyPropertyChanged(BR.bs3q12);
+    public void setH214b(String h214b) {
+        this.h214b = h214b;
+        notifyPropertyChanged(BR.h214b);
     }
 
     @Bindable
-    public String getBs3q1201() {
-        return bs3q1201;
+    public String getH214b01() {
+        return h214b01;
     }
 
-    public void setBs3q1201(String bs3q1201) {
-        if (this.bs3q1201.equals(bs3q1201)) return;
-        this.bs3q1201 = bs3q1201;
-        notifyPropertyChanged(BR.bs3q1201);
+    public void setH214b01(String h214b01) {
+        this.h214b01 = h214b01;
+        notifyPropertyChanged(BR.h214b01);
     }
 
     @Bindable
-    public String getBs3q1202() {
-        return bs3q1202;
+    public String getH214b02() {
+        return h214b02;
     }
 
-    public void setBs3q1202(String bs3q1202) {
-        if (this.bs3q1202.equals(bs3q1202)) return;
-        this.bs3q1202 = bs3q1202;
-        notifyPropertyChanged(BR.bs3q1202);
+    public void setH214b02(String h214b02) {
+        this.h214b02 = h214b02;
+        notifyPropertyChanged(BR.h214b02);
     }
 
     @Bindable
-    public String getBs3q1203() {
-        return bs3q1203;
+    public String getH214b03() {
+        return h214b03;
     }
 
-    public void setBs3q1203(String bs3q1203) {
-        if (this.bs3q1203.equals(bs3q1203)) return;
-        this.bs3q1203 = bs3q1203;
-        notifyPropertyChanged(BR.bs3q1203);
+    public void setH214b03(String h214b03) {
+        this.h214b03 = h214b03;
+        notifyPropertyChanged(BR.h214b03);
     }
 
     @Bindable
-    public String getBs3q1204() {
-        return bs3q1204;
+    public String getH214b04() {
+        return h214b04;
     }
 
-    public void setBs3q1204(String bs3q1204) {
-        if (this.bs3q1204.equals(bs3q1204)) return;
-        this.bs3q1204 = bs3q1204;
-        notifyPropertyChanged(BR.bs3q1204);
+    public void setH214b04(String h214b04) {
+        this.h214b04 = h214b04;
+        notifyPropertyChanged(BR.h214b04);
     }
 
     @Bindable
-    public String getBs3q1205() {
-        return bs3q1205;
+    public String getH214b05() {
+        return h214b05;
     }
 
-    public void setBs3q1205(String bs3q1205) {
-        if (this.bs3q1205.equals(bs3q1205)) return;
-        this.bs3q1205 = bs3q1205;
-        notifyPropertyChanged(BR.bs3q1205);
+    public void setH214b05(String h214b05) {
+        this.h214b05 = h214b05;
+        notifyPropertyChanged(BR.h214b05);
     }
 
     @Bindable
-    public String getBs3q1206() {
-        return bs3q1206;
+    public String getH214b06() {
+        return h214b06;
     }
 
-    public void setBs3q1206(String bs3q1206) {
-        if (this.bs3q1206.equals(bs3q1206)) return;
-        this.bs3q1206 = bs3q1206;
-        setBs3q1206x(bs3q1206.equals("6") ? this.bs3q1206x : "");
-        notifyPropertyChanged(BR.bs3q1206);
+    public void setH214b06(String h214b06) {
+        this.h214b06 = h214b06;
+        notifyPropertyChanged(BR.h214b06);
     }
 
     @Bindable
-    public String getBs3q1206x() {
-        return bs3q1206x;
+    public String getH214b96() {
+        return h214b96;
     }
 
-    public void setBs3q1206x(String bs3q1206x) {
-        this.bs3q1206x = bs3q1206x;
-        notifyPropertyChanged(BR.bs3q1206x);
+    public void setH214b96(String h214b96) {
+        this.h214b96 = h214b96;
+        notifyPropertyChanged(BR.h214b96);
     }
 
     @Bindable
-    public String getBs3q1207() {
-        return bs3q1207;
+    public String getH214b96x() {
+        return h214b96x;
     }
 
-    public void setBs3q1207(String bs3q1207) {
-        if (this.bs3q1207.equals(bs3q1207)) return;
-        this.bs3q1207 = bs3q1207;
-        notifyPropertyChanged(BR.bs3q1207);
+    public void setH214b96x(String h214b96x) {
+        this.h214b96x = h214b96x;
+        notifyPropertyChanged(BR.h214b96x);
     }
 
     @Bindable
-    public String getBs3q1296() {
-        return bs3q1296;
+    public String getH214b98() {
+        return h214b98;
     }
 
-    public void setBs3q1296(String bs3q1296) {
-        if (this.bs3q1296.equals(bs3q1296)) return;
-        this.bs3q1296 = bs3q1296;
-        setBs3q1296x(bs3q1296.equals("96") ? this.bs3q1296x : "");
-        notifyPropertyChanged(BR.bs3q1296);
+    public void setH214b98(String h214b98) {
+        this.h214b98 = h214b98;
+        notifyPropertyChanged(BR.h214b98);
     }
 
     @Bindable
-    public String getBs3q1296x() {
-        return bs3q1296x;
+    public String getH215() {
+        return h215;
     }
 
-    public void setBs3q1296x(String bs3q1296x) {
-        this.bs3q1296x = bs3q1296x;
-        notifyPropertyChanged(BR.bs3q1296x);
+    public void setH215(String h215) {
+        this.h215 = h215;
+        notifyPropertyChanged(BR.h215);
     }
 
     @Bindable
-    public String getBs3q13() {
-        return bs3q13;
+    public String getH216() {
+        return h216;
     }
 
-    public void setBs3q13(String bs3q13) {
-        this.bs3q13 = bs3q13;
-        notifyPropertyChanged(BR.bs3q13);
+    public void setH216(String h216) {
+        this.h216 = h216;
+        notifyPropertyChanged(BR.h216);
     }
 
     @Bindable
-    public String getBs3q14() {
-        return bs3q14;
+    public String getH216a() {
+        return h216a;
     }
 
-    public void setBs3q14(String bs3q14) {
-        this.bs3q14 = bs3q14;
-        notifyPropertyChanged(BR.bs3q14);
+    public void setH216a(String h216a) {
+        this.h216a = h216a;
+        notifyPropertyChanged(BR.h216a);
     }
 
     @Bindable
-    public String getBs3q15() {
-        return bs3q15;
+    public String getH216a96x() {
+        return h216a96x;
     }
 
-    public void setBs3q15(String bs3q15) {
-        this.bs3q15 = bs3q15;
-        notifyPropertyChanged(BR.bs3q15);
+    public void setH216a96x(String h216a96x) {
+        this.h216a96x = h216a96x;
+        notifyPropertyChanged(BR.h216a96x);
     }
 
     @Bindable
-    public String getBs4aq1() {
-        return bs4aq1;
+    public String getH217() {
+        return h217;
     }
 
-    public void setBs4aq1(String bs4aq1) {
-        this.bs4aq1 = bs4aq1;
-        setBs4aq201(bs4aq1.equals("2") ? "" : this.bs4aq201);
-        setBs4aq202(bs4aq1.equals("2") ? "" : this.bs4aq202);
-        setBs4aq203(bs4aq1.equals("2") ? "" : this.bs4aq203);
-        setBs4aq204(bs4aq1.equals("2") ? "" : this.bs4aq204);
-        setBs4aq205(bs4aq1.equals("2") ? "" : this.bs4aq205);
-        setBs4aq206(bs4aq1.equals("2") ? "" : this.bs4aq206);
-        setBs4aq207(bs4aq1.equals("2") ? "" : this.bs4aq207);
-        setBs4aq208(bs4aq1.equals("2") ? "" : this.bs4aq208);
-        setBs4aq296(bs4aq1.equals("2") ? "" : this.bs4aq296);
-        setBs4aq298(bs4aq1.equals("2") ? "" : this.bs4aq298);
-        setBs4aq3(bs4aq1.equals("2") ? "" : this.bs4aq3);
-        setBs4aq4(bs4aq1.equals("2") ? "" : this.bs4aq4);
-        setBs4aq5(bs4aq1.equals("2") ? "" : this.bs4aq5);
-        setBs4aq6(bs4aq1.equals("2") ? "" : this.bs4aq6);
-        setBs4aq7(bs4aq1.equals("2") ? "" : this.bs4aq7);
-        setBs4aq8(bs4aq1.equals("2") ? "" : this.bs4aq8);
-        setBs4aq9(bs4aq1.equals("2") ? "" : this.bs4aq9);
-        setBs4aq10(bs4aq1.equals("2") ? "" : this.bs4aq10);
-        notifyPropertyChanged(BR.bs4aq1);
+    public void setH217(String h217) {
+        this.h217 = h217;
+        notifyPropertyChanged(BR.h217);
     }
 
     @Bindable
-    public String getBs4aq2() {
-        return bs4aq2;
+    public String getH21701() {
+        return h21701;
     }
 
-    public void setBs4aq2(String bs4aq2) {
-        this.bs4aq2 = bs4aq2;
-        notifyPropertyChanged(BR.bs4aq2);
+    public void setH21701(String h21701) {
+        this.h21701 = h21701;
+        notifyPropertyChanged(BR.h21701);
     }
 
     @Bindable
-    public String getBs4aq201() {
-        return bs4aq201;
+    public String getH21702() {
+        return h21702;
     }
 
-    public void setBs4aq201(String bs4aq201) {
-        if (this.bs4aq201.equals(bs4aq201)) return;
-        this.bs4aq201 = bs4aq201;
-        notifyPropertyChanged(BR.bs4aq201);
+    public void setH21702(String h21702) {
+        this.h21702 = h21702;
+        notifyPropertyChanged(BR.h21702);
     }
 
     @Bindable
-    public String getBs4aq202() {
-        return bs4aq202;
+    public String getH21703() {
+        return h21703;
     }
 
-    public void setBs4aq202(String bs4aq202) {
-        if (this.bs4aq202.equals(bs4aq202)) return;
-        this.bs4aq202 = bs4aq202;
-        notifyPropertyChanged(BR.bs4aq202);
+    public void setH21703(String h21703) {
+        this.h21703 = h21703;
+        notifyPropertyChanged(BR.h21703);
     }
 
     @Bindable
-    public String getBs4aq203() {
-        return bs4aq203;
+    public String getH21704() {
+        return h21704;
     }
 
-    public void setBs4aq203(String bs4aq203) {
-        if (this.bs4aq203.equals(bs4aq203)) return;
-        this.bs4aq203 = bs4aq203;
-        notifyPropertyChanged(BR.bs4aq203);
+    public void setH21704(String h21704) {
+        this.h21704 = h21704;
+        notifyPropertyChanged(BR.h21704);
     }
 
     @Bindable
-    public String getBs4aq204() {
-        return bs4aq204;
+    public String getH21705() {
+        return h21705;
     }
 
-    public void setBs4aq204(String bs4aq204) {
-        if (this.bs4aq204.equals(bs4aq204)) return;
-        this.bs4aq204 = bs4aq204;
-        notifyPropertyChanged(BR.bs4aq204);
+    public void setH21705(String h21705) {
+        this.h21705 = h21705;
+        notifyPropertyChanged(BR.h21705);
     }
 
     @Bindable
-    public String getBs4aq205() {
-        return bs4aq205;
+    public String getH21706() {
+        return h21706;
     }
 
-    public void setBs4aq205(String bs4aq205) {
-        if (this.bs4aq205.equals(bs4aq205)) return;
-        this.bs4aq205 = bs4aq205;
-        notifyPropertyChanged(BR.bs4aq205);
+    public void setH21706(String h21706) {
+        this.h21706 = h21706;
+        notifyPropertyChanged(BR.h21706);
     }
 
     @Bindable
-    public String getBs4aq206() {
-        return bs4aq206;
+    public String getH21796() {
+        return h21796;
     }
 
-    public void setBs4aq206(String bs4aq206) {
-        if (this.bs4aq206.equals(bs4aq206)) return;
-        this.bs4aq206 = bs4aq206;
-        notifyPropertyChanged(BR.bs4aq206);
+    public void setH21796(String h21796) {
+        this.h21796 = h21796;
+        notifyPropertyChanged(BR.h21796);
     }
 
     @Bindable
-    public String getBs4aq207() {
-        return bs4aq207;
+    public String getH21796x() {
+        return h21796x;
     }
 
-    public void setBs4aq207(String bs4aq207) {
-        if (this.bs4aq207.equals(bs4aq207)) return;
-        this.bs4aq207 = bs4aq207;
-        notifyPropertyChanged(BR.bs4aq207);
+    public void setH21796x(String h21796x) {
+        this.h21796x = h21796x;
+        notifyPropertyChanged(BR.h21796x);
     }
 
     @Bindable
-    public String getBs4aq208() {
-        return bs4aq208;
+    public String getH218() {
+        return h218;
     }
 
-    public void setBs4aq208(String bs4aq208) {
-        if (this.bs4aq208.equals(bs4aq208)) return;
-        this.bs4aq208 = bs4aq208;
-        notifyPropertyChanged(BR.bs4aq208);
+    public void setH218(String h218) {
+        this.h218 = h218;
+        notifyPropertyChanged(BR.h218);
     }
 
     @Bindable
-    public String getBs4aq298() {
-        return bs4aq298;
+    public String getH219() {
+        return h219;
     }
 
-    public void setBs4aq298(String bs4aq298) {
-        if (this.bs4aq298.equals(bs4aq298)) return;
-        this.bs4aq298 = bs4aq298;
-        setBs4aq201(bs4aq298.equals("98") ? "" : this.bs4aq201);
-        setBs4aq202(bs4aq298.equals("98") ? "" : this.bs4aq202);
-        setBs4aq203(bs4aq298.equals("98") ? "" : this.bs4aq203);
-        setBs4aq204(bs4aq298.equals("98") ? "" : this.bs4aq204);
-        setBs4aq205(bs4aq298.equals("98") ? "" : this.bs4aq205);
-        setBs4aq206(bs4aq298.equals("98") ? "" : this.bs4aq206);
-        setBs4aq207(bs4aq298.equals("98") ? "" : this.bs4aq207);
-        setBs4aq208(bs4aq298.equals("98") ? "" : this.bs4aq208);
-        setBs4aq296(bs4aq298.equals("98") ? "" : this.bs4aq296);
-        notifyPropertyChanged(BR.bs4aq298);
+    public void setH219(String h219) {
+        this.h219 = h219;
+        notifyPropertyChanged(BR.h219);
     }
 
     @Bindable
-    public String getBs4aq296() {
-        return bs4aq296;
+    public String getH21996x() {
+        return h21996x;
     }
 
-    public void setBs4aq296(String bs4aq296) {
-        if (this.bs4aq296.equals(bs4aq296)) return;
-        this.bs4aq296 = bs4aq296;
-        setBs4aq296x(bs4aq296.equals("96") ? this.bs4aq296x : "");
-        notifyPropertyChanged(BR.bs4aq296);
+    public void setH21996x(String h21996x) {
+        this.h21996x = h21996x;
+        notifyPropertyChanged(BR.h21996x);
     }
 
     @Bindable
-    public String getBs4aq296x() {
-        return bs4aq296x;
+    public String getH220() {
+        return h220;
     }
 
-    public void setBs4aq296x(String bs4aq296x) {
-        this.bs4aq296x = bs4aq296x;
-        notifyPropertyChanged(BR.bs4aq296x);
+    public void setH220(String h220) {
+        this.h220 = h220;
+        notifyPropertyChanged(BR.h220);
     }
 
     @Bindable
-    public String getBs4aq3() {
-        return bs4aq3;
+    public String getH2201() {
+        return h2201;
     }
 
-    public void setBs4aq3(String bs4aq3) {
-        this.bs4aq3 = bs4aq3;
-        setBs4aq4(bs4aq3.equals("2") ? "" : this.bs4aq4);
-        setBs4aq5(bs4aq3.equals("2") ? "" : this.bs4aq5);
-        setBs4aq6(bs4aq3.equals("2") ? "" : this.bs4aq6);
-        notifyPropertyChanged(BR.bs4aq3);
+    public void setH2201(String h2201) {
+        this.h2201 = h2201;
+        notifyPropertyChanged(BR.h2201);
     }
 
     @Bindable
-    public String getBs4aq4() {
-        return bs4aq4;
+    public String getH2201x() {
+        return h2201x;
     }
 
-    public void setBs4aq4(String bs4aq4) {
-        this.bs4aq4 = bs4aq4;
-        setBs4aq5(bs4aq4.equals("2") ? "" : this.bs4aq5);
-        setBs4aq6(bs4aq4.equals("2") ? "" : this.bs4aq6);
-        notifyPropertyChanged(BR.bs4aq4);
+    public void setH2201x(String h2201x) {
+        this.h2201x = h2201x;
+        notifyPropertyChanged(BR.h2201x);
     }
 
     @Bindable
-    public String getBs4aq5() {
-        return bs4aq5;
+    public String getH2202() {
+        return h2202;
     }
 
-    public void setBs4aq5(String bs4aq5) {
-        this.bs4aq5 = bs4aq5;
-        setBs4aq6(bs4aq5.equals("2") ? "" : this.bs4aq6);
-        notifyPropertyChanged(BR.bs4aq5);
+    public void setH2202(String h2202) {
+        this.h2202 = h2202;
+        notifyPropertyChanged(BR.h2202);
     }
 
     @Bindable
-    public String getBs4aq6() {
-        return bs4aq6;
+    public String getH2202x() {
+        return h2202x;
     }
 
-    public void setBs4aq6(String bs4aq6) {
-        this.bs4aq6 = bs4aq6;
-        setBs4aq696x(bs4aq6.equals("96") ? this.bs4aq696x : "");
-        notifyPropertyChanged(BR.bs4aq6);
+    public void setH2202x(String h2202x) {
+        this.h2202x = h2202x;
+        notifyPropertyChanged(BR.h2202x);
     }
 
     @Bindable
-    public String getBs4aq696x() {
-        return bs4aq696x;
+    public String getH2203() {
+        return h2203;
     }
 
-    public void setBs4aq696x(String bs4aq696x) {
-        this.bs4aq696x = bs4aq696x;
-        notifyPropertyChanged(BR.bs4aq696x);
+    public void setH2203(String h2203) {
+        this.h2203 = h2203;
+        notifyPropertyChanged(BR.h2203);
     }
 
     @Bindable
-    public String getBs4aq7() {
-        return bs4aq7;
+    public String getH2203x() {
+        return h2203x;
     }
 
-    public void setBs4aq7(String bs4aq7) {
-        this.bs4aq7 = bs4aq7;
-        setBs4aq8(bs4aq7.equals("1") ? this.bs4aq8 : "");
-        notifyPropertyChanged(BR.bs4aq7);
+    public void setH2203x(String h2203x) {
+        this.h2203x = h2203x;
+        notifyPropertyChanged(BR.h2203x);
     }
 
     @Bindable
-    public String getBs4aq8() {
-        return bs4aq8;
+    public String getH2204() {
+        return h2204;
     }
 
-    public void setBs4aq8(String bs4aq8) {
-        this.bs4aq8 = bs4aq8;
-        setBs4aq896x(bs4aq8.equals("96") ? this.bs4aq896x : "");
-        notifyPropertyChanged(BR.bs4aq8);
+    public void setH2204(String h2204) {
+        this.h2204 = h2204;
+        notifyPropertyChanged(BR.h2204);
     }
 
     @Bindable
-    public String getBs4aq896x() {
-        return bs4aq896x;
+    public String getH2204x() {
+        return h2204x;
     }
 
-    public void setBs4aq896x(String bs4aq896x) {
-        this.bs4aq896x = bs4aq896x;
-        notifyPropertyChanged(BR.bs4aq896x);
+    public void setH2204x(String h2204x) {
+        this.h2204x = h2204x;
+        notifyPropertyChanged(BR.h2204x);
     }
 
     @Bindable
-    public String getBs4aq9() {
-        return bs4aq9;
+    public String getH2205() {
+        return h2205;
     }
 
-    public void setBs4aq9(String bs4aq9) {
-        this.bs4aq9 = bs4aq9;
-        setBs4aq10(bs4aq9.equals("1") ? this.bs4aq10 : "");
-        notifyPropertyChanged(BR.bs4aq9);
+    public void setH2205(String h2205) {
+        this.h2205 = h2205;
+        notifyPropertyChanged(BR.h2205);
     }
 
     @Bindable
-    public String getBs4aq10() {
-        return bs4aq10;
+    public String getH2205x() {
+        return h2205x;
     }
 
-    public void setBs4aq10(String bs4aq10) {
-        this.bs4aq10 = bs4aq10;
-        notifyPropertyChanged(BR.bs4aq10);
+    public void setH2205x(String h2205x) {
+        this.h2205x = h2205x;
+        notifyPropertyChanged(BR.h2205x);
     }
 
     @Bindable
-    public String getBs4bq1() {
-        return bs4bq1;
+    public String getH2206() {
+        return h2206;
     }
 
-    public void setBs4bq1(String bs4bq1) {
-        this.bs4bq1 = bs4bq1;
-        setBs4bq21(bs4bq1.equals("2") ? "" : this.bs4bq21);
-        setBs4bq22(bs4bq1.equals("2") ? "" : this.bs4bq22);
-        setBs4bq23(bs4bq1.equals("2") ? "" : this.bs4bq23);
-        setBs4bq24(bs4bq1.equals("2") ? "" : this.bs4bq24);
-        setBs4bq296(bs4bq1.equals("2") ? "" : this.bs4bq296);
-        setBs4bq298(bs4bq1.equals("2") ? "" : this.bs4bq298);
-        setBs4bq31(bs4bq1.equals("2") ? "" : this.bs4bq31);
-        setBs4bq32(bs4bq1.equals("2") ? "" : this.bs4bq32);
-        setBs4bq33(bs4bq1.equals("2") ? "" : this.bs4bq33);
-        setBs4bq34(bs4bq1.equals("2") ? "" : this.bs4bq34);
-        setBs4bq35(bs4bq1.equals("2") ? "" : this.bs4bq35);
-        setBs4bq36(bs4bq1.equals("2") ? "" : this.bs4bq36);
-        setBs4bq396(bs4bq1.equals("2") ? "" : this.bs4bq396);
-        setBs4bq398(bs4bq1.equals("2") ? "" : this.bs4bq398);
-        setBs4bq4(bs4bq1.equals("2") ? "" : this.bs4bq4);
-        setBs4bq51(bs4bq1.equals("2") ? "" : this.bs4bq51);
-        setBs4bq52(bs4bq1.equals("2") ? "" : this.bs4bq52);
-        setBs4bq53(bs4bq1.equals("2") ? "" : this.bs4bq53);
-        setBs4bq596(bs4bq1.equals("2") ? "" : this.bs4bq596);
-        setBs4bq598(bs4bq1.equals("2") ? "" : this.bs4bq598);
-        setBs4bq6(bs4bq1.equals("2") ? "" : this.bs4bq6);
-        setBs4bq7(bs4bq1.equals("2") ? "" : this.bs4bq7);
-        setBs4bq81(bs4bq1.equals("2") ? "" : this.bs4bq81);
-        setBs4bq82(bs4bq1.equals("2") ? "" : this.bs4bq82);
-        setBs4bq83(bs4bq1.equals("2") ? "" : this.bs4bq83);
-        setBs4bq84(bs4bq1.equals("2") ? "" : this.bs4bq84);
-        setBs4bq85(bs4bq1.equals("2") ? "" : this.bs4bq85);
-        setBs4bq86(bs4bq1.equals("2") ? "" : this.bs4bq86);
-        setBs4bq87(bs4bq1.equals("2") ? "" : this.bs4bq87);
-        setBs4bq896(bs4bq1.equals("2") ? "" : this.bs4bq896);
-        setBs4bq898(bs4bq1.equals("2") ? "" : this.bs4bq898);
-        notifyPropertyChanged(BR.bs4bq1);
+    public void setH2206(String h2206) {
+        this.h2206 = h2206;
+        notifyPropertyChanged(BR.h2206);
     }
 
     @Bindable
-    public String getBs4bq2() {
-        return bs4bq2;
+    public String getH2206x() {
+        return h2206x;
     }
 
-    public void setBs4bq2(String bs4bq2) {
-        this.bs4bq2 = bs4bq2;
-        notifyPropertyChanged(BR.bs4bq2);
+    public void setH2206x(String h2206x) {
+        this.h2206x = h2206x;
+        notifyPropertyChanged(BR.h2206x);
     }
 
     @Bindable
-    public String getBs4bq21() {
-        return bs4bq21;
+    public String getH22096() {
+        return h22096;
     }
 
-    public void setBs4bq21(String bs4bq21) {
-        if (this.bs4bq21.equals(bs4bq21)) return;
-        this.bs4bq21 = bs4bq21;
-        notifyPropertyChanged(BR.bs4bq21);
+    public void setH22096(String h22096) {
+        this.h22096 = h22096;
+        notifyPropertyChanged(BR.h22096);
     }
 
     @Bindable
-    public String getBs4bq22() {
-        return bs4bq22;
+    public String getH22096x() {
+        return h22096x;
     }
 
-    public void setBs4bq22(String bs4bq22) {
-        if (this.bs4bq22.equals(bs4bq22)) return;
-        this.bs4bq22 = bs4bq22;
-        notifyPropertyChanged(BR.bs4bq22);
+    public void setH22096x(String h22096x) {
+        this.h22096x = h22096x;
+        notifyPropertyChanged(BR.h22096x);
     }
 
     @Bindable
-    public String getBs4bq23() {
-        return bs4bq23;
+    public String getH221() {
+        return h221;
     }
 
-    public void setBs4bq23(String bs4bq23) {
-        if (this.bs4bq23.equals(bs4bq23)) return;
-        this.bs4bq23 = bs4bq23;
-        notifyPropertyChanged(BR.bs4bq23);
+    public void setH221(String h221) {
+        this.h221 = h221;
+        notifyPropertyChanged(BR.h221);
     }
 
     @Bindable
-    public String getBs4bq24() {
-        return bs4bq24;
+    public String getH222() {
+        return h222;
     }
 
-    public void setBs4bq24(String bs4bq24) {
-        if (this.bs4bq24.equals(bs4bq24)) return;
-        this.bs4bq24 = bs4bq24;
-        notifyPropertyChanged(BR.bs4bq24);
+    public void setH222(String h222) {
+        this.h222 = h222;
+        notifyPropertyChanged(BR.h222);
     }
 
     @Bindable
-    public String getBs4bq298() {
-        return bs4bq298;
+    public String getH223() {
+        return h223;
     }
 
-    public void setBs4bq298(String bs4bq298) {
-        if (this.bs4bq298.equals(bs4bq298)) return;
-        this.bs4bq298 = bs4bq298;
-        setBs4bq21(bs4bq298.equals("98") ? "" : this.bs4bq21);
-        setBs4bq22(bs4bq298.equals("98") ? "" : this.bs4bq22);
-        setBs4bq23(bs4bq298.equals("98") ? "" : this.bs4bq23);
-        setBs4bq24(bs4bq298.equals("98") ? "" : this.bs4bq24);
-        setBs4bq296(bs4bq298.equals("98") ? "" : this.bs4bq296);
-        notifyPropertyChanged(BR.bs4bq298);
+    public void setH223(String h223) {
+        this.h223 = h223;
+        notifyPropertyChanged(BR.h223);
     }
 
     @Bindable
-    public String getBs4bq296() {
-        return bs4bq296;
+    public String getK101() {
+        return k101;
     }
 
-    public void setBs4bq296(String bs4bq296) {
-        if (this.bs4bq296.equals(bs4bq296)) return;
-        this.bs4bq296 = bs4bq296;
-        setBs4bq296x(bs4bq296.equals("96") ? this.bs4bq296x : "");
-        notifyPropertyChanged(BR.bs4bq296);
+    public void setK101(String k101) {
+        this.k101 = k101;
+        notifyPropertyChanged(BR.k101);
     }
 
     @Bindable
-    public String getBs4bq296x() {
-        return bs4bq296x;
+    public String getK101a() {
+        return k101a;
     }
 
-    public void setBs4bq296x(String bs4bq296x) {
-        this.bs4bq296x = bs4bq296x;
-        notifyPropertyChanged(BR.bs4bq296x);
+    public void setK101a(String k101a) {
+        this.k101a = k101a;
+        notifyPropertyChanged(BR.k101a);
     }
 
     @Bindable
-    public String getBs4bq3() {
-        return bs4bq3;
+    public String getK101a01() {
+        return k101a01;
     }
 
-    public void setBs4bq3(String bs4bq3) {
-        this.bs4bq3 = bs4bq3;
-        notifyPropertyChanged(BR.bs4bq3);
+    public void setK101a01(String k101a01) {
+        this.k101a01 = k101a01;
+        notifyPropertyChanged(BR.k101a01);
     }
 
     @Bindable
-    public String getBs4bq31() {
-        return bs4bq31;
+    public String getK101a02() {
+        return k101a02;
     }
 
-    public void setBs4bq31(String bs4bq31) {
-        if (this.bs4bq31.equals(bs4bq31)) return;
-        this.bs4bq31 = bs4bq31;
-        notifyPropertyChanged(BR.bs4bq31);
+    public void setK101a02(String k101a02) {
+        this.k101a02 = k101a02;
+        notifyPropertyChanged(BR.k101a02);
     }
 
     @Bindable
-    public String getBs4bq32() {
-        return bs4bq32;
+    public String getK101a03() {
+        return k101a03;
     }
 
-    public void setBs4bq32(String bs4bq32) {
-        if (this.bs4bq32.equals(bs4bq32)) return;
-        this.bs4bq32 = bs4bq32;
-        notifyPropertyChanged(BR.bs4bq32);
+    public void setK101a03(String k101a03) {
+        this.k101a03 = k101a03;
+        notifyPropertyChanged(BR.k101a03);
     }
 
     @Bindable
-    public String getBs4bq33() {
-        return bs4bq33;
+    public String getK101a04() {
+        return k101a04;
     }
 
-    public void setBs4bq33(String bs4bq33) {
-        if (this.bs4bq33.equals(bs4bq33)) return;
-        this.bs4bq33 = bs4bq33;
-        notifyPropertyChanged(BR.bs4bq33);
+    public void setK101a04(String k101a04) {
+        this.k101a04 = k101a04;
+        notifyPropertyChanged(BR.k101a04);
     }
 
     @Bindable
-    public String getBs4bq34() {
-        return bs4bq34;
+    public String getK101a05() {
+        return k101a05;
     }
 
-    public void setBs4bq34(String bs4bq34) {
-        if (this.bs4bq34.equals(bs4bq34)) return;
-        this.bs4bq34 = bs4bq34;
-        notifyPropertyChanged(BR.bs4bq34);
+    public void setK101a05(String k101a05) {
+        this.k101a05 = k101a05;
+        notifyPropertyChanged(BR.k101a05);
     }
 
     @Bindable
-    public String getBs4bq35() {
-        return bs4bq35;
+    public String getK101a06() {
+        return k101a06;
     }
 
-    public void setBs4bq35(String bs4bq35) {
-        if (this.bs4bq35.equals(bs4bq35)) return;
-        this.bs4bq35 = bs4bq35;
-        notifyPropertyChanged(BR.bs4bq35);
+    public void setK101a06(String k101a06) {
+        this.k101a06 = k101a06;
+        notifyPropertyChanged(BR.k101a06);
     }
 
     @Bindable
-    public String getBs4bq36() {
-        return bs4bq36;
+    public String getK101a07() {
+        return k101a07;
     }
 
-    public void setBs4bq36(String bs4bq36) {
-        if (this.bs4bq36.equals(bs4bq36)) return;
-        this.bs4bq36 = bs4bq36;
-        notifyPropertyChanged(BR.bs4bq36);
+    public void setK101a07(String k101a07) {
+        this.k101a07 = k101a07;
+        notifyPropertyChanged(BR.k101a07);
     }
 
     @Bindable
-    public String getBs4bq398() {
-        return bs4bq398;
+    public String getK101a08() {
+        return k101a08;
     }
 
-    public void setBs4bq398(String bs4bq398) {
-        if (this.bs4bq398.equals(bs4bq398)) return;
-        this.bs4bq398 = bs4bq398;
-        setBs4bq31(bs4bq398.equals("98") ? "" : this.bs4bq31);
-        setBs4bq32(bs4bq398.equals("98") ? "" : this.bs4bq32);
-        setBs4bq33(bs4bq398.equals("98") ? "" : this.bs4bq33);
-        setBs4bq34(bs4bq398.equals("98") ? "" : this.bs4bq34);
-        setBs4bq35(bs4bq398.equals("98") ? "" : this.bs4bq35);
-        setBs4bq36(bs4bq398.equals("98") ? "" : this.bs4bq36);
-        setBs4bq396(bs4bq398.equals("98") ? "" : this.bs4bq396);
-        notifyPropertyChanged(BR.bs4bq398);
+    public void setK101a08(String k101a08) {
+        this.k101a08 = k101a08;
+        notifyPropertyChanged(BR.k101a08);
     }
 
     @Bindable
-    public String getBs4bq396() {
-        return bs4bq396;
+    public String getK101a09() {
+        return k101a09;
     }
 
-    public void setBs4bq396(String bs4bq396) {
-        if (this.bs4bq396.equals(bs4bq396)) return;
-        this.bs4bq396 = bs4bq396;
-        setBs4bq396x(bs4bq396.equals("96") ? this.bs4bq396x : "");
-        notifyPropertyChanged(BR.bs4bq396);
+    public void setK101a09(String k101a09) {
+        this.k101a09 = k101a09;
+        notifyPropertyChanged(BR.k101a09);
     }
 
     @Bindable
-    public String getBs4bq396x() {
-        return bs4bq396x;
+    public String getK101a10() {
+        return k101a10;
     }
 
-    public void setBs4bq396x(String bs4bq396x) {
-        this.bs4bq396x = bs4bq396x;
-        notifyPropertyChanged(BR.bs4bq396x);
+    public void setK101a10(String k101a10) {
+        this.k101a10 = k101a10;
+        notifyPropertyChanged(BR.k101a10);
     }
 
     @Bindable
-    public String getBs4bq4() {
-        return bs4bq4;
+    public String getK101a11() {
+        return k101a11;
     }
 
-    public void setBs4bq4(String bs4bq4) {
-        this.bs4bq4 = bs4bq4;
-        setBs4bq51(bs4bq4.equals("1") ? this.bs4bq51 : "");
-        setBs4bq52(bs4bq4.equals("1") ? this.bs4bq52 : "");
-        setBs4bq53(bs4bq4.equals("1") ? this.bs4bq53 : "");
-        setBs4bq596(bs4bq4.equals("1") ? this.bs4bq596 : "");
-        setBs4bq598(bs4bq4.equals("1") ? this.bs4bq598 : "");
-        setBs4bq6(bs4bq4.equals("1") ? this.bs4bq6 : "");
-        notifyPropertyChanged(BR.bs4bq4);
+    public void setK101a11(String k101a11) {
+        this.k101a11 = k101a11;
+        notifyPropertyChanged(BR.k101a11);
     }
 
     @Bindable
-    public String getBs4bq5() {
-        return bs4bq5;
+    public String getK101a12() {
+        return k101a12;
     }
 
-    public void setBs4bq5(String bs4bq5) {
-        this.bs4bq5 = bs4bq5;
-        notifyPropertyChanged(BR.bs4bq5);
+    public void setK101a12(String k101a12) {
+        this.k101a12 = k101a12;
+        notifyPropertyChanged(BR.k101a12);
     }
 
     @Bindable
-    public String getBs4bq51() {
-        return bs4bq51;
+    public String getK101a13() {
+        return k101a13;
     }
 
-    public void setBs4bq51(String bs4bq51) {
-        if (this.bs4bq51.equals(bs4bq51)) return;
-        this.bs4bq51 = bs4bq51;
-        notifyPropertyChanged(BR.bs4bq51);
+    public void setK101a13(String k101a13) {
+        this.k101a13 = k101a13;
+        notifyPropertyChanged(BR.k101a13);
     }
 
     @Bindable
-    public String getBs4bq52() {
-        return bs4bq52;
+    public String getK101a96() {
+        return k101a96;
     }
 
-    public void setBs4bq52(String bs4bq52) {
-        if (this.bs4bq52.equals(bs4bq52)) return;
-        this.bs4bq52 = bs4bq52;
-        notifyPropertyChanged(BR.bs4bq52);
+    public void setK101a96(String k101a96) {
+        this.k101a96 = k101a96;
+        notifyPropertyChanged(BR.k101a96);
     }
 
     @Bindable
-    public String getBs4bq53() {
-        return bs4bq53;
+    public String getK101a96x() {
+        return k101a96x;
     }
 
-    public void setBs4bq53(String bs4bq53) {
-        if (this.bs4bq53.equals(bs4bq53)) return;
-        this.bs4bq53 = bs4bq53;
-        notifyPropertyChanged(BR.bs4bq53);
+    public void setK101a96x(String k101a96x) {
+        this.k101a96x = k101a96x;
+        notifyPropertyChanged(BR.k101a96x);
     }
 
     @Bindable
-    public String getBs4bq598() {
-        return bs4bq598;
+    public String getK102() {
+        return k102;
     }
 
-    public void setBs4bq598(String bs4bq598) {
-        if (this.bs4bq598.equals(bs4bq598)) return;
-        this.bs4bq598 = bs4bq598;
-        setBs4bq51(bs4bq598.equals("98") ? "" : this.bs4bq51);
-        setBs4bq52(bs4bq598.equals("98") ? "" : this.bs4bq52);
-        setBs4bq53(bs4bq598.equals("98") ? "" : this.bs4bq53);
-        setBs4bq596(bs4bq598.equals("98") ? "" : this.bs4bq596);
-        notifyPropertyChanged(BR.bs4bq598);
+    public void setK102(String k102) {
+        this.k102 = k102;
+        notifyPropertyChanged(BR.k102);
     }
 
     @Bindable
-    public String getBs4bq596() {
-        return bs4bq596;
+    public String getK104a() {
+        return k104a;
     }
 
-    public void setBs4bq596(String bs4bq596) {
-        if (this.bs4bq596.equals(bs4bq596)) return;
-        this.bs4bq596 = bs4bq596;
-        setBs4bq596x(bs4bq596.equals("96") ? this.bs4bq596x : "");
-        notifyPropertyChanged(BR.bs4bq596);
+    public void setK104a(String k104a) {
+        this.k104a = k104a;
+        notifyPropertyChanged(BR.k104a);
     }
 
     @Bindable
-    public String getBs4bq596x() {
-        return bs4bq596x;
+    public String getK104a01() {
+        return k104a01;
     }
 
-    public void setBs4bq596x(String bs4bq596x) {
-        this.bs4bq596x = bs4bq596x;
-        notifyPropertyChanged(BR.bs4bq596x);
+    public void setK104a01(String k104a01) {
+        this.k104a01 = k104a01;
+        notifyPropertyChanged(BR.k104a01);
     }
 
     @Bindable
-    public String getBs4bq6() {
-        return bs4bq6;
+    public String getK104a02() {
+        return k104a02;
     }
 
-    public void setBs4bq6(String bs4bq6) {
-        this.bs4bq6 = bs4bq6;
-        setBs4bq696x(bs4bq6.equals("96") ? this.bs4bq696x : "");
-        notifyPropertyChanged(BR.bs4bq6);
+    public void setK104a02(String k104a02) {
+        this.k104a02 = k104a02;
+        notifyPropertyChanged(BR.k104a02);
     }
 
     @Bindable
-    public String getBs4bq696x() {
-        return bs4bq696x;
+    public String getK104a03() {
+        return k104a03;
     }
 
-    public void setBs4bq696x(String bs4bq696x) {
-        this.bs4bq696x = bs4bq696x;
-        notifyPropertyChanged(BR.bs4bq696x);
+    public void setK104a03(String k104a03) {
+        this.k104a03 = k104a03;
+        notifyPropertyChanged(BR.k104a03);
     }
 
     @Bindable
-    public String getBs4bq7() {
-        return bs4bq7;
+    public String getK104a04() {
+        return k104a04;
     }
 
-    public void setBs4bq7(String bs4bq7) {
-        this.bs4bq7 = bs4bq7;
-        notifyPropertyChanged(BR.bs4bq7);
+    public void setK104a04(String k104a04) {
+        this.k104a04 = k104a04;
+        notifyPropertyChanged(BR.k104a04);
     }
 
     @Bindable
-    public String getBs4bq8() {
-        return bs4bq8;
+    public String getK104a05() {
+        return k104a05;
     }
 
-    public void setBs4bq8(String bs4bq8) {
-        this.bs4bq8 = bs4bq8;
-        notifyPropertyChanged(BR.bs4bq8);
+    public void setK104a05(String k104a05) {
+        this.k104a05 = k104a05;
+        notifyPropertyChanged(BR.k104a05);
     }
 
     @Bindable
-    public String getBs4bq81() {
-        return bs4bq81;
+    public String getK104a06() {
+        return k104a06;
     }
 
-    public void setBs4bq81(String bs4bq81) {
-        if (this.bs4bq81.equals(bs4bq81)) return;
-        this.bs4bq81 = bs4bq81;
-        notifyPropertyChanged(BR.bs4bq81);
+    public void setK104a06(String k104a06) {
+        this.k104a06 = k104a06;
+        notifyPropertyChanged(BR.k104a06);
     }
 
     @Bindable
-    public String getBs4bq82() {
-        return bs4bq82;
+    public String getK104a77() {
+        return k104a77;
     }
 
-    public void setBs4bq82(String bs4bq82) {
-        if (this.bs4bq82.equals(bs4bq82)) return;
-        this.bs4bq82 = bs4bq82;
-        notifyPropertyChanged(BR.bs4bq82);
+    public void setK104a77(String k104a77) {
+        this.k104a77 = k104a77;
+        notifyPropertyChanged(BR.k104a77);
     }
 
     @Bindable
-    public String getBs4bq83() {
-        return bs4bq83;
+    public String getK104a08() {
+        return k104a08;
     }
 
-    public void setBs4bq83(String bs4bq83) {
-        if (this.bs4bq83.equals(bs4bq83)) return;
-        this.bs4bq83 = bs4bq83;
-        notifyPropertyChanged(BR.bs4bq83);
+    public void setK104a08(String k104a08) {
+        this.k104a08 = k104a08;
+        notifyPropertyChanged(BR.k104a08);
     }
 
     @Bindable
-    public String getBs4bq84() {
-        return bs4bq84;
+    public String getK104a09() {
+        return k104a09;
     }
 
-    public void setBs4bq84(String bs4bq84) {
-        if (this.bs4bq84.equals(bs4bq84)) return;
-        this.bs4bq84 = bs4bq84;
-        notifyPropertyChanged(BR.bs4bq84);
+    public void setK104a09(String k104a09) {
+        this.k104a09 = k104a09;
+        notifyPropertyChanged(BR.k104a09);
     }
 
     @Bindable
-    public String getBs4bq85() {
-        return bs4bq85;
+    public String getK104a10() {
+        return k104a10;
     }
 
-    public void setBs4bq85(String bs4bq85) {
-        if (this.bs4bq85.equals(bs4bq85)) return;
-        this.bs4bq85 = bs4bq85;
-        notifyPropertyChanged(BR.bs4bq85);
+    public void setK104a10(String k104a10) {
+        this.k104a10 = k104a10;
+        notifyPropertyChanged(BR.k104a10);
     }
 
     @Bindable
-    public String getBs4bq86() {
-        return bs4bq86;
+    public String getK104a11() {
+        return k104a11;
     }
 
-    public void setBs4bq86(String bs4bq86) {
-        if (this.bs4bq86.equals(bs4bq86)) return;
-        this.bs4bq86 = bs4bq86;
-        notifyPropertyChanged(BR.bs4bq86);
+    public void setK104a11(String k104a11) {
+        this.k104a11 = k104a11;
+        notifyPropertyChanged(BR.k104a11);
     }
 
     @Bindable
-    public String getBs4bq87() {
-        return bs4bq87;
+    public String getK104a12() {
+        return k104a12;
     }
 
-    public void setBs4bq87(String bs4bq87) {
-        if (this.bs4bq87.equals(bs4bq87)) return;
-        this.bs4bq87 = bs4bq87;
-        notifyPropertyChanged(BR.bs4bq87);
+    public void setK104a12(String k104a12) {
+        this.k104a12 = k104a12;
+        notifyPropertyChanged(BR.k104a12);
     }
 
     @Bindable
-    public String getBs4bq898() {
-        return bs4bq898;
+    public String getK104a13() {
+        return k104a13;
     }
 
-    public void setBs4bq898(String bs4bq898) {
-        if (this.bs4bq898.equals(bs4bq898)) return;
-        this.bs4bq898 = bs4bq898;
-        setBs4bq81(bs4bq898.equals("98") ? "" : this.bs4bq81);
-        setBs4bq82(bs4bq898.equals("98") ? "" : this.bs4bq82);
-        setBs4bq83(bs4bq898.equals("98") ? "" : this.bs4bq83);
-        setBs4bq84(bs4bq898.equals("98") ? "" : this.bs4bq84);
-        setBs4bq85(bs4bq898.equals("98") ? "" : this.bs4bq85);
-        setBs4bq86(bs4bq898.equals("98") ? "" : this.bs4bq86);
-        setBs4bq87(bs4bq898.equals("98") ? "" : this.bs4bq87);
-        setBs4bq896(bs4bq898.equals("98") ? "" : this.bs4bq896);
-        notifyPropertyChanged(BR.bs4bq898);
+    public void setK104a13(String k104a13) {
+        this.k104a13 = k104a13;
+        notifyPropertyChanged(BR.k104a13);
     }
 
     @Bindable
-    public String getBs4bq896() {
-        return bs4bq896;
+    public String getK103() {
+        return k103;
     }
 
-    public void setBs4bq896(String bs4bq896) {
-        if (this.bs4bq896.equals(bs4bq896)) return;
-        this.bs4bq896 = bs4bq896;
-        setBs4bq896x(bs4bq896.equals("96") ? this.bs4bq896x : "");
-        notifyPropertyChanged(BR.bs4bq896);
+    public void setK103(String k103) {
+        this.k103 = k103;
+        notifyPropertyChanged(BR.k103);
     }
 
     @Bindable
-    public String getBs4bq896x() {
-        return bs4bq896x;
+    public String getK104b() {
+        return k104b;
     }
 
-    public void setBs4bq896x(String bs4bq896x) {
-        this.bs4bq896x = bs4bq896x;
-        notifyPropertyChanged(BR.bs4bq896x);
+    public void setK104b(String k104b) {
+        this.k104b = k104b;
+        notifyPropertyChanged(BR.k104b);
     }
 
     @Bindable
-    public String getBs5q1() {
-        return bs5q1;
+    public String getK104b01() {
+        return k104b01;
     }
 
-    public void setBs5q1(String bs5q1) {
-        this.bs5q1 = bs5q1;
-        setBs5q201(bs5q1.equals("2") ? "" : this.bs5q201);
-        setBs5q202(bs5q1.equals("2") ? "" : this.bs5q202);
-        setBs5q203(bs5q1.equals("2") ? "" : this.bs5q203);
-        setBs5q204(bs5q1.equals("2") ? "" : this.bs5q204);
-        setBs5q205(bs5q1.equals("2") ? "" : this.bs5q205);
-        setBs5q296(bs5q1.equals("2") ? "" : this.bs5q296);
-        setBs5q297(bs5q1.equals("2") ? "" : this.bs5q297);
-        notifyPropertyChanged(BR.bs5q1);
+    public void setK104b01(String k104b01) {
+        this.k104b01 = k104b01;
+        notifyPropertyChanged(BR.k104b01);
     }
 
     @Bindable
-    public String getBs5q2() {
-        return bs5q2;
+    public String getK104b02() {
+        return k104b02;
     }
 
-    public void setBs5q2(String bs5q2) {
-        this.bs5q2 = bs5q2;
-        notifyPropertyChanged(BR.bs5q2);
+    public void setK104b02(String k104b02) {
+        this.k104b02 = k104b02;
+        notifyPropertyChanged(BR.k104b02);
     }
 
     @Bindable
-    public String getBs5q201() {
-        return bs5q201;
+    public String getK104b03() {
+        return k104b03;
     }
 
-    public void setBs5q201(String bs5q201) {
-        if (this.bs5q201.equals(bs5q201)) return;
-        this.bs5q201 = bs5q201;
-        notifyPropertyChanged(BR.bs5q201);
+    public void setK104b03(String k104b03) {
+        this.k104b03 = k104b03;
+        notifyPropertyChanged(BR.k104b03);
     }
 
     @Bindable
-    public String getBs5q202() {
-        return bs5q202;
+    public String getK104b04() {
+        return k104b04;
     }
 
-    public void setBs5q202(String bs5q202) {
-        if (this.bs5q202.equals(bs5q202)) return;
-        this.bs5q202 = bs5q202;
-        notifyPropertyChanged(BR.bs5q202);
+    public void setK104b04(String k104b04) {
+        this.k104b04 = k104b04;
+        notifyPropertyChanged(BR.k104b04);
     }
 
     @Bindable
-    public String getBs5q203() {
-        return bs5q203;
+    public String getK104b05() {
+        return k104b05;
     }
 
-    public void setBs5q203(String bs5q203) {
-        if (this.bs5q203.equals(bs5q203)) return;
-        this.bs5q203 = bs5q203;
-        notifyPropertyChanged(BR.bs5q203);
+    public void setK104b05(String k104b05) {
+        this.k104b05 = k104b05;
+        notifyPropertyChanged(BR.k104b05);
     }
 
     @Bindable
-    public String getBs5q204() {
-        return bs5q204;
+    public String getK104b06() {
+        return k104b06;
     }
 
-    public void setBs5q204(String bs5q204) {
-        if (this.bs5q204.equals(bs5q204)) return;
-        this.bs5q204 = bs5q204;
-        notifyPropertyChanged(BR.bs5q204);
+    public void setK104b06(String k104b06) {
+        this.k104b06 = k104b06;
+        notifyPropertyChanged(BR.k104b06);
     }
 
     @Bindable
-    public String getBs5q205() {
-        return bs5q205;
+    public String getK104b07() {
+        return k104b07;
     }
 
-    public void setBs5q205(String bs5q205) {
-        if (this.bs5q205.equals(bs5q205)) return;
-        this.bs5q205 = bs5q205;
-        notifyPropertyChanged(BR.bs5q205);
+    public void setK104b07(String k104b07) {
+        this.k104b07 = k104b07;
+        notifyPropertyChanged(BR.k104b07);
     }
 
     @Bindable
-    public String getBs5q296() {
-        return bs5q296;
+    public String getK104b08() {
+        return k104b08;
     }
 
-    public void setBs5q296(String bs5q296) {
-        if (this.bs5q296.equals(bs5q296)) return;
-        this.bs5q296 = bs5q296;
-        setBs5q296x(bs5q296.equals("96") ? this.bs5q296x : "");
-        notifyPropertyChanged(BR.bs5q296);
+    public void setK104b08(String k104b08) {
+        this.k104b08 = k104b08;
+        notifyPropertyChanged(BR.k104b08);
     }
 
     @Bindable
-    public String getBs5q296x() {
-        return bs5q296x;
+    public String getK104b09() {
+        return k104b09;
     }
 
-    public void setBs5q296x(String bs5q296x) {
-        this.bs5q296x = bs5q296x;
-        notifyPropertyChanged(BR.bs5q296x);
+    public void setK104b09(String k104b09) {
+        this.k104b09 = k104b09;
+        notifyPropertyChanged(BR.k104b09);
     }
 
     @Bindable
-    public String getBs5q297() {
-        return bs5q297;
+    public String getK104b10() {
+        return k104b10;
     }
 
-    public void setBs5q297(String bs5q297) {
-        if (this.bs5q297.equals(bs5q297)) return;
-        this.bs5q297 = bs5q297;
-        setBs5q201(bs5q297.equals("97") ? "" : this.bs5q201);
-        setBs5q202(bs5q297.equals("97") ? "" : this.bs5q202);
-        setBs5q203(bs5q297.equals("97") ? "" : this.bs5q203);
-        setBs5q204(bs5q297.equals("97") ? "" : this.bs5q204);
-        setBs5q205(bs5q297.equals("97") ? "" : this.bs5q205);
-        setBs5q296(bs5q297.equals("97") ? "" : this.bs5q296);
-        notifyPropertyChanged(BR.bs5q297);
+    public void setK104b10(String k104b10) {
+        this.k104b10 = k104b10;
+        notifyPropertyChanged(BR.k104b10);
     }
 
     @Bindable
-    public String getBs5q3() {
-        return bs5q3;
+    public String getK104b11() {
+        return k104b11;
     }
 
-    public void setBs5q3(String bs5q3) {
-        this.bs5q3 = bs5q3;
-        setBs5q401(bs5q3.equals("2") ? "" : this.bs5q401);
-        setBs5q402(bs5q3.equals("2") ? "" : this.bs5q402);
-        setBs5q403(bs5q3.equals("2") ? "" : this.bs5q403);
-        setBs5q404(bs5q3.equals("2") ? "" : this.bs5q404);
-        setBs5q496(bs5q3.equals("2") ? "" : this.bs5q496);
-        setBs5q497(bs5q3.equals("2") ? "" : this.bs5q497);
-        setBs5q5(bs5q3.equals("2") ? "" : this.bs5q5);
-        notifyPropertyChanged(BR.bs5q3);
+    public void setK104b11(String k104b11) {
+        this.k104b11 = k104b11;
+        notifyPropertyChanged(BR.k104b11);
     }
 
     @Bindable
-    public String getBs5q4() {
-        return bs5q4;
+    public String getK104b12() {
+        return k104b12;
     }
 
-    public void setBs5q4(String bs5q4) {
-        this.bs5q4 = bs5q4;
-        notifyPropertyChanged(BR.bs5q4);
+    public void setK104b12(String k104b12) {
+        this.k104b12 = k104b12;
+        notifyPropertyChanged(BR.k104b12);
     }
 
     @Bindable
-    public String getBs5q401() {
-        return bs5q401;
+    public String getK104b13() {
+        return k104b13;
     }
 
-    public void setBs5q401(String bs5q401) {
-        if (this.bs5q401.equals(bs5q401)) return;
-        this.bs5q401 = bs5q401;
-        notifyPropertyChanged(BR.bs5q401);
+    public void setK104b13(String k104b13) {
+        this.k104b13 = k104b13;
+        notifyPropertyChanged(BR.k104b13);
     }
 
     @Bindable
-    public String getBs5q402() {
-        return bs5q402;
+    public String getK105() {
+        return k105;
     }
 
-    public void setBs5q402(String bs5q402) {
-        if (this.bs5q402.equals(bs5q402)) return;
-        this.bs5q402 = bs5q402;
-        notifyPropertyChanged(BR.bs5q402);
+    public void setK105(String k105) {
+        this.k105 = k105;
+        notifyPropertyChanged(BR.k105);
     }
 
     @Bindable
-    public String getBs5q403() {
-        return bs5q403;
+    public String getK105a() {
+        return k105a;
     }
 
-    public void setBs5q403(String bs5q403) {
-        if (this.bs5q403.equals(bs5q403)) return;
-        this.bs5q403 = bs5q403;
-        notifyPropertyChanged(BR.bs5q403);
+    public void setK105a(String k105a) {
+        this.k105a = k105a;
+        notifyPropertyChanged(BR.k105a);
     }
 
     @Bindable
-    public String getBs5q404() {
-        return bs5q404;
+    public String getK105a01x() {
+        return k105a01x;
     }
 
-    public void setBs5q404(String bs5q404) {
-        if (this.bs5q404.equals(bs5q404)) return;
-        this.bs5q404 = bs5q404;
-        notifyPropertyChanged(BR.bs5q404);
+    public void setK105a01x(String k105a01x) {
+        this.k105a01x = k105a01x;
+        notifyPropertyChanged(BR.k105a01x);
     }
 
     @Bindable
-    public String getBs5q496() {
-        return bs5q496;
+    public String getK105a02x() {
+        return k105a02x;
     }
 
-    public void setBs5q496(String bs5q496) {
-        if (this.bs5q496.equals(bs5q496)) return;
-        this.bs5q496 = bs5q496;
-        setBs5q496x(bs5q496.equals("96") ? this.bs5q496x : "");
-        notifyPropertyChanged(BR.bs5q496);
+    public void setK105a02x(String k105a02x) {
+        this.k105a02x = k105a02x;
+        notifyPropertyChanged(BR.k105a02x);
     }
 
     @Bindable
-    public String getBs5q496x() {
-        return bs5q496x;
+    public String getK106() {
+        return k106;
     }
 
-    public void setBs5q496x(String bs5q496x) {
-        this.bs5q496x = bs5q496x;
-        notifyPropertyChanged(BR.bs5q496x);
+    public void setK106(String k106) {
+        this.k106 = k106;
+        notifyPropertyChanged(BR.k106);
     }
 
     @Bindable
-    public String getBs5q497() {
-        return bs5q497;
+    public String getK10601() {
+        return k10601;
     }
 
-    public void setBs5q497(String bs5q497) {
-        if (this.bs5q497.equals(bs5q497)) return;
-        this.bs5q497 = bs5q497;
-        setBs5q401(bs5q497.equals("97") ? "" : this.bs5q401);
-        setBs5q402(bs5q497.equals("97") ? "" : this.bs5q402);
-        setBs5q403(bs5q497.equals("97") ? "" : this.bs5q403);
-        setBs5q404(bs5q497.equals("97") ? "" : this.bs5q404);
-        setBs5q496(bs5q497.equals("97") ? "" : this.bs5q496);
-        notifyPropertyChanged(BR.bs5q497);
+    public void setK10601(String k10601) {
+        this.k10601 = k10601;
+        notifyPropertyChanged(BR.k10601);
     }
 
     @Bindable
-    public String getBs5q5() {
-        return bs5q5;
+    public String getK10602() {
+        return k10602;
     }
 
-    public void setBs5q5(String bs5q5) {
-        this.bs5q5 = bs5q5;
-        notifyPropertyChanged(BR.bs5q5);
+    public void setK10602(String k10602) {
+        this.k10602 = k10602;
+        notifyPropertyChanged(BR.k10602);
     }
 
     @Bindable
-    public String getBs5q6() {
-        return bs5q6;
+    public String getK10603() {
+        return k10603;
     }
 
-    public void setBs5q6(String bs5q6) {
-        this.bs5q6 = bs5q6;
-        setBs5q7(bs5q6.equals("2") ? "" : this.bs5q7);
-        notifyPropertyChanged(BR.bs5q6);
+    public void setK10603(String k10603) {
+        this.k10603 = k10603;
+        notifyPropertyChanged(BR.k10603);
     }
 
     @Bindable
-    public String getBs5q7() {
-        return bs5q7;
+    public String getK10604() {
+        return k10604;
     }
 
-    public void setBs5q7(String bs5q7) {
-        this.bs5q7 = bs5q7;
-        notifyPropertyChanged(BR.bs5q7);
+    public void setK10604(String k10604) {
+        this.k10604 = k10604;
+        notifyPropertyChanged(BR.k10604);
     }
 
     @Bindable
-    public String getBs5q8() {
-        return bs5q8;
+    public String getK10605() {
+        return k10605;
     }
 
-    public void setBs5q8(String bs5q8) {
-        this.bs5q8 = bs5q8;
-        notifyPropertyChanged(BR.bs5q8);
+    public void setK10605(String k10605) {
+        this.k10605 = k10605;
+        notifyPropertyChanged(BR.k10605);
     }
 
     @Bindable
-    public String getBs5q801() {
-        return bs5q801;
+    public String getK10606() {
+        return k10606;
     }
 
-    public void setBs5q801(String bs5q801) {
-        if (this.bs5q801.equals(bs5q801)) return;
-        this.bs5q801 = bs5q801;
-        notifyPropertyChanged(BR.bs5q801);
+    public void setK10606(String k10606) {
+        this.k10606 = k10606;
+        notifyPropertyChanged(BR.k10606);
     }
 
     @Bindable
-    public String getBs5q802() {
-        return bs5q802;
+    public String getK10607() {
+        return k10607;
     }
 
-    public void setBs5q802(String bs5q802) {
-        if (this.bs5q802.equals(bs5q802)) return;
-        this.bs5q802 = bs5q802;
-        notifyPropertyChanged(BR.bs5q802);
+    public void setK10607(String k10607) {
+        this.k10607 = k10607;
+        notifyPropertyChanged(BR.k10607);
     }
 
     @Bindable
-    public String getBs5q803() {
-        return bs5q803;
+    public String getK10608() {
+        return k10608;
     }
 
-    public void setBs5q803(String bs5q803) {
-        if (this.bs5q803.equals(bs5q803)) return;
-        this.bs5q803 = bs5q803;
-        notifyPropertyChanged(BR.bs5q803);
+    public void setK10608(String k10608) {
+        this.k10608 = k10608;
+        notifyPropertyChanged(BR.k10608);
     }
 
     @Bindable
-    public String getBs5q804() {
-        return bs5q804;
+    public String getK10696() {
+        return k10696;
     }
 
-    public void setBs5q804(String bs5q804) {
-        if (this.bs5q804.equals(bs5q804)) return;
-        this.bs5q804 = bs5q804;
-        notifyPropertyChanged(BR.bs5q804);
+    public void setK10696(String k10696) {
+        this.k10696 = k10696;
+        notifyPropertyChanged(BR.k10696);
     }
 
     @Bindable
-    public String getBs5q805() {
-        return bs5q805;
+    public String getK10696x() {
+        return k10696x;
     }
 
-    public void setBs5q805(String bs5q805) {
-        if (this.bs5q805.equals(bs5q805)) return;
-        this.bs5q805 = bs5q805;
-        notifyPropertyChanged(BR.bs5q805);
+    public void setK10696x(String k10696x) {
+        this.k10696x = k10696x;
+        notifyPropertyChanged(BR.k10696x);
     }
 
     @Bindable
-    public String getBs5q806() {
-        return bs5q806;
+    public String getK107() {
+        return k107;
     }
 
-    public void setBs5q806(String bs5q806) {
-        if (this.bs5q806.equals(bs5q806)) return;
-        this.bs5q806 = bs5q806;
-        notifyPropertyChanged(BR.bs5q806);
+    public void setK107(String k107) {
+        this.k107 = k107;
+        notifyPropertyChanged(BR.k107);
     }
 
     @Bindable
-    public String getBs5q807() {
-        return bs5q807;
+    public String getK107a() {
+        return k107a;
     }
 
-    public void setBs5q807(String bs5q807) {
-        if (this.bs5q807.equals(bs5q807)) return;
-        this.bs5q807 = bs5q807;
-        notifyPropertyChanged(BR.bs5q807);
+    public void setK107a(String k107a) {
+        this.k107a = k107a;
+        notifyPropertyChanged(BR.k107a);
     }
 
     @Bindable
-    public String getBs5q808() {
-        return bs5q808;
+    public String getK107a96x() {
+        return k107a96x;
     }
 
-    public void setBs5q808(String bs5q808) {
-        if (this.bs5q808.equals(bs5q808)) return;
-        this.bs5q808 = bs5q808;
-        notifyPropertyChanged(BR.bs5q808);
+    public void setK107a96x(String k107a96x) {
+        this.k107a96x = k107a96x;
+        notifyPropertyChanged(BR.k107a96x);
     }
 
     @Bindable
-    public String getBs5q896() {
-        return bs5q896;
+    public String getL101() {
+        return l101;
     }
 
-    public void setBs5q896(String bs5q896) {
-        if (this.bs5q896.equals(bs5q896)) return;
-        this.bs5q896 = bs5q896;
-        setBs5q896x(bs5q896.equals("96") ? this.bs5q896x : "");
-        notifyPropertyChanged(BR.bs5q896);
+    public void setL101(String l101) {
+        this.l101 = l101;
+        notifyPropertyChanged(BR.l101);
     }
 
     @Bindable
-    public String getBs5q896x() {
-        return bs5q896x;
+    public String getL102() {
+        return l102;
     }
 
-    public void setBs5q896x(String bs5q896x) {
-        this.bs5q896x = bs5q896x;
-        notifyPropertyChanged(BR.bs5q896x);
+    public void setL102(String l102) {
+        this.l102 = l102;
+        notifyPropertyChanged(BR.l102);
     }
 
     @Bindable
-    public String getBs5q898() {
-        return bs5q898;
+    public String getL102a() {
+        return l102a;
     }
 
-    public void setBs5q898(String bs5q898) {
-        if (this.bs5q898.equals(bs5q898)) return;
-        this.bs5q898 = bs5q898;
-        setBs5q801(bs5q898.equals("98") ? "" : this.bs5q801);
-        setBs5q802(bs5q898.equals("98") ? "" : this.bs5q802);
-        setBs5q803(bs5q898.equals("98") ? "" : this.bs5q803);
-        setBs5q804(bs5q898.equals("98") ? "" : this.bs5q804);
-        setBs5q805(bs5q898.equals("98") ? "" : this.bs5q805);
-        setBs5q806(bs5q898.equals("98") ? "" : this.bs5q806);
-        setBs5q807(bs5q898.equals("98") ? "" : this.bs5q807);
-        setBs5q808(bs5q898.equals("98") ? "" : this.bs5q808);
-        setBs5q896(bs5q898.equals("98") ? "" : this.bs5q896);
-        notifyPropertyChanged(BR.bs5q898);
+    public void setL102a(String l102a) {
+        this.l102a = l102a;
+        notifyPropertyChanged(BR.l102a);
     }
 
     @Bindable
-    public String getBs5q9() {
-        return bs5q9;
+    public String getL102a96x() {
+        return l102a96x;
     }
 
-    public void setBs5q9(String bs5q9) {
-        this.bs5q9 = bs5q9;
-        notifyPropertyChanged(BR.bs5q9);
+    public void setL102a96x(String l102a96x) {
+        this.l102a96x = l102a96x;
+        notifyPropertyChanged(BR.l102a96x);
     }
 
     @Bindable
-    public String getBs5q901() {
-        return bs5q901;
+    public String getL103() {
+        return l103;
     }
 
-    public void setBs5q901(String bs5q901) {
-        if (this.bs5q901.equals(bs5q901)) return;
-        this.bs5q901 = bs5q901;
-        notifyPropertyChanged(BR.bs5q901);
+    public void setL103(String l103) {
+        this.l103 = l103;
+        notifyPropertyChanged(BR.l103);
     }
 
     @Bindable
-    public String getBs5q902() {
-        return bs5q902;
+    public String getL104() {
+        return l104;
     }
 
-    public void setBs5q902(String bs5q902) {
-        if (this.bs5q902.equals(bs5q902)) return;
-        this.bs5q902 = bs5q902;
-        notifyPropertyChanged(BR.bs5q902);
+    public void setL104(String l104) {
+        this.l104 = l104;
+        notifyPropertyChanged(BR.l104);
     }
 
     @Bindable
-    public String getBs5q903() {
-        return bs5q903;
+    public String getL10496x() {
+        return l10496x;
     }
 
-    public void setBs5q903(String bs5q903) {
-        if (this.bs5q903.equals(bs5q903)) return;
-        this.bs5q903 = bs5q903;
-        notifyPropertyChanged(BR.bs5q903);
+    public void setL10496x(String l10496x) {
+        this.l10496x = l10496x;
+        notifyPropertyChanged(BR.l10496x);
     }
 
     @Bindable
-    public String getBs5q904() {
-        return bs5q904;
+    public String getL105() {
+        return l105;
     }
 
-    public void setBs5q904(String bs5q904) {
-        if (this.bs5q904.equals(bs5q904)) return;
-        this.bs5q904 = bs5q904;
-        notifyPropertyChanged(BR.bs5q904);
+    public void setL105(String l105) {
+        this.l105 = l105;
+        notifyPropertyChanged(BR.l105);
     }
 
     @Bindable
-    public String getBs5q905() {
-        return bs5q905;
+    public String getL106() {
+        return l106;
     }
 
-    public void setBs5q905(String bs5q905) {
-        if (this.bs5q905.equals(bs5q905)) return;
-        this.bs5q905 = bs5q905;
-        notifyPropertyChanged(BR.bs5q905);
+    public void setL106(String l106) {
+        this.l106 = l106;
+        notifyPropertyChanged(BR.l106);
     }
 
     @Bindable
-    public String getBs5q906() {
-        return bs5q906;
+    public String getL10696x() {
+        return l10696x;
     }
 
-    public void setBs5q906(String bs5q906) {
-        if (this.bs5q906.equals(bs5q906)) return;
-        this.bs5q906 = bs5q906;
-        notifyPropertyChanged(BR.bs5q906);
+    public void setL10696x(String l10696x) {
+        this.l10696x = l10696x;
+        notifyPropertyChanged(BR.l10696x);
     }
 
     @Bindable
-    public String getBs5q907() {
-        return bs5q907;
+    public String getL107() {
+        return l107;
     }
 
-    public void setBs5q907(String bs5q907) {
-        if (this.bs5q907.equals(bs5q907)) return;
-        this.bs5q907 = bs5q907;
-        notifyPropertyChanged(BR.bs5q907);
+    public void setL107(String l107) {
+        this.l107 = l107;
+        notifyPropertyChanged(BR.l107);
     }
 
     @Bindable
-    public String getBs5q908() {
-        return bs5q908;
+    public String getL10796x() {
+        return l10796x;
     }
 
-    public void setBs5q908(String bs5q908) {
-        if (this.bs5q908.equals(bs5q908)) return;
-        this.bs5q908 = bs5q908;
-        notifyPropertyChanged(BR.bs5q908);
+    public void setL10796x(String l10796x) {
+        this.l10796x = l10796x;
+        notifyPropertyChanged(BR.l10796x);
     }
 
     @Bindable
-    public String getBs5q996() {
-        return bs5q996;
+    public String getL108() {
+        return l108;
     }
 
-    public void setBs5q996(String bs5q996) {
-        if (this.bs5q996.equals(bs5q996)) return;
-        this.bs5q996 = bs5q996;
-        setBs5q996x(bs5q996.equals("96") ? this.bs5q996x : "");
-        notifyPropertyChanged(BR.bs5q996);
+    public void setL108(String l108) {
+        this.l108 = l108;
+        notifyPropertyChanged(BR.l108);
     }
 
     @Bindable
-    public String getBs5q996x() {
-        return bs5q996x;
+    public String getL10896x() {
+        return l10896x;
     }
 
-    public void setBs5q996x(String bs5q996x) {
-        this.bs5q996x = bs5q996x;
-        notifyPropertyChanged(BR.bs5q996x);
+    public void setL10896x(String l10896x) {
+        this.l10896x = l10896x;
+        notifyPropertyChanged(BR.l10896x);
     }
 
     @Bindable
-    public String getBs5q998() {
-        return bs5q998;
+    public String getL109() {
+        return l109;
     }
 
-    public void setBs5q998(String bs5q998) {
-        if (this.bs5q998.equals(bs5q998)) return;
-        this.bs5q998 = bs5q998;
-        setBs5q901(bs5q998.equals("98") ? "" : this.bs5q901);
-        setBs5q902(bs5q998.equals("98") ? "" : this.bs5q902);
-        setBs5q903(bs5q998.equals("98") ? "" : this.bs5q903);
-        setBs5q904(bs5q998.equals("98") ? "" : this.bs5q904);
-        setBs5q905(bs5q998.equals("98") ? "" : this.bs5q905);
-        setBs5q906(bs5q998.equals("98") ? "" : this.bs5q906);
-        setBs5q907(bs5q998.equals("98") ? "" : this.bs5q907);
-        setBs5q908(bs5q998.equals("98") ? "" : this.bs5q908);
-        setBs5q996(bs5q998.equals("98") ? "" : this.bs5q996);
-        notifyPropertyChanged(BR.bs5q998);
+    public void setL109(String l109) {
+        this.l109 = l109;
+        notifyPropertyChanged(BR.l109);
     }
 
     @Bindable
-    public String getBs5q10() {
-        return bs5q10;
+    public String getL10996x() {
+        return l10996x;
     }
 
-    public void setBs5q10(String bs5q10) {
-        this.bs5q10 = bs5q10;
-        setBs5q1096x(bs5q10.equals("96") ? this.bs5q1096x : "");
-        notifyPropertyChanged(BR.bs5q10);
+    public void setL10996x(String l10996x) {
+        this.l10996x = l10996x;
+        notifyPropertyChanged(BR.l10996x);
     }
 
     @Bindable
-    public String getBs5q1096x() {
-        return bs5q1096x;
+    public String getL110() {
+        return l110;
     }
 
-    public void setBs5q1096x(String bs5q1096x) {
-        this.bs5q1096x = bs5q1096x;
-        notifyPropertyChanged(BR.bs5q1096x);
+    public void setL110(String l110) {
+        this.l110 = l110;
+        notifyPropertyChanged(BR.l110);
     }
 
     @Bindable
-    public String getBs5q11() {
-        return bs5q11;
+    public String getL111() {
+        return l111;
     }
 
-    public void setBs5q11(String bs5q11) {
-        this.bs5q11 = bs5q11;
-        notifyPropertyChanged(BR.bs5q11);
+    public void setL111(String l111) {
+        this.l111 = l111;
+        notifyPropertyChanged(BR.l111);
     }
 
     @Bindable
-    public String getBs5q12() {
-        return bs5q12;
+    public String getL1121() {
+        return l1121;
     }
 
-    public void setBs5q12(String bs5q12) {
-        this.bs5q12 = bs5q12;
-        notifyPropertyChanged(BR.bs5q12);
+    public void setL1121(String l1121) {
+        this.l1121 = l1121;
+        notifyPropertyChanged(BR.l1121);
     }
 
     @Bindable
-    public String getBs6q1() {
-        return bs6q1;
+    public String getL1122() {
+        return l1122;
     }
 
-    public void setBs6q1(String bs6q1) {
-        this.bs6q1 = bs6q1;
-        setBs6q1mx(bs6q1.equals("2") ? this.bs6q1mx : "");
-        setBs6q2(bs6q1.equals("3") ? "" : this.bs6q2);
-        setBs6q3(bs6q1.equals("3") ? this.bs6q3 : "");
-        notifyPropertyChanged(BR.bs6q1);
+    public void setL1122(String l1122) {
+        this.l1122 = l1122;
+        notifyPropertyChanged(BR.l1122);
     }
 
     @Bindable
-    public String getBs6q1mx() {
-        return bs6q1mx;
+    public String getL1123() {
+        return l1123;
     }
 
-    public void setBs6q1mx(String bs6q1mx) {
-        this.bs6q1mx = bs6q1mx;
-        notifyPropertyChanged(BR.bs6q1mx);
+    public void setL1123(String l1123) {
+        this.l1123 = l1123;
+        notifyPropertyChanged(BR.l1123);
     }
 
     @Bindable
-    public String getBs6q2() {
-        return bs6q2;
+    public String getL1124() {
+        return l1124;
     }
 
-    public void setBs6q2(String bs6q2) {
-        this.bs6q2 = bs6q2;
-        notifyPropertyChanged(BR.bs6q2);
+    public void setL1124(String l1124) {
+        this.l1124 = l1124;
+        notifyPropertyChanged(BR.l1124);
     }
 
     @Bindable
-    public String getBs6q3() {
-        return bs6q3;
+    public String getL1125() {
+        return l1125;
     }
 
-    public void setBs6q3(String bs6q3) {
-        this.bs6q3 = bs6q3;
-        setBs6q3mx(bs6q3.equals("2") ? this.bs6q3mx : "");
-        notifyPropertyChanged(BR.bs6q3);
+    public void setL1125(String l1125) {
+        this.l1125 = l1125;
+        notifyPropertyChanged(BR.l1125);
     }
 
     @Bindable
-    public String getBs6q3mx() {
-        return bs6q3mx;
+    public String getL1131() {
+        return l1131;
     }
 
-    public void setBs6q3mx(String bs6q3mx) {
-        this.bs6q3mx = bs6q3mx;
-        notifyPropertyChanged(BR.bs6q3mx);
+    public void setL1131(String l1131) {
+        this.l1131 = l1131;
+        notifyPropertyChanged(BR.l1131);
     }
 
     @Bindable
-    public String getBs7q1() {
-        return bs7q1;
+    public String getL1132() {
+        return l1132;
     }
 
-    public void setBs7q1(String bs7q1) {
-        this.bs7q1 = bs7q1;
-        notifyPropertyChanged(BR.bs7q1);
+    public void setL1132(String l1132) {
+        this.l1132 = l1132;
+        notifyPropertyChanged(BR.l1132);
     }
 
     @Bindable
-    public String getBs7q2line() {
-        return bs7q2line;
+    public String getL1133() {
+        return l1133;
     }
 
-    public void setBs7q2line(String bs7q2line) {
-        this.bs7q2line = bs7q2line;
-        notifyPropertyChanged(BR.bs7q2line);
+    public void setL1133(String l1133) {
+        this.l1133 = l1133;
+        notifyPropertyChanged(BR.l1133);
     }
 
     @Bindable
-    public String getBs7q3() {
-        return bs7q3;
+    public String getL1134() {
+        return l1134;
     }
 
-    public void setBs7q3(String bs7q3) {
-        this.bs7q3 = bs7q3;
-        notifyPropertyChanged(BR.bs7q3);
+    public void setL1134(String l1134) {
+        this.l1134 = l1134;
+        notifyPropertyChanged(BR.l1134);
     }
 
     @Bindable
-    public String getBs7q4a() {
-        return bs7q4a;
+    public String getL114() {
+        return l114;
     }
 
-    public void setBs7q4a(String bs7q4a) {
-        this.bs7q4a = bs7q4a;
-        notifyPropertyChanged(BR.bs7q4a);
+    public void setL114(String l114) {
+        this.l114 = l114;
+        notifyPropertyChanged(BR.l114);
     }
 
     @Bindable
-    public String getBs7q4b() {
-        return bs7q4b;
+    public String getL11496x() {
+        return l11496x;
     }
 
-    public void setBs7q4b(String bs7q4b) {
-        this.bs7q4b = bs7q4b;
-        notifyPropertyChanged(BR.bs7q4b);
+    public void setL11496x(String l11496x) {
+        this.l11496x = l11496x;
+        notifyPropertyChanged(BR.l11496x);
     }
 
     @Bindable
-    public String getBs7q4c() {
-        return bs7q4c;
+    public String getL115() {
+        return l115;
     }
 
-    public void setBs7q4c(String bs7q4c) {
-        this.bs7q4c = bs7q4c;
-        notifyPropertyChanged(BR.bs7q4c);
+    public void setL115(String l115) {
+        this.l115 = l115;
+        notifyPropertyChanged(BR.l115);
     }
 
     @Bindable
-    public String getBs7q4d() {
-        return bs7q4d;
+    public String getL11596x() {
+        return l11596x;
     }
 
-    public void setBs7q4d(String bs7q4d) {
-        this.bs7q4d = bs7q4d;
-        notifyPropertyChanged(BR.bs7q4d);
+    public void setL11596x(String l11596x) {
+        this.l11596x = l11596x;
+        notifyPropertyChanged(BR.l11596x);
     }
 
     @Bindable
-    public String getBs7q4e() {
-        return bs7q4e;
+    public String getL116() {
+        return l116;
     }
 
-    public void setBs7q4e(String bs7q4e) {
-        this.bs7q4e = bs7q4e;
-        notifyPropertyChanged(BR.bs7q4e);
+    public void setL116(String l116) {
+        this.l116 = l116;
+        notifyPropertyChanged(BR.l116);
     }
 
     @Bindable
-    public String getBs7q4f() {
-        return bs7q4f;
+    public String getL11696x() {
+        return l11696x;
     }
 
-    public void setBs7q4f(String bs7q4f) {
-        this.bs7q4f = bs7q4f;
-        notifyPropertyChanged(BR.bs7q4f);
+    public void setL11696x(String l11696x) {
+        this.l11696x = l11696x;
+        notifyPropertyChanged(BR.l11696x);
     }
 
     @Bindable
-    public String getBs7q4g() {
-        return bs7q4g;
+    public String getL117() {
+        return l117;
     }
 
-    public void setBs7q4g(String bs7q4g) {
-        this.bs7q4g = bs7q4g;
-        notifyPropertyChanged(BR.bs7q4g);
+    public void setL117(String l117) {
+        this.l117 = l117;
+        notifyPropertyChanged(BR.l117);
     }
 
     @Bindable
-    public String getBs7q4h() {
-        return bs7q4h;
+    public String getL11796x() {
+        return l11796x;
     }
 
-    public void setBs7q4h(String bs7q4h) {
-        this.bs7q4h = bs7q4h;
-        notifyPropertyChanged(BR.bs7q4h);
+    public void setL11796x(String l11796x) {
+        this.l11796x = l11796x;
+        notifyPropertyChanged(BR.l11796x);
     }
 
 
@@ -5057,416 +5568,501 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.MwraTable.COLUMN_SYNCED, this.synced);
         json.put(TableContracts.MwraTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(TableContracts.MwraTable.COLUMN_SB1, new JSONObject(sB1toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB2, new JSONObject(sB2toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB3, new JSONObject(sB3toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB41, new JSONObject(sB41toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB42, new JSONObject(sB42toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB5, new JSONObject(sB5toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB6, new JSONObject(sB6toString()));
-        json.put(TableContracts.MwraTable.COLUMN_SB7, new JSONObject(sB7toString()));
+        json.put(TableContracts.MwraTable.COLUMN_SF, new JSONObject(sFtoString()));
+        json.put(TableContracts.MwraTable.COLUMN_SG, new JSONObject(sGtoString()));
+        json.put(TableContracts.MwraTable.COLUMN_SH1, new JSONObject(sH1toString()));
+        json.put(TableContracts.MwraTable.COLUMN_SH2, new JSONObject(sH2toString()));
+        json.put(TableContracts.MwraTable.COLUMN_SK, new JSONObject(sKtoString()));
+        json.put(TableContracts.MwraTable.COLUMN_SL, new JSONObject(sLtoString()));
 
         return json;
     }
 
 
-    public String sB1toString() throws JSONException {
-        Log.d(TAG, "sB1toString: ");
+    public String sFtoString() throws JSONException {
+        Log.d(TAG, "sFtoString: ");
         JSONObject json = new JSONObject();
-        json.put("bs1resp", bs1resp)
-                .put("bs1respline", bs1respline)
-                .put("bs1con", bs1con)
-                .put("bs1q1", bs1q1)
-                .put("bs1q2", bs1q2)
-                .put("bs1q3", bs1q3)
-                .put("bs1q4", bs1q4)
-                .put("bs1q5", bs1q5)
-                .put("bs1q6", bs1q6)
-                .put("bs1q08", bs1q08)
-                .put("bs1q09", bs1q09)
-                .put("bs1q0901", bs1q0901)
-                .put("bs1q0902", bs1q0902)
-                .put("bs1q0903", bs1q0903)
-                .put("bs1q0904", bs1q0904)
-                .put("bs1q0905", bs1q0905)
-                .put("bs1q0906", bs1q0906)
-                .put("bs1q0907", bs1q0907)
-                .put("bs1q0908", bs1q0908)
-                .put("bs1q09t296", bs1q09t296)
-                .put("bs1q09t296x", bs1q09t296x)
-                .put("bs1q1001", bs1q1001)
-                .put("bs1q1002", bs1q1002)
-                .put("bs1q1098", bs1q1098)
-                .put("bs1q11", bs1q11)
-                .put("bs1q12", bs1q12)
-                .put("bs1q13", bs1q13)
-                .put("bs1q1301", bs1q1301)
-                .put("bs1q1302", bs1q1302)
-                .put("bs1q1303", bs1q1303)
-                .put("bs1q1304", bs1q1304)
-                .put("bs1q1305", bs1q1305)
-                .put("bs1q1306", bs1q1306)
-                .put("bs1q1307", bs1q1307)
-                .put("bs1q1308", bs1q1308)
-                .put("bs1q1396", bs1q1396)
-                .put("bs1q1396x", bs1q1396x);
+        json.put("f101", f101)
+                .put("f101a01", f101a01)
+                .put("f101a02", f101a02)
+                .put("f101a03", f101a03)
+                .put("f101a04", f101a04)
+                .put("f101a05", f101a05)
+                .put("f101a06", f101a06)
+                .put("f101a07", f101a07)
+                .put("f101a08", f101a08)
+                .put("f101a09", f101a09)
+                .put("f101a10", f101a10)
+                .put("f101a11", f101a11)
+                .put("f101a12", f101a12)
+                .put("f101a13", f101a13)
+                .put("f101a14", f101a14)
+                .put("f101a96", f101a96)
+                .put("f101b", f101b)
+                .put("f101b01x", f101b01x)
+                .put("f10201", f10201)
+                .put("f10202", f10202)
+                .put("f10203", f10203)
+                .put("f10204", f10204)
+                .put("f10205", f10205)
+                .put("f10206", f10206)
+                .put("f10207", f10207)
+                .put("f10208", f10208)
+                .put("f10209", f10209)
+                .put("f10210", f10210)
+                .put("f10296", f10296)
+                .put("f10296x", f10296x)
+                .put("f10301", f10301)
+                .put("f10302", f10302)
+                .put("f10303", f10303)
+                .put("f10304", f10304)
+                .put("f10305", f10305)
+                .put("f107", f107)
+                .put("f10796x", f10796x)
+                .put("f108", f108)
+                .put("f108wx", f108wx)
+                .put("f108mx", f108mx)
+                .put("f11001", f11001)
+                .put("f11002", f11002)
+                .put("f11003", f11003)
+                .put("f11004", f11004)
+                .put("f11005", f11005)
+                .put("f11006", f11006)
+                .put("f11007", f11007)
+                .put("f11008", f11008)
+                .put("f11009", f11009)
+                .put("f11096", f11096)
+                .put("f1109696x", f1109696x)
+                .put("f111", f111)
+                .put("f112", f112)
+                .put("f113", f113)
+                .put("f11301x", f11301x)
+                .put("f114", f114)
+                .put("f116", f116)
+                .put("f117", f117)
+                .put("f118m", f118m)
+                .put("f118d", f118d)
+                .put("f119", f119)
+                .put("f120", f120)
+                .put("f12001x", f12001x)
+                .put("f121a", f121a)
+                .put("f121b", f121b)
+                .put("f121b96x", f121b96x)
+                .put("f122", f122)
+                .put("f12201x", f12201x)
+                .put("f12301", f12301)
+                .put("f12302", f12302)
+                .put("f12303", f12303)
+                .put("f12304", f12304)
+                .put("f12305", f12305)
+                .put("f12306", f12306)
+                .put("f12307", f12307)
+                .put("f12308", f12308)
+                .put("f12309", f12309)
+                .put("f12801", f12801)
+                .put("f12802", f12802)
+                .put("f12803", f12803)
+                .put("f12804", f12804)
+                .put("f12805", f12805)
+                .put("f12806", f12806)
+                .put("f12807", f12807)
+                .put("f129", f129)
+                .put("f13001", f13001)
+                .put("f13002", f13002)
+                .put("f13003", f13003)
+                .put("f13004", f13004)
+                .put("f13005", f13005)
+                .put("f13006", f13006)
+                .put("f13007", f13007)
+                .put("f13008", f13008)
+                .put("f13009", f13009)
+                .put("f13010", f13010)
+                .put("f13011", f13011)
+                .put("f13012", f13012)
+                .put("f13013", f13013)
+                .put("f13014", f13014)
+                .put("f13096", f13096)
+                .put("f13096x", f13096x)
+                .put("f131", f131)
+                .put("f131a", f131a)
+                .put("f13401", f13401)
+                .put("f13402", f13402)
+                .put("f13403", f13403)
+                .put("f13404", f13404)
+                .put("f13405", f13405)
+                .put("f13406", f13406)
+                .put("f13407", f13407)
+                .put("f13408", f13408)
+                .put("f13409", f13409);
         return json.toString();
     }
 
-    public String sB2toString() throws JSONException {
-        Log.d(TAG, "sB2toString: ");
+    public String sGtoString() throws JSONException {
+        Log.d(TAG, "sGtoString: ");
         JSONObject json = new JSONObject();
-        json.put("bs2q1", bs2q1)
-                .put("bs2q2", bs2q2)
-                .put("bs2q201", bs2q201)
-                .put("bs2q202", bs2q202)
-                .put("bs2q203", bs2q203)
-                .put("bs2q204", bs2q204)
-                .put("bs2q205", bs2q205)
-                .put("bs2q206", bs2q206)
-                .put("bs2q207", bs2q207)
-                .put("bs2q208", bs2q208)
-                .put("bs2q209", bs2q209)
-                .put("bs2q210", bs2q210)
-                .put("bs2q211", bs2q211)
-                .put("bs2q212", bs2q212)
-                .put("bs2q213", bs2q213)
-                .put("bs2q214", bs2q214)
-                .put("bs2q215", bs2q215)
-                .put("bs2q216", bs2q216)
-                .put("bs2q217", bs2q217)
-                .put("bs2q218", bs2q218)
-                .put("bs2q296", bs2q296)
-                .put("bs2q296x", bs2q296x)
-                .put("bs2q3", bs2q3)
-                .put("bs2q4", bs2q4)
-                .put("bs2q401", bs2q401)
-                .put("bs2q402", bs2q402)
-                .put("bs2q403", bs2q403)
-                .put("bs2q404", bs2q404)
-                .put("bs2q405", bs2q405)
-                .put("bs2q406", bs2q406)
-                .put("bs2q407", bs2q407)
-                .put("bs2q408", bs2q408)
-                .put("bs2q409", bs2q409)
-                .put("bs2q410", bs2q410)
-                .put("bs2q411", bs2q411)
-                .put("bs2q412", bs2q412)
-                .put("bs2q413", bs2q413)
-                .put("bs2q414", bs2q414)
-                .put("bs2q415", bs2q415)
-                .put("bs2q416", bs2q416)
-                .put("bs2q417", bs2q417)
-                .put("bs2q418", bs2q418)
-                .put("bs2q466", bs2q466)
-                .put("bs2q4096", bs2q4096)
-                .put("bs2q4096x", bs2q4096x)
-                .put("bs2q5", bs2q5)
-                .put("bs2q6", bs2q6)
-                .put("bs2q601", bs2q601)
-                .put("bs2q602", bs2q602)
-                .put("bs2q603", bs2q603)
-                .put("bs2q604", bs2q604)
-                .put("bs2q605", bs2q605)
-                .put("bs2q606", bs2q606)
-                .put("bs2q606x", bs2q606x)
-                .put("bs2q607", bs2q607)
-                .put("bs2q608", bs2q608)
-                .put("bs2q609", bs2q609)
-                .put("bs2q6010", bs2q6010)
-                .put("bs2q6010x", bs2q6010x)
-                .put("bs2q6011", bs2q6011)
-                .put("bs2q6011x", bs2q6011x)
-                .put("bs2q6012", bs2q6012)
-                .put("bs2q6013", bs2q6013)
-                .put("bs2q6014", bs2q6014)
-                .put("bs2q6015", bs2q6015)
-                .put("bs2q696", bs2q696)
-                .put("bs2q696x", bs2q696x)
-                .put("bs2q7", bs2q7)
-                .put("bs2q796x", bs2q796x)
-                .put("bs2q8", bs2q8)
-                .put("bs2q801", bs2q801)
-                .put("bs2q802", bs2q802)
-                .put("bs2q803", bs2q803)
-                .put("bs2q804", bs2q804)
-                .put("bs2q898", bs2q898)
-                .put("bs2q896", bs2q896)
-                .put("bs2q896x", bs2q896x);
+        json.put("g101", g101)
+                .put("g102", g102)
+                .put("g10301", g10301)
+                .put("g10302", g10302)
+                .put("g10303", g10303)
+                .put("g10304", g10304)
+                .put("g10305", g10305)
+                .put("g10306", g10306)
+                .put("g10307", g10307)
+                .put("g10308", g10308)
+                .put("g10309", g10309)
+                .put("g10310", g10310)
+                .put("g10311", g10311)
+                .put("g10312", g10312)
+                .put("g10313", g10313)
+                .put("g10314", g10314)
+                .put("g10396", g10396)
+                .put("g10396x", g10396x)
+                .put("g104", g104)
+                .put("g10496x", g10496x)
+                .put("g105", g105)
+                .put("g10501x", g10501x)
+                .put("g106", g106)
+                .put("g107", g107)
+                .put("g10701x", g10701x)
+                .put("g108", g108)
+                .put("g109", g109)
+                .put("g110", g110)
+                .put("g126", g126)
+                .put("g113", g113)
+                .put("g114", g114)
+                .put("g11496x", g11496x)
+                .put("g115", g115)
+                .put("g116", g116)
+                .put("g117", g117)
+                .put("g117hx", g117hx)
+                .put("g117mx", g117mx)
+                .put("g117dx", g117dx)
+                .put("g11801", g11801)
+                .put("g11801x", g11801x)
+                .put("g11802", g11802)
+                .put("g11802x", g11802x)
+                .put("g11803", g11803)
+                .put("g11803x", g11803x)
+                .put("g11804", g11804)
+                .put("g11804x", g11804x)
+                .put("g11896", g11896)
+                .put("g11896x", g11896x)
+                .put("g11898", g11898)
+                .put("g119", g119)
+                .put("g120", g120)
+                .put("g12096x", g12096x)
+                .put("g121", g121)
+                .put("g12196x", g12196x)
+                .put("g12401", g12401)
+                .put("g12402", g12402)
+                .put("g12403", g12403)
+                .put("g12404", g12404)
+                .put("g12405", g12405)
+                .put("g12406", g12406)
+                .put("g12407", g12407)
+                .put("g12408", g12408)
+                .put("g12409", g12409)
+                .put("g12410", g12410)
+                .put("g12411", g12411)
+                .put("g12412", g12412)
+                .put("g12413", g12413)
+                .put("g128", g128)
+                .put("g129", g129);
         return json.toString();
     }
 
-    public String sB3toString() throws JSONException {
-        Log.d(TAG, "sB3toString: ");
+    public String sH1toString() throws JSONException {
+        Log.d(TAG, "sH1toString: ");
         JSONObject json = new JSONObject();
-        json.put("bs3q1", bs3q1)
-                .put("bs3q101", bs3q101)
-                .put("bs3q102", bs3q102)
-                .put("bs3q103", bs3q103)
-                .put("bs3q104", bs3q104)
-                .put("bs3q105", bs3q105)
-                .put("bs3q106", bs3q106)
-                .put("bs3q107", bs3q107)
-                .put("bs3q197", bs3q197)
-                .put("bs3q198", bs3q198)
-                .put("bs3q196", bs3q196)
-                .put("bs3q196x", bs3q196x)
-                .put("bs3q2a", bs3q2a)
-                .put("bs3q2a96x", bs3q2a96x)
-                .put("bs3q2b", bs3q2b)
-                .put("bs3q2b96x", bs3q2b96x)
-                .put("bs3q2c", bs3q2c)
-                .put("bs3q2c96x", bs3q2c96x)
-                .put("bs3q2d", bs3q2d)
-                .put("bs3q2d96x", bs3q2d96x)
-                .put("bs3q3", bs3q3)
-                .put("bs3q4", bs3q4)
-                .put("bs3q401", bs3q401)
-                .put("bs3q402", bs3q402)
-                .put("bs3q403", bs3q403)
-                .put("bs3q404", bs3q404)
-                .put("bs3q405", bs3q405)
-                .put("bs3q406", bs3q406)
-                .put("bs3q407", bs3q407)
-                .put("bs3q496", bs3q496)
-                .put("bs3q496x", bs3q496x)
-                .put("bs3q498", bs3q498)
-                .put("bs3q5", bs3q5)
-                .put("bs3q501", bs3q501)
-                .put("bs3q502", bs3q502)
-                .put("bs3q503", bs3q503)
-                .put("bs3q504", bs3q504)
-                .put("bs3q598", bs3q598)
-                .put("bs3q596", bs3q596)
-                .put("bs3q596x", bs3q596x)
-                .put("bs3q6", bs3q6)
-                .put("bs3q601", bs3q601)
-                .put("bs3q602", bs3q602)
-                .put("bs3q603", bs3q603)
-                .put("bs3q604", bs3q604)
-                .put("bs3q605", bs3q605)
-                .put("bs3q606", bs3q606)
-                .put("bs3q607", bs3q607)
-                .put("bs3q608", bs3q608)
-                .put("bs3q609", bs3q609)
-                .put("bs3q698", bs3q698)
-                .put("bs3q696", bs3q696)
-                .put("bs3q696x", bs3q696x)
-                .put("bs3q7", bs3q7)
-                .put("bs3q701", bs3q701)
-                .put("bs3q702", bs3q702)
-                .put("bs3q703", bs3q703)
-                .put("bs3q704", bs3q704)
-                .put("bs3q705", bs3q705)
-                .put("bs3q798", bs3q798)
-                .put("bs3q796", bs3q796)
-                .put("bs3q796x", bs3q796x)
-                .put("bs3q8", bs3q8)
-                .put("bs3q801", bs3q801)
-                .put("bs3q802", bs3q802)
-                .put("bs3q803", bs3q803)
-                .put("bs3q804", bs3q804)
-                .put("bs3q897", bs3q897)
-                .put("bs3q896", bs3q896)
-                .put("bs3q896x", bs3q896x)
-                .put("bs3q9", bs3q9)
-                .put("bs3q901", bs3q901)
-                .put("bs3q902", bs3q902)
-                .put("bs3q903", bs3q903)
-                .put("bs3q904", bs3q904)
-                .put("bs3q905", bs3q905)
-                .put("bs3q906", bs3q906)
-                .put("bs3q996", bs3q996)
-                .put("bs3q996x", bs3q996x)
-                .put("bs3q997", bs3q997)
-                .put("bs3q10", bs3q10)
-                .put("bs3q1001", bs3q1001)
-                .put("bs3q1002", bs3q1002)
-                .put("bs3q1003", bs3q1003)
-                .put("bs3q1004", bs3q1004)
-                .put("bs3q1005", bs3q1005)
-                .put("bs3q1006", bs3q1006)
-                .put("bs3q1007", bs3q1007)
-                .put("bs3q1008", bs3q1008)
-                .put("bs3q1009", bs3q1009)
-                .put("bs3q1096", bs3q1096)
-                .put("bs3q1096x", bs3q1096x)
-                .put("bs3q1097", bs3q1097)
-                .put("bs3q11", bs3q11)
-                .put("bs3q12", bs3q12)
-                .put("bs3q1201", bs3q1201)
-                .put("bs3q1202", bs3q1202)
-                .put("bs3q1203", bs3q1203)
-                .put("bs3q1204", bs3q1204)
-                .put("bs3q1205", bs3q1205)
-                .put("bs3q1206", bs3q1206)
-                .put("bs3q1206x", bs3q1206x)
-                .put("bs3q1207", bs3q1207)
-                .put("bs3q1296", bs3q1296)
-                .put("bs3q1296x", bs3q1296x)
-                .put("bs3q13", bs3q13)
-                .put("bs3q14", bs3q14)
-                .put("bs3q15", bs3q15);
+        json.put("h101", h101)
+                .put("h101mx", h101mx)
+                .put("h101wx", h101wx)
+                .put("h102", h102)
+                .put("h103", h103)
+                .put("h10401", h10401)
+                .put("h10402", h10402)
+                .put("h10403", h10403)
+                .put("h10496", h10496)
+                .put("h105", h105)
+                .put("h106", h106)
+                .put("h1061x", h1061x)
+                .put("h107", h107)
+                .put("h108", h108)
+                .put("h10896x", h10896x)
+                .put("h10901", h10901)
+                .put("h10902", h10902)
+                .put("h10903", h10903)
+                .put("h10904", h10904)
+                .put("h10905", h10905)
+                .put("h10906", h10906)
+                .put("h10907", h10907)
+                .put("h10997", h10997)
+                .put("h10996", h10996)
+                .put("h10996x", h10996x)
+                .put("h110", h110)
+                .put("h111", h111)
+                .put("h112", h112)
+                .put("h113", h113)
+                .put("h114", h114)
+                .put("h11501", h11501)
+                .put("h11502", h11502)
+                .put("h11503", h11503)
+                .put("h11504", h11504)
+                .put("h11505", h11505)
+                .put("h11506", h11506)
+                .put("h11507", h11507)
+                .put("h11508", h11508)
+                .put("h11509", h11509)
+                .put("h11596", h11596)
+                .put("h11596x", h11596x)
+                .put("h116", h116)
+                .put("h11701", h11701)
+                .put("h118", h118)
+                .put("h119", h119)
+                .put("h120", h120)
+                .put("h121", h121)
+                .put("h122", h122)
+                .put("h1221x", h1221x)
+                .put("h123", h123)
+                .put("h124", h124)
+                .put("h125", h125)
+                .put("h126", h126)
+                .put("h127", h127)
+                .put("h128", h128)
+                .put("h12896x", h12896x)
+                .put("h12901", h12901)
+                .put("h12902", h12902)
+                .put("h12903", h12903)
+                .put("h12904", h12904)
+                .put("h12905", h12905)
+                .put("h12906", h12906)
+                .put("h132", h132)
+                .put("h132a", h132a)
+                .put("h13301", h13301)
+                .put("h13302", h13302)
+                .put("h13303", h13303)
+                .put("h13304", h13304)
+                .put("h13305", h13305)
+                .put("h13306", h13306)
+                .put("h13307", h13307)
+                .put("h13308", h13308)
+                .put("h13309", h13309)
+                .put("h13501", h13501)
+                .put("h13502", h13502)
+                .put("h13503", h13503)
+                .put("h13504", h13504)
+                .put("h13505", h13505)
+                .put("h13506", h13506)
+                .put("h13507", h13507)
+                .put("h13508", h13508)
+                .put("h13509", h13509)
+                .put("h13598", h13598)
+                .put("h13601", h13601)
+                .put("h13602", h13602)
+                .put("h13603", h13603)
+                .put("h13604", h13604)
+                .put("h13605", h13605)
+                .put("h13606", h13606)
+                .put("h13696", h13696)
+                .put("h13696x", h13696x)
+                .put("h137", h137)
+                .put("h137a", h137a)
+                .put("h137a96x", h137a96x)
+                .put("h137b", h137b)
+                .put("h137b96x", h137b96x)
+                .put("h137c", h137c)
+                .put("h137c96x", h137c96x);
         return json.toString();
     }
 
-    public String sB41toString() throws JSONException {
-        Log.d(TAG, "sB41toString: ");
+    public String sH2toString() throws JSONException {
+        Log.d(TAG, "sH2toString: ");
         JSONObject json = new JSONObject();
-        json.put("bs4aq1", bs4aq1)
-                .put("bs4aq2", bs4aq2)
-                .put("bs4aq201", bs4aq201)
-                .put("bs4aq202", bs4aq202)
-                .put("bs4aq203", bs4aq203)
-                .put("bs4aq204", bs4aq204)
-                .put("bs4aq205", bs4aq205)
-                .put("bs4aq206", bs4aq206)
-                .put("bs4aq207", bs4aq207)
-                .put("bs4aq208", bs4aq208)
-                .put("bs4aq298", bs4aq298)
-                .put("bs4aq296", bs4aq296)
-                .put("bs4aq296x", bs4aq296x)
-                .put("bs4aq3", bs4aq3)
-                .put("bs4aq4", bs4aq4)
-                .put("bs4aq5", bs4aq5)
-                .put("bs4aq6", bs4aq6)
-                .put("bs4aq696x", bs4aq696x)
-                .put("bs4aq7", bs4aq7)
-                .put("bs4aq8", bs4aq8)
-                .put("bs4aq896x", bs4aq896x)
-                .put("bs4aq9", bs4aq9)
-                .put("bs4aq10", bs4aq10);
+        json.put("h201", h201)
+                .put("h201hx", h201hx)
+                .put("h201dx", h201dx)
+                .put("h201wx", h201wx)
+                .put("h202", h202)
+                .put("h203h", h203h)
+                .put("h203d", h203d)
+                .put("h203w", h203w)
+                .put("h204", h204)
+                .put("h205", h205)
+                .put("h20596x", h20596x)
+                .put("h20701", h20701)
+                .put("h20702", h20702)
+                .put("h20703", h20703)
+                .put("h20704", h20704)
+                .put("h20705", h20705)
+                .put("h20706", h20706)
+                .put("h20707", h20707)
+                .put("h20708", h20708)
+                .put("h20798", h20798)
+                .put("h20801", h20801)
+                .put("h20802", h20802)
+                .put("h20803", h20803)
+                .put("h20804", h20804)
+                .put("h20805", h20805)
+                .put("h20806", h20806)
+                .put("h20896", h20896)
+                .put("h209", h209)
+                .put("h209a", h209a)
+                .put("h210", h210)
+                .put("h211", h211)
+                .put("h212", h212)
+                .put("h213", h213)
+                .put("h214", h214)
+                .put("h214a", h214a)
+                .put("h214b01", h214b01)
+                .put("h214b02", h214b02)
+                .put("h214b03", h214b03)
+                .put("h214b04", h214b04)
+                .put("h214b05", h214b05)
+                .put("h214b06", h214b06)
+                .put("h214b96", h214b96)
+                .put("h214b96x", h214b96x)
+                .put("h214b98", h214b98)
+                .put("h215", h215)
+                .put("h216", h216)
+                .put("h216a", h216a)
+                .put("h216a96x", h216a96x)
+                .put("h21701", h21701)
+                .put("h21702", h21702)
+                .put("h21703", h21703)
+                .put("h21704", h21704)
+                .put("h21705", h21705)
+                .put("h21706", h21706)
+                .put("h21796", h21796)
+                .put("h21796x", h21796x)
+                .put("h218", h218)
+                .put("h219", h219)
+                .put("h21996x", h21996x)
+                .put("h2201", h2201)
+                .put("h2201x", h2201x)
+                .put("h2202", h2202)
+                .put("h2202x", h2202x)
+                .put("h2203", h2203)
+                .put("h2203x", h2203x)
+                .put("h2204", h2204)
+                .put("h2204x", h2204x)
+                .put("h2205", h2205)
+                .put("h2205x", h2205x)
+                .put("h2206", h2206)
+                .put("h2206x", h2206x)
+                .put("h22096", h22096)
+                .put("h22096x", h22096x)
+                .put("h221", h221)
+                .put("h222", h222)
+                .put("h223", h223);
         return json.toString();
     }
 
-    public String sB42toString() throws JSONException {
-        Log.d(TAG, "sB42toString: ");
+    public String sKtoString() throws JSONException {
+        Log.d(TAG, "sKtoString: ");
         JSONObject json = new JSONObject();
-        json.put("bs4bq1", bs4bq1)
-                .put("bs4bq2", bs4bq2)
-                .put("bs4bq21", bs4bq21)
-                .put("bs4bq22", bs4bq22)
-                .put("bs4bq23", bs4bq23)
-                .put("bs4bq24", bs4bq24)
-                .put("bs4bq298", bs4bq298)
-                .put("bs4bq296", bs4bq296)
-                .put("bs4bq296x", bs4bq296x)
-                .put("bs4bq3", bs4bq3)
-                .put("bs4bq31", bs4bq31)
-                .put("bs4bq32", bs4bq32)
-                .put("bs4bq33", bs4bq33)
-                .put("bs4bq34", bs4bq34)
-                .put("bs4bq35", bs4bq35)
-                .put("bs4bq36", bs4bq36)
-                .put("bs4bq398", bs4bq398)
-                .put("bs4bq396", bs4bq396)
-                .put("bs4bq396x", bs4bq396x)
-                .put("bs4bq4", bs4bq4)
-                .put("bs4bq5", bs4bq5)
-                .put("bs4bq51", bs4bq51)
-                .put("bs4bq52", bs4bq52)
-                .put("bs4bq53", bs4bq53)
-                .put("bs4bq598", bs4bq598)
-                .put("bs4bq596", bs4bq596)
-                .put("bs4bq596x", bs4bq596x)
-                .put("bs4bq6", bs4bq6)
-                .put("bs4bq696x", bs4bq696x)
-                .put("bs4bq7", bs4bq7)
-                .put("bs4bq8", bs4bq8)
-                .put("bs4bq81", bs4bq81)
-                .put("bs4bq82", bs4bq82)
-                .put("bs4bq83", bs4bq83)
-                .put("bs4bq84", bs4bq84)
-                .put("bs4bq85", bs4bq85)
-                .put("bs4bq86", bs4bq86)
-                .put("bs4bq87", bs4bq87)
-                .put("bs4bq898", bs4bq898)
-                .put("bs4bq896", bs4bq896)
-                .put("bs4bq896x", bs4bq896x);
+        json.put("k101", k101)
+                .put("k101a01", k101a01)
+                .put("k101a02", k101a02)
+                .put("k101a03", k101a03)
+                .put("k101a04", k101a04)
+                .put("k101a05", k101a05)
+                .put("k101a06", k101a06)
+                .put("k101a07", k101a07)
+                .put("k101a08", k101a08)
+                .put("k101a09", k101a09)
+                .put("k101a10", k101a10)
+                .put("k101a11", k101a11)
+                .put("k101a12", k101a12)
+                .put("k101a13", k101a13)
+                .put("k101a96", k101a96)
+                .put("k101a96x", k101a96x)
+                .put("k102", k102)
+                .put("k104a01", k104a01)
+                .put("k104a02", k104a02)
+                .put("k104a03", k104a03)
+                .put("k104a04", k104a04)
+                .put("k104a05", k104a05)
+                .put("k104a06", k104a06)
+                .put("k104a77", k104a77)
+                .put("k104a08", k104a08)
+                .put("k104a09", k104a09)
+                .put("k104a10", k104a10)
+                .put("k104a11", k104a11)
+                .put("k104a12", k104a12)
+                .put("k104a13", k104a13)
+                .put("k103", k103)
+                .put("k104b01", k104b01)
+                .put("k104b02", k104b02)
+                .put("k104b03", k104b03)
+                .put("k104b04", k104b04)
+                .put("k104b05", k104b05)
+                .put("k104b06", k104b06)
+                .put("k104b07", k104b07)
+                .put("k104b08", k104b08)
+                .put("k104b09", k104b09)
+                .put("k104b10", k104b10)
+                .put("k104b11", k104b11)
+                .put("k104b12", k104b12)
+                .put("k104b13", k104b13)
+                .put("k105", k105)
+                .put("k105a", k105a)
+                .put("k105a01x", k105a01x)
+                .put("k105a02x", k105a02x)
+                .put("k10601", k10601)
+                .put("k10602", k10602)
+                .put("k10603", k10603)
+                .put("k10604", k10604)
+                .put("k10605", k10605)
+                .put("k10606", k10606)
+                .put("k10607", k10607)
+                .put("k10608", k10608)
+                .put("k10696", k10696)
+                .put("k10696x", k10696x)
+                .put("k107", k107)
+                .put("k107a", k107a)
+                .put("k107a96x", k107a96x);
         return json.toString();
     }
 
-    public String sB5toString() throws JSONException {
-        Log.d(TAG, "sB5toString: ");
+    public String sLtoString() throws JSONException {
+        Log.d(TAG, "sLtoString: ");
         JSONObject json = new JSONObject();
-        json.put("bs5q1", bs5q1)
-                .put("bs5q2", bs5q2)
-                .put("bs5q201", bs5q201)
-                .put("bs5q202", bs5q202)
-                .put("bs5q203", bs5q203)
-                .put("bs5q204", bs5q204)
-                .put("bs5q205", bs5q205)
-                .put("bs5q296", bs5q296)
-                .put("bs5q296x", bs5q296x)
-                .put("bs5q297", bs5q297)
-                .put("bs5q3", bs5q3)
-                .put("bs5q4", bs5q4)
-                .put("bs5q401", bs5q401)
-                .put("bs5q402", bs5q402)
-                .put("bs5q403", bs5q403)
-                .put("bs5q404", bs5q404)
-                .put("bs5q496", bs5q496)
-                .put("bs5q496x", bs5q496x)
-                .put("bs5q497", bs5q497)
-                .put("bs5q5", bs5q5)
-                .put("bs5q6", bs5q6)
-                .put("bs5q7", bs5q7)
-                .put("bs5q8", bs5q8)
-                .put("bs5q801", bs5q801)
-                .put("bs5q802", bs5q802)
-                .put("bs5q803", bs5q803)
-                .put("bs5q804", bs5q804)
-                .put("bs5q805", bs5q805)
-                .put("bs5q806", bs5q806)
-                .put("bs5q807", bs5q807)
-                .put("bs5q808", bs5q808)
-                .put("bs5q896", bs5q896)
-                .put("bs5q896x", bs5q896x)
-                .put("bs5q898", bs5q898)
-                .put("bs5q9", bs5q9)
-                .put("bs5q901", bs5q901)
-                .put("bs5q902", bs5q902)
-                .put("bs5q903", bs5q903)
-                .put("bs5q904", bs5q904)
-                .put("bs5q905", bs5q905)
-                .put("bs5q906", bs5q906)
-                .put("bs5q907", bs5q907)
-                .put("bs5q908", bs5q908)
-                .put("bs5q996", bs5q996)
-                .put("bs5q996x", bs5q996x)
-                .put("bs5q998", bs5q998)
-                .put("bs5q10", bs5q10)
-                .put("bs5q1096x", bs5q1096x)
-                .put("bs5q11", bs5q11)
-                .put("bs5q12", bs5q12);
-        return json.toString();
-    }
-
-    public String sB6toString() throws JSONException {
-        Log.d(TAG, "sB6toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs6q1", bs6q1)
-                .put("bs6q1mx", bs6q1mx)
-                .put("bs6q2", bs6q2)
-                .put("bs6q3", bs6q3)
-                .put("bs6q3mx", bs6q3mx);
-        return json.toString();
-    }
-
-    public String sB7toString() throws JSONException {
-        Log.d(TAG, "sB7toString: ");
-        JSONObject json = new JSONObject();
-        json.put("bs7q1", bs7q1)
-                .put("bs7q2line", bs7q2line)
-                .put("bs7q3", bs7q3)
-                .put("bs7q4a", bs7q4a)
-                .put("bs7q4b", bs7q4b)
-                .put("bs7q4c", bs7q4c)
-                .put("bs7q4d", bs7q4d)
-                .put("bs7q4e", bs7q4e)
-                .put("bs7q4f", bs7q4f)
-                .put("bs7q4g", bs7q4g)
-                .put("bs7q4h", bs7q4h);
+        json.put("l101", l101)
+                .put("l102", l102)
+                .put("l102a", l102a)
+                .put("l102a96x", l102a96x)
+                .put("l103", l103)
+                .put("l104", l104)
+                .put("l10496x", l10496x)
+                .put("l105", l105)
+                .put("l106", l106)
+                .put("l10696x", l10696x)
+                .put("l107", l107)
+                .put("l10796x", l10796x)
+                .put("l108", l108)
+                .put("l10896x", l10896x)
+                .put("l109", l109)
+                .put("l10996x", l10996x)
+                .put("l110", l110)
+                .put("l111", l111)
+                .put("l1121", l1121)
+                .put("l1122", l1122)
+                .put("l1123", l1123)
+                .put("l1124", l1124)
+                .put("l1125", l1125)
+                .put("l1131", l1131)
+                .put("l1132", l1132)
+                .put("l1133", l1133)
+                .put("l1134", l1134)
+                .put("l114", l114)
+                .put("l11496x", l11496x)
+                .put("l115", l115)
+                .put("l11596x", l11596x)
+                .put("l116", l116)
+                .put("l11696x", l11696x)
+                .put("l117", l117)
+                .put("l11796x", l11796x);
         return json.toString();
     }
 
@@ -5491,433 +6087,518 @@ public class MWRA extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED_DATE));
 
 
-        sB1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB1)));
-        sB2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB2)));
-        sB3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB3)));
-        sB41Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB41)));
-        sB42Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB42)));
-        sB5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB5)));
-        sB6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB6)));
-        sB7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SB7)));
+        sFHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SF)));
+        sGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SG)));
+        sH1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SH1)));
+        sH2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SH2)));
+        sKHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SK)));
+        sLHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SL)));
 
         return this;
     }
 
-    public void sB1Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB1Hydrate: " + string);
+    public void sFHydrate(String string) throws JSONException {
+        Log.d(TAG, "sFHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs1resp = json.getString("bs1resp");
-            this.bs1respline = json.getString("bs1respline");
-            this.bs1con = json.getString("bs1con");
-            this.bs1q1 = json.getString("bs1q1");
-            this.bs1q2 = json.getString("bs1q2");
-            this.bs1q3 = json.getString("bs1q3");
-            this.bs1q4 = json.getString("bs1q4");
-            this.bs1q5 = json.getString("bs1q5");
-            this.bs1q6 = json.getString("bs1q6");
-            this.bs1q08 = json.getString("bs1q08");
-            this.bs1q09 = json.getString("bs1q09");
-            this.bs1q0901 = json.getString("bs1q0901");
-            this.bs1q0902 = json.getString("bs1q0902");
-            this.bs1q0903 = json.getString("bs1q0903");
-            this.bs1q0904 = json.getString("bs1q0904");
-            this.bs1q0905 = json.getString("bs1q0905");
-            this.bs1q0906 = json.getString("bs1q0906");
-            this.bs1q0907 = json.getString("bs1q0907");
-            this.bs1q0908 = json.getString("bs1q0908");
-            this.bs1q09t296 = json.getString("bs1q09t296");
-            this.bs1q09t296x = json.getString("bs1q09t296x");
-            this.bs1q1001 = json.getString("bs1q1001");
-            this.bs1q1002 = json.getString("bs1q1002");
-            this.bs1q1098 = json.getString("bs1q1098");
-            this.bs1q11 = json.getString("bs1q11");
-            this.bs1q12 = json.getString("bs1q12");
-            this.bs1q13 = json.getString("bs1q13");
-            this.bs1q1301 = json.getString("bs1q1301");
-            this.bs1q1302 = json.getString("bs1q1302");
-            this.bs1q1303 = json.getString("bs1q1303");
-            this.bs1q1304 = json.getString("bs1q1304");
-            this.bs1q1305 = json.getString("bs1q1305");
-            this.bs1q1306 = json.getString("bs1q1306");
-            this.bs1q1307 = json.getString("bs1q1307");
-            this.bs1q1308 = json.getString("bs1q1308");
-            this.bs1q1396 = json.getString("bs1q1396");
-            this.bs1q1396x = json.getString("bs1q1396x");
+            this.f101 = json.getString("f101");
+            this.f101a01 = json.getString("f101a01");
+            this.f101a02 = json.getString("f101a02");
+            this.f101a03 = json.getString("f101a03");
+            this.f101a04 = json.getString("f101a04");
+            this.f101a05 = json.getString("f101a05");
+            this.f101a06 = json.getString("f101a06");
+            this.f101a07 = json.getString("f101a07");
+            this.f101a08 = json.getString("f101a08");
+            this.f101a09 = json.getString("f101a09");
+            this.f101a10 = json.getString("f101a10");
+            this.f101a11 = json.getString("f101a11");
+            this.f101a12 = json.getString("f101a12");
+            this.f101a13 = json.getString("f101a13");
+            this.f101a14 = json.getString("f101a14");
+            this.f101a96 = json.getString("f101a96");
+            this.f101b = json.getString("f101b");
+            this.f101b01x = json.getString("f101b01x");
+            this.f10201 = json.getString("f10201");
+            this.f10202 = json.getString("f10202");
+            this.f10203 = json.getString("f10203");
+            this.f10204 = json.getString("f10204");
+            this.f10205 = json.getString("f10205");
+            this.f10206 = json.getString("f10206");
+            this.f10207 = json.getString("f10207");
+            this.f10208 = json.getString("f10208");
+            this.f10209 = json.getString("f10209");
+            this.f10210 = json.getString("f10210");
+            this.f10296 = json.getString("f10296");
+            this.f10296x = json.getString("f10296x");
+            this.f10301 = json.getString("f10301");
+            this.f10302 = json.getString("f10302");
+            this.f10303 = json.getString("f10303");
+            this.f10304 = json.getString("f10304");
+            this.f10305 = json.getString("f10305");
+            this.f107 = json.getString("f107");
+            this.f10796x = json.getString("f10796x");
+            this.f108 = json.getString("f108");
+            this.f108wx = json.getString("f108wx");
+            this.f108mx = json.getString("f108mx");
+            this.f11001 = json.getString("f11001");
+            this.f11002 = json.getString("f11002");
+            this.f11003 = json.getString("f11003");
+            this.f11004 = json.getString("f11004");
+            this.f11005 = json.getString("f11005");
+            this.f11006 = json.getString("f11006");
+            this.f11007 = json.getString("f11007");
+            this.f11008 = json.getString("f11008");
+            this.f11009 = json.getString("f11009");
+            this.f11096 = json.getString("f11096");
+            this.f1109696x = json.getString("f1109696x");
+            this.f111 = json.getString("f111");
+            this.f112 = json.getString("f112");
+            this.f113 = json.getString("f113");
+            this.f11301x = json.getString("f11301x");
+            this.f114 = json.getString("f114");
+            this.f116 = json.getString("f116");
+            this.f117 = json.getString("f117");
+            this.f118m = json.getString("f118m");
+            this.f118d = json.getString("f118d");
+            this.f119 = json.getString("f119");
+            this.f120 = json.getString("f120");
+            this.f12001x = json.getString("f12001x");
+            this.f121a = json.getString("f121a");
+            this.f121b = json.getString("f121b");
+            this.f121b96x = json.getString("f121b96x");
+            this.f122 = json.getString("f122");
+            this.f12201x = json.getString("f12201x");
+            this.f12301 = json.getString("f12301");
+            this.f12302 = json.getString("f12302");
+            this.f12303 = json.getString("f12303");
+            this.f12304 = json.getString("f12304");
+            this.f12305 = json.getString("f12305");
+            this.f12306 = json.getString("f12306");
+            this.f12307 = json.getString("f12307");
+            this.f12308 = json.getString("f12308");
+            this.f12309 = json.getString("f12309");
+            this.f12801 = json.getString("f12801");
+            this.f12802 = json.getString("f12802");
+            this.f12803 = json.getString("f12803");
+            this.f12804 = json.getString("f12804");
+            this.f12805 = json.getString("f12805");
+            this.f12806 = json.getString("f12806");
+            this.f12807 = json.getString("f12807");
+            this.f129 = json.getString("f129");
+            this.f13001 = json.getString("f13001");
+            this.f13002 = json.getString("f13002");
+            this.f13003 = json.getString("f13003");
+            this.f13004 = json.getString("f13004");
+            this.f13005 = json.getString("f13005");
+            this.f13006 = json.getString("f13006");
+            this.f13007 = json.getString("f13007");
+            this.f13008 = json.getString("f13008");
+            this.f13009 = json.getString("f13009");
+            this.f13010 = json.getString("f13010");
+            this.f13011 = json.getString("f13011");
+            this.f13012 = json.getString("f13012");
+            this.f13013 = json.getString("f13013");
+            this.f13014 = json.getString("f13014");
+            this.f13096 = json.getString("f13096");
+            this.f13096x = json.getString("f13096x");
+            this.f131 = json.getString("f131");
+            this.f131a = json.getString("f131a");
+            this.f13401 = json.getString("f13401");
+            this.f13402 = json.getString("f13402");
+            this.f13403 = json.getString("f13403");
+            this.f13404 = json.getString("f13404");
+            this.f13405 = json.getString("f13405");
+            this.f13406 = json.getString("f13406");
+            this.f13407 = json.getString("f13407");
+            this.f13408 = json.getString("f13408");
+            this.f13409 = json.getString("f13409");
+
         }
     }
 
-    public void sB2Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB2Hydrate: " + string);
+    public void sGHydrate(String string) throws JSONException {
+        Log.d(TAG, "sGHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs2q1 = json.getString("bs2q1");
-            this.bs2q2 = json.getString("bs2q2");
-            this.bs2q201 = json.getString("bs2q201");
-            this.bs2q202 = json.getString("bs2q202");
-            this.bs2q203 = json.getString("bs2q203");
-            this.bs2q204 = json.getString("bs2q204");
-            this.bs2q205 = json.getString("bs2q205");
-            this.bs2q206 = json.getString("bs2q206");
-            this.bs2q207 = json.getString("bs2q207");
-            this.bs2q208 = json.getString("bs2q208");
-            this.bs2q209 = json.getString("bs2q209");
-            this.bs2q210 = json.getString("bs2q210");
-            this.bs2q211 = json.getString("bs2q211");
-            this.bs2q212 = json.getString("bs2q212");
-            this.bs2q213 = json.getString("bs2q213");
-            this.bs2q214 = json.getString("bs2q214");
-            this.bs2q215 = json.getString("bs2q215");
-            this.bs2q216 = json.getString("bs2q216");
-            this.bs2q217 = json.getString("bs2q217");
-            this.bs2q218 = json.getString("bs2q218");
-            this.bs2q296 = json.getString("bs2q296");
-            this.bs2q296x = json.getString("bs2q296x");
-            this.bs2q3 = json.getString("bs2q3");
-            this.bs2q4 = json.getString("bs2q4");
-            this.bs2q401 = json.getString("bs2q401");
-            this.bs2q402 = json.getString("bs2q402");
-            this.bs2q403 = json.getString("bs2q403");
-            this.bs2q404 = json.getString("bs2q404");
-            this.bs2q405 = json.getString("bs2q405");
-            this.bs2q406 = json.getString("bs2q406");
-            this.bs2q407 = json.getString("bs2q407");
-            this.bs2q408 = json.getString("bs2q408");
-            this.bs2q409 = json.getString("bs2q409");
-            this.bs2q410 = json.getString("bs2q410");
-            this.bs2q411 = json.getString("bs2q411");
-            this.bs2q412 = json.getString("bs2q412");
-            this.bs2q413 = json.getString("bs2q413");
-            this.bs2q414 = json.getString("bs2q414");
-            this.bs2q415 = json.getString("bs2q415");
-            this.bs2q416 = json.getString("bs2q416");
-            this.bs2q417 = json.getString("bs2q417");
-            this.bs2q418 = json.getString("bs2q418");
-            this.bs2q466 = json.getString("bs2q466");
-            this.bs2q4096 = json.getString("bs2q4096");
-            this.bs2q4096x = json.getString("bs2q4096x");
-            this.bs2q5 = json.getString("bs2q5");
-            this.bs2q6 = json.getString("bs2q6");
-            this.bs2q601 = json.getString("bs2q601");
-            this.bs2q602 = json.getString("bs2q602");
-            this.bs2q603 = json.getString("bs2q603");
-            this.bs2q604 = json.getString("bs2q604");
-            this.bs2q605 = json.getString("bs2q605");
-            this.bs2q606 = json.getString("bs2q606");
-            this.bs2q606x = json.getString("bs2q606x");
-            this.bs2q607 = json.getString("bs2q607");
-            this.bs2q608 = json.getString("bs2q608");
-            this.bs2q609 = json.getString("bs2q609");
-            this.bs2q6010 = json.getString("bs2q6010");
-            this.bs2q6010x = json.getString("bs2q6010x");
-            this.bs2q6011 = json.getString("bs2q6011");
-            this.bs2q6011x = json.getString("bs2q6011x");
-            this.bs2q6012 = json.getString("bs2q6012");
-            this.bs2q6013 = json.getString("bs2q6013");
-            this.bs2q6014 = json.getString("bs2q6014");
-            this.bs2q6015 = json.getString("bs2q6015");
-            this.bs2q696 = json.getString("bs2q696");
-            this.bs2q696x = json.getString("bs2q696x");
-            this.bs2q7 = json.getString("bs2q7");
-            this.bs2q796x = json.getString("bs2q796x");
-            this.bs2q8 = json.getString("bs2q8");
-            this.bs2q801 = json.getString("bs2q801");
-            this.bs2q802 = json.getString("bs2q802");
-            this.bs2q803 = json.getString("bs2q803");
-            this.bs2q804 = json.getString("bs2q804");
-            this.bs2q898 = json.getString("bs2q898");
-            this.bs2q896 = json.getString("bs2q896");
-            this.bs2q896x = json.getString("bs2q896x");
+            this.g101 = json.getString("g101");
+            this.g102 = json.getString("g102");
+            this.g10301 = json.getString("g10301");
+            this.g10302 = json.getString("g10302");
+            this.g10303 = json.getString("g10303");
+            this.g10304 = json.getString("g10304");
+            this.g10305 = json.getString("g10305");
+            this.g10306 = json.getString("g10306");
+            this.g10307 = json.getString("g10307");
+            this.g10308 = json.getString("g10308");
+            this.g10309 = json.getString("g10309");
+            this.g10310 = json.getString("g10310");
+            this.g10311 = json.getString("g10311");
+            this.g10312 = json.getString("g10312");
+            this.g10313 = json.getString("g10313");
+            this.g10314 = json.getString("g10314");
+            this.g10396 = json.getString("g10396");
+            this.g10396x = json.getString("g10396x");
+            this.g104 = json.getString("g104");
+            this.g10496x = json.getString("g10496x");
+            this.g105 = json.getString("g105");
+            this.g10501x = json.getString("g10501x");
+            this.g106 = json.getString("g106");
+            this.g107 = json.getString("g107");
+            this.g10701x = json.getString("g10701x");
+            this.g108 = json.getString("g108");
+            this.g109 = json.getString("g109");
+            this.g110 = json.getString("g110");
+            this.g126 = json.getString("g126");
+            this.g113 = json.getString("g113");
+            this.g114 = json.getString("g114");
+            this.g11496x = json.getString("g11496x");
+            this.g115 = json.getString("g115");
+            this.g116 = json.getString("g116");
+            this.g117 = json.getString("g117");
+            this.g117hx = json.getString("g117hx");
+            this.g117mx = json.getString("g117mx");
+            this.g117dx = json.getString("g117dx");
+            this.g11801 = json.getString("g11801");
+            this.g11801x = json.getString("g11801x");
+            this.g11802 = json.getString("g11802");
+            this.g11802x = json.getString("g11802x");
+            this.g11803 = json.getString("g11803");
+            this.g11803x = json.getString("g11803x");
+            this.g11804 = json.getString("g11804");
+            this.g11804x = json.getString("g11804x");
+            this.g11896 = json.getString("g11896");
+            this.g11896x = json.getString("g11896x");
+            this.g11898 = json.getString("g11898");
+            this.g119 = json.getString("g119");
+            this.g120 = json.getString("g120");
+            this.g12096x = json.getString("g12096x");
+            this.g121 = json.getString("g121");
+            this.g12196x = json.getString("g12196x");
+            this.g12401 = json.getString("g12401");
+            this.g12402 = json.getString("g12402");
+            this.g12403 = json.getString("g12403");
+            this.g12404 = json.getString("g12404");
+            this.g12405 = json.getString("g12405");
+            this.g12406 = json.getString("g12406");
+            this.g12407 = json.getString("g12407");
+            this.g12408 = json.getString("g12408");
+            this.g12409 = json.getString("g12409");
+            this.g12410 = json.getString("g12410");
+            this.g12411 = json.getString("g12411");
+            this.g12412 = json.getString("g12412");
+            this.g12413 = json.getString("g12413");
+            this.g128 = json.getString("g128");
+            this.g129 = json.getString("g129");
+
         }
     }
 
-    public void sB3Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB3Hydrate: " + string);
+    public void sH1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sH1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs3q1 = json.getString("bs3q1");
-            this.bs3q101 = json.getString("bs3q101");
-            this.bs3q102 = json.getString("bs3q102");
-            this.bs3q103 = json.getString("bs3q103");
-            this.bs3q104 = json.getString("bs3q104");
-            this.bs3q105 = json.getString("bs3q105");
-            this.bs3q106 = json.getString("bs3q106");
-            this.bs3q107 = json.getString("bs3q107");
-            this.bs3q197 = json.getString("bs3q197");
-            this.bs3q198 = json.getString("bs3q198");
-            this.bs3q196 = json.getString("bs3q196");
-            this.bs3q196x = json.getString("bs3q196x");
-            this.bs3q2a = json.getString("bs3q2a");
-            this.bs3q2a96x = json.getString("bs3q2a96x");
-            this.bs3q2b = json.getString("bs3q2b");
-            this.bs3q2b96x = json.getString("bs3q2b96x");
-            this.bs3q2c = json.getString("bs3q2c");
-            this.bs3q2c96x = json.getString("bs3q2c96x");
-            this.bs3q2d = json.getString("bs3q2d");
-            this.bs3q2d96x = json.getString("bs3q2d96x");
-            this.bs3q3 = json.getString("bs3q3");
-            this.bs3q4 = json.getString("bs3q4");
-            this.bs3q401 = json.getString("bs3q401");
-            this.bs3q402 = json.getString("bs3q402");
-            this.bs3q403 = json.getString("bs3q403");
-            this.bs3q404 = json.getString("bs3q404");
-            this.bs3q405 = json.getString("bs3q405");
-            this.bs3q406 = json.getString("bs3q406");
-            this.bs3q407 = json.getString("bs3q407");
-            this.bs3q496 = json.getString("bs3q496");
-            this.bs3q496x = json.getString("bs3q496x");
-            this.bs3q498 = json.getString("bs3q498");
-            this.bs3q5 = json.getString("bs3q5");
-            this.bs3q501 = json.getString("bs3q501");
-            this.bs3q502 = json.getString("bs3q502");
-            this.bs3q503 = json.getString("bs3q503");
-            this.bs3q504 = json.getString("bs3q504");
-            this.bs3q598 = json.getString("bs3q598");
-            this.bs3q596 = json.getString("bs3q596");
-            this.bs3q596x = json.getString("bs3q596x");
-            this.bs3q6 = json.getString("bs3q6");
-            this.bs3q601 = json.getString("bs3q601");
-            this.bs3q602 = json.getString("bs3q602");
-            this.bs3q603 = json.getString("bs3q603");
-            this.bs3q604 = json.getString("bs3q604");
-            this.bs3q605 = json.getString("bs3q605");
-            this.bs3q606 = json.getString("bs3q606");
-            this.bs3q607 = json.getString("bs3q607");
-            this.bs3q608 = json.getString("bs3q608");
-            this.bs3q609 = json.getString("bs3q609");
-            this.bs3q698 = json.getString("bs3q698");
-            this.bs3q696 = json.getString("bs3q696");
-            this.bs3q696x = json.getString("bs3q696x");
-            this.bs3q7 = json.getString("bs3q7");
-            this.bs3q701 = json.getString("bs3q701");
-            this.bs3q702 = json.getString("bs3q702");
-            this.bs3q703 = json.getString("bs3q703");
-            this.bs3q704 = json.getString("bs3q704");
-            this.bs3q705 = json.getString("bs3q705");
-            this.bs3q798 = json.getString("bs3q798");
-            this.bs3q796 = json.getString("bs3q796");
-            this.bs3q796x = json.getString("bs3q796x");
-            this.bs3q8 = json.getString("bs3q8");
-            this.bs3q801 = json.getString("bs3q801");
-            this.bs3q802 = json.getString("bs3q802");
-            this.bs3q803 = json.getString("bs3q803");
-            this.bs3q804 = json.getString("bs3q804");
-            this.bs3q897 = json.getString("bs3q897");
-            this.bs3q896 = json.getString("bs3q896");
-            this.bs3q896x = json.getString("bs3q896x");
-            this.bs3q9 = json.getString("bs3q9");
-            this.bs3q901 = json.getString("bs3q901");
-            this.bs3q902 = json.getString("bs3q902");
-            this.bs3q903 = json.getString("bs3q903");
-            this.bs3q904 = json.getString("bs3q904");
-            this.bs3q905 = json.getString("bs3q905");
-            this.bs3q906 = json.getString("bs3q906");
-            this.bs3q996 = json.getString("bs3q996");
-            this.bs3q996x = json.getString("bs3q996x");
-            this.bs3q997 = json.getString("bs3q997");
-            this.bs3q10 = json.getString("bs3q10");
-            this.bs3q1001 = json.getString("bs3q1001");
-            this.bs3q1002 = json.getString("bs3q1002");
-            this.bs3q1003 = json.getString("bs3q1003");
-            this.bs3q1004 = json.getString("bs3q1004");
-            this.bs3q1005 = json.getString("bs3q1005");
-            this.bs3q1006 = json.getString("bs3q1006");
-            this.bs3q1007 = json.getString("bs3q1007");
-            this.bs3q1008 = json.getString("bs3q1008");
-            this.bs3q1009 = json.getString("bs3q1009");
-            this.bs3q1096 = json.getString("bs3q1096");
-            this.bs3q1096x = json.getString("bs3q1096x");
-            this.bs3q1097 = json.getString("bs3q1097");
-            this.bs3q11 = json.getString("bs3q11");
-            this.bs3q12 = json.getString("bs3q12");
-            this.bs3q1201 = json.getString("bs3q1201");
-            this.bs3q1202 = json.getString("bs3q1202");
-            this.bs3q1203 = json.getString("bs3q1203");
-            this.bs3q1204 = json.getString("bs3q1204");
-            this.bs3q1205 = json.getString("bs3q1205");
-            this.bs3q1206 = json.getString("bs3q1206");
-            this.bs3q1206x = json.getString("bs3q1206x");
-            this.bs3q1207 = json.getString("bs3q1207");
-            this.bs3q1296 = json.getString("bs3q1296");
-            this.bs3q1296x = json.getString("bs3q1296x");
-            this.bs3q13 = json.getString("bs3q13");
-            this.bs3q14 = json.getString("bs3q14");
-            this.bs3q15 = json.getString("bs3q15");
+            this.h101 = json.getString("h101");
+            this.h101mx = json.getString("h101mx");
+            this.h101wx = json.getString("h101wx");
+            this.h102 = json.getString("h102");
+            this.h103 = json.getString("h103");
+            this.h10401 = json.getString("h10401");
+            this.h10402 = json.getString("h10402");
+            this.h10403 = json.getString("h10403");
+            this.h10496 = json.getString("h10496");
+            this.h105 = json.getString("h105");
+            this.h106 = json.getString("h106");
+            this.h1061x = json.getString("h1061x");
+            this.h107 = json.getString("h107");
+            this.h108 = json.getString("h108");
+            this.h10896x = json.getString("h10896x");
+            this.h10901 = json.getString("h10901");
+            this.h10902 = json.getString("h10902");
+            this.h10903 = json.getString("h10903");
+            this.h10904 = json.getString("h10904");
+            this.h10905 = json.getString("h10905");
+            this.h10906 = json.getString("h10906");
+            this.h10907 = json.getString("h10907");
+            this.h10997 = json.getString("h10997");
+            this.h10996 = json.getString("h10996");
+            this.h10996x = json.getString("h10996x");
+            this.h110 = json.getString("h110");
+            this.h111 = json.getString("h111");
+            this.h112 = json.getString("h112");
+            this.h113 = json.getString("h113");
+            this.h114 = json.getString("h114");
+            this.h11501 = json.getString("h11501");
+            this.h11502 = json.getString("h11502");
+            this.h11503 = json.getString("h11503");
+            this.h11504 = json.getString("h11504");
+            this.h11505 = json.getString("h11505");
+            this.h11506 = json.getString("h11506");
+            this.h11507 = json.getString("h11507");
+            this.h11508 = json.getString("h11508");
+            this.h11509 = json.getString("h11509");
+            this.h11596 = json.getString("h11596");
+            this.h11596x = json.getString("h11596x");
+            this.h116 = json.getString("h116");
+            this.h11701 = json.getString("h11701");
+            this.h118 = json.getString("h118");
+            this.h119 = json.getString("h119");
+            this.h120 = json.getString("h120");
+            this.h121 = json.getString("h121");
+            this.h122 = json.getString("h122");
+            this.h1221x = json.getString("h1221x");
+            this.h123 = json.getString("h123");
+            this.h124 = json.getString("h124");
+            this.h125 = json.getString("h125");
+            this.h126 = json.getString("h126");
+            this.h127 = json.getString("h127");
+            this.h128 = json.getString("h128");
+            this.h12896x = json.getString("h12896x");
+            this.h12901 = json.getString("h12901");
+            this.h12902 = json.getString("h12902");
+            this.h12903 = json.getString("h12903");
+            this.h12904 = json.getString("h12904");
+            this.h12905 = json.getString("h12905");
+            this.h12906 = json.getString("h12906");
+            this.h132 = json.getString("h132");
+            this.h132a = json.getString("h132a");
+            this.h13301 = json.getString("h13301");
+            this.h13302 = json.getString("h13302");
+            this.h13303 = json.getString("h13303");
+            this.h13304 = json.getString("h13304");
+            this.h13305 = json.getString("h13305");
+            this.h13306 = json.getString("h13306");
+            this.h13307 = json.getString("h13307");
+            this.h13308 = json.getString("h13308");
+            this.h13309 = json.getString("h13309");
+            this.h13501 = json.getString("h13501");
+            this.h13502 = json.getString("h13502");
+            this.h13503 = json.getString("h13503");
+            this.h13504 = json.getString("h13504");
+            this.h13505 = json.getString("h13505");
+            this.h13506 = json.getString("h13506");
+            this.h13507 = json.getString("h13507");
+            this.h13508 = json.getString("h13508");
+            this.h13509 = json.getString("h13509");
+            this.h13598 = json.getString("h13598");
+            this.h13601 = json.getString("h13601");
+            this.h13602 = json.getString("h13602");
+            this.h13603 = json.getString("h13603");
+            this.h13604 = json.getString("h13604");
+            this.h13605 = json.getString("h13605");
+            this.h13606 = json.getString("h13606");
+            this.h13696 = json.getString("h13696");
+            this.h13696x = json.getString("h13696x");
+            this.h137 = json.getString("h137");
+            this.h137a = json.getString("h137a");
+            this.h137a96x = json.getString("h137a96x");
+            this.h137b = json.getString("h137b");
+            this.h137b96x = json.getString("h137b96x");
+            this.h137c = json.getString("h137c");
+            this.h137c96x = json.getString("h137c96x");
+
         }
     }
 
-    public void sB41Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB41Hydrate: " + string);
+    public void sH2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sH2Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs4aq1 = json.getString("bs4aq1");
-            this.bs4aq2 = json.getString("bs4aq2");
-            this.bs4aq201 = json.getString("bs4aq201");
-            this.bs4aq202 = json.getString("bs4aq202");
-            this.bs4aq203 = json.getString("bs4aq203");
-            this.bs4aq204 = json.getString("bs4aq204");
-            this.bs4aq205 = json.getString("bs4aq205");
-            this.bs4aq206 = json.getString("bs4aq206");
-            this.bs4aq207 = json.getString("bs4aq207");
-            this.bs4aq208 = json.getString("bs4aq208");
-            this.bs4aq298 = json.getString("bs4aq298");
-            this.bs4aq296 = json.getString("bs4aq296");
-            this.bs4aq296x = json.getString("bs4aq296x");
-            this.bs4aq3 = json.getString("bs4aq3");
-            this.bs4aq4 = json.getString("bs4aq4");
-            this.bs4aq5 = json.getString("bs4aq5");
-            this.bs4aq6 = json.getString("bs4aq6");
-            this.bs4aq696x = json.getString("bs4aq696x");
-            this.bs4aq7 = json.getString("bs4aq7");
-            this.bs4aq8 = json.getString("bs4aq8");
-            this.bs4aq896x = json.getString("bs4aq896x");
-            this.bs4aq9 = json.getString("bs4aq9");
-            this.bs4aq10 = json.getString("bs4aq10");
+            this.h201 = json.getString("h201");
+            this.h201hx = json.getString("h201hx");
+            this.h201dx = json.getString("h201dx");
+            this.h201wx = json.getString("h201wx");
+            this.h202 = json.getString("h202");
+            this.h203h = json.getString("h203h");
+            this.h203d = json.getString("h203d");
+            this.h203w = json.getString("h203w");
+            this.h204 = json.getString("h204");
+            this.h205 = json.getString("h205");
+            this.h20596x = json.getString("h20596x");
+            this.h20701 = json.getString("h20701");
+            this.h20702 = json.getString("h20702");
+            this.h20703 = json.getString("h20703");
+            this.h20704 = json.getString("h20704");
+            this.h20705 = json.getString("h20705");
+            this.h20706 = json.getString("h20706");
+            this.h20707 = json.getString("h20707");
+            this.h20708 = json.getString("h20708");
+            this.h20798 = json.getString("h20798");
+            this.h20801 = json.getString("h20801");
+            this.h20802 = json.getString("h20802");
+            this.h20803 = json.getString("h20803");
+            this.h20804 = json.getString("h20804");
+            this.h20805 = json.getString("h20805");
+            this.h20806 = json.getString("h20806");
+            this.h20896 = json.getString("h20896");
+            this.h209 = json.getString("h209");
+            this.h209a = json.getString("h209a");
+            this.h210 = json.getString("h210");
+            this.h211 = json.getString("h211");
+            this.h212 = json.getString("h212");
+            this.h213 = json.getString("h213");
+            this.h214 = json.getString("h214");
+            this.h214a = json.getString("h214a");
+            this.h214b01 = json.getString("h214b01");
+            this.h214b02 = json.getString("h214b02");
+            this.h214b03 = json.getString("h214b03");
+            this.h214b04 = json.getString("h214b04");
+            this.h214b05 = json.getString("h214b05");
+            this.h214b06 = json.getString("h214b06");
+            this.h214b96 = json.getString("h214b96");
+            this.h214b96x = json.getString("h214b96x");
+            this.h214b98 = json.getString("h214b98");
+            this.h215 = json.getString("h215");
+            this.h216 = json.getString("h216");
+            this.h216a = json.getString("h216a");
+            this.h216a96x = json.getString("h216a96x");
+            this.h21701 = json.getString("h21701");
+            this.h21702 = json.getString("h21702");
+            this.h21703 = json.getString("h21703");
+            this.h21704 = json.getString("h21704");
+            this.h21705 = json.getString("h21705");
+            this.h21706 = json.getString("h21706");
+            this.h21796 = json.getString("h21796");
+            this.h21796x = json.getString("h21796x");
+            this.h218 = json.getString("h218");
+            this.h219 = json.getString("h219");
+            this.h21996x = json.getString("h21996x");
+            this.h2201 = json.getString("h2201");
+            this.h2201x = json.getString("h2201x");
+            this.h2202 = json.getString("h2202");
+            this.h2202x = json.getString("h2202x");
+            this.h2203 = json.getString("h2203");
+            this.h2203x = json.getString("h2203x");
+            this.h2204 = json.getString("h2204");
+            this.h2204x = json.getString("h2204x");
+            this.h2205 = json.getString("h2205");
+            this.h2205x = json.getString("h2205x");
+            this.h2206 = json.getString("h2206");
+            this.h2206x = json.getString("h2206x");
+            this.h22096 = json.getString("h22096");
+            this.h22096x = json.getString("h22096x");
+            this.h221 = json.getString("h221");
+            this.h222 = json.getString("h222");
+            this.h223 = json.getString("h223");
+
         }
     }
 
-    public void sB42Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB42Hydrate: " + string);
+    public void sKHydrate(String string) throws JSONException {
+        Log.d(TAG, "sKHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs4bq1 = json.getString("bs4bq1");
-            this.bs4bq2 = json.getString("bs4bq2");
-            this.bs4bq21 = json.getString("bs4bq21");
-            this.bs4bq22 = json.getString("bs4bq22");
-            this.bs4bq23 = json.getString("bs4bq23");
-            this.bs4bq24 = json.getString("bs4bq24");
-            this.bs4bq298 = json.getString("bs4bq298");
-            this.bs4bq296 = json.getString("bs4bq296");
-            this.bs4bq296x = json.getString("bs4bq296x");
-            this.bs4bq3 = json.getString("bs4bq3");
-            this.bs4bq31 = json.getString("bs4bq31");
-            this.bs4bq32 = json.getString("bs4bq32");
-            this.bs4bq33 = json.getString("bs4bq33");
-            this.bs4bq34 = json.getString("bs4bq34");
-            this.bs4bq35 = json.getString("bs4bq35");
-            this.bs4bq36 = json.getString("bs4bq36");
-            this.bs4bq398 = json.getString("bs4bq398");
-            this.bs4bq396 = json.getString("bs4bq396");
-            this.bs4bq396x = json.getString("bs4bq396x");
-            this.bs4bq4 = json.getString("bs4bq4");
-            this.bs4bq5 = json.getString("bs4bq5");
-            this.bs4bq51 = json.getString("bs4bq51");
-            this.bs4bq52 = json.getString("bs4bq52");
-            this.bs4bq53 = json.getString("bs4bq53");
-            this.bs4bq598 = json.getString("bs4bq598");
-            this.bs4bq596 = json.getString("bs4bq596");
-            this.bs4bq596x = json.getString("bs4bq596x");
-            this.bs4bq6 = json.getString("bs4bq6");
-            this.bs4bq696x = json.getString("bs4bq696x");
-            this.bs4bq7 = json.getString("bs4bq7");
-            this.bs4bq8 = json.getString("bs4bq8");
-            this.bs4bq81 = json.getString("bs4bq81");
-            this.bs4bq82 = json.getString("bs4bq82");
-            this.bs4bq83 = json.getString("bs4bq83");
-            this.bs4bq84 = json.getString("bs4bq84");
-            this.bs4bq85 = json.getString("bs4bq85");
-            this.bs4bq86 = json.getString("bs4bq86");
-            this.bs4bq87 = json.getString("bs4bq87");
-            this.bs4bq898 = json.getString("bs4bq898");
-            this.bs4bq896 = json.getString("bs4bq896");
-            this.bs4bq896x = json.getString("bs4bq896x");
+            this.k101 = json.getString("k101");
+            this.k101a01 = json.getString("k101a01");
+            this.k101a02 = json.getString("k101a02");
+            this.k101a03 = json.getString("k101a03");
+            this.k101a04 = json.getString("k101a04");
+            this.k101a05 = json.getString("k101a05");
+            this.k101a06 = json.getString("k101a06");
+            this.k101a07 = json.getString("k101a07");
+            this.k101a08 = json.getString("k101a08");
+            this.k101a09 = json.getString("k101a09");
+            this.k101a10 = json.getString("k101a10");
+            this.k101a11 = json.getString("k101a11");
+            this.k101a12 = json.getString("k101a12");
+            this.k101a13 = json.getString("k101a13");
+            this.k101a96 = json.getString("k101a96");
+            this.k101a96x = json.getString("k101a96x");
+            this.k102 = json.getString("k102");
+            this.k104a01 = json.getString("k104a01");
+            this.k104a02 = json.getString("k104a02");
+            this.k104a03 = json.getString("k104a03");
+            this.k104a04 = json.getString("k104a04");
+            this.k104a05 = json.getString("k104a05");
+            this.k104a06 = json.getString("k104a06");
+            this.k104a77 = json.getString("k104a77");
+            this.k104a08 = json.getString("k104a08");
+            this.k104a09 = json.getString("k104a09");
+            this.k104a10 = json.getString("k104a10");
+            this.k104a11 = json.getString("k104a11");
+            this.k104a12 = json.getString("k104a12");
+            this.k104a13 = json.getString("k104a13");
+            this.k103 = json.getString("k103");
+            this.k104b01 = json.getString("k104b01");
+            this.k104b02 = json.getString("k104b02");
+            this.k104b03 = json.getString("k104b03");
+            this.k104b04 = json.getString("k104b04");
+            this.k104b05 = json.getString("k104b05");
+            this.k104b06 = json.getString("k104b06");
+            this.k104b07 = json.getString("k104b07");
+            this.k104b08 = json.getString("k104b08");
+            this.k104b09 = json.getString("k104b09");
+            this.k104b10 = json.getString("k104b10");
+            this.k104b11 = json.getString("k104b11");
+            this.k104b12 = json.getString("k104b12");
+            this.k104b13 = json.getString("k104b13");
+            this.k105 = json.getString("k105");
+            this.k105a = json.getString("k105a");
+            this.k105a01x = json.getString("k105a01x");
+            this.k105a02x = json.getString("k105a02x");
+            this.k10601 = json.getString("k10601");
+            this.k10602 = json.getString("k10602");
+            this.k10603 = json.getString("k10603");
+            this.k10604 = json.getString("k10604");
+            this.k10605 = json.getString("k10605");
+            this.k10606 = json.getString("k10606");
+            this.k10607 = json.getString("k10607");
+            this.k10608 = json.getString("k10608");
+            this.k10696 = json.getString("k10696");
+            this.k10696x = json.getString("k10696x");
+            this.k107 = json.getString("k107");
+            this.k107a = json.getString("k107a");
+            this.k107a96x = json.getString("k107a96x");
+
         }
     }
 
-    public void sB5Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB5Hydrate: " + string);
+    public void sLHydrate(String string) throws JSONException {
+        Log.d(TAG, "sLHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.bs5q1 = json.getString("bs5q1");
-            this.bs5q2 = json.getString("bs5q2");
-            this.bs5q201 = json.getString("bs5q201");
-            this.bs5q202 = json.getString("bs5q202");
-            this.bs5q203 = json.getString("bs5q203");
-            this.bs5q204 = json.getString("bs5q204");
-            this.bs5q205 = json.getString("bs5q205");
-            this.bs5q296 = json.getString("bs5q296");
-            this.bs5q296x = json.getString("bs5q296x");
-            this.bs5q297 = json.getString("bs5q297");
-            this.bs5q3 = json.getString("bs5q3");
-            this.bs5q4 = json.getString("bs5q4");
-            this.bs5q401 = json.getString("bs5q401");
-            this.bs5q402 = json.getString("bs5q402");
-            this.bs5q403 = json.getString("bs5q403");
-            this.bs5q404 = json.getString("bs5q404");
-            this.bs5q496 = json.getString("bs5q496");
-            this.bs5q496x = json.getString("bs5q496x");
-            this.bs5q497 = json.getString("bs5q497");
-            this.bs5q5 = json.getString("bs5q5");
-            this.bs5q6 = json.getString("bs5q6");
-            this.bs5q7 = json.getString("bs5q7");
-            this.bs5q8 = json.getString("bs5q8");
-            this.bs5q801 = json.getString("bs5q801");
-            this.bs5q802 = json.getString("bs5q802");
-            this.bs5q803 = json.getString("bs5q803");
-            this.bs5q804 = json.getString("bs5q804");
-            this.bs5q805 = json.getString("bs5q805");
-            this.bs5q806 = json.getString("bs5q806");
-            this.bs5q807 = json.getString("bs5q807");
-            this.bs5q808 = json.getString("bs5q808");
-            this.bs5q896 = json.getString("bs5q896");
-            this.bs5q896x = json.getString("bs5q896x");
-            this.bs5q898 = json.getString("bs5q898");
-            this.bs5q9 = json.getString("bs5q9");
-            this.bs5q901 = json.getString("bs5q901");
-            this.bs5q902 = json.getString("bs5q902");
-            this.bs5q903 = json.getString("bs5q903");
-            this.bs5q904 = json.getString("bs5q904");
-            this.bs5q905 = json.getString("bs5q905");
-            this.bs5q906 = json.getString("bs5q906");
-            this.bs5q907 = json.getString("bs5q907");
-            this.bs5q908 = json.getString("bs5q908");
-            this.bs5q996 = json.getString("bs5q996");
-            this.bs5q996x = json.getString("bs5q996x");
-            this.bs5q998 = json.getString("bs5q998");
-            this.bs5q10 = json.getString("bs5q10");
-            this.bs5q1096x = json.getString("bs5q1096x");
-            this.bs5q11 = json.getString("bs5q11");
-            this.bs5q12 = json.getString("bs5q12");
+            this.l101 = json.getString("l101");
+            this.l102 = json.getString("l102");
+            this.l102a = json.getString("l102a");
+            this.l102a96x = json.getString("l102a96x");
+            this.l103 = json.getString("l103");
+            this.l104 = json.getString("l104");
+            this.l10496x = json.getString("l10496x");
+            this.l105 = json.getString("l105");
+            this.l106 = json.getString("l106");
+            this.l10696x = json.getString("l10696x");
+            this.l107 = json.getString("l107");
+            this.l10796x = json.getString("l10796x");
+            this.l108 = json.getString("l108");
+            this.l10896x = json.getString("l10896x");
+            this.l109 = json.getString("l109");
+            this.l10996x = json.getString("l10996x");
+            this.l110 = json.getString("l110");
+            this.l111 = json.getString("l111");
+            this.l1121 = json.getString("l1121");
+            this.l1122 = json.getString("l1122");
+            this.l1123 = json.getString("l1123");
+            this.l1124 = json.getString("l1124");
+            this.l1125 = json.getString("l1125");
+            this.l1131 = json.getString("l1131");
+            this.l1132 = json.getString("l1132");
+            this.l1133 = json.getString("l1133");
+            this.l1134 = json.getString("l1134");
+            this.l114 = json.getString("l114");
+            this.l11496x = json.getString("l11496x");
+            this.l115 = json.getString("l115");
+            this.l11596x = json.getString("l11596x");
+            this.l116 = json.getString("l116");
+            this.l11696x = json.getString("l11696x");
+            this.l117 = json.getString("l117");
+            this.l11796x = json.getString("l11796x");
+
         }
     }
-
-    public void sB6Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB6Hydrate: " + string);
-        if (string != null) {
-            JSONObject json = null;
-            json = new JSONObject(string);
-            this.bs6q1 = json.getString("bs6q1");
-            this.bs6q1mx = json.getString("bs6q1mx");
-            this.bs6q2 = json.getString("bs6q2");
-            this.bs6q3 = json.getString("bs6q3");
-            this.bs6q3mx = json.getString("bs6q3mx");
-        }
-    }
-
-    public void sB7Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sB7Hydrate: " + string);
-        if (string != null) {
-            JSONObject json = null;
-            json = new JSONObject(string);
-            this.bs7q1 = json.getString("bs7q1");
-            this.bs7q2line = json.getString("bs7q2line");
-            this.bs7q3 = json.getString("bs7q3");
-            this.bs7q4a = json.getString("bs7q4a");
-            this.bs7q4b = json.getString("bs7q4b");
-            this.bs7q4c = json.getString("bs7q4c");
-            this.bs7q4d = json.getString("bs7q4d");
-            this.bs7q4e = json.getString("bs7q4e");
-            this.bs7q4f = json.getString("bs7q4f");
-            this.bs7q4g = json.getString("bs7q4g");
-            this.bs7q4h = json.getString("bs7q4h");
-        }
-    }
-
-
 }
