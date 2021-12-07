@@ -24,7 +24,8 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_SA1 + " TEXT"
+            + FormsTable.COLUMN_SA + " TEXT,"
+            + FormsTable.COLUMN_SM + " TEXT"
             + " );"
             )
     const val SQL_CREATE_ENTRYLOGS = ("CREATE TABLE "

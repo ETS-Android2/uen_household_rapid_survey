@@ -166,6 +166,8 @@ public class Form extends BaseObservable implements Observable {
     private String o108 = _EMPTY_;
     private String o10896x = _EMPTY_;
 
+    private String e116 = _EMPTY_;
+    private String e117 = _EMPTY_;
 
 
     public Form() {
@@ -1510,6 +1512,27 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getE116() {
+        return e116;
+    }
+
+    public void setE116(String e116) {
+        this.e116 = e116;
+        notifyPropertyChanged(BR.e116);
+    }
+
+    @Bindable
+    public String getE117() {
+        return e117;
+    }
+
+    public void setE117(String e117) {
+        this.e117 = e117;
+        notifyPropertyChanged(BR.e117);
+    }
+
+
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
@@ -1527,24 +1550,261 @@ public class Form extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
 
-        sA1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA1)));
+        sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
+        sMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SM)));
         return this;
     }
 
-    public void sA1Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sA1Hydrate: " + string);
+    public void sAHydrate(String string) throws JSONException {
+        Log.d(TAG, "sAHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.a101 = json.getString("a101");
+            this.a102 = json.getString("a102");
+            this.a103 = json.getString("a103");
+            this.a104 = json.getString("a104");
+            this.a105 = json.getString("a105");
+            this.a106 = json.getString("a106");
+            this.a107 = json.getString("a107");
+            this.a108 = json.getString("a108");
+            this.a113 = json.getString("a113");
+            this.a109 = json.getString("a109");
+            this.a110 = json.getString("a110");
+            this.a111 = json.getString("a111");
+            this.a11201 = json.getString("a11201");
+            this.a11201x = json.getString("a11201x");
+            this.a11203 = json.getString("a11203");
+            this.c101 = json.getString("c101");
+            this.c102 = json.getString("c102");
+            this.c103 = json.getString("c103");
         }
     }
 
+    public void sMHydrate(String string) throws JSONException {
+        Log.d(TAG, "sMHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.m101 = json.getString("m101");
+            this.m102 = json.getString("m102");
+            this.m103 = json.getString("m103");
+            this.m104 = json.getString("m104");
+            this.m105 = json.getString("m105");
+            this.m106 = json.getString("m106");
+            this.m1071 = json.getString("m1071");
+            this.m1072 = json.getString("m1072");
+            this.m1073 = json.getString("m1073");
+            this.m1074 = json.getString("m1074");
+            this.m1075 = json.getString("m1075");
+            this.m1076 = json.getString("m1076");
+            this.m1077 = json.getString("m1077");
+            this.m1078 = json.getString("m1078");
+            this.m1079 = json.getString("m1079");
+            this.m018 = json.getString("m018");
+            this.m109 = json.getString("m109");
+            this.m110 = json.getString("m110");
+            this.m11001x = json.getString("m11001x");
+            this.m11002x = json.getString("m11002x");
+            this.m111 = json.getString("m111");
+            this.m11201 = json.getString("m11201");
+            this.m11201x = json.getString("m11201x");
+            this.m11202 = json.getString("m11202");
+            this.m11202x = json.getString("m11202x");
+            this.m11203 = json.getString("m11203");
+            this.m11203x = json.getString("m11203x");
+            this.m11204 = json.getString("m11204");
+            this.m11204x = json.getString("m11204x");
+            this.m11205 = json.getString("m11205");
+            this.m11205x = json.getString("m11205x");
+            this.m11206 = json.getString("m11206");
+            this.m11206x = json.getString("m11206x");
+            this.m11207 = json.getString("m11207");
+            this.m11207x = json.getString("m11207x");
+            this.m113 = json.getString("m113");
+            this.m1141 = json.getString("m1141");
+            this.m1142 = json.getString("m1142");
+            this.m1143 = json.getString("m1143");
+            this.m1144 = json.getString("m1144");
+            this.m1145 = json.getString("m1145");
+            this.m1146 = json.getString("m1146");
+            this.m1147 = json.getString("m1147");
+            this.m1148 = json.getString("m1148");
+            this.m1149 = json.getString("m1149");
+            this.m11410 = json.getString("m11410");
+            this.m11411 = json.getString("m11411");
+            this.m11412 = json.getString("m11412");
+            this.m11413 = json.getString("m11413");
+            this.m11414 = json.getString("m11414");
+            this.m11415 = json.getString("m11415");
+            this.m11416 = json.getString("m11416");
+            this.m11417 = json.getString("m11417");
+            this.m11418 = json.getString("m11418");
+            this.m115 = json.getString("m115");
+            this.m116 = json.getString("m116");
+            this.n101 = json.getString("n101");
+            this.n102 = json.getString("n102");
+            this.n103 = json.getString("n103");
+            this.n104 = json.getString("n104");
+            this.n10401x = json.getString("n10401x");
+            this.n105 = json.getString("n105");
+            this.n106 = json.getString("n106");
+            this.n107 = json.getString("n107");
+            this.n108 = json.getString("n108");
+            this.n10901 = json.getString("n10901");
+            this.n10902 = json.getString("n10902");
+            this.n10903 = json.getString("n10903");
+            this.n10904 = json.getString("n10904");
+            this.n10905 = json.getString("n10905");
+            this.n10906 = json.getString("n10906");
+            this.n10907 = json.getString("n10907");
+            this.n110 = json.getString("n110");
+            this.n111 = json.getString("n111");
+            this.n112 = json.getString("n112");
+            this.n113 = json.getString("n113");
+            this.n11301x = json.getString("n11301x");
+            this.o101 = json.getString("o101");
+            this.o102 = json.getString("o102");
+            this.o103 = json.getString("o103");
+            this.o10401 = json.getString("o10401");
+            this.o10402 = json.getString("o10402");
+            this.o10403 = json.getString("o10403");
+            this.o10404 = json.getString("o10404");
+            this.o10497 = json.getString("o10497");
+            this.o105 = json.getString("o105");
+            this.o106 = json.getString("o106");
+            this.o10701 = json.getString("o10701");
+            this.o10702 = json.getString("o10702");
+            this.o10703 = json.getString("o10703");
+            this.o10704 = json.getString("o10704");
+            this.o10797 = json.getString("o10797");
+            this.o108 = json.getString("o108");
+            this.o10896x = json.getString("o10896x");
 
-    public String sA1toString() throws JSONException {
-        Log.d(TAG, "sA1toString: ");
+        }
+    }
+
+    public String sAtoString() throws JSONException {
+        Log.d(TAG, "sAtoString: ");
         JSONObject json = new JSONObject();
-        json.put("a101", a101);
+        json.put("a101", a101)
+                .put("a102", a102)
+                .put("a103", a103)
+                .put("a104", a104)
+                .put("a105", a105)
+                .put("a106", a106)
+                .put("a107", a107)
+                .put("a108", a108)
+                .put("a113", a113)
+                .put("a109", a109)
+                .put("a110", a110)
+                .put("a111", a111)
+                .put("a11201", a11201)
+                .put("a11201x", a11201x)
+                .put("a11203", a11203)
+                .put("c101", c101)
+                .put("c102", c102)
+                .put("c103", c103);
+        return json.toString();
+    }
+
+    public String sMtoString() throws JSONException {
+        Log.d(TAG, "sMtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("m101", m101)
+                .put("m102", m102)
+                .put("m103", m103)
+                .put("m104", m104)
+                .put("m105", m105)
+                .put("m106", m106)
+                .put("m1071", m1071)
+                .put("m1072", m1072)
+                .put("m1073", m1073)
+                .put("m1074", m1074)
+                .put("m1075", m1075)
+                .put("m1076", m1076)
+                .put("m1077", m1077)
+                .put("m1078", m1078)
+                .put("m1079", m1079)
+                .put("m018", m018)
+                .put("m109", m109)
+                .put("m110", m110)
+                .put("m11001x", m11001x)
+                .put("m11002x", m11002x)
+                .put("m111", m111)
+                .put("m11201", m11201)
+                .put("m11201x", m11201x)
+                .put("m11202", m11202)
+                .put("m11202x", m11202x)
+                .put("m11203", m11203)
+                .put("m11203x", m11203x)
+                .put("m11204", m11204)
+                .put("m11204x", m11204x)
+                .put("m11205", m11205)
+                .put("m11205x", m11205x)
+                .put("m11206", m11206)
+                .put("m11206x", m11206x)
+                .put("m11207", m11207)
+                .put("m11207x", m11207x)
+                .put("m113", m113)
+                .put("m1141", m1141)
+                .put("m1142", m1142)
+                .put("m1143", m1143)
+                .put("m1144", m1144)
+                .put("m1145", m1145)
+                .put("m1146", m1146)
+                .put("m1147", m1147)
+                .put("m1148", m1148)
+                .put("m1149", m1149)
+                .put("m11410", m11410)
+                .put("m11411", m11411)
+                .put("m11412", m11412)
+                .put("m11413", m11413)
+                .put("m11414", m11414)
+                .put("m11415", m11415)
+                .put("m11416", m11416)
+                .put("m11417", m11417)
+                .put("m11418", m11418)
+                .put("m115", m115)
+                .put("m116", m116)
+                .put("n101", n101)
+                .put("n102", n102)
+                .put("n103", n103)
+                .put("n104", n104)
+                .put("n10401x", n10401x)
+                .put("n105", n105)
+                .put("n106", n106)
+                .put("n107", n107)
+                .put("n108", n108)
+                .put("n10901", n10901)
+                .put("n10902", n10902)
+                .put("n10903", n10903)
+                .put("n10904", n10904)
+                .put("n10905", n10905)
+                .put("n10906", n10906)
+                .put("n10907", n10907)
+                .put("n110", n110)
+                .put("n111", n111)
+                .put("n112", n112)
+                .put("n113", n113)
+                .put("n11301x", n11301x)
+                .put("o101", o101)
+                .put("o102", o102)
+                .put("o103", o103)
+                .put("o10401", o10401)
+                .put("o10402", o10402)
+                .put("o10403", o10403)
+                .put("o10404", o10404)
+                .put("o10497", o10497)
+                .put("o105", o105)
+                .put("o106", o106)
+                .put("o10701", o10701)
+                .put("o10702", o10702)
+                .put("o10703", o10703)
+                .put("o10704", o10704)
+                .put("o10797", o10797)
+                .put("o108", o108)
+                .put("o10896x", o10896x);
         return json.toString();
     }
 
@@ -1567,7 +1827,8 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
-        json.put(FormsTable.COLUMN_SA1, new JSONObject(sA1toString()));
+        json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
+        json.put(FormsTable.COLUMN_SM, new JSONObject(sMtoString()));
         return json;
     }
 

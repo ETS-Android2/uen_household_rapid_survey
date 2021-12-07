@@ -102,7 +102,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_SA1, form.sA1toString());
+        values.put(FormsTable.COLUMN_SA, form.sAtoString());
+        values.put(FormsTable.COLUMN_SM, form.sMtoString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());
@@ -164,8 +165,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_SH2, mwra.sH2toString());
         values.put(MwraTable.COLUMN_SK, mwra.sKtoString());
         values.put(MwraTable.COLUMN_SL, mwra.sLtoString());
-        values.put(MwraTable.COLUMN_SB6, mwra.sB6toString());
-        values.put(MwraTable.COLUMN_SB7, mwra.sB7toString());
         values.put(MwraTable.COLUMN_ISTATUS, mwra.getiStatus());
         values.put(MwraTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
         values.put(MwraTable.COLUMN_DEVICEID, mwra.getDeviceId());
@@ -196,10 +195,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
         values.put(ChildTable.COLUMN_SI1, child.sI1toString());
         values.put(ChildTable.COLUMN_SI2, child.sI2toString());
-        values.put(ChildTable.COLUMN_SC31, child.sC31toString());
-        values.put(ChildTable.COLUMN_SC32, child.sC32toString());
-        values.put(ChildTable.COLUMN_SC4, child.sC4toString());
-        values.put(ChildTable.COLUMN_SC5, child.sC5toString());
+        values.put(ChildTable.COLUMN_SIM, child.sIMtoString());
         values.put(ChildTable.COLUMN_ISTATUS, child.getiStatus());
         values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
