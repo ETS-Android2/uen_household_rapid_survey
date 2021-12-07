@@ -289,6 +289,26 @@ public class Pregnancy extends BaseObservable implements Observable {
 
     public void setE101(String e101) {
         this.e101 = e101;
+        setE102(e101.equals("2") ? "" : this.e102);
+        setE102a(e101.equals("2") ? "" : this.e102a);
+        setE103(e101.equals("2") ? "" : this.e103);
+        setE104(e101.equals("2") ? "" : this.e104);
+        setE105(e101.equals("2") ? "" : this.e105);
+        setE106d(e101.equals("2") ? "" : this.e106d);
+        setE106m(e101.equals("2") ? "" : this.e106m);
+        setE106y(e101.equals("2") ? "" : this.e106y);
+        setE107(e101.equals("2") ? "" : this.e107);
+        setE108(e101.equals("2") ? "" : this.e108);
+        setE109(e101.equals("2") ? "" : this.e109);
+        setE110d(e101.equals("2") ? "" : this.e110d);
+        setE110m(e101.equals("2") ? "" : this.e110m);
+        setE110y(e101.equals("2") ? "" : this.e110y);
+        setE111(e101.equals("2") ? "" : this.e111);
+        setE112(e101.equals("2") ? "" : this.e112);
+        setE113m(e101.equals("2") ? "" : this.e113m);
+        setE113y(e101.equals("2") ? "" : this.e113y);
+        setE114(e101.equals("2") ? "" : this.e114);
+        setE115(e101.equals("2") ? "" : this.e115);
         notifyPropertyChanged(BR.e101);
     }
 
