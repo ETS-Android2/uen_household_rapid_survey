@@ -14,8 +14,8 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_consent.xml" value="0.5155010814708003" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_identification.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.602866779089376" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.6" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.6" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.22946084724005134" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.2756360832690825" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.55859375" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_c1.xml" value="0.2765625" />
@@ -36,7 +36,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
