@@ -1552,6 +1552,8 @@ public class Form extends BaseObservable implements Observable {
 
         sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
         sMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SM)));
+        sNHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SN)));
+        sOHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SO)));
         sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SE2)));
         return this;
     }
@@ -1653,6 +1655,14 @@ public class Form extends BaseObservable implements Observable {
             this.m11418 = json.getString("m11418");
             this.m115 = json.getString("m115");
             this.m116 = json.getString("m116");
+        }
+    }
+
+    public void sNHydrate(String string) throws JSONException {
+        Log.d(TAG, "sNHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.n101 = json.getString("n101");
             this.n102 = json.getString("n102");
             this.n103 = json.getString("n103");
@@ -1674,6 +1684,14 @@ public class Form extends BaseObservable implements Observable {
             this.n112 = json.getString("n112");
             this.n113 = json.getString("n113");
             this.n11301x = json.getString("n11301x");
+        }
+    }
+
+    public void sOHydrate(String string) throws JSONException {
+        Log.d(TAG, "sOHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.o101 = json.getString("o101");
             this.o102 = json.getString("o102");
             this.o103 = json.getString("o103");
@@ -1691,7 +1709,6 @@ public class Form extends BaseObservable implements Observable {
             this.o10797 = json.getString("o10797");
             this.o108 = json.getString("o108");
             this.o10896x = json.getString("o10896x");
-
         }
     }
 
@@ -1785,8 +1802,14 @@ public class Form extends BaseObservable implements Observable {
                 .put("m11417", m11417)
                 .put("m11418", m11418)
                 .put("m115", m115)
-                .put("m116", m116)
-                .put("n101", n101)
+                .put("m116", m116);
+        return json.toString();
+    }
+
+    public String sNtoString() throws JSONException {
+        Log.d(TAG, "sNtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("n101", n101)
                 .put("n102", n102)
                 .put("n103", n103)
                 .put("n104", n104)
@@ -1806,8 +1829,14 @@ public class Form extends BaseObservable implements Observable {
                 .put("n111", n111)
                 .put("n112", n112)
                 .put("n113", n113)
-                .put("n11301x", n11301x)
-                .put("o101", o101)
+                .put("n11301x", n11301x);
+        return json.toString();
+    }
+
+    public String sOtoString() throws JSONException {
+        Log.d(TAG, "sOtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("o101", o101)
                 .put("o102", o102)
                 .put("o103", o103)
                 .put("o10401", o10401)
@@ -1848,9 +1877,9 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
         json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
         json.put(FormsTable.COLUMN_SM, new JSONObject(sMtoString()));
+        json.put(FormsTable.COLUMN_SN, new JSONObject(sNtoString()));
+        json.put(FormsTable.COLUMN_SO, new JSONObject(sOtoString()));
         json.put(FormsTable.COLUMN_SE2, new JSONObject(sE2toString()));
         return json;
     }
-
-
 }
