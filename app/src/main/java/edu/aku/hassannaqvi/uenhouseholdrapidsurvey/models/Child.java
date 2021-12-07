@@ -3214,10 +3214,10 @@ public class Child extends BaseObservable implements Observable {
 
         sI1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SI1)));
         sI2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SI2)));
+        sIMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SIM)));
 
         return this;
     }
-
 
     public void sI1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sI1Hydrate: " + string);
@@ -3369,6 +3369,138 @@ public class Child extends BaseObservable implements Observable {
         }
     }
 
+    public void sIMHydrate(String string) throws JSONException {
+        Log.d(TAG, "sIMHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.im01 = json.getString("im01");
+            this.im02 = json.getString("im02");
+            this.im03 = json.getString("im03");
+            this.im0396x = json.getString("im0396x");
+            this.im04d = json.getString("im04d");
+            this.im04m = json.getString("im04m");
+            this.im04y = json.getString("im04y");
+            this.im0501d = json.getString("im0501d");
+            this.im0501m = json.getString("im0501m");
+            this.im0501y = json.getString("im0501y");
+            this.im0502d = json.getString("im0502d");
+            this.im0502m = json.getString("im0502m");
+            this.im0502y = json.getString("im0502y");
+            this.im0503d = json.getString("im0503d");
+            this.im0503m = json.getString("im0503m");
+            this.im0503y = json.getString("im0503y");
+            this.im0504d = json.getString("im0504d");
+            this.im0504m = json.getString("im0504m");
+            this.im0504y = json.getString("im0504y");
+            this.im0505d = json.getString("im0505d");
+            this.im0505m = json.getString("im0505m");
+            this.im0505y = json.getString("im0505y");
+            this.im0506d = json.getString("im0506d");
+            this.im0506m = json.getString("im0506m");
+            this.im0506y = json.getString("im0506y");
+            this.im0507d = json.getString("im0507d");
+            this.im0507m = json.getString("im0507m");
+            this.im0507y = json.getString("im0507y");
+            this.im0508d = json.getString("im0508d");
+            this.im0508m = json.getString("im0508m");
+            this.im0508y = json.getString("im0508y");
+            this.im0509d = json.getString("im0509d");
+            this.im0509m = json.getString("im0509m");
+            this.im0509y = json.getString("im0509y");
+            this.im0510d = json.getString("im0510d");
+            this.im0510m = json.getString("im0510m");
+            this.im0510y = json.getString("im0510y");
+            this.im0511d = json.getString("im0511d");
+            this.im0511m = json.getString("im0511m");
+            this.im0511y = json.getString("im0511y");
+            this.im0512d = json.getString("im0512d");
+            this.im0512m = json.getString("im0512m");
+            this.im0512y = json.getString("im0512y");
+            this.im0513d = json.getString("im0513d");
+            this.im0513m = json.getString("im0513m");
+            this.im0513y = json.getString("im0513y");
+            this.im0514d = json.getString("im0514d");
+            this.im0514m = json.getString("im0514m");
+            this.im0514y = json.getString("im0514y");
+            this.im0515d = json.getString("im0515d");
+            this.im0515m = json.getString("im0515m");
+            this.im0515y = json.getString("im0515y");
+            this.im0516d = json.getString("im0516d");
+            this.im0516m = json.getString("im0516m");
+            this.im0516y = json.getString("im0516y");
+            this.im07 = json.getString("im07");
+            this.im08 = json.getString("im08");
+            this.im09 = json.getString("im09");
+            this.im10 = json.getString("im10");
+            this.im11 = json.getString("im11");
+            this.im12 = json.getString("im12");
+            this.im1201x = json.getString("im1201x");
+            this.im14 = json.getString("im14");
+            this.im15 = json.getString("im15");
+            this.im1501x = json.getString("im1501x");
+            this.im16 = json.getString("im16");
+            this.im17 = json.getString("im17");
+            this.im1701x = json.getString("im1701x");
+            this.im18 = json.getString("im18");
+            this.im19 = json.getString("im19");
+            this.im1901x = json.getString("im1901x");
+            this.im20 = json.getString("im20");
+            this.im21 = json.getString("im21");
+            this.im22 = json.getString("im22");
+            this.im2201x = json.getString("im2201x");
+            this.im23 = json.getString("im23");
+            this.im2396x = json.getString("im2396x");
+            this.im24 = json.getString("im24");
+            this.im2496x = json.getString("im2496x");
+            this.im25 = json.getString("im25");
+            this.im2501x = json.getString("im2501x");
+            this.im2502x = json.getString("im2502x");
+            this.im2601 = json.getString("im2601");
+            this.im2602 = json.getString("im2602");
+            this.im2603 = json.getString("im2603");
+            this.im2604 = json.getString("im2604");
+            this.im2605 = json.getString("im2605");
+            this.im2606 = json.getString("im2606");
+            this.im2607 = json.getString("im2607");
+            this.im2608 = json.getString("im2608");
+            this.im2609 = json.getString("im2609");
+            this.im2610 = json.getString("im2610");
+            this.im2611 = json.getString("im2611");
+            this.im2612 = json.getString("im2612");
+            this.im2613 = json.getString("im2613");
+            this.im2614 = json.getString("im2614");
+            this.im2615 = json.getString("im2615");
+            this.im2616 = json.getString("im2616");
+            this.im2617 = json.getString("im2617");
+            this.im2698 = json.getString("im2698");
+            this.im2696 = json.getString("im2696");
+            this.im2696x = json.getString("im2696x");
+            this.im27 = json.getString("im27");
+            this.im28 = json.getString("im28");
+            this.im29 = json.getString("im29");
+            this.im2901x = json.getString("im2901x");
+            this.im30 = json.getString("im30");
+            this.im31 = json.getString("im31");
+            this.im3201 = json.getString("im3201");
+            this.im3202 = json.getString("im3202");
+            this.im3203 = json.getString("im3203");
+            this.im3204 = json.getString("im3204");
+            this.im3205 = json.getString("im3205");
+            this.im3206 = json.getString("im3206");
+            this.im3207 = json.getString("im3207");
+            this.im3208 = json.getString("im3208");
+            this.im3209 = json.getString("im3209");
+            this.im3210 = json.getString("im3210");
+            this.im3211 = json.getString("im3211");
+            this.im3212 = json.getString("im3212");
+            this.im3213 = json.getString("im3213");
+            this.im3298 = json.getString("im3298");
+            this.im3296 = json.getString("im3296");
+            this.im3296x = json.getString("im3296x");
+        }
+    }
+
     public String sI1toString() throws JSONException {
         Log.d(TAG, "sI1toString: ");
         JSONObject json = new JSONObject();
@@ -3515,6 +3647,135 @@ public class Child extends BaseObservable implements Observable {
         return json.toString();
     }
 
+    public String sIMtoString() throws JSONException {
+        Log.d(TAG, "sIMtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("im01", im01)
+                .put("im02", im02)
+                .put("im03", im03)
+                .put("im0396x", im0396x)
+                .put("im04d", im04d)
+                .put("im04m", im04m)
+                .put("im04y", im04y)
+                .put("im0501d", im0501d)
+                .put("im0501m", im0501m)
+                .put("im0501y", im0501y)
+                .put("im0502d", im0502d)
+                .put("im0502m", im0502m)
+                .put("im0502y", im0502y)
+                .put("im0503d", im0503d)
+                .put("im0503m", im0503m)
+                .put("im0503y", im0503y)
+                .put("im0504d", im0504d)
+                .put("im0504m", im0504m)
+                .put("im0504y", im0504y)
+                .put("im0505d", im0505d)
+                .put("im0505m", im0505m)
+                .put("im0505y", im0505y)
+                .put("im0506d", im0506d)
+                .put("im0506m", im0506m)
+                .put("im0506y", im0506y)
+                .put("im0507d", im0507d)
+                .put("im0507m", im0507m)
+                .put("im0507y", im0507y)
+                .put("im0508d", im0508d)
+                .put("im0508m", im0508m)
+                .put("im0508y", im0508y)
+                .put("im0509d", im0509d)
+                .put("im0509m", im0509m)
+                .put("im0509y", im0509y)
+                .put("im0510d", im0510d)
+                .put("im0510m", im0510m)
+                .put("im0510y", im0510y)
+                .put("im0511d", im0511d)
+                .put("im0511m", im0511m)
+                .put("im0511y", im0511y)
+                .put("im0512d", im0512d)
+                .put("im0512m", im0512m)
+                .put("im0512y", im0512y)
+                .put("im0513d", im0513d)
+                .put("im0513m", im0513m)
+                .put("im0513y", im0513y)
+                .put("im0514d", im0514d)
+                .put("im0514m", im0514m)
+                .put("im0514y", im0514y)
+                .put("im0515d", im0515d)
+                .put("im0515m", im0515m)
+                .put("im0515y", im0515y)
+                .put("im0516d", im0516d)
+                .put("im0516m", im0516m)
+                .put("im0516y", im0516y)
+                .put("im07", im07)
+                .put("im08", im08)
+                .put("im09", im09)
+                .put("im10", im10)
+                .put("im11", im11)
+                .put("im12", im12)
+                .put("im1201x", im1201x)
+                .put("im14", im14)
+                .put("im15", im15)
+                .put("im1501x", im1501x)
+                .put("im16", im16)
+                .put("im17", im17)
+                .put("im1701x", im1701x)
+                .put("im18", im18)
+                .put("im19", im19)
+                .put("im1901x", im1901x)
+                .put("im20", im20)
+                .put("im21", im21)
+                .put("im22", im22)
+                .put("im2201x", im2201x)
+                .put("im23", im23)
+                .put("im2396x", im2396x)
+                .put("im24", im24)
+                .put("im2496x", im2496x)
+                .put("im25", im25)
+                .put("im2501x", im2501x)
+                .put("im2502x", im2502x)
+                .put("im2601", im2601)
+                .put("im2602", im2602)
+                .put("im2603", im2603)
+                .put("im2604", im2604)
+                .put("im2605", im2605)
+                .put("im2606", im2606)
+                .put("im2607", im2607)
+                .put("im2608", im2608)
+                .put("im2609", im2609)
+                .put("im2610", im2610)
+                .put("im2611", im2611)
+                .put("im2612", im2612)
+                .put("im2613", im2613)
+                .put("im2614", im2614)
+                .put("im2615", im2615)
+                .put("im2616", im2616)
+                .put("im2617", im2617)
+                .put("im2698", im2698)
+                .put("im2696", im2696)
+                .put("im2696x", im2696x)
+                .put("im27", im27)
+                .put("im28", im28)
+                .put("im29", im29)
+                .put("im2901x", im2901x)
+                .put("im30", im30)
+                .put("im31", im31)
+                .put("im3201", im3201)
+                .put("im3202", im3202)
+                .put("im3203", im3203)
+                .put("im3204", im3204)
+                .put("im3205", im3205)
+                .put("im3206", im3206)
+                .put("im3207", im3207)
+                .put("im3208", im3208)
+                .put("im3209", im3209)
+                .put("im3210", im3210)
+                .put("im3211", im3211)
+                .put("im3212", im3212)
+                .put("im3213", im3213)
+                .put("im3298", im3298)
+                .put("im3296", im3296)
+                .put("im3296x", im3296x);
+        return json.toString();
+    }
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
@@ -3539,6 +3800,7 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildTable.COLUMN_SI1, new JSONObject(sI1toString()));
         json.put(TableContracts.ChildTable.COLUMN_SI2, new JSONObject(sI2toString()));
+        json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));
 
         return json;
     }

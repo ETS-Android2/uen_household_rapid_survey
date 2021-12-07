@@ -117,9 +117,7 @@ object CreateTable {
             + MwraTable.COLUMN_SH1 + " TEXT,"
             + MwraTable.COLUMN_SH2 + " TEXT,"
             + MwraTable.COLUMN_SK + " TEXT,"
-            + MwraTable.COLUMN_SL + " TEXT,"
-            + MwraTable.COLUMN_SB6 + " TEXT,"
-            + MwraTable.COLUMN_SB7 + " TEXT"
+            + MwraTable.COLUMN_SL + " TEXT"
             + " );"
             )
 
@@ -171,10 +169,7 @@ object CreateTable {
             + ChildTable.COLUMN_APPVERSION + " TEXT,"
             + ChildTable.COLUMN_SI1 + " TEXT,"
             + ChildTable.COLUMN_SI2 + " TEXT,"
-            + ChildTable.COLUMN_SC31 + " TEXT,"
-            + ChildTable.COLUMN_SC32 + " TEXT,"
-            + ChildTable.COLUMN_SC4 + " TEXT,"
-            + ChildTable.COLUMN_SC5 + " TEXT"
+            + ChildTable.COLUMN_SIM + " TEXT"
 
             + " );"
             )
