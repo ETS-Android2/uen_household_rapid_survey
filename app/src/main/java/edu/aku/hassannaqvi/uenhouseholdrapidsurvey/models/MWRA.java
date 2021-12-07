@@ -5213,6 +5213,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL102(String l102) {
         this.l102 = l102;
+        setL102a(l102.equals("1") ? this.l102a : "");
+        setL103(l102.equals("1") ? this.l103 : "");
         notifyPropertyChanged(BR.l102);
     }
 
@@ -5223,6 +5225,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL102a(String l102a) {
         this.l102a = l102a;
+        setL102a96x(l102a.equals("96") ? this.l102a96x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l102a);
     }
 
@@ -5243,6 +5246,9 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL103(String l103) {
         this.l103 = l103;
+        setL104(l103.equals("1") ? this.l104 : "");
+        setL105(l102.equals("1") ? this.l105 : "");
+        setL106(l102.equals("1") ? this.l106 : "");
         notifyPropertyChanged(BR.l103);
     }
 
@@ -5253,6 +5259,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL104(String l104) {
         this.l104 = l104;
+        setL10496x(l104.equals("96") ? this.l10496x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l104);
     }
 
@@ -5283,6 +5290,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL106(String l106) {
         this.l106 = l106;
+        setL10696x(l106.equals("96") ? this.l10696x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l106);
     }
 
@@ -5303,6 +5311,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL107(String l107) {
         this.l107 = l107;
+        setL10796x(l107.equals("96") ? this.l10796x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l107);
     }
 
@@ -5323,6 +5332,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL108(String l108) {
         this.l108 = l108;
+        setL10896x(l108.equals("96") ? this.l10896x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l108);
     }
 
@@ -5343,6 +5353,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL109(String l109) {
         this.l109 = l109;
+        setL10996x(l109.equals("96") ? this.l10996x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l109);
     }
 
@@ -5473,6 +5484,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL114(String l114) {
         this.l114 = l114;
+        setL11496x(l114.equals("96") ? this.l11496x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l114);
     }
 
@@ -5493,6 +5505,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL115(String l115) {
         this.l115 = l115;
+        setL11596x(l115.equals("96") ? this.l11596x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l115);
     }
 
@@ -5513,6 +5526,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL116(String l116) {
         this.l116 = l116;
+        setL11696x(l116.equals("96") ? this.l11696x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l116);
     }
 
@@ -5533,6 +5547,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL117(String l117) {
         this.l117 = l117;
+        setL11796x(l117.equals("96") ? this.l11796x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.l117);
     }
 
