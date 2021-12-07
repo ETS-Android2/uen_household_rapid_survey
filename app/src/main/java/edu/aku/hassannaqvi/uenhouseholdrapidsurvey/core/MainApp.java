@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MaternalMortality;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Users;
 
@@ -53,6 +54,7 @@ public class MainApp extends Application {
     public static Pregnancy pregnancy;
     public static Child child;
     public static FamilyMembers familyMember;
+    public static MaternalMortality mortality;
     public static int preg_count = 0;
     public static int child_count = 0;
 
