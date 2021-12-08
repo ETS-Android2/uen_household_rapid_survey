@@ -48,6 +48,8 @@ public class MaternalMortality extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
 
     //Field Variables;
+    private String e116 = _EMPTY_;
+    private String e117 = _EMPTY_;
     private String e118 = _EMPTY_;
     private String e119d = _EMPTY_;
     private String e119m = _EMPTY_;
@@ -246,6 +248,28 @@ public class MaternalMortality extends BaseObservable implements Observable {
 
 
     @Bindable
+    public String getE116() {
+        return e116;
+    }
+
+    public void setE116(String e116) {
+        this.e116 = e116;
+        notifyPropertyChanged(BR.e116);
+    }
+
+
+    @Bindable
+    public String getE117() {
+        return e117;
+    }
+
+    public void setE117(String e117) {
+        this.e117 = e117;
+        notifyPropertyChanged(BR.e117);
+    }
+
+
+    @Bindable
     public String getE118() {
         return e118;
     }
@@ -355,7 +379,9 @@ public class MaternalMortality extends BaseObservable implements Observable {
     public String sE2toString() throws JSONException {
         Log.d(TAG, "sE2toString: ");
         JSONObject json = new JSONObject();
-        json.put("e118", e118)
+        json.put("e116", e116)
+                .put("e117", e117)
+                .put("e118", e118)
                 .put("e119d", e119d)
                 .put("e119m", e119m)
                 .put("e119y", e119y)
@@ -397,6 +423,8 @@ public class MaternalMortality extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+            this.e116 = json.getString("e116");
+            this.e117 = json.getString("e117");
             this.e118 = json.getString("e118");
             this.e119d = json.getString("e119d");
             this.e119m = json.getString("e119m");
