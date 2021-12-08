@@ -254,6 +254,15 @@ public class MaternalMortality extends BaseObservable implements Observable {
 
     public void setE116(String e116) {
         this.e116 = e116;
+        setE117(e116.equals("1") ? this.e117 : "");
+        setE118(e116.equals("1") ? this.e118 : "");
+        setE119d(e116.equals("1") ? this.e119d : "");
+        setE119m(e116.equals("1") ? this.e119m : "");
+        setE119y(e116.equals("1") ? this.e119y : "");
+        setE120(e116.equals("1") ? this.e120 : "");
+        setE121(e116.equals("1") ? this.e121 : "");
+        setE122(e116.equals("1") ? this.e122 : "");
+        setE12296x(e116.equals("1") ? this.e12296x : "");
         notifyPropertyChanged(BR.e116);
     }
 
@@ -336,6 +345,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
 
     public void setE122(String e122) {
         this.e122 = e122;
+        setE12296x(e122.equals("96") ? this.e12296x : "");
         notifyPropertyChanged(BR.e122);
     }
 
