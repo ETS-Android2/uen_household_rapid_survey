@@ -509,6 +509,55 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI101(String i101) {
         this.i101 = i101;
+        setI10201(i101.equals("1") ? this.i10201 : "");
+        setI102a(i101.equals("1") ? this.i102a : "");
+        setI102ano(i101.equals("1") ? this.i102ano : "");
+        setI102b(i101.equals("1") ? this.i102b : "");
+        setI102c(i101.equals("1") ? this.i102c : "");
+        setI102cno(i101.equals("1") ? this.i102cno : "");
+        setI103(i101.equals("1") ? this.i103 : "");
+        setI104(i101.equals("1") ? this.i104 : "");
+        setI105(i101.equals("1") ? this.i105 : "");
+        setI106(i101.equals("1") ? this.i106 : "");
+        setI107(i101.equals("1") ? this.i107 : "");
+        setI108(i101.equals("1") ? this.i108 : "");
+        setI111(i101.equals("1") ? this.i111 : "");
+
+        setI11201(i101.equals("1") ? this.i11201 : "");
+        setI11202(i101.equals("1") ? this.i11202 : "");
+        setI11203(i101.equals("1") ? this.i11203 : "");
+        setI11204(i101.equals("1") ? this.i11204 : "");
+        setI11205(i101.equals("1") ? this.i11205 : "");
+        setI11206(i101.equals("1") ? this.i11206 : "");
+        setI11207(i101.equals("1") ? this.i11207 : "");
+        setI11208(i101.equals("1") ? this.i11208 : "");
+        setI11209(i101.equals("1") ? this.i11209 : "");
+        setI11210(i101.equals("1") ? this.i11210 : "");
+        setI11211(i101.equals("1") ? this.i11211 : "");
+
+        setI113(i101.equals("1") ? this.i113 : "");
+        setI115(i101.equals("1") ? this.i115 : "");
+        setI116(i101.equals("1") ? this.i116 : "");
+
+        setI11701(i101.equals("1") ? this.i11701 : "");
+        setI11702(i101.equals("1") ? this.i11702 : "");
+        setI11703(i101.equals("1") ? this.i11703 : "");
+        setI11704(i101.equals("1") ? this.i11704 : "");
+        setI11705(i101.equals("1") ? this.i11705 : "");
+        setI11706(i101.equals("1") ? this.i11706 : "");
+        setI11707(i101.equals("1") ? this.i11707 : "");
+        setI11708(i101.equals("1") ? this.i11708 : "");
+        setI11796(i101.equals("1") ? this.i11796 : "");
+
+        setI11801(i101.equals("1") ? this.i11801 : "");
+        setI11802(i101.equals("1") ? this.i11802 : "");
+        setI11803(i101.equals("1") ? this.i11803 : "");
+        setI11896(i101.equals("1") ? this.i11896 : "");
+
+        setI119(i101.equals("1") ? this.i119 : "");
+        setI120(i101.equals("1") ? this.i120 : "");
+        setI121(i101.equals("1") ? this.i121 : "");
+
         notifyPropertyChanged(BR.i101);
     }
 
@@ -549,6 +598,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI102b(String i102b) {
         this.i102b = i102b;
+        setI102c(i102b.equals("2") ? this.i102c : "");
+        setI102cno(i102b.equals("2") ? this.i102cno : "");
         notifyPropertyChanged(BR.i102b);
     }
 
@@ -610,6 +661,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI105(String i105) {
         this.i105 = i105;
+        setI106(i105.equals("2") ? this.i106 : "");
         notifyPropertyChanged(BR.i105);
     }
 
@@ -813,6 +865,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI113(String i113) {
         this.i113 = i113;
+        setI115(i113.equals("1") ? this.i115 : "");
+        setI116(i113.equals("1") ? this.i116 : "");
         notifyPropertyChanged(BR.i113);
     }
 
@@ -1093,6 +1147,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI119(String i119) {
         this.i119 = i119;
+        setI120(i119.equals("1") ? this.i120 : "");
+        setI121(i119.equals("1") ? this.i121 : "");
         notifyPropertyChanged(BR.i119);
     }
 
@@ -1103,6 +1159,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI120(String i120) {
         this.i120 = i120;
+        setI121(i120.equals("1") ? this.i121 : "");
         notifyPropertyChanged(BR.i120);
     }
 
@@ -1221,6 +1278,12 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI123(String i123) {
         this.i123 = i123;
+        setI124(i123.equals("2") ? this.i124 : "");
+        setI12501(i123.equals("1") ? this.i12501 : "");
+        setI12502(i123.equals("1") ? this.i12502 : "");
+        setI12503(i123.equals("1") ? this.i12503 : "");
+        setI12504(i123.equals("1") ? this.i12504 : "");
+        setI12505(i123.equals("1") ? this.i12505 : "");
         notifyPropertyChanged(BR.i123);
     }
 
