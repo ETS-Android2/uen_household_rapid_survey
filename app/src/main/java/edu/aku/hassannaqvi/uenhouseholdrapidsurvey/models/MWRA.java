@@ -793,6 +793,23 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setF101(String f101) {
         this.f101 = f101;
+        setF101a01(f101.equals("1") ? "" : this.f101a01);
+        setF101a02(f101.equals("1") ? "" : this.f101a02);
+        setF101a03(f101.equals("1") ? "" : this.f101a03);
+        setF101a04(f101.equals("1") ? "" : this.f101a04);
+        setF101a05(f101.equals("1") ? "" : this.f101a05);
+        setF101a06(f101.equals("1") ? "" : this.f101a06);
+        setF101a07(f101.equals("1") ? "" : this.f101a07);
+        setF101a08(f101.equals("1") ? "" : this.f101a08);
+        setF101a09(f101.equals("1") ? "" : this.f101a09);
+        setF101a10(f101.equals("1") ? "" : this.f101a10);
+        setF101a11(f101.equals("1") ? "" : this.f101a11);
+        setF101a12(f101.equals("1") ? "" : this.f101a12);
+        setF101a13(f101.equals("1") ? "" : this.f101a13);
+        setF101a14(f101.equals("1") ? "" : this.f101a14);
+        setF101a96(f101.equals("1") ? "" : this.f101a96);
+        setF101b(f101.equals("1") ? this.f101b : "");
+        setF101b01x(f101.equals("1") ? this.f101b01x : "");
         notifyPropertyChanged(BR.f101);
     }
 
@@ -978,6 +995,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setF101b(String f101b) {
         this.f101b = f101b;
+        setF101b01x(f101b.equals("1") ? this.f101b01x : "");
         notifyPropertyChanged(BR.f101b);
     }
 
