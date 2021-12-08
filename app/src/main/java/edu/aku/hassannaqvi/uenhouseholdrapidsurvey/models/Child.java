@@ -1309,6 +1309,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI202b(String i202b) {
         this.i202b = i202b;
+        setI202c(i202b.equals("1") ? this.i202c : "");
+        setI202cno(i202b.equals("1") ? this.i202cno : "");
         notifyPropertyChanged(BR.i202b);
     }
 
@@ -1359,6 +1361,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI206(String i206) {
         this.i206 = i206;
+        setI20601x(i206.equals("1") ? this.i20601x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i206);
     }
 
@@ -1379,6 +1382,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI207(String i207) {
         this.i207 = i207;
+        setI208(i207.equals("2") ? this.i208 : "");
         notifyPropertyChanged(BR.i207);
     }
 
@@ -1389,6 +1393,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI208(String i208) {
         this.i208 = i208;
+        setI20896x(i208.equals("96") ? this.i20896x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i208);
     }
 
@@ -1459,6 +1464,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI216(String i216) {
         this.i216 = i216;
+        setI21601x(i216.equals("1") ? this.i21601x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i216);
     }
 
@@ -1489,6 +1495,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI218(String i218) {
         this.i218 = i218;
+        setI21896x(i218.equals("96") ? this.i21896x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i218);
     }
 
@@ -1518,7 +1525,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21901(String i21901) {
+        if (this.i21901.equals(i21901)) return; // for all checkboxes
         this.i21901 = i21901;
+        setI21901x(i21901.equals("1") ? this.i21901x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21901);
     }
 
@@ -1538,7 +1547,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21902(String i21902) {
+        if (this.i21902.equals(i21902)) return; // for all checkboxes
         this.i21902 = i21902;
+        setI21902x(i21902.equals("2") ? this.i21902x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21902);
     }
 
@@ -1558,7 +1569,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21903(String i21903) {
+        if (this.i21903.equals(i21903)) return; // for all checkboxes
         this.i21903 = i21903;
+        setI21903x(i21903.equals("3") ? this.i21903x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21903);
     }
 
@@ -1578,7 +1591,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21904(String i21904) {
+        if (this.i21904.equals(i21904)) return; // for all checkboxes
         this.i21904 = i21904;
+        setI21904x(i21904.equals("4") ? this.i21904x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21904);
     }
 
@@ -1598,7 +1613,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21905(String i21905) {
+        if (this.i21905.equals(i21905)) return; // for all checkboxes
         this.i21905 = i21905;
+        setI21905x(i21905.equals("5") ? this.i21905x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21905);
     }
 
@@ -1618,7 +1635,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21996(String i21996) {
+        if (this.i21996.equals(i21996)) return; // for all checkboxes
         this.i21996 = i21996;
+        setI21996x(i21996.equals("96") ? this.i21996x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i21996);
     }
 
@@ -1638,7 +1657,15 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI21998(String i21998) {
+        if (this.i21998.equals(i21998)) return; // for all checkboxes
         this.i21998 = i21998;
+        setI22101(i21998.equals("98") ? "" : this.i22101);
+        setI22102(i21998.equals("98") ? "" : this.i22102);
+        setI22103(i21998.equals("98") ? "" : this.i22103);
+        setI22104(i21998.equals("98") ? "" : this.i22104);
+        setI22105(i21998.equals("98") ? "" : this.i22105);
+        setI22106(i21998.equals("98") ? "" : this.i22106);
+        setI22196(i21998.equals("98") ? "" : this.i22196);
         notifyPropertyChanged(BR.i21998);
     }
 
@@ -1738,6 +1765,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22101(String i22101) {
+        if (this.i22101.equals(i22101)) return; // for all checkboxes
         this.i22101 = i22101;
         notifyPropertyChanged(BR.i22101);
     }
@@ -1748,6 +1776,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22102(String i22102) {
+        if (this.i22102.equals(i22102)) return; // for all checkboxes
         this.i22102 = i22102;
         notifyPropertyChanged(BR.i22102);
     }
@@ -1758,6 +1787,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22103(String i22103) {
+        if (this.i22103.equals(i22103)) return; // for all checkboxes
         this.i22103 = i22103;
         notifyPropertyChanged(BR.i22103);
     }
@@ -1768,6 +1798,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22104(String i22104) {
+        if (this.i22104.equals(i22104)) return; // for all checkboxes
         this.i22104 = i22104;
         notifyPropertyChanged(BR.i22104);
     }
@@ -1778,6 +1809,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22105(String i22105) {
+        if (this.i22105.equals(i22105)) return; // for all checkboxes
         this.i22105 = i22105;
         notifyPropertyChanged(BR.i22105);
     }
@@ -1788,6 +1820,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22106(String i22106) {
+        if (this.i22106.equals(i22106)) return; // for all checkboxes
         this.i22106 = i22106;
         notifyPropertyChanged(BR.i22106);
     }
@@ -1798,7 +1831,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22196(String i22196) {
+        if (this.i22196.equals(i22196)) return; // for all checkboxes
         this.i22196 = i22196;
+        setI22196x(i22196.equals("96") ? this.i22196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i22196);
     }
 
@@ -1829,6 +1864,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI223(String i223) {
         this.i223 = i223;
+        setI22396x(i223.equals("96") ? this.i22396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i223);
     }
 
@@ -1858,6 +1894,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22401(String i22401) {
+        if (this.i22401.equals(i22401)) return; // for all checkboxes
         this.i22401 = i22401;
         notifyPropertyChanged(BR.i22401);
     }
@@ -1868,6 +1905,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22402(String i22402) {
+        if (this.i22402.equals(i22402)) return; // for all checkboxes
         this.i22402 = i22402;
         notifyPropertyChanged(BR.i22402);
     }
@@ -1878,6 +1916,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22403(String i22403) {
+        if (this.i22403.equals(i22403)) return; // for all checkboxes
         this.i22403 = i22403;
         notifyPropertyChanged(BR.i22403);
     }
@@ -1888,6 +1927,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22404(String i22404) {
+        if (this.i22404.equals(i22404)) return; // for all checkboxes
         this.i22404 = i22404;
         notifyPropertyChanged(BR.i22404);
     }
@@ -1898,6 +1938,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22405(String i22405) {
+        if (this.i22405.equals(i22405)) return; // for all checkboxes
         this.i22405 = i22405;
         notifyPropertyChanged(BR.i22405);
     }
@@ -1908,6 +1949,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22406(String i22406) {
+        if (this.i22406.equals(i22406)) return; // for all checkboxes
         this.i22406 = i22406;
         notifyPropertyChanged(BR.i22406);
     }
@@ -1918,7 +1960,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setI22496(String i22496) {
+        if (this.i22496.equals(i22496)) return; // for all checkboxes
         this.i22496 = i22496;
+        setI22496x(i22496.equals("96") ? this.i22496x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.i22496);
     }
 
