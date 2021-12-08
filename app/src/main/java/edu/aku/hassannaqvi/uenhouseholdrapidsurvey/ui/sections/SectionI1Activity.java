@@ -26,7 +26,7 @@ public class SectionI1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i1);
-        bi.setForm(MainApp.child);
+        bi.setChild(MainApp.child);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni1diarrheainformation_mainheading);

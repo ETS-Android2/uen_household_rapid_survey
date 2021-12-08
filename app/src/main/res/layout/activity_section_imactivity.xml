@@ -8,13 +8,16 @@
         <variable
             name="child"
             type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -29,9 +32,11 @@
             app:title="@string/sectionimimmunizationinformation_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -44,6 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/imtitle" />
+
 
                 <!-- im01  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -97,9 +103,13 @@
                                 android:checked="@{child.im01.equals(`2`)}"
                                 android:onClick="@{()->child.setIm01(`2`)}"
                                 android:text="@string/im0102" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im02  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -164,6 +174,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im03  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -264,15 +275,20 @@
                                 android:tag="im0396"
                                 android:text="@={child.im0396x}"
                                 android:visibility="@{child.im03.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="@{child.im01.equals(`2`)? View.GONE : View.VISIBLE}">
+
 
                     <!-- im04  Title   -->
                     <androidx.cardview.widget.CardView
@@ -382,6 +398,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- iminst  Title   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCViminst"
@@ -425,8 +442,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
                                 android:text="@string/iminst4" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im0501  Title   -->
                     <androidx.cardview.widget.CardView
@@ -454,6 +474,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:text="@string/im0501" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -478,13 +499,14 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:hint="@string/im0501d"
+                                        android:hint="##"
                                         android:inputType="number"
                                         android:maxLength="2"
                                         android:text="@={child.im0501d}"
                                         app:maxValue="31"
                                         app:minValue="1"
                                         app:type="range" />
+
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -3491,9 +3513,13 @@
                                 android:tag="im2496"
                                 android:text="@={child.im2496x}"
                                 android:visibility="@{child.im24.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im25  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3527,54 +3553,69 @@
                         <RadioGroup
                             android:id="@+id/im25"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im2501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{child.im25.equals(`1`)}"
                                 android:onClick="@{()->child.setIm25(`1`)}"
                                 android:text="@string/im2501" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im2501x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/im2501"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{child.im25.equals(`1`)}"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="im2501"
                                 android:text="@={child.im2501x}"
-                                android:visibility="@{child.im25.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:hint="##"
                                 app:maxValue="23"
                                 app:minValue="1"
                                 app:type="range" />
 
+                            <View
+                                android:layout_width="50dp"
+                                android:layout_height="match_parent" />
+
                             <RadioButton
                                 android:id="@+id/im2502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{child.im25.equals(`2`)}"
                                 android:onClick="@{()->child.setIm25(`2`)}"
                                 android:text="@string/im2502" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im2502x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/im2502"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{child.im25.equals(`2`)}"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="im2502"
                                 android:text="@={child.im2502x}"
-                                android:visibility="@{child.im25.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:hint="##"
                                 app:maxValue="59"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im26  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -3614,17 +3655,15 @@
                             android:tag="0">
 
                             <TextView
-                                style="@style/info"
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/im26t1" />
 
                             <TextView
-                                style="@style/info"
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/im26t2" />
 
                             <CheckBox
@@ -3806,9 +3845,13 @@
                                 android:tag="im2696"
                                 android:text="@={child.im2696x}"
                                 android:visibility="@{child.im2696.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im27  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3875,9 +3918,13 @@
                                 android:checked="@{child.im27.equals(`4`)}"
                                 android:onClick="@{()->child.setIm27(`4`)}"
                                 android:text="@string/im2704" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im28  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3940,9 +3987,13 @@
                                 android:checked="@{child.im28.equals(`98`)}"
                                 android:onClick="@{()->child.setIm28(`98`)}"
                                 android:text="@string/im2898" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -3982,40 +4033,49 @@
                             <RadioGroup
                                 android:id="@+id/im29"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/im2901"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{child.im29.equals(`1`)}"
                                     android:onClick="@{()->child.setIm29(`1`)}"
                                     android:text="@string/im2901" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im2901x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/im2901"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{child.im29.equals(`1`)}"
+                                    android:gravity="center"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:tag="im2901"
                                     android:text="@={child.im2901x}"
-                                    android:visibility="@{child.im29.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:hint="###"
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
 
                                 <RadioButton
                                     android:id="@+id/im2998"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{child.im29.equals(`98`)}"
                                     android:onClick="@{()->child.setIm29(`98`)}"
                                     android:text="@string/im2998" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im30  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -4078,9 +4138,13 @@
                                     android:checked="@{child.im30.equals(`98`)}"
                                     android:onClick="@{()->child.setIm30(`98`)}"
                                     android:text="@string/im3098" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im31  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -4151,9 +4215,14 @@
                                     android:checked="@{child.im31.equals(`3`)}"
                                     android:onClick="@{()->child.setIm31(`3`)}"
                                     android:text="@string/im3103" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
+
                 </LinearLayout>
 
                 <!-- im32  CheckBox   -->
@@ -4186,18 +4255,18 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im32t" />
+
                         <LinearLayout
                             android:id="@+id/im32check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:tag="0">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/im32t" />
 
                             <CheckBox
                                 android:id="@+id/im3201"
@@ -4342,9 +4411,13 @@
                                 android:tag="im3296"
                                 android:text="@={child.im3296x}"
                                 android:visibility="@{child.im3296.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout

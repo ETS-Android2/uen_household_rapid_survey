@@ -25,7 +25,7 @@ public class SectionIMActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_imactivity);
         bi.setChild(MainApp.child);
         setupSkips();
         setSupportActionBar(bi.toolbar);

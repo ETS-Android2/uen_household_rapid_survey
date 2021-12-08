@@ -21,17 +21,17 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionF1
 
 public class SectionF1Activity extends AppCompatActivity {
 
-
     private static final String TAG = "SectionF1Activity";
     ActivitySectionF1Binding bi;
     private DatabaseHelper db;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f1);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectionfantenatalcare_mainheading);
         db = MainApp.appInfo.dbHelper;
 
         try {
