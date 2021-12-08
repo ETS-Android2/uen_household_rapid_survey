@@ -608,10 +608,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
             }
 
 
+            //TODO:
             // set current Date
-            int curDay = !MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
-            int curMonth = !MainApp.form.getAs1q15m().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15m()) : 6;
-            int curYear = Integer.parseInt(MainApp.form.getAs1q15y());
+            int curDay = 15;//!MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
+            int curMonth = 6;//!MainApp.form.getAs1q15m().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15m()) : 6;
+            int curYear = 2021;//Integer.parseInt(MainApp.form.getAs1q15y());
             Calendar cur = Calendar.getInstance();
 
 
