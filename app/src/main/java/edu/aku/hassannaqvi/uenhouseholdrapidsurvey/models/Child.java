@@ -1383,6 +1383,40 @@ public class Child extends BaseObservable implements Observable {
     public void setI207(String i207) {
         this.i207 = i207;
         setI208(i207.equals("2") ? this.i208 : "");
+
+        setI211(i207.equals("1") ? this.i211 : "");
+        setI212(i207.equals("1") ? this.i212 : "");
+        setI213(i207.equals("1") ? this.i213 : "");
+        setI214(i207.equals("1") ? this.i214 : "");
+        setI215(i207.equals("1") ? this.i215 : "");
+        setI216(i207.equals("1") ? this.i216 : "");
+        setI217(i207.equals("1") ? this.i217 : "");
+        setI218(i207.equals("1") ? this.i218 : "");
+        setI21901(i207.equals("1") ? this.i21901 : "");
+        setI21902(i207.equals("1") ? this.i21902 : "");
+        setI21903(i207.equals("1") ? this.i21903 : "");
+        setI21904(i207.equals("1") ? this.i21904 : "");
+        setI21905(i207.equals("1") ? this.i21905 : "");
+        setI21996(i207.equals("1") ? this.i21996 : "");
+        setI21998(i207.equals("1") ? this.i21998 : "");
+
+        setI22001(i207.equals("1") ? this.i22001 : "");
+        setI22002(i207.equals("1") ? this.i22002 : "");
+        setI22003(i207.equals("1") ? this.i22003 : "");
+        setI22004(i207.equals("1") ? this.i22004 : "");
+        setI22005(i207.equals("1") ? this.i22005 : "");
+        setI22006(i207.equals("1") ? this.i22006 : "");
+        setI22007(i207.equals("1") ? this.i22007 : "");
+
+        setI22101(i207.equals("1") ? this.i22101 : "");
+        setI22102(i207.equals("1") ? this.i22102 : "");
+        setI22103(i207.equals("1") ? this.i22103 : "");
+        setI22104(i207.equals("1") ? this.i22104 : "");
+        setI22105(i207.equals("1") ? this.i22105 : "");
+        setI22106(i207.equals("1") ? this.i22106 : "");
+        setI22196(i207.equals("1") ? this.i22196 : "");
+
+        setI222(i207.equals("1") ? this.i222 : "");
         notifyPropertyChanged(BR.i207);
     }
 
@@ -1414,6 +1448,12 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI211(String i211) {
         this.i211 = i211;
+        setI212(i211.equals("1") ? "" : this.i212);
+        setI213(i211.equals("1") ? "" : this.i213);
+        setI214(i211.equals("1") ? "" : this.i214);
+        setI215(i211.equals("1") ? "" : this.i215);
+        setI216(i211.equals("1") ? "" : this.i216);
+        setI217(i211.equals("1") ? "" : this.i217);
         notifyPropertyChanged(BR.i211);
     }
 
@@ -1444,6 +1484,9 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI214(String i214) {
         this.i214 = i214;
+        setI215(i214.equals("2") ? "" : this.i215);
+        setI216(i214.equals("2") ? "" : this.i216);
+        setI217(i214.equals("2") ? "" : this.i217);
         notifyPropertyChanged(BR.i214);
     }
 
@@ -1854,6 +1897,14 @@ public class Child extends BaseObservable implements Observable {
 
     public void setI222(String i222) {
         this.i222 = i222;
+        setI223(i222.equals("1") ? this.i223 : "");
+        setI22401(i222.equals("1") ? this.i22401 : "");
+        setI22402(i222.equals("1") ? this.i22402 : "");
+        setI22403(i222.equals("1") ? this.i22403 : "");
+        setI22404(i222.equals("1") ? this.i22404 : "");
+        setI22405(i222.equals("1") ? this.i22405 : "");
+        setI22406(i222.equals("1") ? this.i22406 : "");
+        setI22496(i222.equals("1") ? this.i22496 : "");
         notifyPropertyChanged(BR.i222);
     }
 
