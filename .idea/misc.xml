@@ -7,16 +7,16 @@
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_identification.xml" value="0.34833333333333333" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.371875" />
-        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_b.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2.xml" value="0.3486328125" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_f1.xml" value="0.1" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_g1.xml" value="0.11913899549474387" />
-        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1.xml" value="0.1" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h2.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i1.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i2.xml" value="0.10852713178294573" />
-        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_imactivity.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_imactivity.xml" value="0.33568406205923834" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.3441666666666667" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_l1.xml" value="0.17474302496328928" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.1" />
@@ -28,24 +28,6 @@
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/sync_list_adapter.xml" value="0.29609375" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/menu/main_menu.xml" value="0.3614583333333333" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3717948717948718" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_c1.xml" value="0.2765625" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.2765625" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.18" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_b.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2.xml" value="0.39731285988483683" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_f1.xml" value="0.1" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h2.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i2.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_imactivity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_l1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.1" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_n1.xml" value="0.37890625" />
-        <entry key="..\:/Users/hassan.naqvi/StudioProjects/uen_household_rapid_survey/app/src/main/res/layout/activity_section_o1.xml" value="0.1" />
       </map>
     </option>
   </component>
