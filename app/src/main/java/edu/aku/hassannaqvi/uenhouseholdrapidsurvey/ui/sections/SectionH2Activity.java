@@ -27,7 +27,7 @@ public class SectionH2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2);
-        bi.setForm(MainApp.mwra);
+        bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectionh2postnatalcare_mainheading);
