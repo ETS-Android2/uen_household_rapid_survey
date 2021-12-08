@@ -3142,6 +3142,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH105(String h105) {
         this.h105 = h105;
+        setH106(h105.equals("1") ? this.h106 : "");
+        setH107(h105.equals("1") ? this.h107 : "");
         notifyPropertyChanged(BR.h105);
     }
 
@@ -3332,6 +3334,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH110(String h110) {
         this.h110 = h110;
+        setH111(h110.equals("1") ? this.h111 : "");
         notifyPropertyChanged(BR.h110);
     }
 
@@ -3362,6 +3365,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH113(String h113) {
         this.h113 = h113;
+        setH114(h113.equals("1") ? this.h114 : "");
         notifyPropertyChanged(BR.h113);
     }
 
