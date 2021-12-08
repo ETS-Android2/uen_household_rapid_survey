@@ -88,7 +88,8 @@
                         <RadioGroup
                             android:id="@+id/f101"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f10101"
@@ -96,7 +97,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101.equals(`1`)}"
                                 android:onClick="@{()->form.setF101(`1`)}"
-                                android:text="@string/f10101" />
+                                android:text="@string/f10101"
+                                android:layout_weight="1"/>
 
                             <RadioButton
                                 android:id="@+id/f10102"
@@ -104,7 +106,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101.equals(`2`)}"
                                 android:onClick="@{()->form.setF101(`2`)}"
-                                android:text="@string/f10102" />
+                                android:text="@string/f10102"
+                                android:layout_weight="1"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -151,7 +154,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a01.equals(`1`)}"
                                 android:onClick="@{()->form.setF101a01(form.f101a01.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/f101a01" />
 
                             <CheckBox
@@ -160,7 +162,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a02.equals(`2`)}"
                                 android:onClick="@{()->form.setF101a02(form.f101a02.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/f101a02" />
 
                             <CheckBox
@@ -169,7 +170,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a03.equals(`3`)}"
                                 android:onClick="@{()->form.setF101a03(form.f101a03.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/f101a03" />
 
                             <CheckBox
@@ -178,7 +178,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a04.equals(`4`)}"
                                 android:onClick="@{()->form.setF101a04(form.f101a04.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/f101a04" />
 
                             <CheckBox
@@ -187,7 +186,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a05.equals(`5`)}"
                                 android:onClick="@{()->form.setF101a05(form.f101a05.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/f101a05" />
 
                             <CheckBox
@@ -196,7 +194,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a06.equals(`6`)}"
                                 android:onClick="@{()->form.setF101a06(form.f101a06.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/f101a06" />
 
                             <CheckBox
@@ -205,7 +202,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a07.equals(`7`)}"
                                 android:onClick="@{()->form.setF101a07(form.f101a07.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/f101a07" />
 
                             <CheckBox
@@ -214,7 +210,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a08.equals(`8`)}"
                                 android:onClick="@{()->form.setF101a08(form.f101a08.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/f101a08" />
 
                             <CheckBox
@@ -223,7 +218,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a09.equals(`9`)}"
                                 android:onClick="@{()->form.setF101a09(form.f101a09.equals(`9`)?``:`9`)}"
-
                                 android:text="@string/f101a09" />
 
                             <CheckBox
@@ -241,7 +235,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a11.equals(`11`)}"
                                 android:onClick="@{()->form.setF101a11(form.f101a11.equals(`11`)?``:`11`)}"
-
                                 android:text="@string/f101a11" />
 
                             <CheckBox
@@ -250,7 +243,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a12.equals(`12`)}"
                                 android:onClick="@{()->form.setF101a12(form.f101a12.equals(`12`)?``:`12`)}"
-
                                 android:text="@string/f101a12" />
 
                             <CheckBox
@@ -259,7 +251,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a13.equals(`13`)}"
                                 android:onClick="@{()->form.setF101a13(form.f101a13.equals(`13`)?``:`13`)}"
-
                                 android:text="@string/f101a13" />
 
                             <CheckBox
@@ -268,7 +259,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a14.equals(`14`)}"
                                 android:onClick="@{()->form.setF101a14(form.f101a14.equals(`14`)?``:`14`)}"
-
                                 android:text="@string/f101a14" />
 
                             <CheckBox
@@ -277,7 +267,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.f101a96.equals(`96`)}"
                                 android:onClick="@{()->form.setF101a96(form.f101a96.equals(`96`)?``:`96`)}"
-
                                 android:text="@string/f101a96" />
                         </LinearLayout>
                     </LinearLayout>
