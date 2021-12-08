@@ -27,6 +27,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionA1Activity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -193,7 +194,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!hhExists()) {
             saveDraftForm();
             finish();
-            startActivity(new Intent(this, SectionAS1Activity.class));
+            startActivity(new Intent(this, SectionA1Activity.class));
         } else if (MainApp.entryType != Integer.parseInt(MainApp.form.getEntryType())) {
             Toast.makeText(this, String.format("This form has been entered as %s", MainApp.form.getEntryType().equals("1") ? "interview." : "data-entry"), Toast.LENGTH_SHORT).show();
 
@@ -201,7 +202,7 @@ public class IdentificationActivity extends AppCompatActivity {
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
-            startActivity(new Intent(this, SectionAS1Activity.class));
+            startActivity(new Intent(this, SectionA1Activity.class));
         }
 
     }
@@ -215,12 +216,12 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.form.setAs1q01(String.valueOf(MainApp.selectedCountry));
-        MainApp.form.setAs1q02(MainApp.selectedProvince);
-        MainApp.form.setAs1q05(MainApp.selectedDistrict);
-        MainApp.form.setAs1q07(MainApp.selectedPSU);
-        MainApp.form.setAs1q03(MainApp.selectedPSU);
-        MainApp.form.setAs1q08(MainApp.selectedHHID);
+        MainApp.form.setA104(String.valueOf(MainApp.selectedCountry));
+        MainApp.form.setA105(MainApp.selectedProvince);
+        MainApp.form.setA106(MainApp.selectedDistrict);
+        MainApp.form.setA107(MainApp.selectedPSU);
+        MainApp.form.setA109(MainApp.selectedPSU);
+        MainApp.form.setA101(MainApp.selectedHHID);
         MainApp.form.setSno(MainApp.selectedHHID);
 
     }

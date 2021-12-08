@@ -1,21 +1,21 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.mortality;
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.pregnancy;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Validator;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1ABinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE2Binding;
 
 public class SectionE2Activity extends AppCompatActivity {

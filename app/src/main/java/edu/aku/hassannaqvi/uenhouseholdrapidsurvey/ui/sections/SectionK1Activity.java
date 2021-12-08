@@ -1,18 +1,19 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Validator;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionF1Binding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionK1Binding;
 
 public class SectionK1Activity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class SectionK1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k1);
-        bi.setForm(MainApp.mwra);
+        bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectionkfamilyplanning_mainheading);
