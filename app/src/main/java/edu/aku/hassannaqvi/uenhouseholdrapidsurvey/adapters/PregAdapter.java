@@ -14,13 +14,13 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
 
 
 public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
     private static final String TAG = "PregAdapter";
     private final Context mContext;
-    private final List<Pregnancy> pregList;
+    private final List<PregnancyDetails> pregList;
     private final int mExpandedPosition = -1;
     private final int completeCount;
 
@@ -29,7 +29,7 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
      *
      * @param pregList List<FemaleMembersModel> containing the data to populate views to be used by RecyclerView.
      */
-    public PregAdapter(Context mContext, List<Pregnancy> pregList) {
+    public PregAdapter(Context mContext, List<PregnancyDetails> pregList) {
         this.pregList = pregList;
         this.mContext = mContext;
         completeCount = 0;
@@ -44,7 +44,7 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Log.d(TAG, "Element " + position + " set.");
-        Pregnancy preg = this.pregList.get(position);        // Get element from your dataset at this position and replace the contents of the view
+        PregnancyDetails preg = this.pregList.get(position);        // Get element from your dataset at this position and replace the contents of the view
         // with that element
 
         TextView w114 = viewHolder.w114;
@@ -95,7 +95,7 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         }*/
 
         String birthStatus = "";
-        switch (preg.getW115()) {
+      /*  switch (preg.getW115()) {
             case "1":
                 birthStatus = mContext.getString(R.string.w115a);
                 break;
@@ -116,9 +116,9 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + preg.getW115());
-        }
+        }*/
 
-
+/*
         String curStatus = "";
         Log.d(TAG, "onBindViewHolder: ");
         switch (preg.getW116()) {
@@ -143,7 +143,7 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         } else {
             w117.setText("  ----  ");
 
-        }
+        }*/
 
 
         itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getResources().getColor(R.color.grayLight) : mContext.getResources().getColor(R.color.white));

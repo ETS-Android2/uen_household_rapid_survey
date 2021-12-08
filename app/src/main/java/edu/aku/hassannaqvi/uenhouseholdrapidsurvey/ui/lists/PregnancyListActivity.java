@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,13 +12,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.json.JSONException;
-
-import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
@@ -27,7 +19,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.adapters.PregAdapter;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityPregnancyListBinding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy;
 
 
 public class PregnancyListActivity extends AppCompatActivity {
@@ -57,10 +48,10 @@ public class PregnancyListActivity extends AppCompatActivity {
                                         (age >= 14 && age < 50 && !notMarried && isFemale )
 
                         ) {*/
-                        MainApp.pregList.add(MainApp.preg);
+                     //   MainApp.pregList.add(MainApp.preg);
 
                         MainApp.pregCount++;
-                        pregAdapter.notifyItemInserted(MainApp.pregList.size() - 1);
+                        //   pregAdapter.notifyItemInserted(MainApp.pregList.size() - 1);
                         //  Collections.sort(MainApp.fm, new SortByStatus());
                         //fmAdapter.notifyDataSetChanged();
 
@@ -84,7 +75,7 @@ public class PregnancyListActivity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
 
         db = MainApp.appInfo.dbHelper;
-        MainApp.pregList = new ArrayList<>();
+/*        MainApp.pregList = new ArrayList<>();
         Log.d(TAG, "onCreate: preglist " + MainApp.pregList.size());
         try {
             MainApp.pregList = db.getPregBYMUID(MainApp.mwra.getUid());
@@ -92,14 +83,14 @@ public class PregnancyListActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Pragnancy)", Toast.LENGTH_SHORT).show();
         }
- /*
+
         // Set Selected Preg
         for (int i = 0; i < MainApp.pregList.size(); i++) {
             if (MainApp.pregList.get(i).getIndexed().equals("1")) {
                 MainApp.selectedPreg = String.valueOf(i);
                 break;
             }
-        }*/
+        }
         MainApp.pregCount = Math.round(MainApp.pregList.size());
 
         pregAdapter = new PregAdapter(this, MainApp.pregList);
@@ -121,7 +112,7 @@ public class PregnancyListActivity extends AppCompatActivity {
                 Toast.makeText(PregnancyListActivity.this, "This form has been locked. You cannot add new pregren to locked forms", Toast.LENGTH_LONG).show();
             }
         });
-
+*/
     }
 
     @Override
@@ -131,13 +122,13 @@ public class PregnancyListActivity extends AppCompatActivity {
 
         //MainApp.mwra = new MWRA();
         //MainApp.preg = new Preg();
-        if (MainApp.pregList.size() > 0) {
+  /*      if (MainApp.pregList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
             bi.btnContinue.setVisibility(View.VISIBLE);
             bi.btnContinue.setEnabled(true);
             //bi.btnRand.setVisibility(View.VISIBLE);
 
-        }
+        }*/
         checkCompleteFm();
 
 
@@ -148,9 +139,9 @@ public class PregnancyListActivity extends AppCompatActivity {
 
     private void checkCompleteFm() {
         //     if (!MainApp.form.getIStatus().equals("1")) {
-        int compCount = MainApp.pregList.size();
+        //    int compCount = MainApp.pregList.size();
 
-        MainApp.pregCountComplete = compCount;
+        //   MainApp.pregCountComplete = compCount;
         //   bi.btnContinue.setVisibility(compCount == mwraCount && !form.getiStatus().equals("1")? View.VISIBLE : View.GONE);
      /*   bi.btnContinue.setVisibility(compCount >= mwraCount ? View.VISIBLE : View.GONE);
         bi.btnContinue.setEnabled(bi.btnContinue.getVisibility()==View.VISIBLE);*/
@@ -161,7 +152,7 @@ public class PregnancyListActivity extends AppCompatActivity {
     }
 
     public void addPreg() {
-        Intent intent = new Intent(this, SectionW1bActivity.class);
+     /*   Intent intent = new Intent(this, SectionW1bActivity.class);
         //   finish();
         MemberInfoLauncher.launch(intent);
     }
@@ -172,7 +163,7 @@ public class PregnancyListActivity extends AppCompatActivity {
         MainApp.pregList = new ArrayList<>();
         finish();
         startActivity(new Intent(this, SectionW2Activity.class).putExtra("complete", true));
-
+*/
     }
 
     public void btnEnd(View view) {

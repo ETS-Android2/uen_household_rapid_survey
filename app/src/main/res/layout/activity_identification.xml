@@ -55,32 +55,34 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:minHeight="60dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/a104" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/a104"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="56dp"
-                            android:prompt="@string/a104"
-                            android:spinnerMode="dropdown" />
+                        <!--
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/bottom"
+                                                android:minHeight="60dp"
+                                                android:orientation="horizontal">
 
-                    </LinearLayout>
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:gravity="center"
+                                                    android:text="@string/a104" />
 
-                </androidx.cardview.widget.CardView>
+                                                <androidx.appcompat.widget.AppCompatSpinner
+                                                    android:id="@+id/a104"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:minHeight="56dp"
+                                                    android:prompt="@string/a104"
+                                                    android:spinnerMode="dropdown" />
 
-                <!-- a105 DistrictSpinner   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa105"
-                    style="@style/cardView">
+                                            </LinearLayout>-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -90,27 +92,25 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a105" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
+                        <TextView
+                            style="@style/sub_labels"
                             android:id="@+id/a105"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
+                            android:text="Autopopulate from User"
                             android:prompt="@string/a105"
                             android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <!-- a106 TehsilSpinner   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa106"
-                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -120,28 +120,23 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a106" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a106"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a106"
                             android:spinnerMode="dropdown" />
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <!-- a107 UCSpinner   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa107"
-                    style="@style/cardView">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -150,89 +145,118 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="@string/a107" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/a107"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:minHeight="56dp"
                             android:prompt="@string/a107"
                             android:spinnerMode="dropdown" />
 
                     </LinearLayout>
+                        <!--
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/bottom"
+                                                android:minHeight="60dp"
+                                                android:orientation="horizontal">
 
-                </androidx.cardview.widget.CardView>
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:gravity="center"
+                                                    android:text="@string/a109" />
 
+                                                <androidx.appcompat.widget.AppCompatSpinner
+                                                    android:id="@+id/a109"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:minHeight="56dp"
+                                                    android:prompt="@string/a109"
+                                                    android:spinnerMode="dropdown" />
 
-                <!-- a109 VillageSpinner   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q09"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:minHeight="60dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/a109" />
-
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/a109"
+                                            </LinearLayout>-->
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="56dp"
-                            android:prompt="@string/a109"
-                            android:spinnerMode="dropdown" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:minHeight="60dp"
+                            android:orientation="horizontal">
 
-                    </LinearLayout>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/a101" />
 
-                </androidx.cardview.widget.CardView>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a101"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="#######"
+                                android:inputType="number"
+                                android:maxLength="7"
+                                app:maxValue="9999999"
+                                app:minValue="1111111"
+                                app:type="range" />
+                            <!--                            <Button
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="match_parent"
+                                                            android:drawableStart="@drawable/search"
+                                                            android:onClick="searchCluster"
+                                                            android:text="Search"
+                                                            android:textColor="@color/colorPrimary" />-->
+                        </LinearLayout>
 
 
-                <!-- a101  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVas1q08"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:minHeight="60dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/a101" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a101"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:hint="#######"
-                            android:inputType="number"
-                            android:maxLength="7"
-                            app:maxValue="9999999"
-                            app:minValue="1111111"
-                            app:type="range" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/a113" />
+
+                            <EditText
+                                android:id="@+id/a113"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.a113}" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/search"
+                                android:onClick="checkHousehold"
+                                android:text="Search"
+                                android:textColor="@color/colorPrimary" />
+
+                        </LinearLayout>
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
-
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout

@@ -24,12 +24,12 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 public class MWRA extends BaseObservable implements Observable {
 
     private final String TAG = "MWRA";
-    private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
+    private transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     //Not saving in DB
     private final LocalDate localDate = null;
     private final boolean exist = false;
     // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
+    private String projectName = PROJECT_NAME;
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
@@ -53,6 +53,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
 
     //Section Vaiables
+    private String sE = _EMPTY_;
     private String sF = _EMPTY_;
     private String sG = _EMPTY_;
     private String sH1 = _EMPTY_;
@@ -62,6 +63,7 @@ public class MWRA extends BaseObservable implements Observable {
 
 
     // Field Variables bs1
+
 
     private String f101 = _EMPTY_;
     private String f101a = _EMPTY_;
@@ -562,8 +564,9 @@ public class MWRA extends BaseObservable implements Observable {
         setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
-        setHhid(MainApp.selectedHHID);
+        setCluster(MainApp.currentHousehold.getClusteCcode());
+        setHhid(MainApp.currentHousehold.getHhno());
+        // setEntryType(String.valueOf(MainApp.entryType));
 
     }
 
@@ -789,6 +792,18 @@ public class MWRA extends BaseObservable implements Observable {
     public void setsL(String sL) {
         this.sL = sL;
     }
+
+
+    @Bindable
+    public String getsE() {
+        return sE;
+    }
+
+    public void setsE(String sE) {
+        this.sE = sE;
+        notifyChange(BR.sE);
+    }
+
 
     @Bindable
     public String getF101() {
@@ -7263,6 +7278,26 @@ public class MWRA extends BaseObservable implements Observable {
             this.l117 = json.getString("l117");
             this.l11796x = json.getString("l11796x");
 
+        }
+    }
+
+    private synchronized void notifyChange(int propertyId) {
+        if (propertyChangeRegistry == null) propertyChangeRegistry = new PropertyChangeRegistry();
+
+        propertyChangeRegistry.notifyChange(this, propertyId);
+    }
+
+    @Override
+    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry == null) propertyChangeRegistry = new PropertyChangeRegistry();
+        propertyChangeRegistry.add(callback);
+
+    }
+
+    @Override
+    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
+        if (propertyChangeRegistry != null) {
+            propertyChangeRegistry.remove(callback);
         }
     }
 }

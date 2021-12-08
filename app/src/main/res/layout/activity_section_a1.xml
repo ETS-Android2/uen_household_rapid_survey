@@ -45,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- a104  Input-Numeric   -->
+<!--
+                &lt;!&ndash; a104  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa104"
                     style="@style/cardView">
@@ -80,7 +80,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a105  Input-Numeric   -->
+                &lt;!&ndash; a105  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa105"
                     style="@style/cardView">
@@ -114,7 +114,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a106  Input-Numeric   -->
+                &lt;!&ndash; a106  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa106"
                     style="@style/cardView">
@@ -148,7 +148,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a107  Input-Numeric   -->
+                &lt;!&ndash; a107  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa107"
                     style="@style/cardView">
@@ -182,7 +182,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- a101  Input-Numeric   -->
+                &lt;!&ndash; a101  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa101"
                     style="@style/cardView">
@@ -226,7 +226,7 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- a102  Radio   -->
@@ -364,7 +364,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:hint="###"
+                            android:hint="auto populate from bl_random"
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.a103}" />
@@ -373,44 +373,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <!-- a113  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa113"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_a113" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/a113" />
-
-                        <EditText
-                            android:id="@+id/a113"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.a113}" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- a1title  Title   -->

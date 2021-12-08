@@ -226,7 +226,7 @@
     <string name="a1title">Complete Address</string>
     <string name="a103">Randomization Serial Number</string>
     <string name="a103_info">It should matched with Randomized Household Number</string>
-    <string name="a113">Randomizaed Household Number</string>
+    <string name="a113">Household Number</string>
     <string name="a113_info">It should matched with Randomization Serial Number</string>
     <string name="a109">Village</string>
     <string name="a110">Block/ Mohalla</string>

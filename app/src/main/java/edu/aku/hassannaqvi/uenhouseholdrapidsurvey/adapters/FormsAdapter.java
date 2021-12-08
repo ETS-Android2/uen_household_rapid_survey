@@ -130,7 +130,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.psuCode.setText(fc.get(position).getPsuCode());
 
         holder.istatus.setText(iStatus);
-        holder.fatherName.setText(fc.get(position).getAs1q09());
+      //  holder.fatherName.setText(fc.get(position).getAs1q09());
       /*    holder.mwraCount.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
         holder.childCount.setText(bloodStatus == 2 ? "  Done   " : " Pending ");
         holder.adolMaleCount.setText(stoolStatus == 2 ? "  Done   " : " Pending ");

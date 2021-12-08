@@ -9,23 +9,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityIdentificationBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.RandomHH;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionA1Activity;
 
@@ -35,12 +34,12 @@ public class IdentificationActivity extends AppCompatActivity {
     private static final String TAG = "IdentificationActivity";
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
-    private ArrayList<String> provinceNames;
-    private ArrayList<String> provinceCodes;
     private ArrayList<String> districtNames;
     private ArrayList<String> districtCodes;
-    private ArrayList<String> villageNames;
-    private ArrayList<String> villageCodes;
+    private ArrayList<String> tehsilNames;
+    private ArrayList<String> tehsilCodes;
+    private ArrayList<String> ucNames;
+    private ArrayList<String> ucCodes;
     private ArrayList<String> psuCode;
     private ArrayList<String> headHH;
     private Intent openIntent;
@@ -52,7 +51,7 @@ public class IdentificationActivity extends AppCompatActivity {
         //setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
-        populateSpinner();
+        // populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
         if (MainApp.superuser)
@@ -65,98 +64,59 @@ public class IdentificationActivity extends AppCompatActivity {
     private void populateSpinner() {
 
         // Populate Provinces
-        Collection<Villages> provinces = db.getProvinceByCountry(String.valueOf(MainApp.selectedCountry));
+        Collection<Villages> tehsils = db.getTehsilsByDistrict(String.valueOf(MainApp.selectedDistrict));
 
-        provinceNames = new ArrayList<>();
-        provinceCodes = new ArrayList<>();
+        tehsilNames = new ArrayList<>();
+        tehsilCodes = new ArrayList<>();
 
-        provinceNames.add("...");
-        provinceCodes.add("...");
+        tehsilNames.add("...");
+        tehsilCodes.add("...");
 
-        for (Villages p : provinces) {
+        for (Villages t : tehsils) {
 
-            provinceNames.add(p.getProvince());
-            provinceCodes.add(p.getProvcode());
+            tehsilNames.add(t.getTehsilName());
+            tehsilCodes.add(t.getTcode());
 
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                R.layout.custom_spinner, provinceNames);
+                R.layout.custom_spinner, tehsilNames);
 
-        bi.a104.setAdapter(adapter);
+        bi.a106.setAdapter(adapter);
 
-        bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a106.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a105.setAdapter(null);
-                bi.a109.setAdapter(null);
+                bi.a107.setAdapter(null);
                 bi.a101.setText(null);
+                bi.a113.setText(null);
 
                 if (position == 0) return;
-                MainApp.selectedProvince = provinceCodes.get(position);
-                // Populate Districts
-                Collection<Villages> districts = db.getDistrictsByProvince(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince);
+                MainApp.selectedTehsil = tehsilCodes.get(position);
+                // Populate UCs
+                Collection<Villages> ucs = db.getUCsByTehsil(MainApp.selectedDistrict, MainApp.selectedTehsil);
 
-                districtNames = new ArrayList<>();
-                districtCodes = new ArrayList<>();
+                ucNames = new ArrayList<>();
+                ucCodes = new ArrayList<>();
 
-                districtNames.add("...");
-                districtCodes.add("...");
-
-                for (Villages d : districts) {
-
-                    districtNames.add(d.getDistrict_name());
-                    districtCodes.add(d.getDcode());
-
-                }
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        R.layout.custom_spinner, districtNames);
-
-                bi.a105.setAdapter(adapter);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        bi.a105.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a104.setAdapter(null);
-                bi.a109.setAdapter(null);
-                bi.a101.setText(null);
-                if (position == 0) return;
-
-                MainApp.selectedDistrict = districtCodes.get(position);
-                // Populate Villages
-                Collection<Villages> villages = db.getVillagesByDistrict(String.valueOf(MainApp.selectedCountry), MainApp.selectedProvince, MainApp.selectedDistrict);
-
-                villageNames = new ArrayList<>();
-                villageCodes = new ArrayList<>();
+                ucNames.add("...");
+                ucCodes.add("...");
                 psuCode = new ArrayList<>();
 
-                villageNames.add("...");
-                villageCodes.add("...");
-                psuCode.add("...");
+                for (Villages uc : ucs) {
 
-                for (Villages v : villages) {
-
-                    villageNames.add(v.getVillage());
-                    villageCodes.add(v.getVcode());
-                    psuCode.add(v.getPsucode());
+                    ucNames.add(uc.getUcName());
+                    ucCodes.add(uc.getUccode());
+                    psuCode.add(uc.getPsucode());
 
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        R.layout.custom_spinner, villageNames);
+                        R.layout.custom_spinner, ucNames);
 
-                bi.a109.setAdapter(adapter);
+                bi.a107.setAdapter(adapter);
 
             }
 
@@ -166,14 +126,15 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.a109.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        bi.a107.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a101.setText(null);
+                bi.a113.setText(null);
                 if (position == 0) return;
 
-                MainApp.selectedVillage = villageCodes.get(position);
-                MainApp.selectedPSU = psuCode.get(position);
+                MainApp.selectedUC = ucCodes.get(position);
 
 
             }
@@ -186,7 +147,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     }
-
+/*
     public void btnContinue(View view) {
         if (!formValidation()) return;
         MainApp.selectedHHID = bi.a101.getText().toString();
@@ -205,10 +166,10 @@ public class IdentificationActivity extends AppCompatActivity {
             startActivity(new Intent(this, SectionA1Activity.class));
         }
 
-    }
+    }*/
 
 
-    private void saveDraftForm() {
+/*    private void saveDraftForm() {
         MainApp.form = new Form();
 
         MainApp.form.setUserName(MainApp.user.getUserName());
@@ -224,7 +185,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setA101(MainApp.selectedHHID);
         MainApp.form.setSno(MainApp.selectedHHID);
 
-    }
+    }*/
 
    /* private void saveDraftAnthro() {
         MainApp.anthro = new Anthro();
@@ -246,41 +207,38 @@ public class IdentificationActivity extends AppCompatActivity {
     }*/
 
 
-    public void btnEnd(View view) {
-        finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-    }
-
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
     public void checkHousehold(View view) {
-        /*RandomHH testRand = new RandomHH();
-        testRand.setEcdNo("1");
-        testRand.setpsuCode("909090909");
+        RandomHH testRand = new RandomHH();
+        testRand.setSno("1");
+        testRand.setClusteCcode("909090909");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999-99");
         RandomHH randHH = new RandomHH();
-        if (!bi.a105.getText().toString().equals("909090909")) {
-            randHH = db.getHHbyEnumBlocks(bi.a105.getText().toString(), bi.a110.getText().toString());
+        if (!bi.a101.getText().toString().equals("909090909")) {
+            randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
             randHH = testRand;
         }
-        if (!randHH.getpsuCode().equals("")) {
-            bi.ahhead.setError(null);
-            bi.ahhead.setText(randHH.getHeadhh());
+        if (!randHH.getClusteCcode().equals("")) {
+         /*   bi.ahhead.setError(null);
+            bi.ahhead.setText(randHH.getHeadhh());*/
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
 
             MainApp.currentHousehold = randHH;
 
         } else {
+/*
             bi.ahhead.setError("Not Found!");
+*/
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
             bi.btnContinue.setEnabled(false);
-        }*/
+        }
         /*ArrayList<String> households = new ArrayList<String>();
         for (RandomHH r : randHH) {
             households.add(r.getHhno());
@@ -289,12 +247,70 @@ public class IdentificationActivity extends AppCompatActivity {
         }*/
     }
 
+    public void btnContinue(View view) {
+        if (!formValidation()) return;
+
+        if (!hhExists()) {
+            if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+            } else {
+                finish();
+                startActivity(new Intent(this, SectionA1Activity.class));
+            }
+        }
+    }
+
+    /*public void searchCluster(View view) {
+        bi.btnContinue.setEnabled(false);
+        Villages testClusters = new Villages();
+        testClusters.setPsucode("909090909");
+        testClusters.setDistrictName("Test District 9");
+        testClusters.setTehsilName("Test Tehsil 9");
+        Villages clusters = new Villages();
+        if (!bi.a101.getText().toString().equals(testClusters.getPsucode())) {
+            clusters = db.getPS(bi.a105.getText().toString());
+        } else {
+            clusters = testClusters;
+        }
+
+       *//* ebCode = new ArrayList<>();
+        tehsilNames = new ArrayList<>();
+        tehsilNames = new ArrayList<>();
+        for (EnumBlocks eb : enumBlocks) {
+            ebCode.add(eb.getEnumBlock());
+            tehsilNames.add(eb.getDistrictName());
+            tehsilNames.add(eb.getTehsilName()); //
+        }*//*
+        if (!clusters.getEnumBlock().equals("")) {
+            bi.a107.setError(null);
+            bi.a108.setError(null);
+            bi.a107.setText(clusters.getDistrictName());
+            bi.a108.setText(clusters.getTehsilName());
+            bi.fldGrpHH.setVisibility(View.VISIBLE);
+
+        } else {
+            bi.a107.setError("Not Found!");
+            bi.a108.setError("Not Found!");
+            bi.a110.setText(null);
+            bi.ahhead.setText(null);
+            bi.fldGrpHH.setVisibility(View.GONE);
+        }
+    }
+*/
+
+
+    public void btnEnd(View view) {
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+    }
+
+
     private boolean hhExists() {
 
 
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.selectedPSU, MainApp.selectedHHID);
+            MainApp.form = db.getFormByPSUHHNo(MainApp.currentHousehold.getClusteCcode(), MainApp.currentHousehold.getHhno());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -318,12 +334,12 @@ public class IdentificationActivity extends AppCompatActivity {
         }
 
        *//**//* psuCode = new ArrayList<>();
-        districtNames = new ArrayList<>();
-        villageNames = new ArrayList<>();
+        tehsilNames = new ArrayList<>();
+        ucNames = new ArrayList<>();
         for (Villages eb : enumBlocks) {
             psuCode.add(eb.getEnumBlock());
-            districtNames.add(eb.getDistrictName());
-            villageNames.add(eb.getTehsilName()); //
+            tehsilNames.add(eb.getDistrictName());
+            ucNames.add(eb.getTehsilName()); //
         }*//**//*
         if (!enumBlock.getEnumBlock().equals("")) {
             bi.a107.setError(null);

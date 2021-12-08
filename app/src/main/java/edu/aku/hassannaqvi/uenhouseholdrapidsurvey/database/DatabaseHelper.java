@@ -30,7 +30,9 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.Entr
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.MwraTable;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.PregnancyTable;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.PregnancyDetailsTable;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.PregnancyMasterTable;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.RandomHHTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.VillagesTable;
@@ -40,7 +42,9 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.EntryLog;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.RandomHH;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Users;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.VersionApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
@@ -69,12 +73,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
-        //db.execSQL(SQL_CREATE_RANDOM);
+        db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
-        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY);
-        db.execSQL(CreateTable.SQL_CREATE_MaternalMortalityTable);
+        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY_DETAILS);
+        db.execSQL(CreateTable.SQL_CREATE_MATERNAL_MORTIALITY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
@@ -109,7 +113,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SE2, form.sE2toString());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+/*
         values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());
+*/
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
@@ -213,35 +219,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addPregnancy(Pregnancy preg) throws JSONException {
+    public Long addPregnancyDetails(PregnancyDetails pregD) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(PregnancyTable.COLUMN_PROJECT_NAME, preg.getProjectName());
-        values.put(PregnancyTable.COLUMN_UID, preg.getUid());
-        values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
-        values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
-        values.put(PregnancyTable.COLUMN_FMUID, preg.getFmuid());
-        values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
-        values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
-        values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
-        values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
-        values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
-        values.put(PregnancyTable.COLUMN_SE1, preg.sE1toString());
-        values.put(PregnancyTable.COLUMN_ISTATUS, preg.getiStatus());
-        values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
-        values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());
-        values.put(PregnancyTable.COLUMN_APPVERSION, preg.getAppver());
-        values.put(PregnancyTable.COLUMN_SYNCED, preg.getSynced());
-        values.put(PregnancyTable.COLUMN_SYNCED_DATE, preg.getSyncDate());
+        values.put(PregnancyDetailsTable.COLUMN_PROJECT_NAME, pregD.getProjectName());
+        values.put(PregnancyDetailsTable.COLUMN_UID, pregD.getUid());
+        values.put(PregnancyDetailsTable.COLUMN_UUID, pregD.getUuid());
+        values.put(PregnancyDetailsTable.COLUMN_MUID, pregD.getMuid());
+        values.put(PregnancyDetailsTable.COLUMN_FMUID, pregD.getFmuid());
+        values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregD.getClusterCode());
+        values.put(PregnancyDetailsTable.COLUMN_HHID, pregD.getHhid());
+        values.put(PregnancyDetailsTable.COLUMN_SNO, pregD.getSno());
+        values.put(PregnancyDetailsTable.COLUMN_USERNAME, pregD.getUserName());
+        values.put(PregnancyDetailsTable.COLUMN_SYSDATE, pregD.getSysDate());
+        values.put(PregnancyDetailsTable.COLUMN_SE1, pregD.sE1toString());
+        values.put(PregnancyDetailsTable.COLUMN_ISTATUS, pregD.getiStatus());
+        values.put(PregnancyDetailsTable.COLUMN_DEVICETAGID, pregD.getDeviceTag());
+        values.put(PregnancyDetailsTable.COLUMN_DEVICEID, pregD.getDeviceId());
+        values.put(PregnancyDetailsTable.COLUMN_APPVERSION, pregD.getAppver());
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED, pregD.getSynced());
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED_DATE, pregD.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
-                PregnancyTable.TABLE_NAME,
-                PregnancyTable.COLUMN_NAME_NULLABLE,
+                PregnancyDetailsTable.TABLE_NAME,
+                PregnancyDetailsTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
 
+
+    public Long addPregnancyMaster(PregnancyMaster pregM) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(PregnancyDetailsTable.COLUMN_PROJECT_NAME, pregM.getProjectName());
+        values.put(PregnancyDetailsTable.COLUMN_UID, pregM.getUid());
+        values.put(PregnancyDetailsTable.COLUMN_UUID, pregM.getUuid());
+        values.put(PregnancyDetailsTable.COLUMN_MUID, pregM.getMuid());
+        values.put(PregnancyDetailsTable.COLUMN_FMUID, pregM.getFmuid());
+        values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregM.getClusterCode());
+        values.put(PregnancyDetailsTable.COLUMN_HHID, pregM.getHhid());
+        values.put(PregnancyDetailsTable.COLUMN_SNO, pregM.getSno());
+        values.put(PregnancyDetailsTable.COLUMN_USERNAME, pregM.getUserName());
+        values.put(PregnancyDetailsTable.COLUMN_SYSDATE, pregM.getSysDate());
+        values.put(PregnancyDetailsTable.COLUMN_SE1, pregM.sE1toString());
+        values.put(PregnancyDetailsTable.COLUMN_ISTATUS, pregM.getiStatus());
+        values.put(PregnancyDetailsTable.COLUMN_DEVICETAGID, pregM.getDeviceTag());
+        values.put(PregnancyDetailsTable.COLUMN_DEVICEID, pregM.getDeviceId());
+        values.put(PregnancyDetailsTable.COLUMN_APPVERSION, pregM.getAppver());
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED, pregM.getSynced());
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED_DATE, pregM.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insert(
+                PregnancyDetailsTable.TABLE_NAME,
+                PregnancyDetailsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
 
 
     public Long addHHMembers(FamilyMembers members) throws JSONException {
@@ -378,6 +413,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
 
         return db.update(FamilyMembersTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesPregnancyMasterColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = PregnancyMasterTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.pregM.getId())};
+
+        return db.update(PregnancyMasterTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesPregnancyDetailsColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = PregnancyDetailsTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.pregD.getId())};
+
+        return db.update(PregnancyDetailsTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -665,7 +730,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(VillagesTable.COLUMN_CCODE, villages.getCcode());
                 values.put(VillagesTable.COLUMN_PROVINCE, villages.getProvince());
                 values.put(VillagesTable.COLUMN_PROVCODE, villages.getProvcode());
-                values.put(VillagesTable.COLUMN_DISTRICT_NAME, villages.getDistrict_name());
+                values.put(VillagesTable.COLUMN_DISTRICT_NAME, villages.getDistrictName());
                 values.put(VillagesTable.COLUMN_DCODE, villages.getDcode());
                 values.put(VillagesTable.COLUMN_VILLAGE, villages.getVillage());
                 values.put(VillagesTable.COLUMN_VCODE, villages.getVcode());
@@ -687,7 +752,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /*public int syncRandom(JSONArray list) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(RandomTable.TABLE_NAME, null, null);
+        db.delete(RandomHHTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
             for (int i = 0; i < list.length(); i++) {
@@ -697,12 +762,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 RandomHH ran = new RandomHH();
                 ran.sync(json);
                 ContentValues values = new ContentValues();
-                values.put(RandomTable.COLUMN_ID, ran.getID());
-                values.put(RandomTable.COLUMN_SNO, ran.getEcdNo());
-                values.put(RandomTable.COLUMN_ENUM_BLOCK_CODE, ran.getpsuCode());
-                values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
-                values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
-                long rowID = db.insert(RandomTable.TABLE_NAME, null, values);
+                values.put(RandomHHTable.COLUMN_ID, ran.getID());
+                values.put(RandomHHTable.COLUMN_SNO, ran.getEcdNo());
+                values.put(RandomHHTable.COLUMN_CLUSTER_CODE, ran.getpsuCode());
+                values.put(RandomHHTable.COLUMN_HH_NO, ran.getHhno());
+                values.put(RandomHHTable.COLUMN_HEAD_HH, ran.getHeadhh());
+                long rowID = db.insert(RandomHHTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
@@ -835,21 +900,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedPregnancy() throws JSONException {
+    public JSONArray getUnsyncedPregnancyDetails() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
         String whereClause;
-        whereClause = PregnancyTable.COLUMN_SYNCED + " = '' ";
+        whereClause = PregnancyDetailsTable.COLUMN_SYNCED + " = '' ";
 
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
-        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
 
         JSONArray all = new JSONArray();
         c = db.query(
-                PregnancyTable.TABLE_NAME,  // The table to query
+                PregnancyDetailsTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
@@ -859,8 +924,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
         while (c.moveToNext()) {
             Log.d(TAG, "getUnsyncedPregnancy: " + c.getCount());
-            Pregnancy preg = new Pregnancy();
-            all.put(preg.Hydrate(c).toJSONObject());
+            PregnancyDetails pregD = new PregnancyDetails();
+            all.put(pregD.Hydrate(c).toJSONObject());
+        }
+
+        c.close();
+
+        Log.d(TAG, "getUnsyncedPregnancy: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedPregnancy: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedPregnancyMaster() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = PregnancyMasterTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = PregnancyMasterTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                PregnancyMasterTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedPregnancy: " + c.getCount());
+            PregnancyMaster pregM = new PregnancyMaster();
+            all.put(pregM.Hydrate(c).toJSONObject());
         }
 
         c.close();
@@ -987,12 +1087,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void updateSyncedPregnancy(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(PregnancyTable.COLUMN_SYNCED, true);
-        values.put(PregnancyTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = PregnancyTable.COLUMN_ID + " = ?";
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED, true);
+        values.put(PregnancyDetailsTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = PregnancyDetailsTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
-                PregnancyTable.TABLE_NAME,
+                PregnancyDetailsTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -1061,15 +1161,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
-        String selection = RandomTable.COLUMN_ENUM_BLOCK_CODE + "= ? AND "
-                + RandomTable.COLUMN_HH_NO + "= ? ";
+        String selection = RandomHHTable.COLUMN_CLUSTER_CODE + "= ? AND "
+                + RandomHHTable.COLUMN_HH_NO + "= ? ";
         String[] selectionArgs = {cluster_no, hh_no};
 
         int cCount;
         RandomHH hh = null;
         try {
             c = db.query(
-                    RandomTable.TABLE_NAME,
+                    RandomHHTable.TABLE_NAME,
                     columns,
                     selection,
                     selectionArgs,
@@ -1328,22 +1428,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = RandomTable.COLUMN_ENUM_BLOCK_CODE + " = ? AND " +
-                RandomTable.COLUMN_HH_NO + " = ?";
+        String whereClause = RandomHHTable.COLUMN_CLUSTER_CODE + " = ? AND " +
+                RandomHHTable.COLUMN_HH_NO + " = ?";
 
         String[] whereArgs = {psuCode, hhno};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = RandomTable.COLUMN_HH_NO + " ASC";
+        String orderBy = RandomHHTable.COLUMN_HH_NO + " ASC";
 
         String limit = "5000";
 
         RandomHH randHH = new RandomHH();
         try {
             c = db.query(true,
-                    RandomTable.TABLE_NAME,  // The table to query
+                    RandomHHTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1550,7 +1650,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allCountries;
     }
 
-    public Collection<Villages> getProvinceByCountry(String cCode) {
+    public Collection<Villages> getTehsilsByDistrict(String cCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
@@ -1593,7 +1693,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allProvinces;
     }
 
-    public Collection<Villages> getDistrictsByProvince(String cCode, String provCode) {
+    public Collection<Villages> getUCsByTehsil(String cCode, String provCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
 
@@ -1758,28 +1858,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mwra;
     }
 
-    public Pregnancy getPregByUUid(String pSNo) throws JSONException {
+    public PregnancyDetails getPregDetailsByPregNo(String fmuid, String pregSno) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
         String whereClause;
-        whereClause = PregnancyTable.COLUMN_MUID + "=? AND " +
-                PregnancyTable.COLUMN_UUID + "=? AND " +
-                PregnancyTable.COLUMN_SNO + "=? "
+        whereClause = PregnancyDetailsTable.COLUMN_UUID + "=? AND " +
+                PregnancyDetailsTable.COLUMN_FMUID + "=? AND " +
+                PregnancyDetailsTable.COLUMN_SNO + "=? "
         ;
 
-        String[] whereArgs = {MainApp.mwra.getUid(), MainApp.form.getUid(), pSNo};
+        String[] whereArgs = {MainApp.form.getUid(), fmuid, pregSno};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
 
-        Pregnancy pregnancy = new Pregnancy();  // Pregnancies can never be null.
+        PregnancyDetails pregnancyD = new PregnancyDetails();  // Pregnancies can never be null.
 
         c = db.query(
-                PregnancyTable.TABLE_NAME,  // The table to query
+                PregnancyDetailsTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause
@@ -1788,12 +1888,87 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                    // The sort order
         );
         while (c.moveToNext()) {
-            pregnancy = new Pregnancy().Hydrate(c);
+            pregnancyD = new PregnancyDetails().Hydrate(c);
         }
 
         db.close();
 
-        return pregnancy;
+        return pregnancyD;
+    }
+
+    public Collection<PregnancyDetails> getPregByFmuid(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause =
+                PregnancyDetailsTable.COLUMN_UUID + "=? AND " +
+                        PregnancyDetailsTable.COLUMN_FMUID + "=? "
+        ;
+
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
+
+        Collection<PregnancyDetails> pregnancyM = new ArrayList<>();  // Pregnancies can never be null.
+
+        c = db.query(
+                PregnancyDetailsTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            pregnancyM.add(new PregnancyDetails().Hydrate(c));
+        }
+
+        db.close();
+
+        return pregnancyM;
+    }
+
+    public Collection<PregnancyMaster> getPregByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause =
+                PregnancyMasterTable.COLUMN_UUID + "=? "
+        ;
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PregnancyMasterTable.COLUMN_ID + " ASC";
+
+        Collection<PregnancyMaster> pregnancyM = new ArrayList<>();  // Pregnancies can never be null.
+
+        c = db.query(
+                PregnancyMasterTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            pregnancyM.add(new PregnancyMaster().Hydrate(c));
+        }
+
+        db.close();
+
+        return pregnancyM;
     }
 
     public Child getChildByUUid() throws JSONException {
@@ -1832,25 +2007,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<Pregnancy> getPregBYMUID(String muid) throws JSONException {
+ /*   public List<Pregnancy> getPregBYMUID(String muid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
-        whereClause = PregnancyTable.COLUMN_MUID + "=?";
+        whereClause = PregnancyDetailsTable.COLUMN_MUID + "=?";
 
         String[] whereArgs = {muid};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
 
         ArrayList<Pregnancy> pregByUID = new ArrayList<>();
-        try {
             c = db.query(
-                    PregnancyTable.TABLE_NAME,  // The table to query
+                    PregnancyDetailsTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1863,14 +2037,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 pregByUID.add(preg);
             }
-        } finally {
-            if (c != null) {
+
                 c.close();
-            }
-            if (db != null) {
+
                 db.close();
-            }
-        }
+
         return pregByUID;
+    }*/
+
+    public RandomHH getHHbyCluster(String clustercode, String hhno) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = RandomHHTable.COLUMN_CLUSTER_CODE + " = ? AND " +
+                RandomHHTable.COLUMN_HH_NO + " = ?";
+
+        String[] whereArgs = {clustercode, hhno};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = RandomHHTable.COLUMN_HH_NO + " ASC";
+
+        String limit = "5000";
+
+        RandomHH randHH = new RandomHH();
+        c = db.query(true,
+                RandomHHTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy,
+                limit
+                // The sort order
+        );
+        while (c.moveToNext()) {
+            randHH = new RandomHH().hydrate(c);
+        }
+
+        c.close();
+
+        db.close();
+
+
+        return randHH;
     }
 }

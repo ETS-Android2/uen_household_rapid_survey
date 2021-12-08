@@ -2,18 +2,20 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.form;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Validator;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionA1Binding;
@@ -40,34 +42,35 @@ public class SectionA1Activity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
-        /*if (!fp.getUid().equals("")) return true;
+        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.form.populateMeta();
+
         long rowId = 0;
         try {
-            rowId = db.addFollowup(fp);
+            rowId = db.addForm(MainApp.form);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        fp.setId(String.valueOf(rowId));
+        MainApp.form.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            fp.setUid(fp.getDeviceId() + fp.getId());
-            db.updatesFollowupColumn(TableContracts.FollowupTable.COLUMN_UID, fp.getUid());
+            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
-
     private boolean updateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        if (MainApp.superuser) return true;
+
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FollowupTable.COLUMN_SFHA, fp.sFHAtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -76,37 +79,33 @@ public class SectionA1Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
-        saveDraft();
+        // saveDraft();
         if (updateDB()) {
+            Intent i;
+            //      if (bi.h111a.isChecked()) {
+            i = new Intent(this, ConsentActivity.class).putExtra("complete", true);
+           /* } else {
+                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
+            }*/
+
+            startActivity(i);
             finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private void saveDraft() {
     }
 
 
     public void btnEnd(View view) {
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+        finish();
+        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        //startActivity(new Intent(this, MainActivity.class));
     }
 
     private boolean formValidation() {

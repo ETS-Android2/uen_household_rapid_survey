@@ -73,8 +73,8 @@ public class MaternalMortality extends BaseObservable implements Observable {
 //        setMsno(MainApp.mwra.getBs1q1());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
-        setHhid(MainApp.selectedHHID);
+        setpsuCode(MainApp.currentHousehold.getClusteCcode());
+        setHhid(MainApp.currentHousehold.getHhno());
     }
 
 

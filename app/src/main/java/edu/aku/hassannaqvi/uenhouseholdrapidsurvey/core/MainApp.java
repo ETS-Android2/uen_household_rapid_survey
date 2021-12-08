@@ -22,7 +22,9 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MaternalMortality;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.RandomHH;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Users;
 
 
@@ -51,7 +53,7 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static MWRA mwra;
-    public static Pregnancy pregnancy;
+    // public static Pregnancy pregnancy;
     public static Child child;
     public static FamilyMembers familyMember;
     public static MaternalMortality mortality;
@@ -80,7 +82,6 @@ public class MainApp extends Application {
     public static List<Integer> childOfSelectedMWRAList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
-    public static List<Pregnancy> pregList;
     public static int memberCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
@@ -89,21 +90,25 @@ public class MainApp extends Application {
 
     public static boolean hhheadSelected = false;
     public static boolean superuser;
-    public static int selectedCountry = 0;
+    public static String selectedDistrict = "";
     public static int selectedLanguage = 0;
     public static String selectedProvince = "";
-    public static String selectedDistrict = "";
+    public static String selectedTehsil = "";
+    public static String selectedUC = "";
     public static String selectedVillage = "";
-    public static String selectedPSU = "";
-    public static String selectedHHID = "";
+    /*  public static String selectedPSU = "";
+      public static String selectedHHID = "";*/
+    public static RandomHH currentHousehold;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
     public static String selectedChildName = "";
-    public static Pregnancy preg;
     public static int pregCount = 0;
     public static int pregCountComplete = 0;
     public static boolean pregComplete = false;
+    public static PregnancyMaster pregM;
+    public static PregnancyDetails pregD;
+    public static List<FamilyMembers> allMWRAList;
 
 
     public static void hideSystemUI(View decorView) {

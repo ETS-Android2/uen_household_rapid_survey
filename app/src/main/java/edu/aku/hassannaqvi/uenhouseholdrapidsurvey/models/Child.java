@@ -336,8 +336,8 @@ public class Child extends BaseObservable implements Observable {
         setSno(selectedChild + 1);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
-        setHhid(MainApp.selectedHHID);
+        setpsuCode(MainApp.currentHousehold.getClusteCcode());
+        setHhid(MainApp.currentHousehold.getHhno());
 
     }
 

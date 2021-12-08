@@ -2,6 +2,9 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedDistrict;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedUC;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -187,10 +190,17 @@ public class Form extends BaseObservable implements Observable {
         //   setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setPsuCode(MainApp.selectedPSU);
-        setHhid(MainApp.selectedHHID);
-        setEntryType(String.valueOf(MainApp.entryType));
+        setPsuCode(MainApp.currentHousehold.getClusteCcode());
+        setHhid(MainApp.currentHousehold.getHhno());
+        setSno(MainApp.currentHousehold.getSno());
+        // setEntryType(String.valueOf(MainApp.entryType));
 
+        //SECTION VARIABLES
+        setA101(MainApp.currentHousehold.getClusteCcode());
+        setA105(selectedDistrict);
+        setA106(selectedTehsil);
+        setA107(selectedUC);
+        setA113(MainApp.currentHousehold.getHhno());
     }
 
 
@@ -1608,7 +1618,7 @@ public class Form extends BaseObservable implements Observable {
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ENTRY_TYPE));
+        //   this.entryType = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ENTRY_TYPE));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
@@ -1932,7 +1942,7 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
+        //    json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);

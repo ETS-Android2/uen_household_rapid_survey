@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Pregnancy" />
+            name="pregM"
+            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster" />
 
     </data>
 
@@ -76,73 +76,74 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_e101a" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/e101a" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/e101a"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/e101a"
-                            android:maxLength="20"
-                            android:text="@={form.e101a}" />
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/Q_e101b"
+                                    android:visibility="gone" />
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/e101b" />
 
 
-                <!-- e101b  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVe101b"
-                    style="@style/cardView">
+                                <TextView
+                                    android:id="@+id/bs2line"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="@={pregM.e101a}" />
+                            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:orientation="vertical">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_e101b" />
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_e101a"
+                                    android:visibility="gone" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/e101b" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/e101a" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e101b"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.e101b}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                                <TextView
+                                    android:id="@+id/e101a"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                    android:enabled="false"
+                                    android:text="@={pregM.e101a}" />
 
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -188,8 +189,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e101.equals(`1`)}"
-                                android:onClick="@{()->form.setE101(`1`)}"
+                                android:checked="@{pregM.e101.equals(`1`)}"
+                                android:onClick="@{()->pregM.setE101(`1`)}"
                                 android:text="@string/e10101" />
 
                             <RadioButton
@@ -197,8 +198,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e101.equals(`2`)}"
-                                android:onClick="@{()->form.setE101(`2`) + e102a.clearCheck()}"
+                                android:checked="@{pregM.e101.equals(`2`)}"
+                                android:onClick="@{()->pregM.setE101(`2`) + e102a.clearCheck()}"
                                 android:text="@string/e10102" />
 
                         </RadioGroup>
@@ -212,7 +213,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe102"
                     style="@style/cardView"
-                    android:visibility="@{form.e101.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{pregM.e101.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -246,7 +247,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.e102}"
+                            android:text="@={pregM.e102}"
                             app:maxValue="25"
                             app:minValue="0"
                             app:type="range" />
@@ -260,7 +261,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe102a"
                     style="@style/cardView"
-                    android:visibility="@{form.e101.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{pregM.e101.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -291,14 +292,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+                            <!--
+                                                        android:checkedButton="@={pregM.e101.eq}"
+                            -->
 
                             <RadioButton
                                 android:id="@+id/e102a01"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e102a.equals(`1`)}"
-                                android:onClick="@{()->form.setE102a(`1`)}"
+                                android:checked="@{pregM.e102a.equals(`1`)}"
+                                android:onClick="@{()->pregM.setE102a(`1`)}"
                                 android:text="@string/e102a01" />
 
                             <RadioButton
@@ -306,8 +310,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.e102a.equals(`2`)}"
-                                android:onClick="@{()->form.setE102a(`2`)}"
+                                android:checked="@{pregM.e102a.equals(`2`)}"
+                                android:onClick="@{()->pregM.setE102a(`2`)}"
                                 android:text="@string/e102a02" />
 
                         </RadioGroup>

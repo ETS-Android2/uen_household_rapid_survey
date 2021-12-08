@@ -100,7 +100,7 @@
 
                     android:padding="8dp" />
 
-                <LinearLayout
+            <!--    <LinearLayout
                     android:id="@+id/membersDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
 
                     </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_mwra"

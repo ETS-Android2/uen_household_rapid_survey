@@ -466,8 +466,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position != 0 && position != pos) {
-                    MainApp.selectedCountry = Integer.parseInt(countryCodeList.get(position));
-                    // changeLanguage(MainApp.selectedCountry);
+                    //   MainApp.selectedDistrict = Integer.parseInt(countryCodeList.get(position));
+                    // changeLanguage(MainApp.selectedDistrict);
 
                     //  startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).putExtra("pos", position));
                     //   overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

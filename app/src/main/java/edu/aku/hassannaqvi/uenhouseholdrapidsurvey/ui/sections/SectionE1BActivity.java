@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.pregnancy;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.pregD;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,12 +16,12 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1ABinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1BBinding;
 
 public class SectionE1BActivity extends AppCompatActivity {
 
     private static final String TAG = "SectionE1AActivity";
-    ActivitySectionE1ABinding bi;
+    ActivitySectionE1BBinding bi;
     private DatabaseHelper db;
 
 
@@ -29,7 +29,7 @@ public class SectionE1BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_b);
-        bi.setForm(pregnancy);
+        bi.setPregD(pregD);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.reproductivehealth_mainheading);

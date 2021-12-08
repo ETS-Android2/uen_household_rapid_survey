@@ -168,9 +168,9 @@ public class SyncActivity extends AppCompatActivity {
                 }
 
                 //Pregnancy
-                uploadTables.add(new SyncModel(TableContracts.PregnancyTable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.PregnancyDetailsTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedPregnancy());
+                    MainApp.uploadData.add(db.getUnsyncedPregnancyDetails());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(SyncActivity.this, "JSONException(Pregnancy)" + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -215,7 +215,7 @@ public class SyncActivity extends AppCompatActivity {
                     downloadTables.add(new SyncModel(TableContracts.UsersTable.TABLE_NAME));
 
                     downloadTables.add(new SyncModel(TableContracts.VillagesTable.TABLE_NAME));
-//                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
+//                    downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableContracts.VersionTable.TABLE_NAME));
                 } else {
                     // Set tables to DOWNLOAD
@@ -304,7 +304,7 @@ public class SyncActivity extends AppCompatActivity {
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncClusters(jsonArray);
                                         break;
-                                    /*case RandomTable.TABLE_NAME:
+                                    /*case RandomHHTable.TABLE_NAME:
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncRandom(jsonArray);
                                         break;*/
