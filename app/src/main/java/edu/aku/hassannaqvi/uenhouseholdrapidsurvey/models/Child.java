@@ -1959,6 +1959,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm03(String im03) {
         this.im03 = im03;
+        setIm0396x(im03.equals("96") ? this.im0396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im03);
     }
 
@@ -2539,6 +2540,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm12(String im12) {
         this.im12 = im12;
+        setIm1201x(im12.equals("1") ? this.im1201x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im12);
     }
 
@@ -2569,6 +2571,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm15(String im15) {
         this.im15 = im15;
+        setIm1501x(im15.equals("1") ? this.im1501x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im15);
     }
 
@@ -2599,6 +2602,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm17(String im17) {
         this.im17 = im17;
+        setIm1701x(im17.equals("1") ? this.im1701x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im17);
     }
 
@@ -2629,6 +2633,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm19(String im19) {
         this.im19 = im19;
+        setIm1901x(im19.equals("1") ? this.im1901x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im19);
     }
 
@@ -2669,6 +2674,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm22(String im22) {
         this.im22 = im22;
+        setIm2201x(im22.equals("1") ? this.im2201x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im22);
     }
 
@@ -2689,6 +2695,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm23(String im23) {
         this.im23 = im23;
+        setIm2396x(im23.equals("96") ? this.im2396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im23);
     }
 
@@ -2709,6 +2716,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm24(String im24) {
         this.im24 = im24;
+        setIm2496x(im24.equals("96") ? this.im2496x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im24);
     }
 
@@ -2729,6 +2737,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm25(String im25) {
         this.im25 = im25;
+        setIm2501x(im25.equals("1") ? this.im2501x : ""); // for all skips, mention all skipped questions
+        setIm2502x(im25.equals("2") ? this.im2502x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im25);
     }
 
@@ -2768,6 +2778,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2601(String im2601) {
+        if (this.im2601.equals(im2601)) return; // for all checkboxes
         this.im2601 = im2601;
         notifyPropertyChanged(BR.im2601);
     }
@@ -2778,6 +2789,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2602(String im2602) {
+        if (this.im2602.equals(im2602)) return; // for all checkboxes
         this.im2602 = im2602;
         notifyPropertyChanged(BR.im2602);
     }
@@ -2788,6 +2800,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2603(String im2603) {
+        if (this.im2603.equals(im2603)) return; // for all checkboxes
         this.im2603 = im2603;
         notifyPropertyChanged(BR.im2603);
     }
@@ -2798,6 +2811,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2604(String im2604) {
+        if (this.im2604.equals(im2604)) return; // for all checkboxes
         this.im2604 = im2604;
         notifyPropertyChanged(BR.im2604);
     }
@@ -2808,6 +2822,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2605(String im2605) {
+        if (this.im2605.equals(im2605)) return; // for all checkboxes
         this.im2605 = im2605;
         notifyPropertyChanged(BR.im2605);
     }
@@ -2818,6 +2833,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2606(String im2606) {
+        if (this.im2606.equals(im2606)) return; // for all checkboxes
         this.im2606 = im2606;
         notifyPropertyChanged(BR.im2606);
     }
@@ -2828,6 +2844,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2607(String im2607) {
+        if (this.im2607.equals(im2607)) return; // for all checkboxes
         this.im2607 = im2607;
         notifyPropertyChanged(BR.im2607);
     }
@@ -2838,6 +2855,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2608(String im2608) {
+        if (this.im2608.equals(im2608)) return; // for all checkboxes
         this.im2608 = im2608;
         notifyPropertyChanged(BR.im2608);
     }
@@ -2848,6 +2866,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2609(String im2609) {
+        if (this.im2609.equals(im2609)) return; // for all checkboxes
         this.im2609 = im2609;
         notifyPropertyChanged(BR.im2609);
     }
@@ -2858,6 +2877,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2610(String im2610) {
+        if (this.im2610.equals(im2610)) return; // for all checkboxes
         this.im2610 = im2610;
         notifyPropertyChanged(BR.im2610);
     }
@@ -2868,6 +2888,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2611(String im2611) {
+        if (this.im2611.equals(im2611)) return; // for all checkboxes
         this.im2611 = im2611;
         notifyPropertyChanged(BR.im2611);
     }
@@ -2878,6 +2899,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2612(String im2612) {
+        if (this.im2612.equals(im2612)) return; // for all checkboxes
         this.im2612 = im2612;
         notifyPropertyChanged(BR.im2612);
     }
@@ -2888,6 +2910,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2613(String im2613) {
+        if (this.im2613.equals(im2613)) return; // for all checkboxes
         this.im2613 = im2613;
         notifyPropertyChanged(BR.im2613);
     }
@@ -2898,6 +2921,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2614(String im2614) {
+        if (this.im2614.equals(im2614)) return; // for all checkboxes
         this.im2614 = im2614;
         notifyPropertyChanged(BR.im2614);
     }
@@ -2908,6 +2932,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2615(String im2615) {
+        if (this.im2615.equals(im2615)) return; // for all checkboxes
         this.im2615 = im2615;
         notifyPropertyChanged(BR.im2615);
     }
@@ -2918,6 +2943,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2616(String im2616) {
+        if (this.im2616.equals(im2616)) return; // for all checkboxes
         this.im2616 = im2616;
         notifyPropertyChanged(BR.im2616);
     }
@@ -2928,6 +2954,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2617(String im2617) {
+        if (this.im2617.equals(im2617)) return; // for all checkboxes
         this.im2617 = im2617;
         notifyPropertyChanged(BR.im2617);
     }
@@ -2938,7 +2965,26 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2698(String im2698) {
+        if (this.im2698.equals(im2698)) return; // for all checkboxes
         this.im2698 = im2698;
+        setIm2601(im2698.equals("98") ? "" : this.im2601);
+        setIm2602(im2698.equals("98") ? "" : this.im2602);
+        setIm2603(im2698.equals("98") ? "" : this.im2603);
+        setIm2604(im2698.equals("98") ? "" : this.im2604);
+        setIm2605(im2698.equals("98") ? "" : this.im2605);
+        setIm2606(im2698.equals("98") ? "" : this.im2606);
+        setIm2607(im2698.equals("98") ? "" : this.im2607);
+        setIm2608(im2698.equals("98") ? "" : this.im2608);
+        setIm2609(im2698.equals("98") ? "" : this.im2609);
+        setIm2610(im2698.equals("98") ? "" : this.im2610);
+        setIm2611(im2698.equals("98") ? "" : this.im2611);
+        setIm2612(im2698.equals("98") ? "" : this.im2612);
+        setIm2613(im2698.equals("98") ? "" : this.im2613);
+        setIm2614(im2698.equals("98") ? "" : this.im2614);
+        setIm2615(im2698.equals("98") ? "" : this.im2615);
+        setIm2616(im2698.equals("98") ? "" : this.im2616);
+        setIm2617(im2698.equals("98") ? "" : this.im2617);
+        setIm2696(im2698.equals("98") ? "" : this.im2696);
         notifyPropertyChanged(BR.im2698);
     }
 
@@ -2948,7 +2994,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm2696(String im2696) {
+        if (this.im2696.equals(im2696)) return; // for all checkboxes
         this.im2696 = im2696;
+        setIm2696x(im2696.equals("96") ? this.im2696x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im2696);
     }
 
@@ -2989,6 +3037,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm29(String im29) {
         this.im29 = im29;
+        setIm2901x(im29.equals("1") ? this.im2901x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im29);
     }
 
@@ -3038,6 +3087,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3201(String im3201) {
+        if (this.im3201.equals(im3201)) return; // for all checkboxes
         this.im3201 = im3201;
         notifyPropertyChanged(BR.im3201);
     }
@@ -3048,6 +3098,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3202(String im3202) {
+        if (this.im3202.equals(im3202)) return; // for all checkboxes
         this.im3202 = im3202;
         notifyPropertyChanged(BR.im3202);
     }
@@ -3058,6 +3109,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3203(String im3203) {
+        if (this.im3203.equals(im3203)) return; // for all checkboxes
         this.im3203 = im3203;
         notifyPropertyChanged(BR.im3203);
     }
@@ -3068,6 +3120,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3204(String im3204) {
+        if (this.im3204.equals(im3204)) return; // for all checkboxes
         this.im3204 = im3204;
         notifyPropertyChanged(BR.im3204);
     }
@@ -3078,6 +3131,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3205(String im3205) {
+        if (this.im3205.equals(im3205)) return; // for all checkboxes
         this.im3205 = im3205;
         notifyPropertyChanged(BR.im3205);
     }
@@ -3088,6 +3142,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3206(String im3206) {
+        if (this.im3206.equals(im3206)) return; // for all checkboxes
         this.im3206 = im3206;
         notifyPropertyChanged(BR.im3206);
     }
@@ -3098,6 +3153,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3207(String im3207) {
+        if (this.im3207.equals(im3207)) return; // for all checkboxes
         this.im3207 = im3207;
         notifyPropertyChanged(BR.im3207);
     }
@@ -3108,6 +3164,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3208(String im3208) {
+        if (this.im3208.equals(im3208)) return; // for all checkboxes
         this.im3208 = im3208;
         notifyPropertyChanged(BR.im3208);
     }
@@ -3118,6 +3175,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3209(String im3209) {
+        if (this.im3209.equals(im3209)) return; // for all checkboxes
         this.im3209 = im3209;
         notifyPropertyChanged(BR.im3209);
     }
@@ -3128,6 +3186,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3210(String im3210) {
+        if (this.im3210.equals(im3210)) return; // for all checkboxes
         this.im3210 = im3210;
         notifyPropertyChanged(BR.im3210);
     }
@@ -3138,6 +3197,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3211(String im3211) {
+        if (this.im3211.equals(im3211)) return; // for all checkboxes
         this.im3211 = im3211;
         notifyPropertyChanged(BR.im3211);
     }
@@ -3148,6 +3208,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3212(String im3212) {
+        if (this.im3212.equals(im3212)) return; // for all checkboxes
         this.im3212 = im3212;
         notifyPropertyChanged(BR.im3212);
     }
@@ -3158,6 +3219,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3213(String im3213) {
+        if (this.im3213.equals(im3213)) return; // for all checkboxes
         this.im3213 = im3213;
         notifyPropertyChanged(BR.im3213);
     }
@@ -3168,7 +3230,22 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3298(String im3298) {
+        if (this.im3298.equals(im3298)) return; // for all checkboxes
         this.im3298 = im3298;
+        setIm3201(im3298.equals("98") ? "" : this.im3201);
+        setIm3202(im3298.equals("98") ? "" : this.im3202);
+        setIm3203(im3298.equals("98") ? "" : this.im3203);
+        setIm3204(im3298.equals("98") ? "" : this.im3204);
+        setIm3205(im3298.equals("98") ? "" : this.im3205);
+        setIm3206(im3298.equals("98") ? "" : this.im3206);
+        setIm3207(im3298.equals("98") ? "" : this.im3207);
+        setIm3208(im3298.equals("98") ? "" : this.im3208);
+        setIm3209(im3298.equals("98") ? "" : this.im3209);
+        setIm3210(im3298.equals("98") ? "" : this.im3210);
+        setIm3211(im3298.equals("98") ? "" : this.im3211);
+        setIm3212(im3298.equals("98") ? "" : this.im3212);
+        setIm3213(im3298.equals("98") ? "" : this.im3213);
+        setIm3296(im3298.equals("98") ? "" : this.im3296);
         notifyPropertyChanged(BR.im3298);
     }
 
@@ -3178,7 +3255,9 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm3296(String im3296) {
+        if (this.im3296.equals(im3296)) return; // for all checkboxes
         this.im3296 = im3296;
+        setIm3296x(im3296.equals("96") ? this.im3296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im3296);
     }
 
