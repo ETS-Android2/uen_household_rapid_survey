@@ -2223,6 +2223,25 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG102(String g102) {
         this.g102 = g102;
+        setG10301(g102.equals("1") ? this.g10301 : "");
+        setG10302(g102.equals("1") ? this.g10302 : "");
+        setG10303(g102.equals("1") ? this.g10303 : "");
+        setG10304(g102.equals("1") ? this.g10304 : "");
+        setG10305(g102.equals("1") ? this.g10305 : "");
+        setG10306(g102.equals("1") ? this.g10306 : "");
+        setG10307(g102.equals("1") ? this.g10307 : "");
+        setG10308(g102.equals("1") ? this.g10308 : "");
+        setG10309(g102.equals("1") ? this.g10309 : "");
+        setG10310(g102.equals("1") ? this.g10310 : "");
+        setG10311(g102.equals("1") ? this.g10311 : "");
+        setG10312(g102.equals("1") ? this.g10312 : "");
+        setG10313(g102.equals("1") ? this.g10313 : "");
+        setG10314(g102.equals("1") ? this.g10314 : "");
+        setG10396(g102.equals("1") ? this.g10396 : "");
+        setG105(g102.equals("1") ? this.g105 : "");
+        setG106(g102.equals("1") ? this.g106 : "" );
+        setG107(g102.equals("1") ? this.g107 : "");
+
         notifyPropertyChanged(BR.g102);
     }
 
@@ -2398,6 +2417,7 @@ public class MWRA extends BaseObservable implements Observable {
     public void setG10396(String g10396) {
         if (this.g10396.equals(g10396)) return;     // For all checkboxes
         this.g10396 = g10396;
+        setG10396x(g10396.equals("96") ? this.g10396x : "");
         notifyPropertyChanged(BR.g10396);
     }
 
@@ -2438,6 +2458,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG105(String g105) {
         this.g105 = g105;
+        setG10501x(g105.equals("1") ? this.g10501x : "");
         notifyPropertyChanged(BR.g105);
     }
 
@@ -2468,6 +2489,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG107(String g107) {
         this.g107 = g107;
+        setG10701x(g107.equals("1") ? this.g10701x : "");
         notifyPropertyChanged(BR.g107);
     }
 
@@ -2508,6 +2530,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG110(String g110) {
         this.g110 = g110;
+        setG126(g110.equals("1") ? this.g126 : "");
         notifyPropertyChanged(BR.g110);
     }
 
@@ -2528,6 +2551,9 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG113(String g113) {
         this.g113 = g113;
+        setG114(g113.equals("1") ? this.g114 : "");
+        setG115(g113.equals("1") ? this.g115 : "");
+        setG116(g113.equals("1") ? this.g116 : "");
         notifyPropertyChanged(BR.g113);
     }
 
@@ -2558,6 +2584,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG115(String g115) {
         this.g115 = g115;
+        setG116(g115.equals("1") ? this.g116 : "");
         notifyPropertyChanged(BR.g115);
     }
 
@@ -2578,6 +2605,9 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG117(String g117) {
         this.g117 = g117;
+        setG117hx(g117.equals("1") ? this.g117hx : "");
+        setG117mx(g117.equals("2") ? this.g117mx : "");
+        setG117dx(g117.equals("3") ? this.g117dx : "");
         notifyPropertyChanged(BR.g117);
     }
 
@@ -2627,7 +2657,9 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setG11801(String g11801) {
+        if (this.g11801.equals(g11801)) return;     // For all checkboxes
         this.g11801 = g11801;
+        setG11801x(g11801.equals("1") ? this.g11801x : "");
         notifyPropertyChanged(BR.g11801);
     }
 
@@ -2647,7 +2679,9 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setG11802(String g11802) {
+        if (this.g11802.equals(g11802)) return;     // For all checkboxes
         this.g11802 = g11802;
+        setG11802x(g11802.equals("2") ? this.g11802x : "");
         notifyPropertyChanged(BR.g11802);
     }
 
@@ -2657,6 +2691,7 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setG11802x(String g11802x) {
+
         this.g11802x = g11802x;
         notifyPropertyChanged(BR.g11802x);
     }
@@ -2667,7 +2702,9 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setG11803(String g11803) {
+        if (this.g11803.equals(g11803)) return;     // For all checkboxes
         this.g11803 = g11803;
+        setG11803x(g11803.equals("3") ? this.g11803x : "");
         notifyPropertyChanged(BR.g11803);
     }
 
@@ -2687,6 +2724,7 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     public void setG11804(String g11804) {
+        setG11804x(g11804.equals("4") ? this.g11804x : "");
         this.g11804 = g11804;
         notifyPropertyChanged(BR.g11804);
     }
@@ -2708,6 +2746,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG11896(String g11896) {
         this.g11896 = g11896;
+        setG11896x(g11896.equals("96") ? this.g11896x : "");
         notifyPropertyChanged(BR.g11896);
     }
 
@@ -2729,6 +2768,22 @@ public class MWRA extends BaseObservable implements Observable {
     public void setG11898(String g11898) {
         if (this.g11898.equals(g11898)) return;     // For all checkboxes
         this.g11898 = g11898;
+
+        setG11801(g11898.equals("98") ? "" : this.g11801);
+        setG11801x(g11898.equals("98") ? "" : this.g11801x);
+
+        setG11802(g11898.equals("98") ? "" : this.g11802);
+        setG11802x(g11898.equals("98") ? "" : this.g11802x);
+        setG11803(g11898.equals("98") ? "" : this.g11803);
+        setG11803x(g11898.equals("98") ? "" : this.g11803x);
+        setG11804(g11898.equals("98") ? "" : this.g11804);
+        setG11804x(g11898.equals("98") ? "" : this.g11804x);
+        setG11896(g11898.equals("98") ? "" : this.g11896);
+        setG11896x(g11898.equals("98") ? "" : this.g11896x);
+
+
+
+
         notifyPropertyChanged(BR.g11898);
     }
 
