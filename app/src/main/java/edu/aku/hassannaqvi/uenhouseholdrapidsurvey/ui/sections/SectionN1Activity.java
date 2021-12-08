@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -17,19 +16,20 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionF1Binding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionM1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionN1Binding;
 
-public class SectionM1Activity extends AppCompatActivity {
+public class SectionN1Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionM1Activity";
-    ActivitySectionM1Binding bi;
+    private static final String TAG = "SectionN1Activity";
+    ActivitySectionN1Binding bi;
     private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_m1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_n1);
         bi.setForm(form);
         setupSkips();
         setSupportActionBar(bi.toolbar);
