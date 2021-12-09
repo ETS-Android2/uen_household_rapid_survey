@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,13 +13,23 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.adapters.PregAdapter;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityPregnancyListBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1AActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1BActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE2AActivity;
 
 
 public class PregnancyListActivity extends AppCompatActivity {
@@ -48,10 +59,10 @@ public class PregnancyListActivity extends AppCompatActivity {
                                         (age >= 14 && age < 50 && !notMarried && isFemale )
 
                         ) {*/
-                     //   MainApp.pregList.add(MainApp.preg);
+                        MainApp.pregList.add(MainApp.pregD);
 
                         MainApp.pregCount++;
-                        //   pregAdapter.notifyItemInserted(MainApp.pregList.size() - 1);
+                        pregAdapter.notifyItemInserted(MainApp.pregList.size() - 1);
                         //  Collections.sort(MainApp.fm, new SortByStatus());
                         //fmAdapter.notifyDataSetChanged();
 
@@ -75,22 +86,22 @@ public class PregnancyListActivity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
 
         db = MainApp.appInfo.dbHelper;
-/*        MainApp.pregList = new ArrayList<>();
+        MainApp.pregList = new ArrayList<>();
         Log.d(TAG, "onCreate: preglist " + MainApp.pregList.size());
         try {
-            MainApp.pregList = db.getPregBYMUID(MainApp.mwra.getUid());
+            MainApp.pregList = db.getPregDByFmuid(MainApp.mwra.getUid());
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "JSONException(Pragnancy)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "JSONException(PregD)", Toast.LENGTH_SHORT).show();
         }
-
+ /*
         // Set Selected Preg
         for (int i = 0; i < MainApp.pregList.size(); i++) {
             if (MainApp.pregList.get(i).getIndexed().equals("1")) {
                 MainApp.selectedPreg = String.valueOf(i);
                 break;
             }
-        }
+        }*/
         MainApp.pregCount = Math.round(MainApp.pregList.size());
 
         pregAdapter = new PregAdapter(this, MainApp.pregList);
@@ -101,18 +112,22 @@ public class PregnancyListActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(view -> {
-            if (!MainApp.form.getiStatus().equals("1")) {
+            if (MainApp.form.getSynced().equals("")) {
                 //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
-                MainApp.preg = new Pregnancy();
-                // Set Pregnancy Serial No
-                MainApp.preg.setW113(String.valueOf(MainApp.pregList.size() + 1));
+                try {
+                    MainApp.pregD = db.getPregDByPsno(MainApp.allMWRAList.get(0).getUid(), String.valueOf(MainApp.pregList.size() + 1));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(PredD): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+                MainApp.pregD.setE103(String.valueOf(MainApp.pregList.size() + 1));
 
                 addPreg();
             } else {
                 Toast.makeText(PregnancyListActivity.this, "This form has been locked. You cannot add new pregren to locked forms", Toast.LENGTH_LONG).show();
             }
         });
-*/
+
     }
 
     @Override
@@ -122,13 +137,13 @@ public class PregnancyListActivity extends AppCompatActivity {
 
         //MainApp.mwra = new MWRA();
         //MainApp.preg = new Preg();
-  /*      if (MainApp.pregList.size() > 0) {
+        if (MainApp.pregList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
             bi.btnContinue.setVisibility(View.VISIBLE);
             bi.btnContinue.setEnabled(true);
             //bi.btnRand.setVisibility(View.VISIBLE);
 
-        }*/
+        }
         checkCompleteFm();
 
 
@@ -139,9 +154,9 @@ public class PregnancyListActivity extends AppCompatActivity {
 
     private void checkCompleteFm() {
         //     if (!MainApp.form.getIStatus().equals("1")) {
-        //    int compCount = MainApp.pregList.size();
+        int compCount = MainApp.pregList.size();
 
-        //   MainApp.pregCountComplete = compCount;
+        MainApp.pregCountComplete = compCount;
         //   bi.btnContinue.setVisibility(compCount == mwraCount && !form.getiStatus().equals("1")? View.VISIBLE : View.GONE);
      /*   bi.btnContinue.setVisibility(compCount >= mwraCount ? View.VISIBLE : View.GONE);
         bi.btnContinue.setEnabled(bi.btnContinue.getVisibility()==View.VISIBLE);*/
@@ -152,24 +167,32 @@ public class PregnancyListActivity extends AppCompatActivity {
     }
 
     public void addPreg() {
-     /*   Intent intent = new Intent(this, SectionW1bActivity.class);
+        Intent intent = new Intent(this, SectionE1BActivity.class);
         //   finish();
         MemberInfoLauncher.launch(intent);
     }
 
     public void btnContinue(View view) {
 
-        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+        MainApp.allMWRAList.remove(0);
         MainApp.pregList = new ArrayList<>();
+
+        if (MainApp.allMWRAList.size() > 0) {
+            startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
+        } else {
+            // if no more pregnancy and no more mwra than go to E2
+            startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
+
+        }        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+
         finish();
-        startActivity(new Intent(this, SectionW2Activity.class).putExtra("complete", true));
-*/
+
     }
 
     public void btnEnd(View view) {
 
         finish();
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         /*   } else {
                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
            }*/

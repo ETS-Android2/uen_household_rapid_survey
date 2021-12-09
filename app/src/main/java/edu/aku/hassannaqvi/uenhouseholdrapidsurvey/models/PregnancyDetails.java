@@ -33,7 +33,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
     private String sysDate = _EMPTY_;
     private String clusterCode = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String sno = _EMPTY_;
+    private String pSno = _EMPTY_;
     private String msno = _EMPTY_;
     private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -146,12 +146,12 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         this.hhid = hhid;
     }
 
-    public String getSno() {
-        return sno;
+    public String getPSno() {
+        return pSno;
     }
 
-    public void setSno(String sno) {
-        this.sno = sno;
+    public void setPSno(String pSno) {
+        this.pSno = pSno;
     }
 
     public String getIndexed() {
@@ -481,7 +481,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_PSU_CODE, this.clusterCode);
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_HHID, this.hhid);
-        json.put(TableContracts.PregnancyDetailsTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.PregnancyDetailsTable.COLUMN_PSNO, this.pSno);
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_M_SNO, this.msno);
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.PregnancyDetailsTable.COLUMN_SYSDATE, this.sysDate);
@@ -532,7 +532,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_INDEXED));
         this.clusterCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_HHID));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_SNO));
+        this.pSno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_PSNO));
         this.msno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_M_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyDetailsTable.COLUMN_SYSDATE));

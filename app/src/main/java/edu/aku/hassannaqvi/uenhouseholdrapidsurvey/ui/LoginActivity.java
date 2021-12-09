@@ -43,7 +43,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -444,7 +443,7 @@ public class LoginActivity extends AppCompatActivity {
     private void settingCountryCode() {
 
 
-        Collection<Villages> countries = db.getAllCountries();
+        List<Villages> countries = db.getAllCountries();
 
         countryNameList = new ArrayList<>();
         countryCodeList = new ArrayList<>();

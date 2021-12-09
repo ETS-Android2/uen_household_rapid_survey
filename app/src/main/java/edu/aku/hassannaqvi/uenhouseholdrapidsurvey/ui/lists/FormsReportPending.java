@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +21,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 
 public class FormsReportPending extends AppCompatActivity {
     DatabaseHelper db;
-    Collection<Form> fc;
+    List<Form> fc;
     String sysdateToday = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     ActivityFormsReportBinding bi;
     private RecyclerView.Adapter formsAdapter;
@@ -47,7 +46,7 @@ public class FormsReportPending extends AppCompatActivity {
         fc = db.getPendingForms();
 
         // specify an adapter (see also next example)
-        formsAdapter = new FormsAdapter((List<Form>) fc, this);
+        formsAdapter = new FormsAdapter(fc, this);
         bi.fcRecyclerView.setAdapter(formsAdapter);
     }
 
