@@ -1096,6 +1096,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- g113  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVg113"
@@ -1133,8 +1134,8 @@
 
                             <RadioButton
                                 android:id="@+id/g11301"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g113.equals(`1`)}"
                                 android:onClick="@{()->mwra.setG113(`1`)}"
@@ -1142,8 +1143,8 @@
 
                             <RadioButton
                                 android:id="@+id/g11302"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g113.equals(`2`)}"
                                 android:onClick="@{()->mwra.setG113(`2`)}"
@@ -1151,14 +1152,17 @@
 
                             <RadioButton
                                 android:id="@+id/g11398"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g113.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG113(`98`)}"
                                 android:text="@string/g11398" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1278,9 +1282,13 @@
                                 android:tag="g11496"
                                 android:text="@={mwra.g11496x}"
                                 android:visibility="@{mwra.g114.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- g115  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1320,8 +1328,8 @@
 
                             <RadioButton
                                 android:id="@+id/g11501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g115.equals(`1`)}"
                                 android:onClick="@{()->mwra.setG115(`1`)}"
@@ -1329,15 +1337,19 @@
 
                             <RadioButton
                                 android:id="@+id/g11502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g115.equals(`2`)}"
                                 android:onClick="@{()->mwra.setG115(`2`)}"
                                 android:text="@string/g11502" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- g116  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1413,9 +1425,13 @@
                                 android:checked="@{mwra.g116.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG116(`98`)}"
                                 android:text="@string/g11698" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- g117  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1451,7 +1467,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1481,6 +1496,7 @@
                                     app:maxValue="100"
                                     app:minValue="0"
                                     app:type="range" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1554,9 +1570,13 @@
                                 android:checked="@{mwra.g117.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG117(`98`)}"
                                 android:text="@string/g11798" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- g118  CheckBox   -->
                 <androidx.cardview.widget.CardView
