@@ -40,6 +40,12 @@ public class SectionE1AActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(PregM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+        // Name
+        MainApp.pregM.setE101a(MainApp.allMWRAList.get(0).getD102());
+        // SNO
+        MainApp.pregM.setE101b(MainApp.allMWRAList.get(0).getD101());
+        // FMUID
+        MainApp.pregM.setFmuid(MainApp.allMWRAList.get(0).getUid());
         bi.setPregM(MainApp.pregM);
 
     }
@@ -48,7 +54,6 @@ public class SectionE1AActivity extends AppCompatActivity {
 
     private boolean insertNewRecord() {
         if (!MainApp.pregM.getUid().equals("") || MainApp.superuser) return true;
-
         MainApp.pregM.populateMeta();
         long rowId = 0;
         try {
@@ -74,7 +79,7 @@ public class SectionE1AActivity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         int updcount = 0;
         try {
-            db.updatesPregnancyMasterColumn(TableContracts.PregnancyMasterTable.COLUMN_SE1, MainApp.pregM.sE1toString());
+            updcount = db.updatesPregnancyMasterColumn(TableContracts.PregnancyMasterTable.COLUMN_SE1, MainApp.pregM.sE1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
