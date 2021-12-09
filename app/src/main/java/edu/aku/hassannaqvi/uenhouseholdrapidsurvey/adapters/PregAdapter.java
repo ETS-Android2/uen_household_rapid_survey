@@ -47,10 +47,9 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         PregnancyDetails preg = this.pregList.get(position);        // Get element from your dataset at this position and replace the contents of the view
         // with that element
 
-        TextView w114 = viewHolder.w114;
-        TextView w115 = viewHolder.w115;
-        TextView w116 = viewHolder.w116;
-        TextView w117 = viewHolder.w117;
+        TextView e106 = viewHolder.e106;
+        TextView e105 = viewHolder.e105;
+        TextView e109 = viewHolder.e109;
         TableRow itemRow = viewHolder.itemRow;
  /*       TextView fAge = viewHolder.fAge;
         // LinearLayout subItem = viewHolder.subItem;
@@ -95,33 +94,33 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         }*/
 
         String birthStatus = "";
-      /*  switch (preg.getW115()) {
+        switch (preg.getE105()) {
             case "1":
-                birthStatus = mContext.getString(R.string.w115a);
+                birthStatus = mContext.getString(R.string.e10501);
                 break;
             case "2":
-                birthStatus = mContext.getString(R.string.w115b);
+                birthStatus = mContext.getString(R.string.e10502);
                 break;
             case "3":
-                birthStatus = mContext.getString(R.string.w115c);
+                birthStatus = mContext.getString(R.string.e10503);
                 break;
             case "4":
-                birthStatus = mContext.getString(R.string.w115d);
+                birthStatus = mContext.getString(R.string.e10504);
                 break;
             case "5":
-                birthStatus = mContext.getString(R.string.w115e);
+                birthStatus = mContext.getString(R.string.e10505);
                 break;
             case "6":
-                birthStatus = mContext.getString(R.string.w115f);
+                birthStatus = mContext.getString(R.string.e10506);
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + preg.getW115());
-        }*/
+                throw new IllegalStateException("Unexpected value: " + preg.getE105());
+        }
 
-/*
+
         String curStatus = "";
         Log.d(TAG, "onBindViewHolder: ");
-        switch (preg.getW116()) {
+        switch (preg.getE109()) {
             case "1":
                 curStatus = "  Alive  ";
                 break;
@@ -133,17 +132,24 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
                 break;
         }
 
-        w114.setText(preg.getW114d() + "-" + preg.getW114m() + "-" + preg.getW114y());
-        w115.setText(birthStatus);
-        w116.setText(curStatus);
-        if ((preg.getW116().equals("1"))) {
-            w117.setText((preg.getW117y() + "y/" + preg.getW117m() + "m/" + preg.getW117d() + "d"));
-        } else if (!preg.getW116().equals("")) {
-            w117.setText("(at death)\r\n" + preg.getW118y() + "y/" + preg.getW118m() + "m/" + preg.getW118d() + "d");
-        } else {
-            w117.setText("  ----  ");
+        // Date of Outcome
+        e106.setText(preg.getE106d() + "-" + preg.getE106m() + "-" + preg.getE106y());
 
-        }*/
+        // Child status at birth
+        e105.setText(birthStatus);
+
+        // Current status of child
+        e109.setText(curStatus);
+
+
+        if ((preg.getE109().equals("1"))) {
+            e106.setText((preg.getE106y() + "y/" + preg.getE106m() + "m/" + preg.getE106d() + "d"));
+        } else if (!preg.getE109().equals("")) {
+            e106.setText("(at death)\r\n" + preg.getE110y() + "y/" + preg.getE110m() + "m/" + preg.getE110d() + "d");
+        } else {
+            e106.setText("  ----  ");
+
+        }
 
 
         itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getResources().getColor(R.color.grayLight) : mContext.getResources().getColor(R.color.white));
@@ -263,10 +269,9 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
      * Provide a reference to the type of views that you are using (custom ViewHolder)
      */
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView w114;
-        private final TextView w115;
-        private final TextView w116;
-        private final TextView w117;
+        private final TextView e106;
+        private final TextView e105;
+        private final TextView e109;
         private final TableRow itemRow;
         //private final TextView addSec;
         //private final LinearLayout subItem;
@@ -277,10 +282,9 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
 
         public ViewHolder(View v) {
             super(v);
-            w114 = v.findViewById(R.id.w114);
-            w115 = v.findViewById(R.id.w115);
-            w116 = v.findViewById(R.id.w116);
-            w117 = v.findViewById(R.id.w117);
+            e106 = v.findViewById(R.id.e106);
+            e105 = v.findViewById(R.id.e105);
+            e109 = v.findViewById(R.id.e109);
             itemRow = v.findViewById(R.id.itemRow);
             //  addSec = v.findViewById(R.id.cadd_section);
             //  subItem = v.findViewById(R.id.csubitem);
@@ -293,8 +297,7 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
 
-                 /*   Log.d(TAG, "Element " + getBindingAdapterPosition() + " clicked.");
-                    if (subItem.getVisibility()==View.VISIBLE)
+                  /*  if (subItem.getVisibility()==View.VISIBLE)
                         subItem.setVisibility(View.GONE);
                     else
                         subItem.setVisibility(View.VISIBLE);*/

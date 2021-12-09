@@ -34,6 +34,9 @@ public class SectionE1BActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.reproductivehealth_mainheading);
         db = MainApp.appInfo.dbHelper;
+
+        // FMUID
+        MainApp.pregD.setFmuid(MainApp.allMWRAList.get(0).getUid());
         bi.setPregD(pregD);
         setupSkips();
     }

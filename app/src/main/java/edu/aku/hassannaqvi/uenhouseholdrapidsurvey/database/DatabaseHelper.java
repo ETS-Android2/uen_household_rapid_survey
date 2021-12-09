@@ -228,7 +228,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyMasterTable.COLUMN_PROJECT_NAME, pregM.getProjectName());
         values.put(PregnancyMasterTable.COLUMN_UID, pregM.getUid());
         values.put(PregnancyMasterTable.COLUMN_UUID, pregM.getUuid());
-        values.put(PregnancyMasterTable.COLUMN_MUID, pregM.getMuid());
         values.put(PregnancyMasterTable.COLUMN_FMUID, pregM.getFmuid());
         values.put(PregnancyMasterTable.COLUMN_PSU_CODE, pregM.getClusterCode());
         values.put(PregnancyMasterTable.COLUMN_HHID, pregM.getHhid());
@@ -244,9 +243,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyMasterTable.COLUMN_SYNCED_DATE, pregM.getSyncDate());
 
         long newRowId;
-        newRowId = db.insert(
-                PregnancyDetailsTable.TABLE_NAME,
-                PregnancyDetailsTable.COLUMN_NAME_NULLABLE,
+        newRowId = db.insertOrThrow(
+                PregnancyMasterTable.TABLE_NAME,
+                PregnancyMasterTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -257,7 +256,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyDetailsTable.COLUMN_PROJECT_NAME, pregD.getProjectName());
         values.put(PregnancyDetailsTable.COLUMN_UID, pregD.getUid());
         values.put(PregnancyDetailsTable.COLUMN_UUID, pregD.getUuid());
-        values.put(PregnancyDetailsTable.COLUMN_MUID, pregD.getMuid());
         values.put(PregnancyDetailsTable.COLUMN_FMUID, pregD.getFmuid());
         values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregD.getClusterCode());
         values.put(PregnancyDetailsTable.COLUMN_HHID, pregD.getHhid());
@@ -2025,7 +2023,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause;
         whereClause =
                 PregnancyDetailsTable.COLUMN_UUID + "=? AND " +
-                        PregnancyDetailsTable.COLUMN_FMUID + "=? AND" +
+                        PregnancyDetailsTable.COLUMN_FMUID + "=? AND " +
                         PregnancyDetailsTable.COLUMN_PSNO + "=?";
 
         String[] whereArgs = {MainApp.form.getUid(), fmuid, pSno};
@@ -2112,7 +2110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         MaternalMortality mortality = new MaternalMortality();  // Pregnancies can never be null.
 
         c = db.query(
-                PregnancyDetailsTable.TABLE_NAME,  // The table to query
+                MaternalMortalityTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
                 whereClause,               // The columns for the WHERE clause
                 whereArgs,                 // The values for the WHERE clause

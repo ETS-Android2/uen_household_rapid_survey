@@ -27,9 +27,6 @@ public class SectionE2AActivity extends AppCompatActivity {
     ActivitySectionE2ABinding bi;
     private DatabaseHelper db;
 
-    {
-        Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +42,7 @@ public class SectionE2AActivity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         int updcount = 0;
         try {
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE2, MainApp.form.sE2toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE2, MainApp.form.sE2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

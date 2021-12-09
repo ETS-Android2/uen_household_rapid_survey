@@ -89,7 +89,7 @@ public class PregnancyListActivity extends AppCompatActivity {
         MainApp.pregList = new ArrayList<>();
         Log.d(TAG, "onCreate: preglist " + MainApp.pregList.size());
         try {
-            MainApp.pregList = db.getPregDByFmuid(MainApp.mwra.getUid());
+            MainApp.pregList = db.getPregDByFmuid(MainApp.allMWRAList.get(0).getUid());
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(PregD)", Toast.LENGTH_SHORT).show();

@@ -218,7 +218,6 @@
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
 
 

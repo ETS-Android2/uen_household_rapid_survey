@@ -68,7 +68,7 @@ public class SectionE2BActivity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            db.updatesMortalityColumn(TableContracts.MaternalMortalityTable.COLUMN_SE2, MainApp.mortality.sE2toString());
+            updcount = db.updatesMortalityColumn(TableContracts.MaternalMortalityTable.COLUMN_SE2, MainApp.mortality.sE2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
