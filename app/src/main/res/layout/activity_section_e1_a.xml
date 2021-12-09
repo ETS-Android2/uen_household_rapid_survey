@@ -105,13 +105,13 @@
 
 
                                 <TextView
-                                    android:id="@+id/bs2line"
+                                    android:id="@+id/e101b"
                                     style="@style/sub_labels"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:enabled="false"
                                     android:gravity="center"
-                                    android:text="@={pregM.e101a}" />
+                                    android:text="@={pregM.e101b}" />
                             </LinearLayout>
 
                             <LinearLayout

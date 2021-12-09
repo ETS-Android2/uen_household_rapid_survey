@@ -41,6 +41,7 @@ public class SectionD1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectiondhouseholdmemberinformation_mainheading);
         db = MainApp.appInfo.dbHelper;
+    //    MainApp.allMWRAList = new ArrayList<>();
         familyMember.setD101(String.valueOf(memberCount + 1));
         bi.setMember(familyMember);
         populateSpinner();
