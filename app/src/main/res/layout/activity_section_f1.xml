@@ -116,7 +116,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.f101.equals(`2`)}"
-                                android:onClick="@{()->mwra.setF101(`2`)}"
+                                android:onClick="@{()->mwra.setF101(`2`) + f101b.clearCheck() + f107.clearCheck() + f108.clearCheck() + f11001.clearCheck() + f11002.clearCheck() + f11003.clearCheck() + f11004.clearCheck() + f11005.clearCheck() + f11006.clearCheck() + f11007.clearCheck() + f11008.clearCheck() + f11009.clearCheck() + f11096.clearCheck()}"
                                 android:text="@string/f10102" />
 
                         </RadioGroup>
@@ -370,7 +370,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.f101b.equals(`98`)}"
-                                    android:onClick="@{()->mwra.setF101b(`98`)}"
+                                    android:onClick="@{()->mwra.setF101b(`98`) + f107.clearCheck() + f108.clearCheck() + f11001.clearCheck() + f11002.clearCheck() + f11003.clearCheck() + f11004.clearCheck() + f11005.clearCheck() + f11006.clearCheck() + f11007.clearCheck() + f11008.clearCheck() + f11009.clearCheck() + f11096.clearCheck()}"
                                     android:text="@string/f101b98" />
 
                             </RadioGroup>
@@ -1341,7 +1341,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.f112.equals(`2`)}"
-                                android:onClick="@{()->mwra.setF112(`2`)}"
+                                android:onClick="@{()->mwra.setF112(`2`) + f113.clearCheck()}"
                                 android:text="@string/f11202" />
 
                             <RadioButton
@@ -1350,7 +1350,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.f112.equals(`98`)}"
-                                android:onClick="@{()->mwra.setF112(`98`)}"
+                                android:onClick="@{()->mwra.setF112(`98`) + f113.clearCheck()}"
                                 android:text="@string/f11298" />
 
                         </RadioGroup>
@@ -1501,7 +1501,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.f114.equals(`2`)}"
-                                android:onClick="@{()->mwra.setF114(`2`)}"
+                                android:onClick="@{()->mwra.setF114(`2`) + f116.clearCheck() + f117.clearCheck() + f119.clearCheck() + f120.clearCheck()}"
                                 android:text="@string/f11402" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1824,7 +1824,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.f119.equals(`1`)}"
-                                    android:onClick="@{()->mwra.setF119(`1`)}"
+                                    android:onClick="@{()->mwra.setF119(`1`) + f120.clearCheck()}"
                                     android:text="@string/f11901" />
 
                                 <RadioButton
@@ -1963,7 +1963,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f121a.equals(`1`)}"
-                                android:onClick="@{()->mwra.setF121a(`1`)}"
+                                android:onClick="@{()->mwra.setF121a(`1`) + f121b.clearCheck()}"
                                 android:text="@string/f121a01" />
 
                             <RadioButton
@@ -1972,7 +1972,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f121a.equals(`2`)}"
-                                android:onClick="@{()->mwra.setF121a(`2`)}"
+                                android:onClick="@{()->mwra.setF121a(`2`) + f122.clearCheck()}"
                                 android:text="@string/f121a02" />
                         </RadioGroup>
                     </LinearLayout>
@@ -2385,7 +2385,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f12807.equals(`7`)}"
-                                android:onClick="@{()->mwra.setF12807(mwra.f12807.equals(`7`)?``:`7`)}"
+                                android:onClick="@{()->mwra.setF12807(mwra.f12807.equals(`7`)?``:`7`) + f129.clearCheck()}"
 
                                 android:text="@string/f12807" />
                         </LinearLayout>
@@ -2449,7 +2449,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.f129.equals(`2`)}"
-                                    android:onClick="@{()->mwra.setF129(`2`)}"
+                                    android:onClick="@{()->mwra.setF129(`2`) + f131.clearCheck()}"
                                     android:text="@string/f12902" />
                             </RadioGroup>
                         </LinearLayout>
