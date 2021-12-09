@@ -53,7 +53,7 @@
     <string name="downloading" translatable="false">Downloading</string>
     <string name="available" translatable="false">Available</string>
     <string name="downError" translatable="false">Cant download.. Internet connectivity issue!</string>
-    <string name="backBtn" translatable="false">Press Back again to Exit</string>
+    <string name="backbtn" translatable="false">Press Back again to Exit</string>
     <string name="noNetwork" translatable="false">No network connection available!</string>
     <string name="appAvailable" translatable="false">APP is available!</string>
     <string name="oldAppMsg" translatable="false">App Ver." + " is now available. Your are currently using older Ver."</string>
@@ -64,10 +64,10 @@
     <string name="updatingError" translatable="false">Error in updating db!!</string>
     <string name="updateDbError1" translatable="false">"Sorry. You can't go further."</string>
     <string name="updateDbError2" translatable="false">"Please contact IT Team (Failed to update DB)"</string>
-    <string name="bckBtn" translatable="false">You Cant go back</string>
+    <string name="bckbtn" translatable="false">You Cant go back</string>
     <string name="processing" translatable="false">Processing</string>
     <string name="confirmation" translatable="false">Confirmation!</string>
-    <string name="cntBtn" translatable="false">Are you sure, you want to continue - interview</string>
+    <string name="cntbtn" translatable="false">Are you sure, you want to continue - interview</string>
     <string name="failedUpdateDb" translatable="false">SORRY! Failed to update DB</string>
     <string name="invalidDate" translatable="false">Invalid date!</string>
     <string name="ageCalc" translatable="false">"Both Month and Year don't be zero!!"</string>

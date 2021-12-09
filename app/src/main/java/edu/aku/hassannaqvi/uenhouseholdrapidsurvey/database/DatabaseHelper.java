@@ -185,7 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_SYNCED_DATE, mwra.getSyncDate());
 
         long newRowId;
-        newRowId = db.insert(
+        newRowId = db.insertOrThrow(
                 MwraTable.TABLE_NAME,
                 MwraTable.COLUMN_NAME_NULLABLE,
                 values);
@@ -1881,7 +1881,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = MwraTable.COLUMN_ID + " ASC";
 
-        MWRA mwra = null;
+        MWRA mwra = new MWRA();
 
         c = db.query(
                 MwraTable.TABLE_NAME,  // The table to query

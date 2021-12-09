@@ -39,7 +39,7 @@ public class SectionIMA_Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SIM, MainApp.child.sIMtoString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SIM, MainApp.child.sIMtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -51,7 +51,7 @@ public class SectionIMA_Activity extends AppCompatActivity {
         }
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
@@ -61,7 +61,7 @@ public class SectionIMA_Activity extends AppCompatActivity {
         }
     }
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
