@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.main">
+
         <activity
             android:name=".ui.sections.SectionIMB_Activity"
             android:exported="true" />
-        <activity
-            android:name=".ui.sections.SectionO1Activity"
-            android:exported="true" />
+
+
         <activity
             android:name=".ui.sections.SectionA1Activity"
             android:screenOrientation="portrait"
