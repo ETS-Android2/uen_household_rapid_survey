@@ -341,16 +341,16 @@
 
                                 <RadioButton
                                     android:id="@+id/f101b01"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
+                                    android:layout_weight="2"
                                     android:checked="@{mwra.f101b.equals(`1`)}"
                                     android:onClick="@{()->mwra.setF101b(`1`)}"
                                     android:text="@string/f101b01" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f101b01x"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{mwra.f101b.equals(`1`)}"
@@ -366,7 +366,7 @@
 
                                 <RadioButton
                                     android:id="@+id/f101b98"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.f101b.equals(`98`)}"
@@ -811,7 +811,7 @@
                                             android:maxLength="1"
                                             android:tag="f108m"
                                             android:text="@={mwra.f108mx}"
-                                            android:visibility="@{mwra.f108.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                            android:enabled="@{mwra.f108.equals(`2`)}"
                                             app:maxValue="9"
                                             app:minValue="0"
                                             app:type="range" />
