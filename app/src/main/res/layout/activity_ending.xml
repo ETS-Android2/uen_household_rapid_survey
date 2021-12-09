@@ -170,7 +170,7 @@
                         android:background="@drawable/capsule"
                         android:backgroundTint="@color/colorAccentOverlay"
                         android:backgroundTintMode="src_atop"
-                        android:onClick="BtnEnd"
+                        android:onClick="btnEnd"
                         android:text="Save"
                         android:textColor="@color/white"
                         android:textSize="18sp"

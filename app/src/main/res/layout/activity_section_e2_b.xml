@@ -554,7 +554,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
-                        android:onClick="BtnEnd"
+                        android:onClick="btnEnd"
                         android:text="Cancel"
                         android:textColor="@color/white" />
 
@@ -564,7 +564,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
-                        android:onClick="BtnContinue"
+                        android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
                 </LinearLayout>

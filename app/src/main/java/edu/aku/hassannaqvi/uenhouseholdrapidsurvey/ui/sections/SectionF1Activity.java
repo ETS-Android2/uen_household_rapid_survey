@@ -12,12 +12,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionF1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
 public class SectionF1Activity extends AppCompatActivity {
 
@@ -30,7 +30,6 @@ public class SectionF1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f1);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
@@ -43,16 +42,34 @@ public class SectionF1Activity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
     }
 
-    private void setupSkips() {
+    private boolean insertNewRecord() {
+        if (!MainApp.mwra.getUid().equals("") || MainApp.superuser) return true;
+        MainApp.mwra.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addMWRA(MainApp.mwra);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.mwra.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.mwra.setUid(MainApp.mwra.getDeviceId() + MainApp.mwra.getId());
+            db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_UID, MainApp.mwra.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
     }
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
-
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.MwraTable.COLUMN_SF, MainApp.mwra.sFtoString());
+            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SF, MainApp.mwra.sFtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -65,30 +82,25 @@ public class SectionF1Activity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
-        if (updateDB()) {
+        if (MainApp.mwra.getUid().equals("") ? insertNewRecord() : updateDB()) {
+
             finish();
             startActivity(new Intent(this, SectionG1Activity.class).putExtra("complete", true));
+
+
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void saveDraft() {
-    }
 
+    public void btnEnd(View view) {
 
-    public void BtnEnd(View view) {
-        if (!formValidation()) return;
-        saveDraft();
-        if (updateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
     }
 
     private boolean formValidation() {

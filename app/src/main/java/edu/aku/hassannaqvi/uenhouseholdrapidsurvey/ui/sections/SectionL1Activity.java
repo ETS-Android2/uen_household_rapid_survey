@@ -46,7 +46,7 @@ public class SectionL1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.MwraTable.COLUMN_SL, MainApp.mwra.sLtoString());
+            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SL, MainApp.mwra.sLtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -60,7 +60,7 @@ public class SectionL1Activity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
@@ -75,7 +75,7 @@ public class SectionL1Activity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {

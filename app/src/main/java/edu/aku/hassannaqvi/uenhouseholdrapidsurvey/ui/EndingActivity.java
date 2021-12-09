@@ -72,7 +72,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {

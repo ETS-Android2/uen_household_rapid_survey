@@ -135,7 +135,7 @@ public class SectionE1AActivity extends AppCompatActivity {
 
 
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
 
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));

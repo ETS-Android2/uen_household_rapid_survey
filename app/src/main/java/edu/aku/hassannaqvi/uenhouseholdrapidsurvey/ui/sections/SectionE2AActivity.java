@@ -55,7 +55,7 @@ public class SectionE2AActivity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
 
@@ -89,7 +89,7 @@ public class SectionE2AActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
 
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
