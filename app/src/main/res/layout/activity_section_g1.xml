@@ -1701,7 +1701,7 @@
                                 android:hint="@string/g11896"
                                 android:tag="g11896"
                                 android:text="@={mwra.g11896x}"
-                                android:enabled="@{mwra.g11896.equals(`96`)" />
+                                 />
                             </LinearLayout>
 
                             <CheckBox

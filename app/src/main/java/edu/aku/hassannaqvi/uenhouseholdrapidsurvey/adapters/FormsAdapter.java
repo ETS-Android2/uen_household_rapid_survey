@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONException;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
@@ -28,7 +28,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     private static final String TAG = "FormsAdapter";
     Context c;
     DatabaseHelper db;
-    private List<Form> fc = Collections.emptyList();
+    private List<Form> fc = new ArrayList<>();
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public FormsAdapter(List<Form> fc, Context c) {

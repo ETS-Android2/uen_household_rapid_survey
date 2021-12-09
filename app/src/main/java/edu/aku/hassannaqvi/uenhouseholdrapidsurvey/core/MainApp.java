@@ -102,6 +102,7 @@ public class MainApp extends Application {
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
+    public static int totalMortalities = 0;
     public static String selectedChildName = "";
     public static int pregCount = 0;
     public static int pregCountComplete = 0;
@@ -109,6 +110,8 @@ public class MainApp extends Application {
     public static PregnancyMaster pregM;
     public static PregnancyDetails pregD;
     public static List<FamilyMembers> allMWRAList;
+    public static List<PregnancyDetails> pregList;
+    public static int mortalityCounter = 0;
 
 
     public static void hideSystemUI(View decorView) {

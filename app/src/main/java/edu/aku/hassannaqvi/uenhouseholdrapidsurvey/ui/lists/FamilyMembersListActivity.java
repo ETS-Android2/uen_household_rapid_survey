@@ -359,7 +359,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionM1Activity.class).putExtra("complete", true));
 
-
     }
 
     private void proceedSelect() {

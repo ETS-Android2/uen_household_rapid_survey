@@ -1,7 +1,8 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.form;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.mortality;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,52 +19,48 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionA1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE2BBinding;
 
-public class SectionA1Activity extends AppCompatActivity {
+public class SectionE2BActivity extends AppCompatActivity {
 
-
-    private static final String TAG = "SectionA1Activity";
-    ActivitySectionA1Binding bi;
+    private static final String TAG = "SectionE2AActivity";
     private DatabaseHelper db;
+    ActivitySectionE2BBinding bi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
-        setupSkips();
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e2_b);
         setSupportActionBar(bi.toolbar);
+        setTitle(R.string.e2maternalmortalitystatus_mainheading);
         db = MainApp.appInfo.dbHelper;
-        form.setA103(MainApp.currentHousehold.getSno());
-        bi.setForm(form);
-    }
-
-    private void setupSkips() {
-
+        MainApp.mortalityCounter++;
+        bi.setMortality(mortality);
     }
 
     private boolean insertNewRecord() {
-        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
+        if (!MainApp.mortality.getUid().equals("") || MainApp.superuser) return true;
 
-        MainApp.form.populateMeta();
-
+        MainApp.mortality.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addForm(MainApp.form);
+            rowId = db.addMortality(MainApp.mortality);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.form.setId(String.valueOf(rowId));
+        MainApp.mortality.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            MainApp.mortality.setUid(MainApp.mortality.getDeviceId() + MainApp.mortality.getId());
+            db.updatesMortalityColumn(TableContracts.MaternalMortalityTable.COLUMN_UID, MainApp.mortality.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
+
     }
 
     private boolean updateDB() {
@@ -71,7 +68,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, MainApp.form.sAtoString());
+            db.updatesMortalityColumn(TableContracts.MaternalMortalityTable.COLUMN_SE2, MainApp.mortality.sE2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -81,32 +78,41 @@ public class SectionA1Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
+
     }
 
-    public void btnContinue(View view) {
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        // saveDraft();
-        if (updateDB()) {
-            Intent i;
-            //      if (bi.h111a.isChecked()) {
-            i = new Intent(this, ConsentActivity.class).putExtra("complete", true);
-           /* } else {
-                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
-            }*/
 
-            startActivity(i);
-            finish();
+    public void btnContinue(View view) {
+
+        if (!formValidation()) return;
+        if (MainApp.mortality.getUid().equals("") ? insertNewRecord() : updateDB()) {
+            if (MainApp.totalMortalities > MainApp.mortalityCounter) {
+                try {
+                    mortality = db.getMortalityBySno(String.valueOf(++MainApp.mortalityCounter));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(MaternalMortality): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+                startActivity(new Intent(this, SectionE2BActivity.class).putExtra("complete", true));
+                finish();
+
+            } else {
+
+                // if no more pregnancy and no more mwra than go to E2
+                startActivity(new Intent(this, SectionF1Activity.class).putExtra("complete", true));
+                finish();
+
+            }
         } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
 
 
     public void btnEnd(View view) {
+        setResult(Activity.RESULT_CANCELED);
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-        //startActivity(new Intent(this, MainActivity.class));
     }
 
     private boolean formValidation() {
@@ -119,6 +125,5 @@ public class SectionA1Activity extends AppCompatActivity {
         // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
     }
-
 
 }

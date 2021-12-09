@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -29,15 +28,11 @@ public class MaternalMortality extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
-    private String muid = _EMPTY_;
-    private String fmuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
-    private String msno = _EMPTY_;
-    private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -48,8 +43,8 @@ public class MaternalMortality extends BaseObservable implements Observable {
     private String syncDate = _EMPTY_;
 
     //Field Variables;
-    private String e116 = _EMPTY_;
-    private String e117 = _EMPTY_;
+/*    private String e116 = _EMPTY_;
+    private String e117 = _EMPTY_;*/
     private String e118 = _EMPTY_;
     private String e119d = _EMPTY_;
     private String e119m = _EMPTY_;
@@ -68,8 +63,6 @@ public class MaternalMortality extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setMuid(MainApp.mwra.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()); //// not applicable in Form table
 //        setMsno(MainApp.mwra.getBs1q1());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
@@ -146,30 +139,6 @@ public class MaternalMortality extends BaseObservable implements Observable {
         this.sno = sno;
     }
 
-    public String getIndexed() {
-        return indexed;
-    }
-
-    public void setIndexed(String indexed) {
-        this.indexed = indexed;
-    }
-
-    public String getMuid() {
-        return muid;
-    }
-
-    public void setMuid(String muid) {
-        this.muid = muid;
-    }
-
-    public String getFmuid() {
-        return fmuid;
-    }
-
-    public void setFmuid(String fmuid) {
-        this.fmuid = fmuid;
-    }
-
     public String getDeviceId() {
         return deviceId;
     }
@@ -234,20 +203,12 @@ public class MaternalMortality extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public String getMsno() {
-        return msno;
-    }
-
-    public void setMsno(String msno) {
-        this.msno = msno;
-    }
-
     public void setpsuCode(String psuCode) {
         this.psuCode = psuCode;
     }
 
 
-    @Bindable
+/*    @Bindable
     public String getE116() {
         return e116;
     }
@@ -275,7 +236,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
     public void setE117(String e117) {
         this.e117 = e117;
         notifyPropertyChanged(BR.e117);
-    }
+    }*/
 
 
     @Bindable
@@ -366,14 +327,11 @@ public class MaternalMortality extends BaseObservable implements Observable {
         json.put(TableContracts.MaternalMortalityTable.COLUMN_ID, this.id);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_UID, this.uid);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_UUID, this.uuid);
-        json.put(TableContracts.MaternalMortalityTable.COLUMN_MUID, this.muid);
-        json.put(TableContracts.MaternalMortalityTable.COLUMN_FMUID, this.fmuid);
+
         json.put(TableContracts.MaternalMortalityTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(TableContracts.MaternalMortalityTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_SNO, this.sno);
-        json.put(TableContracts.MaternalMortalityTable.COLUMN_M_SNO, this.msno);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_DEVICEID, this.deviceId);
@@ -389,8 +347,9 @@ public class MaternalMortality extends BaseObservable implements Observable {
     public String sE2toString() throws JSONException {
         Log.d(TAG, "sE2toString: ");
         JSONObject json = new JSONObject();
-        json.put("e116", e116)
-                .put("e117", e117)
+        json
+                /*.put("e116", e116)
+                .put("e117", e117)*/
                 .put("e118", e118)
                 .put("e119d", e119d)
                 .put("e119m", e119m)
@@ -407,14 +366,11 @@ public class MaternalMortality extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_UUID));
-        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_MUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_FMUID));
+
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_PROJECT_NAME));
-        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_INDEXED));
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SNO));
-        this.msno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_M_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_DEVICEID));
@@ -433,8 +389,8 @@ public class MaternalMortality extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.e116 = json.getString("e116");
-            this.e117 = json.getString("e117");
+/*            this.e116 = json.getString("e116");
+            this.e117 = json.getString("e117");*/
             this.e118 = json.getString("e118");
             this.e119d = json.getString("e119d");
             this.e119m = json.getString("e119m");

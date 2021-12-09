@@ -17,7 +17,7 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
@@ -51,7 +51,7 @@ public class IdentificationActivity extends AppCompatActivity {
         //setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
-        // populateSpinner();
+        populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
         if (MainApp.superuser)
@@ -64,13 +64,22 @@ public class IdentificationActivity extends AppCompatActivity {
     private void populateSpinner() {
 
         // Populate Provinces
-        Collection<Villages> tehsils = db.getTehsilsByDistrict(String.valueOf(MainApp.selectedDistrict));
+        List<Villages> tehsils = db.getTehsilsByDistrict(String.valueOf(MainApp.selectedDistrict));
 
         tehsilNames = new ArrayList<>();
         tehsilCodes = new ArrayList<>();
 
         tehsilNames.add("...");
         tehsilCodes.add("...");
+        if (MainApp.user.getUserName().equals("test1234")) {
+            tehsilNames.add("Test Tehsil 1");
+            tehsilNames.add("Test Tehsil 2");
+            tehsilNames.add("Test Tehsil 3");
+
+            tehsilCodes.add("91");
+            tehsilCodes.add("92");
+            tehsilCodes.add("93");
+        }
 
         for (Villages t : tehsils) {
 
@@ -96,13 +105,22 @@ public class IdentificationActivity extends AppCompatActivity {
                 if (position == 0) return;
                 MainApp.selectedTehsil = tehsilCodes.get(position);
                 // Populate UCs
-                Collection<Villages> ucs = db.getUCsByTehsil(MainApp.selectedDistrict, MainApp.selectedTehsil);
+                List<Villages> ucs = db.getUCsByTehsil(MainApp.selectedDistrict, MainApp.selectedTehsil);
 
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
 
                 ucNames.add("...");
                 ucCodes.add("...");
+                if (MainApp.user.getUserName().equals("test1234")) {
+                    ucNames.add("Test UC 1");
+                    ucNames.add("Test UC 2");
+                    ucNames.add("Test UC 3");
+
+                    ucCodes.add("9101");
+                    ucCodes.add("9202");
+                    ucCodes.add("9303");
+                }
                 psuCode = new ArrayList<>();
 
                 for (Villages uc : ucs) {
@@ -183,7 +201,7 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setA107(MainApp.selectedPSU);
         MainApp.form.setA109(MainApp.selectedPSU);
         MainApp.form.setA101(MainApp.selectedHHID);
-        MainApp.form.setSno(MainApp.selectedHHID);
+        MainApp.form.setpSno(MainApp.selectedHHID);
 
     }*/
 
@@ -215,11 +233,11 @@ public class IdentificationActivity extends AppCompatActivity {
     public void checkHousehold(View view) {
         RandomHH testRand = new RandomHH();
         testRand.setSno("1");
-        testRand.setClusteCcode("909090909");
+        testRand.setClusteCcode("9000001");
         testRand.setHeadhh("Test Head");
-        testRand.setHhno("999-99");
+        testRand.setHhno("999");
         RandomHH randHH = new RandomHH();
-        if (!bi.a101.getText().toString().equals("909090909")) {
+        if (!bi.a101.getText().toString().equals("9000001")) {
             randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
             randHH = testRand;
@@ -249,15 +267,14 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-
-        if (!hhExists()) {
+        hhExists();
             if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
                 Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
             } else {
                 finish();
                 startActivity(new Intent(this, SectionA1Activity.class));
             }
-        }
+
     }
 
     /*public void searchCluster(View view) {

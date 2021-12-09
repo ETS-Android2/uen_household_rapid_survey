@@ -12,13 +12,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1ABinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.PregnancyListActivity;
 
 public class SectionE1AActivity extends AppCompatActivity {
 
@@ -26,27 +27,29 @@ public class SectionE1AActivity extends AppCompatActivity {
     ActivitySectionE1ABinding bi;
     private DatabaseHelper db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_a);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.reproductivehealth_mainheading);
         db = MainApp.appInfo.dbHelper;
-        //TODO: Start HERE
-        //   MainApp.pregM = db.getPregByFmuid(MainApp.allMWRAList.get(0).getUid());
+        try {
+            MainApp.pregM = db.getPregMByFmuid(MainApp.allMWRAList.get(0).getUid());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(PregM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         bi.setPregM(MainApp.pregM);
 
     }
 
-    private void setupSkips() {
 
-    }
 
     private boolean insertNewRecord() {
-        if (!MainApp.pregM.getUid().equals("")) return true;
+        if (!MainApp.pregM.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.pregM.populateMeta();
         long rowId = 0;
         try {
             rowId = db.addPregnancyMaster(MainApp.pregM);
@@ -68,7 +71,7 @@ public class SectionE1AActivity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        if (MainApp.superuser) return true;
         int updcount = 0;
         try {
             db.updatesPregnancyMasterColumn(TableContracts.PregnancyMasterTable.COLUMN_SE1, MainApp.pregM.sE1toString());
@@ -86,29 +89,34 @@ public class SectionE1AActivity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
-            MainApp.allMWRAList.remove(0);
+        if (MainApp.pregM.getUid().equals("") ? insertNewRecord() : updateDB()) {
+
+
+            // Remove current MWRA from the List (Test:Failed!!)
+            // MainApp.allMWRAList.remove(0);
+
+
             MainApp.totalPreg = Integer.parseInt(MainApp.pregM.getE101());
             MainApp.totalPreg = MainApp.pregM.getE102a().equals("1") ? MainApp.totalPreg - 1 : MainApp.totalPreg;
             finish();
             // Pregnancy Outcome History is ZERO goto PregDetails
             if (MainApp.totalPreg > 0) {
                 MainApp.pregD = new PregnancyDetails();
-                startActivity(new Intent(this, SectionE1BActivity.class).putExtra("complete", true));
+                finish();
+                startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
 
             } else {
 
                 // If More MWRA Exists restart this activity for next MWRA
                 if (MainApp.allMWRAList.size() > 0) {
-
+                    finish();
                     startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
 
                 } else {
+                    finish();
 
                     // if no more pregnancy and no more mwra than go to E2
-                    startActivity(new Intent(this, SectionE2Activity.class).putExtra("complete", true));
+                    startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
 
                 }
 
@@ -119,20 +127,14 @@ public class SectionE1AActivity extends AppCompatActivity {
         }
     }
 
-    private void saveDraft() {
-    }
+
 
 
     public void BtnEnd(View view) {
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
     }
 
     private boolean formValidation() {
@@ -142,8 +144,11 @@ public class SectionE1AActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
+        // Allow BackPress
+        // super.onBackPressed();
+
+        // Dont Allow BackPress
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
 }

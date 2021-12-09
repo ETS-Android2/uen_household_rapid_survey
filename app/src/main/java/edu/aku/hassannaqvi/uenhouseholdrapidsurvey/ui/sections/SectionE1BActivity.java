@@ -2,7 +2,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.pregD;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,8 +12,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1BBinding;
@@ -29,45 +31,46 @@ public class SectionE1BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_b);
-        bi.setPregD(pregD);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.reproductivehealth_mainheading);
         db = MainApp.appInfo.dbHelper;
+        bi.setPregD(pregD);
+        setupSkips();
     }
 
     private void setupSkips() {
 
     }
-
     private boolean insertNewRecord() {
-        /*if (!fp.getUid().equals("")) return true;
+        if (!MainApp.pregD.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.pregD.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addFollowup(fp);
+            rowId = db.addPregnancyDetails(MainApp.pregD);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        fp.setId(String.valueOf(rowId));
+        MainApp.pregD.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            fp.setUid(fp.getDeviceId() + fp.getId());
-            db.updatesFollowupColumn(TableContracts.FollowupTable.COLUMN_UID, fp.getUid());
+            MainApp.pregD.setUid(MainApp.pregD.getDeviceId() + MainApp.pregD.getId());
+            db.updatesPregnancyDetailsColumn(TableContracts.PregnancyDetailsTable.COLUMN_UID, MainApp.pregD.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
     private boolean updateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        if (MainApp.superuser) return true;
+
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FollowupTable.COLUMN_SFHA, fp.sFHAtoString());
+            db.updatesPregnancyDetailsColumn(TableContracts.PregnancyDetailsTable.COLUMN_SE1, MainApp.pregD.sE1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -76,37 +79,26 @@ public class SectionE1BActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
-    public void BtnContinue(View view) {
+
+    public void btnContinue(View view) {
+
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
+        if (MainApp.pregD.getUid().equals("") ? insertNewRecord() : updateDB()) {
+            setResult(RESULT_OK);
             finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
         } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void saveDraft() {
-    }
 
-
-    public void BtnEnd(View view) {
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        saveDraft();
-        if (updateDB()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+    public void btnEnd(View view) {
+        setResult(Activity.RESULT_CANCELED);
+        finish();
     }
 
     private boolean formValidation() {
@@ -116,8 +108,12 @@ public class SectionE1BActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // Allow BackPress
+        setResult(Activity.RESULT_CANCELED);
+        super.onBackPressed();
+
+        // Dont Allow BackPress
         // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
     }
 
 }

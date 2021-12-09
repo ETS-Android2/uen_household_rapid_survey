@@ -347,8 +347,6 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
-
-
     @Bindable
     public String getA104() {
         return a104;
@@ -490,7 +488,6 @@ public class Form extends BaseObservable implements Observable {
         setA112(a11297.equals("97") ? "" : this.a112);
         notifyPropertyChanged(BR.a11297);
     }
-
 
 
     @Bindable
@@ -1143,8 +1140,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN103(String n103) {
         this.n103 = n103;
-        setN104(n103.equals("3") ? this.n104 : "" );
-        setN10401x(n103.equals("3") ? this.n10401x : "" );
+        setN104(n103.equals("3") ? this.n104 : "");
+        setN10401x(n103.equals("3") ? this.n10401x : "");
         setN105(n103.equals("3") ? this.n105 : "");
 
         notifyPropertyChanged(BR.n103);
@@ -1347,7 +1344,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN113(String n113) {
         this.n113 = n113;
-        setN11301x(n113.equals("1") ?  this.n11301x : "");
+        setN11301x(n113.equals("1") ? this.n11301x : "");
         notifyPropertyChanged(BR.n113);
     }
 
@@ -1461,10 +1458,10 @@ public class Form extends BaseObservable implements Observable {
         if (this.o10497.equals(o10497)) return;     // For all checkboxes
         this.o10497 = o10497;
 
-        setO10401(o10497.equals("97") ? "" : this.o10401 );
-        setO10402(o10497.equals("97") ? "" : this.o10402 );
-        setO10403(o10497.equals("97") ? "" : this.o10403 );
-        setO10404(o10497.equals("97") ? "" : this.o10404 );
+        setO10401(o10497.equals("97") ? "" : this.o10401);
+        setO10402(o10497.equals("97") ? "" : this.o10402);
+        setO10403(o10497.equals("97") ? "" : this.o10403);
+        setO10404(o10497.equals("97") ? "" : this.o10404);
 
 
         notifyPropertyChanged(BR.o10497);
@@ -1658,7 +1655,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void sE2Hydrate(String string) throws JSONException {
-        Log.d(TAG, "sAHydrate: " + string);
+        Log.d(TAG, "sE2Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -1812,7 +1809,7 @@ public class Form extends BaseObservable implements Observable {
         Log.d(TAG, "sE2toString: ");
         JSONObject json = new JSONObject();
         json.put("e116", e116)
-                .put("a117", e117);
+                .put("e117", e117);
         return json.toString();
     }
 

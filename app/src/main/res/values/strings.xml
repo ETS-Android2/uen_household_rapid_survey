@@ -544,7 +544,7 @@
     <string name="n101t3">Dug well</string>
     <string name="n10108">Protected well</string>
     <string name="n10109">Unprotected well</string>
-    <string name="n10110">Rainwater collection</string>
+    <string name="n10110">Rainwater List</string>
     <string name="n10111">Tanker-truck</string>
     <string name="n10112">Cart with small tank / drum</string>
     <string name="n10113">Surface water (river, stream, dam, lake, pond, canal, irrigation channel)</string>
@@ -562,7 +562,7 @@
     <string name="n102t3">Dug well</string>
     <string name="n10208">Protected well</string>
     <string name="n10209">Unprotected well</string>
-    <string name="n10210">Rainwater collection</string>
+    <string name="n10210">Rainwater List</string>
     <string name="n10211">Tanker-truck</string>
     <string name="n10212">Cart with small tank / drum</string>
     <string name="n10213">Surface water (river, stream, dam, lake, pond, canal, irrigation channel)</string>
