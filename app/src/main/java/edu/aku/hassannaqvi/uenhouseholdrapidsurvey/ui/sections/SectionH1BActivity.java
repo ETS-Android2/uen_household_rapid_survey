@@ -17,27 +17,27 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionG1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionH1bBinding;
 
-public class SectionG1Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionG1Activity";
-    ActivitySectionG1Binding bi;
+public class SectionH1BActivity extends AppCompatActivity {
+
+    private static final String TAG = "SectionH1BActivity";
+    ActivitySectionH1bBinding bi;
+    int childAge;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1b);
         bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectiongdeliverypreparednessandexperience_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 
     private void setupSkips() {
-
     }
 
     private boolean updateDB() {
@@ -45,7 +45,7 @@ public class SectionG1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.MwraTable.COLUMN_SG, MainApp.mwra.sGtoString());
+            updcount = db.updatesFormColumn(TableContracts.MwraTable.COLUMN_SH1, MainApp.mwra.sH1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -55,6 +55,8 @@ public class SectionG1Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
+
+
     }
 
     public void BtnContinue(View view) {
@@ -62,7 +64,7 @@ public class SectionG1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionH1AActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionH2Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
