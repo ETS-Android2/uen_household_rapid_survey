@@ -18,34 +18,28 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionI2Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionImABinding;
 
-public class SectionI2Activity extends AppCompatActivity {
+public class SectionIMA_Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionI2Activity";
-    ActivitySectionI2Binding bi;
+    private static final String TAG = "SectionIMAActivity";
+    ActivitySectionImABinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im_a);
         bi.setChild(MainApp.child);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectioni2acuterespiratoryinfectionari_mainheading);
         db = MainApp.appInfo.dbHelper;
-    }
-
-    private void setupSkips() {
-
     }
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SI2, MainApp.child.sI2toString());
+            updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SIM, MainApp.child.sIMtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -60,22 +54,16 @@ public class SectionI2Activity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionIMA_Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionIMB_Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void saveDraft() {
-    }
-
-
     public void BtnEnd(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
@@ -94,4 +82,6 @@ public class SectionI2Activity extends AppCompatActivity {
         // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
     }
+
+
 }

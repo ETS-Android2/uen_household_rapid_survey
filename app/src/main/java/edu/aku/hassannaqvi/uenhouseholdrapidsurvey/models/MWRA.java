@@ -3523,6 +3523,9 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH116(String h116) {
         this.h116 = h116;
+        setH11701(h116.equals("1") ? this.h11701 : "");
+        setH118(h116.equals("1") || h116.equals("2") ? this.h118 : "");
+        setH119(h116.equals("3") ? "" : this.h119);
         notifyPropertyChanged(BR.h116);
     }
 
@@ -3543,6 +3546,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH118(String h118) {
         this.h118 = h118;
+        setH119(h118.equals("2") ? "" : this.h119);
         notifyPropertyChanged(BR.h118);
     }
 
@@ -3573,6 +3577,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH121(String h121) {
         this.h121 = h121;
+        setH122(h121.equals("2") ? "" : this.h122);
+        setH123(h121.equals("2") ? "" : this.h123);
         notifyPropertyChanged(BR.h121);
     }
 
@@ -3584,6 +3590,7 @@ public class MWRA extends BaseObservable implements Observable {
     public void setH122(String h122) {
         this.h122 = h122;
         setH1221x(h122.equals("1") ? this.h1221x : "");
+        setH123(h122.equals("98") ? "" : this.h123);
         notifyPropertyChanged(BR.h122);
     }
 
@@ -3624,6 +3631,15 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH125(String h125) {
         this.h125 = h125;
+        setH126(h125.equals("2") ? "" : this.h126);
+        setH127(h125.equals("2") ? "" : this.h127);
+        setH128(h125.equals("2") ? "" : this.h128);
+        setH12901(h125.equals("2") ? "" : this.h12901);
+        setH12902(h125.equals("2") ? "" : this.h12902);
+        setH12903(h125.equals("2") ? "" : this.h12903);
+        setH12904(h125.equals("2") ? "" : this.h12904);
+        setH12905(h125.equals("2") ? "" : this.h12905);
+        setH12906(h125.equals("2") ? "" : this.h12906);
         notifyPropertyChanged(BR.h125);
     }
 
@@ -3734,6 +3750,16 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH132(String h132) {
         this.h132 = h132;
+        setH132a(h132.equals("2") ? this.h132a : "");
+        setH13301(h132.equals("1") ? this.h13301 : "");
+        setH13302(h132.equals("1") ? this.h13302 : "");
+        setH13303(h132.equals("1") ? this.h13303 : "");
+        setH13304(h132.equals("1") ? this.h13304 : "");
+        setH13305(h132.equals("1") ? this.h13305 : "");
+        setH13306(h132.equals("1") ? this.h13306 : "");
+        setH13307(h132.equals("1") ? this.h13307 : "");
+        setH13308(h132.equals("1") ? this.h13308 : "");
+        setH13309(h132.equals("1") ? this.h13309 : "");
         notifyPropertyChanged(BR.h132);
     }
 
@@ -4101,6 +4127,9 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH137(String h137) {
         this.h137 = h137;
+        setH137a(h137.equals("2") ? "" : this.h137a);
+        setH137b(h137.equals("2") ? "" : this.h137b);
+        setH137c(h137.equals("2") ? "" : this.h137c);
         notifyPropertyChanged(BR.h137);
     }
 
