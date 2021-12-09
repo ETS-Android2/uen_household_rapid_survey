@@ -24,7 +24,7 @@
             android:background="@color/grayLight">
 
             <TextView
-                android:id="@+id/w114"
+                android:id="@+id/e106"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:ellipsize="marquee"
@@ -35,7 +35,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/w115"
+                android:id="@+id/e105"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:ellipsize="marquee"
@@ -47,7 +47,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/w116"
+                android:id="@+id/e109"
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:ellipsize="marquee"
@@ -58,13 +58,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/w117"
+                android:id="@+id/e110"
                 android:layout_column="4"
                 android:layout_weight="1"
                 android:ellipsize="marquee"
                 android:gravity="center"
                 android:padding="3dip"
-                android:text="Age"
+                android:text="Age at Death"
+                android:visibility="gone"
                 android:textColor="@color/grayDark"
                 android:textSize="16sp" />
 
