@@ -505,6 +505,7 @@
                                     android:text="@={form.n10401x}"
                                     android:visibility='@{form.n104.equals(`1`) ? View.VISIBLE : View.GONE}'
                                     app:maxValue="100"
+                                    app:minValue="1"
                                     app:type="range" />
 
                                 <RadioButton

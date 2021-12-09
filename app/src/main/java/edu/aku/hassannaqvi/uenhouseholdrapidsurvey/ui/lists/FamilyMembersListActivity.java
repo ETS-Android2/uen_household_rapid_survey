@@ -142,6 +142,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         MainApp.familyList = new ArrayList<>();
         MainApp.mwraList = new ArrayList<>();
+        MainApp.allMWRAList = new ArrayList<>();
 
 
         MainApp.fatherList = new ArrayList<>();

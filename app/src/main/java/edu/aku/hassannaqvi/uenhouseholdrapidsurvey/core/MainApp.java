@@ -15,6 +15,7 @@ import net.sqlcipher.database.SQLiteDatabase;
 import org.json.JSONArray;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
@@ -109,7 +110,7 @@ public class MainApp extends Application {
     public static boolean pregComplete = false;
     public static PregnancyMaster pregM;
     public static PregnancyDetails pregD;
-    public static List<FamilyMembers> allMWRAList;
+    public static List<FamilyMembers> allMWRAList = new ArrayList<>();
     public static List<PregnancyDetails> pregList;
     public static int mortalityCounter = 0;
 
