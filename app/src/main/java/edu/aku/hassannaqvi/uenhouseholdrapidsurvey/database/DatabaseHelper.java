@@ -75,10 +75,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
+
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY_DETAILS);
+        db.execSQL(CreateTable.SQL_CREATE_PREGNANCY_MASTER);
         db.execSQL(CreateTable.SQL_CREATE_MATERNAL_MORTIALITY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
 

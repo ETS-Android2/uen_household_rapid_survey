@@ -87,7 +87,7 @@ public class SectionE1AActivity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue(View view) {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         if (MainApp.pregM.getUid().equals("") ? insertNewRecord() : updateDB()) {
 
