@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
 
 
     <data>
@@ -188,7 +189,9 @@
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/bottom"
                                     android:minHeight="60dp"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:visibility="gone"
+                                    tool:visibility="visible">
 
                                     <TextView
                                         android:id="@+id/as1q01"

@@ -1,25 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="edu.aku.hassannaqvi.uenhouseholdrapidsurvey">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:name=".core.MainApp"
+
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:immersive="true"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.main">
+        android:theme="@style/Theme.main"
+        android:usesCleartextTraffic="false"
+        tools:replace="android:allowBackup">
 
 
         <activity
+            android:name=".ui.EndingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.SyncActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+
+        <activity
+            android:name=".database.AndroidManager"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <activity
+            android:name=".ui.lists.FormsReportPending"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.lists.FormsReportCluster"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.lists.FormsReportDate"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.lists.FamilyMembersListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.TakePhoto"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.splashscreen"
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ui.IdentificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
 
 
         <activity
@@ -151,6 +220,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
+
+        <meta-data
+            android:name="YEK_REVRES"
+            android:value="L]MZL7]%cX8;P8F8V@ca#!0nSurvIv0r-t*L$`1`|@DR)TFe+?@mX;(,7+g,Jl" />
 
 
     </application>
