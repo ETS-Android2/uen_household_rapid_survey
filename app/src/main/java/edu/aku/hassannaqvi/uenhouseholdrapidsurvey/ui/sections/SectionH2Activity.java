@@ -33,7 +33,6 @@ public class SectionH2Activity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectionh2postnatalcare_mainheading);
         db = MainApp.appInfo.dbHelper;
 
     }

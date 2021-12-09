@@ -328,7 +328,7 @@
                             </LinearLayout>
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/f101bt" />
@@ -570,7 +570,7 @@
                                 </LinearLayout>
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/info"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/f103t" />
@@ -739,54 +739,84 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
+                                        style="@style/info"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="12dp"
                                         android:text="@string/f108t" />
 
-                                    <RadioButton
-                                        android:id="@+id/f108w"
+                                    <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:checked="@{mwra.f108.equals(`1`)}"
-                                        android:onClick="@{()->mwra.setF108(`1`)}"
-                                        android:text="@string/f108w" />
+                                        android:orientation="horizontal">
 
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/f108wx"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:hint="@string/f108w"
-                                        android:inputType="number"
-                                        android:maxLength="2"
-                                        android:tag="f108w"
-                                        android:text="@={mwra.f108wx}"
-                                        android:visibility="@{mwra.f108.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                        app:maxValue="42"
-                                        app:minValue="0"
-                                        app:type="range" />
+                                        <RadioButton
+                                            android:id="@+id/f108w"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:checked="@{mwra.f108.equals(`1`)}"
+                                            android:onClick="@{()->mwra.setF108(`1`)}"
+                                            android:text="@string/f108w" />
 
-                                    <RadioButton
-                                        android:id="@+id/f108m"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{mwra.f108.equals(`2`)}"
-                                        android:onClick="@{()->mwra.setF108(`2`)}"
-                                        android:text="@string/f108m" />
+                                        <View
+                                            android:layout_width="20dp"
+                                            android:layout_height="match_parent" />
 
-                                    <com.edittextpicker.aliazaz.EditTextPicker
-                                        android:id="@+id/f108mx"
+                                        <com.edittextpicker.aliazaz.EditTextPicker
+                                            android:id="@+id/f108wx"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:enabled="@{mwra.f108.equals(`1`)}"
+                                            android:gravity="center"
+                                            android:inputType="number"
+                                            android:maxLength="2"
+                                            android:tag="f108w"
+                                            android:text="@={mwra.f108wx}"
+                                            android:hint="##"
+                                            app:maxValue="42"
+                                            app:minValue="0"
+                                            app:type="range" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:hint="@string/f108m"
-                                        android:inputType="number"
-                                        android:maxLength="1"
-                                        android:tag="f108m"
-                                        android:text="@={mwra.f108mx}"
-                                        android:visibility="@{mwra.f108.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                        app:maxValue="9"
-                                        app:minValue="0"
-                                        app:type="range" />
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/f108m"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:checked="@{mwra.f108.equals(`2`)}"
+                                            android:onClick="@{()->mwra.setF108(`2`)}"
+                                            android:text="@string/f108m" />
+
+
+                                        <View
+                                            android:layout_width="20dp"
+                                            android:layout_height="match_parent" />
+
+                                        <com.edittextpicker.aliazaz.EditTextPicker
+                                            android:id="@+id/f108mx"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:hint="#"
+                                            android:inputType="number"
+                                            android:maxLength="1"
+                                            android:tag="f108m"
+                                            android:text="@={mwra.f108mx}"
+                                            android:visibility="@{mwra.f108.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                            app:maxValue="9"
+                                            app:minValue="0"
+                                            app:type="range" />
+
+                                    </LinearLayout>
 
                                     <RadioButton
                                         android:id="@+id/f10898"
@@ -833,7 +863,7 @@
                                 </LinearLayout>
 
                                 <TextView
-                                    style="@style/sub_labels"
+                                    style="@style/info"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/f110t" />
@@ -1232,6 +1262,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
@@ -1292,28 +1323,32 @@
                         <RadioGroup
                             android:id="@+id/f112"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f11201"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f112.equals(`1`)}"
                                 android:onClick="@{()->mwra.setF112(`1`)}"
                                 android:text="@string/f11201" />
 
                             <RadioButton
                                 android:id="@+id/f11202"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f112.equals(`2`)}"
                                 android:onClick="@{()->mwra.setF112(`2`)}"
                                 android:text="@string/f11202" />
 
                             <RadioButton
                                 android:id="@+id/f11298"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f112.equals(`98`)}"
                                 android:onClick="@{()->mwra.setF112(`98`)}"
                                 android:text="@string/f11298" />
@@ -1360,38 +1395,61 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <RadioButton
-                                android:id="@+id/f11301"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{mwra.f113.equals(`1`)}"
-                                android:onClick="@{()->mwra.setF113(`1`)}"
-                                android:text="@string/f11301" />
+                                android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/f11301x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/f11301"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:tag="f11301"
-                                android:text="@={mwra.f11301x}"
-                                android:visibility="@{mwra.f113.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="5"
-                                app:minValue="0"
-                                app:type="range" />
+                                <RadioButton
+                                    android:id="@+id/f11301"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{mwra.f113.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setF113(`1`)}"
+                                    android:text="@string/f11301" />
 
-                            <RadioButton
-                                android:id="@+id/f11398"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{mwra.f113.equals(`98`)}"
-                                android:onClick="@{()->mwra.setF113(`98`)}"
-                                android:text="@string/f11398" />
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f11301x"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{mwra.f113.equals(`1`)}"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="1"
+                                    android:tag="f11301"
+                                    android:text="@={mwra.f11301x}"
+                                    android:hint="#"
+                                    app:maxValue="5"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
+                                <RadioButton
+                                    android:id="@+id/f11398"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{mwra.f113.equals(`98`)}"
+                                    android:onClick="@{()->mwra.setF113(`98`)}"
+                                    android:text="@string/f11398" />
+
+                            </LinearLayout>
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- f114  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1425,20 +1483,23 @@
                         <RadioGroup
                             android:id="@+id/f114"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f11401"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f114.equals(`1`)}"
                                 android:onClick="@{()->mwra.setF114(`1`)}"
                                 android:text="@string/f11401" />
 
                             <RadioButton
                                 android:id="@+id/f11402"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f114.equals(`2`)}"
                                 android:onClick="@{()->mwra.setF114(`2`)}"
                                 android:text="@string/f11402" />
@@ -1649,44 +1710,76 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/f118" />
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/f118m" />
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_f118" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/f118m"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/f118m"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text="@={mwra.f118m}"
-                                app:maxValue="9"
-                                app:minValue="0"
-                                app:type="range" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f118" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/f118d" />
+                            </LinearLayout>
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/f118d"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/f118d"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={mwra.f118d}"
-                                app:maxValue="31"
-                                app:minValue="0"
-                                app:type="range" />
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/f118m" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f118m"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#"
+                                    android:inputType="number"
+                                    android:maxLength="1"
+                                    android:text="@={mwra.f118m}"
+                                    app:maxValue="9"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/f118d" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f118d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={mwra.f118d}"
+                                    app:maxValue="31"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -1722,20 +1815,23 @@
                             <RadioGroup
                                 android:id="@+id/f119"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/f11901"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f119.equals(`1`)}"
                                     android:onClick="@{()->mwra.setF119(`1`)}"
                                     android:text="@string/f11901" />
 
                                 <RadioButton
                                     android:id="@+id/f11902"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f119.equals(`2`)}"
                                     android:onClick="@{()->mwra.setF119(`2`)}"
                                     android:text="@string/f11902" />
@@ -1776,34 +1872,47 @@
                             <RadioGroup
                                 android:id="@+id/f120"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/f12001"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f120.equals(`1`)}"
                                     android:onClick="@{()->mwra.setF120(`1`)}"
                                     android:text="@string/f12001" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f12001x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/f12001"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{mwra.f120.equals(`1`)}"
+                                    android:gravity="center"
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:tag="f12001"
                                     android:text="@={mwra.f12001x}"
-                                    android:visibility="@{mwra.f120.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:hint="####"
                                     app:maxValue="1000"
                                     app:minValue="0"
                                     app:type="range" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <RadioButton
                                     android:id="@+id/f12098"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f120.equals(`98`)}"
                                     android:onClick="@{()->mwra.setF120(`98`)}"
                                     android:text="@string/f12098" />
@@ -1845,10 +1954,12 @@
                         <RadioGroup
                             android:id="@+id/f121a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f121a01"
+                                android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f121a.equals(`1`)}"
@@ -1857,6 +1968,7 @@
 
                             <RadioButton
                                 android:id="@+id/f121a02"
+                                android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f121a.equals(`2`)}"
@@ -2009,34 +2121,47 @@
                             <RadioGroup
                                 android:id="@+id/f122"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/f12201"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
                                     android:checked="@{mwra.f122.equals(`1`)}"
                                     android:onClick="@{()->mwra.setF122(`1`)}"
                                     android:text="@string/f12201" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f12201x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/f12201"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{mwra.f122.equals(`1`)}"
                                     android:inputType="number"
                                     android:maxLength="2"
+                                    android:gravity="center"
                                     android:tag="f12201"
                                     android:text="@={mwra.f12201x}"
-                                    android:visibility="@{mwra.f122.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:hint="##"
                                     app:maxValue="20"
                                     app:minValue="0"
                                     app:type="range" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <RadioButton
                                     android:id="@+id/f12298"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f122.equals(`98`)}"
                                     android:onClick="@{()->mwra.setF122(`98`)}"
                                     android:text="@string/f12298" />
@@ -2306,20 +2431,23 @@
                             <RadioGroup
                                 android:id="@+id/f129"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/f12901"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f129.equals(`1`)}"
                                     android:onClick="@{()->mwra.setF129(`1`)}"
                                     android:text="@string/f12901" />
 
                                 <RadioButton
                                     android:id="@+id/f12902"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.f129.equals(`2`)}"
                                     android:onClick="@{()->mwra.setF129(`2`)}"
                                     android:text="@string/f12902" />
@@ -2549,6 +2677,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
@@ -2603,6 +2732,7 @@
                                     android:text="@string/f13106" />
 
                                 <TextView
+                                    style="@style/sub_labels"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
@@ -2677,28 +2807,32 @@
                         <RadioGroup
                             android:id="@+id/f131a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f131a01"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f131a.equals(`1`)}"
                                 android:onClick="@{()->mwra.setF131a(`1`)}"
                                 android:text="@string/f131a01" />
 
                             <RadioButton
                                 android:id="@+id/f131a02"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f131a.equals(`2`)}"
                                 android:onClick="@{()->mwra.setF131a(`2`)}"
                                 android:text="@string/f131a02" />
 
                             <RadioButton
                                 android:id="@+id/f131a03"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{mwra.f131a.equals(`3`)}"
                                 android:onClick="@{()->mwra.setF131a(`3`)}"
                                 android:text="@string/f131a03" />

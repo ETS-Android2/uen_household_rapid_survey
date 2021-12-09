@@ -10,9 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main">
 
+
         <activity
-            android:name=".ui.sections.SectionIMB_Activity"
-            android:exported="true" />
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
         <activity
@@ -47,31 +54,37 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE1AActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE1BActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionE2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionF1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionG1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
 
         <activity
             android:name=".ui.sections.SectionH1AActivity"
@@ -90,41 +103,56 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionI1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionI2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionIMA_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.sections.SectionIMB_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionK1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionL1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionM1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
+
     </application>
 
 </manifest>
