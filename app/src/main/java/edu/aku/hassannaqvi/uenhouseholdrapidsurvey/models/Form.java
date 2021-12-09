@@ -1141,7 +1141,6 @@ public class Form extends BaseObservable implements Observable {
     public void setN103(String n103) {
         this.n103 = n103;
         setN104(n103.equals("3") ? this.n104 : "");
-        setN10401x(n103.equals("3") ? this.n10401x : "");
         setN105(n103.equals("3") ? this.n105 : "");
 
         notifyPropertyChanged(BR.n103);
@@ -1154,6 +1153,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN104(String n104) {
         this.n104 = n104;
+        setN10401x(n104.equals("1") ? this.n10401x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.n104);
     }
 
@@ -1333,7 +1333,6 @@ public class Form extends BaseObservable implements Observable {
     public void setN112(String n112) {
         this.n112 = n112;
         setN113(n111.equals("1") ? this.n113 : "");
-        setN11301x(n111.equals("1") ? this.n11301x : "");
         notifyPropertyChanged(BR.n112);
     }
 
