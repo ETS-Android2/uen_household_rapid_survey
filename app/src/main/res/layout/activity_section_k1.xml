@@ -157,7 +157,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a01.equals(`1`)}"
                                 android:onClick="@{()->mwra.setK101a01(mwra.k101a01.equals(`1`)?``:`1`)}"
-
                                 android:text="@string/k101a01" />
 
                             <CheckBox
@@ -166,7 +165,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a02.equals(`2`)}"
                                 android:onClick="@{()->mwra.setK101a02(mwra.k101a02.equals(`2`)?``:`2`)}"
-
                                 android:text="@string/k101a02" />
 
                             <CheckBox
@@ -175,7 +173,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a03.equals(`3`)}"
                                 android:onClick="@{()->mwra.setK101a03(mwra.k101a03.equals(`3`)?``:`3`)}"
-
                                 android:text="@string/k101a03" />
 
                             <CheckBox
@@ -184,7 +181,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a04.equals(`4`)}"
                                 android:onClick="@{()->mwra.setK101a04(mwra.k101a04.equals(`4`)?``:`4`)}"
-
                                 android:text="@string/k101a04" />
 
                             <CheckBox
@@ -193,7 +189,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a05.equals(`5`)}"
                                 android:onClick="@{()->mwra.setK101a05(mwra.k101a05.equals(`5`)?``:`5`)}"
-
                                 android:text="@string/k101a05" />
 
                             <CheckBox
@@ -202,7 +197,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a06.equals(`6`)}"
                                 android:onClick="@{()->mwra.setK101a06(mwra.k101a06.equals(`6`)?``:`6`)}"
-
                                 android:text="@string/k101a06" />
 
                             <CheckBox
@@ -211,7 +205,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a07.equals(`7`)}"
                                 android:onClick="@{()->mwra.setK101a07(mwra.k101a07.equals(`7`)?``:`7`)}"
-
                                 android:text="@string/k101a07" />
 
                             <CheckBox
@@ -220,7 +213,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a08.equals(`8`)}"
                                 android:onClick="@{()->mwra.setK101a08(mwra.k101a08.equals(`8`)?``:`8`)}"
-
                                 android:text="@string/k101a08" />
 
                             <CheckBox
@@ -229,7 +221,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a09.equals(`9`)}"
                                 android:onClick="@{()->mwra.setK101a09(mwra.k101a09.equals(`9`)?``:`9`)}"
-
                                 android:text="@string/k101a09" />
 
                             <CheckBox
@@ -238,7 +229,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a10.equals(`10`)}"
                                 android:onClick="@{()->mwra.setK101a10(mwra.k101a10.equals(`10`)?``:`10`)}"
-
                                 android:text="@string/k101a10" />
 
                             <CheckBox
@@ -247,7 +237,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a11.equals(`11`)}"
                                 android:onClick="@{()->mwra.setK101a11(mwra.k101a11.equals(`11`)?``:`11`)}"
-
                                 android:text="@string/k101a11" />
 
                             <CheckBox
@@ -256,7 +245,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a12.equals(`12`)}"
                                 android:onClick="@{()->mwra.setK101a12(mwra.k101a12.equals(`12`)?``:`12`)}"
-
                                 android:text="@string/k101a12" />
 
                             <CheckBox
@@ -265,7 +253,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.k101a13.equals(`13`)}"
                                 android:onClick="@{()->mwra.setK101a13(mwra.k101a13.equals(`13`)?``:`13`)}"
-
                                 android:text="@string/k101a13" />
 
                             <CheckBox
@@ -285,9 +272,13 @@
                                 android:tag="k101a96"
                                 android:text="@={mwra.k101a96x}"
                                 android:visibility="@{mwra.k101a96.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- k102  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -860,62 +851,74 @@
                             <RadioGroup
                                 android:id="@+id/k105a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/k105a01"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.k105a.equals(`1`)}"
                                     android:onClick="@{()->mwra.setK105a(`1`)}"
                                     android:text="@string/k105a01" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/k105a01x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/k105a01"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{mwra.k105a.equals(`1`)}"
+                                    android:gravity="center"
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:tag="k105a01"
                                     android:text="@={mwra.k105a01x}"
-                                    android:visibility="@{mwra.k105a.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:hint="##"
                                     app:maxValue="11"
                                     app:minValue="1"
                                     app:type="range" />
 
                                 <RadioButton
                                     android:id="@+id/k105a02"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.k105a.equals(`2`)}"
                                     android:onClick="@{()->mwra.setK105a(`2`)}"
                                     android:text="@string/k105a02" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/k105a02x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/k105a02"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{mwra.k105a.equals(`2`)}"
+                                    android:gravity="center"
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:tag="k105a02"
                                     android:text="@={mwra.k105a02x}"
-                                    android:visibility="@{mwra.k105a.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:hint="##"
                                     app:maxValue="99"
                                     app:minValue="1"
                                     app:type="range" />
 
                                 <RadioButton
                                     android:id="@+id/k105a444"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.k105a.equals(`444`)}"
                                     android:onClick="@{()->mwra.setK105a(`444`)}"
                                     android:text="@string/k105a444" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
                 </LinearLayout>
 
                 <!-- k106  CheckBox   -->
