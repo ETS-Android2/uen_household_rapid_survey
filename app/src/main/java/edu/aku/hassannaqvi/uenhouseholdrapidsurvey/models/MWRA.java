@@ -2789,19 +2789,10 @@ public class MWRA extends BaseObservable implements Observable {
         this.g11898 = g11898;
 
         setG11801(g11898.equals("98") ? "" : this.g11801);
-        setG11801x(g11898.equals("98") ? "" : this.g11801x);
-
         setG11802(g11898.equals("98") ? "" : this.g11802);
-        setG11802x(g11898.equals("98") ? "" : this.g11802x);
         setG11803(g11898.equals("98") ? "" : this.g11803);
-        setG11803x(g11898.equals("98") ? "" : this.g11803x);
         setG11804(g11898.equals("98") ? "" : this.g11804);
-        setG11804x(g11898.equals("98") ? "" : this.g11804x);
         setG11896(g11898.equals("98") ? "" : this.g11896);
-        setG11896x(g11898.equals("98") ? "" : this.g11896x);
-
-
-
 
         notifyPropertyChanged(BR.g11898);
     }

@@ -50,6 +50,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:gravity="start"
                             style="@style/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -753,8 +754,8 @@
                             <RadioButton
                                 android:id="@+id/g10701"
                                 android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:checked="@{mwra.g107.equals(`1`)}"
                                 android:onClick="@{()->mwra.setG107(`1`)}"
                                 android:text="@string/g10701" />
@@ -762,14 +763,15 @@
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/g10701x"
                                 android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/g10701"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:enabled="@{mwra.g107.equals(`1`)}"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="g10701"
                                 android:text="@={mwra.g10701x}"
-                                android:visibility="@{mwra.g107.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:hint="###"
                                 app:maxValue="180"
                                 app:minValue="0"
                                 app:type="range" />
@@ -777,8 +779,8 @@
                             <RadioButton
                                 android:id="@+id/g10798"
                                 android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:checked="@{mwra.g107.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG107(`98`)}"
                                 android:text="@string/g10798" />
@@ -877,14 +879,14 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/textView"
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
                                 android:text="@string/g109t1" />
 
                             <TextView
-                                style="@style/textView"
+                                style="@style/info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
@@ -1529,6 +1531,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11801.equals(`1`)}"
+                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11801(mwra.g11801.equals(`1`)?``:`1`)}"
                                 android:text="@string/g11801" />
 
@@ -1551,6 +1554,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11802.equals(`2`)}"
+                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11802(mwra.g11802.equals(`2`)?``:`2`)}"
                                 android:text="@string/g11802" />
 
@@ -1573,6 +1577,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11803.equals(`3`)}"
+                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11803(mwra.g11803.equals(`3`)?``:`3`)}"
                                 android:text="@string/g11803" />
 
@@ -1595,6 +1600,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11804.equals(`4`)}"
+                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11804(mwra.g11804.equals(`4`)?``:`4`)}"
                                 android:text="@string/g11804" />
 
@@ -1617,6 +1623,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11896.equals(`96`)}"
+                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11896(mwra.g11896.equals(`96`)?``:`96`)}"
                                 android:text="@string/g11896" />
 
@@ -1635,7 +1642,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g11898.equals(`98`)}"
-                                android:enabled="@{!mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11898(mwra.g11898.equals(`98`)?``:`98`)}"
                                 android:text="@string/g11898" />
                         </LinearLayout>
