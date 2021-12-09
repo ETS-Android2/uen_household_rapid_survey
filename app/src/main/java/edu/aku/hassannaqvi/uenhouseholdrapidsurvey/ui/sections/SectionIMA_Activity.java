@@ -54,21 +54,16 @@ public class SectionIMA_Activity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionIMB_Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void saveDraft() {
-    }
-
     public void BtnEnd(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));

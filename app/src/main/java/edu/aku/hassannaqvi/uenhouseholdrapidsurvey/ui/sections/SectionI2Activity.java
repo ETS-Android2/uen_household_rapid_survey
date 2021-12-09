@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,8 +11,11 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.MainActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionI2Binding;
@@ -38,21 +42,20 @@ public class SectionI2Activity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = 0;
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FollowupTable.COLUMN_SFHA, fp.sFHAtoString());
+            updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SI2, MainApp.child.sI2toString());
         } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount == 1) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
 
     public void BtnContinue(View view) {
@@ -60,7 +63,7 @@ public class SectionI2Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionIMA_Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
