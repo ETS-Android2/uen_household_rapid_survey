@@ -1610,10 +1610,10 @@
     <string name="k10507">Pharmacy, Chemist</string>
     <string name="k10508">Friend/Relative</string>
     <string name="k10509">Dai/TBA (Traditional Birth Attendant)</string>
-    <string name="k105a">Since when you are using current method without stopping it?</string>
-    <string name="k105a01">Month</string>
-    <string name="k105a02">Year</string>
-    <string name="k105a444">Stop using now</string>
+    <string name="k105a"> Since when you are using current method without stopping it ? </string>
+    <string name="k105a01"> Month </string>
+    <string name="k105a02"> Year </string>
+    <string name="k105a444"> Stop Using Now </string>
     <string name="k106">Reasons for not using any family planning method.</string>
     <string name="k10601">Side effects of contraceptives</string>
     <string name="k10602">Want Pregnancy</string>
