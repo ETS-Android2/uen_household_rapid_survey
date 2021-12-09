@@ -17,19 +17,19 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionH1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionH1aBinding;
 
-public class SectionH1Activity extends AppCompatActivity {
+public class SectionH1AActivity extends AppCompatActivity {
 
     private static final String TAG = "SectionH1Activity";
-    ActivitySectionH1Binding bi;
+    ActivitySectionH1aBinding bi;
     int childAge;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1a);
         bi.setMwra(MainApp.mwra);
         childAge = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild) - 1).getD109y());
         if (childAge < 6) bi.fldGrpCVh114.setVisibility(View.GONE);

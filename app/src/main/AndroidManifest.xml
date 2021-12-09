@@ -81,7 +81,7 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.sections.SectionH1Activity"
+            android:name=".ui.sections.SectionH1AActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
