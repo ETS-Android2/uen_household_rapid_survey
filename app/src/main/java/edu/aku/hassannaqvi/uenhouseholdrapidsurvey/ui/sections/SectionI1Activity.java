@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -65,17 +64,17 @@ public class SectionI1Activity extends AppCompatActivity {
     }
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = 0;
+        if (MainApp.superuser) return true;
+
+        int updcount = 0;
         try {
             updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SI1, MainApp.child.sI1toString());
         } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
-        else {
+        if (updcount == 1) {
+            return true;
+        } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
