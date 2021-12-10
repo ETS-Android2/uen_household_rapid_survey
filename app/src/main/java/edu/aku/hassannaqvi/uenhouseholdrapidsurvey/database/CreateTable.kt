@@ -160,8 +160,6 @@ object CreateTable {
             + PregnancyMasterTable.COLUMN_FMUID + " TEXT,"
             + PregnancyMasterTable.COLUMN_PSU_CODE + " TEXT,"
             + PregnancyMasterTable.COLUMN_SNO + " TEXT,"
-            + PregnancyMasterTable.COLUMN_MSNO + " TEXT,"
-            + PregnancyMasterTable.COLUMN_M_NAME + " TEXT,"
             + PregnancyMasterTable.COLUMN_HHID + " TEXT,"
             + PregnancyMasterTable.COLUMN_USERNAME + " TEXT,"
             + PregnancyMasterTable.COLUMN_SYSDATE + " TEXT,"
