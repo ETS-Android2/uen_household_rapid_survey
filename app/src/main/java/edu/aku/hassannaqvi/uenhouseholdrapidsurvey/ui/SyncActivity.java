@@ -186,6 +186,16 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
+                //ChildARI
+                uploadTables.add(new SyncModel(TableContracts.ChildARITable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedChildARI());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(ChildARI)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                }
+
                 //Entry Log
                 uploadTables.add(new SyncModel(TableContracts.EntryLogTable.TABLE_NAME));
                 try {

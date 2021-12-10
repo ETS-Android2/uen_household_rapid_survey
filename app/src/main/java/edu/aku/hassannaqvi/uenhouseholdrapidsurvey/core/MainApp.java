@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
@@ -59,6 +60,7 @@ public class MainApp extends Application {
     public static MWRA mwra;
     // public static Pregnancy pregnancy;
     public static Child child;
+    public static ChildARI childARI;
     public static FamilyMembers familyMember;
     public static MaternalMortality mortality;
     public static int preg_count = 0;

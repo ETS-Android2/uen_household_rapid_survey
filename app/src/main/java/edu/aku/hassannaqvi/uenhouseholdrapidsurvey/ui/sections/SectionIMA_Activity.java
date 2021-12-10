@@ -34,6 +34,28 @@ public class SectionIMA_Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
     }
 
+    private boolean insertNewRecord() {
+        MainApp.child.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addChild(MainApp.child);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.child.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
+            db.updatesFormColumn(TableContracts.ChildTable.COLUMN_UID, MainApp.child.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
@@ -53,6 +75,7 @@ public class SectionIMA_Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionIMB_Activity.class).putExtra("complete", true));

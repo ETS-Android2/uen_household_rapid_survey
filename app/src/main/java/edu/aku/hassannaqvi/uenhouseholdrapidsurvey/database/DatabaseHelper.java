@@ -4,6 +4,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.child;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childARI;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -24,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildARITable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FamilyMembersTable;
@@ -38,6 +41,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.Vers
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.VillagesTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.EntryLog;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
@@ -83,6 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY_MASTER);
         db.execSQL(CreateTable.SQL_CREATE_MATERNAL_MORTIALITY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_CHILD_ARI);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
@@ -195,7 +200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addChild(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(TableContracts.ChildARITable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_FMUID, child.getFmuid());
@@ -205,8 +210,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
-        values.put(ChildTable.COLUMN_SI1, child.sI1toString());
-        values.put(ChildTable.COLUMN_SI2, child.sI2toString());
         values.put(ChildTable.COLUMN_SIM, child.sIMtoString());
         values.put(ChildTable.COLUMN_ISTATUS, child.getiStatus());
         values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
@@ -218,6 +221,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 ChildTable.TABLE_NAME,
                 ChildTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addChildARI(ChildARI childARI) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ChildARITable.COLUMN_PROJECT_NAME, childARI.getProjectName());
+        values.put(ChildARITable.COLUMN_UID, childARI.getUid());
+        values.put(ChildARITable.COLUMN_UUID, childARI.getUuid());
+        values.put(ChildARITable.COLUMN_FMUID, childARI.getFmuid());
+        values.put(ChildARITable.COLUMN_MUID, childARI.getMuid());
+        values.put(ChildARITable.COLUMN_SNO, childARI.getSno());
+        values.put(ChildARITable.COLUMN_PSU_CODE, childARI.getpsuCode());
+        values.put(ChildARITable.COLUMN_HHID, childARI.getHhid());
+        values.put(ChildARITable.COLUMN_USERNAME, childARI.getUserName());
+        values.put(ChildARITable.COLUMN_SYSDATE, childARI.getSysDate());
+        values.put(ChildARITable.COLUMN_SI1, childARI.sI1toString());
+        values.put(ChildARITable.COLUMN_SI2, childARI.sI2toString());
+        values.put(ChildARITable.COLUMN_ISTATUS, childARI.getiStatus());
+        values.put(ChildARITable.COLUMN_DEVICETAGID, childARI.getDeviceTag());
+        values.put(ChildARITable.COLUMN_DEVICEID, childARI.getDeviceId());
+        values.put(ChildARITable.COLUMN_APPVERSION, childARI.getAppver());
+        values.put(ChildARITable.COLUMN_SYNCED, childARI.getSynced());
+        values.put(ChildARITable.COLUMN_SYNCED_DATE, childARI.getSyncDate());
+        long newRowId;
+        newRowId = db.insert(
+                ChildARITable.TABLE_NAME,
+                ChildARITable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -417,6 +449,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
     }
+
+
+    public int updatesChildARIColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ChildTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(childARI.getId())};
+
+        return db.update(ChildTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
 
     public int updatesMWRAColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1046,6 +1095,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "getUnsyncedChild: " + allChild.toString().length());
         Log.d(TAG, "getUnsyncedChild: " + allChild);
         return allChild;
+    }
+
+    public JSONArray getUnsyncedChildARI() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ChildARITable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ChildARITable.COLUMN_ID + " ASC";
+
+        JSONArray allChildARI = new JSONArray();
+        c = db.query(
+                ChildARITable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedChild: " + c.getCount());
+            Child ch = new Child();
+            allChildARI.put(ch.Hydrate(c).toJSONObject());
+        }
+
+        Log.d(TAG, "getUnsyncedChildARI: " + allChildARI.toString().length());
+        Log.d(TAG, "getUnsyncedChildARI: " + allChildARI);
+        return allChildARI;
     }
 
     public JSONArray getUnsyncedEntryLog() throws JSONException {

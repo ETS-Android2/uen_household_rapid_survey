@@ -29,7 +29,7 @@ public class SectionI2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i2);
-        bi.setChild(MainApp.child);
+        bi.setChild(MainApp.childARI);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni2acuterespiratoryinfectionari_mainheading);
@@ -45,7 +45,7 @@ public class SectionI2Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.ChildTable.COLUMN_SI2, MainApp.child.sI2toString());
+            updcount = db.updatesChildARIColumn(TableContracts.ChildARITable.COLUMN_SI2, MainApp.childARI.sI2toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

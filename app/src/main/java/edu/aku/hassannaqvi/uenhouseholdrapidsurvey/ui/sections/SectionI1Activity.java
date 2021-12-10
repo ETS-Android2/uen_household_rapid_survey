@@ -29,7 +29,7 @@ public class SectionI1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i1);
-        bi.setChild(MainApp.child);
+        bi.setChild(MainApp.childARI);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni1diarrheainformation_mainheading);
@@ -42,20 +42,20 @@ public class SectionI1Activity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
-        MainApp.child.populateMeta();
+        MainApp.childARI.populateMeta();
 
         long rowId = 0;
         try {
-            rowId = db.addChild(MainApp.child);
+            rowId = db.addChildARI(MainApp.childARI);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.child.setId(String.valueOf(rowId));
+        MainApp.childARI.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
-            db.updatesFormColumn(TableContracts.ChildTable.COLUMN_UID, MainApp.child.getUid());
+            MainApp.childARI.setUid(MainApp.childARI.getDeviceId() + MainApp.childARI.getId());
+            db.updatesChildARIColumn(TableContracts.ChildARITable.COLUMN_UID, MainApp.childARI.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -68,7 +68,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SI1, MainApp.child.sI1toString());
+            updcount = db.updatesChildARIColumn(TableContracts.ChildARITable.COLUMN_SI1, MainApp.childARI.sI1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

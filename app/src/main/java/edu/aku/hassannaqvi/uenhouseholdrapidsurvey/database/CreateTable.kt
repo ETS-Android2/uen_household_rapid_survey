@@ -223,6 +223,32 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_CHILD_ARI = ("CREATE TABLE "
+            + ChildTable.TABLE_NAME + "("
+            + ChildTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ChildTable.COLUMN_UID + " TEXT,"
+            + ChildTable.COLUMN_UUID + " TEXT,"
+            + ChildTable.COLUMN_FMUID + " TEXT,"
+            + ChildTable.COLUMN_MUID + " TEXT,"
+            + ChildTable.COLUMN_PSU_CODE + " TEXT,"
+            + ChildTable.COLUMN_HHID + " TEXT,"
+            + ChildTable.COLUMN_SNO + " TEXT,"
+            + ChildTable.COLUMN_USERNAME + " TEXT,"
+            + ChildTable.COLUMN_SYSDATE + " TEXT,"
+            + ChildTable.COLUMN_INDEXED + " TEXT,"
+            + ChildTable.COLUMN_ISTATUS + " TEXT,"
+            + ChildTable.COLUMN_DEVICEID + " TEXT,"
+            + ChildTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ChildTable.COLUMN_SYNCED + " TEXT,"
+            + ChildTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ChildTable.COLUMN_APPVERSION + " TEXT,"
+            + ChildTable.COLUMN_SI1 + " TEXT,"
+            + ChildTable.COLUMN_SI2 + " TEXT,"
+
+            + " );"
+            )
+
 
     const val SQL_CREATE_USERS = ("CREATE TABLE "
             + UsersTable.TABLE_NAME + "("
