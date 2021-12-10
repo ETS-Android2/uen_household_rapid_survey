@@ -1195,6 +1195,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- m109  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm109"
@@ -1218,10 +1219,10 @@
                                 android:text="@string/Q_m109" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/m109" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -1233,7 +1234,7 @@
                             <RadioButton
                                 android:id="@+id/m10901"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m109.equals(`1`)}"
                                 android:onClick="@{()->form.setM109(`1`)}"
@@ -1242,13 +1243,16 @@
                             <RadioButton
                                 android:id="@+id/m10902"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m109.equals(`2`)}"
                                 android:onClick="@{()->form.setM109(`2`)}"
                                 android:text="@string/m10902" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1657,10 +1661,10 @@
                                 android:text="@string/Q_m113" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/m113" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -1672,7 +1676,7 @@
                             <RadioButton
                                 android:id="@+id/m11301"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m113.equals(`1`)}"
                                 android:onClick="@{()->form.setM113(`1`)}"
@@ -1681,14 +1685,18 @@
                             <RadioButton
                                 android:id="@+id/m11302"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m113.equals(`2`)}"
                                 android:onClick="@{()->form.setM113(`2`)}"
                                 android:text="@string/m11302" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- m114  Title   -->
                 <androidx.cardview.widget.CardView
@@ -2336,6 +2344,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- m115  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm115"
@@ -2359,10 +2368,10 @@
                                 android:text="@string/Q_m115" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/m115" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -2457,9 +2466,13 @@
                                 android:checked="@{form.m115.equals(`11`)}"
                                 android:onClick="@{()->form.setM115(`11`)}"
                                 android:text="@string/m11511" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- m116  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2484,10 +2497,10 @@
                                 android:text="@string/Q_m116" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/m116" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -2558,9 +2571,13 @@
                                 android:checked="@{form.m116.equals(`8`)}"
                                 android:onClick="@{()->form.setM116(`8`)}"
                                 android:text="@string/m11608" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -2589,8 +2606,15 @@
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>

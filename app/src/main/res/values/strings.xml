@@ -584,10 +584,10 @@
     <string name="n106">How does that water in the household taste? </string>
     <string name="n10601">Sweet</string>
     <string name="n10602">Brackish</string>
-    <string name="n107">Was the water for drinking clear or muddy at the time of collection?</string>
-    <string name="n10701">Clear</string>
-    <string name="n10702">Muddy/colored</string>
-    <string name="n10798">Don’t Know</string>
+    <string name="n107"> Was the water for drinking clear or muddy at the time of collection ? </string>
+    <string name="n10701"> Clear </string>
+    <string name="n10702"> Muddy / Colored </string>
+    <string name="n10798"> Don’t Know </string>
     <string name="n108">Do you do anything to the water to make it safer to drink?</string>
     <string name="n10801">Yes</string>
     <string name="n10802">No</string>

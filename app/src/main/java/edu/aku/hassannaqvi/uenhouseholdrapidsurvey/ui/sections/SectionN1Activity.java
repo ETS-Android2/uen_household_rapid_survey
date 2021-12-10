@@ -35,7 +35,6 @@ public class SectionN1Activity extends AppCompatActivity {
         bi.setForm(form);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.householdinformation_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 
