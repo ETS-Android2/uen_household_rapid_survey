@@ -173,6 +173,8 @@ public class TableContracts {
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_PSNO = "psno";
+        public static final String COLUMN_MSNO = "msno";
+        public static final String COLUMN_M_NAME = "mname";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SE1 = "se1";

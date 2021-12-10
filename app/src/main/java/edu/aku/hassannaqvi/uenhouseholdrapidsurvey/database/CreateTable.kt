@@ -136,6 +136,8 @@ object CreateTable {
             + PregnancyDetailsTable.COLUMN_FMUID + " TEXT,"
             + PregnancyDetailsTable.COLUMN_PSU_CODE + " TEXT,"
             + PregnancyDetailsTable.COLUMN_PSNO + " TEXT,"
+            + PregnancyDetailsTable.COLUMN_MSNO + " TEXT,"
+            + PregnancyDetailsTable.COLUMN_M_NAME + " TEXT,"
             + PregnancyDetailsTable.COLUMN_HHID + " TEXT,"
             + PregnancyDetailsTable.COLUMN_USERNAME + " TEXT,"
             + PregnancyDetailsTable.COLUMN_SYSDATE + " TEXT,"
