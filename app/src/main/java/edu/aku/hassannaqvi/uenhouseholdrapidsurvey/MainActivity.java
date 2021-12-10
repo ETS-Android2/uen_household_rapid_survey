@@ -13,38 +13,12 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.AndroidManager;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MaternalMortality;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.SyncActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportPending;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionA1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionD1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1AActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1BActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE2AActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE2BActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionF1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionG1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH1AActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH1BActivity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH2Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI2Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMA_Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMB_Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionK1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionL1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionM1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionN1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionO1Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -100,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;*/
-            case R.id.seca1:
+            /*case R.id.seca1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
@@ -180,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.seco1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionO1Activity.class));
-                break;
+                break;*/
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));
                 break;
