@@ -1659,11 +1659,11 @@
     <string name="l10404">Work for family only</string>
     <string name="l10405">Work for others</string>
     <string name="l10496">Other (Please Specify)</string>
-    <string name="l105">Are you paid for this job?</string>
-    <string name="l10501">Cash</string>
-    <string name="l10502">Kind</string>
-    <string name="l10503">Both in kind and cash</string>
-    <string name="l10504">Not paid at all</string>
+    <string name="l105"> Are you paid for this job ? </string>
+    <string name="l10501"> Cash </string>
+    <string name="l10502"> Kind </string>
+    <string name="l10503"> Both in Kind &amp; Cash </string>
+    <string name="l10504"> Not Paid at All </string>
     <string name="l106">Who usually decides, how to spend money you earn?</string>
     <string name="l10601">Respondent</string>
     <string name="l10602">Husband</string>

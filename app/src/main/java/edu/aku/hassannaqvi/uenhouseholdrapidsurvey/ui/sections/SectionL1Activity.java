@@ -33,7 +33,6 @@ public class SectionL1Activity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectionlwomenempowerment_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 

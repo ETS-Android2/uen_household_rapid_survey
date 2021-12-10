@@ -443,6 +443,15 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/sece2b"
                             android:layout_width="60dp"
@@ -457,15 +466,6 @@
                             android:text="E2B"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/secf1"
@@ -527,6 +527,15 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/sech2"
                             android:layout_width="60dp"
@@ -556,15 +565,6 @@
                             android:text="I1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/seci2"
@@ -611,6 +611,15 @@
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/seck1"
                             android:layout_width="60dp"
@@ -656,15 +665,6 @@
                             android:text="M"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/secn1"
