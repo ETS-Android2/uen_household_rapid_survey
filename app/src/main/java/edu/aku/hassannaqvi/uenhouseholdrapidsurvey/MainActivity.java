@@ -13,8 +13,13 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.AndroidManager;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MaternalMortality;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.SyncActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportCluster;
@@ -105,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.sece1a:
-                MainApp.form = new Form();
+                MainApp.pregM = new PregnancyMaster();
                 startActivity(new Intent(this, SectionE1AActivity.class));
                 break;
             case R.id.sece1b:
-                MainApp.form = new Form();
+                MainApp.pregD = new PregnancyDetails();
                 startActivity(new Intent(this, SectionE1BActivity.class));
                 break;
             case R.id.sece2a:
@@ -117,51 +122,51 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionE2AActivity.class));
                 break;
             case R.id.sece2b:
-                MainApp.form = new Form();
+                MainApp.mortality = new MaternalMortality();
                 startActivity(new Intent(this, SectionE2BActivity.class));
                 break;
             case R.id.secf1:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionF1Activity.class));
                 break;
             case R.id.secg1:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionG1Activity.class));
                 break;
             case R.id.sech1a:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionH1AActivity.class));
                 break;
             case R.id.sech1b:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionH1BActivity.class));
                 break;
             case R.id.sech2:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionH2Activity.class));
                 break;
             case R.id.secia:
-                MainApp.form = new Form();
+                MainApp.child = new Child();
                 startActivity(new Intent(this, SectionI1Activity.class));
                 break;
             case R.id.seci2:
-                MainApp.form = new Form();
+                MainApp.child = new Child();
                 startActivity(new Intent(this, SectionI2Activity.class));
                 break;
             case R.id.secima:
-                MainApp.form = new Form();
+                MainApp.child = new Child();
                 startActivity(new Intent(this, SectionIMA_Activity.class));
                 break;
             case R.id.secimb:
-                MainApp.form = new Form();
+                MainApp.child = new Child();
                 startActivity(new Intent(this, SectionIMB_Activity.class));
                 break;
             case R.id.seck1:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionK1Activity.class));
                 break;
             case R.id.secl1:
-                MainApp.form = new Form();
+                MainApp.mwra = new MWRA();
                 startActivity(new Intent(this, SectionL1Activity.class));
                 break;
             case R.id.secm1:
