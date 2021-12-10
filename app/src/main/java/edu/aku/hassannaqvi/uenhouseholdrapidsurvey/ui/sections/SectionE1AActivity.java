@@ -44,6 +44,7 @@ public class SectionE1AActivity extends AppCompatActivity {
         MainApp.pregM.setE101a(MainApp.allMWRAList.get(0).getD102());
         // SNO
         MainApp.pregM.setE101b(MainApp.allMWRAList.get(0).getD101());
+
         // FMUID
         MainApp.pregM.setFmuid(MainApp.allMWRAList.get(0).getUid());
         bi.setPregM(MainApp.pregM);

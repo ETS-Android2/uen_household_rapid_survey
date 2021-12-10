@@ -231,6 +231,8 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void checkHousehold(View view) {
+        if (!formValidation()) return;
+
         RandomHH testRand = new RandomHH();
         testRand.setSno("1");
         testRand.setClusteCcode("9000001");

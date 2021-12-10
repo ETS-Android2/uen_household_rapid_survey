@@ -260,6 +260,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregD.getClusterCode());
         values.put(PregnancyDetailsTable.COLUMN_HHID, pregD.getHhid());
         values.put(PregnancyDetailsTable.COLUMN_PSNO, pregD.getPSno());
+        values.put(PregnancyDetailsTable.COLUMN_MSNO, pregD.getMsno());
+        values.put(PregnancyDetailsTable.COLUMN_M_NAME, pregD.getMName());
         values.put(PregnancyDetailsTable.COLUMN_USERNAME, pregD.getUserName());
         values.put(PregnancyDetailsTable.COLUMN_SYSDATE, pregD.getSysDate());
         values.put(PregnancyDetailsTable.COLUMN_SE1, pregD.sE1toString());

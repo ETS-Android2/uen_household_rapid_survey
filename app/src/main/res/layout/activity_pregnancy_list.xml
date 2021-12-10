@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="mwra"
-            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA" />
+            name="pregD"
+            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails" />
 
         <variable
             name="callback"
@@ -179,7 +179,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
                 android:layout_marginStart="64dp"
                 android:layout_marginEnd="64dp"
                 android:background="@drawable/capsule"
@@ -190,7 +189,7 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:minHeight="56dp"
                 android:radius="10dp"
-                android:text="@{`PREGNANCIES OF `+mwra.h221}"
+                android:text="@{`PREGNANCIES OF `+pregD.h221}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/white" />
 
