@@ -13,12 +13,33 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.AndroidManager;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.SyncActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportPending;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionA1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionD1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1AActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1BActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE2AActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE2BActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionF1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionG1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH1AActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH1BActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH2Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI2Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMA_Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMB_Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionK1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionL1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionM1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionN1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionO1Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -74,108 +95,90 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;*/
-        /*    case R.id.seca1:
+            case R.id.seca1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionAS1Activity.class));
-                break;
-            case R.id.seca2:
-                MainApp.familyMember = new FamilyMembers();
-                startActivity(new Intent(this, SectionAS2Activity.class));
-                break;
-
-            case R.id.seca3:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS1AActivity.class));
-                break;
-            case R.id.secb1:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS2Activity.class));
-                break;
-            case R.id.secc1:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS3Activity.class));
-                break;
-            case R.id.secc2:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS4AActivity.class));
+                startActivity(new Intent(this, SectionA1Activity.class));
                 break;
             case R.id.secd1:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS4BActivity.class));
+                MainApp.familyMember = new FamilyMembers();
+                startActivity(new Intent(this, SectionD1Activity.class));
                 break;
-            case R.id.sece1:
+
+            case R.id.sece1a:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS5Activity.class));
+                startActivity(new Intent(this, SectionE1AActivity.class));
+                break;
+            case R.id.sece1b:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionE1BActivity.class));
+                break;
+            case R.id.sece2a:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionE2AActivity.class));
+                break;
+            case R.id.sece2b:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionE2BActivity.class));
                 break;
             case R.id.secf1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS6Activity.class));
-                break;
-            case R.id.secf2:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionBS7Activity.class));
-                break;
-            case R.id.secf3:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS1AActivity.class));
+                startActivity(new Intent(this, SectionF1Activity.class));
                 break;
             case R.id.secg1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS2Activity.class));
+                startActivity(new Intent(this, SectionG1Activity.class));
                 break;
-            case R.id.secg2:
+            case R.id.sech1a:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS3AActivity.class));
+                startActivity(new Intent(this, SectionH1AActivity.class));
                 break;
-            case R.id.secg3:
+            case R.id.sech1b:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS3BActivity.class));
+                startActivity(new Intent(this, SectionH1BActivity.class));
                 break;
-            case R.id.secg4:
+            case R.id.sech2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS4Activity.class));
+                startActivity(new Intent(this, SectionH2Activity.class));
                 break;
-            case R.id.secg5:
+            case R.id.secia:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCS5Activity.class));
+                startActivity(new Intent(this, SectionI1Activity.class));
                 break;
-            case R.id.secg6:
+            case R.id.seci2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionDS1Activity.class));
+                startActivity(new Intent(this, SectionI2Activity.class));
                 break;
-            case R.id.secg7:
+            case R.id.secima:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionDS2Activity.class));
+                startActivity(new Intent(this, SectionIMA_Activity.class));
                 break;
-            case R.id.d3:
+            case R.id.secimb:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionDS3Activity.class));
+                startActivity(new Intent(this, SectionIMB_Activity.class));
                 break;
-            case R.id.e1:
+            case R.id.seck1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionES1Activity.class));
+                startActivity(new Intent(this, SectionK1Activity.class));
                 break;
-            case R.id.e2:
+            case R.id.secl1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionES2Activity.class));
+                startActivity(new Intent(this, SectionL1Activity.class));
                 break;
-            case R.id.e3:
+            case R.id.secm1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionES3Activity.class));
+                startActivity(new Intent(this, SectionM1Activity.class));
                 break;
-            case R.id.e4:
+            case R.id.secn1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionES4Activity.class));
+                startActivity(new Intent(this, SectionN1Activity.class));
                 break;
-            case R.id.con:
+            case R.id.seco1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, ConsentActivity.class));
-                break;*/
+                startActivity(new Intent(this, SectionO1Activity.class));
+                break;
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));
                 break;
-
-
         }
     }
 

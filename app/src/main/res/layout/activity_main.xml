@@ -379,12 +379,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="A1"
+                            android:text="A"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/seca2"
+                            android:id="@+id/secd1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -394,12 +394,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="A2"
+                            android:text="D"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/seca3"
+                            android:id="@+id/sece1a"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -409,12 +409,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="B1"
+                            android:text="E1A"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secb1"
+                            android:id="@+id/sece1b"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -424,12 +424,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="B2"
+                            android:text="E1B"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secc1"
+                            android:id="@+id/sece2a"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -439,12 +439,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="B3"
+                            android:text="E2A"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secc2"
+                            android:id="@+id/sece2b"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -454,7 +454,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="B41"
+                            android:text="E2B"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -468,36 +468,6 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/secd1"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="B42"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/sece1"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="B5"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
                             android:id="@+id/secf1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
@@ -508,37 +478,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="B6"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/secf2"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="B7"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/secf3"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="C1"
+                            android:text="F"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -553,7 +493,67 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C2"
+                            android:text="G"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/sech1a"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="H1A"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/sech1b"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="H1B"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/sech2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="H2"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/secia"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="I1"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -567,7 +567,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/secg2"
+                            android:id="@+id/seci2"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -577,12 +577,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C31"
+                            android:text="I2"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secg3"
+                            android:id="@+id/secima"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -592,12 +592,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C32"
+                            android:text="IMA"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secg4"
+                            android:id="@+id/secimb"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -607,12 +607,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C4"
+                            android:text="IMB"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secg5"
+                            android:id="@+id/seck1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -622,13 +622,13 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="C5"
+                            android:text="K"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
 
                         <TextView
-                            android:id="@+id/secg6"
+                            android:id="@+id/secl1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -638,12 +638,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="D1"
+                            android:text="L"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/secg7"
+                            android:id="@+id/secm1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -653,7 +653,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="D2"
+                            android:text="M"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
@@ -667,7 +667,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/d3"
+                            android:id="@+id/secn1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -677,12 +677,12 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="D3"
+                            android:text="N"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/e1"
+                            android:id="@+id/seco1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
@@ -692,69 +692,7 @@
                             android:onClick="sectionPress"
                             android:padding="8dp"
                             android:shadowRadius="8"
-                            android:text="E1"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/e2"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="E2"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/e3"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="E3"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-
-                        <TextView
-                            android:id="@+id/e4"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="E4"
-                            android:textColor="@color/colorAccentLight"
-                            android:textSize="14sp" />
-
-
-                        <TextView
-                            android:id="@+id/con"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="4dp"
-                            android:background="@color/colorPrimary"
-                            android:elevation="1dp"
-                            android:gravity="center"
-                            android:onClick="sectionPress"
-                            android:padding="8dp"
-                            android:shadowRadius="8"
-                            android:text="CON"
+                            android:text="O"
                             android:textColor="@color/colorAccentLight"
                             android:textSize="14sp" />
 
