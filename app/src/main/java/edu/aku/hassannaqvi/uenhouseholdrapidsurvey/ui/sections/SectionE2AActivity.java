@@ -34,7 +34,6 @@ public class SectionE2AActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e2_a);
         bi.setForm(MainApp.form);
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.e2maternalmortalitystatus_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 
