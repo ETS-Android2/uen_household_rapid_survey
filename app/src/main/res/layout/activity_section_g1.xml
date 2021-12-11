@@ -617,16 +617,20 @@
 
                             <RadioButton
                                 android:id="@+id/g10501"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g105.equals(`1`)}"
                                 android:onClick="@{()->mwra.setG105(`1`)}"
                                 android:text="@string/g10501" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/g10501x"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{mwra.g105.equals(`1`)}"
@@ -640,9 +644,13 @@
                                 app:minValue="0"
                                 app:type="range" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <RadioButton
                                 android:id="@+id/g10598"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g105.equals(`98`)}"
@@ -773,16 +781,20 @@
 
                             <RadioButton
                                 android:id="@+id/g10701"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g107.equals(`1`)}"
                                 android:onClick="@{()->mwra.setG107(`1`)}"
                                 android:text="@string/g10701" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/g10701x"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{mwra.g107.equals(`1`)}"
@@ -796,9 +808,13 @@
                                 app:minValue="0"
                                 app:type="range" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <RadioButton
                                 android:id="@+id/g10798"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g107.equals(`98`)}"
@@ -2326,6 +2342,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -2336,25 +2353,34 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
                         android:onClick="btnEnd"
                         android:text="Cancel"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
                         android:onClick="btnContinue"
                         android:text="Save"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>

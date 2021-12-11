@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -10,6 +11,7 @@
             type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA" />
 
     </data>
+
 
 
     <LinearLayout
@@ -103,16 +105,20 @@
 
                             <RadioButton
                                 android:id="@+id/h101m"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.h101.equals(`1`)}"
                                 android:onClick="@{()->mwra.setH101(`1`)}"
                                 android:text="@string/h101m" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h101mx"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{mwra.h101.equals(`1`)}"
@@ -127,21 +133,25 @@
                                 app:type="range" />
 
                             <View
-                                android:layout_width="50dp"
+                                android:layout_width="20dp"
                                 android:layout_height="match_parent" />
 
                             <RadioButton
                                 android:id="@+id/h101w"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.h101.equals(`2`)}"
                                 android:onClick="@{()->mwra.setH101(`2`)}"
                                 android:text="@string/h101w" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h101wx"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{mwra.h101.equals(`2`)}"
@@ -154,6 +164,10 @@
                                 app:maxValue="42"
                                 app:minValue="0"
                                 app:type="range" />
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
 
                         </RadioGroup>
 
@@ -508,16 +522,20 @@
 
                                 <RadioButton
                                     android:id="@+id/h1061"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.h106.equals(`1`)}"
                                     android:onClick="@{()->mwra.setH106(`1`)}"
                                     android:text="@string/h1061" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/h1061x"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{mwra.h106.equals(`1`)}"
@@ -531,9 +549,13 @@
                                     app:minValue="0"
                                     app:type="range" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <RadioButton
                                     android:id="@+id/h10698"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.h106.equals(`98`)}"
@@ -1814,16 +1836,20 @@
 
                             <RadioButton
                                 android:id="@+id/h1221"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.h122.equals(`1`)}"
                                 android:onClick="@{()->mwra.setH122(`1`)}"
                                 android:text="@string/h1221" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h1221x"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{mwra.h122.equals(`1`)}"
@@ -1837,9 +1863,13 @@
                                 app:minValue="0"
                                 app:type="range" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <RadioButton
                                 android:id="@+id/h12298"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.h122.equals(`98`)}"
@@ -2042,5 +2072,6 @@
 
 
     </LinearLayout>
+
 
 </layout>
