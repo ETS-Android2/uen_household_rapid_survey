@@ -33,7 +33,6 @@ public class SectionE2BActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e2_b);
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.e2maternalmortalitystatus_mainheading);
         db = MainApp.appInfo.dbHelper;
         MainApp.mortalityCounter++;
         bi.setMortality(mortality);

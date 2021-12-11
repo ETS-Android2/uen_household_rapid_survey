@@ -51,6 +51,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
     private String e119y = _EMPTY_;
     private String e120 = _EMPTY_;
     private String e121 = _EMPTY_;
+    private String e12196x = _EMPTY_;
     private String e122 = _EMPTY_;
     private String e12296x = _EMPTY_;
 
@@ -300,6 +301,16 @@ public class MaternalMortality extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getE12196x() {
+        return e12196x;
+    }
+
+    public void setE12196x(String e12196x) {
+        this.e12196x = e12196x;
+        notifyPropertyChanged(BR.e12196x);
+    }
+
+    @Bindable
     public String getE122() {
         return e122;
     }
@@ -356,6 +367,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
                 .put("e119y", e119y)
                 .put("e120", e120)
                 .put("e121", e121)
+                .put("e12196x", e12196x)
                 .put("e122", e122)
                 .put("e12296x", e12296x);
         return json.toString();
@@ -397,6 +409,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
             this.e119y = json.getString("e119y");
             this.e120 = json.getString("e120");
             this.e121 = json.getString("e121");
+            this.e12196x = json.getString("e12196x");
             this.e122 = json.getString("e122");
             this.e12296x = json.getString("e12296x");
         }
