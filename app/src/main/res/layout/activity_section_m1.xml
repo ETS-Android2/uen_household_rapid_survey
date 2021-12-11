@@ -1162,10 +1162,10 @@
                                 android:text="@string/Q_m018" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/m018" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -1177,7 +1177,7 @@
                             <RadioButton
                                 android:id="@+id/m01801"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m018.equals(`1`)}"
                                 android:onClick="@{()->form.setM018(`1`)}"
@@ -1186,13 +1186,16 @@
                             <RadioButton
                                 android:id="@+id/m01802"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m018.equals(`2`)}"
                                 android:onClick="@{()->form.setM018(`2`)}"
                                 android:text="@string/m01802" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1246,7 +1249,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.m109.equals(`2`)}"
-                                android:onClick="@{()->form.setM109(`2`)}"
+                                android:onClick="@{()->form.setM109(`2`) + m110.clearCheck()}"
                                 android:text="@string/m10902" />
 
                         </RadioGroup>
@@ -1259,7 +1262,8 @@
                 <!-- m110  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm110"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.m109.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

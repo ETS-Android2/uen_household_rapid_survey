@@ -687,6 +687,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setM109(String m109) {
         this.m109 = m109;
+        setM110(m109.equals("2") ? "" : this.m110);
         notifyPropertyChanged(BR.m109);
     }
 
