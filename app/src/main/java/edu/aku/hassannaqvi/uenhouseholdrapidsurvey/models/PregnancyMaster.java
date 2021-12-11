@@ -238,6 +238,8 @@ public class PregnancyMaster extends BaseObservable implements Observable {
 
     public void setE101(String e101) {
         this.e101 = e101;
+        setE102(e101.equals("2") ? "" : this.e102);
+        setE102a(e101.equals("2") ? "" : this.e102a);
         notifyPropertyChanged(BR.e101);
     }
 
