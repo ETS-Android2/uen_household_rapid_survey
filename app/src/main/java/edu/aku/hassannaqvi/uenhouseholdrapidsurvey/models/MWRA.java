@@ -82,6 +82,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String f101a13 = _EMPTY_;
     private String f101a14 = _EMPTY_;
     private String f101a96 = _EMPTY_;
+    private String f101a96x = _EMPTY_;
     private String f101b = _EMPTY_;
     private String f101b01x = _EMPTY_;
     private String f102 = _EMPTY_;
@@ -1041,7 +1042,18 @@ public class MWRA extends BaseObservable implements Observable {
     public void setF101a96(String f101a96) {
         if (this.f101a96.equals(f101a96)) return;     // For all checkboxes
         this.f101a96 = f101a96;
+        setF101a96x(f101a96.equals("96") ? this.f101a96x : "");
         notifyPropertyChanged(BR.f101a96);
+    }
+
+    @Bindable
+    public String getF101a96x() {
+        return f101a96x;
+    }
+
+    public void setF101a96x(String f101a96x) {
+        this.f101a96x = f101a96x;
+        notifyPropertyChanged(BR.f101a96x);
     }
 
     @Bindable
@@ -2211,6 +2223,14 @@ public class MWRA extends BaseObservable implements Observable {
     public void setF13408(String f13408) {
         if (this.f13408.equals(f13408)) return;     // For all checkboxes
         this.f13408 = f13408;
+        setF13401(f13408.equals("8") ? "" : this.f13401);
+        setF13402(f13408.equals("8") ? "" : this.f13402);
+        setF13403(f13408.equals("8") ? "" : this.f13403);
+        setF13404(f13408.equals("8") ? "" : this.f13404);
+        setF13405(f13408.equals("8") ? "" : this.f13405);
+        setF13406(f13408.equals("8") ? "" : this.f13406);
+        setF13407(f13408.equals("8") ? "" : this.f13407);
+        setF13409(f13408.equals("8") ? "" : this.f13409);
         notifyPropertyChanged(BR.f13408);
     }
 
@@ -2222,6 +2242,14 @@ public class MWRA extends BaseObservable implements Observable {
     public void setF13409(String f13409) {
         if (this.f13409.equals(f13409)) return;     // For all checkboxes
         this.f13409 = f13409;
+        setF13401(f13409.equals("9") ? "" : this.f13401);
+        setF13402(f13409.equals("9") ? "" : this.f13402);
+        setF13403(f13409.equals("9") ? "" : this.f13403);
+        setF13404(f13409.equals("9") ? "" : this.f13404);
+        setF13405(f13409.equals("9") ? "" : this.f13405);
+        setF13406(f13409.equals("9") ? "" : this.f13406);
+        setF13407(f13409.equals("9") ? "" : this.f13407);
+        setF13408(f13409.equals("9") ? "" : this.f13408);
         notifyPropertyChanged(BR.f13409);
     }
 
@@ -6329,6 +6357,7 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("f101a13", f101a13)
                 .put("f101a14", f101a14)
                 .put("f101a96", f101a96)
+                .put("f101a96x", f101a96x)
                 .put("f101b", f101b)
                 .put("f101b01x", f101b01x)
                 .put("f10201", f10201)
@@ -6854,6 +6883,7 @@ public class MWRA extends BaseObservable implements Observable {
             this.f101a13 = json.getString("f101a13");
             this.f101a14 = json.getString("f101a14");
             this.f101a96 = json.getString("f101a96");
+            this.f101a96x = json.getString("f101a96x");
             this.f101b = json.getString("f101b");
             this.f101b01x = json.getString("f101b01x");
             this.f10201 = json.getString("f10201");
