@@ -1322,7 +1322,6 @@ public class Form extends BaseObservable implements Observable {
         this.n111 = n111;
         setN112(n111.equals("1") ? this.n112 : "");
         setN113(n111.equals("1") ? this.n113 : "");
-        setN11301x(n111.equals("1") ? this.n11301x : "");
         notifyPropertyChanged(BR.n111);
     }
 
@@ -1333,7 +1332,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setN112(String n112) {
         this.n112 = n112;
-        setN113(n111.equals("1") ? this.n113 : "");
+        setN113(n112.equals("2") ? "" : this.n113);
         notifyPropertyChanged(BR.n112);
     }
 

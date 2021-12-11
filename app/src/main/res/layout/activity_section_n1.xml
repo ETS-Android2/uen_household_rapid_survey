@@ -1136,7 +1136,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.n111.equals(`2`)}"
-                                android:onClick="@{()->form.setN111(`2`)}"
+                                android:onClick="@{()->form.setN111(`2`) + n112.clearCheck() + n113.clearCheck()}"
                                 android:text="@string/n11102" />
 
                             <RadioButton
@@ -1145,7 +1145,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.n111.equals(`98`)}"
-                                android:onClick="@{()->form.setN111(`98`)}"
+                                android:onClick="@{()->form.setN111(`98`) + n112.clearCheck() + n113.clearCheck()}"
                                 android:text="@string/n11198" />
 
                         </RadioGroup>
@@ -1206,7 +1206,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.n112.equals(`2`)}"
-                                android:onClick="@{()->form.setN112(`2`)}"
+                                android:onClick="@{()->form.setN112(`2`) + n113.clearCheck()}"
                                 android:text="@string/n11202" />
 
                         </RadioGroup>
