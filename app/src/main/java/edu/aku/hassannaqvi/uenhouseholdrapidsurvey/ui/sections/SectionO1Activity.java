@@ -32,15 +32,11 @@ public class SectionO1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_o1);
         bi.setForm(form);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
     }
 
-    private void setupSkips() {
 
-
-    }
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
