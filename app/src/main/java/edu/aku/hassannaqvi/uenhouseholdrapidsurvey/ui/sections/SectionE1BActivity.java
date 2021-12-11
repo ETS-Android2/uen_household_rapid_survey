@@ -32,7 +32,6 @@ public class SectionE1BActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_b);
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.reproductivehealth_mainheading);
         db = MainApp.appInfo.dbHelper;
 
         // FMUID

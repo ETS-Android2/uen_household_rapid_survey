@@ -32,7 +32,6 @@ public class SectionE1AActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_a);
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.reproductivehealth_mainheading);
         db = MainApp.appInfo.dbHelper;
         try {
             MainApp.pregM = db.getPregMByFmuid(MainApp.allMWRAList.get(0).getUid());
