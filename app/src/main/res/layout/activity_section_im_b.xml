@@ -230,16 +230,20 @@
 
                                 <RadioButton
                                     android:id="@+id/im2901"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{child.im29.equals(`1`)}"
                                     android:onClick="@{()->child.setIm29(`1`)}"
                                     android:text="@string/im2901" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im2901x"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:enabled="@{child.im29.equals(`1`)}"
@@ -253,9 +257,13 @@
                                     app:minValue="0"
                                     app:type="range" />
 
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="match_parent" />
+
                                 <RadioButton
                                     android:id="@+id/im2998"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{child.im29.equals(`98`)}"
@@ -621,26 +629,35 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
                         android:onClick="btnEnd"
                         android:text="Cancel"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
                         android:onClick="btnContinue"
                         android:text="Save"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
+
 </layout>
