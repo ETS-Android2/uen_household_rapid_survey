@@ -1304,6 +1304,10 @@
                                 android:onClick="@{()->form.setM110(`1`)}"
                                 android:text="@string/m11001" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/m11001x"
                                 android:layout_width="wrap_content"
@@ -1320,6 +1324,10 @@
                                 app:minValue="1"
                                 app:type="range" />
 
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
+
                             <RadioButton
                                 android:id="@+id/m11002"
                                 android:layout_width="wrap_content"
@@ -1328,6 +1336,10 @@
                                 android:checked="@{form.m110.equals(`2`)}"
                                 android:onClick="@{()->form.setM110(`2`)}"
                                 android:text="@string/m11002" />
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/m11002x"
@@ -1344,6 +1356,10 @@
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent" />
 
                             <RadioButton
                                 android:id="@+id/m11098"
@@ -2583,6 +2599,7 @@
                 </androidx.cardview.widget.CardView>
 
 
+
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -2593,22 +2610,24 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
                         android:onClick="btnEnd"
                         android:text="Cancel"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
                         android:onClick="btnContinue"
                         android:text="Save"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -2620,5 +2639,6 @@
         </ScrollView>
 
     </LinearLayout>
+
 
 </layout>
