@@ -3441,7 +3441,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{child.im23.equals(`3`)}"
-                                    android:onClick="@{()->child.setIm23(`3`)}"
+                                    android:onClick="@{()->child.setIm23(`3`) + im24.clearCheck()}"
                                     android:text="@string/im2303" />
 
                                 <RadioButton
@@ -3894,7 +3894,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{child.im2698.equals(`98`)}"
-                                android:enabled="@{!child.im2698.equals(`98`)}"
                                 android:onClick="@{()->child.setIm2698(child.im2698.equals(`98`)?``:`98`)}"
                                 android:text="@string/im2698" />
 
@@ -3902,6 +3901,7 @@
                                 android:id="@+id/im2696"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!child.im2698.equals(`98`)}"
                                 android:checked="@{child.im2696.equals(`96`)}"
                                 android:onClick="@{()->child.setIm2696(child.im2696.equals(`96`)?``:`96`)}"
                                 android:text="@string/im2696" />
