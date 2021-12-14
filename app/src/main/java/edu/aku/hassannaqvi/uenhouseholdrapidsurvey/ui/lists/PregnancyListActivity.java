@@ -84,7 +84,7 @@ public class PregnancyListActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_pregnancy_list);
 
         // Title with Name of MWRA
-        bi.fmHeading.setText("PREGNANCIES OF " + MainApp.pregM.getE101a().toUpperCase());
+        bi.fmHeading.setText("PREGNANCIES OF \n" + MainApp.pregM.getE101a().toUpperCase());
 
         db = MainApp.appInfo.dbHelper;
         MainApp.pregList = new ArrayList<>();

@@ -24,7 +24,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 public class MWRA extends BaseObservable implements Observable {
 
     private final String TAG = "MWRA";
-    private transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
+    private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     //Not saving in DB
     private final LocalDate localDate = null;
     private final boolean exist = false;
@@ -52,19 +52,7 @@ public class MWRA extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
-    //Section Vaiables
-    private String sE = _EMPTY_;
-    private String sF = _EMPTY_;
-    private String sG = _EMPTY_;
-    private String sH1 = _EMPTY_;
-    private String sH2 = _EMPTY_;
-    private String sK = _EMPTY_;
-    private String sL = _EMPTY_;
-
-
     // Field Variables bs1
-
-
     private String f101 = _EMPTY_;
     private String f101a = _EMPTY_;
     private String f101a01 = _EMPTY_;
@@ -740,70 +728,6 @@ public class MWRA extends BaseObservable implements Observable {
         this.psuCode = psuCode;
     }
 
-
-    public String getsF() {
-        return sF;
-    }
-
-    public void setsF(String sF) {
-        this.sF = sF;
-    }
-
-
-    public String getsG() {
-        return sG;
-    }
-
-    public void setsG(String sG) {
-        this.sG = sG;
-    }
-
-
-    public String getsH1() {
-        return sH1;
-    }
-
-    public void setsH1(String sH1) {
-        this.sH1 = sH1;
-    }
-
-
-    public String getsH2() {
-        return sH2;
-    }
-
-    public void setsH2(String sH2) {
-        this.sH2 = sH2;
-    }
-
-
-    public String getsK() {
-        return sK;
-    }
-
-    public void setsK(String sK) {
-        this.sK = sK;
-    }
-
-
-    public String getsL() {
-        return sL;
-    }
-
-    public void setsL(String sL) {
-        this.sL = sL;
-    }
-
-
-    @Bindable
-    public String getsE() {
-        return sE;
-    }
-
-    public void setsE(String sE) {
-        this.sE = sE;
-        notifyChange(BR.sE);
-    }
 
 
     @Bindable
@@ -7372,23 +7296,4 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
-    private synchronized void notifyChange(int propertyId) {
-        if (propertyChangeRegistry == null) propertyChangeRegistry = new PropertyChangeRegistry();
-
-        propertyChangeRegistry.notifyChange(this, propertyId);
-    }
-
-    @Override
-    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry == null) propertyChangeRegistry = new PropertyChangeRegistry();
-        propertyChangeRegistry.add(callback);
-
-    }
-
-    @Override
-    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry != null) {
-            propertyChangeRegistry.remove(callback);
-        }
-    }
 }
