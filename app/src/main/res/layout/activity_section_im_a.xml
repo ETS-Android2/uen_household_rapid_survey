@@ -3933,24 +3933,24 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
-                        android:elevation="20dp"
                         android:onClick="btnEnd"
                         android:text="Cancel"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
-                        android:elevation="20dp"
                         android:onClick="btnContinue"
                         android:text="Save"
+                        android:elevation="20dp"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -3959,7 +3959,9 @@
 
             </LinearLayout>
 
+
         </ScrollView>
+
 
     </LinearLayout>
 
