@@ -5,7 +5,6 @@ import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.child;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childARI;
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childDIA;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -489,7 +488,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = ChildDIATable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(childDIA.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.childDIA.getId())};
 
         return db.update(ChildDIATable.TABLE_NAME,
                 values,
@@ -2290,6 +2289,76 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return child;
+    }
+
+    public ChildDIA getChildDIAByUUid(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildDIATable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildDIATable.COLUMN_ID + " ASC";
+
+        ChildDIA childDIA = new ChildDIA();  // Pregnancies can never be null.
+
+        c = db.query(
+                ChildDIATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            childDIA = new ChildDIA().Hydrate(c);
+        }
+
+        db.close();
+
+        return childDIA;
+    }
+
+    public ChildARI getChildARIByUUid(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildARITable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildARITable.COLUMN_ID + " ASC";
+
+        ChildARI childARI = new ChildARI();  // Pregnancies can never be null.
+
+        c = db.query(
+                ChildARITable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            childARI = new ChildARI().Hydrate(c);
+        }
+
+        db.close();
+
+        return childARI;
     }
 
 
