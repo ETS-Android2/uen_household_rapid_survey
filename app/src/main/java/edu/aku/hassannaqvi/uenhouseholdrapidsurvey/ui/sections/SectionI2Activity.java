@@ -62,7 +62,7 @@ public class SectionI2Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionIMA_Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionIMAActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

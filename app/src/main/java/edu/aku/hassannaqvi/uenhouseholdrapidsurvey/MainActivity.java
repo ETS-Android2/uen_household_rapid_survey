@@ -38,8 +38,8 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH1BActivit
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionH2Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI1Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionI2Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMA_Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMB_Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMAActivity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionIMBActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionK1Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionL1Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionM1Activity;
@@ -155,11 +155,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.secima:
                 MainApp.child = new Child();
-                startActivity(new Intent(this, SectionIMA_Activity.class));
+                startActivity(new Intent(this, SectionIMAActivity.class));
                 break;
             case R.id.secimb:
                 MainApp.child = new Child();
-                startActivity(new Intent(this, SectionIMB_Activity.class));
+                startActivity(new Intent(this, SectionIMBActivity.class));
                 break;
             case R.id.seck1:
                 MainApp.mwra = new MWRA();

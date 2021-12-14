@@ -29,7 +29,7 @@ public class SectionI1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i1);
-        bi.setChild(MainApp.childARI);
+        bi.setChildDIA(MainApp.childDIA);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni1diarrheainformation_mainheading);
@@ -42,20 +42,20 @@ public class SectionI1Activity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
-        MainApp.childARI.populateMeta();
+        MainApp.childDIA.populateMeta();
 
         long rowId = 0;
         try {
-            rowId = db.addChildARI(MainApp.childARI);
+            rowId = db.addChildDIA(MainApp.childDIA);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.childARI.setId(String.valueOf(rowId));
+        MainApp.childDIA.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.childARI.setUid(MainApp.childARI.getDeviceId() + MainApp.childARI.getId());
-            db.updatesChildARIColumn(TableContracts.ChildARITable.COLUMN_UID, MainApp.childARI.getUid());
+            MainApp.childDIA.setUid(MainApp.childDIA.getDeviceId() + MainApp.childDIA.getId());
+            db.updatesChildARIColumn(TableContracts.ChildDIATable.COLUMN_UID, MainApp.childDIA.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -68,7 +68,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesChildARIColumn(TableContracts.ChildARITable.COLUMN_SI1, MainApp.childARI.sI1toString());
+            updcount = db.updatesChildDIAColumn(TableContracts.ChildDIATable.COLUMN_SI1, MainApp.childDIA.sI1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

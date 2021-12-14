@@ -6,8 +6,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="child"
-            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI" />
+            name="childDIA"
+            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA" />
     </data>
 
     <LinearLayout
@@ -92,8 +92,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i101.equals(`1`)}"
-                                android:onClick="@{()->child.setI101(`1`)}"
+                                android:checked="@{childDIA.i101.equals(`1`)}"
+                                android:onClick="@{()->childDIA.setI101(`1`)}"
                                 android:text="@string/i10101" />
 
                             <RadioButton
@@ -101,8 +101,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i101.equals(`2`)}"
-                                android:onClick="@{()->child.setI101(`2`)}"
+                                android:checked="@{childDIA.i101.equals(`2`)}"
+                                android:onClick="@{()->childDIA.setI101(`2`)}"
                                 android:text="@string/i10102" />
                         </RadioGroup>
                     </LinearLayout>
@@ -112,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{child.i101.equals(`2`)? View.GONE : View.VISIBLE}">
+                    android:visibility="@{childDIA.i101.equals(`2`)? View.GONE : View.VISIBLE}">
 
                     <!-- i102  Title   -->
                     <androidx.cardview.widget.CardView
@@ -155,7 +155,7 @@
                                 android:hint="@string/i10201"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={child.i10201}"
+                                android:text="@={childDIA.i10201}"
                                 app:maxValue="10"
                                 app:minValue="0"
                                 app:type="range" />
@@ -203,7 +203,7 @@
                                 android:layout_height="wrap_content"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                 android:hint="@string/i102a"
-                                android:text="@={child.i102a}" />
+                                android:text="@={childDIA.i102a}" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -243,7 +243,7 @@
                                 android:hint="@string/i102ano"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:text="@={child.i102ano}"
+                                android:text="@={childDIA.i102ano}"
                                 app:maxValue="100"
                                 app:minValue="1"
                                 app:type="range" />
@@ -290,8 +290,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i102b.equals(`1`)}"
-                                    android:onClick="@{()->child.setI102b(`1`)}"
+                                    android:checked="@{childDIA.i102b.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI102b(`1`)}"
                                     android:text="@string/i102b01" />
 
                                 <RadioButton
@@ -299,8 +299,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i102b.equals(`2`)}"
-                                    android:onClick="@{()->child.setI102b(`2`)}"
+                                    android:checked="@{childDIA.i102b.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI102b(`2`)}"
                                     android:text="@string/i102b02" />
                             </RadioGroup>
                         </LinearLayout>
@@ -310,7 +310,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi102ct"
                         style="@style/cardView"
-                        android:visibility="@{child.i102b.equals(`1`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i102b.equals(`1`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -360,7 +360,7 @@
                                         android:layout_height="wrap_content"
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/i102c"
-                                        android:text="@={child.i102c}" />
+                                        android:text="@={childDIA.i102c}" />
                                 </LinearLayout>
 
 
@@ -383,7 +383,7 @@
                                         android:hint="@string/i102cno"
                                         android:inputType="number"
                                         android:maxLength="3"
-                                        android:text="@={child.i102cno}"
+                                        android:text="@={childDIA.i102cno}"
                                         app:maxValue="100"
                                         app:minValue="1"
                                         app:type="range" />
@@ -432,8 +432,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{child.i103.equals(`1`)}"
-                                    android:onClick="@{()->child.setI103(`1`)}"
+                                    android:checked="@{childDIA.i103.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI103(`1`)}"
                                     android:text="@string/i10301" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -441,12 +441,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="@{child.i103.equals(`1`)}"
+                                    android:enabled="@{childDIA.i103.equals(`1`)}"
                                     android:gravity="center"
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:tag="i10301"
-                                    android:text="@={child.i10301x}"
+                                    android:text="@={childDIA.i10301x}"
                                     android:hint="##"
                                     app:maxValue="15"
                                     app:minValue="0"
@@ -457,8 +457,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:checked="@{child.i103.equals(`2`)}"
-                                    android:onClick="@{()->child.setI103(`2`)}"
+                                    android:checked="@{childDIA.i103.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI103(`2`)}"
                                     android:text="@string/i10302" />
                             </RadioGroup>
                         </LinearLayout>
@@ -504,8 +504,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i104.equals(`1`)}"
-                                    android:onClick="@{()->child.setI104(`1`)}"
+                                    android:checked="@{childDIA.i104.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI104(`1`)}"
                                     android:text="@string/i10401" />
 
                                 <RadioButton
@@ -513,8 +513,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i104.equals(`2`)}"
-                                    android:onClick="@{()->child.setI104(`2`)}"
+                                    android:checked="@{childDIA.i104.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI104(`2`)}"
                                     android:text="@string/i10402" />
 
                                 <RadioButton
@@ -522,8 +522,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i104.equals(`98`)}"
-                                    android:onClick="@{()->child.setI104(`98`)}"
+                                    android:checked="@{childDIA.i104.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI104(`98`)}"
                                     android:text="@string/i10498" />
                             </RadioGroup>
                         </LinearLayout>
@@ -569,8 +569,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i105.equals(`1`)}"
-                                    android:onClick="@{()->child.setI105(`1`)}"
+                                    android:checked="@{childDIA.i105.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI105(`1`)}"
                                     android:text="@string/i10501" />
 
                                 <RadioButton
@@ -578,8 +578,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i105.equals(`2`)}"
-                                    android:onClick="@{()->child.setI105(`2`)}"
+                                    android:checked="@{childDIA.i105.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI105(`2`)}"
                                     android:text="@string/i10502" />
                             </RadioGroup>
                         </LinearLayout>
@@ -589,7 +589,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi106"
                         style="@style/cardView"
-                        android:visibility="@{child.i105.equals(`1`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i105.equals(`1`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -624,96 +624,96 @@
                                     android:id="@+id/i10601"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`1`)}"
-                                    android:onClick="@{()->child.setI106(`1`)}"
+                                    android:checked="@{childDIA.i106.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI106(`1`)}"
                                     android:text="@string/i10601" />
 
                                 <RadioButton
                                     android:id="@+id/i10602"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`2`)}"
-                                    android:onClick="@{()->child.setI106(`2`)}"
+                                    android:checked="@{childDIA.i106.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI106(`2`)}"
                                     android:text="@string/i10602" />
 
                                 <RadioButton
                                     android:id="@+id/i10603"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`3`)}"
-                                    android:onClick="@{()->child.setI106(`3`)}"
+                                    android:checked="@{childDIA.i106.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI106(`3`)}"
                                     android:text="@string/i10603" />
 
                                 <RadioButton
                                     android:id="@+id/i10604"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`4`)}"
-                                    android:onClick="@{()->child.setI106(`4`)}"
+                                    android:checked="@{childDIA.i106.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI106(`4`)}"
                                     android:text="@string/i10604" />
 
                                 <RadioButton
                                     android:id="@+id/i10605"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`5`)}"
-                                    android:onClick="@{()->child.setI106(`5`)}"
+                                    android:checked="@{childDIA.i106.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI106(`5`)}"
                                     android:text="@string/i10605" />
 
                                 <RadioButton
                                     android:id="@+id/i10606"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`6`)}"
-                                    android:onClick="@{()->child.setI106(`6`)}"
+                                    android:checked="@{childDIA.i106.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI106(`6`)}"
                                     android:text="@string/i10606" />
 
                                 <RadioButton
                                     android:id="@+id/i10607"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`7`)}"
-                                    android:onClick="@{()->child.setI106(`7`)}"
+                                    android:checked="@{childDIA.i106.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI106(`7`)}"
                                     android:text="@string/i10607" />
 
                                 <RadioButton
                                     android:id="@+id/i10608"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`8`)}"
-                                    android:onClick="@{()->child.setI106(`8`)}"
+                                    android:checked="@{childDIA.i106.equals(`8`)}"
+                                    android:onClick="@{()->childDIA.setI106(`8`)}"
                                     android:text="@string/i10608" />
 
                                 <RadioButton
                                     android:id="@+id/i10609"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`9`)}"
-                                    android:onClick="@{()->child.setI106(`9`)}"
+                                    android:checked="@{childDIA.i106.equals(`9`)}"
+                                    android:onClick="@{()->childDIA.setI106(`9`)}"
                                     android:text="@string/i10609" />
 
                                 <RadioButton
                                     android:id="@+id/i10610"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`10`)}"
-                                    android:onClick="@{()->child.setI106(`10`)}"
+                                    android:checked="@{childDIA.i106.equals(`10`)}"
+                                    android:onClick="@{()->childDIA.setI106(`10`)}"
                                     android:text="@string/i10610" />
 
                                 <RadioButton
                                     android:id="@+id/i10611"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`11`)}"
-                                    android:onClick="@{()->child.setI106(`11`)}"
+                                    android:checked="@{childDIA.i106.equals(`11`)}"
+                                    android:onClick="@{()->childDIA.setI106(`11`)}"
                                     android:text="@string/i10611" />
 
                                 <RadioButton
                                     android:id="@+id/i10696"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i106.equals(`96`)}"
-                                    android:onClick="@{()->child.setI106(`96`)}"
+                                    android:checked="@{childDIA.i106.equals(`96`)}"
+                                    android:onClick="@{()->childDIA.setI106(`96`)}"
                                     android:text="@string/i10696" />
 
                                 <EditText
@@ -723,8 +723,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/i10696"
                                     android:tag="i10696"
-                                    android:text="@={child.i10696x}"
-                                    android:visibility="@{child.i106.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={childDIA.i10696x}"
+                                    android:visibility="@{childDIA.i106.equals(`96`) ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -767,24 +767,24 @@
                                     android:id="@+id/i10701"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i107.equals(`1`)}"
-                                    android:onClick="@{()->child.setI107(`1`)}"
+                                    android:checked="@{childDIA.i107.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI107(`1`)}"
                                     android:text="@string/i10701" />
 
                                 <RadioButton
                                     android:id="@+id/i10702"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i107.equals(`2`)}"
-                                    android:onClick="@{()->child.setI107(`2`)}"
+                                    android:checked="@{childDIA.i107.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI107(`2`)}"
                                     android:text="@string/i10702" />
 
                                 <RadioButton
                                     android:id="@+id/i10703"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i107.equals(`3`)}"
-                                    android:onClick="@{()->child.setI107(`3`)}"
+                                    android:checked="@{childDIA.i107.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI107(`3`)}"
                                     android:text="@string/i10703" />
                             </RadioGroup>
                         </LinearLayout>
@@ -828,56 +828,56 @@
                                     android:id="@+id/i10801"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`1`)}"
-                                    android:onClick="@{()->child.setI108(`1`)}"
+                                    android:checked="@{childDIA.i108.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI108(`1`)}"
                                     android:text="@string/i10801" />
 
                                 <RadioButton
                                     android:id="@+id/i10802"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`2`)}"
-                                    android:onClick="@{()->child.setI108(`2`)}"
+                                    android:checked="@{childDIA.i108.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI108(`2`)}"
                                     android:text="@string/i10802" />
 
                                 <RadioButton
                                     android:id="@+id/i10803"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`3`)}"
-                                    android:onClick="@{()->child.setI108(`3`)}"
+                                    android:checked="@{childDIA.i108.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI108(`3`)}"
                                     android:text="@string/i10803" />
 
                                 <RadioButton
                                     android:id="@+id/i10804"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`4`)}"
-                                    android:onClick="@{()->child.setI108(`4`)}"
+                                    android:checked="@{childDIA.i108.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI108(`4`)}"
                                     android:text="@string/i10804" />
 
                                 <RadioButton
                                     android:id="@+id/i10805"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`5`)}"
-                                    android:onClick="@{()->child.setI108(`5`)}"
+                                    android:checked="@{childDIA.i108.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI108(`5`)}"
                                     android:text="@string/i10805" />
 
                                 <RadioButton
                                     android:id="@+id/i10806"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`6`)}"
-                                    android:onClick="@{()->child.setI108(`6`)}"
+                                    android:checked="@{childDIA.i108.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI108(`6`)}"
                                     android:text="@string/i10806" />
 
                                 <RadioButton
                                     android:id="@+id/i10807"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i108.equals(`7`)}"
-                                    android:onClick="@{()->child.setI108(`7`)}"
+                                    android:checked="@{childDIA.i108.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI108(`7`)}"
                                     android:text="@string/i10807" />
                             </RadioGroup>
                         </LinearLayout>
@@ -921,64 +921,64 @@
                                     android:id="@+id/i11101"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`1`)}"
-                                    android:onClick="@{()->child.setI111(`1`)}"
+                                    android:checked="@{childDIA.i111.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI111(`1`)}"
                                     android:text="@string/i11101" />
 
                                 <RadioButton
                                     android:id="@+id/i11102"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`2`)}"
-                                    android:onClick="@{()->child.setI111(`2`)}"
+                                    android:checked="@{childDIA.i111.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI111(`2`)}"
                                     android:text="@string/i11102" />
 
                                 <RadioButton
                                     android:id="@+id/i11103"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`3`)}"
-                                    android:onClick="@{()->child.setI111(`3`)}"
+                                    android:checked="@{childDIA.i111.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI111(`3`)}"
                                     android:text="@string/i11103" />
 
                                 <RadioButton
                                     android:id="@+id/i11104"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`4`)}"
-                                    android:onClick="@{()->child.setI111(`4`)}"
+                                    android:checked="@{childDIA.i111.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI111(`4`)}"
                                     android:text="@string/i11104" />
 
                                 <RadioButton
                                     android:id="@+id/i11105"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`5`)}"
-                                    android:onClick="@{()->child.setI111(`5`)}"
+                                    android:checked="@{childDIA.i111.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI111(`5`)}"
                                     android:text="@string/i11105" />
 
                                 <RadioButton
                                     android:id="@+id/i11106"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`6`)}"
-                                    android:onClick="@{()->child.setI111(`6`)}"
+                                    android:checked="@{childDIA.i111.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI111(`6`)}"
                                     android:text="@string/i11106" />
 
                                 <RadioButton
                                     android:id="@+id/i11107"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`7`)}"
-                                    android:onClick="@{()->child.setI111(`7`)}"
+                                    android:checked="@{childDIA.i111.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI111(`7`)}"
                                     android:text="@string/i11107" />
 
                                 <RadioButton
                                     android:id="@+id/i11196"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i111.equals(`96`)}"
-                                    android:onClick="@{()->child.setI111(`96`)}"
+                                    android:checked="@{childDIA.i111.equals(`96`)}"
+                                    android:onClick="@{()->childDIA.setI111(`96`)}"
                                     android:text="@string/i11196" />
 
                                 <EditText
@@ -988,8 +988,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/i11196"
                                     android:tag="i11196"
-                                    android:text="@={child.i11196x}"
-                                    android:visibility="@{child.i111.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={childDIA.i11196x}"
+                                    android:visibility="@{childDIA.i111.equals(`96`) ? View.VISIBLE : View.GONE}" />
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -1034,8 +1034,8 @@
                                     android:id="@+id/i11201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11201.equals(`1`)}"
-                                    android:onClick="@{()->child.setI11201(child.i11201.equals(`1`)?``:`1`)}"
+                                    android:checked="@{childDIA.i11201.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI11201(childDIA.i11201.equals(`1`)?``:`1`)}"
 
                                     android:text="@string/i11201" />
 
@@ -1043,8 +1043,8 @@
                                     android:id="@+id/i11202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11202.equals(`2`)}"
-                                    android:onClick="@{()->child.setI11202(child.i11202.equals(`2`)?``:`2`)}"
+                                    android:checked="@{childDIA.i11202.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI11202(childDIA.i11202.equals(`2`)?``:`2`)}"
 
                                     android:text="@string/i11202" />
 
@@ -1052,8 +1052,8 @@
                                     android:id="@+id/i11203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11203.equals(`3`)}"
-                                    android:onClick="@{()->child.setI11203(child.i11203.equals(`3`)?``:`3`)}"
+                                    android:checked="@{childDIA.i11203.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI11203(childDIA.i11203.equals(`3`)?``:`3`)}"
 
                                     android:text="@string/i11203" />
 
@@ -1061,8 +1061,8 @@
                                     android:id="@+id/i11204"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11204.equals(`4`)}"
-                                    android:onClick="@{()->child.setI11204(child.i11204.equals(`4`)?``:`4`)}"
+                                    android:checked="@{childDIA.i11204.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI11204(childDIA.i11204.equals(`4`)?``:`4`)}"
 
                                     android:text="@string/i11204" />
 
@@ -1070,8 +1070,8 @@
                                     android:id="@+id/i11205"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11205.equals(`5`)}"
-                                    android:onClick="@{()->child.setI11205(child.i11205.equals(`5`)?``:`5`)}"
+                                    android:checked="@{childDIA.i11205.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI11205(childDIA.i11205.equals(`5`)?``:`5`)}"
 
                                     android:text="@string/i11205" />
 
@@ -1079,8 +1079,8 @@
                                     android:id="@+id/i11206"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11206.equals(`6`)}"
-                                    android:onClick="@{()->child.setI11206(child.i11206.equals(`6`)?``:`6`)}"
+                                    android:checked="@{childDIA.i11206.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI11206(childDIA.i11206.equals(`6`)?``:`6`)}"
 
                                     android:text="@string/i11206" />
 
@@ -1088,8 +1088,8 @@
                                     android:id="@+id/i11207"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11207.equals(`7`)}"
-                                    android:onClick="@{()->child.setI11207(child.i11207.equals(`7`)?``:`7`)}"
+                                    android:checked="@{childDIA.i11207.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI11207(childDIA.i11207.equals(`7`)?``:`7`)}"
 
                                     android:text="@string/i11207" />
 
@@ -1097,8 +1097,8 @@
                                     android:id="@+id/i11208"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11208.equals(`8`)}"
-                                    android:onClick="@{()->child.setI11208(child.i11208.equals(`8`)?``:`8`)}"
+                                    android:checked="@{childDIA.i11208.equals(`8`)}"
+                                    android:onClick="@{()->childDIA.setI11208(childDIA.i11208.equals(`8`)?``:`8`)}"
 
                                     android:text="@string/i11208" />
 
@@ -1106,8 +1106,8 @@
                                     android:id="@+id/i11209"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11209.equals(`9`)}"
-                                    android:onClick="@{()->child.setI11209(child.i11209.equals(`9`)?``:`9`)}"
+                                    android:checked="@{childDIA.i11209.equals(`9`)}"
+                                    android:onClick="@{()->childDIA.setI11209(childDIA.i11209.equals(`9`)?``:`9`)}"
 
                                     android:text="@string/i11209" />
 
@@ -1115,8 +1115,8 @@
                                     android:id="@+id/i11210"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11210.equals(`10`)}"
-                                    android:onClick="@{()->child.setI11210(child.i11210.equals(`10`)?``:`10`)}"
+                                    android:checked="@{childDIA.i11210.equals(`10`)}"
+                                    android:onClick="@{()->childDIA.setI11210(childDIA.i11210.equals(`10`)?``:`10`)}"
 
                                     android:text="@string/i11210" />
 
@@ -1124,8 +1124,8 @@
                                     android:id="@+id/i11211"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11211.equals(`11`)}"
-                                    android:onClick="@{()->child.setI11211(child.i11211.equals(`11`)?``:`11`)}"
+                                    android:checked="@{childDIA.i11211.equals(`11`)}"
+                                    android:onClick="@{()->childDIA.setI11211(childDIA.i11211.equals(`11`)?``:`11`)}"
 
                                     android:text="@string/i11211" />
                             </LinearLayout>
@@ -1172,8 +1172,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i113.equals(`1`)}"
-                                    android:onClick="@{()->child.setI113(`1`)}"
+                                    android:checked="@{childDIA.i113.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI113(`1`)}"
                                     android:text="@string/i11301" />
 
                                 <RadioButton
@@ -1181,8 +1181,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i113.equals(`2`)}"
-                                    android:onClick="@{()->child.setI113(`2`)}"
+                                    android:checked="@{childDIA.i113.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI113(`2`)}"
                                     android:text="@string/i11302" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1192,7 +1192,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi115"
                         style="@style/cardView"
-                        android:visibility="@{child.i113.equals(`2`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i113.equals(`2`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1234,48 +1234,48 @@
                                     android:id="@+id/i11501"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`1`)}"
-                                    android:onClick="@{()->child.setI115(`1`)}"
+                                    android:checked="@{childDIA.i115.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI115(`1`)}"
                                     android:text="@string/i11501" />
 
                                 <RadioButton
                                     android:id="@+id/i11502"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`2`)}"
-                                    android:onClick="@{()->child.setI115(`2`)}"
+                                    android:checked="@{childDIA.i115.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI115(`2`)}"
                                     android:text="@string/i11502" />
 
                                 <RadioButton
                                     android:id="@+id/i11503"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`3`)}"
-                                    android:onClick="@{()->child.setI115(`3`)}"
+                                    android:checked="@{childDIA.i115.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI115(`3`)}"
                                     android:text="@string/i11503" />
 
                                 <RadioButton
                                     android:id="@+id/i11504"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`4`)}"
-                                    android:onClick="@{()->child.setI115(`4`)}"
+                                    android:checked="@{childDIA.i115.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI115(`4`)}"
                                     android:text="@string/i11504" />
 
                                 <RadioButton
                                     android:id="@+id/i11505"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`5`)}"
-                                    android:onClick="@{()->child.setI115(`5`)}"
+                                    android:checked="@{childDIA.i115.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI115(`5`)}"
                                     android:text="@string/i11505" />
 
                                 <RadioButton
                                     android:id="@+id/i11506"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`6`)}"
-                                    android:onClick="@{()->child.setI115(`6`)}"
+                                    android:checked="@{childDIA.i115.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI115(`6`)}"
                                     android:text="@string/i11506" />
 
                                 <TextView
@@ -1289,32 +1289,32 @@
                                     android:id="@+id/i11507"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`7`)}"
-                                    android:onClick="@{()->child.setI115(`7`)}"
+                                    android:checked="@{childDIA.i115.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI115(`7`)}"
                                     android:text="@string/i11507" />
 
                                 <RadioButton
                                     android:id="@+id/i11508"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`8`)}"
-                                    android:onClick="@{()->child.setI115(`8`)}"
+                                    android:checked="@{childDIA.i115.equals(`8`)}"
+                                    android:onClick="@{()->childDIA.setI115(`8`)}"
                                     android:text="@string/i11508" />
 
                                 <RadioButton
                                     android:id="@+id/i11509"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`9`)}"
-                                    android:onClick="@{()->child.setI115(`9`)}"
+                                    android:checked="@{childDIA.i115.equals(`9`)}"
+                                    android:onClick="@{()->childDIA.setI115(`9`)}"
                                     android:text="@string/i11509" />
 
                                 <RadioButton
                                     android:id="@+id/i11510"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i115.equals(`10`)}"
-                                    android:onClick="@{()->child.setI115(`10`)}"
+                                    android:checked="@{childDIA.i115.equals(`10`)}"
+                                    android:onClick="@{()->childDIA.setI115(`10`)}"
                                     android:text="@string/i11510" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1324,7 +1324,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi116"
                         style="@style/cardView"
-                        android:visibility="@{child.i113.equals(`2`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i113.equals(`2`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1359,8 +1359,8 @@
                                     android:id="@+id/i11601"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i116.equals(`1`)}"
-                                    android:onClick="@{()->child.setI116(`1`)}"
+                                    android:checked="@{childDIA.i116.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI116(`1`)}"
                                     android:text="@string/i11601" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1371,8 +1371,8 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:tag="i11601"
-                                    android:text="@={child.i11601x}"
-                                    android:visibility="@{child.i116.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:text="@={childDIA.i11601x}"
+                                    android:visibility="@{childDIA.i116.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="23"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1381,8 +1381,8 @@
                                     android:id="@+id/i11602"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i116.equals(`2`)}"
-                                    android:onClick="@{()->child.setI116(`2`)}"
+                                    android:checked="@{childDIA.i116.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI116(`2`)}"
                                     android:text="@string/i11602" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1393,8 +1393,8 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:tag="i11602"
-                                    android:text="@={child.i11602x}"
-                                    android:visibility="@{child.i116.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:text="@={childDIA.i11602x}"
+                                    android:visibility="@{childDIA.i116.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="29"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1403,8 +1403,8 @@
                                     android:id="@+id/i11603"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i116.equals(`3`)}"
-                                    android:onClick="@{()->child.setI116(`3`)}"
+                                    android:checked="@{childDIA.i116.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI116(`3`)}"
                                     android:text="@string/i11603" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1450,8 +1450,8 @@
                                     android:id="@+id/i11701"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11701.equals(`1`)}"
-                                    android:onClick="@{()->child.setI11701(child.i11701.equals(`1`)?``:`1`)}"
+                                    android:checked="@{childDIA.i11701.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI11701(childDIA.i11701.equals(`1`)?``:`1`)}"
 
                                     android:text="@string/i11701" />
 
@@ -1466,8 +1466,8 @@
                                     android:id="@+id/i11702"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11702.equals(`2`)}"
-                                    android:onClick="@{()->child.setI11702(child.i11702.equals(`2`)?``:`2`)}"
+                                    android:checked="@{childDIA.i11702.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI11702(childDIA.i11702.equals(`2`)?``:`2`)}"
 
                                     android:text="@string/i11702" />
 
@@ -1475,8 +1475,8 @@
                                     android:id="@+id/i11703"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11703.equals(`3`)}"
-                                    android:onClick="@{()->child.setI11703(child.i11703.equals(`3`)?``:`3`)}"
+                                    android:checked="@{childDIA.i11703.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI11703(childDIA.i11703.equals(`3`)?``:`3`)}"
 
                                     android:text="@string/i11703" />
 
@@ -1484,8 +1484,8 @@
                                     android:id="@+id/i11704"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11704.equals(`4`)}"
-                                    android:onClick="@{()->child.setI11704(child.i11704.equals(`4`)?``:`4`)}"
+                                    android:checked="@{childDIA.i11704.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI11704(childDIA.i11704.equals(`4`)?``:`4`)}"
 
                                     android:text="@string/i11704" />
 
@@ -1500,8 +1500,8 @@
                                     android:id="@+id/i11705"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11705.equals(`5`)}"
-                                    android:onClick="@{()->child.setI11705(child.i11705.equals(`5`)?``:`5`)}"
+                                    android:checked="@{childDIA.i11705.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI11705(childDIA.i11705.equals(`5`)?``:`5`)}"
 
                                     android:text="@string/i11705" />
 
@@ -1509,8 +1509,8 @@
                                     android:id="@+id/i11706"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11706.equals(`6`)}"
-                                    android:onClick="@{()->child.setI11706(child.i11706.equals(`6`)?``:`6`)}"
+                                    android:checked="@{childDIA.i11706.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI11706(childDIA.i11706.equals(`6`)?``:`6`)}"
 
                                     android:text="@string/i11706" />
 
@@ -1518,8 +1518,8 @@
                                     android:id="@+id/i11707"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11707.equals(`7`)}"
-                                    android:onClick="@{()->child.setI11707(child.i11707.equals(`7`)?``:`7`)}"
+                                    android:checked="@{childDIA.i11707.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI11707(childDIA.i11707.equals(`7`)?``:`7`)}"
 
                                     android:text="@string/i11707" />
 
@@ -1527,8 +1527,8 @@
                                     android:id="@+id/i11708"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11708.equals(`8`)}"
-                                    android:onClick="@{()->child.setI11708(child.i11708.equals(`8`)?``:`8`)}"
+                                    android:checked="@{childDIA.i11708.equals(`8`)}"
+                                    android:onClick="@{()->childDIA.setI11708(childDIA.i11708.equals(`8`)?``:`8`)}"
 
                                     android:text="@string/i11708" />
 
@@ -1536,8 +1536,8 @@
                                     android:id="@+id/i11796"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11796.equals(`96`)}"
-                                    android:onClick="@{()->child.setI11796(child.i11796.equals(`96`)?``:`96`)}"
+                                    android:checked="@{childDIA.i11796.equals(`96`)}"
+                                    android:onClick="@{()->childDIA.setI11796(childDIA.i11796.equals(`96`)?``:`96`)}"
                                     android:text="@string/i11796" />
 
                                 <EditText
@@ -1547,8 +1547,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/i11796"
                                     android:tag="i11796"
-                                    android:text="@={child.i11796x}"
-                                    android:visibility="@{child.i11796.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={childDIA.i11796x}"
+                                    android:visibility="@{childDIA.i11796.equals(`96`) ? View.VISIBLE : View.GONE}" />
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -1593,9 +1593,9 @@
                                     android:id="@+id/i11801"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11801.equals(`1`)}"
-                                    android:enabled="@{!child.i11898.equals(`98`)}"
-                                    android:onClick="@{()->child.setI11801(child.i11801.equals(`1`)?``:`1`)}"
+                                    android:checked="@{childDIA.i11801.equals(`1`)}"
+                                    android:enabled="@{!childDIA.i11898.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI11801(childDIA.i11801.equals(`1`)?``:`1`)}"
                                     android:text="@string/i11801" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1606,8 +1606,8 @@
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="i11801"
-                                    android:text="@={child.i11801x}"
-                                    android:visibility="@{child.i11801.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:text="@={childDIA.i11801x}"
+                                    android:visibility="@{childDIA.i11801.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="700000"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1616,9 +1616,9 @@
                                     android:id="@+id/i11802"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11802.equals(`2`)}"
-                                    android:enabled="@{!child.i11898.equals(`98`)}"
-                                    android:onClick="@{()->child.setI11802(child.i11802.equals(`2`)?``:`2`)}"
+                                    android:checked="@{childDIA.i11802.equals(`2`)}"
+                                    android:enabled="@{!childDIA.i11898.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI11802(childDIA.i11802.equals(`2`)?``:`2`)}"
                                     android:text="@string/i11802" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1629,8 +1629,8 @@
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="i11802"
-                                    android:text="@={child.i11802x}"
-                                    android:visibility="@{child.i11802.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:text="@={childDIA.i11802x}"
+                                    android:visibility="@{childDIA.i11802.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="700000"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1639,9 +1639,9 @@
                                     android:id="@+id/i11803"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11803.equals(`3`)}"
-                                    android:enabled="@{!child.i11898.equals(`98`)}"
-                                    android:onClick="@{()->child.setI11803(child.i11803.equals(`3`)?``:`3`)}"
+                                    android:checked="@{childDIA.i11803.equals(`3`)}"
+                                    android:enabled="@{!childDIA.i11898.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI11803(childDIA.i11803.equals(`3`)?``:`3`)}"
                                     android:text="@string/i11803" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1652,8 +1652,8 @@
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="i11803"
-                                    android:text="@={child.i11803x}"
-                                    android:visibility="@{child.i11803.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:text="@={childDIA.i11803x}"
+                                    android:visibility="@{childDIA.i11803.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="700000"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1662,9 +1662,9 @@
                                     android:id="@+id/i11896"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11896.equals(`96`)}"
-                                    android:enabled="@{!child.i11898.equals(`98`)}"
-                                    android:onClick="@{()->child.setI11896(child.i11896.equals(`96`)?``:`96`)}"
+                                    android:checked="@{childDIA.i11896.equals(`96`)}"
+                                    android:enabled="@{!childDIA.i11898.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI11896(childDIA.i11896.equals(`96`)?``:`96`)}"
                                     android:text="@string/i11896" />
 
                                 <EditText
@@ -1674,15 +1674,15 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/i11896"
                                     android:tag="i11896"
-                                    android:text="@={child.i11896x}"
-                                    android:visibility="@{child.i11896.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                    android:text="@={childDIA.i11896x}"
+                                    android:visibility="@{childDIA.i11896.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                                 <CheckBox
                                     android:id="@+id/i11898"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i11898.equals(`98`)}"
-                                    android:onClick="@{()->child.setI11898(child.i11898.equals(`98`)?``:`98`)}"
+                                    android:checked="@{childDIA.i11898.equals(`98`)}"
+                                    android:onClick="@{()->childDIA.setI11898(childDIA.i11898.equals(`98`)?``:`98`)}"
                                     android:text="@string/i11898" />
                             </LinearLayout>
                         </LinearLayout>
@@ -1728,8 +1728,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i119.equals(`1`)}"
-                                    android:onClick="@{()->child.setI119(`1`)}"
+                                    android:checked="@{childDIA.i119.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI119(`1`)}"
                                     android:text="@string/i11901" />
 
                                 <RadioButton
@@ -1737,8 +1737,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i119.equals(`2`)}"
-                                    android:onClick="@{()->child.setI119(`2`)}"
+                                    android:checked="@{childDIA.i119.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI119(`2`)}"
                                     android:text="@string/i11902" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1748,7 +1748,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi120"
                         style="@style/cardView"
-                        android:visibility="@{child.i119.equals(`2`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i119.equals(`2`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1785,8 +1785,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i120.equals(`1`)}"
-                                    android:onClick="@{()->child.setI120(`1`)}"
+                                    android:checked="@{childDIA.i120.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI120(`1`)}"
                                     android:text="@string/i12001" />
 
                                 <RadioButton
@@ -1794,8 +1794,8 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i120.equals(`2`)}"
-                                    android:onClick="@{()->child.setI120(`2`)}"
+                                    android:checked="@{childDIA.i120.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI120(`2`)}"
                                     android:text="@string/i12002" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1805,7 +1805,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi121"
                         style="@style/cardView"
-                        android:visibility="@{child.i119.equals(`2`) || child.i120.equals(`2`)? View.GONE : View.VISIBLE}">
+                        android:visibility="@{childDIA.i119.equals(`2`) || childDIA.i120.equals(`2`)? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1840,72 +1840,72 @@
                                     android:id="@+id/i12101"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`1`)}"
-                                    android:onClick="@{()->child.setI121(`1`)}"
+                                    android:checked="@{childDIA.i121.equals(`1`)}"
+                                    android:onClick="@{()->childDIA.setI121(`1`)}"
                                     android:text="@string/i12101" />
 
                                 <RadioButton
                                     android:id="@+id/i12102"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`2`)}"
-                                    android:onClick="@{()->child.setI121(`2`)}"
+                                    android:checked="@{childDIA.i121.equals(`2`)}"
+                                    android:onClick="@{()->childDIA.setI121(`2`)}"
                                     android:text="@string/i12102" />
 
                                 <RadioButton
                                     android:id="@+id/i12103"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`3`)}"
-                                    android:onClick="@{()->child.setI121(`3`)}"
+                                    android:checked="@{childDIA.i121.equals(`3`)}"
+                                    android:onClick="@{()->childDIA.setI121(`3`)}"
                                     android:text="@string/i12103" />
 
                                 <RadioButton
                                     android:id="@+id/i12104"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`4`)}"
-                                    android:onClick="@{()->child.setI121(`4`)}"
+                                    android:checked="@{childDIA.i121.equals(`4`)}"
+                                    android:onClick="@{()->childDIA.setI121(`4`)}"
                                     android:text="@string/i12104" />
 
                                 <RadioButton
                                     android:id="@+id/i12105"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`5`)}"
-                                    android:onClick="@{()->child.setI121(`5`)}"
+                                    android:checked="@{childDIA.i121.equals(`5`)}"
+                                    android:onClick="@{()->childDIA.setI121(`5`)}"
                                     android:text="@string/i12105" />
 
                                 <RadioButton
                                     android:id="@+id/i12106"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`6`)}"
-                                    android:onClick="@{()->child.setI121(`6`)}"
+                                    android:checked="@{childDIA.i121.equals(`6`)}"
+                                    android:onClick="@{()->childDIA.setI121(`6`)}"
                                     android:text="@string/i12106" />
 
                                 <RadioButton
                                     android:id="@+id/i12107"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`7`)}"
-                                    android:onClick="@{()->child.setI121(`7`)}"
+                                    android:checked="@{childDIA.i121.equals(`7`)}"
+                                    android:onClick="@{()->childDIA.setI121(`7`)}"
                                     android:text="@string/i12107" />
 
                                 <RadioButton
                                     android:id="@+id/i12108"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`8`)}"
-                                    android:onClick="@{()->child.setI121(`8`)}"
+                                    android:checked="@{childDIA.i121.equals(`8`)}"
+                                    android:onClick="@{()->childDIA.setI121(`8`)}"
                                     android:text="@string/i12108" />
 
                                 <RadioButton
                                     android:id="@+id/i12109"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{child.i121.equals(`9`)}"
-                                    android:onClick="@{()->child.setI121(`9`)}"
+                                    android:checked="@{childDIA.i121.equals(`9`)}"
+                                    android:onClick="@{()->childDIA.setI121(`9`)}"
                                     android:text="@string/i12109" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1952,8 +1952,8 @@
                                 android:id="@+id/i12201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12201.equals(`1`)}"
-                                android:onClick="@{()->child.setI12201(child.i12201.equals(`1`)?``:`1`)}"
+                                android:checked="@{childDIA.i12201.equals(`1`)}"
+                                android:onClick="@{()->childDIA.setI12201(childDIA.i12201.equals(`1`)?``:`1`)}"
 
                                 android:text="@string/i12201" />
 
@@ -1961,8 +1961,8 @@
                                 android:id="@+id/i12202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12202.equals(`2`)}"
-                                android:onClick="@{()->child.setI12202(child.i12202.equals(`2`)?``:`2`)}"
+                                android:checked="@{childDIA.i12202.equals(`2`)}"
+                                android:onClick="@{()->childDIA.setI12202(childDIA.i12202.equals(`2`)?``:`2`)}"
 
                                 android:text="@string/i12202" />
 
@@ -1970,8 +1970,8 @@
                                 android:id="@+id/i12203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12203.equals(`3`)}"
-                                android:onClick="@{()->child.setI12203(child.i12203.equals(`3`)?``:`3`)}"
+                                android:checked="@{childDIA.i12203.equals(`3`)}"
+                                android:onClick="@{()->childDIA.setI12203(childDIA.i12203.equals(`3`)?``:`3`)}"
 
                                 android:text="@string/i12203" />
 
@@ -1979,8 +1979,8 @@
                                 android:id="@+id/i12204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12204.equals(`4`)}"
-                                android:onClick="@{()->child.setI12204(child.i12204.equals(`4`)?``:`4`)}"
+                                android:checked="@{childDIA.i12204.equals(`4`)}"
+                                android:onClick="@{()->childDIA.setI12204(childDIA.i12204.equals(`4`)?``:`4`)}"
 
                                 android:text="@string/i12204" />
 
@@ -1988,8 +1988,8 @@
                                 android:id="@+id/i12205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12205.equals(`5`)}"
-                                android:onClick="@{()->child.setI12205(child.i12205.equals(`5`)?``:`5`)}"
+                                android:checked="@{childDIA.i12205.equals(`5`)}"
+                                android:onClick="@{()->childDIA.setI12205(childDIA.i12205.equals(`5`)?``:`5`)}"
 
                                 android:text="@string/i12205" />
 
@@ -1997,8 +1997,8 @@
                                 android:id="@+id/i12206"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12206.equals(`6`)}"
-                                android:onClick="@{()->child.setI12206(child.i12206.equals(`6`)?``:`6`)}"
+                                android:checked="@{childDIA.i12206.equals(`6`)}"
+                                android:onClick="@{()->childDIA.setI12206(childDIA.i12206.equals(`6`)?``:`6`)}"
 
                                 android:text="@string/i12206" />
 
@@ -2006,8 +2006,8 @@
                                 android:id="@+id/i12207"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12207.equals(`7`)}"
-                                android:onClick="@{()->child.setI12207(child.i12207.equals(`7`)?``:`7`)}"
+                                android:checked="@{childDIA.i12207.equals(`7`)}"
+                                android:onClick="@{()->childDIA.setI12207(childDIA.i12207.equals(`7`)?``:`7`)}"
 
                                 android:text="@string/i12207" />
 
@@ -2015,8 +2015,8 @@
                                 android:id="@+id/i12208"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12208.equals(`8`)}"
-                                android:onClick="@{()->child.setI12208(child.i12208.equals(`8`)?``:`8`)}"
+                                android:checked="@{childDIA.i12208.equals(`8`)}"
+                                android:onClick="@{()->childDIA.setI12208(childDIA.i12208.equals(`8`)?``:`8`)}"
 
                                 android:text="@string/i12208" />
                         </LinearLayout>
@@ -2063,8 +2063,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i123.equals(`1`)}"
-                                android:onClick="@{()->child.setI123(`1`)}"
+                                android:checked="@{childDIA.i123.equals(`1`)}"
+                                android:onClick="@{()->childDIA.setI123(`1`)}"
                                 android:text="@string/i12301" />
 
                             <RadioButton
@@ -2072,8 +2072,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i123.equals(`2`)}"
-                                android:onClick="@{()->child.setI123(`2`)}"
+                                android:checked="@{childDIA.i123.equals(`2`)}"
+                                android:onClick="@{()->childDIA.setI123(`2`)}"
                                 android:text="@string/i12302" />
                         </RadioGroup>
                     </LinearLayout>
@@ -2083,7 +2083,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi124"
                     style="@style/cardView"
-                    android:visibility="@{child.i123.equals(`1`)? View.GONE : View.VISIBLE}">
+                    android:visibility="@{childDIA.i123.equals(`1`)? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2118,56 +2118,56 @@
                                 android:id="@+id/i12401"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`1`)}"
-                                android:onClick="@{()->child.setI124(`1`)}"
+                                android:checked="@{childDIA.i124.equals(`1`)}"
+                                android:onClick="@{()->childDIA.setI124(`1`)}"
                                 android:text="@string/i12401" />
 
                             <RadioButton
                                 android:id="@+id/i12402"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`2`)}"
-                                android:onClick="@{()->child.setI124(`2`)}"
+                                android:checked="@{childDIA.i124.equals(`2`)}"
+                                android:onClick="@{()->childDIA.setI124(`2`)}"
                                 android:text="@string/i12402" />
 
                             <RadioButton
                                 android:id="@+id/i12403"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`3`)}"
-                                android:onClick="@{()->child.setI124(`3`)}"
+                                android:checked="@{childDIA.i124.equals(`3`)}"
+                                android:onClick="@{()->childDIA.setI124(`3`)}"
                                 android:text="@string/i12403" />
 
                             <RadioButton
                                 android:id="@+id/i12404"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`4`)}"
-                                android:onClick="@{()->child.setI124(`4`)}"
+                                android:checked="@{childDIA.i124.equals(`4`)}"
+                                android:onClick="@{()->childDIA.setI124(`4`)}"
                                 android:text="@string/i12404" />
 
                             <RadioButton
                                 android:id="@+id/i12405"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`5`)}"
-                                android:onClick="@{()->child.setI124(`5`)}"
+                                android:checked="@{childDIA.i124.equals(`5`)}"
+                                android:onClick="@{()->childDIA.setI124(`5`)}"
                                 android:text="@string/i12405" />
 
                             <RadioButton
                                 android:id="@+id/i12406"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`6`)}"
-                                android:onClick="@{()->child.setI124(`6`)}"
+                                android:checked="@{childDIA.i124.equals(`6`)}"
+                                android:onClick="@{()->childDIA.setI124(`6`)}"
                                 android:text="@string/i12406" />
 
                             <RadioButton
                                 android:id="@+id/i12496"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i124.equals(`96`)}"
-                                android:onClick="@{()->child.setI124(`96`)}"
+                                android:checked="@{childDIA.i124.equals(`96`)}"
+                                android:onClick="@{()->childDIA.setI124(`96`)}"
                                 android:text="@string/i12496" />
 
                             <EditText
@@ -2177,8 +2177,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/i12496"
                                 android:tag="i12496"
-                                android:text="@={child.i12496x}"
-                                android:visibility="@{child.i124.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:text="@={childDIA.i12496x}"
+                                android:visibility="@{childDIA.i124.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -2187,7 +2187,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi125"
                     style="@style/cardView"
-                    android:visibility="@{child.i123.equals(`2`)? View.GONE : View.VISIBLE}">
+                    android:visibility="@{childDIA.i123.equals(`2`)? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2224,8 +2224,8 @@
                                 android:id="@+id/i12501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12501.equals(`1`)}"
-                                android:onClick="@{()->child.setI12501(child.i12501.equals(`1`)?``:`1`)}"
+                                android:checked="@{childDIA.i12501.equals(`1`)}"
+                                android:onClick="@{()->childDIA.setI12501(childDIA.i12501.equals(`1`)?``:`1`)}"
 
                                 android:text="@string/i12501" />
 
@@ -2233,8 +2233,8 @@
                                 android:id="@+id/i12502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12502.equals(`2`)}"
-                                android:onClick="@{()->child.setI12502(child.i12502.equals(`2`)?``:`2`)}"
+                                android:checked="@{childDIA.i12502.equals(`2`)}"
+                                android:onClick="@{()->childDIA.setI12502(childDIA.i12502.equals(`2`)?``:`2`)}"
 
                                 android:text="@string/i12502" />
 
@@ -2242,8 +2242,8 @@
                                 android:id="@+id/i12503"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12503.equals(`3`)}"
-                                android:onClick="@{()->child.setI12503(child.i12503.equals(`3`)?``:`3`)}"
+                                android:checked="@{childDIA.i12503.equals(`3`)}"
+                                android:onClick="@{()->childDIA.setI12503(childDIA.i12503.equals(`3`)?``:`3`)}"
 
                                 android:text="@string/i12503" />
 
@@ -2251,8 +2251,8 @@
                                 android:id="@+id/i12504"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12504.equals(`4`)}"
-                                android:onClick="@{()->child.setI12504(child.i12504.equals(`4`)?``:`4`)}"
+                                android:checked="@{childDIA.i12504.equals(`4`)}"
+                                android:onClick="@{()->childDIA.setI12504(childDIA.i12504.equals(`4`)?``:`4`)}"
 
                                 android:text="@string/i12504" />
 
@@ -2260,8 +2260,8 @@
                                 android:id="@+id/i12505"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{child.i12505.equals(`5`)}"
-                                android:onClick="@{()->child.setI12505(child.i12505.equals(`5`)?``:`5`)}"
+                                android:checked="@{childDIA.i12505.equals(`5`)}"
+                                android:onClick="@{()->childDIA.setI12505(childDIA.i12505.equals(`5`)?``:`5`)}"
 
                                 android:text="@string/i12505" />
                         </LinearLayout>

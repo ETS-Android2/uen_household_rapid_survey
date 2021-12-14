@@ -5,6 +5,7 @@ import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.child;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childARI;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childDIA;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -27,6 +28,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildARITable;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildDIATable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FamilyMembersTable;
@@ -42,6 +44,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.Vill
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.EntryLog;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
@@ -87,6 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_PREGNANCY_MASTER);
         db.execSQL(CreateTable.SQL_CREATE_MATERNAL_MORTIALITY);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        db.execSQL(CreateTable.SQL_CREATE_CHILD_DIA);
         db.execSQL(CreateTable.SQL_CREATE_CHILD_ARI);
 
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
@@ -225,6 +229,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addChildDIA(ChildDIA childDIA) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ChildDIATable.COLUMN_PROJECT_NAME, childDIA.getProjectName());
+        values.put(ChildDIATable.COLUMN_UID, childDIA.getUid());
+        values.put(ChildDIATable.COLUMN_UUID, childDIA.getUuid());
+        values.put(ChildDIATable.COLUMN_FMUID, childDIA.getFmuid());
+        values.put(ChildDIATable.COLUMN_MUID, childDIA.getMuid());
+        values.put(ChildDIATable.COLUMN_SNO, childDIA.getSno());
+        values.put(ChildDIATable.COLUMN_PSU_CODE, childDIA.getpsuCode());
+        values.put(ChildDIATable.COLUMN_HHID, childDIA.getHhid());
+        values.put(ChildDIATable.COLUMN_USERNAME, childDIA.getUserName());
+        values.put(ChildDIATable.COLUMN_SYSDATE, childDIA.getSysDate());
+        values.put(ChildDIATable.COLUMN_SI1, childDIA.sI1toString());
+        values.put(ChildDIATable.COLUMN_ISTATUS, childDIA.getiStatus());
+        values.put(ChildDIATable.COLUMN_DEVICETAGID, childDIA.getDeviceTag());
+        values.put(ChildDIATable.COLUMN_DEVICEID, childDIA.getDeviceId());
+        values.put(ChildDIATable.COLUMN_APPVERSION, childDIA.getAppver());
+        values.put(ChildDIATable.COLUMN_SYNCED, childDIA.getSynced());
+        values.put(ChildDIATable.COLUMN_SYNCED_DATE, childDIA.getSyncDate());
+        long newRowId;
+        newRowId = db.insert(
+                ChildDIATable.TABLE_NAME,
+                ChildDIATable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
     public Long addChildARI(ChildARI childARI) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
@@ -238,7 +271,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildARITable.COLUMN_HHID, childARI.getHhid());
         values.put(ChildARITable.COLUMN_USERNAME, childARI.getUserName());
         values.put(ChildARITable.COLUMN_SYSDATE, childARI.getSysDate());
-        values.put(ChildARITable.COLUMN_SI1, childARI.sI1toString());
         values.put(ChildARITable.COLUMN_SI2, childARI.sI2toString());
         values.put(ChildARITable.COLUMN_ISTATUS, childARI.getiStatus());
         values.put(ChildARITable.COLUMN_DEVICETAGID, childARI.getDeviceTag());
@@ -450,6 +482,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+    public int updatesChildDIAColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ChildDIATable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(childDIA.getId())};
+
+        return db.update(ChildDIATable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
 
     public int updatesChildARIColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -457,10 +503,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = ChildTable._ID + " =? ";
+        String selection = ChildARITable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(childARI.getId())};
 
-        return db.update(ChildTable.TABLE_NAME,
+        return db.update(ChildARITable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
