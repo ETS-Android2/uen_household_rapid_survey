@@ -191,13 +191,13 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.sections.SectionIMA_Activity"
+            android:name=".ui.sections.SectionIMAActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.sections.SectionIMB_Activity"
+            android:name=".ui.sections.SectionIMBActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />

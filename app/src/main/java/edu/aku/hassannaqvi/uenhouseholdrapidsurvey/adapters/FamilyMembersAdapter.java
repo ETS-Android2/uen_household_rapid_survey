@@ -69,9 +69,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         motherName.setText(null);
         String motherRelation = "";
 
-/** Select mother IF
- *  Mother is alive and present in house
- */
+        /** Select mother IF
+         *  Mother is alive and present in house
+         */
         if (!members.getD107().equals("") && !members.getD107().equals("97")
         ) {
             if (members.getD104().equals("1")) {
@@ -86,12 +86,12 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         }
 
-    /*      <string name="hl701"> Married </string>
-            <string name="hl702"> Widowed </string>
-            <string name="hl703"> Divorced </string>
-            <string name="hl704"> Separated </string>
-            <string name="hl705"> Un-Married </string>
-            <string name="hl7099"> Not Applicable (for Age less 13 years old) </string>*/
+        /*      <string name="hl701"> Married </string>
+                <string name="hl702"> Widowed </string>
+                <string name="hl703"> Divorced </string>
+                <string name="hl704"> Separated </string>
+                <string name="hl705"> Un-Married </string>
+                <string name="hl7099"> Not Applicable (for Age less 13 years old) </string>*/
         String marStatus = "";
         switch (members.getD105()) {
             case "1":
@@ -106,9 +106,9 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
             case "4":
                 marStatus = "Separated";
                 break;
-           /* case "5":
-                marStatus = "Un-Married";
-                break;*/
+               /* case "5":
+                    marStatus = "Un-Married";
+                    break;*/
             case "99":
                 marStatus = "Not Applicable";
                 break;
@@ -129,15 +129,15 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
                 idxStatus = "  Child  ";
                 idxColor = mContext.getResources().getColor(R.color.childBg);
                 break;
-         /*   case "3":
-                idxStatus = " Adol. M ";
-                idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
-                break;
-            case "4":
-                idxStatus = " Adol. F ";
-                idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
-                break;
-*/
+             /*   case "3":
+                    idxStatus = " Adol. M ";
+                    idxColor = mContext.getResources().getColor(R.color.adolMaleBg);
+                    break;
+                case "4":
+                    idxStatus = " Adol. F ";
+                    idxColor = mContext.getResources().getColor(R.color.adolFemaleBg);
+                    break;
+    */
             default:
                 idxStatus = "         ";
                 idxColor = mContext.getResources().getColor(R.color.white);
@@ -185,22 +185,22 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         }
 
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");
-      /*  viewHolder.itemView.setOnClickListener(v -> {
-            // Get the current state of the item
+          /*  viewHolder.itemView.setOnClickListener(v -> {
+                // Get the current state of the item
 
-            MainApp.familyMember = MainApp.familyMember.get(position);
-            Intent intent = new Intent(mContext, SectionBActivity.class);
+                MainApp.familyMember = MainApp.familyMember.get(position);
+                Intent intent = new Intent(mContext, SectionBActivity.class);
 
-            intent.putExtra("position", position);
+                intent.putExtra("position", position);
 
-            MainApp.selectedFemale = position;
+                MainApp.selectedFemale = position;
 
-            intent.putExtra("position", position);
+                intent.putExtra("position", position);
 
-            ((Activity) mContext).startActivityForResult(intent, 2);
+                ((Activity) mContext).startActivityForResult(intent, 2);
 
 
-        });*/
+            });*/
 
     }
 

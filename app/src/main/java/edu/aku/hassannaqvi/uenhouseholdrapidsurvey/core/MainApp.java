@@ -21,6 +21,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
@@ -61,6 +62,7 @@ public class MainApp extends Application {
     // public static Pregnancy pregnancy;
     public static Child child;
     public static ChildARI childARI;
+    public static ChildDIA childDIA;
     public static FamilyMembers familyMember;
     public static MaternalMortality mortality;
     public static int preg_count = 0;
@@ -86,6 +88,7 @@ public class MainApp extends Application {
     public static List<FamilyMembers> familyList;
     public static List<Integer> mwraList;
     public static List<Integer> childOfSelectedMWRAList;
+    public static List<FamilyMembers> allChildrenList;
     public static List<FamilyMembers> fatherList;
     public static List<FamilyMembers> motherList;
     public static int memberCount = 0;

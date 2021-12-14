@@ -92,10 +92,20 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
                             }
                         }
+
+                        /**
+                         *  Populate All Children Under-5
+                         */
+                        if (Integer.parseInt(MainApp.familyMember.getD109y()) < 5) {
+                            MainApp.allChildrenList.add(MainApp.familyMember);
+
+                        }
+
                         /** populateMothersList
                          *      Familymember has a value in mothers Serial Number (HL8)
                          *      Mother not already exists in the MWRA List
                          */
+
                         String motherSno = MainApp.familyMember.getD107();
                         if (Integer.parseInt(MainApp.familyMember.getD109y()) < 5 && MainApp.familyMember.getD115().equals("1")
                                 && !motherSno.equals("")
@@ -175,6 +185,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                     }
                 }
 
+                // Populate All U-5 Children
+                if (Integer.parseInt(fm.getD109y()) < 5) {
+                    MainApp.allChildrenList.add(fm);
+                }
+
                 // Populate mothers' list
                 String motherSno = fm.getD107(); // mother's line number from child
                 if (Integer.parseInt(fm.getD109y()) < 5 && fm.getD115().equals("1") &&
@@ -229,6 +244,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.memberCount = Math.round(MainApp.familyList.size());
 
         familyMembersAdapter = new FamilyMembersAdapter(this, MainApp.familyList);
+
         bi.rvMwra.setAdapter(familyMembersAdapter);
         bi.rvMwra.setLayoutManager(new LinearLayoutManager(this));
 
