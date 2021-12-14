@@ -153,6 +153,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.familyList = new ArrayList<>();
         MainApp.mwraList = new ArrayList<>();
         MainApp.allMWRAList = new ArrayList<>();
+        MainApp.allChildrenList = new ArrayList<>();
 
 
         MainApp.fatherList = new ArrayList<>();

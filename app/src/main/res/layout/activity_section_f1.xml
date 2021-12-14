@@ -2378,6 +2378,7 @@
                                 android:id="@+id/f12801"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12801.equals(`1`)}"
                                 android:onClick="@{()->mwra.setF12801(mwra.f12801.equals(`1`)?``:`1`)}"
                                 android:text="@string/f12801" />
@@ -2386,6 +2387,7 @@
                                 android:id="@+id/f12802"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12802.equals(`2`)}"
                                 android:onClick="@{()->mwra.setF12802(mwra.f12802.equals(`2`)?``:`2`)}"
                                 android:text="@string/f12802" />
@@ -2394,6 +2396,7 @@
                                 android:id="@+id/f12803"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12803.equals(`3`)}"
                                 android:onClick="@{()->mwra.setF12803(mwra.f12803.equals(`3`)?``:`3`)}"
                                 android:text="@string/f12803" />
@@ -2402,6 +2405,7 @@
                                 android:id="@+id/f12804"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12804.equals(`4`)}"
                                 android:onClick="@{()->mwra.setF12804(mwra.f12804.equals(`4`)?``:`4`)}"
                                 android:text="@string/f12804" />
@@ -2410,6 +2414,7 @@
                                 android:id="@+id/f12805"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12805.equals(`5`)}"
                                 android:onClick="@{()->mwra.setF12805(mwra.f12805.equals(`5`)?``:`5`)}"
                                 android:text="@string/f12805" />
@@ -2418,6 +2423,7 @@
                                 android:id="@+id/f12806"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!mwra.f12807.equals(`7`)}"
                                 android:checked="@{mwra.f12806.equals(`6`)}"
                                 android:onClick="@{()->mwra.setF12806(mwra.f12806.equals(`6`)?``:`6`)}"
                                 android:text="@string/f12806" />
@@ -2427,7 +2433,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f12807.equals(`7`)}"
-                                android:onClick="@{()->mwra.setF12807(mwra.f12807.equals(`7`)?``:`7`) + f129.clearCheck()}"
+                                android:onClick="@{()->mwra.setF12807(mwra.f12807.equals(`7`)?``:`7`) + f129.clearCheck() + f131.clearCheck()}"
                                 android:text="@string/f12807" />
 
                         </LinearLayout>
@@ -2509,7 +2515,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf130"
                         style="@style/cardView"
-                        android:visibility="@{mwra.f129.equals(`1`) ? View.GONE : View.VISIBLE}">
+                        android:visibility="@{mwra.f129.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
