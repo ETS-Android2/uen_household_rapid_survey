@@ -61,7 +61,7 @@ public class SectionE2AActivity extends AppCompatActivity {
             // Remove current MWRA from the List (Test:Failed!!)
             // MainApp.allMWRAList.remove(0);
 
-            MainApp.totalMortalities = Integer.parseInt(MainApp.form.getE117());
+            MainApp.totalMortalities = Integer.parseInt(MainApp.form.getE117().equals("") ? "0" : MainApp.form.getE117());
 
             // Maternal Mortality is ZERO goto next Section
             if (MainApp.totalMortalities > MainApp.mortalityCounter) {

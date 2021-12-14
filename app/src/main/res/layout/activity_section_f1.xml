@@ -1180,7 +1180,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:checked="@{mwra.f11009.equals(`2`)}"
-                                        android:onClick="@{()->mwra.setF11009(`2`)}"
+                                        android:onClick="@{()->mwra.setF11009(`2`) + f11001.clearCheck() + f11002.clearCheck() + f11003.clearCheck() + f11004.clearCheck() + f11005.clearCheck() + f11006.clearCheck() + f11007.clearCheck() + f11008.clearCheck() + f11096.clearCheck()}"
                                         android:text="@string/f1100902" />
 
                                 </RadioGroup>
@@ -1190,6 +1190,7 @@
                                     android:id="@+id/f11096"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:clickable="@{!mwra.f11009.equals(`2`)}"
                                     android:orientation="horizontal">
 
                                     <TextView
