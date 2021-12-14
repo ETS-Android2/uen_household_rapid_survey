@@ -5,7 +5,6 @@ import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.child;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childARI;
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.childDIA;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -489,7 +488,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = ChildDIATable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(childDIA.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.childDIA.getId())};
 
         return db.update(ChildDIATable.TABLE_NAME,
                 values,
