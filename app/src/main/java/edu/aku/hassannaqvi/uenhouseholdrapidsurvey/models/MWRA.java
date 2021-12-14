@@ -2759,7 +2759,6 @@ public class MWRA extends BaseObservable implements Observable {
         this.g119 = g119;
         setG120(g119.equals("3") ? "" : this.g120);
         setG121(g119.equals("3") ? this.g121 : "");
-
         notifyPropertyChanged(BR.g119);
     }
 

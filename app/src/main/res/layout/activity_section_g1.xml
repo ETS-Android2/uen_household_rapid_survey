@@ -1588,7 +1588,6 @@
                             android:orientation="vertical"
                             android:tag="0">
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1597,7 +1596,7 @@
                                 <CheckBox
                                     android:id="@+id/g11801"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.g11801.equals(`1`)}"
                                     android:enabled="@{!mwra.g11898.equals(`98`)}"
@@ -1607,10 +1606,12 @@
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/g11801x"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
                                     android:enabled="@{mwra.g11801.equals(`1`)}"
-                                    android:hint="@string/g11801"
+                                    android:hint="######"
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="g11801"
@@ -1629,7 +1630,7 @@
                                 <CheckBox
                                     android:id="@+id/g11802"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.g11802.equals(`2`)}"
                                     android:enabled="@{!mwra.g11898.equals(`98`)}"
@@ -1639,10 +1640,12 @@
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/g11802x"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
                                     android:enabled="@{mwra.g11802.equals(`2`)}"
-                                    android:hint="@string/g11802"
+                                    android:hint="######"
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="g11802"
@@ -1650,6 +1653,7 @@
                                     app:maxValue="700000"
                                     app:minValue="0"
                                     app:type="range" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1659,8 +1663,9 @@
 
                                 <CheckBox
                                     android:id="@+id/g11803"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{mwra.g11803.equals(`3`)}"
                                     android:enabled="@{!mwra.g11898.equals(`98`)}"
                                     android:onClick="@{()->mwra.setG11803(mwra.g11803.equals(`3`)?``:`3`)}"
@@ -1669,10 +1674,12 @@
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/g11803x"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
                                     android:enabled="@{mwra.g11803.equals(`3`)}"
-                                    android:hint="@string/g11803"
+                                    android:hint="######"
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="g11803"
@@ -1691,7 +1698,7 @@
                                 <CheckBox
                                     android:id="@+id/g11804"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.g11804.equals(`4`)}"
                                     android:enabled="@{!mwra.g11898.equals(`98`)}"
@@ -1701,10 +1708,12 @@
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/g11804x"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
                                     android:enabled="@{mwra.g11804.equals(`4`)}"
-                                    android:hint="@string/g11804"
+                                    android:hint="######"
                                     android:inputType="number"
                                     android:maxLength="6"
                                     android:tag="g11804"
@@ -1723,7 +1732,7 @@
                                 <CheckBox
                                     android:id="@+id/g11896"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.g11896.equals(`96`)}"
                                     android:enabled="@{!mwra.g11898.equals(`98`)}"
@@ -1733,8 +1742,9 @@
                                 <EditText
                                     android:id="@+id/g11896x"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_marginTop="10dp"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:enabled="@{mwra.g11896.equals(`96`)}"
                                     android:hint="@string/g11896"
@@ -1750,8 +1760,11 @@
                                 android:checked="@{mwra.g11898.equals(`98`)}"
                                 android:onClick="@{()->mwra.setG11898(mwra.g11898.equals(`98`)?``:`98`)}"
                                 android:text="@string/g11898" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1796,7 +1809,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g119.equals(`1`)}"
-                                android:onClick="@{()->mwra.setG119(`1`)}"
+                                android:onClick="@{()->mwra.setG119(`1`) + g121.clearCheck()}"
                                 android:text="@string/g11901" />
 
                             <RadioButton
@@ -1805,7 +1818,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g119.equals(`2`)}"
-                                android:onClick="@{()->mwra.setG119(`2`)}"
+                                android:onClick="@{()->mwra.setG119(`2`) + g121.clearCheck()}"
                                 android:text="@string/g11902" />
 
                             <RadioButton
@@ -1814,7 +1827,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g119.equals(`3`)}"
-                                android:onClick="@{()->mwra.setG119(`3`)}"
+                                android:onClick="@{()->mwra.setG119(`3`) + g120.clearCheck()}"
                                 android:text="@string/g11903" />
 
                         </RadioGroup>
@@ -1932,8 +1945,11 @@
                                 android:tag="g12096"
                                 android:text="@={mwra.g12096x}"
                                 android:visibility="@{mwra.g120.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -2053,8 +2069,11 @@
                                 android:tag="g12196"
                                 android:text="@={mwra.g12196x}"
                                 android:visibility="@{mwra.g121.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -2273,9 +2292,13 @@
                                 android:checked="@{mwra.g128.equals(`97`)}"
                                 android:onClick="@{()->mwra.setG128(`97`)}"
                                 android:text="@string/g12897" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- g129  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2338,8 +2361,11 @@
                                 android:checked="@{mwra.g129.equals(`97`)}"
                                 android:onClick="@{()->mwra.setG129(`97`)}"
                                 android:text="@string/g12997" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
