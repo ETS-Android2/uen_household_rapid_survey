@@ -77,18 +77,18 @@ public class SectionI1Activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 bi.age.setText("");
-                bi.s102respline.setText("");
+                bi.i102respline.setText("");
 
                 //  if (position == 0) return;
                 try {
-                    MainApp.childARI = db.getChildARIByUUid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
-                    if (MainApp.childARI.getUid().equals("")) {
-                        MainApp.childARI.setFmuid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
+                    MainApp.childDIA = db.getChildDIAByUUid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
+                    if (MainApp.childDIA.getUid().equals("")) {
+                        MainApp.childDIA.setFmuid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
                         bi.age.setText(childAges.get(bi.i102resp.getSelectedItemPosition()));
-                        MainApp.childARI.setI102ano(childCodes.get(bi.i102resp.getSelectedItemPosition()));
-                        MainApp.childARI.setI102a(childNames.get(bi.i102resp.getSelectedItemPosition()));
+                        MainApp.childDIA.setI102ano(childCodes.get(bi.i102resp.getSelectedItemPosition()));
+                        MainApp.childDIA.setI102a(childNames.get(bi.i102resp.getSelectedItemPosition()));
                     }
-                    bi.s102respline.setText(childCodes.get(bi.i102resp.getSelectedItemPosition()));
+                    bi.i102respline.setText(childCodes.get(bi.i102resp.getSelectedItemPosition()));
                     bi.age.setText(childAges.get(bi.i102resp.getSelectedItemPosition()));
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -110,7 +110,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        MainApp.childARI.populateMeta();
+        MainApp.childDIA.populateMeta();
 
         long rowId = 0;
         try {
@@ -120,10 +120,10 @@ public class SectionI1Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.childARI.setId(String.valueOf(rowId));
+        MainApp.childDIA.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.childARI.setUid(MainApp.childARI.getDeviceId() + MainApp.childARI.getId());
-            db.updatesChildARIColumn(TableContracts.ChildDIATable.COLUMN_UID, MainApp.childARI.getUid());
+            MainApp.childDIA.setUid(MainApp.childDIA.getDeviceId() + MainApp.childDIA.getId());
+            db.updatesChildDIAColumn(TableContracts.ChildDIATable.COLUMN_UID, MainApp.childDIA.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -137,7 +137,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
         int updcount = 0;
         try {
-            updcount = db.updatesChildDIAColumn(TableContracts.ChildDIATable.COLUMN_SI1, MainApp.childARI.sI1toString());
+            updcount = db.updatesChildDIAColumn(TableContracts.ChildDIATable.COLUMN_SI1, MainApp.childDIA.sI1toString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

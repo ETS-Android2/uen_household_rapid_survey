@@ -151,6 +151,86 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- i202a  Input   -->
+
+
+                <!--                    test-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVes1resp"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_i102a" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/i102a" />
+
+                            <TextView
+                                android:layout_width="115dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Line Number" />
+
+                            <TextView
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Age" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/i202resp"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:minHeight="56dp"
+                                android:prompt="@string/i202a"
+                                android:spinnerMode="dropdown" />
+
+                            <TextView
+                                android:id="@+id/i202respline"
+                                style="@style/textView"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/age"
+                                style="@style/textView"
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <!--                    test end-->
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi202a"
                     style="@style/cardView">

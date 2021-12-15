@@ -229,7 +229,7 @@
                                     android:spinnerMode="dropdown" />
 
                                 <TextView
-                                    android:id="@+id/s102respline"
+                                    android:id="@+id/i102respline"
                                     style="@style/textView"
                                     android:layout_width="100dp"
                                     android:layout_height="match_parent"

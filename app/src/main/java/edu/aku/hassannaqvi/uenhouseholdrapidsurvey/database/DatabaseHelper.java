@@ -2326,6 +2326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return childDIA;
     }
 
+
     public ChildARI getChildARIByUUid(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
