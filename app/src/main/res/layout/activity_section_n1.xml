@@ -1305,7 +1305,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1316,7 +1315,7 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
@@ -1327,7 +1326,7 @@
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
@@ -1342,7 +1341,9 @@
 
             </LinearLayout>
 
+
         </ScrollView>
+
 
     </LinearLayout>
 

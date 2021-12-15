@@ -32,7 +32,6 @@ public class SectionG1Activity extends AppCompatActivity {
         bi.setMwra(MainApp.mwra);
         setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectiongdeliverypreparednessandexperience_mainheading);
         db = MainApp.appInfo.dbHelper;
     }
 
