@@ -34,7 +34,12 @@ public class SectionE2BActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e2_b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        MainApp.mortalityCounter++;
+        try {
+            MainApp.mortality = db.getMortalityBySno(String.valueOf(++MainApp.mortalityCounter));
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Mortality): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         bi.setMortality(mortality);
     }
 
@@ -86,13 +91,13 @@ public class SectionE2BActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (MainApp.mortality.getUid().equals("") ? insertNewRecord() : updateDB()) {
             if (MainApp.totalMortalities > MainApp.mortalityCounter) {
-                try {
+               /* try {
                     mortality = db.getMortalityBySno(String.valueOf(++MainApp.mortalityCounter));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(MaternalMortality): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                }*/
                 startActivity(new Intent(this, SectionE2BActivity.class).putExtra("complete", true));
                 finish();
 

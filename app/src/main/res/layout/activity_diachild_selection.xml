@@ -203,12 +203,6 @@
                                     android:gravity="center"
                                     android:text="Line Number" />
 
-                                <TextView
-                                    android:layout_width="80dp"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:text="Age" />
-
                             </LinearLayout>
 
                             <LinearLayout
@@ -232,12 +226,6 @@
                                     android:layout_width="100dp"
                                     android:layout_height="match_parent"
                                     android:gravity="center" />
-
-                                <TextView
-                                    android:id="@+id/age"
-                                    style="@style/textView"
-                                    android:layout_width="70dp"
-                                    android:layout_height="match_parent" />
 
                             </LinearLayout>
 

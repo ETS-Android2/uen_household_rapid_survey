@@ -47,25 +47,12 @@
                 android:orientation="vertical">
 
 
-                <!-- etitle2  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVetitle2"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/etitle2" />
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- e101a  Input   -->

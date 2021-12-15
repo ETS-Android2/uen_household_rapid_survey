@@ -277,6 +277,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setD104(String d104) {
         this.d104 = d104;
+        setD111("");
         notifyPropertyChanged(BR.d104);
     }
 
@@ -297,6 +298,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setD108d(String d108d) {
         this.d108d = d108d;
+        CaluculateAge();
         notifyPropertyChanged(BR.d108d);
     }
 
@@ -307,6 +309,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setD108m(String d108m) {
         this.d108m = d108m;
+        if (d108m.equals("98")) {
+            setD108d("98");
+        }
+        CaluculateAge();
         notifyPropertyChanged(BR.d108m);
     }
 
@@ -317,6 +323,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setD108y(String d108y) {
         this.d108y = d108y;
+        if (d108y.equals("9998")) {
+            setD108m("98");
+            setD109d("");
+            setD109m("");
+            setD109y("");
+        }
+        // Calculate age
+        CaluculateAge();
         notifyPropertyChanged(BR.d108y);
     }
 
@@ -655,6 +669,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
                 setD109y(String.valueOf(tYear));
                 setD109m(String.valueOf(tMonth));
+                setD109d(String.valueOf(tDay));
                 if (tYear < 0)
                     setD109y("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));

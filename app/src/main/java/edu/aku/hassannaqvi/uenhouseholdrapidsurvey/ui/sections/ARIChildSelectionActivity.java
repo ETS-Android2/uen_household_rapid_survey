@@ -21,7 +21,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityArichildSelectionBinding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
@@ -36,18 +35,28 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_arichild_selection);
-        bi.setChildARI(MainApp.childARI);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        try {
+            MainApp.childARI = db.getChildARIByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ChildARI): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        bi.setChildARI(MainApp.childARI);
         populateSpinner();
-        MainApp.childARI = new ChildARI();
+
+
     }
 
 
     private void populateSpinner() {
 
         // Populate Provinces
-
+   /*     if (!MainApp.childARI.getFmuid().equals("")) {
+            childNames.add(MainApp.childARI.getI202a());
+        }
+*/
         childNames = new ArrayList<>();
         childCodes = new ArrayList<>();
         childAges = new ArrayList<>();
@@ -59,10 +68,21 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
         childFmUID.add("");
 
         for (FamilyMembers fm : MainApp.allChildrenList) {
-            childNames.add(fm.getD102());
-            childCodes.add(fm.getD101());
-            childAges.add(fm.getD109y());
-            childFmUID.add(fm.getUid());
+            // FMUID is not null than add only select Child
+            if (!MainApp.childARI.getFmuid().equals("")) {
+                if (MainApp.childARI.getFmuid().equals(fm.getUid())) {
+                    childNames.add(fm.getD102());
+                    childCodes.add(fm.getD101());
+                    childAges.add(fm.getD109y());
+                    childFmUID.add(fm.getUid());
+                }
+
+            } else {
+                childNames.add(fm.getD102());
+                childCodes.add(fm.getD101());
+                childAges.add(fm.getD109y());
+                childFmUID.add(fm.getUid());
+            }
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(ARIChildSelectionActivity.this,
@@ -74,24 +94,20 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                bi.age.setText("");
+                //  bi.age.setText("");
                 bi.i202ano.setText("");
 
-                //  if (position == 0) return;
-                try {
-                    MainApp.childARI = db.getChildARIByUUid(childFmUID.get(bi.i202a.getSelectedItemPosition()));
-                    if (MainApp.childARI.getUid().equals("")) {
-                        MainApp.childARI.setFmuid(childFmUID.get(bi.i202a.getSelectedItemPosition()));
-                        bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
-                        MainApp.childARI.setI202ano(childCodes.get(bi.i202a.getSelectedItemPosition()));
-                        MainApp.childARI.setI202a(childNames.get(bi.i202a.getSelectedItemPosition()));
-                    }
-                    bi.i202ano.setText(childCodes.get(bi.i202a.getSelectedItemPosition()));
-                    bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(ARIChildSelectionActivity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                if (position == 0) return;
+                //   MainApp.childARI = db.getChildARIByUUid(childFmUID.get(bi.i202a.getSelectedItemPosition()));
+                if (MainApp.childARI.getUid().equals("")) {
+                    MainApp.childARI.setFmuid(childFmUID.get(bi.i202a.getSelectedItemPosition()));
+                    //  bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
+                    MainApp.childARI.setI202ano(childCodes.get(bi.i202a.getSelectedItemPosition()));
+                    MainApp.childARI.setI202a(childNames.get(bi.i202a.getSelectedItemPosition()));
                 }
+                bi.i202ano.setText(childCodes.get(bi.i202a.getSelectedItemPosition()));
+                //   bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
+
             }
 
             @Override
@@ -102,6 +118,8 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
+        if (!MainApp.childARI.getUid().equals("") || MainApp.superuser) return true;
+
         MainApp.childARI.populateMeta();
 
         long rowId = 0;
@@ -154,7 +172,7 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
 
         if (updateDB()) {
 //            allChildrenList.remove(bi.i202a.getSelectedItemPosition() - 1);
-            startActivity(new Intent(this, SectionI2Activity.class).putExtra("age", bi.age.getText().toString()));
+            startActivity(new Intent(this, SectionI2Activity.class));
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

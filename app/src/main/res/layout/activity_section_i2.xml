@@ -73,12 +73,6 @@
                                 android:gravity="center"
                                 android:text="Line Number" />
 
-                            <TextView
-                                android:layout_width="84dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="Age" />
-
                         </LinearLayout>
 
                         <LinearLayout
@@ -112,13 +106,6 @@
                                 android:text="@={childARI.i202ano}"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/age"
-                                style="@style/sub_labels"
-                                android:layout_width="84dp"
-                                android:layout_height="match_parent"
-                                android:enabled="false"
-                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

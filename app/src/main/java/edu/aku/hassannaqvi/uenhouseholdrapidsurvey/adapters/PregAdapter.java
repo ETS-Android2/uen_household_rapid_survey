@@ -141,15 +141,15 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         // Current status of child
         e109.setText(curStatus);
 
-
-        if ((preg.getE109().equals("1"))) {
+/*
+        if ((preg.getE109().equals("1"))) {*/
             e106.setText((preg.getE106y() + "y/" + preg.getE106m() + "m/" + preg.getE106d() + "d"));
-        } else if (!preg.getE109().equals("")) {
+/*        } else if (!preg.getE109().equals("")) {
             e106.setText("(at death)\r\n" + preg.getE110y() + "y/" + preg.getE110m() + "m/" + preg.getE110d() + "d");
         } else {
             e106.setText("  ----  ");
 
-        }
+        }*/
 
 
         itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getResources().getColor(R.color.grayLight) : mContext.getResources().getColor(R.color.white));

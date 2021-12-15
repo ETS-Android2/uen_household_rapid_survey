@@ -87,7 +87,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:inputType="textPersonName"
+                            android:inputType="textCapWords"
                             android:maxLength="20"
                             android:hint="@string/e118"
                             android:text="@={mortality.e118}" />

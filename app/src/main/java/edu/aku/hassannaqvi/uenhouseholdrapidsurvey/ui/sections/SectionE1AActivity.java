@@ -51,7 +51,6 @@ public class SectionE1AActivity extends AppCompatActivity {
     }
 
 
-
     private boolean insertNewRecord() {
         if (!MainApp.pregM.getUid().equals("") || MainApp.superuser) return true;
         MainApp.pregM.populateMeta();
@@ -97,12 +96,12 @@ public class SectionE1AActivity extends AppCompatActivity {
         if (MainApp.pregM.getUid().equals("") ? insertNewRecord() : updateDB()) {
 
 
-            // Remove current MWRA from the List (Test:Failed!!)
-            // MainApp.allMWRAList.remove(0);
-
-
-            MainApp.totalPreg = Integer.parseInt(MainApp.pregM.getE101());
-            MainApp.totalPreg = MainApp.pregM.getE102a().equals("1") ? MainApp.totalPreg - 1 : MainApp.totalPreg;
+            if (MainApp.pregM.getE101().equals("1")) {
+                MainApp.totalPreg = Integer.parseInt(MainApp.pregM.getE102());
+                MainApp.totalPreg = MainApp.pregM.getE102a().equals("1") ? MainApp.totalPreg - 1 : MainApp.totalPreg;
+            } else {
+                MainApp.totalPreg = 0;
+            }
             finish();
             // Pregnancy Outcome History is ZERO goto PregDetails
             if (MainApp.totalPreg > 0) {
@@ -111,6 +110,10 @@ public class SectionE1AActivity extends AppCompatActivity {
                 startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
 
             } else {
+
+
+                // Remove current MWRA if not going to Pregnancy List
+                MainApp.allMWRAList.remove(0);
 
                 // If More MWRA Exists restart this activity for next MWRA
                 if (MainApp.allMWRAList.size() > 0) {
@@ -131,8 +134,6 @@ public class SectionE1AActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
 
     public void btnEnd(View view) {

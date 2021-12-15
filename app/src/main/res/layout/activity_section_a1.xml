@@ -16,6 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
 
@@ -374,15 +375,6 @@
 
 
 
-                <!-- a1title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa1title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <TextView
                             style="@style/labelsHead"
@@ -390,9 +382,6 @@
                             android:layout_height="wrap_content"
                             android:text="@string/a1title" />
 
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- a109  Input   -->

@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.mortality;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,13 +63,13 @@ public class SectionE2AActivity extends AppCompatActivity {
 
             // Maternal Mortality is ZERO goto next Section
             if (MainApp.totalMortalities > MainApp.mortalityCounter) {
-                try {
+         /*       try {
                     mortality = db.getMortalityBySno(String.valueOf(++MainApp.mortalityCounter));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(MaternalMortality): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                }*/
                 startActivity(new Intent(this, SectionE2BActivity.class).putExtra("complete", true));
                 finish();
 

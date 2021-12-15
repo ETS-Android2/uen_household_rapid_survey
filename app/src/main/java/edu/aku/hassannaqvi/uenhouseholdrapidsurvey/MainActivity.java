@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startInterview:
                 MainApp.entryType = 1;
                 break;
-            case R.id.startDataEntry:
+/*            case R.id.startDataEntry:
                 MainApp.entryType = 2;
-                break;
+                break;*/
 /*
             case R.id.updateBlood:
                 MainApp.entryType = 3;
@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.startInterview:
+/*
             case R.id.startDataEntry:
+*/
 
                 MainApp.form = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));

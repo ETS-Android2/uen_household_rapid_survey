@@ -29,12 +29,20 @@ public class SectionIMAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im_a);
-        bi.setChild(MainApp.child);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        try {
+            MainApp.child = db.getChildByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        bi.setChild(MainApp.child);
     }
 
     private boolean insertNewRecord() {
+        if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
+
         MainApp.child.populateMeta();
 
         long rowId = 0;

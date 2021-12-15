@@ -112,7 +112,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:inputType="textPersonName"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:inputType="textCapWords"
                             android:hint="@string/d102"
                             android:maxLength="20"
                             android:text="@={member.d102}" />
@@ -966,6 +967,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{member.d111.equals(`1`)}"
+                                android:enabled="@{member.d104.equals(`2`)}"
                                 android:onClick="@{()->member.setD111(`1`)}"
                                 android:text="@string/d11101" />
 

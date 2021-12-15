@@ -33,16 +33,13 @@ public class SectionI2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i2);
         bi.setChildARI(MainApp.childARI);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni2acuterespiratoryinfectionari_mainheading);
         db = MainApp.appInfo.dbHelper;
-        bi.age.setText(getIntent().getStringExtra("age"));
+     //   bi.age.setText(getIntent().getStringExtra("age"));
     }
 
-    private void setupSkips() {
 
-    }
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;

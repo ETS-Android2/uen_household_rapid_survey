@@ -2291,16 +2291,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return child;
     }
 
-    public ChildDIA getChildDIAByUUid(String fmuid) throws JSONException {
+    public ChildDIA getChildDIAByUUid() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildDIATable.COLUMN_UUID + "=? AND " +
-                ChildDIATable.COLUMN_FMUID + "=?";
+        whereClause = ChildDIATable.COLUMN_UUID + "=?";
 
-        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+        String[] whereArgs = {MainApp.form.getUid()};
 
         String groupBy = null;
         String having = null;
@@ -2328,16 +2327,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public ChildARI getChildARIByUUid(String fmuid) throws JSONException {
+    public ChildARI getChildARIByUUid() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildARITable.COLUMN_UUID + "=? AND " +
-                ChildARITable.COLUMN_FMUID + "=?";
+        whereClause = ChildARITable.COLUMN_UUID + "=? ";
 
-        String[] whereArgs = {MainApp.form.getUid(), fmuid};
+        String[] whereArgs = {MainApp.form.getUid()};
 
         String groupBy = null;
         String having = null;

@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.allChildrenList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +21,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityDiachildSelectionBinding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
@@ -38,11 +35,16 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_diachild_selection);
-        bi.setChildDIA(MainApp.childDIA);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+        try {
+            MainApp.childDIA = db.getChildDIAByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ChildDIA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        bi.setChildDIA(MainApp.childDIA);
         populateSpinner();
-        MainApp.childDIA = new ChildDIA();
     }
 
 
@@ -60,11 +62,24 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
         childAges.add("");
         childFmUID.add("");
 
-        for (FamilyMembers fm : allChildrenList) {
-            childNames.add(fm.getD102());
-            childCodes.add(fm.getD101());
-            childAges.add(fm.getD109y());
-            childFmUID.add(fm.getUid());
+
+        for (FamilyMembers fm : MainApp.allChildrenList) {
+            // FMUID is not null than add only select Child
+            if (!MainApp.childDIA.getFmuid().equals("")) {
+                if (MainApp.childDIA.getFmuid().equals(fm.getUid())) {
+
+                    childNames.add(fm.getD102());
+                    childCodes.add(fm.getD101());
+                    childAges.add(fm.getD109y());
+                    childFmUID.add(fm.getUid());
+                }
+            } else {
+                childNames.add(fm.getD102());
+                childCodes.add(fm.getD101());
+                childAges.add(fm.getD109y());
+                childFmUID.add(fm.getUid());
+
+            }
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(DIAChildSelectionActivity.this,
@@ -76,24 +91,24 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                bi.age.setText("");
+                //   bi.age.setText("");
                 bi.i102ano.setText("");
 
                 //if (position == 0) return;
-                try {
-                    MainApp.childDIA = db.getChildDIAByUUid(childFmUID.get(bi.i102a.getSelectedItemPosition()));
-                    if (MainApp.childDIA.getUid().equals("")) {
-                        MainApp.childDIA.setFmuid(childFmUID.get(bi.i102a.getSelectedItemPosition()));
-                        bi.age.setText(childAges.get(bi.i102a.getSelectedItemPosition()));
-                        MainApp.childDIA.setI102ano(childCodes.get(bi.i102a.getSelectedItemPosition()));
-                        MainApp.childDIA.setI102a(childNames.get(bi.i102a.getSelectedItemPosition()));
-                    }
-                    bi.i102ano.setText(childCodes.get(bi.i102a.getSelectedItemPosition()));
-                    bi.age.setText(childAges.get(bi.i102a.getSelectedItemPosition()));
-                } catch (JSONException e) {
+                //try {
+                //   MainApp.childDIA = db.getChildDIAByUUid(childFmUID.get(bi.i102a.getSelectedItemPosition()));
+                if (MainApp.childDIA.getUid().equals("")) {
+                    MainApp.childDIA.setFmuid(childFmUID.get(bi.i102a.getSelectedItemPosition()));
+                    //        bi.age.setText(childAges.get(bi.i102a.getSelectedItemPosition()));
+                    MainApp.childDIA.setI102ano(childCodes.get(bi.i102a.getSelectedItemPosition()));
+                    MainApp.childDIA.setI102a(childNames.get(bi.i102a.getSelectedItemPosition()));
+                }
+                bi.i102ano.setText(childCodes.get(bi.i102a.getSelectedItemPosition()));
+                //    bi.age.setText(childAges.get(bi.i102a.getSelectedItemPosition()));
+   /*             } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(DIAChildSelectionActivity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
 
             @Override
@@ -104,6 +119,8 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
     }
 
     private boolean insertNewRecord() {
+        if (!MainApp.childDIA.getUid().equals("") || MainApp.superuser) return true;
+
         MainApp.childDIA.populateMeta();
 
         long rowId = 0;
@@ -156,7 +173,7 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
 
         if (updateDB()) {
 //            allChildrenList.remove(bi.i102a.getSelectedItemPosition() - 1);
-            startActivity(new Intent(this, SectionI1Activity.class).putExtra("age", bi.age.getText().toString()));
+            startActivity(new Intent(this, SectionI1Activity.class));
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

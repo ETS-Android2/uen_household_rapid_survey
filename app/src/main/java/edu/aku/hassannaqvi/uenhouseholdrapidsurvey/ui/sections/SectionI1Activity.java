@@ -34,7 +34,7 @@ public class SectionI1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni1diarrheainformation_mainheading);
         db = MainApp.appInfo.dbHelper;
-        bi.age.setText(getIntent().getStringExtra("age"));
+        //  bi.age.setText(getIntent().getStringExtra("age"));
     }
 
 
@@ -43,7 +43,9 @@ public class SectionI1Activity extends AppCompatActivity {
     }
 
 
-    private boolean insertNewRecord() {
+   /* private boolean insertNewRecord() {
+        if (!MainApp.childDIA.getUid().equals("") || MainApp.superuser) return true;
+
         MainApp.childDIA.populateMeta();
 
         long rowId = 0;
@@ -63,7 +65,7 @@ public class SectionI1Activity extends AppCompatActivity {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-    }
+    }*/
 
 
     private boolean updateDB() {
@@ -86,7 +88,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        // if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, ARIChildSelectionActivity.class).putExtra("complete", true));
