@@ -3,8 +3,6 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +19,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionI2Binding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
 public class SectionI2Activity extends AppCompatActivity {
@@ -35,69 +32,12 @@ public class SectionI2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i2);
-        bi.setChild(MainApp.childARI);
+        bi.setChildARI(MainApp.childARI);
         setupSkips();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni2acuterespiratoryinfectionari_mainheading);
         db = MainApp.appInfo.dbHelper;
-        populateSpinner();
-    }
-
-    private void populateSpinner() {
-
-        // Populate Provinces
-
-        childNames = new ArrayList<>();
-        childCodes = new ArrayList<>();
-        childAges = new ArrayList<>();
-        childFmUID = new ArrayList<>();
-
-        childNames.add("...");
-        childCodes.add("");
-        childAges.add("");
-        childFmUID.add("");
-
-        for (FamilyMembers fm : MainApp.allChildrenList) {
-            childNames.add(fm.getD102());
-            childCodes.add(fm.getD101());
-            childAges.add(fm.getD109y());
-            childFmUID.add(fm.getUid());
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionI2Activity.this,
-                R.layout.custom_spinner, childNames);
-
-        bi.i202resp.setAdapter(adapter);
-
-        bi.i202resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                bi.age.setText("");
-                bi.i202respline.setText("");
-
-                //  if (position == 0) return;
-                try {
-                    MainApp.childARI = db.getChildARIByUUid(childFmUID.get(bi.i202resp.getSelectedItemPosition()));
-                    if (MainApp.childARI.getUid().equals("")) {
-                        MainApp.childARI.setFmuid(childFmUID.get(bi.i202resp.getSelectedItemPosition()));
-                        bi.age.setText(childAges.get(bi.i202resp.getSelectedItemPosition()));
-                        MainApp.childARI.setI102ano(childCodes.get(bi.i202resp.getSelectedItemPosition()));
-                        MainApp.childARI.setI102a(childNames.get(bi.i202resp.getSelectedItemPosition()));
-                    }
-                    bi.i202respline.setText(childCodes.get(bi.i202resp.getSelectedItemPosition()));
-                    bi.age.setText(childAges.get(bi.i202resp.getSelectedItemPosition()));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SectionI2Activity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        bi.age.setText(getIntent().getStringExtra("age"));
     }
 
     private void setupSkips() {

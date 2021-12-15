@@ -3,8 +3,6 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,14 +12,11 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.util.ArrayList;
-
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionI1Binding;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
 public class SectionI1Activity extends AppCompatActivity {
@@ -29,7 +24,6 @@ public class SectionI1Activity extends AppCompatActivity {
     private static final String TAG = "SectionI1Activity";
     ActivitySectionI1Binding bi;
     private DatabaseHelper db;
-    private ArrayList<String> childNames, childCodes, childAges, childFmUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,67 +34,7 @@ public class SectionI1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni1diarrheainformation_mainheading);
         db = MainApp.appInfo.dbHelper;
-
-        populateSpinner();
-
-    }
-
-
-    private void populateSpinner() {
-
-        // Populate Provinces
-
-        childNames = new ArrayList<>();
-        childCodes = new ArrayList<>();
-        childAges = new ArrayList<>();
-        childFmUID = new ArrayList<>();
-
-        childNames.add("...");
-        childCodes.add("");
-        childAges.add("");
-        childFmUID.add("");
-
-        for (FamilyMembers fm : MainApp.allChildrenList) {
-            childNames.add(fm.getD102());
-            childCodes.add(fm.getD101());
-            childAges.add(fm.getD109y());
-            childFmUID.add(fm.getUid());
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionI1Activity.this,
-                R.layout.custom_spinner, childNames);
-
-        bi.i102resp.setAdapter(adapter);
-
-        bi.i102resp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                bi.age.setText("");
-                bi.i102respline.setText("");
-
-                //  if (position == 0) return;
-                try {
-                    MainApp.childDIA = db.getChildDIAByUUid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
-                    if (MainApp.childDIA.getUid().equals("")) {
-                        MainApp.childDIA.setFmuid(childFmUID.get(bi.i102resp.getSelectedItemPosition()));
-                        bi.age.setText(childAges.get(bi.i102resp.getSelectedItemPosition()));
-                        MainApp.childDIA.setI102ano(childCodes.get(bi.i102resp.getSelectedItemPosition()));
-                        MainApp.childDIA.setI102a(childNames.get(bi.i102resp.getSelectedItemPosition()));
-                    }
-                    bi.i102respline.setText(childCodes.get(bi.i102resp.getSelectedItemPosition()));
-                    bi.age.setText(childAges.get(bi.i102resp.getSelectedItemPosition()));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(SectionI1Activity.this, "JSONException(LateAdolescent)" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        bi.age.setText(getIntent().getStringExtra("age"));
     }
 
 
@@ -155,7 +89,7 @@ public class SectionI1Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionI2Activity.class).putExtra("complete", true));
+            startActivity(new Intent(this, ARIChildSelectionActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

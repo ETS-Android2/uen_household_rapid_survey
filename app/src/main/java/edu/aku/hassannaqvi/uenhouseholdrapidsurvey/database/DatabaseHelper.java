@@ -2297,9 +2297,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildDIATable.COLUMN_UUID + "=? ";
+        whereClause = ChildDIATable.COLUMN_UUID + "=? AND " +
+                ChildDIATable.COLUMN_FMUID + "=?";
 
-        String[] whereArgs = {MainApp.form.getUid()};
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
 
         String groupBy = null;
         String having = null;
@@ -2333,9 +2334,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildARITable.COLUMN_UUID + "=? ";
+        whereClause = ChildARITable.COLUMN_UUID + "=? AND " +
+                ChildARITable.COLUMN_FMUID + "=?";
 
-        String[] whereArgs = {MainApp.form.getUid()};
+        String[] whereArgs = {MainApp.form.getUid(), fmuid};
 
         String groupBy = null;
         String having = null;

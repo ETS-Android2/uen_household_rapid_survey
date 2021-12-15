@@ -46,7 +46,7 @@
                     android:text="@string/i1title" />
 
                 <!-- i101  Radio   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi101"
                     style="@style/cardView">
 
@@ -114,7 +114,7 @@
                     android:orientation="vertical"
                     android:visibility="@{childDIA.i101.equals(`2`)? View.GONE : View.VISIBLE}">
 
-                    <!-- i102  Title   -->
+                    &lt;!&ndash; i102  Title   &ndash;&gt;
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi102"
                         style="@style/cardView">
@@ -166,88 +166,9 @@
                         style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/i102t" />
+                        android:text="@string/i102t" />-->
 
                     <!-- i102a  Input   -->
-
-                    <!--                    test-->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVes1resp"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bottom"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_i102a" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="@string/i102a" />
-
-                                <TextView
-                                    android:layout_width="115dp"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:text="Line Number" />
-
-                                <TextView
-                                    android:layout_width="80dp"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center"
-                                    android:text="Age" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-
-                                <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/i102resp"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:minHeight="56dp"
-                                    android:prompt="@string/i102a"
-                                    android:spinnerMode="dropdown" />
-
-                                <TextView
-                                    android:id="@+id/i102respline"
-                                    style="@style/textView"
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center" />
-
-                                <TextView
-                                    android:id="@+id/age"
-                                    style="@style/textView"
-                                    android:layout_width="70dp"
-                                    android:layout_height="match_parent" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-                    <!--                    test end-->
-
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVi102a"
                         style="@style/cardView">
@@ -270,64 +191,110 @@
                                     android:text="@string/Q_i102a" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="match_parent"
                                     android:text="@string/i102a" />
 
+
+                                <TextView
+                                    android:layout_width="115dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Line Number" />
+
+                                <TextView
+                                    android:layout_width="84dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="Age" />
+
                             </LinearLayout>
-
-                            <EditText
-                                android:id="@+id/i102a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                                android:hint="@string/i102a"
-                                android:text="@={childDIA.i102a}" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- i102ano  Input-Numeric   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVi102ano"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/bottom"
                                 android:orientation="horizontal">
 
-                                <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
+                                <EditText
+                                    android:id="@+id/i102a"
+                                    style="@style/sub_labels"
+                                    android:enabled="false"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
-                                    android:text="@string/Q_i102ano" />
+                                    android:layout_weight="1"
+                                    android:hint="@string/i102a"
+                                    android:spinnerMode="dropdown"
+                                    android:minHeight="56dp"
+                                    android:prompt="@string/i102a"
+                                    android:text="@={childDIA.i102a}"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/i102ano"
+                                    style="@style/sub_labels"
+                                    android:layout_width="115dp"
+                                    android:enabled="false"
+                                    android:layout_height="match_parent"
+                                    android:prompt="@string/i102ano"
+                                    android:spinnerMode="dropdown"
+                                    android:text="@={childDIA.i102ano}"
+                                    android:textStyle="bold"
+                                    android:gravity="center" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/age"
+                                    style="@style/sub_labels"
+                                    android:layout_width="84dp"
+                                    android:enabled="false"
                                     android:layout_height="match_parent"
-                                    android:text="@string/i102ano" />
-
+                                    android:textStyle="bold" />
                             </LinearLayout>
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/i102ano"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/i102ano"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                android:text="@={childDIA.i102ano}"
-                                app:maxValue="100"
-                                app:minValue="1"
-                                app:type="range" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+
+                    <!-- i102ano  Input-Numeric   -->
+                <!--<androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVi102ano"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_i102ano" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/i102ano" />
+
+                        </LinearLayout>
+
+                        &lt;!&ndash;<com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/i102ano"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/i102ano"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={childDIA.i102ano}"
+                            app:maxValue="100"
+                            app:minValue="1"
+                            app:type="range" />&ndash;&gt;
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>-->
 
                     <!-- i102b  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1989,7 +1956,6 @@
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-                </LinearLayout>
 
                 <!-- i122  CheckBox   -->
                 <androidx.cardview.widget.CardView

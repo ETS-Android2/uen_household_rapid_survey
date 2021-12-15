@@ -5,7 +5,6 @@
 
     <application
         android:name=".core.MainApp"
-
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -31,7 +30,6 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
-
         <activity
             android:name=".database.AndroidManager"
             android:screenOrientation="portrait"
@@ -41,7 +39,6 @@
             android:name=".ui.lists.FormsReportPending"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".ui.lists.FormsReportCluster"
             android:screenOrientation="portrait"
@@ -50,31 +47,25 @@
             android:name=".ui.lists.FormsReportDate"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".ui.lists.FamilyMembersListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
@@ -87,60 +78,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".ui.IdentificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
-
         <activity
             android:name=".ui.sections.SectionA1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.ConsentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
-
         <activity
             android:name=".ui.sections.SectionO1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
-
         <activity
             android:name=".ui.sections.SectionN1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
-
         <activity
             android:name=".ui.sections.SectionD1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionE1AActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionE1BActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionE2AActivity"
             android:screenOrientation="portrait"
@@ -151,34 +128,34 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionF1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionG1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
-
         <activity
             android:name=".ui.sections.SectionH1AActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionH1BActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionH2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.sections.DIAChildSelectionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
@@ -190,41 +167,40 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".ui.sections.ARIChildSelectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ui.sections.SectionI2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionIMAActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionIMBActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionK1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionL1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionM1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
 
         <meta-data
             android:name="YEK_REVRES"
@@ -232,8 +208,6 @@
         <meta-data
             android:name="YEK_TRATS"
             android:value="44" />
-
-
     </application>
 
 </manifest>
