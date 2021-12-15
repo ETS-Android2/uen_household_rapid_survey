@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.allChildrenList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -155,7 +153,7 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
 
         if (updateDB()) {
-            allChildrenList.remove(bi.i202a.getSelectedItemPosition() - 1);
+//            allChildrenList.remove(bi.i202a.getSelectedItemPosition() - 1);
             startActivity(new Intent(this, SectionI2Activity.class).putExtra("age", bi.age.getText().toString()));
             finish();
         } else {

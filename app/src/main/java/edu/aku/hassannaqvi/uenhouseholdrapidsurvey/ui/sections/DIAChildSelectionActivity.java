@@ -155,7 +155,7 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
 
         if (updateDB()) {
-            allChildrenList.remove(bi.i102a.getSelectedItemPosition() - 1);
+//            allChildrenList.remove(bi.i102a.getSelectedItemPosition() - 1);
             startActivity(new Intent(this, SectionI1Activity.class).putExtra("age", bi.age.getText().toString()));
             finish();
         } else {
