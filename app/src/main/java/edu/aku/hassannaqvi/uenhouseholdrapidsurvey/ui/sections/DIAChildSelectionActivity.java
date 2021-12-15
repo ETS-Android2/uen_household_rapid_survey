@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityDiachildSelectionBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
@@ -41,6 +42,7 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         populateSpinner();
+        MainApp.childDIA = new ChildDIA();
     }
 
 
