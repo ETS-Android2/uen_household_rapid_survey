@@ -83,8 +83,8 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
                     if (MainApp.childARI.getUid().equals("")) {
                         MainApp.childARI.setFmuid(childFmUID.get(bi.i202a.getSelectedItemPosition()));
                         bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
-                        MainApp.childARI.setI102ano(childCodes.get(bi.i202a.getSelectedItemPosition()));
-                        MainApp.childARI.setI102a(childNames.get(bi.i202a.getSelectedItemPosition()));
+                        MainApp.childARI.setI202ano(childCodes.get(bi.i202a.getSelectedItemPosition()));
+                        MainApp.childARI.setI202a(childNames.get(bi.i202a.getSelectedItemPosition()));
                     }
                     bi.i202ano.setText(childCodes.get(bi.i202a.getSelectedItemPosition()));
                     bi.age.setText(childAges.get(bi.i202a.getSelectedItemPosition()));
