@@ -92,7 +92,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_uenhouseholdrapidsurvey", "V@ca#!0nSurvIv0r")
+            resValue("string", "DB_PASSWORD_uenhouseholdrapidsurvey", "nT@3rNA1Ev#eRyON")
         }
     }
     compileOptions {
