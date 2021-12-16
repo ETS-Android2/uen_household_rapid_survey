@@ -298,6 +298,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
 
     public void setE121(String e121) {
         this.e121 = e121;
+        setE12196x(e121.equals("96") ? this.e12196x : "");
         notifyPropertyChanged(BR.e121);
     }
 

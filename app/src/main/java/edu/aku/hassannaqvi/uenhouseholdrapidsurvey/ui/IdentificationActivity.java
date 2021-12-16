@@ -131,8 +131,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this,
-                        R.layout.custom_spinner, ucNames);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, ucNames);
 
                 bi.a107.setAdapter(adapter);
 

@@ -1567,6 +1567,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setF121b(String f121b) {
         this.f121b = f121b;
+        setF121b96x(f121b.equals("96") ? this.getF121b96x() : "");
         notifyPropertyChanged(BR.f121b);
     }
 
