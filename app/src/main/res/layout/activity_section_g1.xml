@@ -167,7 +167,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.g102.equals(`1`)}"
-                                android:onClick="@{()->mwra.setG102(`1`)}"
+                                android:onClick="@{()->mwra.setG102(`1`) + g105.clearCheck() + g106.clearCheck() + g107.clearCheck()}"
                                 android:text="@string/g10201" />
 
                             <TextView
@@ -1028,7 +1028,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g110.equals(`2`)}"
-                                android:onClick="@{()->mwra.setG110(`2`)}"
+                                android:onClick="@{()->mwra.setG110(`2`) + g126.clearCheck()}"
                                 android:text="@string/g11002" />
 
                             <RadioButton
@@ -1037,7 +1037,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g110.equals(`98`)}"
-                                android:onClick="@{()->mwra.setG110(`98`)}"
+                                android:onClick="@{()->mwra.setG110(`98`) + g126.clearCheck()}"
                                 android:text="@string/g11098" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1161,7 +1161,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g113.equals(`2`)}"
-                                android:onClick="@{()->mwra.setG113(`2`)}"
+                                android:onClick="@{()->mwra.setG113(`2`) + g114.clearCheck() + g115.clearCheck() + g116.clearCheck()}"
                                 android:text="@string/g11302" />
 
                             <RadioButton
@@ -1170,7 +1170,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g113.equals(`98`)}"
-                                android:onClick="@{()->mwra.setG113(`98`)}"
+                                android:onClick="@{()->mwra.setG113(`98`) + g114.clearCheck() + g115.clearCheck() + g116.clearCheck()}"
                                 android:text="@string/g11398" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1349,7 +1349,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.g115.equals(`2`)}"
-                                android:onClick="@{()->mwra.setG115(`2`)}"
+                                android:onClick="@{()->mwra.setG115(`2`) + g116.clearCheck()}"
                                 android:text="@string/g11502" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1844,7 +1844,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVg120"
                     style="@style/cardView"
-                    android:visibility="@{mwra.g119.equals(`1`) || mwra.g119.equals(`2`) ? View.VISIBLE : View.GONE }">
+                    android:visibility="@{!mwra.g119.equals(`3`) ? View.VISIBLE : View.GONE }">
 
                     <LinearLayout
                         android:layout_width="match_parent"

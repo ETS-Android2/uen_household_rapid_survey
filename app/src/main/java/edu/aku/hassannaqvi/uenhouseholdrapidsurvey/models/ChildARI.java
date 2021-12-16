@@ -1254,6 +1254,9 @@ public class ChildARI extends BaseObservable implements Observable {
 
     public void setI201(String i201) {
         this.i201 = i201;
+        setI20201(i201.equals("1") ? this.i20201 : "");
+        setI202a(i201.equals("1") ? this.i202a : "");
+        setI202ano(i201.equals("1") ? this.i202ano : "");
         notifyPropertyChanged(BR.i201);
     }
 

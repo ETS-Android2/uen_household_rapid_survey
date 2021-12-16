@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_arichild_selection.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_consent.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_diachild_selection.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_ending.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_main.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.371875" />
@@ -12,28 +15,21 @@
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2_a.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2_b.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_f1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_g1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1a.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1b.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h2.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i2.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_a.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_n1.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_o1.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_sync.xml" value="0.371875" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_arichild_selection.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_consent.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_diachild_selection.xml" value="0.56328125" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_forms_report.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_identification.xml" value="0.5503816793893129" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_login.xml" value="1.0" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_main.xml" value="0.5421875" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_pregnancy_list.xml" value="0.5503816793893129" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_a1.xml" value="0.5503816793893129" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_d1.xml" value="0.5503816793893129" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.4411134903640257" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_e1_b.xml" value="0.3171875" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_e2_b.xml" value="0.5503816793893129" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_f1.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_i1.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_i2.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_im_a.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_im_b.xml" value="0.56328125" />
-        <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_section_m1.xml" value="0.56328125" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/activity_sync.xml" value="0.5421875" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/pendingform_layout.xml" value="0.29609375" />
         <entry key="..\:/Android/UENHouseholdRapidSurvey/app/src/main/res/layout/sync_list_adapter.xml" value="0.29609375" />
@@ -44,27 +40,22 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_login.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_pregnancy_list.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_a1.xml" value="0.602866779089376" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.3449107573564882" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_d1.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_a.xml" value="0.536" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_b.xml" value="0.38358369098712447" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e1_b.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2.xml" value="0.6" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2_a.xml" value="0.55859375" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_e2_b.xml" value="0.49125" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_f1.xml" value="0.11489635224168407" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_g1.xml" value="0.13851220457187136" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_f1.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_g1.xml" value="0.37109375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1.xml" value="0.17345948568655992" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1a.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1a.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h1b.xml" value="0.536" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_h2.xml" value="0.6" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i1.xml" value="0.37109375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i2.xml" value="0.536" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_a.xml" value="0.5275" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_b.xml" value="0.5275" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_imactivity.xml" value="0.6" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.5275" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_l1.xml" value="0.5275" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.5275" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_n1.xml" value="0.2145214521452145" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_l1.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/activity_section_o1.xml" value="0.51875" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/custom_spinner.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/uen_household_rapid_survey/app/src/main/res/layout/famlily_member_row.xml" value="0.55859375" />
