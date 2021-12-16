@@ -320,7 +320,7 @@ public class ChildDIA extends BaseObservable implements Observable {
         setI10201(i101.equals("1") ? this.i10201 : "");
         setI102a(i101.equals("1") ? this.i102a : "");
         setI102ano(i101.equals("1") ? this.i102ano : "");
-        setI102b(i101.equals("1") ? this.i102b : "");
+        /*setI102b(i101.equals("1") ? this.i102b : "");
         setI102c(i101.equals("1") ? this.i102c : "");
         setI102cno(i101.equals("1") ? this.i102cno : "");
         setI103(i101.equals("1") ? this.i103 : "");
@@ -364,7 +364,7 @@ public class ChildDIA extends BaseObservable implements Observable {
 
         setI119(i101.equals("1") ? this.i119 : "");
         setI120(i101.equals("1") ? this.i120 : "");
-        setI121(i101.equals("1") ? this.i121 : "");
+        setI121(i101.equals("1") ? this.i121 : "");*/
 
         notifyPropertyChanged(BR.i101);
     }

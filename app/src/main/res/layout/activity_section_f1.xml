@@ -1268,20 +1268,22 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/f111t" />
+
                         <RadioGroup
                             android:id="@+id/f111"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                style="@style/info"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/f111t" />
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/f11101"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f111.equals(`1`)}"
                                 android:onClick="@{()->mwra.setF111(`1`)}"
@@ -1289,7 +1291,8 @@
 
                             <RadioButton
                                 android:id="@+id/f11102"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.f111.equals(`2`)}"
                                 android:onClick="@{()->mwra.setF111(`2`)}"
