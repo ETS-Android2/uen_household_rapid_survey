@@ -352,6 +352,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MaternalMortalityTable.COLUMN_UUID, mortality.getUuid());
         values.put(MaternalMortalityTable.COLUMN_PSU_CODE, mortality.getpsuCode());
         values.put(MaternalMortalityTable.COLUMN_HHID, mortality.getHhid());
+        values.put(MaternalMortalityTable.COLUMN_SNO, mortality.getSno());
         values.put(MaternalMortalityTable.COLUMN_USERNAME, mortality.getUserName());
         values.put(MaternalMortalityTable.COLUMN_SYSDATE, mortality.getSysDate());
         values.put(MaternalMortalityTable.COLUMN_ISTATUS, mortality.getiStatus());

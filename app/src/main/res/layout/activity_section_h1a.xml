@@ -1447,7 +1447,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{mwra.h116.equals(`3`)}"
-                                android:onClick="@{()->mwra.setH116(`3`)}"
+                                android:onClick="@{()->mwra.setH116(`3`) + h118.clearCheck()}"
                                 android:text="@string/h11603" />
 
                         </RadioGroup>
