@@ -5680,15 +5680,15 @@ public class MWRA extends BaseObservable implements Observable {
         setK105a01x(k105a.equals("1") ? this.k105a01x : ""); // for all skips, mention all skipped questions
         setK105a02x(k105a.equals("2") ? this.k105a02x : ""); // for all skips, mention all skipped questions
 
-        setK10601(k105a.equals("3") ? this.k10601 : "");
-        setK10602(k105a.equals("3") ? this.k10602 : "");
-        setK10603(k105a.equals("3") ? this.k10603 : "");
-        setK10604(k105a.equals("3") ? this.k10604 : "");
-        setK10605(k105a.equals("3") ? this.k10605 : "");
-        setK10606(k105a.equals("3") ? this.k10606 : "");
-        setK10607(k105a.equals("3") ? this.k10607 : "");
-        setK10608(k105a.equals("3") ? this.k10608 : "");
-        setK10696(k105a.equals("3") ? this.k10696 : "");
+        setK10601(k105a.equals("444") ? this.k10601 : "");
+        setK10602(k105a.equals("444") ? this.k10602 : "");
+        setK10603(k105a.equals("444") ? this.k10603 : "");
+        setK10604(k105a.equals("444") ? this.k10604 : "");
+        setK10605(k105a.equals("444") ? this.k10605 : "");
+        setK10606(k105a.equals("444") ? this.k10606 : "");
+        setK10607(k105a.equals("444") ? this.k10607 : "");
+        setK10608(k105a.equals("444") ? this.k10608 : "");
+        setK10696(k105a.equals("444") ? this.k10696 : "");
         notifyPropertyChanged(BR.k105a);
     }
 
@@ -5948,8 +5948,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL105(String l105) {
         this.l105 = l105;
-        setL106(l105.equals("3") ? this.l106 : "");
-        setL107(l105.equals("3") ? this.l107 : "");
+        setL106(l105.equals("3") || l105.equals("1") ? this.l106 : "");
+        setL107(l105.equals("3") || l105.equals("1") ? this.l107 : "");
         notifyPropertyChanged(BR.l105);
     }
 

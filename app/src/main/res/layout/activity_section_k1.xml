@@ -344,7 +344,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.k102.equals(`2`)}"
-                                android:onClick="@{()->mwra.setK102(`2`)}"
+                                android:onClick="@{()->mwra.setK102(`2`) + k103.clearCheck() + k105.clearCheck() + k105a.clearCheck()}"
                                 android:text="@string/k10202" />
 
                         </RadioGroup>
@@ -950,7 +950,8 @@
                 <!-- k106  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVk106"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{mwra.k105a.equals(`444`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1113,7 +1114,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.k107.equals(`1`)}"
-                                android:onClick="@{()->mwra.setK107(`1`)}"
+                                android:onClick="@{()->mwra.setK107(`1`) + k107a.clearCheck()}"
                                 android:text="@string/k10701" />
 
                             <RadioButton

@@ -2085,10 +2085,13 @@
     <string name="im04m">Month</string>
     <string name="im04y">Year</string>
     <string name="iminst">INSTRUCTION</string>
-    <string name="iminst1">Please record the date of immunization for each antigen from the card</string>
-    <string name="iminst2">1. If the date is recorded but not readable, record 44 in day column</string>
-    <string name="iminst3">2. If the date is not recorded but a tick mark is present, record 88 in day column</string>
-    <string name="iminst4">If neither date is recorded nor a tick mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
+    <string name="iminst1">Please record the date of immunization for each antigen from the card
+    \n\n1. If the date is recorded but not readable, record 44 in day column
+    \n\n2. If the date is not recorded but a tick mark is present, record 88 in day column
+    \n\nIf neither date is recorded nor a tick mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
+    <string name="iminst2"></string>
+    <string name="iminst3"></string>
+    <string name="iminst4"></string>
     <string name="im0501">BCG (Vaccination for TB)</string>
     <string name="im0501d">Day</string>
     <string name="im0501m">Month</string>

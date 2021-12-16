@@ -168,7 +168,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{child.im28.equals(`2`)}"
-                                android:onClick="@{()->child.setIm28(`2`)}"
+                                android:onClick="@{()->child.setIm28(`2`) + im29.clearCheck() + im30.clearCheck() + im31.clearCheck()}"
                                 android:text="@string/im2802" />
 
                             <RadioButton
@@ -327,7 +327,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{child.im30.equals(`2`)}"
-                                    android:onClick="@{()->child.setIm30(`2`)}"
+                                    android:onClick="@{()->child.setIm30(`2`) + im31.clearCheck()}"
                                     android:text="@string/im3002" />
 
                                 <RadioButton
@@ -336,7 +336,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{child.im30.equals(`98`)}"
-                                    android:onClick="@{()->child.setIm30(`98`)}"
+                                    android:onClick="@{()->child.setIm30(`98`) + im31.clearCheck()}"
                                     android:text="@string/im3098" />
 
                             </RadioGroup>
