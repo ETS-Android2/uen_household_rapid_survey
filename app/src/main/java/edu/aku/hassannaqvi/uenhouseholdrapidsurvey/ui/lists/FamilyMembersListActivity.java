@@ -35,7 +35,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityFamilyLis
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionD1Activity;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionM1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1AActivity;
 
 
 public class FamilyMembersListActivity extends AppCompatActivity {
@@ -375,7 +375,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         finish();
-        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionM1Activity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionE1AActivity.class).putExtra("complete", true));
 
     }
 
