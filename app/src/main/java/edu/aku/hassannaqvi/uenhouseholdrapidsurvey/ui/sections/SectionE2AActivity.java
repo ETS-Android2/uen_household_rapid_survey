@@ -59,27 +59,16 @@ public class SectionE2AActivity extends AppCompatActivity {
             // Remove current MWRA from the List (Test:Failed!!)
             // MainApp.allMWRAList.remove(0);
 
-            MainApp.totalMortalities = Integer.parseInt(MainApp.form.getE117().equals("") ? "0" : MainApp.form.getE117());
-
-            // Maternal Mortality is ZERO goto next Section
-            if (MainApp.totalMortalities > MainApp.mortalityCounter) {
-         /*       try {
-                    mortality = db.getMortalityBySno(String.valueOf(++MainApp.mortalityCounter));
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, "JSONException(MaternalMortality): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }*/
+            if (bi.e11601.isChecked()) {
+                MainApp.totalMortalities = Integer.parseInt(MainApp.form.getE117());
                 startActivity(new Intent(this, SectionE2BActivity.class).putExtra("complete", true));
-                finish();
 
             } else {
-
-                // if no more pregnancy and no more mwra than go to E2
                 startActivity(new Intent(this, SectionF1Activity.class).putExtra("complete", true));
-                finish();
 
             }
+            finish();
+
 
         }
 

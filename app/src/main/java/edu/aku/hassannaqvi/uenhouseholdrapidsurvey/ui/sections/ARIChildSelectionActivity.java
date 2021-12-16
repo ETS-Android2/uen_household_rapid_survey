@@ -172,7 +172,12 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
 
         if (updateDB()) {
 //            allChildrenList.remove(bi.i202a.getSelectedItemPosition() - 1);
-            startActivity(new Intent(this, SectionI2Activity.class));
+            if (bi.i20101.isChecked()) {
+                startActivity(new Intent(this, SectionI2Activity.class));
+            } else {
+                startActivity(new Intent(this, SectionM1Activity.class));
+            }
+
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
