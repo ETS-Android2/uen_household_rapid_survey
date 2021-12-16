@@ -1404,7 +1404,6 @@ public class ChildARI extends BaseObservable implements Observable {
         setI22106(i207.equals("1") ? this.i22106 : "");
         setI22196(i207.equals("1") ? this.i22196 : "");
 
-        setI222(i207.equals("1") ? this.i222 : "");
         notifyPropertyChanged(BR.i207);
     }
 

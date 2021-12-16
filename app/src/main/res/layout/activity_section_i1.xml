@@ -602,7 +602,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childDIA.i105.equals(`1`)}"
-                                    android:onClick="@{()->childDIA.setI105(`1`)}"
+                                    android:onClick="@{()->childDIA.setI105(`1`) + i106.clearCheck()}"
                                     android:text="@string/i10501" />
 
                                 <RadioButton
@@ -1214,7 +1214,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childDIA.i113.equals(`2`)}"
-                                    android:onClick="@{()->childDIA.setI113(`2`)}"
+                                    android:onClick="@{()->childDIA.setI113(`2`) + i115.clearCheck() + i116.clearCheck()}"
                                     android:text="@string/i11302" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1770,7 +1770,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childDIA.i119.equals(`2`)}"
-                                    android:onClick="@{()->childDIA.setI119(`2`)}"
+                                    android:onClick="@{()->childDIA.setI119(`2`) + i120.clearCheck() + i121.clearCheck()}"
                                     android:text="@string/i11902" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1827,7 +1827,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childDIA.i120.equals(`2`)}"
-                                    android:onClick="@{()->childDIA.setI120(`2`)}"
+                                    android:onClick="@{()->childDIA.setI120(`2`) + i121.clearCheck()}"
                                     android:text="@string/i12002" />
                             </RadioGroup>
                         </LinearLayout>
@@ -2095,7 +2095,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childDIA.i123.equals(`1`)}"
-                                android:onClick="@{()->childDIA.setI123(`1`)}"
+                                android:onClick="@{()->childDIA.setI123(`1`) + i124.clearCheck()}"
                                 android:text="@string/i12301" />
 
                             <RadioButton
