@@ -41,11 +41,11 @@ public class MainApp extends Application {
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/f4he/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/uen_rs/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/f4he/app/hhsurvey";
+    public static final String _UPDATE_URL = MainApp._IP + "/uen_rs/app/hhsurvey";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
     private static int TRATS = 0;
@@ -211,6 +211,8 @@ public class MainApp extends Application {
         editor = sharedPref.edit();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
+        initSecure();
+
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
 
@@ -225,6 +227,23 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
 
+    }
+
+    private void initSecure() {
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+
+        // Prepare encryption KEY
+        ApplicationInfo ai = null;
+        try {
+            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            TRATS = bundle.getInt("YEK_TRATS");
+            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }
