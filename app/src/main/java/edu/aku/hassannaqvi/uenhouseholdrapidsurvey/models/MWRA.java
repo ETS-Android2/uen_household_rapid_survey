@@ -2411,6 +2411,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG104(String g104) {
         this.g104 = g104;
+        setG10496x(g104.equals("96") ? this.g10496x : "");
         notifyPropertyChanged(BR.g104);
     }
 
@@ -2537,6 +2538,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG114(String g114) {
         this.g114 = g114;
+        setG11496x(g114.equals("96") ? this.g11496x : "");
         notifyPropertyChanged(BR.g114);
     }
 
