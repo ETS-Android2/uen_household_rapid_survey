@@ -291,7 +291,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVg103"
                     style="@style/cardView"
-                    android:visibility="@{mwra.g102.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.g102.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
