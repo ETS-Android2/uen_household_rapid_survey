@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 
 public class ChildDIA extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ChildIA";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;

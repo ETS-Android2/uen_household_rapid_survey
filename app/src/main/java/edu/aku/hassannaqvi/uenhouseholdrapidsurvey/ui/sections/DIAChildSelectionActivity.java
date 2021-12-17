@@ -173,7 +173,11 @@ public class DIAChildSelectionActivity extends AppCompatActivity {
 
         if (updateDB()) {
 //            allChildrenList.remove(bi.i102a.getSelectedItemPosition() - 1);
-            startActivity(new Intent(this, SectionI1Activity.class));
+            if(bi.i10101.isChecked()) {
+                startActivity(new Intent(this, SectionI1Activity.class));
+            }else{
+                startActivity(new Intent(this, ARIChildSelectionActivity.class));
+            }
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

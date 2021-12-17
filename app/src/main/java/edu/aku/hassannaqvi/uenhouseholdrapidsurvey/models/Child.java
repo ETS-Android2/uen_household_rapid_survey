@@ -1158,8 +1158,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm10(String im10) {
         this.im10 = im10;
-        setIm11(im10.equals("1") ? this.im11 : "");
-        setIm12(im10.equals("1") ? this.im12 : "");
+        setIm11(im10.equals("2") ? "" : this.im11);
+        setIm12(im10.equals("2") ? "" : this.im12);
         notifyPropertyChanged(BR.im10);
     }
 
@@ -1707,6 +1707,21 @@ public class Child extends BaseObservable implements Observable {
     public void setIm30(String im30) {
         this.im30 = im30;
         setIm31(im30.equals("1") ? this.im31 : "");
+        setIm3201(im30.equals("1") ? "" : this.im3201);
+        setIm3202(im30.equals("1") ? "" : this.im3202);
+        setIm3203(im30.equals("1") ? "" : this.im3203);
+        setIm3204(im30.equals("1") ? "" : this.im3204);
+        setIm3205(im30.equals("1") ? "" : this.im3205);
+        setIm3206(im30.equals("1") ? "" : this.im3206);
+        setIm3207(im30.equals("1") ? "" : this.im3207);
+        setIm3208(im30.equals("1") ? "" : this.im3208);
+        setIm3209(im30.equals("1") ? "" : this.im3209);
+        setIm3210(im30.equals("1") ? "" : this.im3210);
+        setIm3211(im30.equals("1") ? "" : this.im3211);
+        setIm3212(im30.equals("1") ? "" : this.im3212);
+        setIm3213(im30.equals("1") ? "" : this.im3213);
+        setIm3296(im30.equals("1") ? "" : this.im3296);
+        setIm3298(im30.equals("1") ? "" : this.im3298);
         notifyPropertyChanged(BR.im30);
     }
 
@@ -1717,21 +1732,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm31(String im31) {
         this.im31 = im31;
-        setIm3201(im31.equals("1") ? "" : this.im3201);
-        setIm3202(im31.equals("1") ? "" : this.im3202);
-        setIm3203(im31.equals("1") ? "" : this.im3203);
-        setIm3204(im31.equals("1") ? "" : this.im3204);
-        setIm3205(im31.equals("1") ? "" : this.im3205);
-        setIm3206(im31.equals("1") ? "" : this.im3206);
-        setIm3207(im31.equals("1") ? "" : this.im3207);
-        setIm3208(im31.equals("1") ? "" : this.im3208);
-        setIm3209(im31.equals("1") ? "" : this.im3209);
-        setIm3210(im31.equals("1") ? "" : this.im3210);
-        setIm3211(im31.equals("1") ? "" : this.im3211);
-        setIm3212(im31.equals("1") ? "" : this.im3212);
-        setIm3213(im31.equals("1") ? "" : this.im3213);
-        setIm3296(im31.equals("1") ? "" : this.im3296);
-        setIm3298(im31.equals("1") ? "" : this.im3298);
+
         notifyPropertyChanged(BR.im31);
     }
 

@@ -14,6 +14,8 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.AndroidManager;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
@@ -148,11 +150,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionH2Activity.class));
                 break;
             case R.id.secia:
-                MainApp.child = new Child();
+                MainApp.childDIA = new ChildDIA();
                 startActivity(new Intent(this, SectionI1Activity.class));
                 break;
             case R.id.seci2:
-                MainApp.child = new Child();
+                MainApp.childARI = new ChildARI();
                 startActivity(new Intent(this, SectionI2Activity.class));
                 break;
             case R.id.secima:

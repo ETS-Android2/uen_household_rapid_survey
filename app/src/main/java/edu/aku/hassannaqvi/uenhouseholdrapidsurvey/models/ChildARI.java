@@ -1689,13 +1689,12 @@ public class ChildARI extends BaseObservable implements Observable {
     public void setI21998(String i21998) {
         if (this.i21998.equals(i21998)) return; // for all checkboxes
         this.i21998 = i21998;
-        setI22101(i21998.equals("98") ? "" : this.i22101);
-        setI22102(i21998.equals("98") ? "" : this.i22102);
-        setI22103(i21998.equals("98") ? "" : this.i22103);
-        setI22104(i21998.equals("98") ? "" : this.i22104);
-        setI22105(i21998.equals("98") ? "" : this.i22105);
-        setI22106(i21998.equals("98") ? "" : this.i22106);
-        setI22196(i21998.equals("98") ? "" : this.i22196);
+        setI21901(i21998.equals("98") ? "" : this.i21901);
+        setI21902(i21998.equals("98") ? "" : this.i21902);
+        setI21903(i21998.equals("98") ? "" : this.i21903);
+        setI21904(i21998.equals("98") ? "" : this.i21904);
+        setI21905(i21998.equals("98") ? "" : this.i21905);
+        setI21996(i21998.equals("98") ? "" : this.i21996);
         notifyPropertyChanged(BR.i21998);
     }
 
