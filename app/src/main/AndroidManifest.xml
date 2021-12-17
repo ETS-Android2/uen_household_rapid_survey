@@ -19,7 +19,9 @@
         tools:replace="android:allowBackup">
         <activity
             android:name=".ui.sections.SectionUNActivity"
-            android:exported="true" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.EndingActivity"
             android:screenOrientation="portrait"
