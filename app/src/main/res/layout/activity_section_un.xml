@@ -1,0 +1,687 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mwra"
+            type="edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/sectionununmetneeds_mainheading"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- un01  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVun01"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_un01" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/un01" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/un01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/un0101"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{mwra.un01.equals(`1`)}"
+                                android:onClick="@{()->mwra.setUn01(`1`) + un02.clearCheck()}"
+                                android:text="@string/un0101" />
+
+                            <RadioButton
+                                android:id="@+id/un0102"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{mwra.un01.equals(`2`)}"
+                                android:onClick="@{()->mwra.setUn01(`2`)}"
+                                android:text="@string/un0102" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- un02  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVun02"
+                    style="@style/cardView"
+                    android:visibility="@{mwra.un01.equals(`2`) ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_un02" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/un02" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/un02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/un0201"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{mwra.un02.equals(`1`)}"
+                                android:onClick="@{()->mwra.setUn02(`1`)}"
+                                android:text="@string/un0201" />
+
+                            <RadioButton
+                                android:id="@+id/un0202"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{mwra.un02.equals(`2`)}"
+                                android:onClick="@{()->mwra.setUn02(`2`)}"
+                                android:text="@string/un0202" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- un03  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVun03"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_un03" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/un03" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/un03"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/un0301"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un03.equals(`1`)}"
+                                android:onClick="@{()->mwra.setUn03(`1`)}"
+                                android:text="@string/un0301" />
+
+                            <RadioButton
+                                android:id="@+id/un0302"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un03.equals(`2`)}"
+                                android:onClick="@{()->mwra.setUn03(`2`) + un04.clearCheck() + un05.clearCheck() + un06.clearCheck()}"
+                                android:text="@string/un0302" />
+
+                            <RadioButton
+                                android:id="@+id/un0303"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un03.equals(`3`)}"
+                                android:onClick="@{()->mwra.setUn03(`3`) + un04.clearCheck() + un05.clearCheck()}"
+                                android:text="@string/un0303" />
+
+                            <RadioButton
+                                android:id="@+id/un0304"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un03.equals(`4`)}"
+                                android:onClick="@{()->mwra.setUn03(`4`) + un04.clearCheck() + un05.clearCheck() + un06.clearCheck()}"
+                                android:text="@string/un0304" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{mwra.un03.equals(`1`) || mwra.un03.equals(`3`) ? View.VISIBLE : View.GONE}">
+
+                    <!-- un04  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVun04"
+                        style="@style/cardView"
+                        android:visibility="@{mwra.un03.equals(`3`) ? View.GONE : View.VISIBLE}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_un04" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/un04" />
+
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/un04"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/un0401"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un04.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setUn04(`1`)}"
+                                    android:text="@string/un0401" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/un0401x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/un0401"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:tag="un0401"
+                                    android:text="@={mwra.un0401x}"
+                                    android:visibility="@{mwra.un04.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    app:maxValue="11"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+                                <RadioButton
+                                    android:id="@+id/un0402"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un04.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setUn04(`2`)}"
+                                    android:text="@string/un0402" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/un0402x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/un0402"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:tag="un0402"
+                                    android:text="@={mwra.un0402x}"
+                                    android:visibility="@{mwra.un04.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    app:maxValue="10"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+                                <RadioButton
+                                    android:id="@+id/un0403"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un04.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setUn04(`3`)}"
+                                    android:text="@string/un0403" />
+
+                                <RadioButton
+                                    android:id="@+id/un0404"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un04.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setUn04(`4`) + un05.clearCheck()}"
+                                    android:text="@string/un0404" />
+                            </RadioGroup>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- un05  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVun05"
+                        style="@style/cardView"
+                        android:visibility="@{mwra.un03.equals(`3`) || mwra.un04.equals(`4`) ? View.GONE : View.VISIBLE}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_un05" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/un05" />
+
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/un05"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/un0501"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="@{mwra.un05.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setUn05(`1`)}"
+                                    android:text="@string/un0501" />
+
+                                <RadioButton
+                                    android:id="@+id/un0502"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="@{mwra.un05.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setUn05(`2`) + un06.clearCheck()}"
+                                    android:text="@string/un0502" />
+
+                                <RadioButton
+                                    android:id="@+id/un0598"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="@{mwra.un05.equals(`98`)}"
+                                    android:onClick="@{()->mwra.setUn05(`98`)}"
+                                    android:text="@string/un0598" />
+                            </RadioGroup>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- un06  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVun06"
+                        style="@style/cardView"
+                        android:visibility="@{mwra.un05.equals(`2`) ? View.VISIBLE : View.GONE}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_un06" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/un06" />
+
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/un06"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/un0601"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`1`)}"
+                                    android:onClick="@{()->mwra.setUn06(`1`)}"
+                                    android:text="@string/un0601" />
+
+                                <RadioButton
+                                    android:id="@+id/un0602"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`2`)}"
+                                    android:onClick="@{()->mwra.setUn06(`2`)}"
+                                    android:text="@string/un0602" />
+
+                                <RadioButton
+                                    android:id="@+id/un0603"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`3`)}"
+                                    android:onClick="@{()->mwra.setUn06(`3`)}"
+                                    android:text="@string/un0603" />
+
+                                <RadioButton
+                                    android:id="@+id/un0604"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`4`)}"
+                                    android:onClick="@{()->mwra.setUn06(`4`)}"
+                                    android:text="@string/un0604" />
+
+                                <RadioButton
+                                    android:id="@+id/un0605"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`5`)}"
+                                    android:onClick="@{()->mwra.setUn06(`5`)}"
+                                    android:text="@string/un0605" />
+
+                                <RadioButton
+                                    android:id="@+id/un0606"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`6`)}"
+                                    android:onClick="@{()->mwra.setUn06(`6`)}"
+                                    android:text="@string/un0606" />
+
+                                <RadioButton
+                                    android:id="@+id/un0607"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`7`)}"
+                                    android:onClick="@{()->mwra.setUn06(`7`)}"
+                                    android:text="@string/un0607" />
+
+                                <RadioButton
+                                    android:id="@+id/un0608"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`8`)}"
+                                    android:onClick="@{()->mwra.setUn06(`8`)}"
+                                    android:text="@string/un0608" />
+
+                                <RadioButton
+                                    android:id="@+id/un0696"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{mwra.un06.equals(`96`)}"
+                                    android:onClick="@{()->mwra.setUn06(`96`)}"
+                                    android:text="@string/un0696" />
+
+                                <EditText
+                                    android:id="@+id/un0696x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/un0696"
+                                    android:tag="un0696"
+                                    android:text="@={mwra.un0696x}"
+                                    android:visibility="@{mwra.un06.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                            </RadioGroup>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- un07  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVun07"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_un07" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/un07" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/un07"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/un0701"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un07.equals(`1`)}"
+                                android:onClick="@{()->mwra.setUn07(`1`)}"
+                                android:text="@string/un0701" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/un0701x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/un0701"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:tag="un0701"
+                                android:text="@={mwra.un0701x}"
+                                android:visibility="@{mwra.un07.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="29"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/un0702"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un07.equals(`2`)}"
+                                android:onClick="@{()->mwra.setUn07(`2`)}"
+                                android:text="@string/un0702" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/un0702x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/un0702"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:tag="un0702"
+                                android:text="@={mwra.un0702x}"
+                                android:visibility="@{mwra.un07.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="4"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/un0703"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un07.equals(`3`)}"
+                                android:onClick="@{()->mwra.setUn07(`3`)}"
+                                android:text="@string/un0703" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/un0703x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/un0703"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:tag="un0703"
+                                android:text="@={mwra.un0703x}"
+                                android:visibility="@{mwra.un07.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="11"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/un0704"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un07.equals(`4`)}"
+                                android:onClick="@{()->mwra.setUn07(`4`)}"
+                                android:text="@string/un0704" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/un0704x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/un0704"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:tag="un0704"
+                                android:text="@={mwra.un0704x}"
+                                android:visibility="@{mwra.un07.equals(`4`) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="10"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/un0705"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{mwra.un07.equals(`5`)}"
+                                android:onClick="@{()->mwra.setUn07(`5`)}"
+                                android:text="@string/un0705" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/red_overlay"
+                        android:elevation="20dp"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/green_overlay"
+                        android:elevation="20dp"
+                        android:onClick="btnContinue"
+                        android:text="Save"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

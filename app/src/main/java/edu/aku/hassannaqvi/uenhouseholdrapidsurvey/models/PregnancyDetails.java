@@ -59,6 +59,8 @@ public class PregnancyDetails extends BaseObservable implements Observable {
     private String e110d = _EMPTY_;
     private String e111 = _EMPTY_;
     private String e11196x = _EMPTY_;
+    private String e111a = _EMPTY_;
+    private String e111a96x = _EMPTY_;
     private String e112 = _EMPTY_;
     private String e113y = _EMPTY_;
     private String e113m = _EMPTY_;
@@ -281,6 +283,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         setE110m(b ? "" : this.e110m);
         setE110y(b ? "" : this.e110y);
         setE111(e105.equals("6") ? "" : this.e111);
+        setE111a(e105.equals("6") ? "" : this.e111a);
         setE112(e105.equals("6") ? "" : this.e112);
         setE113y(e105.equals("6") ? this.e113y : "");
         setE113m(e105.equals("6") ? this.e113m : "");
@@ -341,6 +344,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         setE110m(e109.equals("1") ? "" : this.e110m);
         setE110y(e109.equals("1") ? "" : this.e110y);
         setE111(e109.equals("1") ? "" : this.e111);
+        setE111a(e109.equals("1") ? "" : this.e111a);
         setE112(e109.equals("1") ? "" : this.e112);
         notifyPropertyChanged(BR.e109);
     }
@@ -404,6 +408,27 @@ public class PregnancyDetails extends BaseObservable implements Observable {
     public void setE11196x(String e11196x) {
         this.e11196x = e11196x;
         notifyPropertyChanged(BR.e11196x);
+    }
+
+    @Bindable
+    public String getE111a() {
+        return e111a;
+    }
+
+    public void setE111a(String e111a) {
+        this.e111a = e111a;
+        setE111a96x(e111a.equals("96") ? this.e111a96x : "");
+        notifyPropertyChanged(BR.e111a);
+    }
+
+    @Bindable
+    public String getE111a96x() {
+        return e111a96x;
+    }
+
+    public void setE111a96x(String e111a96x) {
+        this.e111a96x = e111a96x;
+        notifyPropertyChanged(BR.e111a96x);
     }
 
     @Bindable
@@ -500,6 +525,8 @@ public class PregnancyDetails extends BaseObservable implements Observable {
                 .put("e110d", e110d)
                 .put("e111", e111)
                 .put("e11196x", e11196x)
+                .put("e111a", e111a)
+                .put("e111a96x", e111a96x)
                 .put("e112", e112)
                 .put("e113y", e113y)
                 .put("e113m", e113m)
@@ -553,6 +580,8 @@ public class PregnancyDetails extends BaseObservable implements Observable {
             this.e110d = json.getString("e110d");
             this.e111 = json.getString("e111");
             this.e11196x = json.getString("e11196x");
+            this.e111a = json.getString("e111a");
+            this.e111a96x = json.getString("e111a96x");
             this.e112 = json.getString("e112");
             this.e113y = json.getString("e113y");
             this.e113m = json.getString("e113m");

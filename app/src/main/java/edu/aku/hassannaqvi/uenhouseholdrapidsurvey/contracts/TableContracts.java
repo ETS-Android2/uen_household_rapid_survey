@@ -152,6 +152,7 @@ public class TableContracts {
         public static final String COLUMN_SH2 = "sh2";
         public static final String COLUMN_SK = "sk";
         public static final String COLUMN_SL = "sl";
+        public static final String COLUMN_UN = "uN";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

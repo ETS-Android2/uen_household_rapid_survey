@@ -535,6 +535,22 @@ public class MWRA extends BaseObservable implements Observable {
     private String l117 = _EMPTY_;
     private String l11796x = _EMPTY_;
 
+    //    SectionUN
+    private String un01 = _EMPTY_;
+    private String un02 = _EMPTY_;
+    private String un03 = _EMPTY_;
+    private String un04 = _EMPTY_;
+    private String un0401x = _EMPTY_;
+    private String un0402x = _EMPTY_;
+    private String un05 = _EMPTY_;
+    private String un06 = _EMPTY_;
+    private String un0696x = _EMPTY_;
+    private String un07 = _EMPTY_;
+    private String un0701x = _EMPTY_;
+    private String un0702x = _EMPTY_;
+    private String un0703x = _EMPTY_;
+    private String un0704x = _EMPTY_;
+
     // Constructor
     public void Mwra() {
 
@@ -6233,6 +6249,167 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getUn01() {
+        return un01;
+    }
+
+    public void setUn01(String un01) {
+        this.un01 = un01;
+        setUn02(un01.equals("2") ? this.un02 : "");
+        notifyPropertyChanged(BR.un01);
+    }
+
+    @Bindable
+    public String getUn02() {
+        return un02;
+    }
+
+    public void setUn02(String un02) {
+        this.un02 = un02;
+        notifyPropertyChanged(BR.un02);
+    }
+
+    @Bindable
+    public String getUn03() {
+        return un03;
+    }
+
+    public void setUn03(String un03) {
+        this.un03 = un03;
+        setUn04(un03.equals("1") ? this.un04 : "");
+        setUn05(un03.equals("1") ? this.un05 : "");
+        setUn06(un03.equals("1") ? this.un06 : "");
+
+        setUn04(un03.equals("2") || un03.equals("4") ? "" : this.un04);
+        setUn05(un03.equals("2") || un03.equals("4") ? "" : this.un05);
+        setUn06(un03.equals("2") || un03.equals("4") ? "" : this.un06);
+
+        setUn04(un03.equals("3") ? "" : this.un04);
+        setUn05(un03.equals("3") ? "" : this.un05);
+        notifyPropertyChanged(BR.un03);
+    }
+
+    @Bindable
+    public String getUn04() {
+        return un04;
+    }
+
+    public void setUn04(String un04) {
+        this.un04 = un04;
+        setUn0401x(un04.equals("1") ? this.un0401x : "");
+        setUn0402x(un04.equals("2") ? this.un0402x : "");
+        setUn05(un04.equals("4") ? "" : this.un05);
+        notifyPropertyChanged(BR.un04);
+    }
+
+    @Bindable
+    public String getUn0401x() {
+        return un0401x;
+    }
+
+    public void setUn0401x(String un0401x) {
+        this.un0401x = un0401x;
+        notifyPropertyChanged(BR.un0401x);
+    }
+
+    @Bindable
+    public String getUn0402x() {
+        return un0402x;
+    }
+
+    public void setUn0402x(String un0402x) {
+        this.un0402x = un0402x;
+        notifyPropertyChanged(BR.un0402x);
+    }
+
+    @Bindable
+    public String getUn05() {
+        return un05;
+    }
+
+    public void setUn05(String un05) {
+        this.un05 = un05;
+        setUn06(un05.equals("2") ? this.un06 : "");
+        notifyPropertyChanged(BR.un05);
+    }
+
+    @Bindable
+    public String getUn06() {
+        return un06;
+    }
+
+    public void setUn06(String un06) {
+        this.un06 = un06;
+        setUn0696x(un06.equals("96") ? this.un0696x : ""); // for all skips, mention all skipped questions
+        notifyPropertyChanged(BR.un06);
+    }
+
+    @Bindable
+    public String getUn0696x() {
+        return un0696x;
+    }
+
+    public void setUn0696x(String un0696x) {
+        this.un0696x = un0696x;
+        notifyPropertyChanged(BR.un0696x);
+    }
+
+    @Bindable
+    public String getUn07() {
+        return un07;
+    }
+
+    public void setUn07(String un07) {
+        this.un07 = un07;
+        setUn0701x(un07.equals("1") ? this.un0701x : ""); // for all skips, mention all skipped questions
+        setUn0702x(un07.equals("2") ? this.un0702x : ""); // for all skips, mention all skipped questions
+        setUn0703x(un07.equals("3") ? this.un0703x : ""); // for all skips, mention all skipped questions
+        setUn0704x(un07.equals("4") ? this.un0704x : ""); // for all skips, mention all skipped questions
+        notifyPropertyChanged(BR.un07);
+    }
+
+    @Bindable
+    public String getUn0701x() {
+        return un0701x;
+    }
+
+    public void setUn0701x(String un0701x) {
+        this.un0701x = un0701x;
+        notifyPropertyChanged(BR.un0701x);
+    }
+
+    @Bindable
+    public String getUn0702x() {
+        return un0702x;
+    }
+
+    public void setUn0702x(String un0702x) {
+        this.un0702x = un0702x;
+        notifyPropertyChanged(BR.un0702x);
+    }
+
+    @Bindable
+    public String getUn0703x() {
+        return un0703x;
+    }
+
+    public void setUn0703x(String un0703x) {
+        this.un0703x = un0703x;
+        notifyPropertyChanged(BR.un0703x);
+    }
+
+    @Bindable
+    public String getUn0704x() {
+        return un0704x;
+    }
+
+    public void setUn0704x(String un0704x) {
+        this.un0704x = un0704x;
+        notifyPropertyChanged(BR.un0704x);
+    }
+
+
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
 
@@ -6260,6 +6437,7 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_SH2, new JSONObject(sH2toString()));
         json.put(TableContracts.MwraTable.COLUMN_SK, new JSONObject(sKtoString()));
         json.put(TableContracts.MwraTable.COLUMN_SL, new JSONObject(sLtoString()));
+        json.put(TableContracts.MwraTable.COLUMN_UN, new JSONObject(sLtoString()));
 
         return json;
     }
@@ -6384,6 +6562,7 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+
     public String sGtoString() throws JSONException {
         Log.d(TAG, "sGtoString: ");
         JSONObject json = new JSONObject();
@@ -6458,6 +6637,7 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("g129", g129);
         return json.toString();
     }
+
 
     public String sH1toString() throws JSONException {
         Log.d(TAG, "sH1toString: ");
@@ -6565,6 +6745,7 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+
     public String sH2toString() throws JSONException {
         Log.d(TAG, "sH2toString: ");
         JSONObject json = new JSONObject();
@@ -6650,6 +6831,7 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+
     public String sKtoString() throws JSONException {
         Log.d(TAG, "sKtoString: ");
         JSONObject json = new JSONObject();
@@ -6717,6 +6899,7 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+
     public String sLtoString() throws JSONException {
         Log.d(TAG, "sLtoString: ");
         JSONObject json = new JSONObject();
@@ -6758,6 +6941,28 @@ public class MWRA extends BaseObservable implements Observable {
         return json.toString();
     }
 
+
+    public String uNtoString() throws JSONException {
+        Log.d(TAG, "uNtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("un01", un01)
+                .put("un02", un02)
+                .put("un03", un03)
+                .put("un04", un04)
+                .put("un0401x", un0401x)
+                .put("un0402x", un0402x)
+                .put("un05", un05)
+                .put("un06", un06)
+                .put("un0696x", un0696x)
+                .put("un07", un07)
+                .put("un0701x", un0701x)
+                .put("un0702x", un0702x)
+                .put("un0703x", un0703x)
+                .put("un0704x", un0704x);
+        return json.toString();
+    }
+
+
     public MWRA Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UID));
@@ -6785,9 +6990,11 @@ public class MWRA extends BaseObservable implements Observable {
         sH2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SH2)));
         sKHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SK)));
         sLHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SL)));
+        uNHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_UN)));
 
         return this;
     }
+
 
     public void sFHydrate(String string) throws JSONException {
         Log.d(TAG, "sFHydrate: " + string);
@@ -6911,6 +7118,7 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
+
     public void sGHydrate(String string) throws JSONException {
         Log.d(TAG, "sGHydrate: " + string);
         if (string != null) {
@@ -6988,6 +7196,7 @@ public class MWRA extends BaseObservable implements Observable {
 
         }
     }
+
 
     public void sH1Hydrate(String string) throws JSONException {
         Log.d(TAG, "sH1Hydrate: " + string);
@@ -7098,6 +7307,7 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
+
     public void sH2Hydrate(String string) throws JSONException {
         Log.d(TAG, "sH2Hydrate: " + string);
         if (string != null) {
@@ -7186,6 +7396,7 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
+
     public void sKHydrate(String string) throws JSONException {
         Log.d(TAG, "sKHydrate: " + string);
         if (string != null) {
@@ -7256,6 +7467,7 @@ public class MWRA extends BaseObservable implements Observable {
         }
     }
 
+
     public void sLHydrate(String string) throws JSONException {
         Log.d(TAG, "sLHydrate: " + string);
         if (string != null) {
@@ -7297,6 +7509,29 @@ public class MWRA extends BaseObservable implements Observable {
             this.l117 = json.getString("l117");
             this.l11796x = json.getString("l11796x");
 
+        }
+    }
+
+
+    public void uNHydrate(String string) throws JSONException {
+        Log.d(TAG, "uNHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.un01 = json.getString("un01");
+            this.un02 = json.getString("un02");
+            this.un03 = json.getString("un03");
+            this.un04 = json.getString("un04");
+            this.un0401x = json.getString("un0401x");
+            this.un0402x = json.getString("un0402x");
+            this.un05 = json.getString("un05");
+            this.un06 = json.getString("un06");
+            this.un0696x = json.getString("un0696x");
+            this.un07 = json.getString("un07");
+            this.un0701x = json.getString("un0701x");
+            this.un0702x = json.getString("un0702x");
+            this.un0703x = json.getString("un0703x");
+            this.un0704x = json.getString("un0704x");
         }
     }
 

@@ -123,7 +123,8 @@ object CreateTable {
             + MwraTable.COLUMN_SH1 + " TEXT,"
             + MwraTable.COLUMN_SH2 + " TEXT,"
             + MwraTable.COLUMN_SK + " TEXT,"
-            + MwraTable.COLUMN_SL + " TEXT"
+            + MwraTable.COLUMN_SL + " TEXT,"
+            + MwraTable.COLUMN_UN + " TEXT"
             + " );"
             )
 

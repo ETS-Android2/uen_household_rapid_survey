@@ -16,38 +16,31 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionK1Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionUnBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
-public class SectionK1Activity extends AppCompatActivity {
+public class SectionUNActivity extends AppCompatActivity {
 
-
-    private static final String TAG = "SectionK1Activity";
-    ActivitySectionK1Binding bi;
+    private static final String TAG = "SectionUNActivity";
+    ActivitySectionUnBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_un);
         bi.setMwra(MainApp.mwra);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
-        setTitle(R.string.sectionkfamilyplanning_mainheading);
         db = MainApp.appInfo.dbHelper;
-
     }
 
-    private void setupSkips() {
-
-    }
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
         int updcount = 0;
         try {
-            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_SK, MainApp.mwra.sKtoString());
+            updcount = db.updatesMWRAColumn(TableContracts.MwraTable.COLUMN_UN, MainApp.mwra.uNtoString());
         } catch (JSONException e) {
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -61,22 +54,23 @@ public class SectionK1Activity extends AppCompatActivity {
 
     }
 
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionUNActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionL1Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
+
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
@@ -88,5 +82,4 @@ public class SectionK1Activity extends AppCompatActivity {
         // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
     }
-
 }
