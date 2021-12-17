@@ -2290,6 +2290,44 @@
     <string name="im3213">Vaccine leads to infertility</string>
     <string name="im3298">Don’t know</string>
     <string name="im3296">Other (Please Specify)</string>
+    <string name="sectionununmetneeds_mainheading">Section UN: Unmet Needs: </string>
+    <string name="unttitle">UNMET NEED</string>
+    <string name="un01">Now I would like to talk about your last pregnancy. Did you want to get pregnant at that/this time? (include current pregnant)</string>
+    <string name="un0101">Yes</string>
+    <string name="un0102">No</string>
+    <string name="un02">Did you want to have baby later on or did you not want any (more) children?</string>
+    <string name="un0201">Later</string>
+    <string name="un0202">No more</string>
+    <string name="un03">Now I would like to ask some questions about the future. Would you like to have another child, or would you prefer not to have any (more) children&gt;</string>
+    <string name="un0301">Have another child</string>
+    <string name="un0302">No more /None</string>
+    <string name="un0303">Cannot get pregnant</string>
+    <string name="un0304">Undecided/Don’t know</string>
+    <string name="un04">How long would you like to wait before the birth of (another child)?</string>
+    <string name="un0401">Months</string>
+    <string name="un0402">Years</string>
+    <string name="un0403">Does not want to wait (soon/now)</string>
+    <string name="un0404">Cannot get pregnant</string>
+    <string name="un05">Do You think you are physically able to get pregnant at this time?</string>
+    <string name="un0501">Yes</string>
+    <string name="un0502">No</string>
+    <string name="un0598">Dont know</string>
+    <string name="un06">Why do you think you are not able physically able to get pregnant?</string>
+    <string name="un0601">Infrequent Sex/ No sex</string>
+    <string name="un0602">Menopausal</string>
+    <string name="un0603">Never menstruated</string>
+    <string name="un0604">Hysterectomy (surgical removal of uterus)</string>
+    <string name="un0605">Has been tryingto get pregnant for 2 years or more without result</string>
+    <string name="un0606">Postpartum amenorrheic</string>
+    <string name="un0607">Breastfeeding</string>
+    <string name="un0608">Too old</string>
+    <string name="un0696">Other</string>
+    <string name="un07">When your last menstrual period start?</string>
+    <string name="un0701">Days</string>
+    <string name="un0702">Weeks</string>
+    <string name="un0703">Months</string>
+    <string name="un0704">Years</string>
+    <string name="un0705">Before last birth</string>
 
 
     <string name='Q_a101'>a101</string>
@@ -2697,6 +2735,14 @@
     <string name='Q_o106'>o106</string>
     <string name='Q_o107'>o107</string>
     <string name='Q_o108'>o108</string>
+    <string name='Q_un01'>un01</string>
+    <string name='Q_un02'>un02</string>
+    <string name='Q_un03'>un03</string>
+    <string name='Q_un04'>un04</string>
+    <string name='Q_un05'>un05</string>
+    <string name='Q_un06'>un06</string>
+    <string name='Q_un07'>un07</string>
+    <string name='Q_unttitle'>unttitle</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -17,24 +17,22 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
-
-
+        <activity
+            android:name=".ui.sections.SectionUNActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.SyncActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".database.AndroidManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
-
         <activity
             android:name=".ui.lists.FormsReportPending"
             android:screenOrientation="portrait"
@@ -153,19 +151,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.DIAChildSelectionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.SectionI1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.sections.ARIChildSelectionActivity"
             android:screenOrientation="portrait"
