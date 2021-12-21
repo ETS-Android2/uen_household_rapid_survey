@@ -160,7 +160,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{pregD.e104.equals(`2`)}"
-                                android:onClick="@{()->pregD.setE104(`2`) + e10501.setChecked(false) + e10502.setChecked(false)}"
+                                android:onClick="@{()->pregD.setE104(`2`) + e10501.setChecked(false) + e10502.setChecked(false) + e105.clearCheck()}"
                                 android:text="@string/e10402" />
 
                         </RadioGroup>
