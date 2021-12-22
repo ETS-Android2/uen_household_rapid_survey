@@ -104,7 +104,6 @@ public class MainApp extends Application {
     public static boolean hhheadSelected = false;
     public static boolean superuser;
     public static String selectedDistrict = "";
-    public static int selectedLanguage = 0;
     public static String selectedProvince = "";
     public static String selectedTehsil = "";
     public static String selectedUC = "";
@@ -112,6 +111,7 @@ public class MainApp extends Application {
     /*  public static String selectedPSU = "";
       public static String selectedHHID = "";*/
     public static RandomHH currentHousehold;
+    public static int selectedLanguage = 0;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
@@ -216,7 +216,7 @@ public class MainApp extends Application {
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
         initSecure();
-
+/*
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
 
@@ -229,7 +229,7 @@ public class MainApp extends Application {
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
