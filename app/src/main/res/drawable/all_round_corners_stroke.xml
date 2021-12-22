@@ -14,14 +14,14 @@
 
 
             <stroke
-                android:width="2dp"
-                android:color="@color/colorPrimary" />
+                android:width="8dp"
+                android:color="@color/colorPrimaryDark" />
             <padding
                 android:bottom="10dp"
                 android:left="10dp"
                 android:right="10dp"
                 android:top="10dp" />
-            <corners android:radius="14dp" />
+            <corners android:radius="28dp" />
         </shape>
     </item>
 

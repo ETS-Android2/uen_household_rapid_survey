@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@drawable/app_bg_gray"
+        android:background="@drawable/app_bg_effect"
         android:orientation="vertical">
 
         <!-- CUSTOM TOOLBAR -->
@@ -27,7 +27,8 @@
             app:menu="@menu/item_menu"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimary" />
+            app:subtitleTextColor="@color/colorPrimaryLight"
+            app:titleTextColor="@color/colorPrimaryLight" />
 
 
         <ImageView
