@@ -5,6 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -37,10 +41,10 @@ public class MainApp extends Application {
     public static final String PROJECT_NAME = "UEN_HH_RS";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
-    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
+    public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/uen_rs/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
@@ -243,6 +247,19 @@ public class MainApp extends Application {
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static Boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Network nw = connectivityManager.getActiveNetwork();
+            if (nw == null) return false;
+            NetworkCapabilities actNw = connectivityManager.getNetworkCapabilities(nw);
+            return actNw != null && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH));
+        } else {
+            NetworkInfo nwInfo = connectivityManager.getActiveNetworkInfo();
+            return nwInfo != null && nwInfo.isConnected();
         }
     }
 

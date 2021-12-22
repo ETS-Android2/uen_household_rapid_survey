@@ -1111,6 +1111,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public JSONArray getUnsyncedMortalityTable() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = MaternalMortalityTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = MaternalMortalityTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                MaternalMortalityTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedMortalityTable: " + c.getCount());
+            MaternalMortality maternalMortality = new MaternalMortality();
+            all.put(maternalMortality.Hydrate(c).toJSONObject());
+        }
+
+        c.close();
+
+        Log.d(TAG, "getUnsyncedMortalityTable: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedMortalityTable: " + all);
+        return all;
+    }
+
     public JSONArray getUnsyncedChild() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1175,6 +1210,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d(TAG, "getUnsyncedChildARI: " + allChildARI.toString().length());
         Log.d(TAG, "getUnsyncedChildARI: " + allChildARI);
         return allChildARI;
+    }
+
+    public JSONArray getUnsyncedChildDIA() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ChildDIATable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ChildDIATable.COLUMN_ID + " ASC";
+
+        JSONArray allChildDIA = new JSONArray();
+        c = db.query(
+                ChildDIATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedChildDIA " + c.getCount());
+            ChildDIA childDIA = new ChildDIA();
+            allChildDIA.put(childDIA.Hydrate(c).toJSONObject());
+        }
+
+        Log.d(TAG, "getUnsyncedChildDIA: " + allChildDIA.toString().length());
+        Log.d(TAG, "getUnsyncedChildDIA: " + allChildDIA);
+        return allChildDIA;
     }
 
     public JSONArray getUnsyncedEntryLog() throws JSONException {

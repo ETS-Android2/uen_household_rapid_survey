@@ -46,8 +46,8 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:text="DATA SYNC ACTIVITY"
                 android:textColor="@color/colorPrimary"
+                android:text="DATA SYNC ACTIVITY"
                 android:visibility="gone" />
 
             <LinearLayout
@@ -62,9 +62,9 @@
                     android:id="@+id/btnSync"
                     style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:elevation="2dp"
                     android:onClick="ProcessStart"
@@ -79,9 +79,9 @@
 
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:layout_marginTop="15dp"
-                    android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:elevation="2dp"
                     android:onClick="ProcessStart"
@@ -94,17 +94,16 @@
                     android:id="@+id/btnUploadPhotos"
                     style="@style/TextAppearance.AppCompat.Small"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-
-                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:background="@color/colorPrimary"
                     android:elevation="2dp"
                     android:onClick="UploadPhotos"
                     android:padding="16dp"
                     android:text="Upload Photos"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
                     android:visibility="gone" />
             </LinearLayout>
 
@@ -213,15 +212,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal|center_vertical"
-                            android:text="DATA SYNC" />
+                            android:text="DATA SYNC"
+                            android:textColor="@color/colorPrimary" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_upload_list"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/grayLight"
-                            android:padding="12dp"
                             android:visibility="visible"
+                            android:padding="12dp"
                             tools:itemCount="4"
                             tools:listitem="@layout/sync_list_adapter">
 
