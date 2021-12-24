@@ -37,7 +37,6 @@ public class SectionD1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d1);
-        setupSkips();
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         familyMember.setD101(String.valueOf(memberCount + 1));
@@ -45,8 +44,6 @@ public class SectionD1Activity extends AppCompatActivity {
         populateSpinner();
     }
 
-    private void setupSkips() {
-    }
 
     private void populateSpinner() {
 
@@ -111,6 +108,7 @@ public class SectionD1Activity extends AppCompatActivity {
 
     }
 
+
     private boolean insertNewRecord() {
         if (!familyMember.getUid().equals("")) return true;
         if (MainApp.superuser) return true;
@@ -136,6 +134,7 @@ public class SectionD1Activity extends AppCompatActivity {
             return false;
         }
     }
+
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
@@ -171,6 +170,7 @@ public class SectionD1Activity extends AppCompatActivity {
         setResult(Activity.RESULT_CANCELED);
         finish();
     }
+
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
