@@ -41,10 +41,10 @@ public class MainApp extends Application {
     public static final String PROJECT_NAME = "UEN_HH_RS";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
-    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _IP = "http://cls-pae-fp51764";// .TEST server
+    //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/uen_rs/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
@@ -52,7 +52,6 @@ public class MainApp extends Application {
     public static final String _UPDATE_URL = MainApp._IP + "/uen_rs/app/hhsurvey";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
-    private static int TRATS = 0;
     public static String IBAHC = "";
 
     //COUNTRIES
@@ -242,7 +241,7 @@ public class MainApp extends Application {
         try {
             ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
-            TRATS = bundle.getInt("YEK_TRATS");
+            int TRATS = bundle.getInt("YEK_TRATS");
             IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
