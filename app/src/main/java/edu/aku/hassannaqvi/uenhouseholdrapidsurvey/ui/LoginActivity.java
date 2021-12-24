@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     /*    *//*
-     * Setting country code in Shared Preference
+     * Setting clusterNo code in Shared Preference
      * *//*
     private void initializingCountry() {
         countryCode= Integer.parseInt(sharedPref.getString("lang", "0"));
@@ -483,7 +483,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /*
-     * Setting country code in Shared Preference
+     * Setting clusterNo code in Shared Preference
      * */
     private void initializingCountry() {
         countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));

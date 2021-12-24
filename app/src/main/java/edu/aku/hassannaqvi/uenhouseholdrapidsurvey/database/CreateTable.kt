@@ -298,6 +298,14 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_CLUSTERS = ("CREATE TABLE "
+            + ClusterTable.TABLE_NAME + "("
+            + ClusterTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ClusterTable.COLUMN_CLUSTER_NO + " TEXT,"
+            + ClusterTable.COLUMN_GEOAREA + " TEXT,"
+            + ClusterTable.COLUMN_DIST_ID + " TEXT"
+            + " );"
+            )
 
     const val SQL_CREATE_RANDOM_HH = ("CREATE TABLE "
             + RandomHHTable.TABLE_NAME + "("

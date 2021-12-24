@@ -25,10 +25,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildARITable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildDIATable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ChildTable;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.ClusterTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.FormsTable;
@@ -44,6 +44,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildDIA;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Clusters;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.EntryLog;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
@@ -80,6 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
+        db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
 
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
@@ -204,7 +206,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addChild(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
-        values.put(TableContracts.ChildARITable.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(ChildARITable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildTable.COLUMN_UID, child.getUid());
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_FMUID, child.getFmuid());
@@ -798,44 +800,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
 
-    public int syncVersionApp(JSONObject VersionList) {
+    public int syncVersionApp(JSONObject VersionList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VersionTable.TABLE_NAME, null, null);
         long count = 0;
-        try {
-            JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionTable.COLUMN_VERSION_PATH)).getJSONObject(0);
-            VersionApp Vc = new VersionApp();
-            Vc.sync(jsonObjectCC);
+        JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionTable.COLUMN_VERSION_PATH)).getJSONObject(0);
+        VersionApp Vc = new VersionApp();
+        Vc.sync(jsonObjectCC);
 
-            ContentValues values = new ContentValues();
+        ContentValues values = new ContentValues();
 
-            values.put(VersionTable.COLUMN_PATH_NAME, Vc.getPathname());
+        values.put(VersionTable.COLUMN_PATH_NAME, Vc.getPathname());
             values.put(VersionTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
             values.put(VersionTable.COLUMN_VERSION_NAME, Vc.getVersionname());
 
             count = db.insert(VersionTable.TABLE_NAME, null, values);
             if (count > 0) count = 1;
 
-        } catch (Exception ignored) {
-        } finally {
+
             db.close();
-        }
+
 
         return (int) count;
     }
 
-    public int syncUser(JSONArray userList) {
+    public int syncUser(JSONArray userList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;
-        try {
-            for (int i = 0; i < userList.length(); i++) {
+        for (int i = 0; i < userList.length(); i++) {
 
-                JSONObject jsonObjectUser = userList.getJSONObject(i);
+            JSONObject jsonObjectUser = userList.getJSONObject(i);
 
-                Users user = new Users();
-                user.sync(jsonObjectUser);
-                ContentValues values = new ContentValues();
+            Users user = new Users();
+            user.sync(jsonObjectUser);
+            ContentValues values = new ContentValues();
 
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
@@ -845,27 +844,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if (rowID != -1) insertCount++;
             }
 
-        } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
-            db.close();
-        } finally {
-            db.close();
-        }
+
+        db.close();
+
+        db.close();
+
         return insertCount;
     }
 
-    public int syncClusters(JSONArray clusterList) {
+    public int syncVillages(JSONArray clusterList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VillagesTable.TABLE_NAME, null, null);
         int insertCount = 0;
-        try {
-            for (int i = 0; i < clusterList.length(); i++) {
+        for (int i = 0; i < clusterList.length(); i++) {
 
-                JSONObject json = clusterList.getJSONObject(i);
+            JSONObject json = clusterList.getJSONObject(i);
 
-                Villages villages = new Villages();
-                villages.sync(json);
-                ContentValues values = new ContentValues();
+            Villages villages = new Villages();
+            villages.sync(json);
+            ContentValues values = new ContentValues();
 
                 values.put(VillagesTable.COLUMN_COUNTRY, villages.getCountry());
                 values.put(VillagesTable.COLUMN_CCODE, villages.getCcode());
@@ -879,15 +876,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
                 long rowID = db.insert(VillagesTable.TABLE_NAME, null, values);
-                if (rowID != -1) insertCount++;
-            }
-
-        } catch (Exception e) {
-            Log.d(TAG, "syncClusters(e): " + e);
-            db.close();
-        } finally {
-            db.close();
+            if (rowID != -1) insertCount++;
         }
+
+
+        db.close();
+
+        db.close();
+
+        return insertCount;
+    }
+
+    public int syncClusters(JSONArray clusterList) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        db.delete(ClusterTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        for (int i = 0; i < clusterList.length(); i++) {
+
+            JSONObject json = clusterList.getJSONObject(i);
+
+            Clusters clusters = new Clusters();
+            clusters.sync(json);
+            ContentValues values = new ContentValues();
+
+            values.put(ClusterTable.COLUMN_CLUSTER_NO, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_GEOAREA, clusters.getGeoarea());
+            values.put(ClusterTable.COLUMN_DIST_ID, clusters.getDistId());
+
+
+            long rowID = db.insert(ClusterTable.TABLE_NAME, null, values);
+            if (rowID != -1) insertCount++;
+        }
+
+
+        db.close();
+
+        db.close();
+
         return insertCount;
     }
 

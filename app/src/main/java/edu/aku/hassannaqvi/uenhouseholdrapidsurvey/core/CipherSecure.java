@@ -47,6 +47,7 @@ public class CipherSecure {
             return Base64.encodeToString(ivAndCipherText, Base64.NO_WRAP);
         } catch (Exception e) {
             e.getMessage();
+            Log.d(TAG, "encryptException: " + e.getMessage());
             return "[]";
         }
     }
@@ -61,6 +62,8 @@ public class CipherSecure {
             return new String(cipher.doFinal(cipherText), StandardCharsets.UTF_8);
         } catch (Exception e) {
             e.getMessage();
+            Log.d(TAG, "decryptException: " + e.getMessage());
+
             return "[]";
         }
     }

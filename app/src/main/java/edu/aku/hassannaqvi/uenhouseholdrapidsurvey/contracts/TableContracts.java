@@ -92,9 +92,9 @@ public class TableContracts {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String TABLE_NAME = "villages";
         public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_COUNTRY = "country";
-        public static final String COLUMN_CCODE = "ccode";
-        public static final String COLUMN_PROVINCE = "province";
+        public static final String COLUMN_COUNTRY = "clusterNo";
+        public static final String COLUMN_CCODE = "geoarea";
+        public static final String COLUMN_PROVINCE = "distId";
         public static final String COLUMN_PROVCODE = "provcode";
         public static final String COLUMN_DISTRICT_NAME = "districtName";
         public static final String COLUMN_DCODE = "dcode";
@@ -105,6 +105,16 @@ public class TableContracts {
         public static final String COLUMN_VILLAGE = "village";
         public static final String COLUMN_VCODE = "vcode";
         public static final String COLUMN_PSUCODE = "psucode";
+    }
+
+    public static abstract class ClusterTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "clusters";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_DIST_ID = "dist_id";
+        public static final String COLUMN_CLUSTER_NO = "cluster_no";
+        public static final String COLUMN_GEOAREA = "geoarea";
+
     }
 
     public static abstract class RandomHHTable implements BaseColumns {
