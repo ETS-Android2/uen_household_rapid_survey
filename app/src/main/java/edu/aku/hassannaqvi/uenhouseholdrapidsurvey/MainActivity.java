@@ -47,6 +47,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionL1Activity
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionM1Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionN1Activity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionO1Activity;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionUNActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -184,6 +185,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.seco1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionO1Activity.class));
+                break;
+            case R.id.secun:
+                MainApp.mwra = new MWRA();
+                startActivity(new Intent(this, SectionUNActivity.class));
                 break;
             case R.id.dbManager:
                 startActivity(new Intent(this, AndroidManager.class));

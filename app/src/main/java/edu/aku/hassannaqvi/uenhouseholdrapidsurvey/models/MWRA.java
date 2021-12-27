@@ -6007,8 +6007,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setL102(String l102) {
         this.l102 = l102;
-        setL102a(l102.equals("1") ? this.l102a : "");
-        setL103(l102.equals("1") ? this.l103 : "");
+        setL102a(l102.equals("2") ? this.l102a : "");
+        setL103(l102.equals("2") ? this.l103 : "");
         notifyPropertyChanged(BR.l102);
     }
 
