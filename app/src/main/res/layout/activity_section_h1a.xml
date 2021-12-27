@@ -1856,12 +1856,14 @@
                                 android:enabled="@{mwra.h122.equals(`1`)}"
                                 android:gravity="center"
                                 android:inputType="number"
-                                android:maxLength="2"
+                                android:maxLength="3"
                                 android:tag="h1221"
                                 android:text="@={mwra.h1221x}"
                                 android:hint="##"
-                                app:maxValue="20"
-                                app:minValue="0"
+                                app:mask="###"
+                                app:maxValue="20.0"
+                                app:minValue="01.0"
+                                app:pattern="^(\\d{2,1})$"
                                 app:type="range" />
 
                             <View

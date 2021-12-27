@@ -1606,6 +1606,8 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setF118(String f118) {
         this.f118 = f118;
+        setF118mx(f118.equals("1") ? this.f118mx : ""); // for all skips, mention all skipped questions
+        setF118dx(f118.equals("2") ? this.f118dx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.f118);
     }
 
