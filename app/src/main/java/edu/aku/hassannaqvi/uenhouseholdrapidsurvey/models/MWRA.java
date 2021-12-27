@@ -113,10 +113,19 @@ public class MWRA extends BaseObservable implements Observable {
     private String f113 = _EMPTY_;
     private String f11301x = _EMPTY_;
     private String f114 = _EMPTY_;
-    private String f116 = _EMPTY_;
+    private String f11601 = _EMPTY_;
+    private String f11602 = _EMPTY_;
+    private String f11603 = _EMPTY_;
+    private String f11604 = _EMPTY_;
+    private String f11605 = _EMPTY_;
+    private String f11606 = _EMPTY_;
+    private String f11607 = _EMPTY_;
+    private String f11608 = _EMPTY_;
+    private String f11609 = _EMPTY_;
     private String f117 = _EMPTY_;
-    private String f118m = _EMPTY_;
-    private String f118d = _EMPTY_;
+    private String f118 = _EMPTY_;
+    private String f118mx = _EMPTY_;
+    private String f118dx = _EMPTY_;
     private String f119 = _EMPTY_;
     private String f120 = _EMPTY_;
     private String f12001x = _EMPTY_;
@@ -1473,23 +1482,111 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setF114(String f114) {
         this.f114 = f114;
-        setF116(f114.equals("1") ? this.f116 : "");
+        setF11601(f114.equals("1") ? this.f11601 : "");
+        setF11602(f114.equals("1") ? this.f11602 : "");
+        setF11603(f114.equals("1") ? this.f11603 : "");
+        setF11604(f114.equals("1") ? this.f11604 : "");
+        setF11605(f114.equals("1") ? this.f11605 : "");
+        setF11606(f114.equals("1") ? this.f11606 : "");
+        setF11607(f114.equals("1") ? this.f11607 : "");
+        setF11608(f114.equals("1") ? this.f11608 : "");
+        setF11609(f114.equals("1") ? this.f11609 : "");
+
         setF117(f114.equals("1") ? this.f117 : "");
-        setF118m(f114.equals("1") ? this.f118m : "");
-        setF118d(f114.equals("1") ? this.f118d : "");
+        setF118(f114.equals("1") ? this.f118 : "");
         setF119(f114.equals("1") ? this.f119 : "");
         setF120(f114.equals("1") ? this.f120 : "");
         notifyPropertyChanged(BR.f114);
     }
 
     @Bindable
-    public String getF116() {
-        return f116;
+    public String getF11601() {
+        return f11601;
     }
 
-    public void setF116(String f116) {
-        this.f116 = f116;
-        notifyPropertyChanged(BR.f116);
+    public void setF11601(String f11601) {
+        this.f11601 = f11601;
+        notifyPropertyChanged(BR.f11601);
+    }
+
+    @Bindable
+    public String getF11602() {
+        return f11602;
+    }
+
+    public void setF11602(String f11602) {
+        this.f11602 = f11602;
+        notifyPropertyChanged(BR.f11602);
+    }
+
+    @Bindable
+    public String getF11603() {
+        return f11603;
+    }
+
+    public void setF11603(String f11603) {
+        this.f11603 = f11603;
+        notifyPropertyChanged(BR.f11603);
+    }
+
+    @Bindable
+    public String getF11604() {
+        return f11604;
+    }
+
+    public void setF11604(String f11604) {
+        this.f11604 = f11604;
+        notifyPropertyChanged(BR.f11604);
+    }
+
+    @Bindable
+    public String getF11605() {
+        return f11605;
+    }
+
+    public void setF11605(String f11605) {
+        this.f11605 = f11605;
+        notifyPropertyChanged(BR.f11605);
+    }
+
+    @Bindable
+    public String getF11606() {
+        return f11606;
+    }
+
+    public void setF11606(String f11606) {
+        this.f11606 = f11606;
+        notifyPropertyChanged(BR.f11606);
+    }
+
+    @Bindable
+    public String getF11607() {
+        return f11607;
+    }
+
+    public void setF11607(String f11607) {
+        this.f11607 = f11607;
+        notifyPropertyChanged(BR.f11607);
+    }
+
+    @Bindable
+    public String getF11608() {
+        return f11608;
+    }
+
+    public void setF11608(String f11608) {
+        this.f11608 = f11608;
+        notifyPropertyChanged(BR.f11608);
+    }
+
+    @Bindable
+    public String getF11609() {
+        return f11609;
+    }
+
+    public void setF11609(String f11609) {
+        this.f11609 = f11609;
+        notifyPropertyChanged(BR.f11609);
     }
 
     @Bindable
@@ -1503,23 +1600,33 @@ public class MWRA extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getF118m() {
-        return f118m;
+    public String getF118() {
+        return f118;
     }
 
-    public void setF118m(String f118m) {
-        this.f118m = f118m;
-        notifyPropertyChanged(BR.f118m);
+    public void setF118(String f118) {
+        this.f118 = f118;
+        notifyPropertyChanged(BR.f118);
     }
 
     @Bindable
-    public String getF118d() {
-        return f118d;
+    public String getF118mx() {
+        return f118mx;
     }
 
-    public void setF118d(String f118d) {
-        this.f118d = f118d;
-        notifyPropertyChanged(BR.f118d);
+    public void setF118mx(String f118mx) {
+        this.f118mx = f118mx;
+        notifyPropertyChanged(BR.f118mx);
+    }
+
+    @Bindable
+    public String getF118dx() {
+        return f118dx;
+    }
+
+    public void setF118dx(String f118dx) {
+        this.f118dx = f118dx;
+        notifyPropertyChanged(BR.f118dx);
     }
 
     @Bindable
@@ -6503,10 +6610,19 @@ public class MWRA extends BaseObservable implements Observable {
                 .put("f113", f113)
                 .put("f11301x", f11301x)
                 .put("f114", f114)
-                .put("f116", f116)
+                .put("f11601", f11601)
+                .put("f11602", f11602)
+                .put("f11603", f11603)
+                .put("f11604", f11604)
+                .put("f11605", f11605)
+                .put("f11606", f11606)
+                .put("f11607", f11607)
+                .put("f11608", f11608)
+                .put("f11609", f11609)
                 .put("f117", f117)
-                .put("f118m", f118m)
-                .put("f118d", f118d)
+                .put("f118", f118)
+                .put("f118mx", f118mx)
+                .put("f118dx", f118dx)
                 .put("f119", f119)
                 .put("f120", f120)
                 .put("f12001x", f12001x)
@@ -7058,10 +7174,19 @@ public class MWRA extends BaseObservable implements Observable {
             this.f113 = json.getString("f113");
             this.f11301x = json.getString("f11301x");
             this.f114 = json.getString("f114");
-            this.f116 = json.getString("f116");
+            this.f11601 = json.getString("f11601");
+            this.f11602 = json.getString("f11602");
+            this.f11603 = json.getString("f11603");
+            this.f11604 = json.getString("f11604");
+            this.f11605 = json.getString("f11605");
+            this.f11606 = json.getString("f11606");
+            this.f11607 = json.getString("f11607");
+            this.f11608 = json.getString("f11608");
+            this.f11609 = json.getString("f11609");
             this.f117 = json.getString("f117");
-            this.f118m = json.getString("f118m");
-            this.f118d = json.getString("f118d");
+            this.f118 = json.getString("f118");
+            this.f118mx = json.getString("f118mx");
+            this.f118dx = json.getString("f118dx");
             this.f119 = json.getString("f119");
             this.f120 = json.getString("f120");
             this.f12001x = json.getString("f12001x");
