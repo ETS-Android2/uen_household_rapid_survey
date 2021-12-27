@@ -944,7 +944,12 @@ public class ChildDIA extends BaseObservable implements Observable {
     }
 
     public void setI11898(String i11898) {
+        if (this.i11898.equals(i11898)) return; // for all checkboxes
         this.i11898 = i11898;
+        setI11801(i11898.equals("98") ? "" : this.i11801);
+        setI11802(i11898.equals("98") ? "" : this.i11802);
+        setI11803(i11898.equals("98") ? "" : this.i11803);
+        setI11896(i11898.equals("98") ? "" : this.i11896);
         notifyPropertyChanged(BR.i11898);
     }
 

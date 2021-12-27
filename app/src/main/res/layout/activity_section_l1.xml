@@ -191,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{mwra.l102.equals(`2`)? View.GONE : View.VISIBLE}">
+                    android:visibility="@{mwra.l102.equals(`2`)? View.VISIBLE : View.GONE}">
 
 
                     <!-- l102a  Radio   -->
