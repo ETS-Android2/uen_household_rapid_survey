@@ -1860,7 +1860,7 @@
                                 android:tag="h1221"
                                 android:text="@={mwra.h1221x}"
                                 android:hint="##"
-                                app:mask="###"
+                                app:mask="##.#"
                                 app:maxValue="20.0"
                                 app:minValue="01.0"
                                 app:pattern="^(\\d{2,1})$"
