@@ -2647,10 +2647,6 @@
                                         android:onClick="@{()->child.setIm12(`1`)}"
                                         android:text="@string/im1201" />
 
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
-
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im1201x"
                                         android:layout_width="wrap_content"
@@ -2666,10 +2662,6 @@
                                         app:maxValue="10"
                                         app:minValue="1"
                                         app:type="range" />
-
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
 
                                     <RadioButton
                                         android:id="@+id/im1298"
@@ -2808,10 +2800,6 @@
                                         android:onClick="@{()->child.setIm15(`1`)}"
                                         android:text="@string/im1501" />
 
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
-
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im1501x"
                                         android:layout_width="wrap_content"
@@ -2827,10 +2815,6 @@
                                         app:maxValue="10"
                                         app:minValue="1"
                                         app:type="range" />
-
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
 
                                     <RadioButton
                                         android:id="@+id/im1598"
@@ -2969,10 +2953,6 @@
                                         android:onClick="@{()->child.setIm17(`1`)}"
                                         android:text="@string/im1701" />
 
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
-
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im1701x"
                                         android:layout_width="wrap_content"
@@ -2988,10 +2968,6 @@
                                         app:maxValue="10"
                                         app:minValue="1"
                                         app:type="range" />
-
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
 
                                     <RadioButton
                                         android:id="@+id/im1798"
@@ -3123,10 +3099,6 @@
                                         android:onClick="@{()->child.setIm19(`1`)}"
                                         android:text="@string/im1901" />
 
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
-
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im1901x"
                                         android:layout_width="wrap_content"
@@ -3142,10 +3114,6 @@
                                         app:maxValue="10"
                                         app:minValue="1"
                                         app:type="range" />
-
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
 
                                     <RadioButton
                                         android:id="@+id/im1998"
@@ -3346,10 +3314,6 @@
                                         android:onClick="@{()->child.setIm22(`1`)}"
                                         android:text="@string/im2201" />
 
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
-
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im2201x"
                                         android:layout_width="wrap_content"
@@ -3365,10 +3329,6 @@
                                         app:maxValue="10"
                                         app:minValue="1"
                                         app:type="range" />
-
-                                    <View
-                                        android:layout_width="20dp"
-                                        android:layout_height="match_parent" />
 
                                     <RadioButton
                                         android:id="@+id/im2298"
@@ -3631,10 +3591,6 @@
                                 android:onClick="@{()->child.setIm25(`1`)}"
                                 android:text="@string/im2501" />
 
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im2501x"
                                 android:layout_width="wrap_content"
@@ -3651,10 +3607,6 @@
                                 app:minValue="1"
                                 app:type="range" />
 
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
-
                             <RadioButton
                                 android:id="@+id/im2502"
                                 android:layout_width="wrap_content"
@@ -3663,10 +3615,6 @@
                                 android:checked="@{child.im25.equals(`2`)}"
                                 android:onClick="@{()->child.setIm25(`2`)}"
                                 android:text="@string/im2502" />
-
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im2502x"

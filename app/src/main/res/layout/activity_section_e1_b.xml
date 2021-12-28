@@ -334,10 +334,6 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <TextView
                                     style="@style/textView"
                                     android:layout_width="wrap_content"
@@ -359,10 +355,6 @@
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <TextView
                                     style="@style/textView"
@@ -619,9 +611,6 @@
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <TextView
                                     style="@style/textView"
@@ -643,10 +632,6 @@
                                     app:maxValue="11"
                                     app:minValue="0"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <TextView
                                     style="@style/textView"
@@ -1067,10 +1052,6 @@
                                     app:maxValue="2022"
                                     app:minValue="1985"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <TextView
                                     style="@style/textView"

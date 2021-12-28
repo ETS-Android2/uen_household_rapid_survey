@@ -412,6 +412,7 @@
                                 android:layout_height="match_parent"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a109"
+                                android:inputType="text"
                                 android:maxLength="20"
                                 android:text="@={form.a109}" />
 

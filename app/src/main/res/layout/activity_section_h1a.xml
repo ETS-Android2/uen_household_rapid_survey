@@ -529,10 +529,6 @@
                                     android:onClick="@{()->mwra.setH106(`1`)}"
                                     android:text="@string/h1061" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/h1061x"
                                     android:layout_width="wrap_content"
@@ -549,9 +545,6 @@
                                     app:minValue="0"
                                     app:type="range" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/h10698"

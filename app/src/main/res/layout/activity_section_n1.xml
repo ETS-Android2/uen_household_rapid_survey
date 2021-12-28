@@ -508,10 +508,6 @@
                                     android:onClick="@{()->form.setN104(`1`)}"
                                     android:text="@string/n10401" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/n10401x"
                                     android:layout_width="wrap_content"
@@ -527,10 +523,6 @@
                                     app:maxValue="100"
                                     app:minValue="1"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/n10498"

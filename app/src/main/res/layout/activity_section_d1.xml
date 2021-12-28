@@ -113,14 +113,12 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:inputType="textCapWords"
+                            android:inputType="textPersonName"
                             android:hint="@string/d102"
                             android:maxLength="20"
                             android:text="@={member.d102}" />
 
                     </LinearLayout>
-
-                    <!--android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "-->
 
                 </androidx.cardview.widget.CardView>
 
@@ -419,10 +417,6 @@
                                 app:minValue="1"
                                 app:type="range" />
 
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
-
                             <TextView
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
@@ -444,10 +438,6 @@
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
-
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
 
                             <TextView
                                 style="@style/textView"
@@ -536,14 +526,11 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:enabled="@{member.d109y.equals(`9998`)}"
+                                android:onTextChanged="@{()->d105.clearCheck()}"
                                 android:text="@={member.d109y}"
                                 app:maxValue="95"
                                 app:minValue="0"
                                 app:type="range" />
-
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
 
                             <TextView
                                 style="@style/textView"
@@ -566,10 +553,6 @@
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
-
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
 
                             <TextView
                                 style="@style/textView"
@@ -707,12 +690,11 @@
 
                 </androidx.cardview.widget.CardView>
 
-
+                <!--                android:visibility="@{member.d109y.length() > 0 ? (Integer.parseInt(member.d109y) > 14 ? View.VISIBLE :View.GONE) : View.VISIBLE}"-->
                 <!-- d105  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd105"
-                    style="@style/cardView"
-                    android:visibility="@{member.d109y.length() > 0 ? (Integer.parseInt(member.d109y) > 14 ? View.VISIBLE :View.GONE) : View.VISIBLE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"

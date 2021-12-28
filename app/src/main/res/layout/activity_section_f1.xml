@@ -1,7 +1,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
+
+<data>
 
         <import type="android.view.View" />
 
@@ -357,10 +358,6 @@
                                     android:onClick="@{()->mwra.setF101b(`1`)}"
                                     android:text="@string/f101b01" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f101b01x"
                                     android:layout_width="wrap_content"
@@ -376,10 +373,6 @@
                                     app:maxValue="10"
                                     app:minValue="0"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/f101b98"
@@ -1439,10 +1432,6 @@
                                     android:onClick="@{()->mwra.setF113(`1`)}"
                                     android:text="@string/f11301" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f11301x"
                                     android:layout_width="wrap_content"
@@ -1458,10 +1447,6 @@
                                     app:maxValue="5"
                                     app:minValue="0"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/f11398"
@@ -1942,10 +1927,6 @@
                                     android:onClick="@{()->mwra.setF120(`1`)}"
                                     android:text="@string/f12001" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f12001x"
                                     android:layout_width="wrap_content"
@@ -1961,10 +1942,6 @@
                                     app:maxValue="1000"
                                     app:minValue="0"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/f12098"
@@ -2204,10 +2181,6 @@
                                     android:onClick="@{()->mwra.setF122(`1`)}"
                                     android:text="@string/f12201" />
 
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/f12201x"
                                     android:layout_width="wrap_content"
@@ -2223,10 +2196,6 @@
                                     app:maxValue="20"
                                     app:minValue="0"
                                     app:type="range" />
-
-                                <View
-                                    android:layout_width="20dp"
-                                    android:layout_height="match_parent" />
 
                                 <RadioButton
                                     android:id="@+id/f12298"
