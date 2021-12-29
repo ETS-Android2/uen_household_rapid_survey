@@ -288,6 +288,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         setE113m(e105.equals("6") ? this.e113m : "");
         setE114(e105.equals("6") ? this.e114 : "");
         setE115(e105.equals("6") ? this.e115 : "");
+
         notifyPropertyChanged(BR.e105);
     }
 
