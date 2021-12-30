@@ -14,6 +14,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
@@ -25,6 +27,7 @@ public class SectionE1BActivity extends AppCompatActivity {
     private static final String TAG = "SectionE1AActivity";
     ActivitySectionE1BBinding bi;
     private DatabaseHelper db;
+    private ArrayList<String> childNames, childCodes, childAges, childFmUID;
 
 
     @Override
@@ -36,13 +39,78 @@ public class SectionE1BActivity extends AppCompatActivity {
 
         // FMUID
         MainApp.pregD.setFmuid(MainApp.allMWRAList.get(0).getUid());
+
+/*        try {
+            MainApp.child = db.getChildByUUid();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }*/
+
         bi.setPregD(pregD);
         setupSkips();
+//        populateSpinner();
     }
+
+
+    /*private void populateSpinner() {
+
+        childNames = new ArrayList<>();
+        childCodes = new ArrayList<>();
+        childAges = new ArrayList<>();
+        childFmUID = new ArrayList<>();
+
+        childNames.add("...");
+        childCodes.add("");
+        childAges.add("");
+        childFmUID.add("");
+
+        for (FamilyMembers fm : MainApp.allChildrenList) {
+            // FMUID is not null than add only select Child
+            if (!MainApp.pregD.getFmuid().equals("")) {
+                if (MainApp.pregD.getFmuid().equals(fm.getUid())) {
+                    childNames.add(fm.getD102());
+                    childCodes.add(fm.getD101());
+                    childAges.add(fm.getD109y());
+                    childFmUID.add(fm.getUid());
+                }
+
+            } else {
+                childNames.add(fm.getD102());
+                childCodes.add(fm.getD101());
+                childAges.add(fm.getD109y());
+                childFmUID.add(fm.getUid());
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionE1BActivity.this,
+                R.layout.custom_spinner, childNames);
+
+        bi.e108.setAdapter(adapter);
+
+        bi.e108.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+                if (position == 0) return;
+                if (MainApp.pregD.getUid().equals("")) {
+                    MainApp.pregD.setFmuid(childFmUID.get(bi.e108.getSelectedItemPosition()));
+                    MainApp.pregD.setE108(childNames.get(bi.e108.getSelectedItemPosition()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }*/
 
     private void setupSkips() {
 
     }
+
     private boolean insertNewRecord() {
         if (!MainApp.pregD.getUid().equals("") || MainApp.superuser) return true;
 

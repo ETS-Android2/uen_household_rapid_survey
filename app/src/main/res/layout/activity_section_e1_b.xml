@@ -532,6 +532,14 @@
                             android:maxLength="20"
                             android:text="@={pregD.e108}" />
 
+                        <!--                        <androidx.appcompat.widget.AppCompatSpinner
+                                                    android:id="@+id/e108"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:minHeight="56dp"
+                                                    android:prompt="@string/e108"
+                                                    android:spinnerMode="dropdown" />-->
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
