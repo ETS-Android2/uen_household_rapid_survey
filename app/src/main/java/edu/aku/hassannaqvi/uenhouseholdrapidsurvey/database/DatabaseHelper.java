@@ -626,7 +626,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
         String orderBy = UsersTable.COLUMN_ID + " ASC";
 
-        Users loggedInUser = null;
+        Users loggedInUser = new Users();
         try {
             c = db.query(
                     UsersTable.TABLE_NAME,  // The table to query
@@ -639,6 +639,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 loggedInUser = new Users().hydrate(c);
+                MainApp.user = loggedInUser;
+
             }
         } finally {
             if (c != null) {
@@ -648,7 +650,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        MainApp.user = loggedInUser;
         return c.getCount() > 0;
     }
 
