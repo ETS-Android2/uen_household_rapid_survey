@@ -275,12 +275,22 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra("login", false);
 
+                // set select and filter to default, set again with the table in case of special requirements
                 String select = " * ";
                 String filter = " colflag is null ";
-                downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
-                downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
-                downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
 
+                if (sync_flag) {
+                    select = " * ";
+                    filter = " colflag is null ";
+
+                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
+                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
+                } else {
+
+                    select = " * ";
+                    filter = " colflag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
+                }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
