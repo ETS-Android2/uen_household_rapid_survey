@@ -517,11 +517,20 @@
 
                         </LinearLayout>
 
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/e108s"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="56dp"
+                            android:prompt="@string/e108"
+                            android:spinnerMode="dropdown" />
+
                         <TextView
                             style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/e108t" />
+
 
                         <EditText
                             android:id="@+id/e108"
@@ -530,15 +539,10 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/e108"
                             android:maxLength="20"
+                            android:enabled="false"
                             android:text="@={pregD.e108}" />
 
-                        <!--                        <androidx.appcompat.widget.AppCompatSpinner
-                                                    android:id="@+id/e108"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="match_parent"
-                                                    android:minHeight="56dp"
-                                                    android:prompt="@string/e108"
-                                                    android:spinnerMode="dropdown" />-->
+
 
                     </LinearLayout>
 
@@ -1113,6 +1117,14 @@
                                     android:text="@string/e108a" />
 
                             </LinearLayout>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/e108as"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="56dp"
+                                android:prompt="@string/e108"
+                                android:spinnerMode="dropdown" />
 
                             <TextView
                                 style="@style/sub_labels"

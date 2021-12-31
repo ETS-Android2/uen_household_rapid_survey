@@ -5,6 +5,8 @@ import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.pregD;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionE1BBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 
 public class SectionE1BActivity extends AppCompatActivity {
 
@@ -49,11 +52,11 @@ public class SectionE1BActivity extends AppCompatActivity {
 
         bi.setPregD(pregD);
         setupSkips();
-//        populateSpinner();
+        populateSpinner();
     }
 
 
-    /*private void populateSpinner() {
+    private void populateSpinner() {
 
         childNames = new ArrayList<>();
         childCodes = new ArrayList<>();
@@ -65,9 +68,11 @@ public class SectionE1BActivity extends AppCompatActivity {
         childAges.add("");
         childFmUID.add("");
 
-        for (FamilyMembers fm : MainApp.allChildrenList) {
+        for (int c : MainApp.childOfSelectedMWRAList) {
             // FMUID is not null than add only select Child
-            if (!MainApp.pregD.getFmuid().equals("")) {
+
+            FamilyMembers fm = MainApp.familyList.get(c);
+/*            if (!MainApp.pregD.getFmuid().equals("")) {
                 if (MainApp.pregD.getFmuid().equals(fm.getUid())) {
                     childNames.add(fm.getD102());
                     childCodes.add(fm.getD101());
@@ -75,29 +80,41 @@ public class SectionE1BActivity extends AppCompatActivity {
                     childFmUID.add(fm.getUid());
                 }
 
-            } else {
-                childNames.add(fm.getD102());
-                childCodes.add(fm.getD101());
-                childAges.add(fm.getD109y());
-                childFmUID.add(fm.getUid());
-            }
+            } else {*/
+            childNames.add(fm.getD102());
+            childCodes.add(fm.getD101());
+            childAges.add(fm.getD109y());
+            childFmUID.add(fm.getUid());
+            //          }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionE1BActivity.this,
+        childNames.add("Not Available/Died");
+        childCodes.add("97");
+        childAges.add("");
+        childFmUID.add("");
+
+        ArrayAdapter<String> adapterE108 = new ArrayAdapter<String>(SectionE1BActivity.this,
                 R.layout.custom_spinner, childNames);
 
-        bi.e108.setAdapter(adapter);
+        bi.e108s.setAdapter(adapterE108);
 
-        bi.e108.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.e108s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                bi.e108.setEnabled(false);
+                bi.e108.setText("");
 
                 if (position == 0) return;
-                if (MainApp.pregD.getUid().equals("")) {
-                    MainApp.pregD.setFmuid(childFmUID.get(bi.e108.getSelectedItemPosition()));
-                    MainApp.pregD.setE108(childNames.get(bi.e108.getSelectedItemPosition()));
+                MainApp.pregD.setFmuidE108(childFmUID.get(bi.e108s.getSelectedItemPosition()));
+                MainApp.pregD.setE108(childNames.get(bi.e108s.getSelectedItemPosition()));
+
+                if (bi.e108s.getSelectedItem().toString().equals("Not Available/Died")) {
+                    bi.e108.setEnabled(true);
+                } else {
+                    bi.e108.setText(bi.e108s.getSelectedItem().toString());
+
                 }
+
             }
 
             @Override
@@ -105,7 +122,37 @@ public class SectionE1BActivity extends AppCompatActivity {
 
             }
         });
-    }*/
+        // Set Second Adapter
+        ArrayAdapter<String> adapterE108a = new ArrayAdapter<String>(SectionE1BActivity.this,
+                R.layout.custom_spinner, childNames);
+
+        bi.e108as.setAdapter(adapterE108a);
+
+        bi.e108as.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.e108a.setEnabled(false);
+                bi.e108a.setText("");
+
+                if (position == 0) return;
+                MainApp.pregD.setFmuidE108a(childFmUID.get(bi.e108as.getSelectedItemPosition()));
+                MainApp.pregD.setE108a(childNames.get(bi.e108as.getSelectedItemPosition()));
+
+                if (bi.e108as.getSelectedItem().toString().equals("Not Available/Died")) {
+                    bi.e108a.setEnabled(true);
+                } else {
+                    bi.e108a.setText(bi.e108as.getSelectedItem().toString());
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
 
     private void setupSkips() {
 

@@ -54,6 +54,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
     private String e107 = _EMPTY_;
     private String e109 = _EMPTY_;
     private String e108 = _EMPTY_;
+    private String fmuidE108 = _EMPTY_;
     private String e110y = _EMPTY_;
     private String e110m = _EMPTY_;
     private String e110d = _EMPTY_;
@@ -70,6 +71,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
     private String e107a = _EMPTY_;
     private String e109a = _EMPTY_;
     private String e108a = _EMPTY_;
+    private String fmuidE108a = _EMPTY_;
     private String e110ay = _EMPTY_;
     private String e110am = _EMPTY_;
     private String e110ad = _EMPTY_;
@@ -396,6 +398,23 @@ public class PregnancyDetails extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.e108);
     }
 
+    public String getFmuidE108() {
+        return fmuidE108;
+    }
+
+    public void setFmuidE108(String fmuidE108) {
+        this.fmuidE108 = fmuidE108;
+    }
+
+    public String getFmuidE108a() {
+        return fmuidE108a;
+    }
+
+    public void setFmuidE108a(String fmuidE108a) {
+        this.fmuidE108a = fmuidE108a;
+    }
+
+
     @Bindable
     public String getE110y() {
         return e110y;
@@ -652,6 +671,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
                 .put("e107", e107)
                 .put("e109", e109)
                 .put("e108", e108)
+                .put("fmuidE108", fmuidE108)
                 .put("e110y", e110y)
                 .put("e110m", e110m)
                 .put("e110d", e110d)
@@ -663,6 +683,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
                 .put("e107a", e107a)
                 .put("e109a", e109a)
                 .put("e108a", e108a)
+                .put("fmuidE108a", fmuidE108a)
                 .put("e110ay", e110ay)
                 .put("e110am", e110am)
                 .put("e110ad", e110ad)
@@ -716,6 +737,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
             this.e107 = json.getString("e107");
             this.e109 = json.getString("e109");
             this.e108 = json.getString("e108");
+            this.fmuidE108 = json.getString("fmuidE108");
             this.e110y = json.getString("e110y");
             this.e110m = json.getString("e110m");
             this.e110d = json.getString("e110d");
@@ -727,6 +749,7 @@ public class PregnancyDetails extends BaseObservable implements Observable {
             this.e107a = json.getString("e107a");
             this.e109a = json.getString("e109a");
             this.e108a = json.getString("e108a");
+            this.fmuidE108a = json.getString("fmuidE108a");
             this.e110ay = json.getString("e110ay");
             this.e110am = json.getString("e110am");
             this.e110ad = json.getString("e110ad");
