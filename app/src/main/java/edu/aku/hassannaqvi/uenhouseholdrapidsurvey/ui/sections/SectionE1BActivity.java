@@ -51,7 +51,7 @@ public class SectionE1BActivity extends AppCompatActivity {
         }*/
 
         bi.setPregD(pregD);
-        setupSkips();
+      //  setupSkips();
         populateSpinner();
     }
 
@@ -68,11 +68,9 @@ public class SectionE1BActivity extends AppCompatActivity {
         childAges.add("");
         childFmUID.add("");
 
-        for (int c : MainApp.childOfSelectedMWRAList) {
+        for (FamilyMembers fm : MainApp.allChildrenList) {
             // FMUID is not null than add only select Child
-
-            FamilyMembers fm = MainApp.familyList.get(c);
-/*            if (!MainApp.pregD.getFmuid().equals("")) {
+            if (!MainApp.pregD.getFmuid().equals("")) {
                 if (MainApp.pregD.getFmuid().equals(fm.getUid())) {
                     childNames.add(fm.getD102());
                     childCodes.add(fm.getD101());
@@ -80,81 +78,78 @@ public class SectionE1BActivity extends AppCompatActivity {
                     childFmUID.add(fm.getUid());
                 }
 
-            } else {*/
-            childNames.add(fm.getD102());
-            childCodes.add(fm.getD101());
-            childAges.add(fm.getD109y());
-            childFmUID.add(fm.getUid());
-            //          }
+            } else {
+                childNames.add(fm.getD102());
+                childCodes.add(fm.getD101());
+                childAges.add(fm.getD109y());
+                childFmUID.add(fm.getUid());
+            }
+
+            childNames.add("Not Available/Died");
+            childCodes.add("97");
+            childAges.add("");
+            childFmUID.add("");
+
+            ArrayAdapter<String> adapterE108 = new ArrayAdapter<String>(SectionE1BActivity.this,
+                    R.layout.custom_spinner, childNames);
+
+            bi.e108s.setAdapter(adapterE108);
+
+            bi.e108s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    bi.e108.setEnabled(false);
+                    bi.e108.setText("");
+
+                    if (position == 0) return;
+                    MainApp.pregD.setFmuidE108(childFmUID.get(bi.e108s.getSelectedItemPosition()));
+                    MainApp.pregD.setE108(childNames.get(bi.e108s.getSelectedItemPosition()));
+
+                    if (bi.e108s.getSelectedItem().toString().equals("Not Available/Died")) {
+                        bi.e108.setEnabled(true);
+                    } else {
+                        bi.e108.setText(bi.e108s.getSelectedItem().toString());
+
+                    }
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+            // Set Second Adapter
+            ArrayAdapter<String> adapterE108a = new ArrayAdapter<String>(SectionE1BActivity.this,
+                    R.layout.custom_spinner, childNames);
+
+            bi.e108as.setAdapter(adapterE108a);
+
+            bi.e108as.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    bi.e108a.setEnabled(false);
+                    bi.e108a.setText("");
+
+                    if (position == 0) return;
+                    MainApp.pregD.setFmuidE108a(childFmUID.get(bi.e108as.getSelectedItemPosition()));
+                    MainApp.pregD.setE108a(childNames.get(bi.e108as.getSelectedItemPosition()));
+
+                    if (bi.e108as.getSelectedItem().toString().equals("Not Available/Died")) {
+                        bi.e108a.setEnabled(true);
+                    } else {
+                        bi.e108a.setText(bi.e108as.getSelectedItem().toString());
+
+                    }
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
         }
-
-        childNames.add("Not Available/Died");
-        childCodes.add("97");
-        childAges.add("");
-        childFmUID.add("");
-
-        ArrayAdapter<String> adapterE108 = new ArrayAdapter<String>(SectionE1BActivity.this,
-                R.layout.custom_spinner, childNames);
-
-        bi.e108s.setAdapter(adapterE108);
-
-        bi.e108s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.e108.setEnabled(false);
-                bi.e108.setText("");
-
-                if (position == 0) return;
-                MainApp.pregD.setFmuidE108(childFmUID.get(bi.e108s.getSelectedItemPosition()));
-                MainApp.pregD.setE108(childNames.get(bi.e108s.getSelectedItemPosition()));
-
-                if (bi.e108s.getSelectedItem().toString().equals("Not Available/Died")) {
-                    bi.e108.setEnabled(true);
-                } else {
-                    bi.e108.setText(bi.e108s.getSelectedItem().toString());
-
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        // Set Second Adapter
-        ArrayAdapter<String> adapterE108a = new ArrayAdapter<String>(SectionE1BActivity.this,
-                R.layout.custom_spinner, childNames);
-
-        bi.e108as.setAdapter(adapterE108a);
-
-        bi.e108as.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.e108a.setEnabled(false);
-                bi.e108a.setText("");
-
-                if (position == 0) return;
-                MainApp.pregD.setFmuidE108a(childFmUID.get(bi.e108as.getSelectedItemPosition()));
-                MainApp.pregD.setE108a(childNames.get(bi.e108as.getSelectedItemPosition()));
-
-                if (bi.e108as.getSelectedItem().toString().equals("Not Available/Died")) {
-                    bi.e108a.setEnabled(true);
-                } else {
-                    bi.e108a.setText(bi.e108as.getSelectedItem().toString());
-
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void setupSkips() {
 
     }
 
