@@ -368,6 +368,14 @@
 
                             </LinearLayout>
 
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/i102as"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="56dp"
+                                android:prompt="@string/i102a"
+                                android:spinnerMode="dropdown" />
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

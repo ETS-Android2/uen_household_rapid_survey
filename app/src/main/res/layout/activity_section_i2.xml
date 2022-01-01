@@ -239,6 +239,14 @@
 
                         </LinearLayout>
 
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/i202as"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="56dp"
+                            android:prompt="@string/i202a"
+                            android:spinnerMode="dropdown" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -260,6 +268,7 @@
                                     android:id="@+id/i202c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="false"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/i202c"
                                     android:text="@={childARI.i202c}" />
@@ -284,6 +293,7 @@
                                     android:hint="@string/i202cno"
                                     android:inputType="number"
                                     android:maxLength="3"
+                                    android:enabled="false"
                                     android:text="@={childARI.i202cno}"
                                     app:maxValue="100"
                                     app:minValue="1"

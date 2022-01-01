@@ -31,6 +31,7 @@ public class ChildDIA extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
+    private String respFmuid = _EMPTY_;
     private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
@@ -409,6 +410,16 @@ public class ChildDIA extends BaseObservable implements Observable {
         setI102c(i102b.equals("2") ? this.i102c : "");
         setI102cno(i102b.equals("2") ? this.i102cno : "");
         notifyPropertyChanged(BR.i102b);
+    }
+
+    @Bindable
+    public String getRespFmuid() {
+        return respFmuid;
+    }
+
+    public void setRespFmuid(String respFmuid) {
+        this.respFmuid = respFmuid;
+        notifyPropertyChanged(BR.respFmuid);
     }
 
     @Bindable
@@ -1224,6 +1235,7 @@ public class ChildDIA extends BaseObservable implements Observable {
             this.i102b = json.getString("i102b");
             this.i102c = json.getString("i102c");
             this.i102cno = json.getString("i102cno");
+            this.respFmuid = json.getString("respFmuid");
             this.i103 = json.getString("i103");
             this.i10301x = json.getString("i10301x");
             this.i104 = json.getString("i104");
@@ -1302,6 +1314,7 @@ public class ChildDIA extends BaseObservable implements Observable {
                 .put("i102b", i102b)
                 .put("i102c", i102c)
                 .put("i102cno", i102cno)
+                .put("respFmuid", respFmuid)
                 .put("i103", i103)
                 .put("i10301x", i10301x)
                 .put("i104", i104)

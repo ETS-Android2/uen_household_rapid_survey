@@ -2537,4 +2537,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return randHH;
     }
+
+    public List<FamilyMembers> getAllRespondents() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = FamilyMembersTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
+
+        List<FamilyMembers> resp = new ArrayList<>();
+
+        c = db.query(
+                FamilyMembersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            resp.add(new FamilyMembers().Hydrate(c));
+        }
+
+        db.close();
+
+        return resp;
+    }
 }
