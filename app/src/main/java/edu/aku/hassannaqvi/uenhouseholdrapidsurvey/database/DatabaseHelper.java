@@ -2565,7 +2565,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                    // The sort order
         );
         while (c.moveToNext()) {
-            resp.add(new FamilyMembers().Hydrate(c));
+            FamilyMembers fm = new FamilyMembers().Hydrate(c);
+            if (Integer.parseInt(fm.getD109y()) > 15)
+                resp.add(fm);
         }
 
         db.close();
