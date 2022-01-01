@@ -42,6 +42,7 @@ public class SectionI1Activity extends AppCompatActivity {
         setTitle(R.string.sectioni1diarrheainformation_mainheading);
         db = MainApp.appInfo.dbHelper;
         //  bi.age.setText(getIntent().getStringExtra("age"));
+        populateSpinner();
     }
 
     private void populateSpinner() {
