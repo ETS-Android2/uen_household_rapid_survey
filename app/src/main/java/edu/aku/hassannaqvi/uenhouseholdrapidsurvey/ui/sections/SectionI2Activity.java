@@ -153,7 +153,7 @@ public class SectionI2Activity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (bi.i202b.equals("2") && bi.i202c.getText().toString().isEmpty()) {
+        if (bi.i202b02.isChecked() && bi.i202c.getText().toString().isEmpty()) {
             return Validator.emptyCustomTextBox(this, bi.i202c, "Select Respondent");
         }
 
