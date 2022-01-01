@@ -73,7 +73,6 @@
     <string name="ageCalc" translatable="false">"Both Month and Year don't be zero!!"</string>
     <string name="action_database" translatable="false">Database Manager</string>
     <string name="action_data_sync" translatable="false">Sync Data</string>
-    <string name="no"> No </string>
     <string name="dkn"> Don’t Know </string>
     <string name="none"> No one </string>
     <string name="never"> Never</string>
@@ -157,6 +156,11 @@
     <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
     <string name="open_new_form" translatable="false">OPEN NEW FORM</string>
     <string name="options" translatable="false">Options</string>
+
+    <string name="title_preg_dialog">Pregnancy Count</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="message_preg_dialog_addmore">You have already entered %1$s Pregnancy. \nAre you sure you want to add more Pregnancy?</string>
 
 
     <string name="as1householdinformation_mainheading">AS1: Household Information: </string>

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -168,9 +170,14 @@ public class PregnancyListActivity extends AppCompatActivity {
     }
 
     public void addPreg() {
-        Intent intent = new Intent(this, SectionE1BActivity.class);
+        if (MainApp.pregList.size() >= Integer.parseInt(MainApp.pregM.getE102())) {
+            displayAddMoreDialog();
+        } else {
+            addMoreMWRA();
+        }
+        /*Intent intent = new Intent(this, SectionE1BActivity.class);
         //   finish();
-        MemberInfoLauncher.launch(intent);
+        MemberInfoLauncher.launch(intent);*/
     }
 
     public void btnContinue(View view) {
@@ -197,6 +204,31 @@ public class PregnancyListActivity extends AppCompatActivity {
         /*   } else {
                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
            }*/
+    }
+
+    private void displayAddMoreDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_preg_dialog)
+                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), MainApp.pregM.getE102()))
+
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        addMoreMWRA();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.no, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void addMoreMWRA() {
+        Intent intent = new Intent(this, SectionE1BActivity.class);
+        //   finish();
+        MemberInfoLauncher.launch(intent);
     }
 
 

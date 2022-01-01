@@ -177,7 +177,14 @@ public class SectionI1Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (bi.i102c.getText().toString().isEmpty()) {
+            return Validator.emptyCustomTextBox(this, bi.i102c, "Select Respondent");
+        }
+
+        return true;
     }
 
 
