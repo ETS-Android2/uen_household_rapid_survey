@@ -72,7 +72,7 @@ public class SectionI2Activity extends AppCompatActivity {
             respLineNo.add(fm.getD101());
             respFmUIDs.add(fm.getUid());
 
-            if (MainApp.childDIA.getI102cno().equals(fm.getD101())) {
+            if (MainApp.childARI.getI202cno().equals(fm.getD101())) {
                 selectedResp = counter;
             }
             counter++;
@@ -90,16 +90,16 @@ public class SectionI2Activity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 // for EditMode auto selection
-                if (MainApp.childDIA.getI102cno().equals(respLineNo.get(bi.i202as.getSelectedItemPosition()))) {
+                if (MainApp.childARI.getI202cno().equals(respLineNo.get(bi.i202as.getSelectedItemPosition()))) {
                     return;
                 } else {
 
                     //   if(position == 0) return;
                     bi.i202c.setText("");
                     bi.i202cno.setText("");
-                    MainApp.childDIA.setRespFmuid(respFmUIDs.get(bi.i202as.getSelectedItemPosition()));
-                    MainApp.childDIA.setI102cno(respLineNo.get(bi.i202as.getSelectedItemPosition()));
-                    MainApp.childDIA.setI102c(respNames.get(bi.i202as.getSelectedItemPosition()));
+                    MainApp.childARI.setRespFmuid(respFmUIDs.get(bi.i202as.getSelectedItemPosition()));
+                    MainApp.childARI.setI202cno(respLineNo.get(bi.i202as.getSelectedItemPosition()));
+                    MainApp.childARI.setI202c(respNames.get(bi.i202as.getSelectedItemPosition()));
                 }
 
             }
@@ -153,7 +153,7 @@ public class SectionI2Activity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (bi.i202c.getText().toString().isEmpty()) {
+        if (bi.i202b.equals("2") && bi.i202c.getText().toString().isEmpty()) {
             return Validator.emptyCustomTextBox(this, bi.i202c, "Select Respondent");
         }
 

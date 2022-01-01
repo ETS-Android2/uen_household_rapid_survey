@@ -373,6 +373,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:minHeight="56dp"
+                                android:tag="-1"
                                 android:prompt="@string/i102a"
                                 android:spinnerMode="dropdown" />
 

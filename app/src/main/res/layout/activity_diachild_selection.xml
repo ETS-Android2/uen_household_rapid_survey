@@ -143,22 +143,31 @@
 
                             </LinearLayout>
 
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/i10201" />
+                                android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/i10201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/i10201"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={childDIA.i10201}"
-                                app:maxValue="10"
-                                app:minValue="0"
-                                app:type="range" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/i10201" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/i10201"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="@string/i10201"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={childDIA.i10201}"
+                                    app:maxValue="10"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -216,6 +225,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:gravity="center"
                                     android:minHeight="56dp"
                                     android:prompt="@string/i102a"
                                     android:spinnerMode="dropdown" />
