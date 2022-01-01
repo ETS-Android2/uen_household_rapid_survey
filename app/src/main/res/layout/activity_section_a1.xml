@@ -359,6 +359,7 @@
                             android:text="@string/a103" />
 
                         <EditText
+                            android:enabled="false"
                             android:id="@+id/a103"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

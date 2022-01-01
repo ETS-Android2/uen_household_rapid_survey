@@ -2314,13 +2314,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2201.equals(`1`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2201x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -2329,13 +2329,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2202.equals(`2`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2202x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -2344,13 +2344,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2203.equals(`3`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2203x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -2359,13 +2359,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2204.equals(`4`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2204x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -2374,13 +2374,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2205.equals(`5`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2205x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -2389,13 +2389,13 @@
                                         android:layout_height="match_parent"
                                         android:enabled="@{mwra.h2206.equals(`6`)}"
                                         android:gravity="center"
-                                        android:hint="######"
+                                        android:hint="#"
                                         android:inputType="number"
-                                        android:maxLength="6"
+                                        android:maxLength="1"
                                         android:paddingTop="20dp"
                                         android:text="@={mwra.h2206x}"
-                                        app:maxValue="700000"
-                                        app:minValue="0"
+                                        app:maxValue="6"
+                                        app:minValue="1"
                                         app:type="range" />
 
                                     <EditText

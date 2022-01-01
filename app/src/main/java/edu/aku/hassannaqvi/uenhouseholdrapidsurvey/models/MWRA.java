@@ -2320,23 +2320,23 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setG102(String g102) {
         this.g102 = g102;
-        setG10301(g102.equals("1") ? this.g10301 : "");
-        setG10302(g102.equals("1") ? this.g10302 : "");
-        setG10303(g102.equals("1") ? this.g10303 : "");
-        setG10304(g102.equals("1") ? this.g10304 : "");
-        setG10305(g102.equals("1") ? this.g10305 : "");
-        setG10306(g102.equals("1") ? this.g10306 : "");
-        setG10307(g102.equals("1") ? this.g10307 : "");
-        setG10308(g102.equals("1") ? this.g10308 : "");
-        setG10309(g102.equals("1") ? this.g10309 : "");
-        setG10310(g102.equals("1") ? this.g10310 : "");
-        setG10311(g102.equals("1") ? this.g10311 : "");
-        setG10312(g102.equals("1") ? this.g10312 : "");
-        setG10313(g102.equals("1") ? this.g10313 : "");
-        setG10314(g102.equals("1") ? this.g10314 : "");
-        setG10396(g102.equals("1") ? this.g10396 : "");
+        setG10301(g102.equals("1") ? "" : this.g10301);
+        setG10302(g102.equals("1") ? "" : this.g10302);
+        setG10303(g102.equals("1") ? "" : this.g10303);
+        setG10304(g102.equals("1") ? "" : this.g10304);
+        setG10305(g102.equals("1") ? "" : this.g10305);
+        setG10306(g102.equals("1") ? "" : this.g10306);
+        setG10307(g102.equals("1") ? "" : this.g10307);
+        setG10308(g102.equals("1") ? "" : this.g10308);
+        setG10309(g102.equals("1") ? "" : this.g10309);
+        setG10310(g102.equals("1") ? "" : this.g10310);
+        setG10311(g102.equals("1") ? "" : this.g10311);
+        setG10312(g102.equals("1") ? "" : this.g10312);
+        setG10313(g102.equals("1") ? "" : this.g10313);
+        setG10314(g102.equals("1") ? "" : this.g10314);
+        setG10396(g102.equals("1") ? "" : this.g10396);
         setG105(g102.equals("1") ? this.g105 : "");
-        setG106(g102.equals("1") ? this.g106 : "" );
+        setG106(g102.equals("1") ? this.g106 : "");
         setG107(g102.equals("1") ? this.g107 : "");
         setH201(g102.equals("1") ? "" : this.h201);
 

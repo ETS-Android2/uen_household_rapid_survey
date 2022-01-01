@@ -714,7 +714,7 @@
     <string name="e110m">Month(s)</string>
     <string name="e110d">Day(s)</string>
     <string name="e111">What was the reason for (NAME’s) death?</string>
-    <string name="e11101">Birth before 37 weeks (Preterm)</string>
+    <string name="e11101">Birth more than 22 weeks (Preterm)</string>
     <string name="e11102">Hypertension</string>
     <string name="e11103">Severe anemia</string>
     <string name="e11104">Birth trauma (headinjury)</string>
