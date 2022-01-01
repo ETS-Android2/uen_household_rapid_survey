@@ -67,23 +67,18 @@ public class SectionE1BActivity extends AppCompatActivity {
         childCodes.add("");
         childAges.add("");
         childFmUID.add("");
+        String mwraSno = MainApp.allMWRAList.get(0).getD101();
 
         for (FamilyMembers fm : MainApp.allChildrenList) {
-            // FMUID is not null than add only select Child
-            if (!MainApp.pregD.getFmuid().equals("")) {
-                if (MainApp.pregD.getFmuid().equals(fm.getUid())) {
-                    childNames.add(fm.getD102());
-                    childCodes.add(fm.getD101());
-                    childAges.add(fm.getD109y());
-                    childFmUID.add(fm.getUid());
-                }
 
-            } else {
+            // populate only selected mwra's children (i.e selected for Pregnancy history. May Not be Indexed mother)
+            if (mwraSno.equals(fm.getD107())) {
                 childNames.add(fm.getD102());
                 childCodes.add(fm.getD101());
                 childAges.add(fm.getD109y());
                 childFmUID.add(fm.getUid());
             }
+
 
             childNames.add("Not Available/Died");
             childCodes.add("97");
