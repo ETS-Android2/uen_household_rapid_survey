@@ -431,7 +431,8 @@
                 <!-- o106  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVo106"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.o105.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -492,7 +493,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVo107"
                     style="@style/cardView"
-                    android:visibility="@{form.o106.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{form.o106.equals(`1`) || form.o105.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
