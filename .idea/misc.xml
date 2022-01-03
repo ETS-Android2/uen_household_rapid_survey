@@ -28,7 +28,7 @@
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i1.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_i2.xml" value="0.29083333333333333" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_a.xml" value="0.305" />
-        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_b.xml" value="0.305" />
+        <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_im_b.xml" value="0.37166666666666665" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_k1.xml" value="0.30666666666666664" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_l1.xml" value="0.2913096695226438" />
         <entry key="..\:/Android Office Work/uen_household_rapid_survey/app/src/main/res/layout/activity_section_m1.xml" value="0.16286496350364962" />
@@ -119,7 +119,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

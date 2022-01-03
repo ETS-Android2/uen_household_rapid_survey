@@ -97,8 +97,7 @@ public class PregnancyListActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(PregD)", Toast.LENGTH_SHORT).show();
         }
- /*
-        // Set Selected Preg
+/*        // Set Selected Preg
         for (int i = 0; i < MainApp.pregList.size(); i++) {
             if (MainApp.pregList.get(i).getIndexed().equals("1")) {
                 MainApp.selectedPreg = String.valueOf(i);
@@ -181,19 +180,44 @@ public class PregnancyListActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
-
-        MainApp.allMWRAList.remove(0);
-        MainApp.pregList = new ArrayList<>();
-
-        if (MainApp.allMWRAList.size() > 0) {
-            startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
+        if (MainApp.pregList.size() < Integer.parseInt(MainApp.pregM.getE102())) {
+            displayProceedDialog();
         } else {
-            // if no more pregnancy and no more mwra than go to E2
-            startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
 
-        }        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+            MainApp.allMWRAList.remove(0);
+            MainApp.pregList = new ArrayList<>();
 
-        finish();
+            if (MainApp.allMWRAList.size() > 0) {
+                startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
+            } else {
+                // if no more pregnancy and no more mwra than go to E2
+                startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
+
+            }        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+            finish();
+        }
+
+    }
+
+    private void displayProceedDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_preg_dialog)
+                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), MainApp.mwraList.size() + "", MainApp.pregM.getE102()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+//                        proceedSelect();
+                        startActivity(new Intent(PregnancyListActivity.this, SectionE2AActivity.class).putExtra("complete", true));
+                        finish();
+                    }
+                })
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.no, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
 
     }
 

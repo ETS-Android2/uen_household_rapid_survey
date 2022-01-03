@@ -3417,6 +3417,7 @@
                                         android:layout_height="wrap_content"
                                         android:checked="@{child.im23.equals(`4`)}"
                                         android:onClick="@{()->child.setIm23(`4`)}"
+                                        android:visibility="gone"
                                         android:text="@string/im2304" />
 
                                     <RadioButton

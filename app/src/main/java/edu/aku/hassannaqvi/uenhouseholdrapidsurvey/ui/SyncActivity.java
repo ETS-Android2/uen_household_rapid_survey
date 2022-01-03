@@ -285,7 +285,6 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " colflag is null ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
                 } else {
 

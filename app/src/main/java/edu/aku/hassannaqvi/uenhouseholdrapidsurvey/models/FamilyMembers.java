@@ -627,9 +627,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
             //TODO:
             // set current Date
-            int curDay = 15;//!MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
+/*            int curDay = 15;//!MainApp.form.getAs1q15d().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15d()) : 15;
             int curMonth = 6;//!MainApp.form.getAs1q15m().equals("98") ? Integer.parseInt(MainApp.form.getAs1q15m()) : 6;
-            int curYear = 2021;//Integer.parseInt(MainApp.form.getAs1q15y());
+            int curYear = 2021;//Integer.parseInt(MainApp.form.getAs1q15y());*/
+
             Calendar cur = Calendar.getInstance();
 
 
@@ -645,22 +646,21 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
             try {
                 cal.setTime(df.parse(year + " " + month + " " + day));
-                cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
+//                cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
 
-/*                System.out.println(df.format("Current: " + cur.getTime()));
+                /*System.out.println(df.format("Current: " + cur.getTime()));
                 System.out.println(df.format("DOB: " + cal.getTime()));*/
 
 
-                //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
-                long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
+                long millis = System.currentTimeMillis() - cal.getTimeInMillis();
+//                long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
-             /*   int mYear = cal.get(Calendar.YEAR)-1970;
+                int mYear = cal.get(Calendar.YEAR) - 1970;
                 int mMonth = cal.get(Calendar.MONTH);
-                int mDay = cal.get(Calendar.DAY_OF_MONTH)-1;
+                int mDay = cal.get(Calendar.DAY_OF_MONTH) - 1;
 
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
-*/
                 this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
                 long tYear = MILLISECONDS.toDays(millis) / 365;
                 long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
