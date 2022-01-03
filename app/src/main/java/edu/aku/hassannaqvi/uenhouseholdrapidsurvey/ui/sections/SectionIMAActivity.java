@@ -12,6 +12,11 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
@@ -38,6 +43,27 @@ public class SectionIMAActivity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         bi.setChild(MainApp.child);
+    }
+
+    private boolean validateDates(String baseDate, String forwardDate) {
+        try {
+
+
+            Calendar baseCal = Calendar.getInstance();
+            Calendar forwardCal = Calendar.getInstance();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            baseCal.setTime(sdf.parse(baseDate));// all done
+            forwardCal.setTime(sdf.parse(forwardDate));// all done
+
+            return forwardCal.getTimeInMillis() >= baseCal.getTimeInMillis();
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "ParseException(setDateRanges()): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private boolean insertNewRecord() {
@@ -98,7 +124,47 @@ public class SectionIMAActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) {
+
+            return false;
+        }
+
+        //if (IMdates is valid date(not, 97, 66, 88, 44)){
+
+        // Only set once
+        // IM04 - DOB
+        String dobDate = bi.im04y.getText().toString()
+                + "-" + bi.im04m.getText().toString()
+                + "-" + bi.im04d.getText().toString();
+
+        // IM0501
+        String im0501date = bi.im0501y.getText().toString()
+                + "-" + bi.im0501m.getText().toString()
+                + "-" + bi.im0501d.getText().toString();
+        if (!validateDates(dobDate, im0501date)) {
+            Validator.emptyCustomTextBox(this, bi.im0501y, "Incorrect Date.");
+        }
+
+
+        // IM0502
+        String im0502date = bi.im0502y.getText().toString()
+                + "-" + bi.im0502m.getText().toString()
+                + "-" + bi.im0502d.getText().toString();
+        if (!validateDates(dobDate, im0502date)) {
+            Validator.emptyCustomTextBox(this, bi.im0502y, "Incorrect Date.");
+        }
+
+        // IM0503
+        String im0503date = bi.im0503y.getText().toString()
+                + "-" + bi.im0503m.getText().toString()
+                + "-" + bi.im0503d.getText().toString();
+        if (!validateDates(dobDate, im0503date)) {
+            Validator.emptyCustomTextBox(this, bi.im0503y, "Incorrect Date.");
+        }
+
+        return true;
+        //}
     }
 
 
