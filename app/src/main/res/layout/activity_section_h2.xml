@@ -1432,7 +1432,8 @@
                 <!-- h214a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh214a"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{mwra.h214.equals(`98`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1493,7 +1494,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh214b"
                     style="@style/cardView"
-                    android:visibility="@{mwra.h214a.equals(`2`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.h214a.equals(`1`) || mwra.h214.equals(`98`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2589,7 +2590,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVh223"
                             style="@style/cardView"
-                            android:visibility="@{mwra.h221.equals(`2`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{mwra.h221.equals(`2`) || mwra.h221.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                             <LinearLayout
                                 android:layout_width="match_parent"

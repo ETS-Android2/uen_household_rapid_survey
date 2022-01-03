@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +15,14 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivitySectionI2Binding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.EndingActivity;
 
 public class SectionI2Activity extends AppCompatActivity {
@@ -26,7 +30,7 @@ public class SectionI2Activity extends AppCompatActivity {
     private static final String TAG = "SectionI2Activity";
     ActivitySectionI2Binding bi;
     private DatabaseHelper db;
-    private ArrayList<String> childNames, childCodes, childAges, childFmUID;
+    private ArrayList<String> respNames, respLineNo, respFmUIDs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +40,76 @@ public class SectionI2Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.sectioni2acuterespiratoryinfectionari_mainheading);
         db = MainApp.appInfo.dbHelper;
-     //   bi.age.setText(getIntent().getStringExtra("age"));
+        //   bi.age.setText(getIntent().getStringExtra("age"));
+        populateSpinner();
     }
 
+    private void populateSpinner() {
+
+        // Populate Respondents
+        List<FamilyMembers> respList = new ArrayList<>();
+        try {
+            respList = db.getAllRespondents();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Familymembers): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        respNames = new ArrayList<>();
+        respLineNo = new ArrayList<>();
+        respFmUIDs = new ArrayList<>();
+
+        respNames.add("...");
+        respLineNo.add("");
+        respFmUIDs.add("");
+
+        int selectedResp = 0;
+        int counter = 0;
+
+        for (FamilyMembers fm : respList) {
+
+            respNames.add(fm.getD102());
+            respLineNo.add(fm.getD101());
+            respFmUIDs.add(fm.getUid());
+
+            if (MainApp.childARI.getI202cno().equals(fm.getD101())) {
+                selectedResp = counter;
+            }
+            counter++;
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SectionI2Activity.this,
+                R.layout.custom_spinner, respNames);
+
+        bi.i202as.setAdapter(adapter);
+        bi.i202as.setSelection(selectedResp);
+
+
+        bi.i202as.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                // for EditMode auto selection
+                if (MainApp.childARI.getI202cno().equals(respLineNo.get(bi.i202as.getSelectedItemPosition()))) {
+                    return;
+                } else {
+
+                    //   if(position == 0) return;
+                    bi.i202c.setText("");
+                    bi.i202cno.setText("");
+                    MainApp.childARI.setRespFmuid(respFmUIDs.get(bi.i202as.getSelectedItemPosition()));
+                    MainApp.childARI.setI202cno(respLineNo.get(bi.i202as.getSelectedItemPosition()));
+                    MainApp.childARI.setI202c(respNames.get(bi.i202as.getSelectedItemPosition()));
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
 
 
     private boolean updateDB() {
@@ -79,7 +150,14 @@ public class SectionI2Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (bi.i202b02.isChecked() && bi.i202c.getText().toString().isEmpty()) {
+            return Validator.emptyCustomTextBox(this, bi.i202c, "Select Respondent");
+        }
+
+        return true;
     }
 
 

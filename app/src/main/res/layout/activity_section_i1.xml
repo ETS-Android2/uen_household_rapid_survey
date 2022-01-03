@@ -373,6 +373,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:minHeight="56dp"
+                                android:tag="-1"
                                 android:prompt="@string/i102a"
                                 android:spinnerMode="dropdown" />
 
@@ -396,6 +397,8 @@
 
                                     <EditText
                                         android:id="@+id/i102c"
+                                        android:enabled="false"
+                                        android:gravity="center"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
@@ -418,6 +421,8 @@
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/i102cno"
+                                        android:enabled="false"
+                                        android:gravity="center"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:hint="@string/i102cno"

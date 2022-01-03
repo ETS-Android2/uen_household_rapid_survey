@@ -31,6 +31,7 @@ public class ChildARI extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
+    private String respFmuid = _EMPTY_;
     private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
@@ -214,6 +215,17 @@ public class ChildARI extends BaseObservable implements Observable {
         setHhid(MainApp.currentHousehold.getHhno());
 
     }
+
+    @Bindable
+    public String getRespFmuid() {
+        return respFmuid;
+    }
+
+    public void setRespFmuid(String respFmuid) {
+        this.respFmuid = respFmuid;
+        notifyPropertyChanged(BR.respFmuid);
+    }
+
 
     public String getProjectName() {
         return projectName;
@@ -2129,6 +2141,7 @@ public class ChildARI extends BaseObservable implements Observable {
             this.i202b = json.getString("i202b");
             this.i202c = json.getString("i202c");
             this.i202cno = json.getString("i202cno");
+            this.respFmuid = json.getString("respFmuid");
             this.i203 = json.getString("i203");
             this.i205 = json.getString("i205");
             this.i206 = json.getString("i206");
@@ -2275,6 +2288,7 @@ public class ChildARI extends BaseObservable implements Observable {
                 .put("i202b", i202b)
                 .put("i202c", i202c)
                 .put("i202cno", i202cno)
+                .put("respFmuid", respFmuid)
                 .put("i203", i203)
                 .put("i205", i205)
                 .put("i206", i206)

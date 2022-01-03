@@ -132,22 +132,32 @@
                             android:layout_marginTop="12dp"
                             android:text="@string/i202t" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/i20201" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/i20201"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/i20201"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={childARI.i20201}"
-                            app:maxValue="10"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/i20201" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/i20201"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="@string/i20201"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={childARI.i20201}"
+                                app:maxValue="10"
+                                app:minValue="0"
+                                app:type="range" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -197,6 +207,7 @@
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/i202a"
+                                android:gravity="center"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"

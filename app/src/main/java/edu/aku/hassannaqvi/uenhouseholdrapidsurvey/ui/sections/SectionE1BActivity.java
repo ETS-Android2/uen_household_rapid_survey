@@ -51,7 +51,7 @@ public class SectionE1BActivity extends AppCompatActivity {
         }*/
 
         bi.setPregD(pregD);
-      //  setupSkips();
+        //  setupSkips();
         populateSpinner();
     }
 
