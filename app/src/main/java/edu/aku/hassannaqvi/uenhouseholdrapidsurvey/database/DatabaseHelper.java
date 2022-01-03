@@ -919,8 +919,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-    /*public int syncRandom(JSONArray list) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public int syncRandom(JSONArray list) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(RandomHHTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
@@ -932,8 +933,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ran.sync(json);
                 ContentValues values = new ContentValues();
                 values.put(RandomHHTable.COLUMN_ID, ran.getID());
-                values.put(RandomHHTable.COLUMN_SNO, ran.getEcdNo());
-                values.put(RandomHHTable.COLUMN_CLUSTER_CODE, ran.getpsuCode());
+                values.put(RandomHHTable.COLUMN_SNO, ran.getSno());
+                values.put(RandomHHTable.COLUMN_CLUSTER_CODE, ran.getClusteCcode());
                 values.put(RandomHHTable.COLUMN_HH_NO, ran.getHhno());
                 values.put(RandomHHTable.COLUMN_HEAD_HH, ran.getHeadhh());
                 long rowID = db.insert(RandomHHTable.TABLE_NAME, null, values);
@@ -947,7 +948,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
-    }*/
+    }
 
 
     //get UnSyncedTables

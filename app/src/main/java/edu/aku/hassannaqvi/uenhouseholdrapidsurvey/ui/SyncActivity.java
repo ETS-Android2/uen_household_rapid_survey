@@ -398,6 +398,20 @@ public class SyncActivity extends AppCompatActivity {
                                         syncListAdapter.updatesyncList(downloadTables);
                                     }
                                     break;
+
+                                case RandomHHTable.TABLE_NAME:
+                                    try {
+                                        jsonArray = new JSONArray(result);
+
+                                        insertCount = db.syncRandom(jsonArray);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                        downloadTables.get(position).setstatus("Process Failed");
+                                        downloadTables.get(position).setstatusID(1);
+                                        downloadTables.get(position).setmessage(e.getMessage());
+                                        syncListAdapter.updatesyncList(downloadTables);
+                                    }
+                                    break;
                             }
 
                             downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
