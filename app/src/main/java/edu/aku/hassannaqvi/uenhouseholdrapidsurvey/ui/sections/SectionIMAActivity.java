@@ -47,8 +47,6 @@ public class SectionIMAActivity extends AppCompatActivity {
 
     private boolean validateDates(String baseDate, String forwardDate) {
         try {
-
-
             Calendar baseCal = Calendar.getInstance();
             Calendar forwardCal = Calendar.getInstance();
 
@@ -126,7 +124,6 @@ public class SectionIMAActivity extends AppCompatActivity {
     private boolean formValidation() {
 
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) {
-
             return false;
         }
 
@@ -134,34 +131,155 @@ public class SectionIMAActivity extends AppCompatActivity {
 
         // Only set once
         // IM04 - DOB
-        String dobDate = bi.im04y.getText().toString()
-                + "-" + bi.im04m.getText().toString()
-                + "-" + bi.im04d.getText().toString();
+        String dobDate = MainApp.child.getIm04y()
+                + "-" + MainApp.child.getIm04m()
+                + "-" + MainApp.child.getIm04d();
 
         // IM0501
-        String im0501date = bi.im0501y.getText().toString()
-                + "-" + bi.im0501m.getText().toString()
-                + "-" + bi.im0501d.getText().toString();
+        String im0501date = MainApp.child.getIm0501y()
+                + "-" + MainApp.child.getIm0501m()
+                + "-" + MainApp.child.getIm0501d();
         if (!validateDates(dobDate, im0501date)) {
-            Validator.emptyCustomTextBox(this, bi.im0501y, "Incorrect Date.");
+            return Validator.emptyCustomTextBox(this, bi.im0501y, "Incorrect Date.");
         }
 
 
         // IM0502
-        String im0502date = bi.im0502y.getText().toString()
-                + "-" + bi.im0502m.getText().toString()
-                + "-" + bi.im0502d.getText().toString();
+        String im0502date = MainApp.child.getIm0502y()
+                + "-" + MainApp.child.getIm0502m()
+                + "-" + MainApp.child.getIm0502d();
         if (!validateDates(dobDate, im0502date)) {
-            Validator.emptyCustomTextBox(this, bi.im0502y, "Incorrect Date.");
+            return Validator.emptyCustomTextBox(this, bi.im0502y, "Incorrect Date.");
         }
 
+        /*firstVaccine*/
+        String firstVaccine = MainApp.child.getIm0501y()
+                + "-" + MainApp.child.getIm0501m()
+                + "-" + MainApp.child.getIm0501d();
+
         // IM0503
-        String im0503date = bi.im0503y.getText().toString()
-                + "-" + bi.im0503m.getText().toString()
-                + "-" + bi.im0503d.getText().toString();
-        if (!validateDates(dobDate, im0503date)) {
-            Validator.emptyCustomTextBox(this, bi.im0503y, "Incorrect Date.");
+        String im0503date = MainApp.child.getIm0503y()
+                + "-" + MainApp.child.getIm0503m()
+                + "-" + MainApp.child.getIm0503d();
+        if (!validateDates(firstVaccine, im0503date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0503y, "Incorrect Date.");
         }
+
+        String im0504date = MainApp.child.getIm0504y()
+                + "-" + MainApp.child.getIm0504m()
+                + "-" + MainApp.child.getIm0504d();
+        if (!validateDates(firstVaccine, im0504date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0504y, "Incorrect Date.");
+        }
+
+        String im0505date = MainApp.child.getIm0505y()
+                + "-" + MainApp.child.getIm0505m()
+                + "-" + MainApp.child.getIm0505d();
+        if (!validateDates(firstVaccine, im0505date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0505y, "Incorrect Date.");
+        }
+
+        String im0506date = MainApp.child.getIm0506y()
+                + "-" + MainApp.child.getIm0506m()
+                + "-" + MainApp.child.getIm0506d();
+        if (!validateDates(firstVaccine, im0506date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0506y, "Incorrect Date.");
+        }
+
+        /*secondVaccine*/
+        String secondVaccine = MainApp.child.getIm0506y()
+                + "-" + MainApp.child.getIm0506m()
+                + "-" + MainApp.child.getIm0506d();
+
+        // IM0507
+        String im0507date = MainApp.child.getIm0507y()
+                + "-" + MainApp.child.getIm0507m()
+                + "-" + MainApp.child.getIm0507d();
+        if (!validateDates(secondVaccine, im0507date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0507y, "Incorrect Date.");
+        }
+
+        String im0508date = MainApp.child.getIm0508y()
+                + "-" + MainApp.child.getIm0508m()
+                + "-" + MainApp.child.getIm0508d();
+        if (!validateDates(secondVaccine, im0508date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0508y, "Incorrect Date.");
+        }
+
+        String im0509date = MainApp.child.getIm0509y()
+                + "-" + MainApp.child.getIm0509m()
+                + "-" + MainApp.child.getIm0509d();
+        if (!validateDates(secondVaccine, im0509date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0509y, "Incorrect Date.");
+        }
+
+        String im0510date = MainApp.child.getIm0510y()
+                + "-" + MainApp.child.getIm0510m()
+                + "-" + MainApp.child.getIm0510d();
+        if (!validateDates(secondVaccine, im0510date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0510y, "Incorrect Date.");
+        }
+
+        /*thirdVaccine*/
+        String thirdVaccine = MainApp.child.getIm0510y()
+                + "-" + MainApp.child.getIm0510m()
+                + "-" + MainApp.child.getIm0510d();
+
+        // IM0507
+        String im0511date = MainApp.child.getIm0511y()
+                + "-" + MainApp.child.getIm0511m()
+                + "-" + MainApp.child.getIm0511d();
+        if (!validateDates(thirdVaccine, im0511date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0511y, "Incorrect Date.");
+        }
+
+        String im0512date = MainApp.child.getIm0512y()
+                + "-" + MainApp.child.getIm0512m()
+                + "-" + MainApp.child.getIm0512d();
+        if (!validateDates(thirdVaccine, im0512date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0512y, "Incorrect Date.");
+        }
+
+        String im0513date = MainApp.child.getIm0513y()
+                + "-" + MainApp.child.getIm0513m()
+                + "-" + MainApp.child.getIm0513d();
+        if (!validateDates(thirdVaccine, im0513date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0513y, "Incorrect Date.");
+        }
+
+        String im0514date = MainApp.child.getIm0514y()
+                + "-" + MainApp.child.getIm0514m()
+                + "-" + MainApp.child.getIm0514d();
+        if (!validateDates(thirdVaccine, im0514date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0514y, "Incorrect Date.");
+        }
+
+        /*forthVaccine*/
+        String forthVaccine = MainApp.child.getIm0514y()
+                + "-" + MainApp.child.getIm0514m()
+                + "-" + MainApp.child.getIm0514d();
+
+        // IM0507
+        String im0515date = MainApp.child.getIm0515y()
+                + "-" + MainApp.child.getIm0515m()
+                + "-" + MainApp.child.getIm0515d();
+        if (!validateDates(forthVaccine, im0515date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0515y, "Incorrect Date.");
+        }
+
+        /*fifthVaccine*/
+        String fifthVaccine = MainApp.child.getIm0515y()
+                + "-" + MainApp.child.getIm0515m()
+                + "-" + MainApp.child.getIm0515d();
+
+        // IM0507
+        String im0516date = MainApp.child.getIm0516y()
+                + "-" + MainApp.child.getIm0516m()
+                + "-" + MainApp.child.getIm0516d();
+        if (!validateDates(fifthVaccine, im0516date)) {
+            return Validator.emptyCustomTextBox(this, bi.im0516y, "Incorrect Date.");
+        }
+
 
         return true;
         //}

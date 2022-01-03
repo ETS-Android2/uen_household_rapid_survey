@@ -120,12 +120,12 @@ public class TableContracts {
 
     public static abstract class RandomHHTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "randomhh";
+        public static final String TABLE_NAME = "bl_randomised";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_CLUSTER_CODE = "cluster_code";
-        public static final String COLUMN_HEAD_HH = "hh_head";
-        public static final String COLUMN_HH_NO = "hh_no";
+        public static final String COLUMN_CLUSTER_CODE = "hh02";
+        public static final String COLUMN_HEAD_HH = "hh08";
+        public static final String COLUMN_HH_NO = "hhno";
 
     }
 

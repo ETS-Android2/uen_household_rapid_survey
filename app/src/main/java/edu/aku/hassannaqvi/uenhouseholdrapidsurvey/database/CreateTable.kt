@@ -278,6 +278,7 @@ object CreateTable {
             + UsersTable.COLUMN_USERNAME + " TEXT,"
             + UsersTable.COLUMN_PASSWORD + " TEXT,"
             + UsersTable.COLUMN_FULLNAME + " TEXT,"
+            + UsersTable.COLUMN_DIST_ID + " TEXT,"
             + UsersTable.COLUMN_DESIGNATION + " TEXT"
             + " );"
             )
