@@ -178,15 +178,18 @@
                                 android:gravity="center"
                                 android:text="@string/a113" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/a113"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
-                                android:inputType="number"
-                                android:maxLength="3"
+                                android:hint="#-####-###"
+                                android:inputType="textCapCharacters"
+                                android:maxLength="11"
+                                android:textAllCaps="true"
+                                app:mask="#-####-###"
+                                app:pattern="[^0-9]{1,1}-[0-9]{4,4}-[0-9]{3,3}"
                                 android:text="@={form.a113}" />
 
                             <Button
