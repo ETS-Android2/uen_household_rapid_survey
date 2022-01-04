@@ -1837,10 +1837,6 @@
                                 android:onClick="@{()->mwra.setH122(`1`) + h124.clearCheck()}"
                                 android:text="@string/h1221" />
 
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h1221x"
                                 android:layout_width="wrap_content"
@@ -1852,16 +1848,12 @@
                                 android:maxLength="3"
                                 android:tag="h1221"
                                 android:text="@={mwra.h1221x}"
-                                android:hint="##"
-                                app:mask="##.#"
-                                app:maxValue="20.0"
-                                app:minValue="01.0"
-                                app:pattern="^(\\d{2,1})$"
+                                android:hint="#.##"
+                                app:mask="#.##"
+                                app:maxValue="9.00"
+                                app:minValue="1.00"
+                                app:pattern="^(\\d{1,2})$"
                                 app:type="range" />
-
-                            <View
-                                android:layout_width="20dp"
-                                android:layout_height="match_parent" />
 
                             <RadioButton
                                 android:id="@+id/h12298"
