@@ -1852,7 +1852,6 @@
                                 app:mask="#.##"
                                 app:maxValue="9.00"
                                 app:minValue="1.00"
-                                app:pattern="^(\\d{1,2})$"
                                 app:type="range" />
 
                             <RadioButton

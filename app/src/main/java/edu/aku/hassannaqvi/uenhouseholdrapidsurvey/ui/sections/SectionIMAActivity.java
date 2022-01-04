@@ -45,7 +45,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         bi.setChild(MainApp.child);
     }
 
-    private boolean validateDates(String baseDate, String forwardDate) {
+    private boolean validateDatesBCG(String baseDate, String forwardDate) {
         try {
             Calendar baseCal = Calendar.getInstance();
             Calendar forwardCal = Calendar.getInstance();
@@ -55,6 +55,25 @@ public class SectionIMAActivity extends AppCompatActivity {
             forwardCal.setTime(sdf.parse(forwardDate));// all done
 
             return forwardCal.getTimeInMillis() >= baseCal.getTimeInMillis();
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "ParseException(setDateRanges()): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean validateDates(String baseDate, String forwardDate) {
+        try {
+            Calendar baseCal = Calendar.getInstance();
+            Calendar forwardCal = Calendar.getInstance();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            baseCal.setTime(sdf.parse(baseDate));// all done
+            forwardCal.setTime(sdf.parse(forwardDate));// all done
+
+            return forwardCal.getTimeInMillis() > baseCal.getTimeInMillis();
 
 
         } catch (ParseException e) {
@@ -88,6 +107,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
@@ -105,6 +125,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         }
     }
 
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
@@ -115,6 +136,7 @@ public class SectionIMAActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
+
 
     public void btnEnd(View view) {
         finish();
@@ -139,7 +161,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         String im0501date = MainApp.child.getIm0501y()
                 + "-" + MainApp.child.getIm0501m()
                 + "-" + MainApp.child.getIm0501d();
-        if (!validateDates(dobDate, im0501date)) {
+        if (!validateDatesBCG(dobDate, im0501date)) {
             return Validator.emptyCustomTextBox(this, bi.im0501y, "Incorrect Date.");
         }
 
@@ -148,7 +170,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         String im0502date = MainApp.child.getIm0502y()
                 + "-" + MainApp.child.getIm0502m()
                 + "-" + MainApp.child.getIm0502d();
-        if (!validateDates(dobDate, im0502date)) {
+        if (!validateDatesBCG(dobDate, im0502date)) {
             return Validator.emptyCustomTextBox(this, bi.im0502y, "Incorrect Date.");
         }
 
