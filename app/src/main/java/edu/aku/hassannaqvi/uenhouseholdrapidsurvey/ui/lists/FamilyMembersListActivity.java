@@ -414,7 +414,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         // Updating database to mark indexed mother
         try {
             // Youngest Child index can never be zero
-            MainApp.selectedChild = String.valueOf(db.getYoungestChildByMUId(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getMuid()) - 1);
+            MainApp.selectedChild = String.valueOf(db.getYoungestChildByMUId(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()) - 1);
         } catch (JSONException e) {
 
             Toast.makeText(this, "JSONException(FamilyMemebers): " + e.getMessage(), Toast.LENGTH_SHORT).show();

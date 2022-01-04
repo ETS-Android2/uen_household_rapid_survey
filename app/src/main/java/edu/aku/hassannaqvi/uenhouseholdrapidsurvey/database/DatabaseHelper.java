@@ -417,6 +417,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
         values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
         values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
+        values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
+        values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
@@ -2266,8 +2268,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs,                 // The values for the WHERE clause
                 groupBy,                   // don't group the rows
                 having,                    // don't filter by row groups
-                orderBy,                    // The sort order
-                "1"
+                orderBy                    // The sort order
+
         );
         int chSNo = 0;
         while (c.moveToNext()) {
