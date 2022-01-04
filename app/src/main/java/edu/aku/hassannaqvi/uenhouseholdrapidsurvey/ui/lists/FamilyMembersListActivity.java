@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists;
 import static android.view.View.VISIBLE;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedChild;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedChildName;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.selectedMWRA;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -84,7 +85,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                                 case "2":
                                     MainApp.motherList.add(MainApp.familyMember);
                                     // if present add SNO to allMWRAlist
-                                    if (MainApp.familyMember.getD115().equals("1")) {
+
+                                    if (MainApp.familyMember.getD115().equals("1") && Integer.parseInt(MainApp.familyMember.getD109y()) < 50) {
                                         MainApp.allMWRAList.add(MainApp.familyMember);
                                     }
                                     //MainApp.adolCount++;
@@ -166,7 +168,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 fmCount++;
 
                 // Adding Parents
-                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) >= 14;
+                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) > 14;
                 boolean memMarriedCheck = !fm.getD105().equals("2");
                 String memGender = fm.getD104();
                 if (memMarriedCheck && memAgeCheck) {
@@ -177,7 +179,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                             break;
                         case "2":
                             MainApp.motherList.add(fm);
-                            if (fm.getD115().equals("1")) {
+
+                            if (fm.getD115().equals("1") && Integer.parseInt(fm.getD109y()) < 50) {
                                 MainApp.allMWRAList.add(fm);
                             }
                             //MainApp.adolCount++;
@@ -211,7 +214,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
-        MainApp.selectedMWRA = "";
+        selectedMWRA = "";
         MainApp.selectedChild = "";
 
         // Set Selected Members
@@ -219,7 +222,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
             // Set Mother
             if (MainApp.familyList.get(i).getIndexed().equals("1")) {
-                MainApp.selectedMWRA = String.valueOf(i);
+                selectedMWRA = String.valueOf(i);
                 bi.btnRand.setVisibility(View.INVISIBLE);
                 //bi.btnContinue.setVisibility(View.VISIBLE);
                 bi.btnContinue.setEnabled(true);
@@ -238,8 +241,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         }
 
-        bi.btnContinue.setEnabled(!MainApp.selectedMWRA.equals(""));
-        bi.btnContinue.setBackground(!MainApp.selectedMWRA.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
+        bi.btnContinue.setEnabled(!selectedMWRA.equals(""));
+        bi.btnContinue.setBackground(!selectedMWRA.equals("") ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
 
         //bi.btnContinue.setVisibility(!MainApp.selectedMWRA.equals("") ? View.VISIBLE : View.INVISIBLE);
         MainApp.memberCount = Math.round(MainApp.familyList.size());
@@ -257,7 +260,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 if (MainApp.superuser) {
                     Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-                } else if (MainApp.selectedMWRA.equals("")) {
+                } else if (selectedMWRA.equals("")) {
                     //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                     MainApp.familyMember = new FamilyMembers();
                     addFemale();
@@ -284,7 +287,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         // Disable family complete check if MWRA indexed
-        if (!MainApp.selectedMWRA.equals("")) {
+        if (!selectedMWRA.equals("")) {
             bi.familyComplete.setChecked(true);
             bi.familyComplete.setEnabled(false);
         }
@@ -375,7 +378,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         finish();
-        startActivity(new Intent(this, MainApp.selectedMWRA.equals("") ? EndingActivity.class : SectionE1AActivity.class).putExtra("complete", true));
+        startActivity(new Intent(this, selectedMWRA.equals("") ? EndingActivity.class : SectionE1AActivity.class).putExtra("complete", true));
 
     }
 
@@ -387,13 +390,13 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         int sno = MainApp.mwraList.get(Integer.parseInt(kishGridMWRA));
 
         // Updating database to mark indexed mother
-        MainApp.selectedMWRA = String.valueOf(sno - 1);
-        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
+        selectedMWRA = String.valueOf(sno - 1);
+        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(selectedMWRA));
         db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
         // Updating adapter
-        MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA)).setIndexed("1");
-        familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
+        MainApp.familyList.get(Integer.parseInt(selectedMWRA)).setIndexed("1");
+        familyMembersAdapter.notifyItemChanged(Integer.parseInt(selectedMWRA));
 
 
         // Select Child using KishGrid
@@ -404,11 +407,18 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
         }
 
-        String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
-        sno = MainApp.childOfSelectedMWRAList.get(Integer.parseInt(kishGridChild));
+        // String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
+
+        // sno =  (int) (Math.random()*MainApp.childOfSelectedMWRAList.size()) + 1;
 
         // Updating database to mark indexed mother
-        MainApp.selectedChild = String.valueOf(sno - 1);
+        try {
+            // Youngest Child index can never be zero
+            MainApp.selectedChild = String.valueOf(db.getYoungestChildByMUId(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getMuid()) - 1);
+        } catch (JSONException e) {
+
+            Toast.makeText(this, "JSONException(FamilyMemebers): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getD102();
         MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getD109y());
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
@@ -504,7 +514,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 /*        if (MainApp.familyList.size() < Integer.parseInt(MainApp.form.getH220b())) {
             displayProceedDialog();
         } else {*/
-        if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
+        if (MainApp.mwraList.size() > 0 && selectedMWRA.equals("")) {
             proceedSelect();
 
     /*        if (MainApp.entryType == 1) {
@@ -634,7 +644,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     public void finalizeFamily(View view) {
         if (bi.familyComplete.isChecked()) {
-            if (MainApp.mwraList.size() > 0 && MainApp.selectedMWRA.equals("")) {
+            if (MainApp.mwraList.size() > 0 && selectedMWRA.equals("")) {
                 //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedMWRA))).setStatus("1");
                 bi.btnRand.setVisibility(VISIBLE);
                 // bi.btnContinue.setVisibility(View.INVISIBLE);

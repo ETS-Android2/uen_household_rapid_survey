@@ -39,14 +39,17 @@ public class SectionE1AActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(PregM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
         // Name
         MainApp.pregM.setE101a(MainApp.allMWRAList.get(0).getD102());
+
         // SNO
         MainApp.pregM.setE101b(MainApp.allMWRAList.get(0).getD101());
 
         // FMUID
         MainApp.pregM.setFmuid(MainApp.allMWRAList.get(0).getUid());
         bi.setPregM(MainApp.pregM);
+
 
     }
 

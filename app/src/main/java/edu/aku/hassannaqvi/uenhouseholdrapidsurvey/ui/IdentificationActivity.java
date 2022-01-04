@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,15 +15,14 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityIdentificationBinding;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Clusters;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Form;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.RandomHH;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionA1Activity;
 
 
@@ -51,7 +48,7 @@ public class IdentificationActivity extends AppCompatActivity {
         //setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
-        populateSpinner();
+        //   populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
         if (MainApp.superuser)
@@ -61,8 +58,9 @@ public class IdentificationActivity extends AppCompatActivity {
 
     }
 
-    private void populateSpinner() {
+   /* private void populateSpinner() {
 
+        bi.a105.setText(db.getDistrictNameByCode());
         // Populate Provinces
         List<Villages> tehsils = db.getTehsilsByDistrict(String.valueOf(MainApp.selectedDistrict));
 
@@ -164,7 +162,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     }
-/*
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
         MainApp.selectedHHID = bi.a101.getText().toString();
@@ -231,18 +229,18 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void checkHousehold(View view) {
         if (!formValidation()) return;
-
+/*
         RandomHH testRand = new RandomHH();
         testRand.setSno("1");
         testRand.setClusteCcode("9000001");
         testRand.setHeadhh("Test Head");
-        testRand.setHhno("999");
-        RandomHH randHH = new RandomHH();
-        if (!bi.a101.getText().toString().equals("9000001")) {
+        testRand.setHhno("999");*/
+        RandomHH randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
+      /*  if (!bi.a101.getText().toString().equals("9000001")) {
             randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
             randHH = testRand;
-        }
+        }*/
         if (!randHH.getClusteCcode().equals("")) {
          /*   bi.ahhead.setError(null);
             bi.ahhead.setText(randHH.getHeadhh());*/
@@ -338,40 +336,26 @@ public class IdentificationActivity extends AppCompatActivity {
 
     }
 
-  /*  public void searchEB(View view) {
+
+    public void searchCluster(View view) {
         bi.btnContinue.setEnabled(false);
-        Villages testEb = new Villages();
-        testEb.setEnumBlock("909090909");
-        testEb.setDistrictName("Test District 9");
-        testEb.setTehsilName("Test Tehsil 9");
-        Villages enumBlock = new Villages();
-        *//*if (!bi.a105.getText().toString().equals(testEb.getEnumBlock())) {
-            enumBlock = db.getEnumBlocks(bi.a105.getText().toString());
-        } else {
-            enumBlock = testEb;
+
+        bi.a105.setText(null);
+        bi.a106.setText(null);
+        bi.a107.setText(null);
+        bi.a113.setText(null);
+        bi.fldGrpA113.setVisibility(View.GONE);
+
+        Clusters clusters = db.getCluster(bi.a101.getText().toString());
+
+        String geoarea = clusters.getGeoarea();
+        if (!clusters.getClusterNo().equals("")) {
+            bi.a105.setText(geoarea.split("\\|")[0]);
+            bi.a106.setText(geoarea.split("\\|")[1]);
+            bi.a107.setText(geoarea.split("\\|")[2]);
+
+            bi.fldGrpA113.setVisibility(View.VISIBLE);
+
         }
-
-       *//**//* psuCode = new ArrayList<>();
-        tehsilNames = new ArrayList<>();
-        ucNames = new ArrayList<>();
-        for (Villages eb : enumBlocks) {
-            psuCode.add(eb.getEnumBlock());
-            tehsilNames.add(eb.getDistrictName());
-            ucNames.add(eb.getTehsilName()); //
-        }*//**//*
-        if (!enumBlock.getEnumBlock().equals("")) {
-            bi.a107.setError(null);
-            bi.a108.setError(null);
-            bi.a107.setText(enumBlock.getDistrictName());
-            bi.a108.setText(enumBlock.getTehsilName());
-            bi.fldGrpHH.setVisibility(View.VISIBLE);
-
-        } else {
-            bi.a107.setError("Not Found!");
-            bi.a108.setError("Not Found!");
-            bi.a110.setText(null);
-            bi.ahhead.setText(null);
-            bi.fldGrpHH.setVisibility(View.GONE);
-        }*//*
-    }*/
+    }
 }

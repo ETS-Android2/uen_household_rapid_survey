@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -55,7 +54,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Users;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -151,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        settingCountryCode();
+      //  settingCountryCode();
         /*if (getIntent().hasExtra("pos")) {
             pos = getIntent().getExtras().getInt("pos");
             bi.countrySwitch.setSelection(pos);
@@ -440,7 +438,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void settingCountryCode() {
+/*    private void settingCountryCode() {
 
 
         List<Villages> countries = db.getAllCountries();
@@ -480,7 +478,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
     /*
      * Setting clusterNo code in Shared Preference

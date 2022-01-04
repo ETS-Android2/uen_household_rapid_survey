@@ -282,14 +282,14 @@ public class SyncActivity extends AppCompatActivity {
 
                 if (sync_flag) {
                     select = " * ";
-                    filter = " colflag is null ";
+                    filter = " enabled = '1' ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
                 } else {
 
                     select = " * ";
-                    filter = " colflag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " col_flag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
                 }

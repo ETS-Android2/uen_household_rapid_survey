@@ -51,8 +51,7 @@ public class DataDownWorkerALL extends Worker {
 
     private final int position;
     private final Context mContext;
-    private final String uploadTable;
-    private final String uploadWhere;
+    private final String uploadTable, uploadWhere, uploadColumns;
     HttpsURLConnection urlConnection;
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
@@ -60,8 +59,8 @@ public class DataDownWorkerALL extends Worker {
         mContext = context;
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
-        //uploadColumns = workerParams.getInputData().getString("columns");
-        uploadWhere = workerParams.getInputData().getString("where");
+        uploadColumns = workerParams.getInputData().getString("select");
+        uploadWhere = workerParams.getInputData().getString("filter");
 
     }
 
@@ -164,12 +163,12 @@ public class DataDownWorkerALL extends Worker {
 
         try {
             url = new URL(MainApp._HOST_URL + MainApp._SERVER_GET_URL);
-            Log.d(TAG, "doWork: URL: " + url);
+            Log.d(TAG + " : " + uploadTable, "doWork: URL: " + url);
 
             HostnameVerifier allHostsValid = new HostnameVerifier() {
                 public boolean verify(String hostname, SSLSession session) {
                     //Logcat.d(hostname + " / " + apiHostname);
-                    Log.d(TAG, "verify: hostname " + hostname);
+                    Log.d(TAG + " : " + uploadTable, "verify: hostname " + hostname);
                     return true;
                 }
             };
@@ -199,8 +198,10 @@ public class DataDownWorkerALL extends Worker {
                 JSONArray jsonParam = new JSONArray();
 
                 jsonTable.put("table", uploadTable);
-                //jsonTable.put("select", uploadColumns);
+                jsonTable.put("select", uploadColumns);
                 jsonTable.put("filter", uploadWhere);
+
+                jsonTable.put("check", "");
 
                 if (uploadTable.equals(TableContracts.VersionTable.TABLE_NAME)) {
                     jsonTable.put("folder", "/");
@@ -213,9 +214,9 @@ public class DataDownWorkerALL extends Worker {
                 // .put(jsonSync);
 
 
-                Log.d(TAG, "doWork: jsonTable: " + jsonTable);
+                Log.d(TAG + " : " + uploadTable, "doWork: jsonTable: " + jsonTable);
                 wr.writeBytes(CipherSecure.encrypt(String.valueOf(jsonTable)));
-                Log.d(TAG, "doWork: Encrypted: " + CipherSecure.encrypt(String.valueOf(jsonTable)));
+                Log.d(TAG + " : " + uploadTable, "doWork: Encrypted: " + CipherSecure.encrypt(String.valueOf(jsonTable)));
                 wr.flush();
                 wr.close();
 
@@ -233,9 +234,9 @@ public class DataDownWorkerALL extends Worker {
                         result.append(line);
 
                     }
-                    Log.d(TAG, "doWork: result-server: " + result);
+                    Log.d(TAG + " : " + uploadTable, "doWork: result-server: " + result);
                     result = new StringBuilder(CipherSecure.decrypt(result.toString()));
-                    Log.d(TAG, "doWork: result-decrypt: " + result);
+                    Log.d(TAG + " : " + uploadTable, "doWork: result-decrypt: " + result);
 
                     if (result.toString().equals("[]")) {
                         data = new Data.Builder()

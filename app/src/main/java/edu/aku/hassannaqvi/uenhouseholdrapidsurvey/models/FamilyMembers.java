@@ -79,7 +79,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     private boolean expanded;
     private boolean mwra;
-    private long ageInMonths;
+    private String ageInMonths;
+    private String muid;
     private String indexed = _EMPTY_;
     private String memCate = _EMPTY_;
 
@@ -115,6 +116,23 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+
+    public String getAgeInMonths() {
+        return ageInMonths;
+    }
+
+    public void setAgeInMonth(String ageInMonths) {
+        this.id = ageInMonths;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 
     public String getUid() {
@@ -515,6 +533,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SNO));
+        this.ageInMonths = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_AGE_MONTHS));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_MUID));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_INDEXED));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYSDATE));
@@ -572,6 +592,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_HHID, this.hhid);
         json.put(FamilyMembersTable.COLUMN_INDEXED, this.indexed);
         json.put(FamilyMembersTable.COLUMN_SNO, this.sno);
+        json.put(FamilyMembersTable.COLUMN_AGE_MONTHS, this.ageInMonths);
+        json.put(FamilyMembersTable.COLUMN_MUID, this.muid);
         json.put(FamilyMembersTable.COLUMN_USERNAME, this.userName);
         json.put(FamilyMembersTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FamilyMembersTable.COLUMN_DEVICEID, this.deviceId);
@@ -620,7 +642,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
             if ((Integer.parseInt(this.d108m) > 12 && !this.d108m.equals("98")) || (Integer.parseInt(this.d108d) > 31 && !this.d108d.equals("98")) || Integer.parseInt(this.d108y) < 1920) {
                 setD109y("");
                 setD109m("");
-                this.ageInMonths = 0;
+                this.ageInMonths = "0";
                 return;
             }
 
@@ -646,22 +668,16 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
             try {
                 cal.setTime(df.parse(year + " " + month + " " + day));
-//                cur.setTime(df.parse(curYear + " " + curMonth + " " + curDay));
-
-                /*System.out.println(df.format("Current: " + cur.getTime()));
-                System.out.println(df.format("DOB: " + cal.getTime()));*/
-
-
                 long millis = System.currentTimeMillis() - cal.getTimeInMillis();
-//                long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
-                int mYear = cal.get(Calendar.YEAR) - 1970;
+             /*   int mYear = cal.get(Calendar.YEAR)-1970;
                 int mMonth = cal.get(Calendar.MONTH);
-                int mDay = cal.get(Calendar.DAY_OF_MONTH) - 1;
+                int mDay = cal.get(Calendar.DAY_OF_MONTH)-1;
 
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
-                this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
+*/
+                setAgeInMonth(String.valueOf(MILLISECONDS.toDays(millis) / 30));
                 long tYear = MILLISECONDS.toDays(millis) / 365;
                 long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
                 long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));

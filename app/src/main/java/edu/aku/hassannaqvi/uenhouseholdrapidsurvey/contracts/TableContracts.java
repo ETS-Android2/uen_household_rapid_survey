@@ -63,6 +63,8 @@ public class TableContracts {
         public static final String COLUMN_PSU_CODE = "psuCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_SNO = "sno";
+        public static final String COLUMN_AGE_MONTHS = "ageinmonths";
+        public static final String COLUMN_MUID = "muid";
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
@@ -86,10 +88,9 @@ public class TableContracts {
         public static final String COLUMN_FULLNAME = "full_name";
         public static final String COLUMN_DESIGNATION = "designation";
         public static final String COLUMN_DIST_ID = "dist_id";
-
     }
 
-    public static abstract class VillagesTable implements BaseColumns {
+/*    public static abstract class VillagesTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String TABLE_NAME = "villages";
         public static final String COLUMN_ID = "_id";
@@ -106,7 +107,7 @@ public class TableContracts {
         public static final String COLUMN_VILLAGE = "village";
         public static final String COLUMN_VCODE = "vcode";
         public static final String COLUMN_PSUCODE = "psucode";
-    }
+    }*/
 
     public static abstract class ClusterTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <data>
@@ -187,31 +186,31 @@
 
                                 </LinearLayout>
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/bottom"
-                                    android:minHeight="60dp"
-                                    android:orientation="horizontal"
-                                    android:visibility="gone"
-                                    tool:visibility="visible">
+                                <!--               <LinearLayout
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:background="@drawable/bottom"
+                                                   android:minHeight="60dp"
+                                                   android:orientation="horizontal"
+                                                   android:visibility="gone"
+                                                   tool:visibility="visible">
 
-                                    <TextView
-                                        android:id="@+id/as1q01"
-                                        style="@style/sub_labels"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:gravity="center"
-                                        android:text="@string/as1q01" />
+                                                   <TextView
+                                                       android:id="@+id/as1q01"
+                                                       style="@style/sub_labels"
+                                                       android:layout_width="wrap_content"
+                                                       android:layout_height="match_parent"
+                                                       android:gravity="center"
+                                                       android:text="@string/as1q01" />
 
-                                    <androidx.appcompat.widget.AppCompatSpinner
-                                        android:id="@+id/countrySwitch"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:prompt="@string/as1q01"
-                                        android:spinnerMode="dropdown" />
+                                                   <androidx.appcompat.widget.AppCompatSpinner
+                                                       android:id="@+id/countrySwitch"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+                                                       android:prompt="@string/as1q01"
+                                                       android:spinnerMode="dropdown" />
 
-                                </LinearLayout>
+                                               </LinearLayout>-->
 
                                 <ProgressBar
                                     android:id="@+id/pbarMR"

@@ -64,6 +64,8 @@ object CreateTable {
             + FamilyMembersTable.COLUMN_PSU_CODE + " TEXT,"
             + FamilyMembersTable.COLUMN_HHID + " TEXT,"
             + FamilyMembersTable.COLUMN_SNO + " TEXT,"
+            + FamilyMembersTable.COLUMN_AGE_MONTHS + " TEXT,"
+            + FamilyMembersTable.COLUMN_MUID + " TEXT,"
             + FamilyMembersTable.COLUMN_USERNAME + " TEXT,"
             + FamilyMembersTable.COLUMN_SYSDATE + " TEXT,"
             + FamilyMembersTable.COLUMN_INDEXED + " TEXT,"
@@ -283,21 +285,6 @@ object CreateTable {
             + " );"
             )
 
-
-    const val SQL_CREATE_VILLAGES = ("CREATE TABLE "
-            + VillagesTable.TABLE_NAME + "("
-            + VillagesTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + VillagesTable.COLUMN_COUNTRY + " TEXT,"
-            + VillagesTable.COLUMN_CCODE + " TEXT,"
-            + VillagesTable.COLUMN_PROVINCE + " TEXT,"
-            + VillagesTable.COLUMN_PROVCODE + " TEXT,"
-            + VillagesTable.COLUMN_DISTRICT_NAME + " TEXT,"
-            + VillagesTable.COLUMN_DCODE + " TEXT,"
-            + VillagesTable.COLUMN_VILLAGE + " TEXT,"
-            + VillagesTable.COLUMN_VCODE + " TEXT,"
-            + VillagesTable.COLUMN_PSUCODE + " TEXT"
-            + " );"
-            )
 
     const val SQL_CREATE_CLUSTERS = ("CREATE TABLE "
             + ClusterTable.TABLE_NAME + "("

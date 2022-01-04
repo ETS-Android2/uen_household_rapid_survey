@@ -39,7 +39,6 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.Preg
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.RandomHHTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.VersionTable;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts.VillagesTable;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Child;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.ChildARI;
@@ -55,7 +54,9 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.RandomHH;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Users;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.VersionApp;
+/*
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.Villages;
+*/
 
 
 
@@ -80,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
-        db.execSQL(CreateTable.SQL_CREATE_VILLAGES);
         db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
 
@@ -385,6 +385,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
         values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
         values.put(FamilyMembersTable.COLUMN_SNO, members.getSno());
+        values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
+        values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
@@ -651,6 +653,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         MainApp.user = loggedInUser;
+        MainApp.selectedDistrict = loggedInUser.getDist_id();
         return c.getCount() > 0;
     }
 
@@ -855,7 +858,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-    public int syncVillages(JSONArray clusterList) throws JSONException {
+   /* public int syncVillages(JSONArray clusterList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VillagesTable.TABLE_NAME, null, null);
         int insertCount = 0;
@@ -888,7 +891,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return insertCount;
-    }
+    }*/
 
     public int syncClusters(JSONArray clusterList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
@@ -1654,43 +1657,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Villages getVillagesByCode(String psucode) {
+    public String getDistrictNameByCode() {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = VillagesTable.COLUMN_PSUCODE + " = ?";
+        String whereClause = ClusterTable.COLUMN_DIST_ID + " = ?";
 
-        String[] whereArgs = {psucode};
+        String[] whereArgs = {MainApp.selectedDistrict};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = VillagesTable.COLUMN_PSUCODE + " ASC";
+        String orderBy = ClusterTable.COLUMN_GEOAREA + " ASC";
 
-        Villages e = new Villages();
-        try {
+        String cl = null;
             c = db.query(
-                    VillagesTable.TABLE_NAME,  // The table to query
+                    ClusterTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
-                    orderBy
+                    orderBy,
+                    "1"
             );
-            while (c.moveToNext()) {
-                e = new Villages().hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
+        while (c.moveToNext()) {
+            cl = new Clusters().hydrate(c).getGeoarea();
         }
-        return e;
+        c.close();
+        db.close();
+
+        return cl;
 
     }
 
@@ -1877,183 +1875,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<Villages> getAllCountries() {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-
-        Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
-        String[] columns = null;
-        String whereClause = null;
-        String[] whereArgs = null;
-        String groupBy = VillagesTable.COLUMN_COUNTRY;
-        String having = null;
-        String orderBy = VillagesTable.COLUMN_COUNTRY + " ASC";
-        String limitRows = "9999";
-
-        List<Villages> allCountries = new ArrayList<>();
-        try {
-            c = db.query(
-                    distinct,       // Distinct values
-                    tableName,      // The table to query
-                    columns,        // The columns to return
-                    whereClause,    // The columns for the WHERE clause
-                    whereArgs,      // The values for the WHERE clause
-                    groupBy,        // don't group the rows
-                    having,         // don't filter by row groups
-                    orderBy,
-                    limitRows
-            );
-            while (c.moveToNext()) {
-
-                allCountries.add(new Villages().hydrate(c));
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allCountries;
-    }
-
-    public List<Villages> getTehsilsByDistrict(String cCode) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-
-        Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
-        String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ?";
-        String[] whereArgs = {cCode};
-        String groupBy = VillagesTable.COLUMN_PROVINCE;
-        String having = null;
-        String orderBy = VillagesTable.COLUMN_PROVINCE + " ASC";
-        String limitRows = "9999";
-
-        List<Villages> allProvinces = new ArrayList<>();
-        try {
-            c = db.query(
-                    distinct,       // Distinct values
-                    tableName,      // The table to query
-                    columns,        // The columns to return
-                    whereClause,    // The columns for the WHERE clause
-                    whereArgs,      // The values for the WHERE clause
-                    groupBy,        // don't group the rows
-                    having,         // don't filter by row groups
-                    orderBy,
-                    limitRows
-            );
-            while (c.moveToNext()) {
-
-                allProvinces.add(new Villages().hydrate(c));
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allProvinces;
-    }
-
-    public List<Villages> getUCsByTehsil(String cCode, String provCode) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-
-        Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
-        String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
-                VillagesTable.COLUMN_PROVCODE + "= ? ";
-        String[] whereArgs = {cCode, provCode};
-        String groupBy = VillagesTable.COLUMN_DISTRICT_NAME;
-        String having = null;
-        String orderBy = VillagesTable.COLUMN_DISTRICT_NAME + " ASC";
-        String limitRows = "9999";
-
-        List<Villages> allProvinces = new ArrayList<>();
-        try {
-            c = db.query(
-                    distinct,       // Distinct values
-                    tableName,      // The table to query
-                    columns,        // The columns to return
-                    whereClause,    // The columns for the WHERE clause
-                    whereArgs,      // The values for the WHERE clause
-                    groupBy,        // don't group the rows
-                    having,         // don't filter by row groups
-                    orderBy,
-                    limitRows
-            );
-            while (c.moveToNext()) {
-
-                allProvinces.add(new Villages().hydrate(c));
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allProvinces;
-    }
-
-    public List<Villages> getVillagesByDistrict(String cCode, String provCode, String distCode) {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-
-        Boolean distinct = true;
-        String tableName = VillagesTable.TABLE_NAME;
-        String[] columns = null;
-        String whereClause = VillagesTable.COLUMN_CCODE + "= ? AND " +
-                VillagesTable.COLUMN_PROVCODE + "= ? AND " +
-                VillagesTable.COLUMN_DCODE + "= ? ";
-        String[] whereArgs = {cCode, provCode, distCode};
-        String groupBy = VillagesTable.COLUMN_VILLAGE;
-        String having = null;
-        String orderBy = VillagesTable.COLUMN_VILLAGE + " ASC";
-        String limitRows = "9999";
-
-        List<Villages> allVillages = new ArrayList<>();
-        try {
-            c = db.query(
-                    distinct,       // Distinct values
-                    tableName,      // The table to query
-                    columns,        // The columns to return
-                    whereClause,    // The columns for the WHERE clause
-                    whereArgs,      // The values for the WHERE clause
-                    groupBy,        // don't group the rows
-                    having,         // don't filter by row groups
-                    orderBy,
-                    limitRows
-            );
-            while (c.moveToNext()) {
-
-                allVillages.add(new Villages().hydrate(c));
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allVillages;
-    }
-
     public Form getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -2128,44 +1949,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return mwra;
     }
-
-/*    public PregnancyDetails getPregDetailsByPregNo(String fmuid, String pregSno) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = PregnancyDetailsTable.COLUMN_UUID + "=? AND " +
-                PregnancyDetailsTable.COLUMN_FMUID + "=? AND " +
-                PregnancyDetailsTable.COLUMN_SNO + "=? "
-        ;
-
-        String[] whereArgs = {MainApp.form.getUid(), fmuid, pregSno};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
-
-        PregnancyDetails pregnancyD = new PregnancyDetails();  // Pregnancies can never be null.
-
-        c = db.query(
-                PregnancyDetailsTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            pregnancyD = new PregnancyDetails().Hydrate(c);
-        }
-
-        db.close();
-
-        return pregnancyD;
-    }*/
 
     public PregnancyMaster getPregMByFmuid(String fmuid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -2461,44 +2244,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return childARI;
     }
 
-
- /*   public List<Pregnancy> getPregBYMUID(String muid) throws JSONException {
+    public int getYoungestChildByMUId(String muid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
+        Cursor c;
         String[] columns = null;
 
-        String whereClause;
-        whereClause = PregnancyDetailsTable.COLUMN_MUID + "=?";
+        String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
+                FamilyMembersTable.COLUMN_MUID + "=?";
 
-        String[] whereArgs = {muid};
+        String[] whereArgs = {MainApp.form.getUid(), muid};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = PregnancyDetailsTable.COLUMN_ID + " ASC";
+        String orderBy = FamilyMembersTable.COLUMN_AGE_MONTHS + " ASC";
 
-        ArrayList<Pregnancy> pregByUID = new ArrayList<>();
-            c = db.query(
-                    PregnancyDetailsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Pregnancy preg = new Pregnancy().Hydrate(c);
+        c = db.query(
+                FamilyMembersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy,                    // The sort order
+                "1"
+        );
+        int chSNo = 0;
+        while (c.moveToNext()) {
+            chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
+        }
 
-                pregByUID.add(preg);
-            }
+        db.close();
 
-                c.close();
+        return chSNo;
+    }
 
-                db.close();
-
-        return pregByUID;
-    }*/
 
     public RandomHH getHHbyCluster(String clustercode, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -2576,5 +2356,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return resp;
+    }
+
+
+    public Clusters getCluster(String cluster_no) {
+
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = ClusterTable.COLUMN_CLUSTER_NO + " =?";
+        String[] whereArgs = new String[]{cluster_no};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                ClusterTable._ID + " ASC";
+
+        Clusters cluster = new Clusters();
+
+        c = db.query(
+                ClusterTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            cluster = new Clusters().hydrate(c);
+        }
+
+        c.close();
+
+        db.close();
+
+        return cluster;
+
     }
 }
