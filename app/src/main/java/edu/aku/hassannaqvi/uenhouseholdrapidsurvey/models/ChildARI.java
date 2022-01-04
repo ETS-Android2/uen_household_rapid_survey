@@ -1895,7 +1895,7 @@ public class ChildARI extends BaseObservable implements Observable {
 
     public void setI222(String i222) {
         this.i222 = i222;
-        setI223(i222.equals("1") ? this.i223 : "");
+        setI223(i222.equals("2") ? this.i223 : "");
         setI22401(i222.equals("1") ? this.i22401 : "");
         setI22402(i222.equals("1") ? this.i22402 : "");
         setI22403(i222.equals("1") ? this.i22403 : "");
