@@ -202,7 +202,7 @@ public class PregnancyListActivity extends AppCompatActivity {
     private void displayProceedDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_preg_dialog)
-                .setMessage(String.format(getString(R.string.message_preg_dialog_proceed), String.valueOf(MainApp.mwraList.size()), String.valueOf(MainApp.totalPreg)))
+                .setMessage(String.format(getString(R.string.message_preg_dialog_proceed), String.valueOf(MainApp.pregList.size()), String.valueOf(MainApp.totalPreg)))
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.
@@ -233,7 +233,7 @@ public class PregnancyListActivity extends AppCompatActivity {
     private void displayAddMoreDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_preg_dialog)
-                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), String.valueOf(MainApp.pregList)))
+                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), String.valueOf(MainApp.pregList.size())))
 
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
