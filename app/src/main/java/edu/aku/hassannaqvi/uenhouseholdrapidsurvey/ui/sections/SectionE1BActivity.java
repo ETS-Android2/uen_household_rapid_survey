@@ -69,16 +69,21 @@ public class SectionE1BActivity extends AppCompatActivity {
         childFmUID.add("");
         String mwraSno = MainApp.allMWRAList.get(0).getD101();
 
-        for (FamilyMembers fm : MainApp.allChildrenList) {
+        try {
+            for (FamilyMembers fm : db.AllChildrenByMUID(MainApp.pregD.getFmuid())) {
 
-            // populate only selected mwra's children (i.e selected for Pregnancy history. May Not be Indexed mother)
-            if (mwraSno.equals(fm.getD107())) {
-                childNames.add(fm.getD102());
-                childCodes.add(fm.getD101());
-                childAges.add(fm.getD109y());
-                childFmUID.add(fm.getUid());
+                // populate only selected mwra's children (i.e selected for Pregnancy history. May Not be Indexed mother)
+                if (mwraSno.equals(fm.getD107())) {
+                    childNames.add(fm.getD102());
+                    childCodes.add(fm.getD101());
+                    childAges.add(fm.getD109y());
+                    childFmUID.add(fm.getUid());
+                }
+
             }
-
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(familymembers): "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         childNames.add("Not Available/Died");
         childCodes.add("97");

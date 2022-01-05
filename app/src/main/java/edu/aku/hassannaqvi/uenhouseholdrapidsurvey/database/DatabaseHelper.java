@@ -2397,4 +2397,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cluster;
 
     }
+
+    public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
+                FamilyMembersTable.COLUMN_MUID + "=?";
+
+        String[] whereArgs = {MainApp.form.getUid(), muid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FamilyMembersTable.COLUMN_AGE_MONTHS + " ASC";
+
+        c = db.query(
+                FamilyMembersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+
+        );
+        List<FamilyMembers> allChildren= new ArrayList<>();
+        while (c.moveToNext()) {
+            allChildren.add(new FamilyMembers().Hydrate(c));
+        }
+
+        db.close();
+
+        return allChildren;
+    }
 }

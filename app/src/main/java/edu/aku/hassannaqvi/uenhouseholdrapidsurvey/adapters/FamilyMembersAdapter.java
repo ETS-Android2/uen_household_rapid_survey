@@ -36,7 +36,6 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         completeCount = 0;
         MainApp.memberComplete = false;
 
-
     }
 
 

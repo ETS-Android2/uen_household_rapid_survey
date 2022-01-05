@@ -160,7 +160,8 @@
     <string name="title_preg_dialog">Pregnancy Count</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="message_preg_dialog_addmore">You have entered only %1$s of %2$s Pregnancy. \nAre you sure you want to exit?</string>
+    <string name="message_preg_dialog_proceed">You have entered only %1$s of %2$s Pregnancy. \nAre you sure you want to continue?</string>
+    <string name="message_preg_dialog_addmore">You have already entered %1$s Pregnancy. \nAre you sure you want to add more pregnancies?</string>
 
     <string name="as1householdinformation_mainheading">AS1: Household Information: </string>
     <string name="as2householdroster_mainheading">AS2: Household Roster: </string>
