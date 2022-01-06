@@ -1232,8 +1232,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                    // The sort order
         );
         while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedChild: " + c.getCount());
-            Child ch = new Child();
+            Log.d(TAG, "getUnsyncedChildARI: " + c.getCount());
+            ChildARI ch = new ChildARI();
             allChildARI.put(ch.Hydrate(c).toJSONObject());
         }
 
@@ -1356,7 +1356,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedPregnancy(String id) {
+    public void updateSyncedPregnancyDetails(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyDetailsTable.COLUMN_SYNCED, true);
@@ -1365,6 +1365,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 PregnancyDetailsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedPregnancyMaster(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(PregnancyMasterTable.COLUMN_SYNCED, true);
+        values.put(PregnancyMasterTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = PregnancyMasterTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                PregnancyMasterTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedMaternalMortality(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(MaternalMortalityTable.COLUMN_SYNCED, true);
+        values.put(MaternalMortalityTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = MaternalMortalityTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                MaternalMortalityTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -1379,6 +1407,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 ChildTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedChildARI(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ChildARITable.COLUMN_SYNCED, true);
+        values.put(ChildARITable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ChildARITable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ChildARITable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedChildDIA(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ChildDIATable.COLUMN_SYNCED, true);
+        values.put(ChildDIATable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ChildDIATable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ChildDIATable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedEntryLog(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(EntryLogTable.COLUMN_SYNCED, true);
+        values.put(EntryLogTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = EntryLogTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                EntryLogTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

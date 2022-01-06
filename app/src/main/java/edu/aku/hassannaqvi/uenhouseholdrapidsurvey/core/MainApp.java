@@ -41,10 +41,10 @@ public class MainApp extends Application {
     public static final String PROJECT_NAME = "UEN_HH_RS";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
-    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/uen_rs/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
