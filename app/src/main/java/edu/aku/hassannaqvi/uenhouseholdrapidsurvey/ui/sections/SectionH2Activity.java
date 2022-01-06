@@ -37,9 +37,11 @@ public class SectionH2Activity extends AppCompatActivity {
 
     }
 
+
     private void setupSkips() {
 
     }
+
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
@@ -59,6 +61,7 @@ public class SectionH2Activity extends AppCompatActivity {
 
     }
 
+
     public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
@@ -70,6 +73,7 @@ public class SectionH2Activity extends AppCompatActivity {
         }
     }
 
+
     private void saveDraft() {
     }
 
@@ -79,8 +83,15 @@ public class SectionH2Activity extends AppCompatActivity {
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
+
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (Integer.parseInt(MainApp.mwra.getH203d()) == 0 && Integer.parseInt(MainApp.mwra.getH203h()) == 0 && Integer.parseInt(MainApp.mwra.getH203w()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.h203w, "All cannot be Zero");
+
+        return true;
     }
 
 

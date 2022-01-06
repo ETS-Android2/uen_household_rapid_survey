@@ -45,6 +45,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         bi.setChild(MainApp.child);
     }
 
+
     private boolean validateDatesBCG(String baseDate, String forwardDate) {
         try {
             Calendar baseCal = Calendar.getInstance();
@@ -64,6 +65,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean validateDates(String baseDate, String forwardDate) {
         try {
             Calendar baseCal = Calendar.getInstance();
@@ -82,6 +84,7 @@ public class SectionIMAActivity extends AppCompatActivity {
             return false;
         }
     }
+
 
     private boolean insertNewRecord() {
         if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
@@ -142,6 +145,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
+
 
     private boolean formValidation() {
 
