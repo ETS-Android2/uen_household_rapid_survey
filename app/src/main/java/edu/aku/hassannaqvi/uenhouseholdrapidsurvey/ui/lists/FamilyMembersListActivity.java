@@ -185,7 +185,6 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                             }
                             //MainApp.adolCount++;
                             break;
-
                     }
                 }
 
@@ -384,7 +383,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
     private void proceedSelect() {
 
-        String hhno = MainApp.form.getSno().substring(MainApp.form.getSno().length() - 1);
+     /*   String hhno = MainApp.form.getSno().substring(MainApp.form.getSno().length() - 1);
         // Select Index Mother using KishGrid
         String kishGridMWRA = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.mwraList.size());
         int sno = MainApp.mwraList.get(Integer.parseInt(kishGridMWRA));
@@ -405,29 +404,37 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             if (fm.getD107().equals(MainApp.familyMember.getD101()) && fm.getD115().equals("1") && Integer.parseInt(fm.getD109y()) < 5) {
                 MainApp.childOfSelectedMWRAList.add(Integer.parseInt(fm.getD101()));
             }
-        }
+        }*/
 
         // String kishGridChild = MainApp.kishGrid(Integer.parseInt(hhno), MainApp.childOfSelectedMWRAList.size());
 
         // sno =  (int) (Math.random()*MainApp.childOfSelectedMWRAList.size()) + 1;
 
-        // Updating database to mark indexed mother
+        // Selection of youngest Child with mother present
         try {
-            // Youngest Child index can never be zero
-            MainApp.selectedChild = String.valueOf(db.getYoungestChildByMUId(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid()) - 1);
+            // Youngest Child SNO can never be zero; -1 to get index number in familyList
+            MainApp.selectedChild = String.valueOf(db.getSNoYoungestChild() - 1);
         } catch (JSONException e) {
-
-            Toast.makeText(this, "JSONException(FamilyMemebers): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "JSONException(FamilyMembers): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
         selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getD102();
         MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getD109y());
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
-        // Updating adapter
-        MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
+        // Updating adapter for Child selection
+        MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("1");
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
 
+        // Select mother of indexed child
+        MainApp.selectedMWRA = String.valueOf(Integer.parseInt(MainApp.familyMember.getD107()) - 1);
+        MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(selectedMWRA));
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+
+        // Updating adapter for Mother selection
+        MainApp.familyList.get(Integer.parseInt(selectedMWRA)).setIndexed("2");
+        familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
 
         bi.btnRand.setVisibility(View.INVISIBLE);
         // bi.btnContinue.setVisibility(View.VISIBLE);

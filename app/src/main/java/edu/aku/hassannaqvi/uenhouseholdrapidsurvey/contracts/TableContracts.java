@@ -65,6 +65,7 @@ public class TableContracts {
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_AGE_MONTHS = "ageinmonths";
         public static final String COLUMN_MUID = "muid";
+        public static final String COLUMN_MOTHER_PRESENT = "motherPresent";
         public static final String COLUMN_INDEXED = "indexed";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";

@@ -81,6 +81,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private boolean mwra;
     private String ageInMonths;
     private String muid;
+    private String motherPresent;
     private String indexed = _EMPTY_;
     private String memCate = _EMPTY_;
 
@@ -99,6 +100,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setAppver(MainApp.form.getAppver());
         setpsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
+
     }
 
 
@@ -124,7 +126,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setAgeInMonth(String ageInMonths) {
-        this.id = ageInMonths;
+        this.ageInMonths = ageInMonths;
     }
 
     public String getMuid() {
@@ -133,6 +135,14 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
     public void setMuid(String muid) {
         this.muid = muid;
+    }
+
+    public String getMotherPresent() {
+        return motherPresent;
+    }
+
+    public void setMotherPresent(String motherPresent) {
+        this.motherPresent = motherPresent;
     }
 
     public String getUid() {
@@ -535,6 +545,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SNO));
         this.ageInMonths = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_AGE_MONTHS));
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_MUID));
+        this.motherPresent = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_MOTHER_PRESENT));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_INDEXED));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYSDATE));
@@ -594,6 +605,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_SNO, this.sno);
         json.put(FamilyMembersTable.COLUMN_AGE_MONTHS, this.ageInMonths);
         json.put(FamilyMembersTable.COLUMN_MUID, this.muid);
+        json.put(FamilyMembersTable.COLUMN_MOTHER_PRESENT, this.motherPresent);
         json.put(FamilyMembersTable.COLUMN_USERNAME, this.userName);
         json.put(FamilyMembersTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FamilyMembersTable.COLUMN_DEVICEID, this.deviceId);
@@ -677,10 +689,10 @@ public class FamilyMembers extends BaseObservable implements Observable {
 
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
 */
-                setAgeInMonth(String.valueOf(MILLISECONDS.toDays(millis) / 30));
-                long tYear = MILLISECONDS.toDays(millis) / 365;
-                long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
-                long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
+                long inDays = MILLISECONDS.toDays(millis);
+                long tYear = inDays / 365;
+                long tMonth = (inDays - (tYear * 365)) / 30;
+                long tDay = inDays - ((tYear * 365) + (tMonth * 30));
 
                 Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
                /* setH231d(String.valueOf(tDay));
@@ -689,6 +701,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 setD109y(String.valueOf(tYear));
                 setD109m(String.valueOf(tMonth));
                 setD109d(String.valueOf(tDay));
+                setAgeInMonth(String.valueOf((int) inDays));
                 if (tYear < 0)
                     setD109y("");
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));

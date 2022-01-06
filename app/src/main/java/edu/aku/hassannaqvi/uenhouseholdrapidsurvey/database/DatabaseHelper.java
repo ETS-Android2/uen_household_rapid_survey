@@ -419,13 +419,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
         values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
         values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
+        values.put(FamilyMembersTable.COLUMN_MOTHER_PRESENT, members.getMotherPresent());
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
         values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
         values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
-
         values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
-
         values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
@@ -519,7 +518,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-
     public int updatesMWRAColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
@@ -611,7 +609,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
     }
-
 
     //Functions that dealing with table data
     public boolean doLogin(String username, String password) {
@@ -706,7 +703,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allForms;
     }
-
 
     // istatus examples: (1) or (1,9) or (1,3,5)
     public Form getFormByAssessNo(String uid, String istatus) throws JSONException {
@@ -2246,15 +2242,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return childARI;
     }
 
-    public int getYoungestChildByMUId(String muid) throws JSONException {
+    public int getSNoYoungestChild() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
 
         String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
-                FamilyMembersTable.COLUMN_MUID + "=?";
+                FamilyMembersTable.COLUMN_MOTHER_PRESENT + "='1'";
 
-        String[] whereArgs = {MainApp.form.getUid(), muid};
+        String[] whereArgs = {MainApp.form.getUid()};
 
         String groupBy = null;
         String having = null;
@@ -2271,7 +2267,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 orderBy                    // The sort order
 
         );
-        int chSNo = 0;
+        int chSNo = 999;
         while (c.moveToNext()) {
             chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
         }

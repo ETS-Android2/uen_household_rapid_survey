@@ -31,7 +31,7 @@ public class SectionD1Activity extends AppCompatActivity {
     private static final String TAG = "SectionD1Activity";
     ActivitySectionD1Binding bi;
     private DatabaseHelper db;
-    private ArrayList<String> fatherNames, fatherCodes, motherNames, motherCodes, motherUID;
+    private ArrayList<String> fatherNames, fatherCodes, motherNames, motherCodes, motherUID, motherPresent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,7 @@ public class SectionD1Activity extends AppCompatActivity {
         motherCodes = new ArrayList<>();
 
         motherUID = new ArrayList<>();
+        motherPresent = new ArrayList<>();
 
         fatherNames.add("...");
         fatherCodes.add("...");
@@ -67,14 +68,17 @@ public class SectionD1Activity extends AppCompatActivity {
         motherNames.add("...");
         motherCodes.add("...");
         motherUID.add("...");
+        motherPresent.add("...");
         for (FamilyMembers fl : MainApp.motherList) {
             motherNames.add(fl.getD102());
             motherCodes.add(fl.getD101());
             motherUID.add(fl.getUid());
+            motherPresent.add(fl.getD115());
         }
         motherNames.add("Not Available/Died");
         motherCodes.add("97");
         motherUID.add("");
+        motherPresent.add("");
 
         // Apply the adapter to the Father spinner
         bi.d106.setAdapter(new ArrayAdapter<>(SectionD1Activity.this, R.layout.custom_spinner, fatherNames));
@@ -103,6 +107,7 @@ public class SectionD1Activity extends AppCompatActivity {
                 if (position == 0) return;
                 MainApp.familyMember.setD107(motherCodes.get(position));
                 MainApp.familyMember.setMuid(motherUID.get(position));
+                MainApp.familyMember.setMotherPresent(motherPresent.get(position));
             }
 
             @Override

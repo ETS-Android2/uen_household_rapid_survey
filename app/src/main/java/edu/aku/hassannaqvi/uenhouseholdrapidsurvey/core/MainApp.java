@@ -97,6 +97,7 @@ public class MainApp extends Application {
     public static int memberCount = 0;
     public static String selectedMWRA;
     public static String selectedChild;
+    public static String selectedChildName = "";
     public static int memberCountComplete;
     public static boolean memberComplete;
 
@@ -115,7 +116,6 @@ public class MainApp extends Application {
     public static int ageOfIndexChild;
     public static int totalPreg = 0;
     public static int totalMortalities = 0;
-    public static String selectedChildName = "";
     public static int pregCount = 0;
     public static int pregCountComplete = 0;
     public static boolean pregComplete = false;

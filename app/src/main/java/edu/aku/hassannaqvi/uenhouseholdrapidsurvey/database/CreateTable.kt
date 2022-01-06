@@ -66,6 +66,7 @@ object CreateTable {
             + FamilyMembersTable.COLUMN_SNO + " TEXT,"
             + FamilyMembersTable.COLUMN_AGE_MONTHS + " TEXT,"
             + FamilyMembersTable.COLUMN_MUID + " TEXT,"
+            + FamilyMembersTable.COLUMN_MOTHER_PRESENT + " TEXT,"
             + FamilyMembersTable.COLUMN_USERNAME + " TEXT,"
             + FamilyMembersTable.COLUMN_SYSDATE + " TEXT,"
             + FamilyMembersTable.COLUMN_INDEXED + " TEXT,"
