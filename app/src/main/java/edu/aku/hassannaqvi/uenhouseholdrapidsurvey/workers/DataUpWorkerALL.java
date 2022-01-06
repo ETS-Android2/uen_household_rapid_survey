@@ -25,7 +25,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
@@ -316,7 +315,7 @@ public class DataUpWorkerALL extends Worker {
 
                 Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
 
-                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
                     Log.d(TAG, "Connection Response: " + urlConnection.getResponseCode());
                     displayNotification(nTitle, "Connection Established");
 
