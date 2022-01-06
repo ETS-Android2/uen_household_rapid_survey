@@ -2318,7 +2318,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
-                FamilyMembersTable.COLUMN_MOTHER_PRESENT + "='1'";
+                FamilyMembersTable.COLUMN_MOTHER_PRESENT + "='1' AND " +
+                "CAST(" + FamilyMembersTable.COLUMN_AGE_MONTHS + " AS INTEGER) < 1825 ";
 
         String[] whereArgs = {MainApp.form.getUid()};
 

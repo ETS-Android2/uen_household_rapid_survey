@@ -163,21 +163,11 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         }
 
         switch (members.getMemCate()) {
-            case "1":
+            case "2":
                 memCate.setText("Mother");
                 break;
-            case "2":
-                if (motherPresent) {
-                    memCate.setText("Child");
-                } else {
-                    memCate.setVisibility(View.GONE);
-                }
-                break;
-            case "3":
-                memCate.setText("Adol. M");
-                break;
-            case "4":
-                memCate.setText("Adol. F");
+            case "1":
+                memCate.setText("Child");
                 break;
             default:
                 memCate.setVisibility(View.GONE);

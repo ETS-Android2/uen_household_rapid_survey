@@ -307,9 +307,10 @@ public class DataUpWorkerALL extends Worker {
 
                 String writeEnc = CipherSecure.encrypt(jsonParam.toString());
 
-                longInfo(writeEnc);
+                longInfo("Encrypted: " + writeEnc);
 
                 //     wr.writeBytes(jsonParam.toString());
+
                 wr.flush();
                 wr.close();
 
@@ -332,7 +333,8 @@ public class DataUpWorkerALL extends Worker {
 
                     }
                     displayNotification(nTitle, "Received Data");
-                    Log.d(TAG, "doWork(EN): " + result.toString());
+                    longInfo("result-server: " + writeEnc);
+
                 } else {
 
                     Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
