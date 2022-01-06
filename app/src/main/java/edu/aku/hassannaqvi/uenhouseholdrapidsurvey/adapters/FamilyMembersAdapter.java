@@ -100,10 +100,10 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
                 marStatus = "UnMarried";
                 break;
             case "3":
-                marStatus = "Divorced/Widowed";
+                marStatus = "Widowed";
                 break;
             case "4":
-                marStatus = "Separated";
+                marStatus = "Divorced/Separated";
                 break;
                /* case "5":
                     marStatus = "Un-Married";

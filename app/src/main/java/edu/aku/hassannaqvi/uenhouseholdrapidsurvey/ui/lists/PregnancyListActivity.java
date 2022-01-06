@@ -78,6 +78,7 @@ public class PregnancyListActivity extends AppCompatActivity {
 
                 }
             });
+    private final boolean proceedFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,26 +184,31 @@ public class PregnancyListActivity extends AppCompatActivity {
         if (MainApp.pregList.size() < MainApp.totalPreg) {
             displayProceedDialog();
         } else {
-
-            MainApp.allMWRAList.remove(0);
-            MainApp.pregList = new ArrayList<>();
-
-            if (MainApp.allMWRAList.size() > 0) {
-                startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
-            } else {
-                // if no more pregnancy and no more mwra than go to E2
-                startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
-
-            }        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
-            finish();
+            proceedNext();
         }
+
+
+    }
+
+    private void proceedNext() {
+        MainApp.allMWRAList.remove(0);
+        MainApp.pregList = new ArrayList<>();
+
+        if (MainApp.allMWRAList.size() > 0) {
+            startActivity(new Intent(this, SectionE1AActivity.class).putExtra("complete", true));
+        } else {
+            // if no more pregnancy and no more mwra than go to E2
+            startActivity(new Intent(this, SectionE2AActivity.class).putExtra("complete", true));
+
+        }        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+        finish();
 
     }
 
     private void displayProceedDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_preg_dialog)
-                .setMessage(String.format(getString(R.string.message_preg_dialog_proceed), String.valueOf(MainApp.pregList.size()), String.valueOf(MainApp.totalPreg)))
+                .setMessage(String.format(getString(R.string.message_preg_dialog_proceed), MainApp.pregList.size() + "", MainApp.totalPreg + ""))
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.
@@ -210,8 +216,9 @@ public class PregnancyListActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Continue with delete operation
 //                        proceedSelect();
-                        startActivity(new Intent(PregnancyListActivity.this, SectionE2AActivity.class).putExtra("complete", true));
-                        finish();
+                     /*   startActivity(new Intent(PregnancyListActivity.this, SectionE2AActivity.class).putExtra("complete", true));
+                        finish();*/
+                        proceedNext();
                     }
                 })
                 // A null listener allows the button to dismiss the dialog and take no further action.
@@ -233,7 +240,7 @@ public class PregnancyListActivity extends AppCompatActivity {
     private void displayAddMoreDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_preg_dialog)
-                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), String.valueOf(MainApp.pregList.size())))
+                .setMessage(String.format(getString(R.string.message_preg_dialog_addmore), MainApp.pregList.size() + ""))
 
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
