@@ -504,7 +504,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0501d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:type="range" />
 
@@ -529,6 +529,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0501m}"
+                                    android:enabled="@{Integer.parseInt(child.im0501d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -554,6 +555,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0501y}"
+                                    android:enabled="@{Integer.parseInt(child.im0501d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -616,7 +618,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0502d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:type="range" />
 
@@ -641,6 +643,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0502m}"
+                                    android:enabled="@{Integer.parseInt(child.im0502d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -666,6 +669,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0502y}"
+                                    android:enabled="@{Integer.parseInt(child.im0502d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -728,7 +732,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0503d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -754,7 +758,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0503m}"
-                                    android:enabled="@{!child.im0503d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0503d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -780,7 +784,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0503y}"
-                                    android:enabled="@{!child.im0503d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0503d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -843,7 +847,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0504d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -869,7 +873,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0504m}"
-                                    android:enabled="@{!child.im0504d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0504d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -895,7 +899,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0504y}"
-                                    android:enabled="@{!child.im0504d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0504d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -958,7 +962,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0505d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -984,7 +988,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0505m}"
-                                    android:enabled="@{!child.im0505d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0505d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1010,7 +1014,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0505y}"
-                                    android:enabled="@{!child.im0505d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0505d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1073,7 +1077,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0506d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1099,7 +1103,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0506m}"
-                                    android:enabled="@{!child.im0506d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0506d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1125,7 +1129,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0506y}"
-                                    android:enabled="@{!child.im0506d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0506d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1188,7 +1192,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0507d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1214,7 +1218,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0507m}"
-                                    android:enabled="@{!child.im0507d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0507d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1240,7 +1244,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0507y}"
-                                    android:enabled="@{!child.im0507d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0507d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1303,7 +1307,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0508d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1329,7 +1333,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0508m}"
-                                    android:enabled="@{!child.im0508d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0508d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1355,7 +1359,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0508y}"
-                                    android:enabled="@{!child.im0508d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0508d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1418,7 +1422,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0509d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1444,7 +1448,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0509m}"
-                                    android:enabled="@{!child.im0509d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0509d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1470,7 +1474,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0509y}"
-                                    android:enabled="@{!child.im0509d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0509d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1533,7 +1537,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0510d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1559,7 +1563,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0510m}"
-                                    android:enabled="@{!child.im0510d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0510d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1585,7 +1589,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0510y}"
-                                    android:enabled="@{!child.im0510d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0510d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1648,7 +1652,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0511d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1674,7 +1678,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0511m}"
-                                    android:enabled="@{!child.im0511d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0511d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1700,7 +1704,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0511y}"
-                                    android:enabled="@{!child.im0511d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0511d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1763,7 +1767,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0512d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1789,7 +1793,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0512m}"
-                                    android:enabled="@{!child.im0512d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0512d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1815,7 +1819,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0512y}"
-                                    android:enabled="@{!child.im0512d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0512d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1878,7 +1882,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0513d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -1904,7 +1908,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0513m}"
-                                    android:enabled="@{!child.im0513d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0513d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1930,7 +1934,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0513y}"
-                                    android:enabled="@{!child.im0513d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0513d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -1993,7 +1997,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0514d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -2019,7 +2023,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0514m}"
-                                    android:enabled="@{!child.im0514d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0514d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2045,7 +2049,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0514y}"
-                                    android:enabled="@{!child.im0514d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0514d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -2108,7 +2112,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0515d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -2134,7 +2138,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0515m}"
-                                    android:enabled="@{!child.im0515d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0515d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2160,7 +2164,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0515y}"
-                                    android:enabled="@{!child.im0515d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0515d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />
@@ -2223,7 +2227,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0516d}"
-                                    app:maxValue="31"
+                                    app:maxValue="99"
                                     app:minValue="1"
                                     app:defaultValue="97"
                                     app:type="range" />
@@ -2249,7 +2253,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={child.im0516m}"
-                                    android:enabled="@{!child.im0516d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0516d) &lt;=31}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2275,7 +2279,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.im0516y}"
-                                    android:enabled="@{!child.im0516d.equals(`97`)}"
+                                    android:enabled="@{Integer.parseInt(child.im0516d) &lt;=31}"
                                     app:maxValue="2021"
                                     app:minValue="2016"
                                     app:type="range" />

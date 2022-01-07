@@ -56,52 +56,52 @@ public class Child extends BaseObservable implements Observable {
     private String im04d = _EMPTY_;
     private String im04m = _EMPTY_;
     private String im04y = _EMPTY_;
-    private String im0501d = _EMPTY_;
+    private String im0501d = "0";
     private String im0501m = _EMPTY_;
     private String im0501y = _EMPTY_;
-    private String im0502d = _EMPTY_;
+    private String im0502d = "0";
     private String im0502m = _EMPTY_;
     private String im0502y = _EMPTY_;
-    private String im0503d = _EMPTY_;
+    private String im0503d = "0";
     private String im0503m = _EMPTY_;
     private String im0503y = _EMPTY_;
-    private String im0504d = _EMPTY_;
+    private String im0504d = "0";
     private String im0504m = _EMPTY_;
     private String im0504y = _EMPTY_;
-    private String im0505d = _EMPTY_;
+    private String im0505d = "0";
     private String im0505m = _EMPTY_;
     private String im0505y = _EMPTY_;
-    private String im0506d = _EMPTY_;
+    private String im0506d = "0";
     private String im0506m = _EMPTY_;
     private String im0506y = _EMPTY_;
-    private String im0507d = _EMPTY_;
+    private String im0507d = "0";
     private String im0507m = _EMPTY_;
     private String im0507y = _EMPTY_;
-    private String im0508d = _EMPTY_;
+    private String im0508d = "0";
     private String im0508m = _EMPTY_;
     private String im0508y = _EMPTY_;
-    private String im0509d = _EMPTY_;
+    private String im0509d = "0";
     private String im0509m = _EMPTY_;
     private String im0509y = _EMPTY_;
-    private String im0510d = _EMPTY_;
+    private String im0510d = "0";
     private String im0510m = _EMPTY_;
     private String im0510y = _EMPTY_;
-    private String im0511d = _EMPTY_;
+    private String im0511d = "0";
     private String im0511m = _EMPTY_;
     private String im0511y = _EMPTY_;
-    private String im0512d = _EMPTY_;
+    private String im0512d = "0";
     private String im0512m = _EMPTY_;
     private String im0512y = _EMPTY_;
-    private String im0513d = _EMPTY_;
+    private String im0513d = "0";
     private String im0513m = _EMPTY_;
     private String im0513y = _EMPTY_;
-    private String im0514d = _EMPTY_;
+    private String im0514d = "0";
     private String im0514m = _EMPTY_;
     private String im0514y = _EMPTY_;
-    private String im0515d = _EMPTY_;
+    private String im0515d = "0";
     private String im0515m = _EMPTY_;
     private String im0515y = _EMPTY_;
-    private String im0516d = _EMPTY_;
+    private String im0516d = "0";
     private String im0516m = _EMPTY_;
     private String im0516y = _EMPTY_;
     private String im07 = _EMPTY_;
@@ -614,6 +614,13 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0501d(String im0501d) {
         this.im0501d = im0501d;
+        if (Integer.parseInt(im0501d) >= 31) {
+            setIm0501m("");
+            setIm0501y("");
+        } else {
+            setIm0501m(this.im0501m);
+            setIm0501y(this.im0501y);
+        }
         notifyPropertyChanged(BR.im0501d);
     }
 
@@ -644,6 +651,13 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0502d(String im0502d) {
         this.im0502d = im0502d;
+        if (Integer.parseInt(im0502d) >= 31) {
+            setIm0502m("");
+            setIm0502y("");
+        } else {
+            setIm0501m(this.im0502m);
+            setIm0501y(this.im0502y);
+        }
         notifyPropertyChanged(BR.im0502d);
     }
 
@@ -674,8 +688,13 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0503d(String im0503d) {
         this.im0503d = im0503d;
-        setIm0503m(im0503d.equals("97") ? "" : this.im0503m);
-        setIm0503y(im0503d.equals("97") ? "" : this.im0503y);
+        if (Integer.parseInt(im0503d) >= 31) {
+            setIm0503m("");
+            setIm0503y("");
+        } else {
+            setIm0503m(this.im0503m);
+            setIm0503y(this.im0503y);
+        }
         notifyPropertyChanged(BR.im0503d);
     }
 
@@ -706,8 +725,13 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0504d(String im0504d) {
         this.im0504d = im0504d;
-        setIm0504m(im0504d.equals("97") ? "" : this.im0504m);
-        setIm0504y(im0504d.equals("97") ? "" : this.im0504y);
+        if (Integer.parseInt(im0504d) >= 31) {
+            setIm0504m("");
+            setIm0504y("");
+        } else {
+            setIm0504m(this.im0504m);
+            setIm0504y(this.im0504y);
+        }
         notifyPropertyChanged(BR.im0504d);
     }
 
