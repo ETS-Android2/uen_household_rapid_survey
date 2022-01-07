@@ -9,22 +9,14 @@
     <string name="splashText"> </string>
     <string name="check_pending_forms">CHECK PENDING FORMS</string>
     <string name="start_interview" translatable="false">START INTERVIEW</string>
-    <string name="start_data_entry" translatable="false">START DATA ENTRY</string>
-    <string name="open_anthro_form" translatable="false">UPDATE ANTHRO FORM</string>
     <string name="open_blood_form" translatable="false">UPDATE BLOOD INFORMANTION</string>
     <string name="open_stool_form" translatable="false">UPDATE STOOL INFORMANTION</string>
     <string name="records_summary">Records Summary</string>
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="database">Database</string>
-    <string name="region" translatable="false">REGION</string>
     <string name="district" translatable="false">DISTRICT</string>
     <string name="uc" translatable="false">UC</string>
-    <string name="cityVillage" translatable="false">City / Village</string>
-    <string name="childScreening" translatable="false">Child Screening</string>
-    <string name="childFollowup" translatable="false">Child Follow-up</string>
-    <string name="wraScreening" translatable="false">WRAs Screening</string>
-    <string name="wraFollowup" translatable="false">WRAs Follow-up</string>
     <string name="btnSave" translatable="false">Save</string>
     <string name="btnEnd" translatable="false">Cancel</string>
     <string name="signin" translatable="false">SIGN IN</string>
@@ -105,8 +97,6 @@
     <string name="num"> Number </string>
     <string name="name"> Name </string>
     <string name="contactnum">Contact Number </string>
-    <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
-    <string name="newHHheadname"> Name of new head of the household </string>
 
 
     <string name="istatus"> Result of Household Questionnaire interview </string>
@@ -123,7 +113,6 @@
 
     <!--Error Messages-->
     <string name="upd_db_form" translatable="false"> updateDB(Form):\t </string>
-    <string name="upd_db_food_consumption" translatable="false"> updateDB(FoodConsumption):\t </string>
     <string name="upd_db_error" translatable="false"> Updating Database… ERROR! </string>
     <string name="db_excp_error" translatable="false"> Database Exception... ERROR! </string>
     <string name="upd_db" translatable="false"> Updating Database...\t </string>
@@ -148,11 +137,6 @@
     <string name="info_hh_form_not_exist" translatable="false">INFO: Household information does not exist.</string>
     <string name="hh_not_found" translatable="false">Household not Found</string>
     <string name="hh_exists_form" translatable="false"> JSONException(Form): \t </string>
-    <string name="w202t2" translatable="false">Probe for the type of person seen and record all answers given.</string>
-    <string name="w311t2" translatable="false">Агар аз 24 соат камтар бошад, соатро нависед.</string>
-    <string name="instrc3" translatable="false">Варақчаи Гуруҳи Ғизоҳоро истифода баред то ин ки ғизо муайян шавад ки ба кадом гурӯҳ дохил мебошад.</string>
-    <string name="modetitle" translatable="false">MODULE E: САНҶИШИ ГЕМОГЛОБИН ВА ҶАМЪОВАРИИ СТУЛ</string>
-    <string name="woman_child_info_missing" translatable="false">Please fill woman and child sections before entering this information</string>
     <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
     <string name="open_new_form" translatable="false">OPEN NEW FORM</string>
     <string name="options" translatable="false">Options</string>
