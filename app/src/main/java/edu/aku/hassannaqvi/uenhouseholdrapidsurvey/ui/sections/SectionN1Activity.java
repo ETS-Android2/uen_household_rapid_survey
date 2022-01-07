@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.form;
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ public class SectionN1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_n1);
         bi.setForm(form);
         setSupportActionBar(bi.toolbar);

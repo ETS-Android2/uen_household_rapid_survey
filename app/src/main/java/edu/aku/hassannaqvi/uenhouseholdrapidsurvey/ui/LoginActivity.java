@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-      //  settingCountryCode();
+        //  settingCountryCode();
         /*if (getIntent().hasExtra("pos")) {
             pos = getIntent().getExtras().getInt("pos");
             bi.countrySwitch.setSelection(pos);
@@ -403,24 +403,14 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.editor
                         .putString("lang", "1")
                         .apply();
+                break;
             case 2:
-                lang = "ps";
-                country = "AF";
+                lang = "sd";
+                country = "PK";
                 MainApp.editor
                         .putString("lang", "2")
                         .apply();
-            case 3:
-                lang = "tg";
-                country = "TJ";
-                MainApp.editor
-                        .putString("lang", "3")
-                        .apply();
-            case 4:
-                lang = "ru";
-                country = "KG";
-                MainApp.editor
-                        .putString("lang", "4")
-                        .apply();
+                break;
             default:
                 lang = "en";
                 country = "US";
@@ -519,25 +509,16 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.NO:
                 return true;
 
-            case R.id.PK:
+            case R.id.UR:
                 MainApp.selectedLanguage = 1;
                 MainApp.langRTL = true;
                 break;
 
-            case R.id.AF:
+            case R.id.SD:
                 MainApp.selectedLanguage = 2;
                 MainApp.langRTL = true;
                 break;
 
-            case R.id.TJ:
-                MainApp.selectedLanguage = 3;
-                MainApp.langRTL = false;
-                break;
-
-            case R.id.KG:
-                MainApp.selectedLanguage = 4;
-                MainApp.langRTL = false;
-                break;
 
             default:
                 MainApp.selectedLanguage = 0;

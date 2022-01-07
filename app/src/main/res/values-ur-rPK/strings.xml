@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UEN Rapid Survey</string>
+    <string name="app_name" translatable="false">UEN Rapid Survey - URDU</string>
     <string name="btnDownload" translatable="false">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="prompt_email">Email</string>
