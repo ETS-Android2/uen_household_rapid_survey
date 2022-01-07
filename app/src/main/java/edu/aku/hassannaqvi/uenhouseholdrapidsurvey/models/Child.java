@@ -674,6 +674,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0503d(String im0503d) {
         this.im0503d = im0503d;
+        setIm0503m(im0503d.equals("97") ? "" : this.im0503m);
         notifyPropertyChanged(BR.im0503d);
     }
 

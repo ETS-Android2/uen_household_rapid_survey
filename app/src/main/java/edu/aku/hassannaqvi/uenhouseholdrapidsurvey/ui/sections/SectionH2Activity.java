@@ -92,7 +92,7 @@ public class SectionH2Activity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (Integer.parseInt(MainApp.mwra.getH203d()) == 0 && Integer.parseInt(MainApp.mwra.getH203h()) == 0 && Integer.parseInt(MainApp.mwra.getH203w()) == 0)
+        if (MainApp.mwra.getH202().equals("1") && Integer.parseInt(MainApp.mwra.getH203d()) == 0 && Integer.parseInt(MainApp.mwra.getH203h()) == 0 && Integer.parseInt(MainApp.mwra.getH203w()) == 0)
             return Validator.emptyCustomTextBox(this, bi.h203w, "All cannot be Zero");
 
         return true;
