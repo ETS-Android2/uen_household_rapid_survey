@@ -15,8 +15,6 @@
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="database">Database</string>
-    <string name="district" translatable="false">DISTRICT</string>
-    <string name="uc" translatable="false">UC</string>
     <string name="btnSave" translatable="false">Save</string>
     <string name="btnEnd" translatable="false">Cancel</string>
     <string name="signin" translatable="false">SIGN IN</string>
@@ -27,7 +25,6 @@
     <string name="tajikistan" translatable="false">Tajikistan</string>
     <string name="btnLogin" translatable="false">Login</string>
     <string name="btnDownloadData" translatable="false">Download Data</string>
-    <string name="cs_MAexist" translatable="false">might be already exist</string>
 
     <string name="netwrok" translatable="false">Network connection not available!</string>
     <string name="invalidpass" translatable="false">Invalid Password</string>
@@ -68,24 +65,10 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="week"> Week </string>
-    <string name="day"> Day </string>
-    <string name="hour"> Hour </string>
-    <string name="minute"> Minute </string>
-    <string name="years"> Year(s) </string>
-    <string name="months"> Month(s) </string>
 
 
     <string name="istatus"> Result of Household Questionnaire interview </string>
     <string name="istatusi"> Discuss any result not completed with team leader </string>
-    <string name="istatus01"> Completed </string>
-    <string name="istatus02"> Dwelling locked (Not At Home) </string>
-    <string name="istatus03"> Pending/Partially complete </string>
-    <string name="istatus04"> Unable to answer </string>
-    <string name="istatus05"> Ineligible respondent </string>
-    <string name="istatus06"> Household not found </string>
-    <string name="istatus07"> Didn’t answer due to illness caused by Corona </string>
-    <string name="istatus96"> Other (Specify) </string>
 
 
     <!--Error Messages-->
@@ -99,9 +82,6 @@
     <string name="agecal" translatable="false">ageCal:\t</string>
     <string name="network_conn_error" translatable="false"> Network connection not available ! </string>
     <string name="no_mother_selected_child_list" translatable="false"> No Mother has been selected. Please select a mother before opening Child List </string>
-    <string name="sec_not_available_moment" translatable="false"> This section is not available at the moment. </string>
-    <string name="no_mother_selected_preg_list" translatable="false"> No Mother has been selected. Please select a mother before opening Pregnancy List </string>
-    <string name="h220_error" translatable="false"> H220: WRA count does not match Females 20–49. </string>
     <string name="onitemselected" translatable="false"> onItemSelected(Samples):\t </string>
     <string name="upd_samples" translatable="false"> updateDB(Samples):\t </string>
     <string name="upd_anthro" translatable="false"> updateDB(Anthro):\t </string>
@@ -110,8 +90,6 @@
     <string name="username_required" translatable="false"> Username is required. </string>
     <string name="incorrect_username_or_password" translatable="false">Incorrect Username or Password</string>
     <string name="open_hh_form" translatable="false"> Open Household Form </string>
-    <string name="open_anhtro_form" translatable="false">Open Anthro Form</string>
-    <string name="info_hh_form_not_exist" translatable="false">INFO: Household information does not exist.</string>
     <string name="hh_not_found" translatable="false">Household not Found</string>
     <string name="hh_exists_form" translatable="false"> JSONException(Form): \t </string>
     <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
@@ -119,7 +97,6 @@
     <string name="options" translatable="false">Options</string>
 
     <string name="title_preg_dialog">Pregnancy Count</string>
-    <string name="yes">Yes</string>
     <string name="message_preg_dialog_proceed">You have entered only %1$s of %2$s Pregnancy. \nAre you sure you want to continue?</string>
     <string name="message_preg_dialog_addmore">You have already entered %1$s Pregnancy. \nAre you sure you want to add more pregnancies?</string>
 
@@ -130,51 +107,46 @@
     <string name="as1q01a"> Afghanistan </string>
     <string name="as1q01t"> Tajikistan </string>
     <string name="as1q01k"> Kyrgyztan </string>
-    <string name="a104_info">Database should store province code but it should display Province Name in app</string>
-    <string name="a105_info">Database should store District code but it should display District Name in app</string>
-    <string name="a106_info">Database should store Tehsil code but it should display Tehsil Name in app</string>
-    <string name="a107_info">Database should store Union Council code but it should display Name in App Name in app</string>
-    <string name="a102_info">auto save information from database</string>
-    <string name="a108_info">auto save information from database</string>
-    <string name="a103_info">It should matched with Randomized Household Number</string>
-    <string name="a113_info">It should matched with Randomization Serial Number</string>
-    <string name="concent_info">The name of interviewer will be replace by the Full name of User</string>
-    <string name="c102_info">IF THE AGE OF RESPONDENT AGE IS LESS THAN 18 IT SHOULD PROMPT THAT&quot;Respondent is Not Eligible&quot;</string>
-    <string name="d103t_info">Display the Name of Current member from D102 in application</string>
-    <string name="d108y_info">Max year should be equal to current year of system</string>
-    <string name="d106_info">AT LEAST MINIMUM 10 YEARS OF AGE DIFFERENCE SHOULD BE BETWEEN THE AGE OF CHILD AND AGE OF FATHER</string>
-    <string name="d107_info">AT LEAST MINIMUM 10 YEARS OF AGE DIFFERENCE SHOULD BE BETWEEN THE AGE OF CHILD AND AGE OF MOTHER</string>
-    <string name="d115_info">Mother of youngest child is selected for MWRA interview, incase if children of two different mother are of same age a child will be selected randomly</string>
     <string name="d112_info">Display HH summary at the end of family roaster</string>
-    <string name="etitle1_info">THIS SECTION WILL BE REREATED FOR ALL MWRA`S AVAILABLE IN THE HOUSEHOLD AT THE TIME OF INTERVIEW</string>
-    <string name="e101_info">Check the current MWRA from Family roaster if any child is reported mark YES</string>
-    <string name="e102_info">Cannot be less than the reported number of child of current MWRA</string>
-    <string name="e10402_info">IN CASE FOR MULTIPLE PREGNANCY THE SHOULD INQUIRE ABOUT THE STATUS OF BOTH THE CHILDREN</string>
-    <string name="e108_info">Display the list of children, this MWRA is mentioned as a biological mother</string>
-    <string name="e114y">Month</string>
-    <string name="e114m">Weeks</string>
-    <string name="einst_info">THIS SECTION WILL BE REPEATED AS PER THE RESPONSE IN E116 AND E117</string>
-    <string name="f101_info">THIS MODULE WILL BE FILLED BY THE SELECTED WOMEN (MOTHER OF THE YOUNGEST CHILD AVAILABLE AT THE TIME OF THE INTERVIEW)</string>
     <string name="h10496x"> Please Specify </string>
     <string name="h132a96x"> Please Specify </string>
-    <string name="k10302_info">IF K103 IS 2 GO TO K105A</string>
     <string name="im2304">Naunehal health camp</string>
 
-    <string name="householdidentification_mainheading">: </string>
-    <string name="sectiondhouseholdmemberinformation_mainheading">: </string>
-    <string name="householdinformation_mainheading">: </string>
-    <string name="reproductivehealth_mainheading">: </string>
-    <string name="e2maternalmortalitystatus_mainheading">: </string>
-    <string name="sectionfantenatalcare_mainheading">: </string>
-    <string name="sectiongdeliverypreparednessandexperience_mainheading">: </string>
-    <string name="sectionh1newbornhealth_mainheading">: </string>
-    <string name="sectionh2postnatalcare_mainheading">: </string>
-    <string name="sectionkfamilyplanning_mainheading">: </string>
-    <string name="sectionlwomenempowerment_mainheading">: </string>
-    <string name="sectioni1diarrheainformation_mainheading">: </string>
-    <string name="sectioni2acuterespiratoryinfectionari_mainheading">: </string>
-    <string name="sectionimimmunizationinformation_mainheading">: </string>
-    <string name="sectionununmetneeds_mainheading">-: -</string>
+    <string name="district"> ضلع </string>
+    <string name="uc"> یونین کونسل </string>
+    <string name="cs_MAexist"> پہلے سے موجود ہو سکتا ہے </string>
+    <string name="week"> ہفتہ </string>
+    <string name="day"> دن </string>
+    <string name="hour"> گھنٹہ </string>
+    <string name="minute"> منٹ </string>
+    <string name="years"> سال </string>
+    <string name="months"> مہینہ </string>
+    <string name="istatus01"> مکمل </string>
+    <string name="istatus02"> رہائش مقفل (گھر پر نہیں) </string>
+    <string name="istatus03"> زیر التواء/جزوی طور پر مکمل </string>
+    <string name="istatus04"> جواب دینے سے قاصر </string>
+    <string name="istatus05"> نااہل جواب دہندہ </string>
+    <string name="istatus06"> گھر نہیں ملا </string>
+    <string name="istatus07"> کورونا سے ہونے والی بیماری کی وجہ سے جواب نہیں دیا۔ </string>
+    <string name="istatus96"> دیگر (براہ کرم وضاحت کریں) </string>
+    <string name="yes"> جی ہاں </string>
+    <string name="e114y"> مہینہ </string>
+    <string name="e114m"> ہفتے </string>
+    <string name="householdidentification_mainheading"> گھریلو شناخت </string>
+    <string name="sectiondhouseholdmemberinformation_mainheading"> گھریلو اراکین کی معلومات </string>
+    <string name="householdinformation_mainheading"> گھریلو معلومات </string>
+    <string name="reproductivehealth_mainheading"> تولیدی صحت </string>
+    <string name="e2maternalmortalitystatus_mainheading"> زچگی کی شرح اموات </string>
+    <string name="sectionfantenatalcare_mainheading"> قبل از پیدائش کی دیکھ بھال </string>
+    <string name="sectiongdeliverypreparednessandexperience_mainheading"> ترسیل کی تیاری اور تجربہ </string>
+    <string name="sectionh1newbornhealth_mainheading"> نوزائیدہ صحت </string>
+    <string name="sectionh2postnatalcare_mainheading"> بعد از پیدائش کی دیکھ بھال </string>
+    <string name="sectionkfamilyplanning_mainheading"> خاندانی منصوبہ بندی </string>
+    <string name="sectionlwomenempowerment_mainheading"> خواتین کو بااختیار بنانا </string>
+    <string name="sectioni1diarrheainformation_mainheading"> اسہال کی معلومات </string>
+    <string name="sectioni2acuterespiratoryinfectionari_mainheading"> شدید سانس کا انفیکشن </string>
+    <string name="sectionimimmunizationinformation_mainheading"> حفاظتی ٹیکوں کی معلومات </string>
+    <string name="sectionununmetneeds_mainheading"> غیر پوری ضروریات </string>
     <string name="splashText2">  </string>
     <string name="no"> نہیں </string>
     <string name="dkn"> معلوم نہیں </string>
@@ -679,7 +651,7 @@
     <string name="e110m">مہینے</string>
     <string name="e110d">دن</string>
     <string name="e111">مردہ پیدائش کی کیا وجوہات تھیں؟</string>
-    <string name="e11101">37ہفتوں سے قبل پیدائش(قبل از وقت </string>
+    <string name="e11101"> ڄمڻ 22 هفتن کان وڌيڪ (اڳتي) </string>
     <string name="e11102">ہائی بلڈ پریشر</string>
     <string name="e11103">خون کی کمی </string>
     <string name="e11104">پیدائشی انجری (سر پہ چوٹ)</string>
