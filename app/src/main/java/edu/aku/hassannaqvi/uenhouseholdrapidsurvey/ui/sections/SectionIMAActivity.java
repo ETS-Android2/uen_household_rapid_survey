@@ -111,7 +111,7 @@ public class SectionIMAActivity extends AppCompatActivity {
         MainApp.child.setId(String.valueOf(rowId));
         if (rowId > 0) {
             MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
-            db.updatesFormColumn(TableContracts.ChildTable.COLUMN_UID, MainApp.child.getUid());
+            db.updatesChildColumn(TableContracts.ChildTable.COLUMN_UID, MainApp.child.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
