@@ -351,7 +351,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
         json.put(TableContracts.MaternalMortalityTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.MaternalMortalityTable.COLUMN_SYSDATE, this.syncDate);
+        json.put(TableContracts.MaternalMortalityTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.MaternalMortalityTable.COLUMN_SE2, new JSONObject(sE2toString()));
         return json;
@@ -392,7 +392,7 @@ public class MaternalMortality extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SYNC_DATE));
 
         sE2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MaternalMortalityTable.COLUMN_SE2)));
         return this;

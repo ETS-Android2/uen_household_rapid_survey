@@ -37,7 +37,7 @@ public class SectionI2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i2);
         bi.setChildARI(MainApp.childARI);

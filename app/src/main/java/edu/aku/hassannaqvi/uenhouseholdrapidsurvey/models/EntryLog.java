@@ -229,7 +229,7 @@ public class EntryLog extends BaseObservable implements Observable {
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS));
         this.iStatus96x = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_ISTATUS96x));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYNC_DATE));
 
         return this;
     }
@@ -252,7 +252,7 @@ public class EntryLog extends BaseObservable implements Observable {
         json.put(EntryLogTable.COLUMN_ISTATUS, this.iStatus);
         json.put(EntryLogTable.COLUMN_ISTATUS96x, this.iStatus96x);
         json.put(EntryLogTable.COLUMN_SYNCED, this.synced);
-        json.put(EntryLogTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(EntryLogTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(EntryLogTable.COLUMN_APPVERSION, this.appver);
         return json;
     }

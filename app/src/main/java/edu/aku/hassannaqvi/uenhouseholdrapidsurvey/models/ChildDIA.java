@@ -1216,7 +1216,7 @@ public class ChildDIA extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_SYNC_DATE));
 
         sI1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildDIATable.COLUMN_SI1)));
 
@@ -1402,7 +1402,7 @@ public class ChildDIA extends BaseObservable implements Observable {
         json.put(TableContracts.ChildDIATable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.ChildDIATable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.ChildDIATable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.ChildDIATable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.ChildDIATable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.ChildDIATable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildDIATable.COLUMN_SI1, new JSONObject(sI1toString()));
 

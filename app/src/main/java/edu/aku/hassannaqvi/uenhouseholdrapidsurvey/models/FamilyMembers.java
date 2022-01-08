@@ -554,7 +554,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SYNC_DATE));
 
         sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SD)));
         updateMemCategory();
@@ -612,7 +612,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(FamilyMembersTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FamilyMembersTable.COLUMN_SYNCED, this.synced);
-        json.put(FamilyMembersTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(FamilyMembersTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FamilyMembersTable.COLUMN_APPVERSION, this.appver);
 
         json.put(FamilyMembersTable.COLUMN_SD, new JSONObject(sDtoString()));

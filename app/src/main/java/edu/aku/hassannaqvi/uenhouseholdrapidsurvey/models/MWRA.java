@@ -36,7 +36,6 @@ public class MWRA extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String fmuid = _EMPTY_;
     // private String muid = _EMPTY_;
-    private String cluster = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String psuCode = _EMPTY_;
@@ -578,7 +577,7 @@ public class MWRA extends BaseObservable implements Observable {
         setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setCluster(MainApp.currentHousehold.getClusteCcode());
+        setpsuCode(MainApp.currentHousehold.getClusteCcode());
         setHhid(MainApp.currentHousehold.getHhno());
         // setEntryType(String.valueOf(MainApp.entryType));
 
@@ -631,14 +630,6 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setFmuid(String fmuid) {
         this.fmuid = fmuid;
-    }
-
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
     }
 
     public String getHhid() {
@@ -6548,7 +6539,7 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.MwraTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.MwraTable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.MwraTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.MwraTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.MwraTable.COLUMN_SF, new JSONObject(sFtoString()));
         json.put(TableContracts.MwraTable.COLUMN_SG, new JSONObject(sGtoString()));
         json.put(TableContracts.MwraTable.COLUMN_SH1, new JSONObject(sH1toString()));
@@ -7108,7 +7099,7 @@ public class MWRA extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SYNC_DATE));
 
 
         sFHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.MwraTable.COLUMN_SF)));

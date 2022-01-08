@@ -2043,7 +2043,7 @@ public class ChildARI extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_SYNC_DATE));
 
         sI2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildARITable.COLUMN_SI2)));
 
@@ -2367,7 +2367,7 @@ public class ChildARI extends BaseObservable implements Observable {
         json.put(TableContracts.ChildARITable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.ChildARITable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.ChildARITable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.ChildARITable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.ChildARITable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.ChildARITable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildARITable.COLUMN_SI2, new JSONObject(sI2toString()));
 

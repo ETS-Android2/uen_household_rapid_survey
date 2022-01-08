@@ -32,6 +32,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
     private String clusterCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
+    private String mName = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -139,6 +140,14 @@ public class PregnancyMaster extends BaseObservable implements Observable {
         this.sno = sno;
     }
 
+    public String getMName() {
+        return mName;
+    }
+
+    public void setMName(String mName) {
+        this.mName = mName;
+    }
+
     public String getFmuid() {
         return fmuid;
     }
@@ -218,6 +227,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
 
     public void setE101a(String e101a) {
         this.e101a = e101a;
+        this.mName = e101a;
         notifyPropertyChanged(BR.e101a);
     }
 
@@ -228,6 +238,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
 
     public void setE101b(String e101b) {
         this.e101b = e101b;
+        this.sno = e101b;
         notifyPropertyChanged(BR.e101b);
     }
 
@@ -274,6 +285,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
         json.put(TableContracts.PregnancyMasterTable.COLUMN_PSU_CODE, this.clusterCode);
         json.put(TableContracts.PregnancyMasterTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.PregnancyMasterTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.PregnancyMasterTable.COLUMN_M_NAME, this.mName);
         json.put(TableContracts.PregnancyMasterTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.PregnancyMasterTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.PregnancyMasterTable.COLUMN_DEVICEID, this.deviceId);
@@ -309,6 +321,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
         this.clusterCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SNO));
+        this.mName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_M_NAME));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_DEVICEID));
@@ -316,7 +329,7 @@ public class PregnancyMaster extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SYNC_DATE));
 
         sE1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.PregnancyMasterTable.COLUMN_SE1)));
         return this;

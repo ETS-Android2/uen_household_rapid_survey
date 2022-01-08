@@ -356,6 +356,9 @@ public class IdentificationActivity extends AppCompatActivity {
 
             bi.fldGrpA113.setVisibility(View.VISIBLE);
 
+            MainApp.selectedTehsil = bi.a106.getText().toString();
+            MainApp.selectedUC = bi.a107.getText().toString();
+
         }
     }
 }

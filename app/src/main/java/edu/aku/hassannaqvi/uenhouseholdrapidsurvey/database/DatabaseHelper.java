@@ -132,7 +132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
-        values.put(FormsTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(FormsTable.COLUMN_SYNC_DATE, form.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -157,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(EntryLogTable.COLUMN_ENTRY_DATE, entryLog.getEntryDate());
         values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
         values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
-        values.put(EntryLogTable.COLUMN_SYNCED_DATE, entryLog.getSyncDate());
+        values.put(EntryLogTable.COLUMN_SYNC_DATE, entryLog.getSyncDate());
         values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
 
         long newRowId;
@@ -193,7 +193,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_DEVICEID, mwra.getDeviceId());
         values.put(MwraTable.COLUMN_APPVERSION, mwra.getAppver());
         values.put(MwraTable.COLUMN_SYNCED, mwra.getSynced());
-        values.put(MwraTable.COLUMN_SYNCED_DATE, mwra.getSyncDate());
+        values.put(MwraTable.COLUMN_SYNC_DATE, mwra.getSyncDate());
 
         long newRowId;
         newRowId = db.insertOrThrow(
@@ -222,7 +222,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
         values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
         values.put(ChildTable.COLUMN_SYNCED, child.getSynced());
-        values.put(ChildTable.COLUMN_SYNCED_DATE, child.getSyncDate());
+        values.put(ChildTable.COLUMN_SYNC_DATE, child.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 ChildTable.TABLE_NAME,
@@ -250,7 +250,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildDIATable.COLUMN_DEVICEID, childDIA.getDeviceId());
         values.put(ChildDIATable.COLUMN_APPVERSION, childDIA.getAppver());
         values.put(ChildDIATable.COLUMN_SYNCED, childDIA.getSynced());
-        values.put(ChildDIATable.COLUMN_SYNCED_DATE, childDIA.getSyncDate());
+        values.put(ChildDIATable.COLUMN_SYNC_DATE, childDIA.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 ChildDIATable.TABLE_NAME,
@@ -279,7 +279,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildARITable.COLUMN_DEVICEID, childARI.getDeviceId());
         values.put(ChildARITable.COLUMN_APPVERSION, childARI.getAppver());
         values.put(ChildARITable.COLUMN_SYNCED, childARI.getSynced());
-        values.put(ChildARITable.COLUMN_SYNCED_DATE, childARI.getSyncDate());
+        values.put(ChildARITable.COLUMN_SYNC_DATE, childARI.getSyncDate());
         long newRowId;
         newRowId = db.insert(
                 ChildARITable.TABLE_NAME,
@@ -298,6 +298,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyMasterTable.COLUMN_PSU_CODE, pregM.getClusterCode());
         values.put(PregnancyMasterTable.COLUMN_HHID, pregM.getHhid());
         values.put(PregnancyMasterTable.COLUMN_SNO, pregM.getSno());
+        values.put(PregnancyMasterTable.COLUMN_M_NAME, pregM.getMName());
         values.put(PregnancyMasterTable.COLUMN_USERNAME, pregM.getUserName());
         values.put(PregnancyMasterTable.COLUMN_SYSDATE, pregM.getSysDate());
         values.put(PregnancyMasterTable.COLUMN_SE1, pregM.sE1toString());
@@ -306,7 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyMasterTable.COLUMN_DEVICEID, pregM.getDeviceId());
         values.put(PregnancyMasterTable.COLUMN_APPVERSION, pregM.getAppver());
         values.put(PregnancyMasterTable.COLUMN_SYNCED, pregM.getSynced());
-        values.put(PregnancyMasterTable.COLUMN_SYNCED_DATE, pregM.getSyncDate());
+        values.put(PregnancyMasterTable.COLUMN_SYNC_DATE, pregM.getSyncDate());
 
         long newRowId;
         newRowId = db.insertOrThrow(
@@ -323,7 +324,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyDetailsTable.COLUMN_UID, pregD.getUid());
         values.put(PregnancyDetailsTable.COLUMN_UUID, pregD.getUuid());
         values.put(PregnancyDetailsTable.COLUMN_FMUID, pregD.getFmuid());
-        values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregD.getClusterCode());
+        values.put(PregnancyDetailsTable.COLUMN_PSU_CODE, pregD.getPsuCode());
         values.put(PregnancyDetailsTable.COLUMN_HHID, pregD.getHhid());
         values.put(PregnancyDetailsTable.COLUMN_PSNO, pregD.getPSno());
         values.put(PregnancyDetailsTable.COLUMN_MSNO, pregD.getMsno());
@@ -336,7 +337,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyDetailsTable.COLUMN_DEVICEID, pregD.getDeviceId());
         values.put(PregnancyDetailsTable.COLUMN_APPVERSION, pregD.getAppver());
         values.put(PregnancyDetailsTable.COLUMN_SYNCED, pregD.getSynced());
-        values.put(PregnancyDetailsTable.COLUMN_SYNCED_DATE, pregD.getSyncDate());
+        values.put(PregnancyDetailsTable.COLUMN_SYNC_DATE, pregD.getSyncDate());
 
         long newRowId;
         newRowId = db.insert(
@@ -363,7 +364,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MaternalMortalityTable.COLUMN_DEVICEID, mortality.getDeviceId());
         values.put(MaternalMortalityTable.COLUMN_APPVERSION, mortality.getAppver());
         values.put(MaternalMortalityTable.COLUMN_SYNCED, mortality.getSynced());
-        values.put(MaternalMortalityTable.COLUMN_SYNCED_DATE, mortality.getSyncDate());
+        values.put(MaternalMortalityTable.COLUMN_SYNC_DATE, mortality.getSyncDate());
 
         values.put(MaternalMortalityTable.COLUMN_SE2, mortality.sE2toString());
 
@@ -429,7 +430,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
         values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
         values.put(FamilyMembersTable.COLUMN_SYNCED, members.getSynced());
-        values.put(FamilyMembersTable.COLUMN_SYNCED_DATE, members.getSyncDate());
+        values.put(FamilyMembersTable.COLUMN_SYNC_DATE, members.getSyncDate());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -1315,7 +1316,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_SYNCED, true);
-        values.put(FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(FormsTable.COLUMN_SYNC_DATE, new Date().toString());
 
 // Which row to update, based on the title
         String where = FormsTable.COLUMN_ID + " = ?";
@@ -1332,7 +1333,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(FamilyMembersTable.COLUMN_SYNCED, true);
-        values.put(FamilyMembersTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(FamilyMembersTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = FamilyMembersTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1346,7 +1347,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MwraTable.COLUMN_SYNCED, true);
-        values.put(MwraTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(MwraTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = MwraTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1360,7 +1361,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyDetailsTable.COLUMN_SYNCED, true);
-        values.put(PregnancyDetailsTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(PregnancyDetailsTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = PregnancyDetailsTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1374,7 +1375,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(PregnancyMasterTable.COLUMN_SYNCED, true);
-        values.put(PregnancyMasterTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(PregnancyMasterTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = PregnancyMasterTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1388,7 +1389,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(MaternalMortalityTable.COLUMN_SYNCED, true);
-        values.put(MaternalMortalityTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(MaternalMortalityTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = MaternalMortalityTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1402,7 +1403,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildTable.COLUMN_SYNCED, true);
-        values.put(ChildTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(ChildTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = ChildTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1416,7 +1417,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildARITable.COLUMN_SYNCED, true);
-        values.put(ChildARITable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(ChildARITable.COLUMN_SYNC_DATE, new Date().toString());
         String where = ChildARITable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1430,7 +1431,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildDIATable.COLUMN_SYNCED, true);
-        values.put(ChildDIATable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(ChildDIATable.COLUMN_SYNC_DATE, new Date().toString());
         String where = ChildDIATable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(
@@ -1444,7 +1445,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(EntryLogTable.COLUMN_SYNCED, true);
-        values.put(EntryLogTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(EntryLogTable.COLUMN_SYNC_DATE, new Date().toString());
         String where = EntryLogTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
         int count = db.update(

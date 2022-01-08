@@ -37,13 +37,15 @@ public class SectionE1BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e1_b);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
         // FMUID
         MainApp.pregD.setFmuid(MainApp.allMWRAList.get(0).getUid());
+        MainApp.pregD.setMsno(MainApp.allMWRAList.get(0).getD101());
+        MainApp.pregD.setMName(MainApp.allMWRAList.get(0).getD102());
 
 /*        try {
             MainApp.child = db.getChildByUUid();

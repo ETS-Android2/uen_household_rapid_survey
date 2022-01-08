@@ -372,67 +372,67 @@ public class Child extends BaseObservable implements Observable {
         setIm04m(im01.equals("1") ? this.im04m : "");
         setIm04y(im01.equals("1") ? this.im04y : "");
 
-        setIm0501d(im01.equals("1") ? this.im0501d : "");
+        setIm0501d(im01.equals("1") ? this.im0501d : "0");
         setIm0501m(im01.equals("1") ? this.im0501m : "");
         setIm0501y(im01.equals("1") ? this.im0501y : "");
 
-        setIm0502d(im01.equals("1") ? this.im0502d : "");
+        setIm0502d(im01.equals("1") ? this.im0502d : "0");
         setIm0502m(im01.equals("1") ? this.im0502m : "");
         setIm0502y(im01.equals("1") ? this.im0502y : "");
 
-        setIm0503d(im01.equals("1") ? this.im0503d : "");
+        setIm0503d(im01.equals("1") ? this.im0503d : "0");
         setIm0503m(im01.equals("1") ? this.im0503m : "");
         setIm0503y(im01.equals("1") ? this.im0503y : "");
 
-        setIm0504d(im01.equals("1") ? this.im0504d : "");
+        setIm0504d(im01.equals("1") ? this.im0504d : "0");
         setIm0504m(im01.equals("1") ? this.im0504m : "");
         setIm0504y(im01.equals("1") ? this.im0504y : "");
 
-        setIm0505d(im01.equals("1") ? this.im0505d : "");
+        setIm0505d(im01.equals("1") ? this.im0505d : "0");
         setIm0505m(im01.equals("1") ? this.im0505m : "");
         setIm0505y(im01.equals("1") ? this.im0505y : "");
 
-        setIm0506d(im01.equals("1") ? this.im0506d : "");
+        setIm0506d(im01.equals("1") ? this.im0506d : "0");
         setIm0506m(im01.equals("1") ? this.im0506m : "");
         setIm0506y(im01.equals("1") ? this.im0506y : "");
 
-        setIm0507d(im01.equals("1") ? this.im0507d : "");
+        setIm0507d(im01.equals("1") ? this.im0507d : "0");
         setIm0507m(im01.equals("1") ? this.im0507m : "");
         setIm0507y(im01.equals("1") ? this.im0507y : "");
 
-        setIm0508d(im01.equals("1") ? this.im0508d : "");
+        setIm0508d(im01.equals("1") ? this.im0508d : "0");
         setIm0508m(im01.equals("1") ? this.im0508m : "");
         setIm0508y(im01.equals("1") ? this.im0508y : "");
 
-        setIm0509d(im01.equals("1") ? this.im0509d : "");
+        setIm0509d(im01.equals("1") ? this.im0509d : "0");
         setIm0509m(im01.equals("1") ? this.im0509m : "");
         setIm0509y(im01.equals("1") ? this.im0509y : "");
 
-        setIm0510d(im01.equals("1") ? this.im0510d : "");
+        setIm0510d(im01.equals("1") ? this.im0510d : "0");
         setIm0510m(im01.equals("1") ? this.im0510m : "");
         setIm0510y(im01.equals("1") ? this.im0510y : "");
 
-        setIm0511d(im01.equals("1") ? this.im0511d : "");
+        setIm0511d(im01.equals("1") ? this.im0511d : "0");
         setIm0511m(im01.equals("1") ? this.im0511m : "");
         setIm0511y(im01.equals("1") ? this.im0511y : "");
 
-        setIm0512d(im01.equals("1") ? this.im0512d : "");
+        setIm0512d(im01.equals("1") ? this.im0512d : "0");
         setIm0512m(im01.equals("1") ? this.im0512m : "");
         setIm0512y(im01.equals("1") ? this.im0512y : "");
 
-        setIm0513d(im01.equals("1") ? this.im0513d : "");
+        setIm0513d(im01.equals("1") ? this.im0513d : "0");
         setIm0513m(im01.equals("1") ? this.im0513m : "");
         setIm0513y(im01.equals("1") ? this.im0513y : "");
 
-        setIm0514d(im01.equals("1") ? this.im0514d : "");
+        setIm0514d(im01.equals("1") ? this.im0514d : "0");
         setIm0514m(im01.equals("1") ? this.im0514m : "");
         setIm0514y(im01.equals("1") ? this.im0514y : "");
 
-        setIm0515d(im01.equals("1") ? this.im0515d : "");
+        setIm0515d(im01.equals("1") ? this.im0515d : "0");
         setIm0515m(im01.equals("1") ? this.im0515m : "");
         setIm0515y(im01.equals("1") ? this.im0515y : "");
 
-        setIm0516d(im01.equals("1") ? this.im0516d : "");
+        setIm0516d(im01.equals("1") ? this.im0516d : "0");
         setIm0516m(im01.equals("1") ? this.im0516m : "");
         setIm0516y(im01.equals("1") ? this.im0516y : "");
 
@@ -2002,7 +2002,7 @@ public class Child extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED_DATE));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNC_DATE));
 
         sIMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SIM)));
 
@@ -2290,7 +2290,7 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.ChildTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.ChildTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(TableContracts.ChildTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
         json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));
 
