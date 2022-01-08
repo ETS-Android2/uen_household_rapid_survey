@@ -2336,8 +2336,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs,                 // The values for the WHERE clause
                 groupBy,                   // don't group the rows
                 having,                    // don't filter by row groups
-                orderBy                    // The sort order
-
+                orderBy,                    // The sort order
+                "1"
         );
         int chSNo = 999;
         while (c.moveToNext()) {

@@ -120,11 +120,11 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         int idxColor;
         switch (members.getIndexed()) {
-            case "1":
+            case "2":
                 idxStatus = " Mother  ";
                 idxColor = mContext.getResources().getColor(R.color.motherBg);
                 break;
-            case "2":
+            case "1":
                 idxStatus = "  Child  ";
                 idxColor = mContext.getResources().getColor(R.color.childBg);
                 break;
