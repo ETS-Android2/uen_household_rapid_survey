@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
+            android:theme="@style/ToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:titleTextAppearance="@style/Toolbar.TitleText" />

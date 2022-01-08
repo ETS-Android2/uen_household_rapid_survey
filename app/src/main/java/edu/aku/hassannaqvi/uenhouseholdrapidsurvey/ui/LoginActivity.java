@@ -476,7 +476,7 @@ public class LoginActivity extends AppCompatActivity {
     private void initializingCountry() {
         countryCode = Integer.parseInt(MainApp.sharedPref.getString("lang", "0"));
         if (countryCode == 0) {
-            MainApp.editor.putString("lang", "1").apply();
+            MainApp.editor.putString("lang", "0").apply();
         }
 
         changeLanguage(Integer.parseInt(MainApp.sharedPref.getString("lang", "0")));
