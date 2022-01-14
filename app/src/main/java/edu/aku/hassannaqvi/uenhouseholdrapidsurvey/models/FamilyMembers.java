@@ -718,6 +718,23 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 e.printStackTrace();
 
             }
+        } else {
+            if (!this.d109y.equals("") && !this.d109m.equals("") && !this.d109d.equals("")) {
+                int yearToDays = 0;
+                int monthsToDays = 0;
+                int inDays = 0;
+
+
+                if (Integer.parseInt(this.d109y) < 100 && Integer.parseInt(this.d109y) > 0)
+                    yearToDays = (int) (Integer.parseInt(this.d109y) * 365.2425);
+                if (Integer.parseInt(this.d109m) <= 12 && Integer.parseInt(this.d109m) > 0)
+                    monthsToDays = (int) (Integer.parseInt(this.d109m) * 30.43);
+                if (Integer.parseInt(this.d109m) <= 29 && Integer.parseInt(this.d109d) > 0)
+                    inDays = Integer.parseInt(this.d109m);
+
+                setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
+
+            }
         }
     }
 
