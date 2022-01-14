@@ -1258,7 +1258,7 @@
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
                         android:onClick="btnEnd"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:elevation="20dp"
                         android:textColor="@color/white" />
 
@@ -1269,7 +1269,7 @@
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
                         android:onClick="btnContinue"
-                        android:text="Save"
+                        android:text="@string/btnSave"
                         android:elevation="20dp"
                         android:textColor="@color/white" />
 
