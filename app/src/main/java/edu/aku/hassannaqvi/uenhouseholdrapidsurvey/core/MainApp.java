@@ -45,7 +45,7 @@ public class MainApp extends Application {
     // public static final String _IP = "https://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/uen_rs/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/Uen_rs/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
