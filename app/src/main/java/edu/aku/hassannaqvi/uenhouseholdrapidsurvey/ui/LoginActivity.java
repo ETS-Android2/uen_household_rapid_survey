@@ -341,6 +341,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void resetPassword(View view) {
+        finish();
+        startActivity(new Intent(this, WebViewActivity.class));
+    }
+
     public String computeHash(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         digest.reset();

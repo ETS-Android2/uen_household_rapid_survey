@@ -26,6 +26,7 @@
     <string name="pakistan" translatable="false">Pakistan</string>
     <string name="tajikistan" translatable="false">Tajikistan</string>
     <string name="btnLogin" translatable="false">Login</string>
+    <string name="btnReset" translatable="false">Reset</string>
     <string name="btnDownloadData" translatable="false">Download Data</string>
     <string name="cs_MAexist" translatable="false">might be already exist</string>
 
