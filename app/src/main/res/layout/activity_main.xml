@@ -113,7 +113,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-               <!-- <androidx.cardview.widget.CardView
+                <!-- <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -736,6 +736,13 @@
 
                     </LinearLayout>
 
+                    <Button
+                        android:id="@+id/changePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/login_eyestyle"
+                        android:onClick="sectionPress"
+                        android:text="Password Change" />
                 </LinearLayout>
 
             </LinearLayout>

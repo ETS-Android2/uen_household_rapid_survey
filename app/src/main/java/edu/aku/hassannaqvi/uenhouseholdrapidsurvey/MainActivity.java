@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MWRA;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.MaternalMortality;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyDetails;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.PregnancyMaster;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.ChangePasswordActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.SyncActivity;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.lists.FormsReportCluster;
@@ -105,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA2Activity.class));
                 break;*/
+            case R.id.changePassword:
+                startActivity(new Intent(this, ChangePasswordActivity.class));
+                break;
             case R.id.seca1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
@@ -214,6 +218,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.formsReportDate:
                 intent = new Intent(MainActivity.this, FormsReportDate.class);
+                startActivity(intent);
+                break;
+            case R.id.changePassword:
+                intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportCluster:
