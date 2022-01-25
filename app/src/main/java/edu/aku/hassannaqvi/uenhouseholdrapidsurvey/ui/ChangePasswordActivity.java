@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui;
 import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.UserAuth.generatePassword;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
@@ -117,6 +118,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                     bi.txtMessage.setText(message);
                                     bi.txtMessage.setVisibility(View.VISIBLE);
                                     bi.txtMessage.setTextColor(!error.equals("1") ? getResources().getColor(R.color.green) : getResources().getColor(R.color.redDark));
+                                    new Handler().postDelayed(() -> finish(), 3500);
 
                           /*  StringBuilder sSyncedError = new StringBuilder();
                             JSONObject jsonObject;

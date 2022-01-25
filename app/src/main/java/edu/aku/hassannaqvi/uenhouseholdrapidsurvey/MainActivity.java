@@ -1,14 +1,26 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.AndroidManager;
@@ -53,6 +65,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionUNActivity
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     ActivityMainBinding bi;
     SharedPreferences sp;
 
@@ -66,6 +79,34 @@ public class MainActivity extends AppCompatActivity {
         bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
         bi.toolbar.setSubtitle("Welcome, " + MainApp.user.getFullname() + (MainApp.admin ? " (Admin)" : "") + "!");
         invalidateOptionsMenu();
+
+
+        try {
+            String pwExpiry = String.valueOf(new JSONObject(MainApp.user.getPwdExpiry()).get("date")).substring(0, 10);
+            //     Toast.makeText(this, pwExpiry, Toast.LENGTH_LONG).show();
+            Log.d(TAG, "onCreate: pwExpiry: " + pwExpiry);
+
+            Calendar cal = Calendar.getInstance();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            cal.setTime(sdf.parse(pwExpiry));// all done
+
+            int daysLeft = (int) MILLISECONDS.toDays(cal.getTimeInMillis() - System.currentTimeMillis());
+            //  Toast.makeText(this, daysLeft+" Days left", Toast.LENGTH_LONG).show();
+            if (daysLeft < 1) {
+                Toast.makeText(this, "Your password has expired. Please contact your supervisor.", Toast.LENGTH_LONG).show();
+                finish();
+            }
+            if (daysLeft < 10) {
+                bi.message.setText("Your password will expire on " + pwExpiry + ". There are only " + daysLeft + " Days left.");
+                bi.message.setVisibility(View.VISIBLE);
+            } else {
+                bi.message.setVisibility(View.GONE);
+            }
+
+        } catch (JSONException | ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     public void sectionPress(View view) {
