@@ -259,9 +259,10 @@ public class LoginActivity extends AppCompatActivity {
         bi.username.setError(null);
         bi.password.setError(null);
         //bi.as1q01.setError(null);
-        Toast.makeText(this, String.valueOf(attemptCounter), Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, String.valueOf(attemptCounter), Toast.LENGTH_SHORT).show();
         if (attemptCounter > 5) {
             bi.username.setError("This user has been blocked.");
+            Toast.makeText(this, "This user has been blocked.", Toast.LENGTH_LONG).show();
 
         } else {
             // Store values at the time of the login attempt.
@@ -296,25 +297,30 @@ public class LoginActivity extends AppCompatActivity {
                         || (username.equals("test1234") && password.equals("test1234"))
                         || db.doLogin(username, password)
                 ) {
+
                     MainApp.user.setUserName(username);
                     MainApp.admin = username.contains("@") || username.contains("test1234");
                     MainApp.superuser = MainApp.user.getDesignation().equals("Supervisor");
                     Intent iLogin = null;
-                    if (!MainApp.user.getNewUser().equals("1")) { // TODO: getEnabled().equals("1")
-                        iLogin = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(iLogin);
-                    } else if (MainApp.user.getNewUser().equals("1")) {
-                        iLogin = new Intent(LoginActivity.this, ChangePasswordActivity.class);
-                        startActivity(iLogin);
+                    if (MainApp.user.getEnabled().equals("1")) {
+                        if (!MainApp.user.getNewUser().equals("1")) { // TODO: getEnabled().equals("1")
+                            recordEntry("Successfull Login");
+                            iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(iLogin);
+                        } else if (MainApp.user.getNewUser().equals("1")) {
+                            recordEntry("First Login");
+                            iLogin = new Intent(LoginActivity.this, ChangePasswordActivity.class);
+                            startActivity(iLogin);
+                        }
                     } else {
+                        recordEntry("Inactive User (Disabled)");
                         Toast.makeText(this, "This user is inactive.", Toast.LENGTH_SHORT).show();
                     }
-
                 } else {
-                    recordEntry();
+                    recordEntry("Failed Login: Incorrect username or password");
                     bi.password.setError(getString(R.string.incorrect_username_or_password));
                     bi.password.requestFocus();
-                    Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
+                    //  Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
                 }
             } catch (InvalidKeySpecException e) {
                 e.printStackTrace();
@@ -330,14 +336,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void recordEntry() {
+    private void recordEntry(String entryType) {
 
         EntryLog entryLog = new EntryLog();
         entryLog.setProjectName(PROJECT_NAME);
         entryLog.setUserName(username);
         entryLog.setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         entryLog.setAppver(MainApp.appInfo.getAppVersion());
-        entryLog.setEntryType("Failed Login Attempt!");
+        entryLog.setEntryType(entryType);
         entryLog.setDeviceId(MainApp.deviceid);
         Long rowId = null;
         try {

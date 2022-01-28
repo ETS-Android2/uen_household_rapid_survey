@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.workers;
 
-import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.PROJECT_NAME;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
@@ -49,7 +47,7 @@ public class UserWorker extends Worker {
     // to be initialised by workParams
     private final Context mContext;
     private final URL serverURL = null;
-    private final String nTitle = PROJECT_NAME + ": Users";
+    private String nTitle = "";
     private final String newPassword;
     HttpsURLConnection urlConnection;
     private ProgressDialog pd;
@@ -61,7 +59,7 @@ public class UserWorker extends Worker {
         super(context, workerParams);
         mContext = context;
         newPassword = workerParams.getInputData().getString("newPassword");
-
+        nTitle = mContext.getResources().getString(R.string.app_name) + ": Users";
     }
 
     /*
@@ -152,7 +150,7 @@ public class UserWorker extends Worker {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
                 .setContentTitle(title)
                 .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.drawable.app_icon);
 
         final int maxProgress = 100;
         int curProgress = 0;
@@ -312,7 +310,7 @@ public class UserWorker extends Worker {
                     Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
 
                     data = new Data.Builder()
-                            .putString("error", String.valueOf(urlConnection.getResponseCode()))
+                            .putString("error", "Connection Response (Server Failure): " + urlConnection.getResponseCode())
                             .build();
                     return Result.failure(data);
                 }
@@ -327,7 +325,7 @@ public class UserWorker extends Worker {
             Log.d(TAG, "doWork (Timeout): " + e.getMessage());
             displayNotification(nTitle, "Timeout Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", "Timeout Error: " + e.getMessage())
                     .build();
             return Result.failure(data);
 
@@ -335,7 +333,7 @@ public class UserWorker extends Worker {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", "IO Error: " + e.getMessage())
                     .build();
 
             return Result.failure(data);
@@ -378,7 +376,7 @@ public class UserWorker extends Worker {
 
         } else {
             data = new Data.Builder()
-                    .putString("error", String.valueOf(result))
+                    .putString("error", "No data Received: " + result)
                     .build();
             displayNotification(nTitle, "Error Received");
             return Result.failure(data);

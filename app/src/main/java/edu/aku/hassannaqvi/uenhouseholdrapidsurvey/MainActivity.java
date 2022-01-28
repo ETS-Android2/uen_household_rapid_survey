@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
             if (daysLeft < 10) {
-                bi.message.setText("Your password will expire on " + pwExpiry + ". There are only " + daysLeft + " Days left.");
+                bi.message.setText("Your current password is expiring in " + daysLeft + " day(s) on " + pwExpiry + ". Please change your password to avoid account lockout. (Internet Required.)");
+                // bi.message.setText("Your password will expire on " + pwExpiry + ". There are only " + daysLeft + " Days left.");
                 bi.message.setVisibility(View.VISIBLE);
             } else {
                 bi.message.setVisibility(View.GONE);
@@ -249,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, AndroidManager.class);
                 startActivity(intent);
                 break;
+
             case R.id.onSync:
                 intent = new Intent(MainActivity.this, SyncActivity.class);
                 startActivity(intent);
