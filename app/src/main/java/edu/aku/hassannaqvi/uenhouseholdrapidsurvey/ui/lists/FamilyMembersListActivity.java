@@ -42,7 +42,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections.SectionE1AActivit
 public class FamilyMembersListActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "MwraActivity";
+    private static final String TAG = "FamilyMembersListActivity";
     private final boolean selectionCheck = false;
     ActivityFamilyListBinding bi;
     DatabaseHelper db;
@@ -421,19 +421,19 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         selectedChildName = MainApp.familyList.get(Integer.parseInt(selectedChild)).getD102();
         MainApp.ageOfIndexChild = Integer.parseInt(MainApp.familyList.get(Integer.parseInt(selectedChild)).getD109y());
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
 
         // Updating adapter for Child selection
-        MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("1");
+        MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild)).setIndexed("2");
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedChild));
 
         // Select mother of indexed child
         MainApp.selectedMWRA = String.valueOf(Integer.parseInt(MainApp.familyMember.getD107()) - 1);
         MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(selectedMWRA));
-        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "2");
+        db.updatesfamilyListColumn(TableContracts.FamilyMembersTable.COLUMN_INDEXED, "1");
 
         // Updating adapter for Mother selection
-        MainApp.familyList.get(Integer.parseInt(selectedMWRA)).setIndexed("2");
+        MainApp.familyList.get(Integer.parseInt(selectedMWRA)).setIndexed("1");
         familyMembersAdapter.notifyItemChanged(Integer.parseInt(MainApp.selectedMWRA));
 
         bi.btnRand.setVisibility(View.INVISIBLE);

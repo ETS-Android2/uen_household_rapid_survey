@@ -729,8 +729,8 @@ public class FamilyMembers extends BaseObservable implements Observable {
                     yearToDays = (int) (Integer.parseInt(this.d109y) * 365.2425);
                 if (Integer.parseInt(this.d109m) <= 12 && Integer.parseInt(this.d109m) > 0)
                     monthsToDays = (int) (Integer.parseInt(this.d109m) * 30.43);
-                if (Integer.parseInt(this.d109m) <= 29 && Integer.parseInt(this.d109d) > 0)
-                    inDays = Integer.parseInt(this.d109m);
+                if (Integer.parseInt(this.d109d) <= 29 && Integer.parseInt(this.d109d) > 0)
+                    inDays = Integer.parseInt(this.d109d);
 
                 setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
 
@@ -754,31 +754,32 @@ public class FamilyMembers extends BaseObservable implements Observable {
         // MWRA
         if (memGender.equals("2")                // Female
                 && memAge >= 15 && memAge <= 49   // 15 to 49 year old
-                && !memMaritalStatus.equals("5")
+                && !memMaritalStatus.equals("2")
+                && !memMaritalStatus.isEmpty()
         ) {
             setMemCate("1");
         }
 
         // Child
         if (memAge < 5
-                && !d107.equals("") && !d107.equals("97")
+                && !d107.equals("") && !d107.equals("...") && !d107.equals("97")
         ) {
             setMemCate("2");
         }
 
         // Adolescent Male
         if (memGender.equals("1")
-                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
-                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
+                && memAge >= 15 && memAge <= 19   // 15 to 19 year old
+                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
         ) {
             setMemCate("3");
         }
 
-        // Adolescent Female
 
+        // Adolescent Female
         if (memGender.equals("2")
-                && memAge >= 15 && memAge <= 19   // 15 to 49 year old
-                && (memMaritalStatus.equals("5") || memMaritalStatus.equals("97"))
+                && memAge >= 15 && memAge <= 19   // 15 to 19 year old
+                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
         ) {
             setMemCate("4");
         }
