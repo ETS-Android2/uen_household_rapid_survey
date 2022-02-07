@@ -749,13 +749,13 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (d104.equals("") || d109y.equals("") || d105.equals("") || !d115.equals("1")) return;
         String memGender = getD104();
         String memMaritalStatus = getD105();
+        boolean b = memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97");
         int memAge = Integer.parseInt(getD109y());
 
         // MWRA
         if (memGender.equals("2")                // Female
                 && memAge >= 15 && memAge <= 49   // 15 to 49 year old
-                && !memMaritalStatus.equals("2")
-                && !memMaritalStatus.isEmpty()
+                && !b
         ) {
             setMemCate("1");
         }
@@ -770,7 +770,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         // Adolescent Male
         if (memGender.equals("1")
                 && memAge >= 15 && memAge <= 19   // 15 to 19 year old
-                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
+                && b
         ) {
             setMemCate("3");
         }
@@ -779,7 +779,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         // Adolescent Female
         if (memGender.equals("2")
                 && memAge >= 15 && memAge <= 19   // 15 to 19 year old
-                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
+                && b
         ) {
             setMemCate("4");
         }

@@ -277,13 +277,8 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
         // Family Complete criteria: MWRA must exist
-        if (MainApp.mwraList.size() > 0) {
-            bi.familyComplete.setVisibility(VISIBLE);
-
-        } else {
-            bi.familyComplete.setVisibility(View.GONE);
-
-        }
+        if (MainApp.mwraList.size() > 0) bi.familyComplete.setVisibility(VISIBLE);
+        else bi.familyComplete.setVisibility(View.GONE);
 
         // Disable family complete check if MWRA indexed
         if (!selectedMWRA.equals("")) {
