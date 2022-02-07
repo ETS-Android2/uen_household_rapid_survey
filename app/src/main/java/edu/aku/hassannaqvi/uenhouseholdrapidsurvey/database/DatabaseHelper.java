@@ -615,7 +615,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Functions that dealing with table data
-    public boolean doLogin(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
+    public boolean doLogin(String username, String password) throws InvalidKeySpecException, NoSuchAlgorithmException, IllegalArgumentException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -2534,7 +2534,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(UsersTable.COLUMN_PASSWORD, hashedPassword);
-        values.put(UsersTable.COLUMN_ENABLED, "2");
+        values.put(UsersTable.COLUMN_ISNEW_USER, "");
 
         String selection = UsersTable.COLUMN_USERNAME + " =? ";
         String[] selectionArgs = {MainApp.user.getUserName()};

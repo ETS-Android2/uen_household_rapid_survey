@@ -76,7 +76,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         WorkManager workManager = WorkManager.getInstance(this);
 
         try {
-            String hashedPassword = generatePassword(bi.password2.getText().toString());
+            String hashedPassword = generatePassword(bi.password2.getText().toString(), null);
 
             Data data = new Data.Builder()
                     .putString("newPassword", hashedPassword)
@@ -118,8 +118,10 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                     bi.txtMessage.setText(message);
                                     bi.txtMessage.setVisibility(View.VISIBLE);
                                     bi.txtMessage.setTextColor(!error.equals("1") ? getResources().getColor(R.color.green) : getResources().getColor(R.color.redDark));
-                                    new Handler().postDelayed(() -> finish(), 3500);
 
+                                    if (!error.equals("1")) {
+                                        new Handler().postDelayed(() -> finish(), 3500);
+                                    }
                           /*  StringBuilder sSyncedError = new StringBuilder();
                             JSONObject jsonObject;
                             try {
@@ -170,7 +172,13 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                     workInfo.getState() == WorkInfo.State.FAILED) {
                                 Log.d(TAG, "onChanged: FAILED");
                                 bi.pBarUser.setVisibility(View.GONE);
+
                                 String message = workInfo.getOutputData().getString("error");
+
+                                bi.txtMessage.setText(message);
+                                bi.txtMessage.setVisibility(View.VISIBLE);
+                                bi.txtMessage.setTextColor(getResources().getColor(R.color.redDark));
+                                bi.btnResetPassword.setVisibility(View.VISIBLE);
      /*                       bi.wmError.setText(message);
                             bi.wmError.setVisibility(View.VISIBLE);*/
 
