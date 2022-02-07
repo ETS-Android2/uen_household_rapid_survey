@@ -3683,6 +3683,7 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setH123(String h123) {
         this.h123 = h123;
+        setH124(h123.equals("1") ? this.h124 : "");
         notifyPropertyChanged(BR.h123);
     }
 
