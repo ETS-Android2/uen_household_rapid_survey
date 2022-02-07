@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uenhouseholdrapidsurvey.ui.sections;
 
+import static edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp.sharedPref;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +36,7 @@ public class ARIChildSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_arichild_selection);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
