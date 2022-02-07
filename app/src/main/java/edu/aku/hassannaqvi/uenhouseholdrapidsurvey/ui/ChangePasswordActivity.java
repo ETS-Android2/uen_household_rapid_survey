@@ -76,7 +76,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         WorkManager workManager = WorkManager.getInstance(this);
 
         try {
-            String hashedPassword = generatePassword(bi.password2.getText().toString());
+            String hashedPassword = generatePassword(bi.password2.getText().toString(), null);
 
             Data data = new Data.Builder()
                     .putString("newPassword", hashedPassword)
