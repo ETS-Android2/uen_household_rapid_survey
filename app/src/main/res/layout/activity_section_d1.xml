@@ -550,7 +550,7 @@
                                 android:maxLength="2"
                                 android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:text="@={member.d109m}"
-                                app:maxValue="11"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -572,7 +572,7 @@
                                 android:maxLength="2"
                                 android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:text="@={member.d109d}"
-                                app:maxValue="29"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 

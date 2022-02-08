@@ -160,7 +160,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         MainApp.fatherList = new ArrayList<>();
         MainApp.motherList = new ArrayList<>();
-        Log.d(TAG, "onCreate: familyList " + MainApp.familyList.size());
+        Log.d(TAG, "onCreate(familyList): " + MainApp.familyList.size());
         try {
             MainApp.familyList = db.getMemberBYUID(MainApp.form.getUid());
             int fmCount = 0;
@@ -168,7 +168,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 fmCount++;
 
                 // Adding Parents
-                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) > 14;
+                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) >= 14;
                 boolean memMarriedCheck = !fm.getD105().equals("2");
                 String memGender = fm.getD104();
                 if (memMarriedCheck && memAgeCheck) {

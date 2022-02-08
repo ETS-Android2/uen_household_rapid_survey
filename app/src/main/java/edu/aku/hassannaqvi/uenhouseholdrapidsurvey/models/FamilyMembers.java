@@ -100,6 +100,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setAppver(MainApp.form.getAppver());
         setpsuCode(MainApp.form.getPsuCode());
         setHhid(MainApp.form.getHhid());
+        CaluculateAge();
 
     }
 
@@ -368,9 +369,11 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     public void setD109y(String d109y) {
+        // setD105(!this.d109y.equals(d109y)? "": );
         this.d109y = d109y;
-        setD105(d109y.length() > 0 ? Integer.parseInt(d109y) < 14 ? "2" : this.d105 : d105);
-        setD105(d109y.length() > 0 ? Integer.parseInt(d109y) > 14 ? "" : this.d105 : this.d105);
+        setD105(d109y.length() > 0 && Integer.parseInt(d109y) < 14 ? "2" : this.d105);
+        //   setD105(d109y.length() > 0 ? Integer.parseInt(d109y) > 14 ? "" : this.d105 : this.d105);
+        //  CaluculateAge();
 
         notifyPropertyChanged(BR.d109y);
     }
@@ -725,11 +728,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
                 int inDays = 0;
 
 
-                if (Integer.parseInt(this.d109y) < 100 && Integer.parseInt(this.d109y) > 0)
+                if (Integer.parseInt(this.d109y) < 98 && Integer.parseInt(this.d109y) > 0)
                     yearToDays = (int) (Integer.parseInt(this.d109y) * 365.2425);
-                if (Integer.parseInt(this.d109m) <= 12 && Integer.parseInt(this.d109m) > 0)
+
+                if (Integer.parseInt(this.d109m) < 12 && Integer.parseInt(this.d109m) > 0)
                     monthsToDays = (int) (Integer.parseInt(this.d109m) * 30.43);
-                if (Integer.parseInt(this.d109d) <= 29 && Integer.parseInt(this.d109d) > 0)
+                if (Integer.parseInt(this.d109d) < 30)
                     inDays = Integer.parseInt(this.d109d);
 
                 setAgeInMonth(String.valueOf(inDays + monthsToDays + yearToDays));
@@ -749,20 +753,20 @@ public class FamilyMembers extends BaseObservable implements Observable {
         if (d104.equals("") || d109y.equals("") || d105.equals("") || !d115.equals("1")) return;
         String memGender = getD104();
         String memMaritalStatus = getD105();
-        boolean b = memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97");
         int memAge = Integer.parseInt(getD109y());
 
         // MWRA
         if (memGender.equals("2")                // Female
                 && memAge >= 15 && memAge <= 49   // 15 to 49 year old
-                && !b
+                && !memMaritalStatus.equals("2")
+                && !memMaritalStatus.isEmpty()
         ) {
             setMemCate("1");
         }
 
         // Child
         if (memAge < 5
-                && !d107.equals("") && !d107.equals("...") && !d107.equals("97")
+                && !d107.equals("") && !d107.equals("97")
         ) {
             setMemCate("2");
         }
@@ -770,7 +774,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         // Adolescent Male
         if (memGender.equals("1")
                 && memAge >= 15 && memAge <= 19   // 15 to 19 year old
-                && b
+                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
         ) {
             setMemCate("3");
         }
@@ -779,7 +783,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         // Adolescent Female
         if (memGender.equals("2")
                 && memAge >= 15 && memAge <= 19   // 15 to 19 year old
-                && b
+                && (memMaritalStatus.equals("2") || memMaritalStatus.isEmpty() || memMaritalStatus.equals("97"))
         ) {
             setMemCate("4");
         }

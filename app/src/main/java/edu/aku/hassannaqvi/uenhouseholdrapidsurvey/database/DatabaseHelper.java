@@ -2355,8 +2355,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         // Not working
-        // String orderBy = FamilyMembersTable.COLUMN_AGE_MONTHS + " ASC";
-        String orderBy = null;
+        String orderBy = "CAST(" + FamilyMembersTable.COLUMN_AGE_MONTHS + " AS INTEGER) ASC";
+        //String orderBy = null;
 
         c = db.query(
                 FamilyMembersTable.TABLE_NAME,  // The table to query
@@ -2365,17 +2365,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs,                 // The values for the WHERE clause
                 groupBy,                   // don't group the rows
                 having,                    // don't filter by row groups
-                orderBy                    // The sort order
+                orderBy,                    // The sort order
+                "1"
         );
         int chSNo = 999;
-        int age = 2000;
-        while (c.moveToNext()) {
-            FamilyMembers fm = new FamilyMembers().Hydrate(c);
 
-            if (Integer.parseInt(fm.getAgeInMonths()) < age) {
-                chSNo = Integer.parseInt(fm.getD101());
-            }
-        }
+        c.moveToFirst();
+        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
 
         db.close();
 
