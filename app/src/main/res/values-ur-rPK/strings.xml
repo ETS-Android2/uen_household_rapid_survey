@@ -221,7 +221,7 @@
     <string name="d10313">سوتیلے/رضاعی/لے پالک بچے</string>
     <string name="d10314">گحریلو ملازم</string>
     <string name="d10398">معلوم نہیں</string>
-    <string name="d108">تاریخ پیدائش ریکارڈ کریں“00”اگر تاریخ پیدائش معلوم نہیں تو   اور عمردرج کریں</string>
+    <string name="d108"> تاریخ پیدائش - اگر تاریخ پیدائش معلوم نہ ہو تو دن، مہینے میں 98 اور سال میں 9998 ریکارڈ کریں </string>
     <string name="d108d">دن</string>
     <string name="d108m">مہینہ</string>
     <string name="d108y">سال</string>
@@ -1064,14 +1064,14 @@
     <string name="g117m">منٹس</string>
     <string name="g117d">دن</string>
     <string name="g11798">معلوم نہیں</string>
-    <string name="g118">مجموعی طور پہ آپ (نام) کی پیدائش سے متعلق سہولیات سے مطمئن ہیں؟</string>
+    <string name="g118">  درد زہ شروع ہونے سے لے کر (نام) کی پیدائش ہونے تک آپ نے کتنی رقم خرچ کی تھی ؟ </string>
     <string name="g11801">ٹرانسپورٹ</string>
     <string name="g11802">داخلہ</string>
     <string name="g11803">دوائی</string>
     <string name="g11804">کل روپے</string>
     <string name="g11896">دیگر وضاحت کریں</string>
     <string name="g11898">معلوم نہیں</string>
-    <string name="g119">مجموعی طور پہ آپ (نام) کی پیدائش سے متعلق سہولیات سے مطمئن ہیں؟</string>
+    <string name="g119"> آپ (نام) کی پیدائش سے متعلق سہولیات سے مطمئن ہیں؟</string>
     <string name="g11901">مکمل مطمئن</string>
     <string name="g11902">مطمئن</string>
     <string name="g11903">مطمئن نہیں</string>

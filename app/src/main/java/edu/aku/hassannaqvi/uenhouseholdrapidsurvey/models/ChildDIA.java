@@ -721,6 +721,21 @@ public class ChildDIA extends BaseObservable implements Observable {
         this.i113 = i113;
         setI115(i113.equals("1") ? this.i115 : "");
         setI116(i113.equals("1") ? this.i116 : "");
+
+        setI11701(i113.equals("1") ? this.i11701 : "");
+        setI11702(i113.equals("1") ? this.i11702 : "");
+        setI11703(i113.equals("1") ? this.i11703 : "");
+        setI11704(i113.equals("1") ? this.i11704 : "");
+        setI11705(i113.equals("1") ? this.i11705 : "");
+        setI11706(i113.equals("1") ? this.i11706 : "");
+        setI11707(i113.equals("1") ? this.i11707 : "");
+        setI11708(i113.equals("1") ? this.i11708 : "");
+        setI11796(i113.equals("1") ? this.i11796 : "");
+
+        setI11801(i113.equals("1") ? this.i11801 : "");
+        setI11802(i113.equals("1") ? this.i11802 : "");
+        setI11803(i113.equals("1") ? this.i11803 : "");
+        setI11896(i113.equals("1") ? this.i11896 : "");
         notifyPropertyChanged(BR.i113);
     }
 
