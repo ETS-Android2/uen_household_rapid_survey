@@ -5749,6 +5749,15 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setK103(String k103) {
         this.k103 = k103;
+        setK10601(k103.equals("2") ? "" : this.k10601);
+        setK10602(k103.equals("2") ? "" : this.k10602);
+        setK10603(k103.equals("2") ? "" : this.k10603);
+        setK10604(k103.equals("2") ? "" : this.k10604);
+        setK10605(k103.equals("2") ? "" : this.k10605);
+        setK10606(k103.equals("2") ? "" : this.k10606);
+        setK10607(k103.equals("2") ? "" : this.k10607);
+        setK10608(k103.equals("2") ? "" : this.k10608);
+        setK10696(k103.equals("2") ? "" : this.k10696);
         notifyPropertyChanged(BR.k103);
     }
 
