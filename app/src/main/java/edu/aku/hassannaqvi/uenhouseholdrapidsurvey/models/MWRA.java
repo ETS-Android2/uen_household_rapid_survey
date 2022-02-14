@@ -5749,15 +5749,23 @@ public class MWRA extends BaseObservable implements Observable {
 
     public void setK103(String k103) {
         this.k103 = k103;
-        setK10601(k103.equals("2") ? "" : this.k10601);
-        setK10602(k103.equals("2") ? "" : this.k10602);
-        setK10603(k103.equals("2") ? "" : this.k10603);
-        setK10604(k103.equals("2") ? "" : this.k10604);
-        setK10605(k103.equals("2") ? "" : this.k10605);
-        setK10606(k103.equals("2") ? "" : this.k10606);
-        setK10607(k103.equals("2") ? "" : this.k10607);
-        setK10608(k103.equals("2") ? "" : this.k10608);
-        setK10696(k103.equals("2") ? "" : this.k10696);
+        setK104b01(k103.equals("2") ? "" : this.k104b01);
+        setK104b02(k103.equals("2") ? "" : this.k104b02);
+        setK104b03(k103.equals("2") ? "" : this.k104b03);
+        setK104b04(k103.equals("2") ? "" : this.k104b04);
+        setK104b05(k103.equals("2") ? "" : this.k104b05);
+        setK104b06(k103.equals("2") ? "" : this.k104b06);
+        setK104b07(k103.equals("2") ? "" : this.k104b07);
+        setK104b08(k103.equals("2") ? "" : this.k104b08);
+        setK104b09(k103.equals("2") ? "" : this.k104b09);
+        setK104b10(k103.equals("2") ? "" : this.k104b10);
+        setK104b11(k103.equals("2") ? "" : this.k104b11);
+        setK104b12(k103.equals("2") ? "" : this.k104b12);
+        setK104b13(k103.equals("2") ? "" : this.k104b13);
+
+        setK105(k103.equals("2") ? "" : this.k105);
+        setK105a(k103.equals("2") ? "" : this.k105a);
+        
         notifyPropertyChanged(BR.k103);
     }
 

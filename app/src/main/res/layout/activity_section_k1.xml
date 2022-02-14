@@ -558,7 +558,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.k103.equals(`2`)}"
-                                    android:onClick="@{()->mwra.setK103(`2`)}"
+                                    android:onClick="@{()->mwra.setK103(`2`) + k105.clearCheck() + k105a.clearCheck()}"
                                     android:text="@string/k10302" />
 
                             </RadioGroup>
@@ -571,7 +571,8 @@
                     <!-- k104b  CheckBox   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVk104b"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{mwra.k103.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -718,7 +719,8 @@
                     <!-- k105  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVk105"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{mwra.k103.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -831,7 +833,8 @@
                     <!-- k105a  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVk105a"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{mwra.k103.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -935,7 +938,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVk106"
                     style="@style/cardView"
-                    android:visibility="@{mwra.k103.equals(`2`) || mwra.k105a.equals(`1`) || mwra.k105a.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{mwra.k105a.equals(`1`) || mwra.k105a.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
