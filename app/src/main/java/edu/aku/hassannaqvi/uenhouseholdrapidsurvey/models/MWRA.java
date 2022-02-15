@@ -6683,7 +6683,7 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_SH2, new JSONObject(sH2toString()));
         json.put(TableContracts.MwraTable.COLUMN_SK, new JSONObject(sKtoString()));
         json.put(TableContracts.MwraTable.COLUMN_SL, new JSONObject(sLtoString()));
-        json.put(TableContracts.MwraTable.COLUMN_UN, new JSONObject(sLtoString()));
+        json.put(TableContracts.MwraTable.COLUMN_UN, new JSONObject(uNtoString()));
 
         return json;
     }
