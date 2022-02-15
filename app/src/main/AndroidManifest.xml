@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.aku.hassannaqvi.uenhouseholdrapidsurvey">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".core.MainApp"
         android:allowBackup="false"
@@ -17,6 +19,9 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
+        <activity
+            android:name=".ui.ChangePasswordActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.sections.SectionUNActivity"
             android:screenOrientation="portrait"
@@ -198,7 +203,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
 
+        <!--        <meta-data
+                    android:name="YEK_REVRES"
+                    android:value="GSTa@ndInC%apACIT12B?E(H+MbQeThWmZq4t7w!zsCsF)J@NcRfUjXn2r5u8x/A" />-->
         <meta-data
             android:name="YEK_REVRES"
             android:value="GSTa@ndInC%apACIT12B?E(H+MbQeThWmZq4t7w!zsCsF)J@NcRfUjXn2r5u8x/A" />
@@ -206,5 +219,4 @@
             android:name="YEK_TRATS"
             android:value="2" />
     </application>
-
 </manifest>

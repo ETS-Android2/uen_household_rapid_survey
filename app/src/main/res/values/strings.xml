@@ -22,10 +22,13 @@
     <string name="signin" translatable="false">SIGN IN</string>
     <string name="username" translatable="false">Username</string>
     <string name="password" translatable="false">Password</string>
+    <string name="newPassword" translatable="false">New Password</string>
+    <string name="confirmPassword" translatable="false">Confirm Password</string>
     <string name="country">Language (Click to change)</string>
     <string name="pakistan" translatable="false">Pakistan</string>
     <string name="tajikistan" translatable="false">Tajikistan</string>
     <string name="btnLogin" translatable="false">Login</string>
+    <string name="btnReset" translatable="false">Reset</string>
     <string name="btnDownloadData" translatable="false">Download Data</string>
     <string name="cs_MAexist" translatable="false">might be already exist</string>
 
@@ -2738,5 +2741,15 @@
     <string name="child_List">Children</string>
     <string name="adol_male_List">Adol Male</string>
     <string name="adol_female_List">Adol Female</string>
+    <string name="title_activity_change_password">ChangePasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="btnResetPassword">Reset Password</string>
 
 </resources>

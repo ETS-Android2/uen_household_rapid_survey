@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.models.FamilyMembers;
 
 
 public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdapter.ViewHolder> {
-    private static final String TAG = "MWRAAdapter";
+    private static final String TAG = "FamilyMembersAdapter";
     private final Context mContext;
     private final List<FamilyMembers> member;
     private final int mExpandedPosition = -1;
@@ -71,7 +71,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         /** Select mother IF
          *  Mother is alive and present in house
          */
-        if (!members.getD107().equals("") && !members.getD107().equals("97")
+        if (!members.getD107().equals("") && !members.getD107().equals("...") && !members.getD107().equals("97")
         ) {
             if (members.getD104().equals("1")) {
                 motherRelation = " S/o ";
@@ -120,11 +120,11 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
         int idxColor;
         switch (members.getIndexed()) {
-            case "2":
+            case "1":
                 idxStatus = " Mother  ";
                 idxColor = mContext.getResources().getColor(R.color.motherBg);
                 break;
-            case "1":
+            case "2":
                 idxStatus = "  Child  ";
                 idxColor = mContext.getResources().getColor(R.color.childBg);
                 break;
@@ -152,7 +152,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         cloaked.setVisibility(!members.getMemCate().equals("") ? View.GONE : View.VISIBLE);
         mainIcon.setImageResource(members.getD115().equals("1") ? (members.getD104().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl) : R.drawable.ic_not_available);
         //MainApp.selectedMWRA = members.getIndexed().equals("1") || members.getIndexed().equals("2") ? "-" : "";
-        mainIcon.setBackgroundColor(members.getD115().equals("1") ? (members.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("2") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getD104().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
+        mainIcon.setBackgroundColor(members.getD115().equals("1") ? (members.getIndexed().equals("2") ? mContext.getResources().getColor(R.color.greenLight) : members.getIndexed().equals("1") ? mContext.getResources().getColor(android.R.color.holo_orange_dark) : members.getD104().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)) : mContext.getResources().getColor(R.color.gray));
         //  mainIcon.setBackgroundColor(  ((ColorDrawable) mainIcon.getBackground()).getColor());
         if (members.getMemCate().equals("2"))
             cloaked.setVisibility(motherPresent ? View.GONE : View.VISIBLE);
@@ -163,10 +163,10 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         }
 
         switch (members.getMemCate()) {
-            case "2":
+            case "1":
                 memCate.setText("Mother");
                 break;
-            case "1":
+            case "2":
                 memCate.setText("Child");
                 break;
             default:

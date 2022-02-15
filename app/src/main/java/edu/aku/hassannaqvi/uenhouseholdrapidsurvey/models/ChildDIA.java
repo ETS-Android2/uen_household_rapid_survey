@@ -481,6 +481,41 @@ public class ChildDIA extends BaseObservable implements Observable {
     public void setI105(String i105) {
         this.i105 = i105;
         setI106(i105.equals("2") ? this.i106 : "");
+        setI107(i105.equals("1") ? this.i107 : "");
+        setI108(i105.equals("1") ? this.i108 : "");
+        setI111(i105.equals("1") ? this.i111 : "");
+
+        setI11201(i105.equals("1") ? this.i11201 : "");
+        setI11202(i105.equals("1") ? this.i11202 : "");
+        setI11203(i105.equals("1") ? this.i11203 : "");
+        setI11204(i105.equals("1") ? this.i11204 : "");
+        setI11205(i105.equals("1") ? this.i11205 : "");
+        setI11206(i105.equals("1") ? this.i11206 : "");
+        setI11207(i105.equals("1") ? this.i11207 : "");
+        setI11208(i105.equals("1") ? this.i11208 : "");
+        setI11209(i105.equals("1") ? this.i11209 : "");
+        setI11210(i105.equals("1") ? this.i11210 : "");
+        setI11211(i105.equals("1") ? this.i11211 : "");
+
+        setI113(i105.equals("1") ? this.i113 : "");
+        setI115(i105.equals("1") ? this.i115 : "");
+        setI116(i105.equals("1") ? this.i116 : "");
+
+        setI11701(i105.equals("1") ? this.i11701 : "");
+        setI11702(i105.equals("1") ? this.i11702 : "");
+        setI11703(i105.equals("1") ? this.i11703 : "");
+        setI11704(i105.equals("1") ? this.i11704 : "");
+        setI11705(i105.equals("1") ? this.i11705 : "");
+        setI11706(i105.equals("1") ? this.i11706 : "");
+        setI11707(i105.equals("1") ? this.i11707 : "");
+        setI11708(i105.equals("1") ? this.i11708 : "");
+        setI11796(i105.equals("1") ? this.i11796 : "");
+
+        setI11801(i105.equals("1") ? this.i11801 : "");
+        setI11802(i105.equals("1") ? this.i11802 : "");
+        setI11803(i105.equals("1") ? this.i11803 : "");
+        setI11896(i105.equals("1") ? this.i11896 : "");
+        setI11898(i105.equals("1") ? this.i11898 : "");
         notifyPropertyChanged(BR.i105);
     }
 
@@ -686,6 +721,21 @@ public class ChildDIA extends BaseObservable implements Observable {
         this.i113 = i113;
         setI115(i113.equals("1") ? this.i115 : "");
         setI116(i113.equals("1") ? this.i116 : "");
+
+        setI11701(i113.equals("1") ? this.i11701 : "");
+        setI11702(i113.equals("1") ? this.i11702 : "");
+        setI11703(i113.equals("1") ? this.i11703 : "");
+        setI11704(i113.equals("1") ? this.i11704 : "");
+        setI11705(i113.equals("1") ? this.i11705 : "");
+        setI11706(i113.equals("1") ? this.i11706 : "");
+        setI11707(i113.equals("1") ? this.i11707 : "");
+        setI11708(i113.equals("1") ? this.i11708 : "");
+        setI11796(i113.equals("1") ? this.i11796 : "");
+
+        setI11801(i113.equals("1") ? this.i11801 : "");
+        setI11802(i113.equals("1") ? this.i11802 : "");
+        setI11803(i113.equals("1") ? this.i11803 : "");
+        setI11896(i113.equals("1") ? this.i11896 : "");
         notifyPropertyChanged(BR.i113);
     }
 

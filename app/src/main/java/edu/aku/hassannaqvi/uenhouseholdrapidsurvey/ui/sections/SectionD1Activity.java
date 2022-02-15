@@ -187,7 +187,22 @@ public class SectionD1Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (!MainApp.familyMember.getD109d().equals("98") && Integer.parseInt(MainApp.familyMember.getD109d()) > 29) {
+            Validator.emptyCustomTextBox(this, bi.d109d, "Invalid day's value");
+            return false;
+        }
+
+        if (!MainApp.familyMember.getD109m().equals("98") && Integer.parseInt(MainApp.familyMember.getD109m()) > 11) {
+            Validator.emptyCustomTextBox(this, bi.d109m, "Invalid month's value");
+            return false;
+        }
+
+
+        return true;
     }
 
 

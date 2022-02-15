@@ -521,11 +521,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:onTextChanged="@{()->d105.clearCheck()}"
                                 android:text="@={member.d109y}"
                                 app:maxValue="95"
@@ -550,7 +550,7 @@
                                 android:maxLength="2"
                                 android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:text="@={member.d109m}"
-                                app:maxValue="11"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -572,7 +572,7 @@
                                 android:maxLength="2"
                                 android:enabled="@{member.d108y.equals(`9998`)}"
                                 android:text="@={member.d109d}"
-                                app:maxValue="31"
+                                app:maxValue="98"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -1258,7 +1258,7 @@
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
                         android:onClick="btnEnd"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:elevation="20dp"
                         android:textColor="@color/white" />
 
@@ -1269,7 +1269,7 @@
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
                         android:onClick="btnContinue"
-                        android:text="Save"
+                        android:text="@string/btnSave"
                         android:elevation="20dp"
                         android:textColor="@color/white" />
 

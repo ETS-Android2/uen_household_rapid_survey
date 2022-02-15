@@ -992,7 +992,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/hours" />
+                                android:text="@string/minutes" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h111"
@@ -1912,7 +1912,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{mwra.h123.equals(`1`)}"
-                                android:onClick="@{()->mwra.setH123(`1`)}"
+                                android:onClick="@{()->mwra.setH123(`1`) + h124.clearCheck()}"
                                 android:text="@string/h12301" />
 
                             <RadioButton
@@ -1935,7 +1935,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh124"
                     style="@style/cardView"
-                    android:visibility="@{mwra.h121.equals(`2`) || mwra.h122.equals(`98`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{mwra.h121.equals(`2`) || mwra.h122.equals(`98`) || mwra.h123.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

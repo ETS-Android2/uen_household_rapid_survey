@@ -386,7 +386,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{mwra.un05.equals(`98`)}"
-                                    android:onClick="@{()->mwra.setUn05(`98`)}"
+                                    android:onClick="@{()->mwra.setUn05(`98`) + un06.clearCheck()}"
                                     android:text="@string/un0598" />
                             </RadioGroup>
                         </LinearLayout>
@@ -397,7 +397,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVun06"
                     style="@style/cardView"
-                    android:visibility="@{mwra.un05.equals(`1`) || mwra.un03.equals(`2`)|| mwra.un03.equals(`4`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{mwra.un05.equals(`1`) || mwra.un05.equals(`98`) || mwra.un03.equals(`2`)|| mwra.un03.equals(`4`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -79,7 +79,7 @@
     <string name="weeks"> Week(s) </string>
     <string name="days"> Day(s) </string>
     <string name="hours"> Hour(s) </string>
-    <string name="minutes"> Minute(s) </string>
+    <string name="minutes"> منٽ </string>
     <string name="kg"> Kilograms </string>
     <string name="km"> Kilometers </string>
     <string name="cm"> cm </string>
@@ -223,7 +223,7 @@
     <string name="d10313">ھنج ورتل ٻار</string>
     <string name="d10314">گهر جوملازم</string>
     <string name="d10398">خبر نه آھي </string>
-    <string name="d108"> ڄمڻ جي تاريخ - جيڪڏھن ڄمڻ جي تاريخ نه آھي ته 00 لکو</string>
+    <string name="d108"> ڄمڻ جي تاريخ - جيڪڏهن ڄمڻ جي تاريخ معلوم نه آهي ته رڪارڊ 98 ڏينهن، مهيني ۽ سال ۾ 9998 </string>
     <string name="d108d">ڏينھن</string>
     <string name="d108m">مھينو</string>
     <string name="d108y">سال</string>
@@ -653,7 +653,7 @@
     <string name="e110m">مھينا</string>
     <string name="e110d">ڏينھن</string>
     <string name="e111">مردھه پيدائش جو سبب ڇا ھو؟</string>
-    <string name="e11101">پیدائش 22 ہفتوں سے زیادہ (قبل ازوقت)</string>
+    <string name="e11101"> ڄمڻ 22 هفتن کان وڌيڪ (اڳتي) </string>
     <string name="e11102">ذھني دٻاءُ</string>
     <string name="e11103">شديد رت جي کوٽ</string>
     <string name="e11104">مٿي جو زخم</string>
@@ -1063,14 +1063,14 @@
     <string name="g117m">منٽ</string>
     <string name="g117d">ڏينهن</string>
     <string name="g11798">خبر نه آھي</string>
-    <string name="g118">(نالو) جي پيدائش تي توھان جو ڪيترو خرچو ٿيو؟</string>
+    <string name="g118"> (نالو) جي پيدائش تي توھان جو ڪيترو خرچو ٿيو؟</string>
     <string name="g11801">سواري تي</string>
     <string name="g11802">داخلا</string>
     <string name="g11803">داخلا تي</string>
     <string name="g11804">ڪُل روپيا</string>
     <string name="g11896">ٻيو ڪجھه (وضاحت ڪريو) </string>
     <string name="g11898">خبر نه آھي</string>
-    <string name="g119">(نالو) جي پيدائش جي حوالي سان مجموعي طور تي انھن جي خدمتن يا سھولتن مان توھان ڪيتري حد تائين مطمئن آھيو؟</string>
+    <string name="g119"> (نالو) جي پيدائش جي حوالي سان مجموعي طور تي انھن جي خدمتن يا سھولتن مان توھان ڪيتري حد تائين مطمئن آھيو؟</string>
     <string name="g11901">مطمئن</string>
     <string name="g11902">ٿورو مطمئن </string>
     <string name="g11903">غير مطمئن</string>
