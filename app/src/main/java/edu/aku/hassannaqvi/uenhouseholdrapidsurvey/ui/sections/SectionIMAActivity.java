@@ -35,7 +35,8 @@ public class SectionIMAActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1 : R.style.AppThemeUrdu);
+        setTheme(sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeSindhi : sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im_a);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
