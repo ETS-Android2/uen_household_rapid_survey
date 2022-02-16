@@ -13,6 +13,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import net.sqlcipher.database.SQLiteException;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.contracts.TableContracts;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
@@ -66,6 +68,7 @@ public class EndingActivity extends AppCompatActivity {
                 : bi.istatusg.isChecked() ? "7"
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
+        form.setiStatus96x(bi.istatus96x.getText().toString());
         // form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }
 
@@ -113,7 +116,12 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         if (MainApp.superuser) return true;
-
+        try {
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, form.sAtoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Forms): ", Toast.LENGTH_SHORT).show();
+        }
         int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getiStatus());
         return updcount > 0;
     }
