@@ -6663,7 +6663,7 @@ public class MWRA extends BaseObservable implements Observable {
         json.put(TableContracts.MwraTable.COLUMN_UID, this.uid);
         json.put(TableContracts.MwraTable.COLUMN_PROJECT_NAME, this.projectName);
 
-        json.put(TableContracts.MwraTable.COLUMN_UUID, this.uid);
+        json.put(TableContracts.MwraTable.COLUMN_UUID, this.uuid);
         json.put(TableContracts.MwraTable.COLUMN_HHID, this.hhid);
         // json.put(TableContracts.MwraTable.COLUMN_MUID, this.muid);
         json.put(TableContracts.MwraTable.COLUMN_SNO, this.sno);

@@ -73,7 +73,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         MainApp.hhheadSelected = MainApp.familyMember.getD103().equals("1");
 
                         // Adding Parents
-                        boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getD109y()) >= 14;
+                        boolean memAgeCheck = Integer.parseInt(MainApp.familyMember.getD109y()) > 14;
                         boolean memMarriedCheck = !MainApp.familyMember.getD105().equals("2");
                         String memGender = MainApp.familyMember.getD104();
                         if (memMarriedCheck && memAgeCheck) {
@@ -168,7 +168,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 fmCount++;
 
                 // Adding Parents
-                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) >= 14;
+                boolean memAgeCheck = Integer.parseInt(fm.getD109y()) > 14;
                 boolean memMarriedCheck = !fm.getD105().equals("2");
                 String memGender = fm.getD104();
                 if (memMarriedCheck && memAgeCheck) {

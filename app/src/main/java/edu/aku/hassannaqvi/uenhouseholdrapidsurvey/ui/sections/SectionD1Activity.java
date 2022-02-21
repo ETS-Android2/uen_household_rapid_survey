@@ -77,7 +77,7 @@ public class SectionD1Activity extends AppCompatActivity {
             motherNames.add(fl.getD102());
             motherCodes.add(fl.getD101());
             motherUID.add(fl.getUid());
-            motherPresent.add(fl.getD115());
+            motherPresent.add(fl.getD115().equals("1") && Integer.parseInt(fl.getD109y()) < 50 ? "1" : "2");
         }
         motherNames.add("Not Available/Died");
         motherCodes.add("97");
