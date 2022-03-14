@@ -6,7 +6,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -26,32 +25,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateExpiredException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.CertificateNotYetValidException;
-import java.security.cert.X509Certificate;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManagerFactory;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.CipherSecure;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 
 
 public class DataUpWorkerALL extends Worker {
 
-    private static final String TAG = "DataWorkerEN()";
+    private static final Object APP_NAME = PROJECT_NAME;
+    private final String TAG = "DataWorkerEN()";
 
     // to be initialised by workParams
     private final Context mContext;
@@ -93,117 +77,6 @@ public class DataUpWorkerALL extends Worker {
      * It will display a notification
      * So that we will understand the work is executed
      * */
-    private static SSLSocketFactory buildSslSocketFactory(Context context) {
-        try {
-
-
-            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            AssetManager assetManager = context.getAssets();
-            InputStream caInput = assetManager.open("star_aku_edu.crt");
-            Certificate ca;
-            try {
-                ca = cf.generateCertificate(caInput);
-                System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
-            } finally {
-                caInput.close();
-            }
-
-            // Create a KeyStore containing our trusted CAs
-            String keyStoreType = KeyStore.getDefaultType();
-            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
-            keyStore.load(null, null);
-            keyStore.setCertificateEntry("ca", ca);
-
-            // Create a TrustManager that trusts the CAs in our KeyStore
-            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-            tmf.init(keyStore);
-/*
-
-            SSLContext context = SSLContext.getInstance("TLS");
-            context.init(null, new X509TrustManager[]{new X509TrustManager() {
-                public void checkClientTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-
-                public void checkServerTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-
-                public X509Certificate[] getAcceptedIssuers() {
-                    return new X509Certificate[0];
-                }
-            }}, new SecureRandom());
-            HttpsURLConnection.setDefaultSSLSocketFactory(
-                    context.getSocketFactory());
-            */
-            // Create an SSLContext that uses our TrustManager
-            SSLContext context1 = SSLContext.getInstance("TLSv1.2");
-            context1.init(null, tmf.getTrustManagers(), null);
-            return context1.getSocketFactory();
-        } catch (NoSuchAlgorithmException | KeyStoreException | KeyManagementException | CertificateException | IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static void longInfo(String str) {
-        if (str.length() > 4000) {
-            Log.i(TAG, str.substring(0, 4000));
-            longInfo(str.substring(4000));
-        } else
-            Log.i(TAG, str);
-    }
-
-    /*
-     * The method is doing nothing but only generating
-     * a simple notification
-     * If you are confused about it
-     * you should check the Android Notification Tutorial
-     * */
-    private void displayNotification(String title, String task) {
-        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
-                .setContentTitle(title)
-                .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
-
-        final int maxProgress = 100;
-        int curProgress = 0;
-        notification.setProgress(length, curProgress, false);
-
-        notificationManager.notify(1, notification.build());
-    }
-
-    private boolean certIsValid(Certificate[] certs, Certificate ca) {
-        for (Certificate cert : certs) {
-            System.out.println("Certificate is: " + cert);
-            if (cert instanceof X509Certificate) {
-
-                try {
-                    ((X509Certificate) cert).checkValidity();
-
-                    System.out.println("Certificate is active for current date");
-                    if (cert.equals(ca)) {
-
-                        return true;
-                    }
-                    //  Toast.makeText(mContext, "Certificate is active for current date", Toast.LENGTH_SHORT).show();
-                } catch (CertificateExpiredException | CertificateNotYetValidException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-
-        }
-        return false;
-    }
 
     @NonNull
     @Override
@@ -222,29 +95,6 @@ public class DataUpWorkerALL extends Worker {
         StringBuilder result = new StringBuilder();
 
         URL url = null;
-
-        InputStream caInput = null;
-        Certificate ca = null;
-        try {
-            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            AssetManager assetManager = mContext.getAssets();
-            caInput = assetManager.open("star_aku_edu.crt");
-
-
-            ca = cf.generateCertificate(caInput);
-            System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
-        } catch (CertificateException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                caInput.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         try {
             if (serverURL == null) {
                 url = new URL(MainApp._HOST_URL + MainApp._SERVER_URL);
@@ -252,18 +102,7 @@ public class DataUpWorkerALL extends Worker {
                 url = serverURL;
             }
             Log.d(TAG, "doWork: Connecting...");
-
-            HostnameVerifier allHostsValid = new HostnameVerifier() {
-                public boolean verify(String hostname, SSLSession session) {
-                    //Logcat.d(hostname + " / " + apiHostname);
-                    Log.d(TAG, "verify: hostname " + hostname);
-                    return true;
-                }
-            };
-            //HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-
             urlConnection = (HttpsURLConnection) url.openConnection();
-            urlConnection.setSSLSocketFactory(buildSslSocketFactory(mContext));
             urlConnection.setReadTimeout(100000 /* milliseconds */);
             urlConnection.setConnectTimeout(150000 /* milliseconds */);
             urlConnection.setRequestMethod("POST");
@@ -273,83 +112,60 @@ public class DataUpWorkerALL extends Worker {
             urlConnection.setRequestProperty("charset", "utf-8");
             urlConnection.setUseCaches(false);
             urlConnection.connect();
+            Log.d(TAG, "downloadURL: " + url);
 
-            Certificate[] certs = urlConnection.getServerCertificates();
+            JSONArray jsonSync = new JSONArray();
 
-            if (certIsValid(certs, ca)) {
+            DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
 
+            JSONObject jsonTable = new JSONObject();
+            JSONArray jsonParam = new JSONArray();
 
-                Log.d(TAG, "downloadURL: " + url);
+            jsonTable.put("table", uploadTable);
+            Log.d(TAG, "doWork: " + uploadData);
+            System.out.print("doWork: " + uploadData);
+            //jsonSync.put(uploadData);
+            jsonParam
+                    .put(jsonTable)
+                    .put(uploadData);
 
-                JSONArray jsonSync = new JSONArray();
-
-                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
-
-                JSONObject jsonTable = new JSONObject();
-                JSONArray jsonParam = new JSONArray();
-
-                jsonTable.put("table", uploadTable);
-                //Log.d(TAG, "doWork: " + uploadData);
-                //System.out.print("doWork: " + uploadData);
-                //jsonSync.put(uploadData);
-                jsonParam
-                        .put(jsonTable)
-                        .put(uploadData);
-
-                Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
-                Log.d(TAG, "Upload Begins: " + jsonParam);
-                longInfo(String.valueOf(jsonParam));
+            Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
+            Log.d(TAG, "Upload Begins: " + jsonParam);
 
 
-                //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-                wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
+            //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            wr.writeBytes(jsonParam.toString());
+            wr.flush();
+            wr.close();
 
-                String writeEnc = CipherSecure.encrypt(jsonParam.toString());
+            Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
 
-                longInfo("Encrypted: " + writeEnc);
+            if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
+                Log.d(TAG, "Connection Response: " + urlConnection.getResponseCode());
+                displayNotification(nTitle, "Connection Established");
 
-                //     wr.writeBytes(jsonParam.toString());
+                length = urlConnection.getContentLength();
+                Log.d(TAG, "Content Length: " + length);
 
-                wr.flush();
-                wr.close();
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
-                Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-                if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
-                    Log.d(TAG, "Connection Response: " + urlConnection.getResponseCode());
-                    displayNotification(nTitle, "Connection Established");
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    result.append(line);
 
-                    length = urlConnection.getContentLength();
-                    Log.d(TAG, "Content Length: " + length);
-
-                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        result.append(line);
-
-                    }
-                    displayNotification(nTitle, "Received Data");
-                    longInfo("result-server: " + writeEnc);
-
-                } else {
-
-                    Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
-
-                    data = new Data.Builder()
-                            .putString("error", String.valueOf(urlConnection.getResponseCode()))
-                            .putInt("position", this.position)
-                            .build();
-                    return Result.failure(data);
                 }
+                displayNotification(nTitle, "Received Data");
+                Log.d(TAG, "doWork(EN): " + result.toString());
             } else {
+
+                Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
+
                 data = new Data.Builder()
-                        .putString("error", "Invalid Certificate")
+                        .putString("error", String.valueOf(urlConnection.getResponseCode()))
                         .putInt("position", this.position)
                         .build();
-
                 return Result.failure(data);
             }
         } catch (java.net.SocketTimeoutException e) {
@@ -374,7 +190,6 @@ public class DataUpWorkerALL extends Worker {
         } finally {
 //            urlConnection.disconnect();
         }
-        result = new StringBuilder(CipherSecure.decrypt(result.toString()));
 
         //Do something with the JSON string
         if (result != null) {
@@ -418,5 +233,31 @@ public class DataUpWorkerALL extends Worker {
         }
 
 
+    }
+
+    /*
+     * The method is doing nothing but only generating
+     * a simple notification
+     * If you are confused about it
+     * you should check the Android Notification Tutorial
+     * */
+    private void displayNotification(String title, String task) {
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+                .setContentTitle(title)
+                .setContentText(task)
+                .setSmallIcon(R.mipmap.ic_launcher);
+
+        final int maxProgress = 100;
+        int curProgress = 0;
+        notification.setProgress(length, curProgress, false);
+
+        notificationManager.notify(1, notification.build());
     }
 }

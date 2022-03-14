@@ -27,7 +27,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
-import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.CipherSecure;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.databinding.ActivityChangePasswordBinding;
@@ -185,9 +184,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
                             }
                         }
                     });
-
-
-            Log.d(TAG, "attemptReset: " + CipherSecure.encrypt(bi.password2.getText().toString()));
 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
