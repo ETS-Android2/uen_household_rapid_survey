@@ -25,17 +25,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HttpsURLConnection;
 
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.R;
+import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.CipherSecure;
 import edu.aku.hassannaqvi.uenhouseholdrapidsurvey.core.MainApp;
 
 
 public class DataUpWorkerALL extends Worker {
 
     private static final Object APP_NAME = PROJECT_NAME;
-    private final String TAG = "DataWorkerEN()";
+    private static final String TAG = "DataWorkerEN()";
 
     // to be initialised by workParams
     private final Context mContext;
@@ -64,7 +71,7 @@ public class DataUpWorkerALL extends Worker {
 
         Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
-        uploadWhere = workerParams.getInputData().getString("where");
+        uploadWhere = workerParams.getInputData().getString("filter");
 
     }
 
@@ -77,6 +84,40 @@ public class DataUpWorkerALL extends Worker {
      * It will display a notification
      * So that we will understand the work is executed
      * */
+
+    public static void longInfo(String str) {
+        if (str.length() > 4000) {
+            Log.i(TAG, str.substring(0, 4000));
+            longInfo(str.substring(4000));
+        } else
+            Log.i(TAG, str);
+    }
+
+    /*
+     * The method is doing nothing but only generating
+     * a simple notification
+     * If you are confused about it
+     * you should check the Android Notification Tutorial
+     * */
+    private void displayNotification(String title, String task) {
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+                .setContentTitle(title)
+                .setContentText(task)
+                .setSmallIcon(R.mipmap.ic_launcher);
+
+        final int maxProgress = 100;
+        int curProgress = 0;
+        notification.setProgress(length, curProgress, false);
+
+        notificationManager.notify(1, notification.build());
+    }
 
     @NonNull
     @Override
@@ -131,10 +172,18 @@ public class DataUpWorkerALL extends Worker {
 
             Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
             Log.d(TAG, "Upload Begins: " + jsonParam);
+            longInfo(String.valueOf(jsonParam));
 
 
             //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-            wr.writeBytes(jsonParam.toString());
+            wr.writeBytes(CipherSecure.encrypt(jsonParam.toString()));
+
+            String writeEnc = CipherSecure.encrypt(jsonParam.toString());
+
+            longInfo("Encrypted: " + writeEnc);
+
+            //     wr.writeBytes(jsonParam.toString());
+
             wr.flush();
             wr.close();
 
@@ -177,11 +226,11 @@ public class DataUpWorkerALL extends Worker {
                     .build();
             return Result.failure(data);
 
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getMessage())
                     .putInt("position", this.position)
                     .build();
 
@@ -191,6 +240,19 @@ public class DataUpWorkerALL extends Worker {
 //            urlConnection.disconnect();
         }
 
+        try {
+            result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        } catch (NoSuchPaddingException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | InvalidAlgorithmParameterException | InvalidKeyException e) {
+            Log.d(TAG, "doWork (Encryption Error): " + e.getMessage());
+            displayNotification(nTitle, "Encryption Error: " + e.getMessage());
+            data = new Data.Builder()
+                    .putString("error", e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+
+        }
         //Do something with the JSON string
         if (result != null) {
             displayNotification(nTitle, "Starting Data Processing");
@@ -233,31 +295,5 @@ public class DataUpWorkerALL extends Worker {
         }
 
 
-    }
-
-    /*
-     * The method is doing nothing but only generating
-     * a simple notification
-     * If you are confused about it
-     * you should check the Android Notification Tutorial
-     * */
-    private void displayNotification(String title, String task) {
-        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
-                .setContentTitle(title)
-                .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
-
-        final int maxProgress = 100;
-        int curProgress = 0;
-        notification.setProgress(length, curProgress, false);
-
-        notificationManager.notify(1, notification.build());
     }
 }
