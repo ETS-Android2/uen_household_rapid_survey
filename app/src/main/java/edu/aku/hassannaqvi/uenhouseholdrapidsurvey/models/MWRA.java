@@ -7618,7 +7618,7 @@ public class MWRA extends BaseObservable implements Observable {
             this.h209a = json.getString("h209a");
             this.h209a96x = json.getString("h209a96x");
             this.h210 = json.getString("h210");
-            this.h21101 = json.getString("h21101");
+            this.h21101 = json.has("h21101") ? json.getString("h21101") : "";
             this.h21102 = json.getString("h21102");
             this.h21103 = json.getString("h21103");
             this.h21104 = json.getString("h21104");
